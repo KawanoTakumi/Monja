@@ -360,7 +360,7 @@ GameObject:
   - component: {fileID: 348858939}
   - component: {fileID: 348858938}
   m_Layer: 5
-  m_Name: magic
+  m_Name: magic_button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -431,14 +431,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7400000, guid: 71463173163a3084f8c37320afad48ba, type: 2}
-        m_TargetAssemblyTypeName: UnityEngine.AnimationClip, UnityEngine
-        m_MethodName: set_frameRate
-        m_Mode: 4
+      - m_Target: {fileID: 1013919608}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: Play
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 1
           m_StringArgument: 
           m_BoolArgument: 0
@@ -730,7 +730,7 @@ GameObject:
   - component: {fileID: 889787177}
   - component: {fileID: 889787176}
   m_Layer: 5
-  m_Name: Attack
+  m_Name: Attack_button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -801,10 +801,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7400000, guid: 234ee0f63148e2f4985985dcf114b0dc, type: 2}
-        m_TargetAssemblyTypeName: UnityEngine.AnimationClip, UnityEngine
-        m_MethodName: set_frameRate
-        m_Mode: 4
+      - m_Target: {fileID: 1013919608}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: Play
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -939,6 +939,7 @@ GameObject:
   - component: {fileID: 1013919605}
   - component: {fileID: 1013919607}
   - component: {fileID: 1013919608}
+  - component: {fileID: 1013919609}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1031,7 +1032,7 @@ MonoBehaviour:
   Diffence: 50
   Magic: 50
   Magic_Diffence: 50
-  turn_cnt: 1
+  player_turn: 0
 --- !u!95 &1013919608
 Animator:
   serializedVersion: 5
@@ -1052,6 +1053,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &1013919609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1013919604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43ca332191cee654ab73deacc4732459, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turn: 1
 --- !u!1 &1111548029
 GameObject:
   m_ObjectHideFlags: 0
@@ -1065,7 +1079,7 @@ GameObject:
   - component: {fileID: 1111548032}
   - component: {fileID: 1111548031}
   m_Layer: 5
-  m_Name: heal
+  m_Name: heal_button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1355,7 +1369,7 @@ GameObject:
   - component: {fileID: 1656728080}
   - component: {fileID: 1656728079}
   m_Layer: 5
-  m_Name: min
+  m_Name: min_button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1969,6 +1983,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2097196021}
   - component: {fileID: 2097196020}
+  - component: {fileID: 2097196022}
   m_Layer: 0
   m_Name: Monster
   m_TagString: skelton
@@ -2043,3 +2058,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2097196022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2097196019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43ca332191cee654ab73deacc4732459, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turn: 1

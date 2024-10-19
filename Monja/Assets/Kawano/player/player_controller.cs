@@ -11,12 +11,12 @@ public class player_controller : MonoBehaviour
     public int Diffence = 50;
     public int Magic = 50;
     public int Magic_Diffence = 50;
-
-    public bool turn_cnt = true;
+    public bool player_turn;
+    Enemy_controller enemy_Controller;
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -27,7 +27,7 @@ public class player_controller : MonoBehaviour
 
     public void Attack_act()
     {
-
+        
     }
 
     public void Diffence_act()
