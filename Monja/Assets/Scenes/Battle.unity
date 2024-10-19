@@ -430,7 +430,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 348858939}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7400000, guid: 71463173163a3084f8c37320afad48ba, type: 2}
+        m_TargetAssemblyTypeName: UnityEngine.AnimationClip, UnityEngine
+        m_MethodName: set_frameRate
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 1
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &348858939
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -789,10 +801,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1013919608}
-        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
-        m_MethodName: Play
-        m_Mode: 3
+      - m_Target: {fileID: 7400000, guid: 234ee0f63148e2f4985985dcf114b0dc, type: 2}
+        m_TargetAssemblyTypeName: UnityEngine.AnimationClip, UnityEngine
+        m_MethodName: set_frameRate
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -800,7 +812,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
 --- !u!114 &889787177
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1019,6 +1031,7 @@ MonoBehaviour:
   Diffence: 50
   Magic: 50
   Magic_Diffence: 50
+  turn_cnt: 1
 --- !u!95 &1013919608
 Animator:
   serializedVersion: 5
@@ -1958,7 +1971,7 @@ GameObject:
   - component: {fileID: 2097196020}
   m_Layer: 0
   m_Name: Monster
-  m_TagString: Untagged
+  m_TagString: skelton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

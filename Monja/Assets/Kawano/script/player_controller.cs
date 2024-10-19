@@ -11,6 +11,8 @@ public class player_controller : MonoBehaviour
     public int Diffence = 50;
     public int Magic = 50;
     public int Magic_Diffence = 50;
+
+    public bool turn_cnt = true;
     // Start is called before the first frame update
     void Start()
     {
