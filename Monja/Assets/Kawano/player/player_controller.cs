@@ -12,7 +12,7 @@ public class player_controller : MonoBehaviour
     public int Magic = 50;
     public int Magic_Diffence = 50;
     public bool player_turn;
-    Enemy_controller enemy_Controller;
+    
     // Start is called before the first frame update
     void Start()
     {
