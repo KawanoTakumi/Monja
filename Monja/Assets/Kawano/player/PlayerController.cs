@@ -18,14 +18,13 @@ public class PlayerController : MonoBehaviour
     private int Magic_damage = 0;
     public int HP_Potion = 0;
 
-    Animator animator;//アニメーター取得
     // Start is called before the first frame update
     void Start()
     {
 
     }
 // Update is called once per frame
-void Update()
+    void Update()
     {
         turn_manager turn_Manager = GetComponent<turn_manager>();
         if (Player_turn == false)
@@ -54,14 +53,15 @@ void Update()
                 {
                     MP = MP_max;
                 }
+                Player_turn = false;
             }
         }
-        Player_turn = false;
     }
     public void magic()
     {
         if(Player_turn == true)
         {
+            Debug.Log("魔法");
             Magic_damage = Magic;
             Player_turn = false;
         }

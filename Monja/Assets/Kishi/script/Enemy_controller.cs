@@ -9,7 +9,7 @@ public class Enemy_controller : MonoBehaviour
     public int deffence = 5;
     public int magic = 0;
     public int magic_Diffence = 5;
-    public bool Enemy_turn = true;
+    public bool Enemy_turn = false;
     int Enemy_attack;
     int Enemy_deffence;
     int Enemy_act = 0;
@@ -26,6 +26,12 @@ public class Enemy_controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        turn_manager turn_Manager = GetComponent<turn_manager>();
+        if (Enemy_turn == false)
+        {
+            turn_Manager.turn = false;
+        }
+
         if (Enemy_turn == true)
         {
             Enemy_act = Random.Range(1, 4);
@@ -43,6 +49,7 @@ public class Enemy_controller : MonoBehaviour
                     Enemy_turn = false;
                     break;
             case 3:
+                    Defence();
             Enemy_deffence = deffence;
                     Enemy_turn = false;
                     break;

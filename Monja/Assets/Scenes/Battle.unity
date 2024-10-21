@@ -431,7 +431,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1013919610}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
         m_MethodName: magic
         m_Mode: 1
@@ -801,7 +801,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1013919610}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
         m_MethodName: attack
         m_Mode: 1
@@ -1047,7 +1047,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turn: 1
-  playerController: {fileID: 0}
 --- !u!114 &1013919610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1057,7 +1056,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1013919604}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7093b5e49bdbb5a49ab26126a7c6c9af, type: 3}
+  m_Script: {fileID: 11500000, guid: 08993315e046a7f43be400ec5fbd5a62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 100
@@ -1153,7 +1152,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1111548032}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1013919610}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: heal
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1111548032
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1353,8 +1364,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1614461928}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.1601, y: 0.0518, z: 0}
-  m_LocalScale: {x: 2.2506318, y: 1.6571913, z: 1}
+  m_LocalPosition: {x: -0.0039, y: 0.0026, z: 0}
+  m_LocalScale: {x: 2.2096703, y: 1.6735975, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1444,7 +1455,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1013919610}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
         m_MethodName: concentration
         m_Mode: 1
@@ -1724,8 +1735,8 @@ Canvas:
   m_GameObject: {fileID: 1954981138}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 1321076310}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -2000,6 +2011,7 @@ GameObject:
   - component: {fileID: 2097196021}
   - component: {fileID: 2097196020}
   - component: {fileID: 2097196022}
+  - component: {fileID: 2097196023}
   m_Layer: 0
   m_Name: Monster
   m_TagString: skelton
@@ -2087,4 +2099,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turn: 1
-  playerController: {fileID: 0}
+--- !u!114 &2097196023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2097196019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb3a806902d7b3441bc0d68101c047e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP: 150
+  attack: 5
+  deffence: 5
+  magic: 0
+  magic_Diffence: 5
+  Enemy_turn: 1
