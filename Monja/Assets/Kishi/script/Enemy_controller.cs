@@ -14,6 +14,8 @@ public class Enemy_controller : MonoBehaviour
     int Enemy_deffence;
     int Enemy_act = 0;
     int Enemy_luck = 0;
+    int Enemy_Move = 0;
+   
    
 
 
@@ -45,7 +47,7 @@ public class Enemy_controller : MonoBehaviour
                     Enemy_turn = false;
                 break;
             case 2:
-            Enemy_attack = attack;
+            ; Attack();
                     Enemy_turn = false;
                     break;
             case 3:
@@ -58,21 +60,29 @@ public class Enemy_controller : MonoBehaviour
     }
     void Attack()
     {
+        int Enemy_Move = 1;
+
         Enemy_luck = Random.Range(1, 11);
-        Debug.Log(Enemy_luck);
+        Debug.Log("攻撃");
         if (Enemy_luck <= 9)
         Enemy_attack = attack;
         else if(Enemy_luck == 10)
         {
             Enemy_attack = attack * 2;
+            Debug.Log("クリティカル");
         }
     }
     void Magic()
     {
-
+        int Enemy_Move = 2;
+        Debug.Log("魔法");
     }
     void Defence()
     {
+        int Enemy_Move = 3;
+        Debug.Log("防御");
+
+
         Enemy_deffence = deffence;
     }
 }
