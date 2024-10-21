@@ -2098,7 +2098,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43ca332191cee654ab73deacc4732459, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turn: 1
+  turn: 0
 --- !u!114 &2097196023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2116,4 +2116,4 @@ MonoBehaviour:
   deffence: 5
   magic: 0
   magic_Diffence: 5
-  Enemy_turn: 1
+  Enemy_turn: 0
