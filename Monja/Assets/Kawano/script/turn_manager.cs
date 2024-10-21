@@ -14,6 +14,9 @@ public class turn_manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(turn == true)
+        {
+            
+        }
     }
 }

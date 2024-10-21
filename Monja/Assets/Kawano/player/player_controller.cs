@@ -12,7 +12,10 @@ public class player_controller : MonoBehaviour
     public int Magic = 50;
     public int Magic_Diffence = 50;
     public bool player_turn;
+    int act = 0;
+    Animator animator;
     
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,21 +30,22 @@ public class player_controller : MonoBehaviour
 
     public void Attack_act()
     {
+         = 1;
         
     }
 
     public void Diffence_act()
     {
-
+        select = 3;
     }
 
     public void Magic_act()
     {
-
+        select = 2;
     }
 
     public void Magic_diffence_act()
     {
-
+        select = 4;
     }
 }
