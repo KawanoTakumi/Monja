@@ -13,11 +13,10 @@ public class PlayerController : MonoBehaviour
     public int Diffence = 50;
     public int Magic = 50;
     public int Magic_Diffence = 50;
-    public bool Player_turn = true;//主人公のターン
     private int Attack_damage = 0;
     private int Magic_damage = 0;
     public int HP_Potion = 0;
-
+    turn_manager turn_Manager;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,24 +25,22 @@ public class PlayerController : MonoBehaviour
 // Update is called once per frame
     void Update()
     {
-        turn_manager turn_Manager = GetComponent<turn_manager>();
-        if (Player_turn == false)
-        {
-            turn_Manager.turn = false;
-        }
+
     }
     public void attack()
     {
-        if(Player_turn == true)
+        turn_Manager = GetComponent<turn_manager>();
+        if(turn_Manager.turn == true)
         {
             Debug.Log("攻撃");
             Attack_damage = Attack;
-            Player_turn = false;
+            turn_Manager.turn = false;
         }
     }
     public void concentration()
     {
-        if(Player_turn == true)
+        turn_Manager = GetComponent<turn_manager>();
+        if (turn_Manager.turn == true)
         {
             if (MP < 100)
             {
@@ -53,32 +50,34 @@ public class PlayerController : MonoBehaviour
                 {
                     MP = MP_max;
                 }
-                Player_turn = false;
+                turn_Manager.turn = false;
             }
         }
     }
     public void magic()
     {
-        if(Player_turn == true)
+        turn_Manager = GetComponent<turn_manager>();
+        if (turn_Manager.turn == true)
         {
             Debug.Log("魔法");
             Magic_damage = Magic;
-            Player_turn = false;
+            turn_Manager.turn = false;
         }
     }
     public void heal()
     {
-        if(Player_turn == true)
+        turn_Manager = GetComponent<turn_manager>();
+        if (turn_Manager.turn == true)
         {
             Debug.Log("回復");
             if (HP != HP_max && HP_Potion > 0)
             {
                 HP += HP_max / 4;
-                Player_turn = false;
+                turn_Manager.turn = false;
             }
             else
             {
-                Player_turn = false;
+                turn_Manager.turn = false;
             }
         }
     }

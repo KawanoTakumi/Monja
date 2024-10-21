@@ -938,8 +938,8 @@ GameObject:
   - component: {fileID: 1013919606}
   - component: {fileID: 1013919605}
   - component: {fileID: 1013919608}
-  - component: {fileID: 1013919610}
   - component: {fileID: 1013919609}
+  - component: {fileID: 1013919610}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1056,7 +1056,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1013919604}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08993315e046a7f43be400ec5fbd5a62, type: 3}
+  m_Script: {fileID: 11500000, guid: 6190e519a1569e540b6b6c0282d0879b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 100
@@ -1067,7 +1067,6 @@ MonoBehaviour:
   Diffence: 50
   Magic: 50
   Magic_Diffence: 50
-  Player_turn: 1
   HP_Potion: 0
 --- !u!1 &1111548029
 GameObject:
@@ -2010,8 +2009,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2097196021}
   - component: {fileID: 2097196020}
-  - component: {fileID: 2097196022}
   - component: {fileID: 2097196023}
+  - component: {fileID: 2097196022}
   m_Layer: 0
   m_Name: Monster
   m_TagString: skelton
@@ -2093,19 +2092,6 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2097196019}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43ca332191cee654ab73deacc4732459, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  turn: 0
---- !u!114 &2097196023
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2097196019}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eb3a806902d7b3441bc0d68101c047e6, type: 3}
@@ -2116,4 +2102,16 @@ MonoBehaviour:
   deffence: 5
   magic: 0
   magic_Diffence: 5
-  Enemy_turn: 0
+--- !u!114 &2097196023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2097196019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43ca332191cee654ab73deacc4732459, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turn: 1
