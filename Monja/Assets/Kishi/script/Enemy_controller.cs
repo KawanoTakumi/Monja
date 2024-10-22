@@ -10,8 +10,8 @@ public class Enemy_controller : MonoBehaviour
     public int magic = 0;
     public int magic_Diffence = 5;
     turn_manager turn_Manager;//turnManager“Ç‚İ‚İ
-    int Enemy_attack;
-    int Enemy_deffence;
+    public int Enemy_attack;
+    public int Enemy_deffence;
     int Enemy_act = 0;
     int Enemy_luck = 0;
     //int EnemyMove = 0;
@@ -31,6 +31,9 @@ public class Enemy_controller : MonoBehaviour
         turn_Manager = obj.GetComponent<turn_manager>();
         if (turn_Manager.turn == false)
         {
+            //EnemyAttack‚ğ‰Šú‰»
+            Enemy_attack = 0;
+
             Debug.Log("“G‚ÌUŒ‚");
             Enemy_act = Random.Range(1, 4);
             //Debug.Log(Enemy_act);

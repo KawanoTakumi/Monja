@@ -177,7 +177,7 @@ AnimatorStateTransition:
   m_IsExit: 0
   serializedVersion: 3
   m_TransitionDuration: 0.25
-  m_TransitionOffset: 0.017460432
+  m_TransitionOffset: 0
   m_ExitTime: 0.91803277
   m_HasExitTime: 1
   m_HasFixedDuration: 1
@@ -193,30 +193,24 @@ AnimatorController:
   m_Name: Player
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: select
-    m_Type: 3
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
   - m_Name: attack
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: magic
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: heal
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -318,19 +312,19 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 141242668434149897}
-    m_Position: {x: 810, y: 0, z: 0}
+    m_Position: {x: 800, y: -30, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4555946158955006735}
     m_Position: {x: 800, y: -190, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -1906487245397697933}
-    m_Position: {x: 630, y: -100, z: 0}
+    m_Position: {x: 650, y: -110, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -5563239069843212611}
     m_Position: {x: 490, y: -190, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -6928316881115726189}
-    m_Position: {x: 525, y: -125, z: 0}
+    m_Position: {x: 280, y: -30, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
