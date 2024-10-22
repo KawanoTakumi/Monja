@@ -48,6 +48,7 @@ public class Enemy_controller : MonoBehaviour
                     break;
                 case 3:
                     Defence();
+                    Debug.Log("防御");
                     Enemy_deffence = deffence;
                     turn_Manager.turn = true;
                     break;
@@ -67,16 +68,14 @@ public class Enemy_controller : MonoBehaviour
                 Debug.Log("クリティカル");
             }
         }
-        void Magic()
-        {
-            //int Enemy_Move = 2;
-            Debug.Log("魔法");
-        }
+        //void Magic()
+        //{
+        //    //int Enemy_Move = 2;
+        //    Debug.Log("魔法");
+        //}
         void Defence()
         {
             //int Enemy_Move = 3;
-            Debug.Log("防御");
-
             Enemy_deffence = deffence;
         }
     }
