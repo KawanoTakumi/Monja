@@ -18,7 +18,8 @@ public class Damage_calculate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Playercontroller = GetComponent<PlayerController>(); 
+        Playercontroller = GetComponent<PlayerController>();
+        //Playercontroller.Attack_damage
     }
 
     void  Change()
