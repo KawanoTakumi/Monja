@@ -27,7 +27,8 @@ public class Enemy_controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        turn_Manager = GetComponent<turn_manager>();
+        GameObject obj = GameObject.Find("Player");
+        turn_Manager = obj.GetComponent<turn_manager>();
         if (turn_Manager.turn == false)
         {
             Debug.Log("“G‚ÌUŒ‚");
@@ -37,14 +38,17 @@ public class Enemy_controller : MonoBehaviour
             {
                 case 1:
                     Attack();
+                    Debug.Log("UŒ‚‚P");
                     turn_Manager.turn = true;
                     break;
                 case 2:
                     Attack();
+                    Debug.Log("UŒ‚2");
                     turn_Manager.turn = true;
                     break;
                 case 3:
                     Defence();
+                    Debug.Log("–hŒä");
                     Enemy_deffence = deffence;
                     turn_Manager.turn = true;
                     break;
@@ -64,16 +68,14 @@ public class Enemy_controller : MonoBehaviour
                 Debug.Log("ƒNƒŠƒeƒBƒJƒ‹");
             }
         }
-        void Magic()
-        {
-            //int Enemy_Move = 2;
-            Debug.Log("–‚–@");
-        }
+        //void Magic()
+        //{
+        //    //int Enemy_Move = 2;
+        //    Debug.Log("–‚–@");
+        //}
         void Defence()
         {
             //int Enemy_Move = 3;
-            Debug.Log("–hŒä");
-
             Enemy_deffence = deffence;
         }
     }

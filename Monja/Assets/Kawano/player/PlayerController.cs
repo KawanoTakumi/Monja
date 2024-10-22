@@ -13,8 +13,8 @@ public class PlayerController : MonoBehaviour
     public int Diffence = 50;
     public int Magic = 50;
     public int Magic_Diffence = 50;
-    private int Attack_damage = 0;
-    private int Magic_damage = 0;
+    public int Attack_damage = 0;
+    public int Magic_damage = 0;
     public int HP_Potion = 0;
     turn_manager turn_Manager;
     // Start is called before the first frame update
@@ -30,12 +30,17 @@ public class PlayerController : MonoBehaviour
     public void attack()
     {
         turn_Manager = GetComponent<turn_manager>();
-        if(turn_Manager.turn == true)
+        if (turn_Manager.turn == true)
         {
             Debug.Log("UŒ‚");
             Attack_damage = Attack;
             turn_Manager.turn = false;
         }
+        else
+        {
+            Debug.Log("‘I‘ğ‚Å‚«‚Ü‚¹‚ñ");
+        }
+            
     }
     public void concentration()
     {
