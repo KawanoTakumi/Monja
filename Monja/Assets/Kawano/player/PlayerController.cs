@@ -17,40 +17,47 @@ public class PlayerController : MonoBehaviour
     public int Magic_damage = 0;
     public int HP_Potion = 0;
     turn_manager turn_Manager;
+    Animator animator;
     // Start is called before the first frame update
     void Start()
     {
 
     }
-// Update is called once per frame
+    // Update is called once per frame
     void Update()
     {
-
+        //ダメージ値を初期化
+        Attack_damage = 0;
     }
     public void attack()
     {
+        //読み込み
         turn_Manager = GetComponent<turn_manager>();
+        animator = GetComponent<Animator>();
+        //アニメーション処理を初期化
+        animator.SetBool("attack", false);
+        animator.SetBool("magic", false);
+        animator.SetBool("heal", false);
+
         if (turn_Manager.turn == true)
         {
             Debug.Log("攻撃");
+            animator.SetBool("attack", true);
             Attack_damage = Attack;
             turn_Manager.turn = false;
         }
-        else
-        {
-            Debug.Log("選択できません");
-        }
-            
     }
     public void concentration()
     {
         turn_Manager = GetComponent<turn_manager>();
+        animator = GetComponent<Animator>();
         if (turn_Manager.turn == true)
         {
             if (MP < 100)
             {
                 Debug.Log("集中");
                 MP += MP_max / 4;
+                //MPが最大値よりも大きくなった時数値を最大値に合わせる
                 if (MP > MP_max)
                 {
                     MP = MP_max;
@@ -62,9 +69,16 @@ public class PlayerController : MonoBehaviour
     public void magic()
     {
         turn_Manager = GetComponent<turn_manager>();
+        animator = GetComponent<Animator>();
+        //アニメーション処理を初期化
+        animator.SetBool("attack", false);
+        animator.SetBool("magic", false);
+        animator.SetBool("heal", false);
         if (turn_Manager.turn == true)
         {
+
             Debug.Log("魔法");
+            animator.SetBool("magic", true);
             Magic_damage = Magic;
             turn_Manager.turn = false;
         }
@@ -72,12 +86,23 @@ public class PlayerController : MonoBehaviour
     public void heal()
     {
         turn_Manager = GetComponent<turn_manager>();
+        animator = GetComponent<Animator>();
+        //アニメーション処理を初期化
+        animator.SetBool("attack", false);
+        animator.SetBool("magic", false);
+        animator.SetBool("heal", false);
         if (turn_Manager.turn == true)
         {
             Debug.Log("回復");
             if (HP != HP_max && HP_Potion > 0)
             {
+                animator.SetBool("magic", true);
                 HP += HP_max / 4;
+                //HPが最大値よりも大きくなった時数値を最大値に合わせる
+                if (HP > HP_max)
+                {
+                    HP = HP_max;
+                }
                 turn_Manager.turn = false;
             }
             else
