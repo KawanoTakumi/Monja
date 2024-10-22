@@ -13,8 +13,8 @@ public class PlayerController : MonoBehaviour
     public int Diffence = 50;
     public int Magic = 50;
     public int Magic_Diffence = 50;
-    private int Attack_damage = 0;
-    private int Magic_damage = 0;
+    public int Attack_damage = 0;
+    public int Magic_damage = 0;
     public int HP_Potion = 0;
     turn_manager turn_Manager;
     // Start is called before the first frame update
