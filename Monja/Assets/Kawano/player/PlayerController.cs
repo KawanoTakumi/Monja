@@ -30,12 +30,17 @@ public class PlayerController : MonoBehaviour
     public void attack()
     {
         turn_Manager = GetComponent<turn_manager>();
-        if(turn_Manager.turn == true)
+        if (turn_Manager.turn == true)
         {
             Debug.Log("UŒ‚");
             Attack_damage = Attack;
             turn_Manager.turn = false;
         }
+        else
+        {
+            Debug.Log("‘I‘ğ‚Å‚«‚Ü‚¹‚ñ");
+        }
+            
     }
     public void concentration()
     {
