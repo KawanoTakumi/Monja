@@ -57,14 +57,14 @@ public class turn_manager : MonoBehaviour
                 break;
             case BattleStatus.Player_Attack:
                 Debug.Log("プレイヤーの攻撃");
-                Debug.Log("PlayerはEnemyに" + damage_Calculate.Enemy_Damage + "ダメージを与えた");
+                Debug.Log("PlayerはEnemyに" + "ダメージを与えた");
                 break;
             case BattleStatus.Enmey_Select:
                 Debug.Log("エネミーのターン");
                 break;
             case BattleStatus.Enmey_Attack:
                 Debug.Log("エネミーの攻撃");
-                Debug.Log("EnemyはPlayerに" + damage_Calculate.Player_Damage + "ダメージを与えた");
+                Debug.Log("EnemyはPlayerに" + "ダメージを与えた");
                 break;
         }
     }

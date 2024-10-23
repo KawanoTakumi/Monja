@@ -7,9 +7,6 @@ public class Damage_calculate : MonoBehaviour
     PlayerController Playercontroller;
     Enemy_controller Enemycontoroller;
     
-    public int Enemy_Damage;
-    public int Player_Damage;
-   
     // Start is called before the first frame update
     void Start()
     {
@@ -20,14 +17,20 @@ public class Damage_calculate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //敵へのダメージをプレイヤー攻撃力　ー　敵防御力で求める
-        Enemy_Damage = Playercontroller.Attack_damage - Enemycontoroller.deffence;
-        //プレイヤーへのダメージを敵攻撃力　ー　プレイヤー防御力で求める
-        Player_Damage = Enemycontoroller.Enemy_attack - Playercontroller.Diffence;
+
     }
 
-    void  Change()
+    public void Enemy_Damage_Calculate()
     {
+        int result;
+        result = Playercontroller.Attack_damage - Enemycontoroller.Enemy_deffence;
+        Enemycontoroller.HP -= result;
+    }
 
+    public void Player_Damage_Calculate()
+    {
+        int result;
+        result = Enemycontoroller.Enemy_attack - Playercontroller.Diffence;
+        Playercontroller.HP -= result;
     }
 }

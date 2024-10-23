@@ -10,6 +10,7 @@ public class Enemy_controller : MonoBehaviour
     public int magic = 0;
     public int magic_Diffence = 5;
     turn_manager turn_Manager;//turnManager“Ç‚İ‚İ
+    Damage_calculate damage_Calculate;
     public int Enemy_attack;
     public int Enemy_deffence;
     int Enemy_act = 0;
@@ -23,7 +24,7 @@ public class Enemy_controller : MonoBehaviour
     void Start()
     {
         GameObject skelton = GameObject.FindWithTag("skelton");
-        if(this.tag == "skelton")
+        if(tag == "skelton")
         {
             Enemy_Skelton = true;
         }
@@ -34,6 +35,7 @@ public class Enemy_controller : MonoBehaviour
     {
         GameObject obj = GameObject.Find("Player");
         turn_Manager = obj.GetComponent<turn_manager>();
+        damage_Calculate = GetComponent<Damage_calculate>();
         if (turn_Manager.turn == false)
         {
             //EnemyAttack‚ğ‰Šú‰»
@@ -78,17 +80,20 @@ public class Enemy_controller : MonoBehaviour
                 case 1:
                     Attack();
                     Debug.Log("UŒ‚‚P");
+                    damage_Calculate.Player_Damage_Calculate();
                     turn_Manager.turn = true;
                     break;
                 case 2:
                     Attack();
                     Debug.Log("UŒ‚2");
+                    damage_Calculate.Player_Damage_Calculate();
                     turn_Manager.turn = true;
                     break;
                 case 3:
                     Defence();
                     Debug.Log("–hŒä");
                     Enemy_deffence = deffence;
+                    damage_Calculate.Player_Damage_Calculate();
                     turn_Manager.turn = true;
                     break;
             }
