@@ -38,7 +38,21 @@ public class Item_Library : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
+        if (Button_Check.instance.isTouched)
+        {
+
+
+            if (Dummymoney >= 25 && GetFlag == false)
+            {
+                ItemFlags[(int)Item.Bowlingball] = true;
+                Dummymoney -= 25;
+                Debug.Log(Dummymoney);
+                GetFlag = true;
+            }
+            else
+                textbox.text = "お金が足りません。";
+        }
     }
     public bool GetItemFlag(Item item)
     {
@@ -49,16 +63,6 @@ public class Item_Library : MonoBehaviour
     //購入判定（試作）
     //---------------------------
 
-    public void Buy1()
-    {
-        if (Dummymoney >= 25 && GetFlag == false)
-        {
-            ItemFlags[(int)Item.Bowlingball] = true;
-            Dummymoney -= 25;
-            Debug.Log(Dummymoney);
-            GetFlag = true;
-        }
-        else
-            textbox.text = "お金が足りません。";
-    }
+  
+    
 }

@@ -475,8 +475,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1114536393}
-        m_TargetAssemblyTypeName: Item_Library, Assembly-CSharp
-        m_MethodName: Buy1
+        m_TargetAssemblyTypeName: Button_Check, Assembly-CSharp
+        m_MethodName: button_check
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -533,11 +533,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1114536388}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6550c35efd7122a4aa0f5bb77c3c8848, type: 3}
+  m_Script: {fileID: 11500000, guid: 0331748e3c819ae4ebe883d76ba6f2b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textbox: {fileID: 0}
-  ItemFlags: 
+  isTouched: 0
 --- !u!1 &1278219744
 GameObject:
   m_ObjectHideFlags: 0
