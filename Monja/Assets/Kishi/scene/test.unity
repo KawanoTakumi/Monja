@@ -218,6 +218,7 @@ GameObject:
   - component: {fileID: 1278219746}
   - component: {fileID: 1278219745}
   - component: {fileID: 1278219747}
+  - component: {fileID: 1278219748}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -309,4 +310,18 @@ MonoBehaviour:
   deffence: 5
   magic: 0
   magic_Diffence: 5
-  Enemy_turn: 1
+  Enemy_attack: 0
+  Enemy_deffence: 0
+--- !u!114 &1278219748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1278219744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6550c35efd7122a4aa0f5bb77c3c8848, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ItemFlags: 010101010101
