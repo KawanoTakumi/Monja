@@ -6,6 +6,11 @@ using UnityEngine.UI;
 public class Item_Library : MonoBehaviour
 {
     // Start is called before the first frame update
+
+    int Dummymoney = 100;
+    public Text textbox;
+    bool GetFlag = false;
+   
     public enum Item
     {
        Healdrink,
@@ -44,5 +49,16 @@ public class Item_Library : MonoBehaviour
     //w“ü”»’èiìj
     //---------------------------
 
-    //public 
+    public void Buy1()
+    {
+        if (Dummymoney >= 25 && GetFlag == false)
+        {
+            ItemFlags[(int)Item.Bowlingball] = true;
+            Dummymoney -= 25;
+            Debug.Log(Dummymoney);
+            GetFlag = true;
+        }
+        else
+            textbox.text = "‚¨‹à‚ª‘«‚è‚Ü‚¹‚ñB";
+    }
 }
