@@ -21,13 +21,18 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        //読み込み
+        turn_Manager = GetComponent<turn_manager>();
+        animator = GetComponent<Animator>();
     }
     // Update is called once per frame
     void Update()
     {
         //ダメージ値を初期化
         Attack_damage = 0;
+        if(turn_Manager.turn == false)
+        {
+        }
     }
     public void attack()
     {
@@ -51,6 +56,10 @@ public class PlayerController : MonoBehaviour
     {
         turn_Manager = GetComponent<turn_manager>();
         animator = GetComponent<Animator>();
+        animator.SetBool("attack", false);
+        animator.SetBool("magic", false);
+        animator.SetBool("heal", false);
+
         if (turn_Manager.turn == true)
         {
             if (MP < 100)
@@ -70,13 +79,13 @@ public class PlayerController : MonoBehaviour
     {
         turn_Manager = GetComponent<turn_manager>();
         animator = GetComponent<Animator>();
-        //アニメーション処理を初期化
         animator.SetBool("attack", false);
         animator.SetBool("magic", false);
         animator.SetBool("heal", false);
+
+        //アニメーション処理を初期化
         if (turn_Manager.turn == true)
         {
-
             Debug.Log("魔法");
             animator.SetBool("magic", true);
             Magic_damage = Magic;
@@ -87,16 +96,16 @@ public class PlayerController : MonoBehaviour
     {
         turn_Manager = GetComponent<turn_manager>();
         animator = GetComponent<Animator>();
-        //アニメーション処理を初期化
         animator.SetBool("attack", false);
         animator.SetBool("magic", false);
         animator.SetBool("heal", false);
+        //アニメーション処理を初期化
         if (turn_Manager.turn == true)
         {
-            Debug.Log("回復");
             if (HP != HP_max && HP_Potion > 0)
             {
-                animator.SetBool("magic", true);
+                Debug.Log("回復");
+                animator.SetBool("heal", true);
                 HP += HP_max / 4;
                 //HPが最大値よりも大きくなった時数値を最大値に合わせる
                 if (HP > HP_max)

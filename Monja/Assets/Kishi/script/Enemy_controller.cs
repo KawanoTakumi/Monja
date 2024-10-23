@@ -22,7 +22,11 @@ public class Enemy_controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        GameObject skelton = GameObject.FindWithTag("skelton");
+        if(this.tag == "skelton")
+        {
+            Enemy_Skelton = true;
+        }
     }
 
     // Update is called once per frame
@@ -36,11 +40,9 @@ public class Enemy_controller : MonoBehaviour
             Enemy_attack = 0;
 
             if (Enemy_Skelton == true) //“G@ƒXƒPƒ‹ƒgƒ“
+            {
                 Skelton();
-
-            
             }
-
         }
         void Attack()
         {
@@ -68,27 +70,28 @@ public class Enemy_controller : MonoBehaviour
 
         void Skelton()
         {
-        Debug.Log("“G‚ÌUŒ‚");
-        Enemy_act = Random.Range(1, 4);
-        //Debug.Log(Enemy_act);
-        switch (Enemy_act)
-        {
-            case 1:
-                Attack();
-                Debug.Log("UŒ‚‚P");
-                turn_Manager.turn = true;
-                break;
-            case 2:
-                Attack();
-                Debug.Log("UŒ‚2");
-                turn_Manager.turn = true;
-                break;
-            case 3:
-                Defence();
-                Debug.Log("–hŒä");
-                Enemy_deffence = deffence;
-                turn_Manager.turn = true;
-                break;
+            Debug.Log("“G‚ÌUŒ‚");
+            Enemy_act = Random.Range(1, 4);
+            //Debug.Log(Enemy_act);
+            switch (Enemy_act)
+            {
+                case 1:
+                    Attack();
+                    Debug.Log("UŒ‚‚P");
+                    turn_Manager.turn = true;
+                    break;
+                case 2:
+                    Attack();
+                    Debug.Log("UŒ‚2");
+                    turn_Manager.turn = true;
+                    break;
+                case 3:
+                    Defence();
+                    Debug.Log("–hŒä");
+                    Enemy_deffence = deffence;
+                    turn_Manager.turn = true;
+                    break;
+            }
         }
     }
 }
