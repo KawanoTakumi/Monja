@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
         Attack_damage = 0;
         if(turn_Manager.turn == false)
         {
+            
         }
     }
     public void attack()
@@ -43,7 +44,6 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("attack", false);
         animator.SetBool("magic", false);
         animator.SetBool("heal", false);
-
         if (turn_Manager.turn == true)
         {
             Debug.Log("UŒ‚");
@@ -106,6 +106,7 @@ public class PlayerController : MonoBehaviour
             {
                 Debug.Log("‰ñ•œ");
                 animator.SetBool("heal", true);
+                HP_Potion -= 1;
                 HP += HP_max / 4;
                 //HP‚ªÅ‘å’l‚æ‚è‚à‘å‚«‚­‚È‚Á‚½Žž”’l‚ðÅ‘å’l‚É‡‚í‚¹‚é
                 if (HP > HP_max)
