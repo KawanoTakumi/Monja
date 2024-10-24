@@ -5,7 +5,9 @@ using UnityEngine;
 public class Button_Check : MonoBehaviour
 {
     public static Button_Check instance;
-    public bool isTouched;
+    public bool isTouched1;
+    public bool isTouched2;
+    public bool isTouched3;
 
     public void Awake()
     {
@@ -16,7 +18,7 @@ public class Button_Check : MonoBehaviour
     }
     void Start()
     {
-        isTouched = false;
+        isTouched1 = false;
     }
 
     // Update is called once per frame
@@ -25,8 +27,20 @@ public class Button_Check : MonoBehaviour
         
     }
 
-    public void button_check()
+    public void button_check1()
     {
-        isTouched = true;
+        isTouched1 = true;
     }
+
+    public void button_checks2()
+    {
+        isTouched2 = true;
+    }
+
+    public void button_checks3()
+    {
+        isTouched3 = true;
+    }
+
+
 }

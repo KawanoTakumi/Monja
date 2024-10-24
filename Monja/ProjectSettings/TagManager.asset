@@ -6,6 +6,12 @@ TagManager:
   tags:
   - skelton
   - Enemy
+  - radio
+  - bowlingball
+  - cd
+  - CDplayer
+  - healdrink
+  - hourglass
   layers:
   - Default
   - TransparentFX

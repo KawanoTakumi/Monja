@@ -7,18 +7,19 @@ public class Item_Library : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    int Dummymoney = 100;
+    int Dummymoney = 25;
+    int ItemVlue1 = 25;
     public Text textbox;
     bool GetFlag = false;
-   
-    public enum Item
+
+    public enum Item 
     {
-       Healdrink,
-       Bowlingball,
-       CDPlayer,
-       CD,
-       Radio,
-       Hourglass //砂時計
+        Healdrink,
+        Bowlingball,
+        CDPlayer,
+        CD,
+        Radio,
+        Hourglass //砂時計
     }
     [SerializeField]
     private bool[] ItemFlags;
@@ -32,37 +33,46 @@ public class Item_Library : MonoBehaviour
 
 
 
-
+       
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        if (Button_Check.instance.isTouched)
+        if (Button_Check.instance.isTouched1)
         {
-
-
-            if (Dummymoney >= 25 && GetFlag == false)
-            {
-                ItemFlags[(int)Item.Bowlingball] = true;
-                Dummymoney -= 25;
-                Debug.Log(Dummymoney);
-                GetFlag = true;
-            }
-            else
-                textbox.text = "お金が足りません。";
+            Buy1();
         }
-    }
-    public bool GetItemFlag(Item item)
-    {
-        return ItemFlags[(int)item];
+       
+
     }
 
     //----------------------------
     //購入判定（試作）
     //---------------------------
 
-  
-    
+    void Buy1()
+    {
+        if (Dummymoney >= ItemVlue1 && GetFlag == false)
+        {
+            ItemFlags[(int)Item.Bowlingball] = true;
+            Dummymoney -= ItemVlue1;
+            Debug.Log(Dummymoney);
+            GetFlag = true;
+        }
+        else  if (Dummymoney - ItemVlue1 < 0)
+        {
+            Debug.Log(Dummymoney);
+            textbox.text = "お金が足りません。";
+        }
+
+        Button_Check.instance.isTouched1 = false;
+    }
+
+    public bool GetItemFlag(Item item)
+    {
+        return ItemFlags[(int)item];
+    }
+
+
 }
