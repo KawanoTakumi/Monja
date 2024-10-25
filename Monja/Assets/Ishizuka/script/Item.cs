@@ -1,4 +1,3 @@
-
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Item", menuName = "ScriptableObject/Create Item")]
@@ -12,7 +11,7 @@ public class Item : ScriptableObject
     //アイテムの使用
     public void Use()
     {
-        Debug.Log(name);
+        Debug.Log(name + "を使用しました");
 
     }
 }
