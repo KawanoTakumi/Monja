@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class ChangeScene : MonoBehaviour
 {
-
     public string sceneName;//Ø‚è‘Ö‚¦‚éƒV[ƒ“‚Ì–¼‘O‚ğ“ü‚ê‚é
 
     // Start is called before the first frame update
@@ -24,6 +23,5 @@ public class ChangeScene : MonoBehaviour
     public void Load()
     {
         SceneManager.LoadScene(sceneName);
-     
     }
 }

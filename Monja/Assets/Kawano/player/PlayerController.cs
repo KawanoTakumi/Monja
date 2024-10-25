@@ -1,52 +1,76 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
     //player status
-    public int HP = 100;
-    public int HP_max = 100;
-    public int MP = 100;
-    public int MP_max = 100;
-    public int Attack = 50;
-    public int Diffence = 50;
-    public int Magic = 50;
-    public int Magic_Diffence = 50;
-    public int Attack_damage = 0;
-    public int Magic_damage = 0;
-    public int HP_Potion = 0;
+    public int HP;
+    public int HP_max;
+    public int MP;
+    public int MP_max;
+    public int Attack;
+    public int Diffence;
+    public int Magic;
+    public int Magic_Diffence;
+    public int Attack_damage;
+    public int Magic_damage;
+    public int HP_Potion;
+    public int Money;
+    //ãã®ä»–
+    public bool[] ItemFlags;
     turn_manager turn_Manager;
     Animator animator;
     Damage_calculate damage_Calculate;
+    Enemy_controller enemy_Controller;
+    GameObject Enemey;
+    public ChangeScene change;
+
+    //item
+    public enum Item
+    {
+        Healdrink,
+        Bowlingball,
+        CDPlayer,
+        CD,
+        Radio,
+        Hourglass //ç ‚æ™‚è¨ˆ
+    }
     // Start is called before the first frame update
     void Start()
     {
-        //“Ç‚İ‚İ
         turn_Manager = GetComponent<turn_manager>();
         animator = GetComponent<Animator>();
         damage_Calculate = GetComponent<Damage_calculate>();
+        Enemey = GameObject.Find("Monster");
+        enemy_Controller = Enemey.GetComponent<Enemy_controller>();
+        ItemFlags = new bool[6];
+
     }
     // Update is called once per frame
     void Update()
     {
-        
+        if(HP <= 0)
+        {
+            SceneManager.LoadScene("Win");
+        }
     }
     public void attack()
     {
-        //“Ç‚İ‚İ
+        
         turn_Manager = GetComponent<turn_manager>();
         animator = GetComponent<Animator>();
-        //ƒAƒjƒ[ƒVƒ‡ƒ“ˆ—‚ğ‰Šú‰»
         animator.SetBool("attack", false);
         animator.SetBool("magic", false);
         animator.SetBool("heal", false);
+
         if (turn_Manager.turn == true)
         {
-            Debug.Log("UŒ‚");
+            Debug.Log("æ”»æ’ƒ");
             animator.SetBool("attack", true);
             Attack_damage = Attack;
-            damage_Calculate.Enemy_Damage_Calculate();
+            damage_Calculate.Enmey_Damage_Calculate(Attack_damage,enemy_Controller.Enemy_deffence);
             turn_Manager.turn = false;
         }
     }
@@ -62,9 +86,9 @@ public class PlayerController : MonoBehaviour
         {
             if (MP < 100)
             {
-                Debug.Log("W’†");
+                Debug.Log("é›†ä¸­");
                 MP += MP_max / 4;
-                //MP‚ªÅ‘å’l‚æ‚è‚à‘å‚«‚­‚È‚Á‚½”’l‚ğÅ‘å’l‚É‡‚í‚¹‚é
+                //MP
                 if (MP > MP_max)
                 {
                     MP = MP_max;
@@ -82,15 +106,16 @@ public class PlayerController : MonoBehaviour
         turn_Manager = GetComponent<turn_manager>();
         animator = GetComponent<Animator>();
 
-        //ƒAƒjƒ[ƒVƒ‡ƒ“ˆ—‚ğ‰Šú‰»
+        
         animator.SetBool("attack", false);
         animator.SetBool("magic", false);
         animator.SetBool("heal", false);
         if (turn_Manager.turn == true)
         {
-            Debug.Log("–‚–@");
+            Debug.Log("é­”æ³•");
             animator.SetBool("magic", true);
             Magic_damage = Magic;
+            damage_Calculate.Enmey_Damage_Calculate(Magic_damage, enemy_Controller.magic_Diffence);
             turn_Manager.turn = false;
         }
     }
@@ -101,16 +126,16 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("attack", false);
         animator.SetBool("magic", false);
         animator.SetBool("heal", false);
-        //ƒAƒjƒ[ƒVƒ‡ƒ“ˆ—‚ğ‰Šú‰»
+        
         if (turn_Manager.turn == true)
         {
             if (HP != HP_max && HP_Potion > 0)
             {
-                Debug.Log("‰ñ•œ");
+                Debug.Log("å›å¾©");
                 animator.SetBool("heal", true);
                 HP_Potion -= 1;
                 HP += HP_max / 4;
-                //HP‚ªÅ‘å’l‚æ‚è‚à‘å‚«‚­‚È‚Á‚½”’l‚ğÅ‘å’l‚É‡‚í‚¹‚é
+                
                 if (HP > HP_max)
                 {
                     HP = HP_max;

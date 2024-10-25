@@ -1,19 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class num_cnt : MonoBehaviour
 {
-    public GameObject num0;
-    public GameObject num1;
-    public GameObject num2;
-    public GameObject num3;
-    public GameObject num4;
-    public GameObject num5;
-    public GameObject num6;
-    public GameObject num7;
-    public GameObject num8;
-    public GameObject num9;
+    public PlayerController player;
+    public Text attack_Text;
+    public Text diffence_Text;
+    public Text magic_Text;
+    public Text magic_diffence_Text;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +19,9 @@ public class num_cnt : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        attack_Text.text = string.Format("{0}",player.Attack);
+        diffence_Text.text = string.Format("{0}",player.Diffence);
+        magic_Text.text = string.Format("{0}",player.Magic);
+        magic_diffence_Text.text = string.Format("{0}",player.Magic_Diffence);
     }
 }
