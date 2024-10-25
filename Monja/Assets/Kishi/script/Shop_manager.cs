@@ -61,7 +61,7 @@ public class Shop_manager: MonoBehaviour
         Debug.Log("ランダム値1は" + random1);
 
         img1.texture = texture_list[random1];
-        //texture_list.Remove(img1.texture);
+        texture_list.Remove(img1.texture);
     }
 
     public void ChangeImage2()
@@ -72,7 +72,7 @@ public class Shop_manager: MonoBehaviour
         Debug.Log("ランダム値2は" + random2);
 
         img2.texture = texture_list[random2];
-        //texture_list.Remove(img2.texture);
+        texture_list.Remove(img2.texture);
     }
 
     public void ChangeImage3()
@@ -83,6 +83,6 @@ public class Shop_manager: MonoBehaviour
         Debug.Log("ランダム値3は" + random3);
 
         img3.texture = texture_list[random3];
-        //texture_list.Remove(img3.texture);
+        texture_list.Remove(img3.texture);
     }
 }

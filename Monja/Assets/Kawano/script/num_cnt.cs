@@ -6,14 +6,15 @@ using UnityEngine.UI;
 public class num_cnt : MonoBehaviour
 {
     public PlayerController player;
+    public Enemy_controller enemy;
     public Text attack_Text;
     public Text diffence_Text;
     public Text magic_Text;
     public Text magic_diffence_Text;
+    public Text turn_Text;
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -23,5 +24,6 @@ public class num_cnt : MonoBehaviour
         diffence_Text.text = string.Format("{0}",player.Diffence);
         magic_Text.text = string.Format("{0}",player.Magic);
         magic_diffence_Text.text = string.Format("{0}",player.Magic_Diffence);
+        turn_Text.text = string.Format("{0}", enemy.turn);
     }
 }

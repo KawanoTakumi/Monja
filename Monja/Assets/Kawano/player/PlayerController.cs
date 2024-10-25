@@ -26,6 +26,8 @@ public class PlayerController : MonoBehaviour
     Enemy_controller enemy_Controller;
     GameObject Enemey;
     public ChangeScene change;
+    int animation_time = 0;//アニメーションタイム
+    int turn_time = 0;//ターン経過時間
 
     //item
     public enum Item
@@ -55,23 +57,45 @@ public class PlayerController : MonoBehaviour
         {
             SceneManager.LoadScene("Win");
         }
+        if (animator.GetBool("attack") == true)
+        {
+            animation_time++;
+            turn_time++;
+            if (animation_time > 600 && turn_time > 600)
+            {
+                animator.SetBool("attack", false);
+                Debug.Log("アニメーション終了");
+                animation_time = 0;
+                turn_time = 0;
+                turn_Manager.turn = false;
+            }
+        }
+        if (animator.GetBool("magic") == true)
+        {
+            animation_time++;
+            turn_time++;
+            if (animation_time > 600 && turn_time > 600)
+            {
+                animator.SetBool("magic", false);
+                Debug.Log("アニメーション終了");
+                animation_time = 0;
+                turn_time = 0;
+                turn_Manager.turn = false;
+            }
+        }
+
     }
     public void attack()
     {
-        
         turn_Manager = GetComponent<turn_manager>();
         animator = GetComponent<Animator>();
-        animator.SetBool("attack", false);
-        animator.SetBool("magic", false);
-        animator.SetBool("heal", false);
-
         if (turn_Manager.turn == true)
         {
             Debug.Log("攻撃");
             animator.SetBool("attack", true);
             Attack_damage = Attack;
-            damage_Calculate.Enmey_Damage_Calculate(Attack_damage,enemy_Controller.Enemy_deffence);
-            turn_Manager.turn = false;
+            damage_Calculate.Enemey_Damage_Calculate(Attack_damage,enemy_Controller.Enemy_deffence);
+            //turn_Manager.turn = false;
         }
     }
     public void concentration()
@@ -106,11 +130,6 @@ public class PlayerController : MonoBehaviour
     {
         turn_Manager = GetComponent<turn_manager>();
         animator = GetComponent<Animator>();
-
-        
-        animator.SetBool("attack", false);
-        animator.SetBool("magic", false);
-        animator.SetBool("heal", false);
         if (turn_Manager.turn == true)
         {
             if(MP >= 25)
@@ -119,8 +138,8 @@ public class PlayerController : MonoBehaviour
                 animator.SetBool("magic", true);
                 MP -= 25;
                 Magic_damage = Magic;
-                damage_Calculate.Enmey_Damage_Calculate(Magic_damage, enemy_Controller.magic_Diffence);
-                turn_Manager.turn = false;
+                damage_Calculate.Enemey_Damage_Calculate(Magic_damage, enemy_Controller.magic_Diffence);
+                //turn_Manager.turn = false;
             }
             else
             {

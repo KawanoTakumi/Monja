@@ -423,7 +423,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1113380259}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06e013775b81ead4fae93716118e7098, type: 3}
+  m_Script: {fileID: 11500000, guid: adb4b0b93018a3e4e96e6c822f2129d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: Battle
@@ -557,7 +557,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1120228798}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06e013775b81ead4fae93716118e7098, type: 3}
+  m_Script: {fileID: 11500000, guid: adb4b0b93018a3e4e96e6c822f2129d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: shop
