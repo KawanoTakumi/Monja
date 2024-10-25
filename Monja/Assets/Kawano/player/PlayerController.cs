@@ -97,6 +97,7 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
+                Debug.Log("集中力は足りている");
                 turn_Manager.turn = false;
             }
         }
@@ -112,11 +113,20 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("heal", false);
         if (turn_Manager.turn == true)
         {
-            Debug.Log("魔法");
-            animator.SetBool("magic", true);
-            Magic_damage = Magic;
-            damage_Calculate.Enmey_Damage_Calculate(Magic_damage, enemy_Controller.magic_Diffence);
-            turn_Manager.turn = false;
+            if(MP >= 25)
+            {
+                Debug.Log("魔法");
+                animator.SetBool("magic", true);
+                MP -= 25;
+                Magic_damage = Magic;
+                damage_Calculate.Enmey_Damage_Calculate(Magic_damage, enemy_Controller.magic_Diffence);
+                turn_Manager.turn = false;
+            }
+            else
+            {
+                Debug.Log("魔法不発");
+                turn_Manager.turn = false;
+            }
         }
     }
     public void heal()
@@ -144,6 +154,7 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
+                Debug.Log("回復できなかった");
                 turn_Manager.turn = false;
             }
         }

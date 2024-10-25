@@ -73,6 +73,4 @@ public class Item_Library : MonoBehaviour
     {
         return ItemFlags[(int)item];
     }
-
-
 }

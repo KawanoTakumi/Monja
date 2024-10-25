@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Enemy_controller : MonoBehaviour
 {
@@ -45,6 +46,13 @@ public class Enemy_controller : MonoBehaviour
         {
             //EnemyAttackを初期化
             Enemy_attack = 0;
+
+            //HPが0になったらがクリア画面を出す
+            if(HP <= 0)
+            {
+                SceneManager.LoadScene("Win");
+            }
+
 
             if (Enemy_Skelton == true) //敵　スケルトン
             {

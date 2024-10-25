@@ -10,18 +10,14 @@ public class Shop_manager : MonoBehaviour
     public List<Texture> texture_list = new List<Texture>();
     void Start()
     {
-        img = GameObject.Find("DisplayImage").GetComponent<RawImage>();
+        img = GameObject.Find("DisplayImage_01").GetComponent<RawImage>();
         read_img(6);
-
-       
-
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        ChangeImage();
+        
     }
     public void read_img(int n)
     {
@@ -32,9 +28,9 @@ public class Shop_manager : MonoBehaviour
             texture_list.Add(tmp);
         }
     }
-     void ChangeImage()
+    public void ChangeImage()
     {
-        int random = Random.Range(1, texture_list.Count);
+        int random = Random.Range(0, texture_list.Count);
 
         Debug.Log("ƒ‰ƒ“ƒ_ƒ€’l‚Í" + random);
 
