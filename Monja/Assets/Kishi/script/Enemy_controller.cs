@@ -57,10 +57,17 @@ public class Enemy_controller : MonoBehaviour
             }
 
 
-            if (Enemy_Skelton == true) //“G@ƒXƒPƒ‹ƒgƒ“
+            if (Enemy_Skelton == true && turn_time == 0) //“G@ƒXƒPƒ‹ƒgƒ“
             {
                 Skelton();
+            }
+            turn_time++;
+            if(turn_time > 300)
+            {
+                Debug.Log("“Gƒ^[ƒ“I—¹");
                 turn += 1;
+                turn_Manager.turn = true;
+                turn_time = 0;
             }
         }
         void Attack()
@@ -99,20 +106,20 @@ public class Enemy_controller : MonoBehaviour
                     Debug.Log("UŒ‚‚P");
                     damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Diffence);
                     turn_time++;
-                    turn_Manager.turn = true;
+                    //turn_Manager.turn = true;
                     break;
                 case 2:
                     Attack();
                     Debug.Log("UŒ‚2");
                     damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Diffence);
-                    turn_Manager.turn = true;
+                    //turn_Manager.turn = true;
                     break;
                 case 3:
                     Defence();
                     Debug.Log("–hŒä");
                     Enemy_deffence = deffence;
                     damage_Calculate.Enemey_Damage_Calculate(playerController.Attack_damage,Enemy_deffence);
-                    turn_Manager.turn = true;
+                    //turn_Manager.turn = true;
                     break;
             }
         }

@@ -5,9 +5,9 @@ using UnityEngine;
 public class Damage_calculate : MonoBehaviour
 {
     PlayerController Playercontroller;
-    GameObject player;
+    GameObject player;//プレイヤーオブジェクト
     Enemy_controller Enemycontoroller;
-    GameObject enemey;
+    GameObject enemey;//エネミーオブジェクト
     Animator Player_animator;
     Animator Enemy_animator;
     int animation_time_E = 0;//エネミーのアニメーションタイム
@@ -33,19 +33,19 @@ public class Damage_calculate : MonoBehaviour
         if(Enemy_animator.GetBool("Damage") == true)
         {
             animation_time_E++;
-            if(animation_time_E >= 60)
+            if(animation_time_E >= 30)
             {
-                animation_time_E = 0;
                 Enemy_animator.SetBool("Damage", false);
+                animation_time_E = 0;
             }
         }
         if(Player_animator.GetBool("Player_Damage") == true)
         {
             animation_time_P++;
-            if(animation_time_P >= 60)
+            if(animation_time_P >= 30)
             {
-                animation_time_P = 0;
                 Player_animator.SetBool("Player_Damage", false);
+                animation_time_P = 0;
             }
         }
     }

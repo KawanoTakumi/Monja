@@ -6,18 +6,18 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     //player status
-    public int HP;
-    public int HP_max;
-    public int MP;
-    public int MP_max;
-    public int Attack;
-    public int Diffence;
-    public int Magic;
-    public int Magic_Diffence;
-    public int Attack_damage;
-    public int Magic_damage;
-    public int HP_Potion;
-    public int Money;
+    public int HP;//体力
+    public int HP_max;//最高体力
+    public int MP;//MP
+    public int MP_max;//最高MP
+    public int Attack;//攻撃力
+    public int Diffence;//防御力
+    public int Magic;//魔法力
+    public int Magic_Diffence;//魔法防御力
+    public int Attack_damage;//攻撃力(計算後)
+    public int Magic_damage;//魔法力(計算後)
+    public int HP_Potion;//HPポーションの数
+    public int Money;//所持金額
     //その他
     public bool[] ItemFlags;
     turn_manager turn_Manager;
@@ -61,7 +61,7 @@ public class PlayerController : MonoBehaviour
         {
             animation_time++;
             turn_time++;
-            if (animation_time > 600 && turn_time > 600)
+            if (animation_time > 400 && turn_time > 400)
             {
                 animator.SetBool("attack", false);
                 Debug.Log("アニメーション終了");
@@ -112,7 +112,7 @@ public class PlayerController : MonoBehaviour
             {
                 Debug.Log("集中");
                 MP += MP_max / 4;
-                //MP
+                //MPがMP_maxより大きければMP_maxの値に合わせる
                 if (MP > MP_max)
                 {
                     MP = MP_max;
@@ -122,7 +122,6 @@ public class PlayerController : MonoBehaviour
             else
             {
                 Debug.Log("集中力は足りている");
-                turn_Manager.turn = false;
             }
         }
     }
@@ -171,10 +170,13 @@ public class PlayerController : MonoBehaviour
                 }
                 turn_Manager.turn = false;
             }
-            else
+            else　if(HP == HP_max)
             {
-                Debug.Log("回復できなかった");
-                turn_Manager.turn = false;
+                Debug.Log("体力は満タンだ！！！");
+            }
+            else if(HP_Potion < 1)
+            {
+                Debug.Log("ポーションが足りない");
             }
         }
     }

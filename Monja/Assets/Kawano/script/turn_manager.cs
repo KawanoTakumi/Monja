@@ -19,6 +19,7 @@ public class turn_manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //true = ÂFAfalse = ÔF
         if(turn == true)
         {
             turn_text.color = p_turn;

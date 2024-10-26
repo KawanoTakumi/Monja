@@ -26,21 +26,16 @@ public class Button_Check : MonoBehaviour
     {
         
     }
-
     public void button_check1()
     {
         isTouched1 = true;
     }
-
     public void button_checks2()
     {
         isTouched2 = true;
     }
-
     public void button_checks3()
     {
         isTouched3 = true;
     }
-
-
 }
