@@ -17,6 +17,10 @@ public class Item_Library : MonoBehaviour
     int Item_number1;
     int Item_number2;
     int Item_number3;
+   public Button button1;
+   public Button button2;
+   public Button button3;
+
     Shop_manager shop_manager;
     
 
@@ -70,10 +74,13 @@ public class Item_Library : MonoBehaviour
     {
         if (Dummymoney >= ItemVlue1 && GetFlag1 == false)
         {
+
+
             Item_number1 = shop_manager.number1;
             switch(Item_number1)
             {
                 case 0:
+
                     ItemFlags[(int)Item.Healdrink] = true;  break;
                 case 1:
                     ItemFlags[(int)Item.Bowlingball] = true; break;
