@@ -12,6 +12,7 @@ TagManager:
   - CDplayer
   - healdrink
   - hourglass
+  - ono
   layers:
   - Default
   - TransparentFX

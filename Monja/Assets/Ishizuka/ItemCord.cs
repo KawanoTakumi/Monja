@@ -1,18 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ItemCord : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        
-    }
+        // ゲームオブジェクトの名前を指定して取得
+        GameObject myObject = GameObject.Find("y");
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        // 取得したゲームオブジェクトが存在するか確認
+        if (myObject != null)
+        {
+            // 取得したゲームオブジェクトに対する操作をここで行う
+            Debug.Log("オブジェクト名が見つかりました：" + myObject.name);
+        }
+        else
+        {
+            Debug.LogWarning("オブジェクト名： 'ObjectName'が見つかりません");
+        }
     }
 }
