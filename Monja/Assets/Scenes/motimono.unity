@@ -402,9 +402,10 @@ MonoBehaviour:
   bowlingball: {fileID: 1960638094}
   cd: {fileID: 1758695769}
   cdplayer: {fileID: 1441899673}
-  radio: {fileID: 1434730521}
+  radio: {fileID: 2096905396}
   healdrink: {fileID: 678470206}
   hourglass: {fileID: 784747190}
+  button: {fileID: 0}
 --- !u!1 &420996310
 GameObject:
   m_ObjectHideFlags: 0
@@ -1367,7 +1368,7 @@ GameObject:
   - component: {fileID: 1441899674}
   m_Layer: 5
   m_Name: cdplayer
-  m_TagString: Untagged
+  m_TagString: CDplayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1647,6 +1648,7 @@ GameObject:
   - component: {fileID: 2096905400}
   - component: {fileID: 2096905399}
   - component: {fileID: 2096905398}
+  - component: {fileID: 2096905402}
   m_Layer: 5
   m_Name: radio
   m_TagString: radio
@@ -1671,7 +1673,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -48.92}
+  m_AnchoredPosition: {x: -37, y: -7}
   m_SizeDelta: {x: 160, y: 127.84}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2096905398
@@ -1781,6 +1783,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2096905396}
   m_CullTransparentMesh: 1
+--- !u!114 &2096905402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2096905396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e711d91275d514543a2eeee4464aac12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 2096905399}
+  bowlingball: 0
+  radio: 0
 --- !u!1 &2138227682
 GameObject:
   m_ObjectHideFlags: 0

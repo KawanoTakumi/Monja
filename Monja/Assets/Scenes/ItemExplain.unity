@@ -304,6 +304,7 @@ MonoBehaviour:
   radio: {fileID: 0}
   healdrink: {fileID: 0}
   hourglass: {fileID: 0}
+  button: {fileID: 0}
 --- !u!1 &350577676
 GameObject:
   m_ObjectHideFlags: 0
@@ -400,6 +401,7 @@ MonoBehaviour:
   radio: {fileID: 0}
   healdrink: {fileID: 0}
   hourglass: {fileID: 0}
+  button: {fileID: 0}
 --- !u!1 &466394522
 GameObject:
   m_ObjectHideFlags: 0
@@ -501,6 +503,7 @@ MonoBehaviour:
   radio: {fileID: 0}
   healdrink: {fileID: 0}
   hourglass: {fileID: 0}
+  button: {fileID: 0}
 --- !u!1 &539055704
 GameObject:
   m_ObjectHideFlags: 0
@@ -597,6 +600,7 @@ MonoBehaviour:
   radio: {fileID: 0}
   healdrink: {fileID: 0}
   hourglass: {fileID: 0}
+  button: {fileID: 0}
 --- !u!1 &774161934
 GameObject:
   m_ObjectHideFlags: 0
@@ -769,6 +773,7 @@ MonoBehaviour:
   radio: {fileID: 0}
   healdrink: {fileID: 0}
   hourglass: {fileID: 0}
+  button: {fileID: 0}
 --- !u!1 &920606657
 GameObject:
   m_ObjectHideFlags: 0
@@ -865,6 +870,7 @@ MonoBehaviour:
   radio: {fileID: 0}
   healdrink: {fileID: 0}
   hourglass: {fileID: 0}
+  button: {fileID: 0}
 --- !u!1 &1129217459
 GameObject:
   m_ObjectHideFlags: 0
@@ -966,6 +972,7 @@ RectTransform:
   - {fileID: 539055705}
   - {fileID: 1682021313}
   - {fileID: 920606658}
+  - {fileID: 1441471971}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -992,6 +999,7 @@ MonoBehaviour:
   radio: {fileID: 920606657}
   healdrink: {fileID: 539055704}
   hourglass: {fileID: 1682021312}
+  button: {fileID: 0}
 --- !u!1 &1274574776
 GameObject:
   m_ObjectHideFlags: 0
@@ -1093,6 +1101,80 @@ MonoBehaviour:
   radio: {fileID: 0}
   healdrink: {fileID: 0}
   hourglass: {fileID: 0}
+  button: {fileID: 0}
+--- !u!1 &1441471970
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1441471971}
+  - component: {fileID: 1441471973}
+  - component: {fileID: 1441471972}
+  m_Layer: 5
+  m_Name: RawImage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1441471971
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1441471970}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1129217463}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -16.85, y: 102.36}
+  m_SizeDelta: {x: 168.3, y: 155.29}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1441471972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1441471970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 0}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!222 &1441471973
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1441471970}
+  m_CullTransparentMesh: 1
 --- !u!1 &1450474964
 GameObject:
   m_ObjectHideFlags: 0
@@ -1346,6 +1428,7 @@ MonoBehaviour:
   radio: {fileID: 0}
   healdrink: {fileID: 0}
   hourglass: {fileID: 0}
+  button: {fileID: 0}
 --- !u!1 &1636625479
 GameObject:
   m_ObjectHideFlags: 0
@@ -1360,11 +1443,11 @@ GameObject:
   - component: {fileID: 1636625483}
   m_Layer: 5
   m_Name: bowlingball
-  m_TagString: bowlingball
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1636625480
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1383,7 +1466,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -6, y: 81}
+  m_AnchoredPosition: {x: -255, y: 64.17}
   m_SizeDelta: {x: 180, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1636625481
@@ -1431,7 +1514,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1636625479}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8fe137fb46c889c4c843191fc1c1d311, type: 3}
   m_Name: 
@@ -1442,6 +1525,7 @@ MonoBehaviour:
   radio: {fileID: 0}
   healdrink: {fileID: 0}
   hourglass: {fileID: 0}
+  button: {fileID: 0}
 --- !u!1 &1682021312
 GameObject:
   m_ObjectHideFlags: 0
@@ -1538,6 +1622,7 @@ MonoBehaviour:
   radio: {fileID: 0}
   healdrink: {fileID: 0}
   hourglass: {fileID: 0}
+  button: {fileID: 0}
 --- !u!1 &1726429022
 GameObject:
   m_ObjectHideFlags: 0
@@ -1787,6 +1872,7 @@ MonoBehaviour:
   radio: {fileID: 0}
   healdrink: {fileID: 0}
   hourglass: {fileID: 0}
+  button: {fileID: 0}
 --- !u!1 &1899816421
 GameObject:
   m_ObjectHideFlags: 0
@@ -1972,3 +2058,4 @@ MonoBehaviour:
   radio: {fileID: 0}
   healdrink: {fileID: 0}
   hourglass: {fileID: 0}
+  button: {fileID: 0}
