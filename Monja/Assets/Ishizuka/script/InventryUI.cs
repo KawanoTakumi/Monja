@@ -8,27 +8,26 @@ public class InventryUI : MonoBehaviour
 
     void Start()
     {
-        slots = InventryPanel.GetComponentsInChildren<Slot>();
+       // slots = InventryPanel.GetComponentsInChildren<Slot>();
 
     }
 
     // Update is called once per frame
     public void UpdateUI()
     {
-        Debug.Log("UpdateUi");
-        for (int i = 0; i < slots.Length; i++)
-        {
-            if (i < Inventry.instance.items.Count)
-            {
-                slots[i].AddItem(Inventry.instance.items[i]);
+       // Debug.Log("UpdateUi");
+       // for (int i = 0; i < slots.Length; i++)
+       // {
+       //     if (i < Inventry.instance.items.Count)
+       //     {
+       //         slots[i].AddItem(Inventry.instance.items[i]);
+       //     }
+       //     else
+       //     {
+       //         ;
+       //     }
 
-            }
-            else
-            {
-              ;
-
-            }
-
-        }
+       // }
     }
 }
+
