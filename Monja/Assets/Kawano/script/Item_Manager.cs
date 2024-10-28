@@ -5,25 +5,21 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Item_Manager : MonoBehaviour
 {
-    public Button button;
-    public bool bowlingball;
-    public bool radio;
-
-    // Start is called before the first frame update
-    void Start()
+    public Button button;//É{É^Éì
+    public Text text;//ê‡ñæï∂
+    public void Hit_button()
     {
-        if (button == GameObject.FindWithTag("bowlingball"))
+        if (button == CompareTag("bowlingball"))
         {
-            bowlingball = true;
+            text.text = "aaa";
         }
-        else if (button == GameObject.FindWithTag("radio"))
+        else if (button == CompareTag("radio"))
         {
-            radio = true;
+            text.text = "bbb";
         }
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        
+        else if (button == CompareTag("healdrink"))
+        {
+            text.text = "ccc";
+        }
     }
 }
