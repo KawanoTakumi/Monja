@@ -17,11 +17,10 @@ public class Enemy_controller : MonoBehaviour
     Damage_calculate damage_Calculate;
     PlayerController playerController;
     GameObject player;
-    public int Enemy_attack;
-    public int Enemy_deffence;
+    public int Enemy_attack;//UŒ‚—Í(ŒvZŒã)
+    public int Enemy_deffence;//–hŒä—Í(ŒvZŒã)
     int Enemy_act = 0;
     int Enemy_luck = 0;
-    //int EnemyMove = 0;
     bool Enemy_Skelton;
     public int turn = 0;
     int turn_time = 0;
@@ -33,6 +32,9 @@ public class Enemy_controller : MonoBehaviour
         player = GameObject.Find("Player");
         turn += 1;
         playerController = player.GetComponent<PlayerController>();
+        GameObject obj = GameObject.Find("Player");
+        turn_Manager = obj.GetComponent<turn_manager>();
+        damage_Calculate = GetComponent<Damage_calculate>();
         GameObject skelton = GameObject.FindWithTag("skelton");
         if(CompareTag("skelton") == true)
         {
@@ -43,9 +45,6 @@ public class Enemy_controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GameObject obj = GameObject.Find("Player");
-        turn_Manager = obj.GetComponent<turn_manager>();
-        damage_Calculate = GetComponent<Damage_calculate>();
         if (turn_Manager.turn == false)
         {
             //EnemyAttack‚ğ‰Šú‰»
@@ -54,47 +53,48 @@ public class Enemy_controller : MonoBehaviour
             //HP‚ª0‚É‚È‚Á‚½‚ç‚ªƒNƒŠƒA‰æ–Ê‚ğo‚·
             if(HP <= 0)
             {
-                PlayerController.Money += money;
-                //“X‚Ì–@‚ÌƒvƒŒƒCƒ„[‚Ì‹àŠz‚ğ•ÏX‚·‚é
+                //PlayerController.Money += money;
                 SceneManager.LoadScene("Win");
             }
-
-
             if (Enemy_Skelton == true && turn_time == 0) //“G@ƒXƒPƒ‹ƒgƒ“
             {
                 Skelton();
             }
             turn_time++;
-            if(turn_time > 500)
+            if (turn_time > 200)
             {
                 Debug.Log("“Gƒ^[ƒ“I—¹");
                 turn += 1;
+                
                 turn_Manager.turn = true;
+                //ŠÔ‚Ì‰Šú‰»
                 turn_time = 0;
-                if(turn >= 5)
+                
+                if (turn >= 5)
                 {
-                    money -= 5;
+                    money -= 5;//ƒ^[ƒ“‚ª‚T‚æ‚è‚à‘å‚«‚­‚È‚Á‚½‚çŠl“¾‹àŠz‚ğ‚T‚¸‚ÂŒ¸‚ç‚·
+                               //money‚ª0ˆÈ‰º‚É‚È‚Á‚½‚çAmoney‚ğ0‚É‚·‚é
+                    if (money <= 0)
+                    {
+                        money = 0;
+                    }
                 }
             }
         }
         void Attack()
         {
             //int Enemy_Move = 1;
-
             Enemy_luck = Random.Range(1, 11);
             if (Enemy_luck <= 9)
+            {
                 Enemy_attack = attack;
+            }
             else if (Enemy_luck == 10)
             {
                 Enemy_attack = attack * 2;
                 Debug.Log("ƒNƒŠƒeƒBƒJƒ‹");
             }
         }
-        //void Magic()
-        //{
-        //    //int Enemy_Move = 2;
-        //    Debug.Log("–‚–@");
-        //}
         void Defence()
         {
             //int Enemy_Move = 3;
@@ -112,21 +112,17 @@ public class Enemy_controller : MonoBehaviour
                     Attack();
                     Debug.Log("UŒ‚‚P");
                     damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Diffence);
-                    turn_time++;
-                    //turn_Manager.turn = true;
                     break;
                 case 2:
                     Attack();
                     Debug.Log("UŒ‚2");
                     damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Diffence);
-                    //turn_Manager.turn = true;
                     break;
                 case 3:
                     Defence();
                     Debug.Log("–hŒä");
                     Enemy_deffence = deffence;
                     damage_Calculate.Enemey_Damage_Calculate(playerController.Attack_damage,Enemy_deffence);
-                    //turn_Manager.turn = true;
                     break;
             }
         }

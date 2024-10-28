@@ -12,13 +12,12 @@ public class Damage_calculate : MonoBehaviour
     Animator Enemy_animator;
     int animation_time_E = 0;//エネミーのアニメーションタイム
     int animation_time_P = 0;//プレイヤーのアニメーションタイム
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        Playercontroller = GetComponent<PlayerController>();
         player = GameObject.Find("Player");
-        Enemycontoroller = GetComponent<Enemy_controller>();
         enemey = GameObject.Find("Monster");
     }
 
