@@ -238,8 +238,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 258, y: 87}
-  m_SizeDelta: {x: 234.93, y: 106.9}
+  m_AnchoredPosition: {x: 231.43, y: 88.97}
+  m_SizeDelta: {x: 235.44, y: 130.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &774161936
 MonoBehaviour:
@@ -357,7 +357,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &1129217463
 RectTransform:
@@ -526,8 +526,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1583928738}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.18, y: -0.83, z: 0}
-  m_LocalScale: {x: 2.4420152, y: 2.0040207, z: 1}
+  m_LocalPosition: {x: 0.02, y: -0.6544, z: 0}
+  m_LocalScale: {x: 2.588196, y: 1.9455032, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -571,7 +571,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -251, y: 127}
+  m_AnchoredPosition: {x: -267, y: 143}
   m_SizeDelta: {x: 141.71, y: 64.34}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1726429024
