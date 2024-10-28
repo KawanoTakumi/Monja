@@ -7,12 +7,23 @@ public class Item_Library : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    int Dummymoney = 25;
+    int Dummymoney = 100000000;
     int ItemVlue1 = 25;
     public Text textbox;
-    bool GetFlag = false;
+    bool GetFlag1 = false;
+    bool GetFlag2 = false;
+    bool GetFlag3= false;
+    int Item_Check;
+    int Item_number1;
+    int Item_number2;
+    int Item_number3;
+    Shop_manager shop_manager;
+    
 
-    public enum Item 
+    
+    GameObject obj;
+
+    public  enum Item
     {
         Healdrink,
         Bowlingball,
@@ -22,27 +33,31 @@ public class Item_Library : MonoBehaviour
         Hourglass //砂時計
     }
     [SerializeField]
-    private bool[] ItemFlags;
+    public bool[] ItemFlags;
 
 
     void Start()
     {
+        
+
         ItemFlags = new bool[6];
         ItemFlags[(int)Item.Bowlingball] = false;
 
+        GameObject obj = GameObject.Find("gamemanager");
+        shop_manager = obj.GetComponent<Shop_manager>();
+
+        //int Item_Check1 = shop_manager.random1;
+        //int Item_Check2 = shop_manager.random2;
+        //int Item_Check3 = shop_manager.random3;
 
 
 
-       
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Button_Check.instance.isTouched1)
-        {
-            Buy1();
-        }
        
 
     }
@@ -51,14 +66,32 @@ public class Item_Library : MonoBehaviour
     //購入判定（試作）
     //---------------------------
 
-    void Buy1()
+    public void Buy1()
     {
-        if (Dummymoney >= ItemVlue1 && GetFlag == false)
+        if (Dummymoney >= ItemVlue1 && GetFlag1 == false)
         {
-            ItemFlags[(int)Item.Bowlingball] = true;
+            Item_number1 = shop_manager.number1;
+            switch(Item_number1)
+            {
+                case 0:
+                    ItemFlags[(int)Item.Healdrink] = true;  break;
+                case 1:
+                    ItemFlags[(int)Item.Bowlingball] = true; break;
+                case 2:
+                    ItemFlags[(int)Item.CDPlayer] = true; break;
+                case 3:
+                    ItemFlags[(int)Item.CD] = true; break;
+                case 4:
+                    ItemFlags[(int)Item.Radio] = true; break;
+                case 5:
+                    ItemFlags[(int)Item.Hourglass] = true; break;
+
+            }
+          
+           
             Dummymoney -= ItemVlue1;
             Debug.Log(Dummymoney);
-            GetFlag = true;
+            GetFlag1 = true;
         }
         else  if (Dummymoney - ItemVlue1 < 0)
         {
@@ -66,7 +99,77 @@ public class Item_Library : MonoBehaviour
             textbox.text = "お金が足りません。";
         }
 
-        Button_Check.instance.isTouched1 = false;
+       
+    }
+    public void Buy2()
+    {
+        if (Dummymoney >= ItemVlue1 && GetFlag2 == false)
+        {
+            Item_number2 = shop_manager.number2;
+            switch (Item_number2)
+            {
+                case 0:
+                    ItemFlags[(int)Item.Healdrink] = true; break;
+                case 1:
+                    ItemFlags[(int)Item.Bowlingball] = true; break;
+                case 2:
+                    ItemFlags[(int)Item.CDPlayer] = true; break;
+                case 3:
+                    ItemFlags[(int)Item.CD] = true; break;
+                case 4:
+                    ItemFlags[(int)Item.Radio] = true; break;
+                case 5:
+                    ItemFlags[(int)Item.Hourglass] = true; break;
+
+            }
+
+
+            Dummymoney -= ItemVlue1;
+            Debug.Log(Dummymoney);
+            GetFlag2 = true;
+        }
+        else if (Dummymoney - ItemVlue1 < 0)
+        {
+            Debug.Log(Dummymoney);
+            textbox.text = "お金が足りません。";
+        }
+
+       
+    }
+    public void Buy3()
+    {
+        if (Dummymoney >= ItemVlue1 && GetFlag3 == false)
+        {
+            Item_number3 = shop_manager.number3;
+            switch (Item_number3)
+            {
+                case 0:
+                    ItemFlags[(int)Item.Healdrink] = true; break;
+                case 1:
+                    ItemFlags[(int)Item.Bowlingball] = true; break;
+                case 2:
+                    ItemFlags[(int)Item.CDPlayer] = true; break;
+                case 3:
+                    ItemFlags[(int)Item.CD] = true; break;
+                case 4:
+                    ItemFlags[(int)Item.Radio] = true; break;
+                case 5:
+                    ItemFlags[(int)Item.Hourglass] = true; break;
+
+            }
+
+
+            Dummymoney -= ItemVlue1;
+            Debug.Log(Dummymoney);
+            GetFlag3 = true;
+        }
+        else if (Dummymoney - ItemVlue1 < 0)
+        {
+            Debug.Log(Dummymoney);
+            textbox.text = "お金が足りません。";
+        }
+
+       
     }
 
     public bool GetItemFlag(Item item)

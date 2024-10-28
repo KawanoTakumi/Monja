@@ -4,21 +4,33 @@ using UnityEngine;
 
 public class Button_Check : MonoBehaviour
 {
-    public static Button_Check instance;
+    public static Button_Check instance1;
+    public static Button_Check instance2;
+    public static Button_Check instance3;
     public bool isTouched1;
     public bool isTouched2;
     public bool isTouched3;
 
     public void Awake()
     {
-        if(instance == null)
+        if(instance1 == null)
         {
-            instance = this;
+            instance1 = this;
+        }
+        if (instance2 == null)
+        {
+            instance2 = this;
+        }
+        if (instance3 == null)
+        {
+            instance3 = this;
         }
     }
     void Start()
     {
         isTouched1 = false;
+        isTouched2 = false;
+        isTouched3 = false;
     }
 
     // Update is called once per frame
