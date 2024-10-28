@@ -55,7 +55,7 @@ public class PlayerController : MonoBehaviour
     {
         if(HP <= 0)
         {
-            SceneManager.LoadScene("Win");
+            SceneManager.LoadScene("Lose");
         }
         if (animator.GetBool("attack") == true)
         {
