@@ -7,8 +7,9 @@ public class Item_Library : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    int Dummymoney = 100000000;
+    int Dummymoney = 100;
     int ItemVlue1 = 25;
+    //int ItemValue2 = 30;
     public Text textbox;
     bool GetFlag1 = false;
     bool GetFlag2 = false;
@@ -18,8 +19,6 @@ public class Item_Library : MonoBehaviour
     int Item_number2;
     int Item_number3;
     Shop_manager shop_manager;
-    
-
     
     GameObject obj;
 
@@ -38,8 +37,6 @@ public class Item_Library : MonoBehaviour
 
     void Start()
     {
-        
-
         ItemFlags = new bool[6];
         ItemFlags[(int)Item.Bowlingball] = false;
 

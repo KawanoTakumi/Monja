@@ -22,7 +22,7 @@ public class Enemy_controller : MonoBehaviour
     int Enemy_act = 0;
     int Enemy_luck = 0;
     bool Enemy_Skelton;
-    public int turn = 0;
+    public int turn = 0;//ターン
     int turn_time = 0;
 
 
@@ -53,7 +53,7 @@ public class Enemy_controller : MonoBehaviour
             //HPが0になったらがクリア画面を出す
             if(HP <= 0)
             {
-                //PlayerController.Money += money;
+                PlayerController.Money += money;
                 SceneManager.LoadScene("Win");
             }
             if (Enemy_Skelton == true && turn_time == 0) //敵　スケルトン
@@ -61,7 +61,7 @@ public class Enemy_controller : MonoBehaviour
                 Skelton();
             }
             turn_time++;
-            if (turn_time > 200)
+            if (turn_time > 400)
             {
                 Debug.Log("敵ターン終了");
                 turn += 1;
@@ -73,7 +73,7 @@ public class Enemy_controller : MonoBehaviour
                 if (turn >= 5)
                 {
                     money -= 5;//ターンが５よりも大きくなったら獲得金額を５ずつ減らす
-                               //moneyが0以下になったら、moneyを0にする
+                    //moneyが0以下になったら、moneyを0にする
                     if (money <= 0)
                     {
                         money = 0;
@@ -104,8 +104,7 @@ public class Enemy_controller : MonoBehaviour
         void Skelton()
         {
             Debug.Log("敵の攻撃");
-            Enemy_act = Random.Range(1, 4);
-            //Debug.Log(Enemy_act);
+            Enemy_act = Random.Range(1, 4);//1～3まで
             switch (Enemy_act)
             {
                 case 1:

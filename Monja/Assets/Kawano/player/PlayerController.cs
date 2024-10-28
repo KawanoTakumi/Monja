@@ -55,15 +55,35 @@ public class PlayerController : MonoBehaviour
         Enemey = GameObject.Find("Monster");
         enemy_Controller = Enemey.GetComponent<Enemy_controller>();
         ItemFlags = new bool[6];
-
     }
     // Update is called once per frame
     void Update()
     {
+        //敗北
         if(HP <= 0)
         {
             SceneManager.LoadScene("Lose");
         }
+
+        //9999上限
+        if(Attack >= 9999)
+        {
+            Attack = 9999;
+        }
+        if(Diffence >= 9999)
+        {
+            Diffence = 9999;
+        }
+        if(Magic >= 9999)
+        {
+            Magic = 9999;
+        }
+        if(Magic_Diffence >= 9999)
+        {
+            Magic_Diffence = 9999;
+        }
+
+
         if (animator.GetBool("attack") == true)
         {
             animation_time++;
@@ -175,7 +195,6 @@ public class PlayerController : MonoBehaviour
                 MP -= 25;
                 Magic_damage = Magic;
                 damage_Calculate.Enemey_Damage_Calculate(Magic_damage, enemy_Controller.magic_Diffence);
-                
             }
             else
             {

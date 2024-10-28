@@ -14,5 +14,4 @@ public class Slot : MonoBehaviour
         
         removeButton.SetActive(true);
     }
- 
 }

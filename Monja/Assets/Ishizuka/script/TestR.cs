@@ -18,9 +18,6 @@ public class TestR : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-     
-
-
         bowlingball = GameObject.FindWithTag("bowlingball");
         if (bowlingball == GameObject.FindWithTag("bowlingball"))
         {
