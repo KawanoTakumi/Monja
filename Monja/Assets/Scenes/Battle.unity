@@ -1802,7 +1802,6 @@ MonoBehaviour:
   Attack_damage: 0
   Magic_damage: 0
   HP_Potion: 0
-  Money: 0
   ItemFlags: 
   change: {fileID: 0}
 --- !u!114 &1013919611
@@ -3451,6 +3450,7 @@ MonoBehaviour:
   deffence: 5
   magic: 0
   magic_Diffence: 5
+  money: 0
   Enemy_attack: 0
   Enemy_deffence: 0
   turn: 0

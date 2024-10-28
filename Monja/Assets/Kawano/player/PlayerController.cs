@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
     public int Attack_damage;//攻撃力(計算後)
     public int Magic_damage;//魔法力(計算後)
     public int HP_Potion;//HPポーションの数
-    public int Money;//所持金額
+    public static int Money;//所持金額 //別のシーンでも呼ばれる
     //その他
     public bool[] ItemFlags;
     turn_manager turn_Manager;
@@ -74,7 +74,7 @@ public class PlayerController : MonoBehaviour
         {
             animation_time++;
             turn_time++;
-            if (animation_time > 600 && turn_time > 600)
+            if (animation_time > 400 && turn_time > 400)
             {
                 animator.SetBool("magic", false);
                 Debug.Log("アニメーション終了");
@@ -83,6 +83,20 @@ public class PlayerController : MonoBehaviour
                 turn_Manager.turn = false;
             }
         }
+        if (animator.GetBool("heal") == true)
+        {
+            animation_time++;
+            turn_time++;
+            if (animation_time > 400 && turn_time > 400)
+            {
+                animator.SetBool("heal", false);
+                Debug.Log("アニメーション終了");
+                animation_time = 0;
+                turn_time = 0;
+                turn_Manager.turn = false;
+            }
+        }
+
 
     }
     public void attack()
@@ -95,7 +109,7 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("attack", true);
             Attack_damage = Attack;
             damage_Calculate.Enemey_Damage_Calculate(Attack_damage,enemy_Controller.Enemy_deffence);
-            //turn_Manager.turn = false;
+            
         }
     }
     public void concentration()
@@ -138,7 +152,7 @@ public class PlayerController : MonoBehaviour
                 MP -= 25;
                 Magic_damage = Magic;
                 damage_Calculate.Enemey_Damage_Calculate(Magic_damage, enemy_Controller.magic_Diffence);
-                //turn_Manager.turn = false;
+                
             }
             else
             {
@@ -168,7 +182,7 @@ public class PlayerController : MonoBehaviour
                 {
                     HP = HP_max;
                 }
-                turn_Manager.turn = false;
+                
             }
             else　if(HP == HP_max)
             {

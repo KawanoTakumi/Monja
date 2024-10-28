@@ -11,6 +11,7 @@ public class Enemy_controller : MonoBehaviour
     public int deffence = 5;
     public int magic = 0;
     public int magic_Diffence = 5;
+    public int money = 0;
 
     turn_manager turn_Manager;//turnManager読み込み
     Damage_calculate damage_Calculate;
@@ -53,6 +54,8 @@ public class Enemy_controller : MonoBehaviour
             //HPが0になったらがクリア画面を出す
             if(HP <= 0)
             {
+                PlayerController.Money += money;
+                //店の法のプレイヤーの金額を変更する
                 SceneManager.LoadScene("Win");
             }
 
@@ -62,12 +65,16 @@ public class Enemy_controller : MonoBehaviour
                 Skelton();
             }
             turn_time++;
-            if(turn_time > 300)
+            if(turn_time > 500)
             {
                 Debug.Log("敵ターン終了");
                 turn += 1;
                 turn_Manager.turn = true;
                 turn_time = 0;
+                if(turn >= 5)
+                {
+                    money -= 5;
+                }
             }
         }
         void Attack()
