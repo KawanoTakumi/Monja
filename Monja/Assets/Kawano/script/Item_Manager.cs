@@ -21,5 +21,10 @@ public class Item_Manager : MonoBehaviour
         {
             text.text = "ccc";
         }
+        else if (button == CompareTag("hourglass"))
+        {
+            text.text = "ddd";
+        }
+
     }
 }
