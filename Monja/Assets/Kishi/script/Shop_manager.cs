@@ -22,7 +22,7 @@ public class Shop_manager: MonoBehaviour
         item_ban = new int[9];
 
         SelectItem1();
-        SelectItem1();
+        SelectItem2();
         SelectItem3();
 
 
@@ -33,7 +33,7 @@ public class Shop_manager: MonoBehaviour
 
 
 
-
+        //オブジェクト生成
         CreateObject1();
         CreateObject2();
         CreateObject3();
