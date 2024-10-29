@@ -12,9 +12,9 @@ public class Item_Manager : MonoBehaviour
 
     public void Start()
     {  
-        Button button = GetComponent<Button>();
+        button = GetComponent<Button>();
         button.interactable = true;
-        DontDestroyOnLoad(this);
+        //DontDestroyOnLoad(this);
     }
     public void Hit_button()
     {

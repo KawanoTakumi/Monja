@@ -6,11 +6,11 @@ using UnityEngine.UI;
 public class Item_Library : MonoBehaviour
 {
     // Start is called before the first frame update
-
-    int Dummymoney = 100;
-    int ItemVlue1 = 25;
+    int money = PlayerController.Money;//PlayerControllerのMoneyを取得
+    int ItemValue1 = 25;
     //int ItemValue2 = 30;
     public Text textbox;
+    public Text Money_Text;//金額表示用テキスト
     public bool GetFlag1 = false;
     public bool GetFlag2 = false;
     public bool GetFlag3= false;
@@ -18,7 +18,7 @@ public class Item_Library : MonoBehaviour
     int Item_number1;
     int Item_number2;
     int Item_number3;
-
+    
     Shop_manager shop_manager;
     
     GameObject obj;
@@ -46,17 +46,12 @@ public class Item_Library : MonoBehaviour
 
         GameObject obj = GameObject.Find("gamemanager");
         shop_manager = obj.GetComponent<Shop_manager>();
-
-       
-
-     
-
     }
 
     // Update is called once per frame
     void Update()
     {
-       
+       Money_Text.text = string.Format("{0}",money);
 
     }
 
@@ -66,38 +61,40 @@ public class Item_Library : MonoBehaviour
 
     public void Buy1()
     {
-        if (Dummymoney >= ItemVlue1 && GetFlag1 == false)
+        if (money>= ItemValue1 && GetFlag1 == false)
         {
             Item_number1 = shop_manager.number1;
             Item_Get(Item_number1);
 
 
-            Dummymoney -= ItemVlue1;
-            Debug.Log(Dummymoney);
+            money -= ItemValue1;
+            PlayerController.Money = money;//Player側の数も減らす
+            Debug.Log(money);
             GetFlag1 = true;
             
         }
-        else  if (Dummymoney - ItemVlue1 < 0)
+        else  if (money - ItemValue1 < 0)
         {
-            Debug.Log(Dummymoney);
+            Debug.Log(money);
             textbox.text = "お金が足りません。";
         }
     }
     public void Buy2()
     {
-        if (Dummymoney >= ItemVlue1 && GetFlag2 == false)
+        if (money >= ItemValue1 && GetFlag2 == false)
         {
             Item_number2 = shop_manager.number2;
             Item_Get(Item_number2);
 
 
-            Dummymoney -= ItemVlue1;
-            Debug.Log(Dummymoney);
+            money -= ItemValue1;
+            PlayerController.Money = money;//Player側の数も減らす
+            Debug.Log(money);
             GetFlag2 = true;
         }
-        else if (Dummymoney - ItemVlue1 < 0)
+        else if (money - ItemValue1 < 0)
         {
-            Debug.Log(Dummymoney);
+            Debug.Log(money);
             textbox.text = "お金が足りません。";
         }
 
@@ -105,23 +102,22 @@ public class Item_Library : MonoBehaviour
     }
     public void Buy3()
     {
-        if (Dummymoney >= ItemVlue1 && GetFlag3 == false)
+        if (money >= ItemValue1 && GetFlag3 == false)
         {
             Item_number3 = shop_manager.number3;
 
             Item_Get(Item_number3);
 
-            Dummymoney -= ItemVlue1;
-            Debug.Log(Dummymoney);
+            money -= ItemValue1;
+            PlayerController.Money = money;//Player側の数も減らす
+            Debug.Log(money);
             GetFlag3 = true;
         }
-        else if (Dummymoney - ItemVlue1 < 0)
+        else if (money - ItemValue1 < 0)
         {
-            Debug.Log(Dummymoney);
+            Debug.Log(money);
             textbox.text = "お金が足りません。";
         }
-
-       
     }
 
     public bool GetItemFlag(Item item)
@@ -149,4 +145,3 @@ public class Item_Library : MonoBehaviour
         }
     }
 }
-

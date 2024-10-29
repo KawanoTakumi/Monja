@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     public int Magic_damage;//魔法力(計算後)
     public int HP_Potion;//HPポーションの数
     public static int Money;//所持金額 //別のシーンでも呼ばれる
+    public int money;//一時確認用（あとで消す）
     
     public bool[] ItemFlags;
     turn_manager turn_Manager;
@@ -49,6 +50,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        money = Money;
         turn_Manager = GetComponent<turn_manager>();
         animator = GetComponent<Animator>();
         damage_Calculate = GetComponent<Damage_calculate>();
@@ -143,10 +145,7 @@ public class PlayerController : MonoBehaviour
         if (turn_Manager.turn == true)
         {
             Debug.Log("攻撃");
-            Attack_.interactable = false;
-            Magic_.interactable = false;
-            Heal_.interactable = false;
-            Concentlation_.interactable = false;
+            intaract();
             animator.SetBool("attack", true);
             Attack_damage = Attack;
             damage_Calculate.Enemey_Damage_Calculate(Attack_damage,enemy_Controller.Enemy_deffence);
@@ -163,7 +162,7 @@ public class PlayerController : MonoBehaviour
             if (MP < 100)
             {
                 Debug.Log("集中");
-
+                intaract();
                 MP += MP_max / 4;
                 //MPがMP_maxより大きければMP_maxの値に合わせる
                 if (MP > MP_max)
@@ -187,10 +186,7 @@ public class PlayerController : MonoBehaviour
             if(MP >= 25)
             {
                 Debug.Log("魔法");
-                Attack_.interactable = false;
-                Magic_.interactable = false;
-                Heal_.interactable = false;
-                Concentlation_.interactable = false;
+                intaract();
                 animator.SetBool("magic", true);
                 MP -= 25;
                 Magic_damage = Magic;
@@ -213,10 +209,7 @@ public class PlayerController : MonoBehaviour
             if (HP != HP_max && HP_Potion > 0)
             {
                 Debug.Log("回復");
-                Attack_.interactable = false;
-                Magic_.interactable = false;
-                Heal_.interactable = false;
-                Concentlation_.interactable = false;
+                intaract();
                 animator.SetBool("heal", true);
                 HP_Potion -= 1;
                 HP += HP_max / 4;
@@ -236,5 +229,12 @@ public class PlayerController : MonoBehaviour
                 Debug.Log("ポーションが足りない");
             }
         }
+    }
+    void intaract()
+    {
+        Attack_.interactable = false;
+        Magic_.interactable = false;
+        Heal_.interactable = false;
+        Concentlation_.interactable = false;
     }
 }

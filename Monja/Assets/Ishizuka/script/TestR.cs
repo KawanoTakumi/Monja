@@ -5,43 +5,35 @@ using UnityEngine.UI;
 
 public class TestR : MonoBehaviour
 {
-    [SerializeField] public GameObject bowlingball;
-    [SerializeField] public GameObject cd;
-    [SerializeField] public GameObject cdplayer;
-    [SerializeField] public GameObject radio;
-    [SerializeField] public GameObject healdrink;
-    [SerializeField] public GameObject hourglass;
     public Button button;
-
+    public static string Tag1;
+    public static string Tag2;
+    public static string Tag3;
+    public  bool true_tag = false;
     
 
     // Start is called before the first frame update
     void Start()
     {
-        bowlingball = GameObject.FindWithTag("bowlingball");
-        if (bowlingball == GameObject.FindWithTag("bowlingball"))
-        {
-           // bowlingball.SetActive(true);
-        }
-        cd = GameObject.FindWithTag("cd");
-        //cd.SetActive(true);
-
-        cdplayer = GameObject.FindWithTag("CDplayer");
-        //cdplayer.SetActive(true);
-
-        radio = GameObject.FindWithTag("radio");
-        //radio.SetActive(true);
-
-        healdrink = GameObject.FindWithTag("healdrink");
-        //healdrink.SetActive(true);
-
-        hourglass = GameObject.FindWithTag("hourglass");
-        //hourglass.SetActive(true);
+        Debug.Log(Tag1);
+        Debug.Log(Tag2);
+        Debug.Log(Tag3);
     }
 
     // Update is called once per frame
     void Update()
     {
-       
+        if (button.CompareTag(Tag1)|| button.CompareTag(Tag2)|| button.CompareTag(Tag3) == true)
+        {
+            true_tag = true;
+        }
+        if (true_tag == false)
+        {
+            button.interactable = false;
+        }
+        else if(true_tag == true)
+        {
+            button.interactable = true;
+        }
     }
 }

@@ -13,11 +13,11 @@ public class Shop_manager: MonoBehaviour
     public int number3;
     public bool item_flag;
     Item_Library item_library;
-    public IDictionary<string, bool> Item = new Dictionary<string, bool>();
+    public static IDictionary<string, bool> Item = new Dictionary<string, bool>();
 
-    Button button1;
-    Button button2;
-    Button button3;
+    public Button button1;
+    public Button button2;
+    public Button button3;
     [SerializeField] GameObject _parentGameObject;
 
     void Start()
@@ -25,12 +25,16 @@ public class Shop_manager: MonoBehaviour
         GameObject obj = GameObject.Find("gamemanager");
         item_library = obj.GetComponent<Item_Library>();
         //é´èëÇ…ÉLÅ[Çê›íË
-        Item.Add("healdrink", false);
-        Item.Add("bowlingball", false);
-        Item.Add("CDplayer", false);
-        Item.Add("cd", false);
-        Item.Add("radio", false);
-        Item.Add("hourglass", false);
+        if(Item.ContainsKey("healdrink") == false)
+        {
+            Item.Add("healdrink", false);
+            Item.Add("bowlingball", false);
+            Item.Add("CDplayer", false);
+            Item.Add("cd", false);
+            Item.Add("radio", false);
+            Item.Add("hourglass", false);
+        }
+
 
         number1 = Random.Range(0, prefab.Length);
         Debug.Log(number1);
@@ -69,16 +73,22 @@ public class Shop_manager: MonoBehaviour
         if (flag_1 == true && button1.interactable == true)
         {
             button1.interactable = false;
+            TestR.Tag1 = button1.tag;
+            Debug.Log(TestR.Tag1);
             Debug.Log(button1.interactable);
         }
         if (flag_2 == true && button2.interactable == true)
         {
             button2.interactable = false;
+            TestR.Tag2 = button2.tag;
+            Debug.Log(TestR.Tag2);
             Debug.Log(button2.interactable);
         }
         if (flag_3 == true && button3.interactable == true)
         {
             button3.interactable = false;
+            TestR.Tag3 = button3.tag;
+            Debug.Log(TestR.Tag3);
             Debug.Log(button3.interactable);
         }
 
@@ -108,47 +118,4 @@ public class Shop_manager: MonoBehaviour
         Debug.Log(button3.tag);
         Debug.Log(button3.interactable);
     }
-
-    //void Item_check(GameObject obj)
-    //{
-    //    obj = GameObject.FindWithTag("healdrink");
-    //    obj = GameObject.FindWithTag("bowlingball");
-    //    obj = GameObject.FindWithTag("CDplayer");
-    //    obj = GameObject.FindWithTag("cd");
-    //    obj = GameObject.FindWithTag("radio");
-    //    obj = GameObject.FindWithTag("hourglass");
-    //}
-
-    //void Item_Get_Check(int n,Button button)
-    //{
-    //    bool item = false;
-    //    Debug.Log(n);
-    //    switch (n)
-    //    {
-    //        case 0:
-    //            item = item_library.GetItemFlag(Item_Library.Item.Healdrink);
-    //            if (item == true)
-    //                Debug.Log(n);button.interactable = false; break;
-    //        case 1:
-    //            item = item_library.GetItemFlag(Item_Library.Item.Bowlingball);
-    //            if (item == true)
-    //                Debug.Log(n); button.interactable = false; break;
-    //        case 2:
-    //            item = item_library.GetItemFlag(Item_Library.Item.CDPlayer);
-    //            if (item == true)
-    //                Debug.Log(n); button.interactable = false; break;
-    //        case 3:
-    //            item = item_library.GetItemFlag(Item_Library.Item.CD);
-    //            if (item == true)
-    //                Debug.Log(n); button.interactable = false; break;
-    //        case 4:
-    //            item = item_library.GetItemFlag(Item_Library.Item.Radio);
-    //            if (item == true)
-    //                Debug.Log(n); button.interactable = false; break;
-    //        case 5:
-    //            item = item_library.GetItemFlag(Item_Library.Item.Hourglass);
-    //            if (item == true)
-    //                Debug.Log(n); button.interactable = false; break;
-    //    }
-    //}
 }
