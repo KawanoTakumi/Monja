@@ -11,12 +11,11 @@ public class Shop_manager: MonoBehaviour
     public int number1;
     public int number2;
     public int number3;
+    public bool item_flag;
     Item_Library item_library;
 
-    //マップ定義
-    IDictionary<string, bool> map = new Dictionary<string, bool>();
-
-
+    //アイテム辞書
+    IDictionary<string, bool> Item = new Dictionary<string, bool>();
     Button button1;
     Button button2;
     Button button3;
@@ -27,6 +26,14 @@ public class Shop_manager: MonoBehaviour
         GameObject obj = GameObject.Find("gamemanager");
         item_library = obj.GetComponent<Item_Library>();
 
+        //辞書にキーを設定
+        Item.Add("healdrink", false);
+        Item.Add("bowlingball", false);
+        Item.Add("CDplayer", false);
+        Item.Add("cd", false);
+        Item.Add("radio", false);
+        Item.Add("hourglass", false);
+        
 
         number1 = Random.Range(0, prefab.Length);
         
@@ -41,38 +48,41 @@ public class Shop_manager: MonoBehaviour
         } while (number3 == number2 || number3 == number1);
 
 
-
+        
 
 
 
 
 
         CreateObject1();
-      //  CreateObject2();
+       // CreateObject2();
        // CreateObject3();
     }
 
     private void Update()
     {
+        //アイテムライブラリのGetFlagがtrueの時DictionalyのItem.valueをtrueにする
+        if (item_library.GetFlag1 == true)
+        {
+            Item[button1.tag] = true;
+        }
+        Item.TryGetValue(button1.tag, out bool flag);
 
-
+        // ボタン反応の停止
+        if (flag == true && button1.interactable == true)
+        {
+            button1.interactable = false;
+            Debug.Log(button1.interactable);
+        }
     }
-
-
     void CreateObject1()
     {
         // ゲームオブジェクトを生成します。
-
         GameObject obj1 = Instantiate(prefab[number1], new Vector3(-4.29f, 1, 0), Quaternion.identity, _parentGameObject.transform);
         button1 = obj1.GetComponent<Button>();
-        obj1.name = "1";
-
-        
-        // ボタン反応の停止
-        button1.interactable = false;
-
-
-  //      Item_Get_Check(number1, button1);
+        obj1.name = "Item_Image_1";
+        Debug.Log(button1.tag);
+        //Item_Get_Check(number1, button1);
         Debug.Log(button1.interactable);
     }
     void CreateObject2()

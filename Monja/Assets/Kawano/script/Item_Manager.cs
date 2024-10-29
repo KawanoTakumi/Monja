@@ -9,21 +9,13 @@ public class Item_Manager : MonoBehaviour
     public Button button;//É{É^Éì
     public Text text;//ê‡ñæï∂
 
-<<<<<<< HEAD
-    void Start()
-    {  
-    //Button button = GetComponent<Button>();
-    //button.interactable = true;
-        
-        
-    }
-=======
+
     public void Start()
-    {
+    {  
+        Button button = GetComponent<Button>();
+        button.interactable = true;
         DontDestroyOnLoad(this);
     }
-
->>>>>>> dc4147b0b0b0ad2033fff2a0b3372fa8a13b5e99
     public void Hit_button()
     {
 

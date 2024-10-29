@@ -11,13 +11,14 @@ public class Item_Library : MonoBehaviour
     int ItemVlue1 = 25;
     //int ItemValue2 = 30;
     public Text textbox;
-    bool GetFlag1 = false;
-    bool GetFlag2 = false;
-    bool GetFlag3= false;
+    public bool GetFlag1 = false;
+    public bool GetFlag2 = false;
+    public bool GetFlag3= false;
     int Item_Check;
     int Item_number1;
     int Item_number2;
     int Item_number3;
+
     Shop_manager shop_manager;
     
     GameObject obj;
@@ -74,14 +75,13 @@ public class Item_Library : MonoBehaviour
             Dummymoney -= ItemVlue1;
             Debug.Log(Dummymoney);
             GetFlag1 = true;
+            
         }
         else  if (Dummymoney - ItemVlue1 < 0)
         {
             Debug.Log(Dummymoney);
             textbox.text = "‚¨‹à‚ª‘«‚è‚Ü‚¹‚ñB";
         }
-
-       
     }
     public void Buy2()
     {
