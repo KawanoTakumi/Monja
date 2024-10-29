@@ -178,6 +178,7 @@ MonoBehaviour:
   number1: 0
   number2: 0
   number3: 0
+  item_flag: 0
   _parentGameObject: {fileID: 85725214}
 --- !u!114 &13926572
 MonoBehaviour:
@@ -192,6 +193,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textbox: {fileID: 928404472}
+  GetFlag1: 0
+  GetFlag2: 0
+  GetFlag3: 0
   ItemFlags: 
 --- !u!1 &85725214
 GameObject:
@@ -575,8 +579,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.13733871, y: 0.5}
   m_AnchorMax: {x: 0.13733871, y: 0.5}
-  m_AnchoredPosition: {x: 260, y: 75}
-  m_SizeDelta: {x: 729.48, y: 412.93}
+  m_AnchoredPosition: {x: 235.88, y: 53.23}
+  m_SizeDelta: {x: 908.35, y: 515.58}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &928404472
 MonoBehaviour:
@@ -854,6 +858,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textbox: {fileID: 928404472}
+  GetFlag1: 0
+  GetFlag2: 0
+  GetFlag3: 0
   ItemFlags: 
 --- !u!114 &1278219749
 MonoBehaviour:

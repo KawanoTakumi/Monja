@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Win.unity
     guid: 77b040bb6201b2140b0fb5f5d09547de
   - enabled: 1
-    path: Assets/Kishi/scene/shop.unity
+    path: Assets/Scenes/shop.unity
     guid: 67d7c391139addc44955616bcad3cd38
   - enabled: 1
     path: Assets/Scenes/Battle.unity
