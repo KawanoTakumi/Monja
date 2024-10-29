@@ -7,8 +7,17 @@ public class Item_Manager : MonoBehaviour
 {
     public Button button;//ボタン
     public Text text;//説明文
+
+    void Start()
+    {  
+    //Button button = GetComponent<Button>();
+    //button.interactable = true;
+        
+        
+    }
     public void Hit_button()
     {
+
         if (button == CompareTag("bowlingball"))
         {
             text.text = "ボーリングの玉                        ボーリングに使われていた玉。少し重い。 物理攻撃力を20上昇させ、物理防御力を20減少させる";
