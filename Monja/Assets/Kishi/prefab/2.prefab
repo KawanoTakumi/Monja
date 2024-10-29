@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 8726079575402544273}
   m_Layer: 5
   m_Name: 2
-  m_TagString: Untagged
+  m_TagString: CDplayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -22,7 +22,7 @@ public class Item_Library : MonoBehaviour
     
     GameObject obj;
 
-    public  enum Item
+    public enum Item
     {
         Healdrink,
         Bowlingball,
@@ -33,22 +33,22 @@ public class Item_Library : MonoBehaviour
     }
     [SerializeField]
     public bool[] ItemFlags;
+   
+    
+
 
 
     void Start()
     {
         ItemFlags = new bool[6];
-        ItemFlags[(int)Item.Bowlingball] = false;
+
 
         GameObject obj = GameObject.Find("gamemanager");
         shop_manager = obj.GetComponent<Shop_manager>();
 
-        //int Item_Check1 = shop_manager.random1;
-        //int Item_Check2 = shop_manager.random2;
-        //int Item_Check3 = shop_manager.random3;
+       
 
-
-
+     
 
     }
 
@@ -68,24 +68,9 @@ public class Item_Library : MonoBehaviour
         if (Dummymoney >= ItemVlue1 && GetFlag1 == false)
         {
             Item_number1 = shop_manager.number1;
-            switch(Item_number1)
-            {
-                case 0:
-                    ItemFlags[(int)Item.Healdrink] = true;  break;
-                case 1:
-                    ItemFlags[(int)Item.Bowlingball] = true; break;
-                case 2:
-                    ItemFlags[(int)Item.CDPlayer] = true; break;
-                case 3:
-                    ItemFlags[(int)Item.CD] = true; break;
-                case 4:
-                    ItemFlags[(int)Item.Radio] = true; break;
-                case 5:
-                    ItemFlags[(int)Item.Hourglass] = true; break;
+            Item_Get(Item_number1);
 
-            }
-          
-           
+
             Dummymoney -= ItemVlue1;
             Debug.Log(Dummymoney);
             GetFlag1 = true;
@@ -103,22 +88,7 @@ public class Item_Library : MonoBehaviour
         if (Dummymoney >= ItemVlue1 && GetFlag2 == false)
         {
             Item_number2 = shop_manager.number2;
-            switch (Item_number2)
-            {
-                case 0:
-                    ItemFlags[(int)Item.Healdrink] = true; break;
-                case 1:
-                    ItemFlags[(int)Item.Bowlingball] = true; break;
-                case 2:
-                    ItemFlags[(int)Item.CDPlayer] = true; break;
-                case 3:
-                    ItemFlags[(int)Item.CD] = true; break;
-                case 4:
-                    ItemFlags[(int)Item.Radio] = true; break;
-                case 5:
-                    ItemFlags[(int)Item.Hourglass] = true; break;
-
-            }
+            Item_Get(Item_number2);
 
 
             Dummymoney -= ItemVlue1;
@@ -138,23 +108,8 @@ public class Item_Library : MonoBehaviour
         if (Dummymoney >= ItemVlue1 && GetFlag3 == false)
         {
             Item_number3 = shop_manager.number3;
-            switch (Item_number3)
-            {
-                case 0:
-                    ItemFlags[(int)Item.Healdrink] = true; break;
-                case 1:
-                    ItemFlags[(int)Item.Bowlingball] = true; break;
-                case 2:
-                    ItemFlags[(int)Item.CDPlayer] = true; break;
-                case 3:
-                    ItemFlags[(int)Item.CD] = true; break;
-                case 4:
-                    ItemFlags[(int)Item.Radio] = true; break;
-                case 5:
-                    ItemFlags[(int)Item.Hourglass] = true; break;
 
-            }
-
+            Item_Get(Item_number3);
 
             Dummymoney -= ItemVlue1;
             Debug.Log(Dummymoney);
@@ -173,4 +128,25 @@ public class Item_Library : MonoBehaviour
     {
         return ItemFlags[(int)item];
     }
+
+    void Item_Get(int i)
+    {
+        switch (i)
+        {
+            case 0:
+                ItemFlags[(int)Item.Healdrink] = true; break;
+            case 1:
+                ItemFlags[(int)Item.Bowlingball] = true; break;
+            case 2:
+                ItemFlags[(int)Item.CDPlayer] = true; break;
+            case 3:
+                ItemFlags[(int)Item.CD] = true; break;
+            case 4:
+                ItemFlags[(int)Item.Radio] = true; break;
+            case 5:
+                ItemFlags[(int)Item.Hourglass] = true; break;
+
+        }
+    }
 }
+

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8271621404942272162}
   m_Layer: 5
   m_Name: 0
-  m_TagString: Untagged
+  m_TagString: healdrink
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
