@@ -18,15 +18,15 @@ public class Inventry : MonoBehaviour
         inventryUI.UpdateUI();
     }
 
-    public List<Item> items = new List<Item>();
+    public List<Dictionary> items = new List<Dictionary>();
 
-    public void Add(Item item)
+    public void Add(Dictionary item)
     {
         items.Add(item);
         inventryUI.UpdateUI();
     }
 
-    public void Remove(Item item)
+    public void Remove(Dictionary item)
     {
         items.Remove(item);
         inventryUI.UpdateUI();

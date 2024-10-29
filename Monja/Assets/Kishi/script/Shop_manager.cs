@@ -13,6 +13,10 @@ public class Shop_manager: MonoBehaviour
     public int number3;
     Item_Library item_library;
 
+    //マップ定義
+    IDictionary<string, bool> map = new Dictionary<string, bool>();
+
+
     Button button1;
     Button button2;
     Button button3;

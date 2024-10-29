@@ -6,9 +6,9 @@ public class Slot : MonoBehaviour
 {
     public Image icon;
     public GameObject removeButton;
-    Item item;
+    Dictionary item;
     //ƒAƒCƒeƒ€‚ð’Ç‰Á‚·‚é
-    public void AddItem(Item newItem)
+    public void AddItem(Dictionary newItem)
     {
         item = newItem;
         
