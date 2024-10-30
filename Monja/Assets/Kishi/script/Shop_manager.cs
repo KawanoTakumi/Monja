@@ -13,7 +13,7 @@ public class Shop_manager: MonoBehaviour
     public int number3;
     public bool item_flag;
     Item_Library item_library;
-    //public static IDictionary<string, bool> Item = new Dictionary<string, bool>();
+    
 
     public Button button1;
     public Button button2;
@@ -24,16 +24,7 @@ public class Shop_manager: MonoBehaviour
     {
         GameObject obj = GameObject.Find("gamemanager");
         item_library = obj.GetComponent<Item_Library>();
-        ////辞書にキーを設定
-        //if(Item.ContainsKey("healdrink") == false)
-        //{
-        //    Item.Add("healdrink", false);
-        //    Item.Add("bowlingball", false);
-        //    Item.Add("CDplayer", false);
-        //    Item.Add("cd", false);
-        //    Item.Add("radio", false);
-        //    Item.Add("hourglass", false);
-        //}
+       
 
 
         number1 = Random.Range(0, prefab.Length);
@@ -64,39 +55,39 @@ public class Shop_manager: MonoBehaviour
         {
             item_library.Item[button3.tag] = true;
         }
-        //tagからvalueを取得
-        item_library.Item.TryGetValue(button1.tag, out bool flag_1);
-        item_library.Item.TryGetValue(button2.tag, out bool flag_2);
-        item_library.Item.TryGetValue(button3.tag, out bool flag_3);
+        //////tagからvalueを取得
+        ////item_library.Item.TryGetValue(button1.tag, out bool flag_1);
+        ////item_library.Item.TryGetValue(button2.tag, out bool flag_2);
+        ////item_library.Item.TryGetValue(button3.tag, out bool flag_3);
 
         // ボタン反応の停止
-        if (flag_1 == true && button1.interactable == true)
-        {
-            button1.interactable = false;
-            TestR.Tag1 = button1.tag;
-            Debug.Log(TestR.Tag1);
-            Debug.Log(button1.interactable);
-        }
-        if (flag_2 == true && button2.interactable == true)
-        {
-            button2.interactable = false;
-            TestR.Tag2 = button2.tag;
-            Debug.Log(TestR.Tag2);
-            Debug.Log(button2.interactable);
-        }
-        if (flag_3 == true && button3.interactable == true)
-        {
-            button3.interactable = false;
-            TestR.Tag3 = button3.tag;
-            Debug.Log(TestR.Tag3);
-            Debug.Log(button3.interactable);
-        }
+        //if (item_library.Flag_1 == true && button1.interactable == true)
+        //{
+        //    button1.interactable = false;
+        //    TestR.Tag1 = button1.tag;
+        //    Debug.Log(TestR.Tag1);
+        //    Debug.Log(button1.interactable);
+        //}
+        //if (item_library.Flag_2 == true && button2.interactable == true)
+        //{
+        //    button2.interactable = false;
+        //    TestR.Tag2 = button2.tag;
+        //    Debug.Log(TestR.Tag2);
+        //    Debug.Log(button2.interactable);
+        //}
+        //if (item_library.Flag_3 == true && button3.interactable == true)
+        //{
+        //    button3.interactable = false;
+        //    TestR.Tag3 = button3.tag;
+        //    Debug.Log(TestR.Tag3);
+        //    Debug.Log(button3.interactable);
+        //}
 
     }
     void CreateObject1()
     {
         // ゲームオブジェクトを生成します。
-        GameObject obj1 = Instantiate(prefab[number1], new Vector3(-3.8f, 2f, 0), Quaternion.identity, _parentGameObject.transform);
+        GameObject obj1 = Instantiate(prefab[number1], new Vector3(-3.6f, 1.55f, 0), Quaternion.identity, _parentGameObject.transform);
         button1 = obj1.GetComponent<Button>();
         obj1.name = "Item_Image_1";
         Item_Get_Check(button1);
@@ -105,7 +96,7 @@ public class Shop_manager: MonoBehaviour
     }
     void CreateObject2()
     {
-        GameObject obj2 = Instantiate(prefab[number2], new Vector3(0.11f, 2f, 0), Quaternion.identity, _parentGameObject.transform);
+        GameObject obj2 = Instantiate(prefab[number2], new Vector3(-0.15f,1.55f, 0), Quaternion.identity, _parentGameObject.transform);
         button2 = obj2.GetComponent<Button>();
         obj2.name = "Item_Image_2";
         Item_Get_Check(button2);
@@ -114,7 +105,7 @@ public class Shop_manager: MonoBehaviour
     }
     void CreateObject3()
     {
-        GameObject obj3 = Instantiate(prefab[number3], new Vector3(4.35f, 2f, 0), Quaternion.identity, _parentGameObject.transform);
+        GameObject obj3 = Instantiate(prefab[number3], new Vector3(3.6f, 1.55f, 0), Quaternion.identity, _parentGameObject.transform);
         button3 = obj3.GetComponent<Button>();
         obj3.name = "Item_Image_3";
         Item_Get_Check(button3);

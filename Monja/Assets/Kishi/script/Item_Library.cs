@@ -18,6 +18,12 @@ public class Item_Library : MonoBehaviour
     int Item_number1;
     int Item_number2;
     int Item_number3;
+    public bool Flag_1 = false;
+    public bool Flag_2 = false;
+    public bool Flag_3 = false;
+
+
+
     public IDictionary<string, bool> Item = new Dictionary<string, bool>();
 
     Shop_manager shop_manager;
@@ -45,7 +51,9 @@ public class Item_Library : MonoBehaviour
 
     void Start()
     {
-       
+        Flag_1 = false;
+        Flag_2 = false;
+        Flag_3 = false;
 
 
         GameObject obj = GameObject.Find("gamemanager");
@@ -57,7 +65,7 @@ public class Item_Library : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       Money_Text.text = string.Format("{0}",money);
+       //Money_Text.text = string.Format("{0}",money);
 
     }
 
@@ -77,7 +85,8 @@ public class Item_Library : MonoBehaviour
             PlayerController.Money = money;//Playerë§ÇÃêîÇ‡å∏ÇÁÇ∑
             Debug.Log(money);
             GetFlag1 = true;
-            
+            //Flag_1 = Item[shop_manager.button1.tag];
+
         }
         else  if (money - ItemValue1 < 0)
         {
@@ -97,6 +106,8 @@ public class Item_Library : MonoBehaviour
             PlayerController.Money = money;//Playerë§ÇÃêîÇ‡å∏ÇÁÇ∑
             Debug.Log(money);
             GetFlag2 = true;
+            //Flag_2 = Item[shop_manager.button2.tag];
+
         }
         else if (money - ItemValue1 < 0)
         {
@@ -116,6 +127,8 @@ public class Item_Library : MonoBehaviour
             PlayerController.Money = money;//Playerë§ÇÃêîÇ‡å∏ÇÁÇ∑
             Debug.Log(money);
             GetFlag3 = true;
+            //Flag_3 = Item[shop_manager.button3.tag];
+
         }
         else if (money - ItemValue1 < 0)
         {
