@@ -59,9 +59,9 @@ public class Damage_calculate : MonoBehaviour
             result = 0;
         }
 
-        Playercontroller.HP -= result;
+        PlayerController.HP -= result;
         Player_animator.SetBool("Player_Damage", true);
-        Debug.Log(Playercontroller.HP);
+        Debug.Log(PlayerController.HP);
     }
     public void Enemey_Damage_Calculate(int attack,int diffence)
     {
@@ -72,8 +72,8 @@ public class Damage_calculate : MonoBehaviour
         {
             result = 0;
         }
-        Enemycontoroller.HP -= result;
+        Enemy_controller.HP -= result;
         Enemy_animator.SetBool("Damage",true);
-        Debug.Log(Enemycontoroller.HP);
+        Debug.Log(Enemy_controller.HP);
     }
 }

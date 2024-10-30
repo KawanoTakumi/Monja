@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class Enemy_controller : MonoBehaviour
 {
     //ステータス
-    public int HP = 150;
+    public static int HP = 150;
     public int attack = 5;
     public int deffence = 5;
     public int magic = 0;
@@ -22,7 +22,7 @@ public class Enemy_controller : MonoBehaviour
     int Enemy_act = 0;
     int Enemy_luck = 0;
     bool Enemy_Skelton;
-    public int turn = 0;//ターン
+    public static int turn = 1;//ターン
     int turn_time = 0;
 
 
@@ -30,7 +30,6 @@ public class Enemy_controller : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Player");
-        turn += 1;
         playerController = player.GetComponent<PlayerController>();
         GameObject obj = GameObject.Find("Player");
         turn_Manager = obj.GetComponent<turn_manager>();
@@ -50,10 +49,15 @@ public class Enemy_controller : MonoBehaviour
             //EnemyAttackを初期化
             Enemy_attack = 0;
 
-            //HPが0になったらがクリア画面を出す
+            //HPが0になったらクリア画面を出す
             if(HP <= 0)
             {
+                PlayerController.HP = 100;
+                PlayerController.MP = 100;
+                HP = 150;
+                Debug.Log(PlayerController.HP);
                 PlayerController.Money += money;
+                turn = 1;
                 SceneManager.LoadScene("Win");
             }
             if (Enemy_Skelton == true && turn_time == 0) //敵　スケルトン
@@ -65,7 +69,12 @@ public class Enemy_controller : MonoBehaviour
             {
                 Debug.Log("敵ターン終了");
                 turn += 1;
-                
+                playerController.Attack_.interactable = true;
+                playerController.Magic_.interactable = true;
+                playerController.Heal_.interactable = true;
+                playerController.Concentlation_.interactable = true;
+
+
                 turn_Manager.turn = true;
                 //時間の初期化
                 turn_time = 0;

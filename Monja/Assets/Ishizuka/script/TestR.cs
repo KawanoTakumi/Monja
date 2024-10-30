@@ -9,7 +9,7 @@ public class TestR : MonoBehaviour
     public static string Tag1 = "none";
     public static string Tag2 = "none";
     public static string Tag3 = "none";
-    public  bool true_tag = false;
+    public bool true_tag = false;
     
 
     // Start is called before the first frame update
@@ -27,11 +27,7 @@ public class TestR : MonoBehaviour
         {
             true_tag = true;
         }
-        if (true_tag == false)
-        {
-            button.interactable = false;
-        }
-        else if(true_tag == true)
+        if(true_tag == true)
         {
             button.interactable = true;
         }

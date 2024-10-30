@@ -7,10 +7,10 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     //player status
-    public int HP;//体力
-    public int HP_max;//最高体力
-    public int MP;//MP
-    public int MP_max;//最高MP
+    public static int HP = 100;//体力
+    public static int HP_max = 100;//最高体力
+    public static int MP = 100;//MP
+    public static int MP_max = 100;//最高MP
     public int Attack;//攻撃力
     public int Diffence;//防御力
     public int Magic;//魔法力
@@ -50,6 +50,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log(HP);
         money = Money;
         turn_Manager = GetComponent<turn_manager>();
         animator = GetComponent<Animator>();
@@ -64,6 +65,8 @@ public class PlayerController : MonoBehaviour
         //敗北
         if(HP <= 0)
         {
+            HP = 100;
+            Enemy_controller.turn = 0;
             SceneManager.LoadScene("Lose");
         }
 
@@ -195,7 +198,6 @@ public class PlayerController : MonoBehaviour
             else
             {
                 Debug.Log("魔法不発");
-                turn_Manager.turn = false;
             }
         }
     }

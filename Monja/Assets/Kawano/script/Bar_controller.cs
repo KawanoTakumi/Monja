@@ -22,8 +22,8 @@ public class Bar_controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        HP_Bar.value = playerController.HP;
-        MP_Bar.value = playerController.MP;
-        Enemy_HP_Bar.value = enemy_Controller.HP;
+        HP_Bar.value = PlayerController.HP;
+        MP_Bar.value = PlayerController.MP;
+        Enemy_HP_Bar.value = Enemy_controller.HP;
     }
 }
