@@ -97,8 +97,6 @@ public class Item_Library : MonoBehaviour
             Debug.Log(money);
             textbox.text = "‚¨‹à‚ª‘«‚è‚Ü‚¹‚ñB";
         }
-
-       
     }
     public void Buy3()
     {

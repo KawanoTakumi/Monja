@@ -6,9 +6,9 @@ using UnityEngine.UI;
 public class TestR : MonoBehaviour
 {
     public Button button;
-    public static string Tag1;
-    public static string Tag2;
-    public static string Tag3;
+    public static string Tag1 = "none";
+    public static string Tag2 = "none";
+    public static string Tag3 = "none";
     public  bool true_tag = false;
     
 
@@ -23,7 +23,7 @@ public class TestR : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (button.CompareTag(Tag1)|| button.CompareTag(Tag2)|| button.CompareTag(Tag3) == true)
+        if (button.CompareTag(Tag1)|| button.CompareTag(Tag2)|| button.CompareTag(Tag3))
         {
             true_tag = true;
         }
