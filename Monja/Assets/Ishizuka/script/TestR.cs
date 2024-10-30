@@ -10,14 +10,12 @@ public class TestR : MonoBehaviour
     public static string Tag2 = "none";
     public static string Tag3 = "none";
     public bool true_tag = false;
-    
-
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(Tag1);
-        Debug.Log(Tag2);
-        Debug.Log(Tag3);
+        //Debug.Log(Tag1);
+        //Debug.Log(Tag2);
+        //Debug.Log(Tag3);
     }
 
     // Update is called once per frame
@@ -31,7 +29,7 @@ public class TestR : MonoBehaviour
         {
             button.interactable = true;
         }
-        else
+        else if(true_tag == false)
         {
             button.interactable = false;
         }

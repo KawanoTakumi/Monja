@@ -137,6 +137,7 @@ GameObject:
   - component: {fileID: 49538966}
   - component: {fileID: 49538965}
   - component: {fileID: 49538969}
+  - component: {fileID: 49538970}
   m_Layer: 0
   m_Name: hourglass
   m_TagString: hourglass
@@ -176,8 +177,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e711d91275d514543a2eeee4464aac12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 49538966}
-  text: {fileID: 334224441}
 --- !u!114 &49538966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,8 +221,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 49538965}
-        m_TargetAssemblyTypeName: Item_Manager, Assembly-CSharp
+      - m_Target: {fileID: 49538970}
+        m_TargetAssemblyTypeName: Item_text, Assembly-CSharp
         m_MethodName: Hit_button
         m_Mode: 1
         m_Arguments:
@@ -286,6 +285,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   button: {fileID: 49538966}
   true_tag: 0
+--- !u!114 &49538970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 49538963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e498045494565d46b7f0c9cb041b831, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 49538966}
+  text: {fileID: 334224441}
 --- !u!1 &334224440
 GameObject:
   m_ObjectHideFlags: 0
@@ -724,8 +737,8 @@ GameObject:
   - component: {fileID: 593405945}
   - component: {fileID: 593405944}
   - component: {fileID: 593405943}
-  - component: {fileID: 593405942}
   - component: {fileID: 593405946}
+  - component: {fileID: 593405947}
   m_Layer: 0
   m_Name: bowlingball
   m_TagString: bowlingball
@@ -753,20 +766,6 @@ RectTransform:
   m_AnchoredPosition: {x: -403.09, y: 264.87}
   m_SizeDelta: {x: 109.43, y: 101.88}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &593405942
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 593405940}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e711d91275d514543a2eeee4464aac12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  button: {fileID: 593405943}
-  text: {fileID: 334224441}
 --- !u!114 &593405943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -811,8 +810,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 593405942}
-        m_TargetAssemblyTypeName: Item_Manager, Assembly-CSharp
+      - m_Target: {fileID: 593405947}
+        m_TargetAssemblyTypeName: Item_text, Assembly-CSharp
         m_MethodName: Hit_button
         m_Mode: 1
         m_Arguments:
@@ -875,6 +874,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   button: {fileID: 593405943}
   true_tag: 0
+--- !u!114 &593405947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 593405940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e498045494565d46b7f0c9cb041b831, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 593405943}
+  text: {fileID: 334224441}
 --- !u!1 &670956962
 GameObject:
   m_ObjectHideFlags: 0
@@ -955,8 +968,8 @@ GameObject:
   - component: {fileID: 994643922}
   - component: {fileID: 994643921}
   - component: {fileID: 994643920}
-  - component: {fileID: 994643919}
   - component: {fileID: 994643923}
+  - component: {fileID: 994643924}
   m_Layer: 0
   m_Name: radio
   m_TagString: radio
@@ -984,20 +997,6 @@ RectTransform:
   m_AnchoredPosition: {x: -285.32, y: 264.87}
   m_SizeDelta: {x: 106.97, y: 101.88}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &994643919
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 994643917}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e711d91275d514543a2eeee4464aac12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  button: {fileID: 994643920}
-  text: {fileID: 334224441}
 --- !u!114 &994643920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1042,8 +1041,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 994643919}
-        m_TargetAssemblyTypeName: Item_Manager, Assembly-CSharp
+      - m_Target: {fileID: 994643924}
+        m_TargetAssemblyTypeName: Item_text, Assembly-CSharp
         m_MethodName: Hit_button
         m_Mode: 1
         m_Arguments:
@@ -1106,6 +1105,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   button: {fileID: 994643920}
   true_tag: 0
+--- !u!114 &994643924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 994643917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e498045494565d46b7f0c9cb041b831, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 994643920}
+  text: {fileID: 334224441}
 --- !u!1 &1133855533
 GameObject:
   m_ObjectHideFlags: 0
@@ -1118,8 +1131,8 @@ GameObject:
   - component: {fileID: 1133855538}
   - component: {fileID: 1133855537}
   - component: {fileID: 1133855536}
-  - component: {fileID: 1133855535}
   - component: {fileID: 1133855539}
+  - component: {fileID: 1133855540}
   m_Layer: 0
   m_Name: cdplayer
   m_TagString: CDplayer
@@ -1147,20 +1160,6 @@ RectTransform:
   m_AnchoredPosition: {x: -162.55998, y: 264.87003}
   m_SizeDelta: {x: 107.68, y: 101.88}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1133855535
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1133855533}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e711d91275d514543a2eeee4464aac12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  button: {fileID: 1133855536}
-  text: {fileID: 334224441}
 --- !u!114 &1133855536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1205,8 +1204,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1133855535}
-        m_TargetAssemblyTypeName: Item_Manager, Assembly-CSharp
+      - m_Target: {fileID: 1133855540}
+        m_TargetAssemblyTypeName: Item_text, Assembly-CSharp
         m_MethodName: Hit_button
         m_Mode: 1
         m_Arguments:
@@ -1269,6 +1268,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   button: {fileID: 1133855536}
   true_tag: 0
+--- !u!114 &1133855540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1133855533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e498045494565d46b7f0c9cb041b831, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 1133855536}
+  text: {fileID: 334224441}
 --- !u!1 &1601055882
 GameObject:
   m_ObjectHideFlags: 0
@@ -1323,6 +1336,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: Battle
+  shop: {fileID: 0}
 --- !u!114 &1601055885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1590,8 +1604,8 @@ GameObject:
   - component: {fileID: 1803280221}
   - component: {fileID: 1803280220}
   - component: {fileID: 1803280219}
-  - component: {fileID: 1803280218}
   - component: {fileID: 1803280222}
+  - component: {fileID: 1803280223}
   m_Layer: 0
   m_Name: cd
   m_TagString: cd
@@ -1619,20 +1633,6 @@ RectTransform:
   m_AnchoredPosition: {x: -45.4, y: 264.87}
   m_SizeDelta: {x: 104.83, y: 101.88}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1803280218
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1803280216}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e711d91275d514543a2eeee4464aac12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  button: {fileID: 1803280219}
-  text: {fileID: 334224441}
 --- !u!114 &1803280219
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1677,8 +1677,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1803280218}
-        m_TargetAssemblyTypeName: Item_Manager, Assembly-CSharp
+      - m_Target: {fileID: 1803280223}
+        m_TargetAssemblyTypeName: Item_text, Assembly-CSharp
         m_MethodName: Hit_button
         m_Mode: 1
         m_Arguments:
@@ -1741,6 +1741,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   button: {fileID: 1803280219}
   true_tag: 0
+--- !u!114 &1803280223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1803280216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e498045494565d46b7f0c9cb041b831, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 1803280219}
+  text: {fileID: 334224441}
 --- !u!1 &2095588529
 GameObject:
   m_ObjectHideFlags: 0

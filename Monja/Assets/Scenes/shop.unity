@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 30034492}
   m_Layer: 5
   m_Name: Buy_Button_3
-  m_TagString: Untagged
+  m_TagString: radio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -160,8 +160,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 315.33, y: -218.34}
-  m_SizeDelta: {x: 251.12, y: 89.46}
+  m_AnchoredPosition: {x: 315.33, y: -211.67}
+  m_SizeDelta: {x: 251.12, y: 76.12}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &30034492
 MonoBehaviour:
@@ -207,7 +207,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1035226743}
         m_TargetAssemblyTypeName: Item_Library, Assembly-CSharp
         m_MethodName: Buy3
         m_Mode: 1
@@ -435,7 +435,7 @@ GameObject:
   - component: {fileID: 525141354}
   m_Layer: 5
   m_Name: Buy_Button_2
-  m_TagString: Untagged
+  m_TagString: cd
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -505,7 +505,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1035226743}
         m_TargetAssemblyTypeName: Item_Library, Assembly-CSharp
         m_MethodName: Buy2
         m_Mode: 1
@@ -645,6 +645,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1035226741}
   - component: {fileID: 1035226742}
+  - component: {fileID: 1035226744}
+  - component: {fileID: 1035226743}
+  - component: {fileID: 1035226745}
   m_Layer: 0
   m_Name: Money_Display
   m_TagString: Untagged
@@ -681,6 +684,69 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textbox: {fileID: 0}
   Money_Text: {fileID: 1786191623}
+--- !u!114 &1035226743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1035226740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6550c35efd7122a4aa0f5bb77c3c8848, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  money: 0
+  GetFlag1: 0
+  GetFlag2: 0
+  GetFlag3: 0
+  Flag_1: 0
+  Flag_2: 0
+  Flag_3: 0
+  textbox: {fileID: 1040258329}
+--- !u!114 &1035226744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1035226740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f6e5a1657ec5c447a6b2ad1652ec1d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab:
+  - {fileID: 5244678037462890704, guid: 986f6685800ec8443987bf2a7258649f, type: 3}
+  - {fileID: 4611968386513429475, guid: 4a68183ecbebd7e4f932e47f8e8dd6f5, type: 3}
+  - {fileID: 5541495101405507840, guid: 614e64c9a61a206468f1eba8cf39afe7, type: 3}
+  - {fileID: 607204691462668847, guid: d3b650242e1b6f847b5642a150b1326a, type: 3}
+  - {fileID: 9115924970952617052, guid: d0f3a39f6a54d5b408a6257b5314ce80, type: 3}
+  - {fileID: 5974708362717249371, guid: b0ba04d3611d0454683dfb7a9a25129b, type: 3}
+  number1: 0
+  number2: 0
+  number3: 0
+  item_flag: 0
+  Item_Library: {fileID: 1035226743}
+  button1: {fileID: 0}
+  button2: {fileID: 0}
+  button3: {fileID: 0}
+  _parentGameObject: {fileID: 1292750242}
+--- !u!114 &1035226745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1035226740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0331748e3c819ae4ebe883d76ba6f2b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isTouched1: 0
+  isTouched2: 0
+  isTouched3: 0
 --- !u!1 &1040258327
 GameObject:
   m_ObjectHideFlags: 0
@@ -924,7 +990,7 @@ GameObject:
   - component: {fileID: 1123360770}
   m_Layer: 5
   m_Name: Buy_Button_1
-  m_TagString: Untagged
+  m_TagString: hourglass
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -995,7 +1061,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1035226743}
         m_TargetAssemblyTypeName: Item_Library, Assembly-CSharp
         m_MethodName: Buy1
         m_Mode: 1
@@ -1622,6 +1688,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1641911377}
+  - component: {fileID: 1641911378}
   m_Layer: 0
   m_Name: gamemanager
   m_TagString: Untagged
@@ -1644,6 +1711,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1641911378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1641911374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e711d91275d514543a2eeee4464aac12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1786191621
 GameObject:
   m_ObjectHideFlags: 0

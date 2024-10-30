@@ -27,10 +27,6 @@ public class Item_Library : MonoBehaviour
     Shop_manager shop_manager;
     
     GameObject obj;
-    private void Awake()
-    {
-        DontDestroyOnLoad(this);
-    }
 
     void Start()
     {
@@ -39,14 +35,14 @@ public class Item_Library : MonoBehaviour
 
         GameObject obj = GameObject.Find("gamemanager");
         shop_manager = obj.GetComponent<Shop_manager>();
-        Debug.Log(shop_manager.button1);
+        //Debug.Log(shop_manager.button1);
 
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        money = PlayerController.Money;
     }
 
     //----------------------------
@@ -57,7 +53,7 @@ public class Item_Library : MonoBehaviour
     {
         if (money>= ItemValue1 && GetFlag1 == false)
         {
-            Item_number1 = shop_manager.number1;
+            //Item_number1 = shop_manager.number1;
           
 
 
@@ -77,7 +73,7 @@ public class Item_Library : MonoBehaviour
     {
         if (money >= ItemValue1 && GetFlag2 == false)
         {
-            Item_number2 = shop_manager.number2;
+            //Item_number2 = shop_manager.number2;
           
 
 
@@ -97,7 +93,7 @@ public class Item_Library : MonoBehaviour
     {
         if (money >= ItemValue1 && GetFlag3 == false)
         {
-            Item_number3 = shop_manager.number3;
+            //Item_number3 = shop_manager.number3;
 
             
 
