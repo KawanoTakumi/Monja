@@ -6,11 +6,9 @@ using UnityEngine.UI;
 public class Item_Library : MonoBehaviour
 {
     // Start is called before the first frame update
-    int money = PlayerController.Money;//PlayerControllerのMoneyを取得
+    public int money = PlayerController.Money;//PlayerControllerのMoneyを取得
     int ItemValue1 = 25;
     //int ItemValue2 = 30;
-    public Text textbox;
-    public Text Money_Text;//金額表示用テキスト
     public bool GetFlag1 = false;
     public bool GetFlag2 = false;
     public bool GetFlag3= false;
@@ -23,49 +21,31 @@ public class Item_Library : MonoBehaviour
     public bool Flag_3 = false;
 
 
+    public Text textbox;
 
-    public IDictionary<string, bool> Item = new Dictionary<string, bool>();
 
     Shop_manager shop_manager;
     
     GameObject obj;
-
-
-
-
-
     private void Awake()
     {
         DontDestroyOnLoad(this);
-        //辞書にキーを設定
-        if (Item.ContainsKey("healdrink") == false)
-        {
-            Item.Add("healdrink", false);
-            Item.Add("bowlingball", false);
-            Item.Add("CDplayer", false);
-            Item.Add("cd", false);
-            Item.Add("radio", false);
-            Item.Add("hourglass", false);
-        }
     }
 
     void Start()
     {
-        Flag_1 = false;
-        Flag_2 = false;
-        Flag_3 = false;
+        //tagからvalueを取得
 
 
         GameObject obj = GameObject.Find("gamemanager");
         shop_manager = obj.GetComponent<Shop_manager>();
+        Debug.Log(shop_manager.button1);
 
-       
     }
 
     // Update is called once per frame
     void Update()
     {
-       //Money_Text.text = string.Format("{0}",money);
 
     }
 
@@ -85,7 +65,6 @@ public class Item_Library : MonoBehaviour
             PlayerController.Money = money;//Player側の数も減らす
             Debug.Log(money);
             GetFlag1 = true;
-            //Flag_1 = Item[shop_manager.button1.tag];
 
         }
         else  if (money - ItemValue1 < 0)
@@ -106,7 +85,6 @@ public class Item_Library : MonoBehaviour
             PlayerController.Money = money;//Player側の数も減らす
             Debug.Log(money);
             GetFlag2 = true;
-            //Flag_2 = Item[shop_manager.button2.tag];
 
         }
         else if (money - ItemValue1 < 0)
@@ -127,7 +105,6 @@ public class Item_Library : MonoBehaviour
             PlayerController.Money = money;//Player側の数も減らす
             Debug.Log(money);
             GetFlag3 = true;
-            //Flag_3 = Item[shop_manager.button3.tag];
 
         }
         else if (money - ItemValue1 < 0)

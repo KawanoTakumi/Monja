@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     public static int HP_max = 100;//最高体力
     public static int MP = 100;//MP
     public static int MP_max = 100;//最高MP
-    public int Attack;//攻撃力
+    public int Attack = 300;//攻撃力
     public int Diffence;//防御力
     public int Magic;//魔法力
     public int Magic_Diffence;//魔法防御力

@@ -31,5 +31,9 @@ public class TestR : MonoBehaviour
         {
             button.interactable = true;
         }
+        else
+        {
+            button.interactable = false;
+        }
     }
 }

@@ -13,7 +13,7 @@ public class Shop_manager: MonoBehaviour
     public int number3;
     public bool item_flag;
     Item_Library item_library;
-    
+    public IDictionary<string, bool> Item = new Dictionary<string, bool>();
 
     public Button button1;
     public Button button2;
@@ -24,7 +24,17 @@ public class Shop_manager: MonoBehaviour
     {
         GameObject obj = GameObject.Find("gamemanager");
         item_library = obj.GetComponent<Item_Library>();
-       
+
+        //辞書にキーを設定
+        if (Item.ContainsKey("healdrink") == false)
+        {
+            Item.Add("healdrink", false);
+            Item.Add("bowlingball", false);
+            Item.Add("CDplayer", false);
+            Item.Add("cd", false);
+            Item.Add("radio", false);
+            Item.Add("hourglass", false);
+        }
 
 
         number1 = Random.Range(0, prefab.Length);
@@ -45,43 +55,47 @@ public class Shop_manager: MonoBehaviour
         //アイテムライブラリのGetFlagがtrueの時DictionalyのItem.valueをtrueにする
         if (item_library.GetFlag1 == true)
         {
-            item_library.Item[button1.tag] = true;
+            Item[button1.tag] = true;
         }
         if (item_library.GetFlag2 == true)
         {
-            item_library.Item[button2.tag] = true;
+            Item[button2.tag] = true;
         }
         if (item_library.GetFlag3 == true)
         {
-            item_library.Item[button3.tag] = true;
+            Item[button3.tag] = true;
         }
-        //////tagからvalueを取得
-        ////item_library.Item.TryGetValue(button1.tag, out bool flag_1);
-        ////item_library.Item.TryGetValue(button2.tag, out bool flag_2);
-        ////item_library.Item.TryGetValue(button3.tag, out bool flag_3);
+        //if(button1 != null)
+        //{
+        //    Item.TryGetValue(button1.tag, out bool flag_1);
+        //}
 
-        // ボタン反応の停止
-        //if (item_library.Flag_1 == true && button1.interactable == true)
-        //{
-        //    button1.interactable = false;
-        //    TestR.Tag1 = button1.tag;
-        //    Debug.Log(TestR.Tag1);
-        //    Debug.Log(button1.interactable);
-        //}
-        //if (item_library.Flag_2 == true && button2.interactable == true)
-        //{
-        //    button2.interactable = false;
-        //    TestR.Tag2 = button2.tag;
-        //    Debug.Log(TestR.Tag2);
-        //    Debug.Log(button2.interactable);
-        //}
-        //if (item_library.Flag_3 == true && button3.interactable == true)
-        //{
-        //    button3.interactable = false;
-        //    TestR.Tag3 = button3.tag;
-        //    Debug.Log(TestR.Tag3);
-        //    Debug.Log(button3.interactable);
-        //}
+        //ボタン反応の停止
+        if(button1 != null)
+        {
+            if (Item[button1.tag] == true && button1.interactable == true)
+            {
+                button1.interactable = false;
+                TestR.Tag1 = button1.tag;
+                Debug.Log(TestR.Tag1);
+                Debug.Log(button1.interactable);
+            }
+            if (Item[button2.tag] == true && button2.interactable == true)
+            {
+                button2.interactable = false;
+                TestR.Tag2 = button2.tag;
+                Debug.Log(TestR.Tag2);
+                Debug.Log(button2.interactable);
+            }
+            if (Item[button3.tag] == true && button3.interactable == true)
+            {
+                button3.interactable = false;
+                TestR.Tag3 = button3.tag;
+                Debug.Log(TestR.Tag3);
+                Debug.Log(button3.interactable);
+            }
+
+        }
 
     }
     void CreateObject1()
@@ -115,8 +129,8 @@ public class Shop_manager: MonoBehaviour
 
     void Item_Get_Check(Button button)
     {
-        if (item_library.Item[button.tag] == true)
+        Debug.Log(button.tag);
+        if (Item[button.tag] == true)
             button.interactable = false;
     }
-
 }
