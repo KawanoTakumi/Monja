@@ -62,5 +62,12 @@ public class Item_Power : MonoBehaviour
                 turn_comp = Enemy_controller.turn;//Ÿ‚Ìƒ^[ƒ“‚Ü‚Å”­“®‚µ‚È‚¢‚æ‚¤‚É‚·‚é
             }
         }
+        if(hourglass_flag == true)
+        {
+            if(turn_comp < Enemy_controller.turn)
+            {
+
+            }
+        }
     }
 }

@@ -6,9 +6,9 @@ using UnityEngine.UI;
 public class TestR : MonoBehaviour
 {
     public Button button;
-    public static string Tag1 = "none";
-    public static string Tag2 = "none";
-    public static string Tag3 = "none";
+    //public static string Tag1 = "none";
+    //public static string Tag2 = "none";
+    //public static string Tag3 = "none";
     public bool true_tag = false;
     GameObject obj;
     Item_Manager item_manager;

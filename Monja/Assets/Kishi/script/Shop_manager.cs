@@ -63,22 +63,16 @@ public class Shop_manager: MonoBehaviour
         if (flag_1 == true && button1.interactable == true)
         {
             button1.interactable = false;
-            TestR.Tag1 = button1.tag;
-            Debug.Log(TestR.Tag1);
             Debug.Log(button1.interactable);
         }
         if (flag_2 == true && button2.interactable == true)
         {
             button2.interactable = false;
-            TestR.Tag2 = button2.tag;
-            Debug.Log(TestR.Tag2);
             Debug.Log(button2.interactable);
         }
         if (flag_3 == true && button3.interactable == true)
         {
             button3.interactable = false;
-            TestR.Tag3 = button3.tag;
-            Debug.Log(TestR.Tag3);
             Debug.Log(button3.interactable);
         }
 
