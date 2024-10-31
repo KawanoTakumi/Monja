@@ -28,5 +28,6 @@ public class Item_Manager : MonoBehaviour
 
     public void Start()
     {
+       
     }
 }

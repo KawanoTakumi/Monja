@@ -33,7 +33,7 @@ public class Item_Library : MonoBehaviour
         //tag‚©‚çvalue‚ðŽæ“¾
 
 
-        GameObject obj = GameObject.Find("gamemanager");
+        GameObject obj = GameObject.Find("shopmanager");
         shop_manager = obj.GetComponent<Shop_manager>();
         //Debug.Log(shop_manager.button1);
 

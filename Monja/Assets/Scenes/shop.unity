@@ -649,7 +649,7 @@ GameObject:
   - component: {fileID: 1035226743}
   - component: {fileID: 1035226745}
   m_Layer: 0
-  m_Name: Money_Display
+  m_Name: shopmanager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
