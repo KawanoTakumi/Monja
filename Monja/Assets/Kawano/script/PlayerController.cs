@@ -21,7 +21,6 @@ public class PlayerController : MonoBehaviour
     public static int Money;//所持金額 //別のシーンでも呼ばれる
     public int money;//一時確認用（あとで消す）
     
-    public bool[] ItemFlags;
     turn_manager turn_Manager;
     Animator animator;
     Damage_calculate damage_Calculate;
@@ -36,17 +35,6 @@ public class PlayerController : MonoBehaviour
     public Button Concentlation_;
     public Button Magic_;
     public Button Heal_;
-
-    //item
-    public enum Item
-    {
-        Healdrink,
-        Bowlingball,
-        CDPlayer,
-        CD,
-        Radio,
-        Hourglass //砂時計
-    }
     // Start is called before the first frame update
     void Start()
     {
@@ -57,7 +45,6 @@ public class PlayerController : MonoBehaviour
         damage_Calculate = GetComponent<Damage_calculate>();
         Enemey = GameObject.Find("Monster");
         enemy_Controller = Enemey.GetComponent<Enemy_controller>();
-        ItemFlags = new bool[6];
     }
     // Update is called once per frame
     void Update()
@@ -70,7 +57,7 @@ public class PlayerController : MonoBehaviour
             SceneManager.LoadScene("Lose");
         }
 
-        //9999上限
+        //ステータス9999上限
         if(Attack >= 9999)
         {
             Attack = 9999;
@@ -86,6 +73,23 @@ public class PlayerController : MonoBehaviour
         if(Magic_Diffence >= 9999)
         {
             Magic_Diffence = 9999;
+        }
+        //ステータス0下限
+        if (Attack < 0)
+        {
+            Attack = 0;
+        }
+        if (Diffence < 0)
+        {
+            Diffence = 0;
+        }
+        if (Magic < 0)
+        {
+            Magic = 0;
+        }
+        if (Magic_Diffence >= 0)
+        {
+            Magic_Diffence = 0;
         }
 
 

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1362049632631825932}
   - component: {fileID: 3781199157667596163}
   - component: {fileID: 886131392300622989}
+  - component: {fileID: 5849421250369679957}
   m_Layer: 5
   m_Name: 5
   m_TagString: hourglass
@@ -120,4 +121,29 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3781199157667596163}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5849421250369679957}
+        m_TargetAssemblyTypeName: Item_text, Assembly-CSharp
+        m_MethodName: Hit_button
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5849421250369679957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5974708362717249371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e498045494565d46b7f0c9cb041b831, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 886131392300622989}

@@ -1343,6 +1343,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: motimono
+  shop: {fileID: 0}
 --- !u!1 &875647015
 GameObject:
   m_ObjectHideFlags: 0
@@ -1746,11 +1747,12 @@ GameObject:
   - component: {fileID: 1013919606}
   - component: {fileID: 1013919605}
   - component: {fileID: 1013919608}
-  - component: {fileID: 1013919609}
   - component: {fileID: 1013919610}
-  - component: {fileID: 1013919611}
+  - component: {fileID: 1013919615}
+  - component: {fileID: 1013919614}
   - component: {fileID: 1013919613}
   - component: {fileID: 1013919612}
+  - component: {fileID: 1013919611}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1845,20 +1847,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
---- !u!114 &1013919609
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1013919604}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43ca332191cee654ab73deacc4732459, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  turn: 1
-  turn_text: {fileID: 2031012978}
 --- !u!114 &1013919610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1871,10 +1859,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6190e519a1569e540b6b6c0282d0879b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 100
-  HP_max: 100
-  MP: 100
-  MP_max: 100
   Attack: 30
   Diffence: 30
   Magic: 10
@@ -1883,7 +1867,6 @@ MonoBehaviour:
   Magic_damage: 0
   HP_Potion: 0
   money: 0
-  ItemFlags: 
   change: {fileID: 754146519}
   Attack_: {fileID: 889787176}
   Concentlation_: {fileID: 1656728079}
@@ -1898,7 +1881,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1013919604}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: efc003b51a2a0c340ab4c10574e6801b, type: 3}
+  m_Script: {fileID: 11500000, guid: 75f88bce05720784690fdccbf4fbaaee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1013919612
@@ -1938,6 +1921,32 @@ MonoBehaviour:
   magic_diffence_Text: {fileID: 1997187052}
   turn_Text: {fileID: 2031012978}
   player_money: {fileID: 1205328569}
+--- !u!114 &1013919614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1013919604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43ca332191cee654ab73deacc4732459, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turn: 1
+  turn_text: {fileID: 2031012978}
+--- !u!114 &1013919615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1013919604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efc003b51a2a0c340ab4c10574e6801b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1110063399
 GameObject:
   m_ObjectHideFlags: 0
@@ -3612,7 +3621,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb3a806902d7b3441bc0d68101c047e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 150
   attack: 10
   deffence: 5
   magic: 0
@@ -3620,7 +3628,6 @@ MonoBehaviour:
   money: 50
   Enemy_attack: 0
   Enemy_deffence: 0
-  turn: 0
 --- !u!114 &2097196024
 MonoBehaviour:
   m_ObjectHideFlags: 0

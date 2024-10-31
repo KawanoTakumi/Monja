@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class Item_Power : MonoBehaviour
 {
-    public PlayerController playercontroller;
-    Item_Manager Item_Manager;
+    PlayerController playercontroller;
+    int turn_compare = 0;//ターン数比較用()
 
     bool adapt_bowlingball = true;//ボウリング用適応変数(bowlingball)
-    int turn_comp = 0;//ターン数比較用()
     bool adapt_CDplayer = true;//CDプレーヤー用適応変数(CDplayer)
 
 
@@ -16,11 +15,12 @@ public class Item_Power : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        GameObject player = GameObject.Find("Player");
+        playercontroller = player.GetComponent<PlayerController>();
     }
 
     // Update is called once per frame
-    private void Update()
+    public void Update()
     {
         Item_Manager.Item.TryGetValue("bowlingball", out bool bowlingball_flag);
         Item_Manager.Item.TryGetValue("cd", out bool cd_flag);
@@ -33,16 +33,16 @@ public class Item_Power : MonoBehaviour
             if(adapt_bowlingball == true)
             {
                 playercontroller.Attack += 20;//攻撃力20上昇
-                playercontroller.Diffence -= 20;//防御力20上昇
-                adapt_bowlingball = false;
+                playercontroller.Diffence -= 20;//防御力20減少
+                adapt_bowlingball = false;//falseにして一回しか読み込まれ内容にする
             }
         }
         if(cd_flag == true)
         {
-            if(turn_comp < Enemy_controller.turn)
+            if(turn_compare < Enemy_controller.turn)
             {
                 playercontroller.Attack += playercontroller.Diffence / 2;//attackにdiffenceの1/2の数字を加算
-                turn_comp = Enemy_controller.turn;//次のターンまで発動しないようにする
+                turn_compare = Enemy_controller.turn;//次のターンまで発動しないようにする
             }
         }
         if(CDplayer_flag == true)
@@ -51,22 +51,25 @@ public class Item_Power : MonoBehaviour
             {
                 playercontroller.Attack -= 20;//攻撃力20減少
                 playercontroller.Diffence += 20;//防御力20上昇
+                adapt_CDplayer = false;
             }
         }
         if(radio_flag == true)
         {
-            if(turn_comp < Enemy_controller.turn)
+            if(turn_compare < Enemy_controller.turn)
             {
-                playercontroller.Attack += 20;//毎ターン攻撃力20上昇
+                playercontroller.Diffence += 10;//毎ターン防御力10上昇
                 PlayerController.HP -= 5;//体力を5減らす
-                turn_comp = Enemy_controller.turn;//次のターンまで発動しないようにする
+                turn_compare = Enemy_controller.turn;
             }
         }
         if(hourglass_flag == true)
         {
-            if(turn_comp < Enemy_controller.turn)
+            if(turn_compare < Enemy_controller.turn)
             {
-
+                playercontroller.Attack += 10;//毎ターン攻撃力10上昇
+                PlayerController.HP -= 5;//体力を5減らす
+                turn_compare = Enemy_controller.turn;//次のターンまで発動しないようにする
             }
         }
     }

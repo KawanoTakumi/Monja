@@ -5,17 +5,16 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Item_Manager : MonoBehaviour
 {
-
-    public IDictionary<string, bool> Item = new Dictionary<string, bool>();
-
-
+    //念のためstaticにしてどこでも値が保持されるようにする
+    public static IDictionary<string, bool> Item = new Dictionary<string, bool>();
     private void Awake()
     {
         DontDestroyOnLoad(this);
-
         //辞書にキーを設定
         if (Item.ContainsKey("healdrink") == false)
         {
+            Item.Add("none", false);//空のキーを設定（アイテムがないとき）
+            //アイテムをItem辞書に登録
             Item.Add("healdrink", false);
             Item.Add("bowlingball", false);
             Item.Add("CDplayer", false);
@@ -23,7 +22,6 @@ public class Item_Manager : MonoBehaviour
             Item.Add("radio", false);
             Item.Add("hourglass", false);
         }
-
     }
 
     public void Start()

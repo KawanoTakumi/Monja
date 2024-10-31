@@ -6,10 +6,13 @@ using UnityEngine.UI;
 public class Item_text : MonoBehaviour
 {
     public Button button;//É{É^Éì
-    public Text text;//ê‡ñæï∂
+    Text text;//ê‡ñæï∂
     // Start is called before the first frame update
     void Start()
     {
+        GameObject Text = GameObject.Find("Item_Text");
+        text = Text.GetComponent<Text>();
+
         button = GetComponent<Button>();
         button.interactable = true;
 

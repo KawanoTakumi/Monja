@@ -85,7 +85,6 @@ public class Shop_manager: MonoBehaviour
         obj1.name = "Item_Image_1";
         Item_Get_Check(button1);
         Debug.Log(button1.tag);
-        Debug.Log(button1.interactable);
     }
     void CreateObject2()
     {
@@ -94,7 +93,6 @@ public class Shop_manager: MonoBehaviour
         obj2.name = "Item_Image_2";
         Item_Get_Check(button2);
         Debug.Log(button2.tag);
-        Debug.Log(button2.interactable);
     }
     void CreateObject3()
     {
@@ -103,13 +101,10 @@ public class Shop_manager: MonoBehaviour
         obj3.name = "Item_Image_3";
         Item_Get_Check(button3);
         Debug.Log(button3.tag);
-        Debug.Log(button3.interactable);
     }
 
     void Item_Get_Check(Button button)
     {
-        Debug.Log(button.tag);
-        Debug.Log("ƒ{ƒ^ƒ“‚É“ü‚Á‚½");
         Item_Manager.Item.TryGetValue(button.tag, out bool tag_bool); 
         if (tag_bool == true)
         {

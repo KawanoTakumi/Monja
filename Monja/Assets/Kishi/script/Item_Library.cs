@@ -6,16 +6,16 @@ using UnityEngine.UI;
 public class Item_Library : MonoBehaviour
 {
     // Start is called before the first frame update
-    public int money = PlayerController.Money;//PlayerControllerÇÃMoneyÇéÊìæ
+    public int money;
     int ItemValue1 = 25;
     //int ItemValue2 = 30;
     public bool GetFlag1 = false;
     public bool GetFlag2 = false;
     public bool GetFlag3= false;
-    int Item_Check;
-    int Item_number1;
-    int Item_number2;
-    int Item_number3;
+    //int Item_Check;
+    //int Item_number1;
+    //int Item_number2;
+    //int Item_number3;
     public bool Flag_1 = false;
     public bool Flag_2 = false;
     public bool Flag_3 = false;
@@ -53,15 +53,10 @@ public class Item_Library : MonoBehaviour
     {
         if (money>= ItemValue1 && GetFlag1 == false)
         {
-            //Item_number1 = shop_manager.number1;
-          
-
-
             money -= ItemValue1;
             PlayerController.Money = money;//Playerë§ÇÃêîÇ‡å∏ÇÁÇ∑
             Debug.Log(money);
             GetFlag1 = true;
-
         }
         else  if (money - ItemValue1 < 0)
         {
@@ -73,15 +68,10 @@ public class Item_Library : MonoBehaviour
     {
         if (money >= ItemValue1 && GetFlag2 == false)
         {
-            //Item_number2 = shop_manager.number2;
-          
-
-
             money -= ItemValue1;
             PlayerController.Money = money;//Playerë§ÇÃêîÇ‡å∏ÇÁÇ∑
             Debug.Log(money);
             GetFlag2 = true;
-
         }
         else if (money - ItemValue1 < 0)
         {
@@ -93,15 +83,10 @@ public class Item_Library : MonoBehaviour
     {
         if (money >= ItemValue1 && GetFlag3 == false)
         {
-            //Item_number3 = shop_manager.number3;
-
-            
-
             money -= ItemValue1;
             PlayerController.Money = money;//Playerë§ÇÃêîÇ‡å∏ÇÁÇ∑
             Debug.Log(money);
             GetFlag3 = true;
-
         }
         else if (money - ItemValue1 < 0)
         {
@@ -109,8 +94,4 @@ public class Item_Library : MonoBehaviour
             textbox.text = "Ç®ã‡Ç™ë´ÇËÇ‹ÇπÇÒÅB";
         }
     }
-
-   
-
-  
 }
