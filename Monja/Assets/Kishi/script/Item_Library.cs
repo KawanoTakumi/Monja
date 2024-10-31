@@ -51,19 +51,25 @@ public class Item_Library : MonoBehaviour
 
     public void Buy1()
     {
-        if (money>= ItemValue1 && GetFlag1 == false)
+        if (money >= ItemValue1 && GetFlag1 == false)
         {
             money -= ItemValue1;
             PlayerController.Money = money;//Player側の数も減らす
             Debug.Log(money);
-            GetFlag1 = true;
+            GetFlag2 = true;
         }
-        else  if (money - ItemValue1 < 0)
+        else if (GetFlag1 == true)
+        {
+            textbox.text = "すでに持っています。";
+        }
+        else if (money - ItemValue1 < 0)
         {
             Debug.Log(money);
             textbox.text = "お金が足りません。";
         }
+
     }
+
     public void Buy2()
     {
         if (money >= ItemValue1 && GetFlag2 == false)
@@ -73,11 +79,16 @@ public class Item_Library : MonoBehaviour
             Debug.Log(money);
             GetFlag2 = true;
         }
+        else if (GetFlag2 == true)
+        {
+            textbox.text = "すでに持っています。";
+        }
         else if (money - ItemValue1 < 0)
         {
             Debug.Log(money);
             textbox.text = "お金が足りません。";
         }
+
     }
     public void Buy3()
     {
@@ -88,10 +99,15 @@ public class Item_Library : MonoBehaviour
             Debug.Log(money);
             GetFlag3 = true;
         }
+        else if (GetFlag3 == true)
+        {
+            textbox.text = "すでに持っています。";
+        }
         else if (money - ItemValue1 < 0)
         {
             Debug.Log(money);
             textbox.text = "お金が足りません。";
         }
+
     }
 }

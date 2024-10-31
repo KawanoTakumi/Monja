@@ -39,6 +39,7 @@ public class Shop_manager: MonoBehaviour
             number3 = Random.Range(0, prefab.Length);
         } while (number3 == number2 || number3 == number1);
         CreateObject3();
+
     }
 
     public void Update()
@@ -48,14 +49,18 @@ public class Shop_manager: MonoBehaviour
         {
             Item_Manager.Item[button1.tag] = true;
         }
+    
         if (Item_Library.GetFlag2 == true)
         {
             Item_Manager.Item[button2.tag] = true;
         }
+   
         if (Item_Library.GetFlag3 == true)
         {
             Item_Manager.Item[button3.tag] = true;
         }
+
+
         Item_Manager.Item.TryGetValue(button1.tag, out bool flag_1);
         Item_Manager.Item.TryGetValue(button2.tag, out bool flag_2);
         Item_Manager.Item.TryGetValue(button3.tag, out bool flag_3);
@@ -65,11 +70,13 @@ public class Shop_manager: MonoBehaviour
             button1.interactable = false;
             Debug.Log(button1.interactable);
         }
+
         if (flag_2 == true && button2.interactable == true)
         {
             button2.interactable = false;
             Debug.Log(button2.interactable);
         }
+
         if (flag_3 == true && button3.interactable == true)
         {
             button3.interactable = false;
@@ -105,7 +112,7 @@ public class Shop_manager: MonoBehaviour
 
     void Item_Get_Check(Button button)
     {
-        Item_Manager.Item.TryGetValue(button.tag, out bool tag_bool); 
+        Item_Manager.Item.TryGetValue(button.tag, out bool tag_bool);
         if (tag_bool == true)
         {
             button.interactable = false;
