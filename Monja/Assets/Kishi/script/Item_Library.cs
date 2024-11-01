@@ -35,7 +35,6 @@ public class Item_Library : MonoBehaviour
 
         GameObject obj = GameObject.Find("shopmanager");
         shop_manager = obj.GetComponent<Shop_manager>();
-        //Debug.Log(shop_manager.button1);
 
     }
 
@@ -53,10 +52,17 @@ public class Item_Library : MonoBehaviour
     {
         if (money >= ItemValue1 && GetFlag1 == false)
         {
-            money -= ItemValue1;
+            if(Item_Manager.Item.TryGetValue(shop_manager.button1.tag,out bool button1))
+            {
+                if(button1 == false)
+                {
+                    money -= ItemValue1;
+                }
+            }
+
             PlayerController.Money = money;//Playerë§ÇÃêîÇ‡å∏ÇÁÇ∑
             Debug.Log(money);
-            GetFlag2 = true;
+            GetFlag1 = true;
         }
         else if (GetFlag1 == true)
         {
@@ -74,6 +80,14 @@ public class Item_Library : MonoBehaviour
     {
         if (money >= ItemValue1 && GetFlag2 == false)
         {
+            if (Item_Manager.Item.TryGetValue(shop_manager.button2.tag, out bool button2))
+            {
+                if (button2 == false)
+                {
+                    money -= ItemValue1;
+                }
+            }
+
             money -= ItemValue1;
             PlayerController.Money = money;//Playerë§ÇÃêîÇ‡å∏ÇÁÇ∑
             Debug.Log(money);
@@ -94,6 +108,14 @@ public class Item_Library : MonoBehaviour
     {
         if (money >= ItemValue1 && GetFlag3 == false)
         {
+            if (Item_Manager.Item.TryGetValue(shop_manager.button3.tag, out bool button3))
+            {
+                if (button3 == false)
+                {
+                    money -= ItemValue1;
+                }
+            }
+
             money -= ItemValue1;
             PlayerController.Money = money;//Playerë§ÇÃêîÇ‡å∏ÇÁÇ∑
             Debug.Log(money);

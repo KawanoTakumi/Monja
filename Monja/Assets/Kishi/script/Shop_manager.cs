@@ -12,7 +12,6 @@ public class Shop_manager: MonoBehaviour
     public int number2;
     public int number3;
     public bool item_flag;
-    Item_Manager Item_Manager;
     public Item_Library Item_Library;
 
     public Button button1;
@@ -22,8 +21,6 @@ public class Shop_manager: MonoBehaviour
 
     void Start()
     {
-        GameObject obj = GameObject.Find("gamemanager");
-        Item_Manager = obj.GetComponent<Item_Manager>();
         Item_Library = GetComponent<Item_Library>();
 
         number1 = Random.Range(0, prefab.Length);
