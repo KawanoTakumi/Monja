@@ -7,11 +7,11 @@ public class Enemy_controller : MonoBehaviour
 {
     //ステータス
     public static int HP = 150;
-    public int attack = 30;
-    public int deffence = 25;
-    public int magic = 0;
-    public int magic_Diffence = 5;
-    public int money = 30;
+    public int attack;
+    public int deffence;
+    public int magic;
+    public int magic_Diffence;
+    public int money;
 
     turn_manager turn_Manager;//turnManager読み込み
     Damage_calculate damage_Calculate;

@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     public static int HP_max = 100;//最高体力
     public static int MP = 100;//MP
     public static int MP_max = 100;//最高MP
-    public int Attack = 300;//攻撃力
+    public int Attack;//攻撃力
     public int Diffence;//防御力
     public int Magic;//魔法力
     public int Magic_Diffence;//魔法防御力
@@ -103,10 +103,6 @@ public class PlayerController : MonoBehaviour
                 Debug.Log("アニメーション終了");
                 animation_time = 0;
                 turn_time = 0;
-                Attack_.interactable = true;
-                Magic_.interactable = true;
-                Heal_.interactable = true;
-                Concentlation_.interactable = true;
                 turn_Manager.turn = false;
             }
         }
@@ -120,10 +116,6 @@ public class PlayerController : MonoBehaviour
                 Debug.Log("アニメーション終了");
                 animation_time = 0;
                 turn_time = 0;
-                Attack_.interactable = true;
-                Magic_.interactable = true;
-                Heal_.interactable = true;
-                Concentlation_.interactable = true;
                 turn_Manager.turn = false;
             }
         }
@@ -137,10 +129,6 @@ public class PlayerController : MonoBehaviour
                 Debug.Log("アニメーション終了");
                 animation_time = 0;
                 turn_time = 0;
-                Attack_.interactable = true;
-                Magic_.interactable = true;
-                Heal_.interactable = true;
-                Concentlation_.interactable = true;
                 turn_Manager.turn = false;
             }
         }
@@ -149,10 +137,10 @@ public class PlayerController : MonoBehaviour
     {
         turn_Manager = GetComponent<turn_manager>();
         animator = GetComponent<Animator>();
+        intaract();
         if (turn_Manager.turn == true)
         {
             Debug.Log("攻撃");
-            intaract();
             animator.SetBool("attack", true);
             Attack_damage = Attack;
             damage_Calculate.Enemey_Damage_Calculate(Attack_damage,enemy_Controller.Enemy_deffence);
@@ -212,10 +200,10 @@ public class PlayerController : MonoBehaviour
         
         if (turn_Manager.turn == true)
         {
+            intaract();
             if (HP != HP_max && HP_Potion > 0)
             {
                 Debug.Log("回復");
-                intaract();
                 animator.SetBool("heal", true);
                 HP_Potion -= 1;
                 HP += HP_max / 4;

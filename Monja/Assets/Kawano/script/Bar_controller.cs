@@ -14,9 +14,11 @@ public class Bar_controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        HP_Bar.value = 100;
-        MP_Bar.value = 100;
-        Enemy_HP_Bar.value = 150;
+        HP_Bar.value = PlayerController.HP_max;
+        HP_Bar.maxValue = PlayerController.HP_max;
+        MP_Bar.value = PlayerController.MP_max;
+        MP_Bar.maxValue = PlayerController.MP_max;
+        Enemy_HP_Bar.value = Enemy_controller.HP;
     }
 
     // Update is called once per frame
