@@ -881,9 +881,9 @@ MonoBehaviour:
   number3: 0
   item_flag: 0
   Item_Library: {fileID: 1035226743}
-  button1: {fileID: 0}
-  button2: {fileID: 0}
-  button3: {fileID: 0}
+  button1: {fileID: 1123360770}
+  button2: {fileID: 525141354}
+  button3: {fileID: 30034492}
   _parentGameObject: {fileID: 1292750242}
 --- !u!114 &1035226745
 MonoBehaviour:
