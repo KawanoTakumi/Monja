@@ -3625,7 +3625,7 @@ MonoBehaviour:
   deffence: 5
   magic: 0
   magic_Diffence: 5
-  money: 50
+  money: 30
   Enemy_attack: 0
   Enemy_deffence: 0
 --- !u!114 &2097196024

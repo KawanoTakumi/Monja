@@ -8,7 +8,8 @@ public class Item_Library : MonoBehaviour
     // Start is called before the first frame update
     public int money;
     int ItemValue1 = 25;
-    //int ItemValue2 = 30;
+    int ItemValue2 = 30;
+    int ItemValue3 = 35;
     public bool GetFlag1 = false;
     public bool GetFlag2 = false;
     public bool GetFlag3= false;
@@ -78,17 +79,16 @@ public class Item_Library : MonoBehaviour
 
     public void Buy2()
     {
-        if (money >= ItemValue1 && GetFlag2 == false)
+        if (money >= ItemValue2 && GetFlag2 == false)
         {
             if (Item_Manager.Item.TryGetValue(shop_manager.button2.tag, out bool button2))
             {
                 if (button2 == false)
                 {
-                    money -= ItemValue1;
+                    money -= ItemValue2;
                 }
             }
 
-            money -= ItemValue1;
             PlayerController.Money = money;//Playerë§ÇÃêîÇ‡å∏ÇÁÇ∑
             Debug.Log(money);
             GetFlag2 = true;
@@ -106,17 +106,16 @@ public class Item_Library : MonoBehaviour
     }
     public void Buy3()
     {
-        if (money >= ItemValue1 && GetFlag3 == false)
+        if (money >= ItemValue3 && GetFlag3 == false)
         {
             if (Item_Manager.Item.TryGetValue(shop_manager.button3.tag, out bool button3))
             {
                 if (button3 == false)
                 {
-                    money -= ItemValue1;
+                    money -= ItemValue3;
                 }
             }
 
-            money -= ItemValue1;
             PlayerController.Money = money;//Playerë§ÇÃêîÇ‡å∏ÇÁÇ∑
             Debug.Log(money);
             GetFlag3 = true;
