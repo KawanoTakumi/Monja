@@ -100,7 +100,7 @@ public class Enemy_controller : MonoBehaviour
             }
             else if (Enemy_luck == 10)
             {
-                Enemy_attack = attack * 2;
+                Enemy_attack = attack + attack/2;
                 Debug.Log("クリティカル");
             }
         }
