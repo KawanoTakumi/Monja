@@ -20,12 +20,15 @@ public class PlayerController : MonoBehaviour
     public int HP_Potion;//HPポーションの数
     public static int Money;//所持金額 //別のシーンでも呼ばれる
     public int money;//一時確認用（あとで消す）
+    public int player_luck;
+    public int max_luck;
     
     turn_manager turn_Manager;
     Animator animator;
     Damage_calculate damage_Calculate;
     Enemy_controller enemy_Controller;
     GameObject Enemey;
+    Item_Manager Item_manager;
     public ChangeScene change;//チェンジシーン
     int animation_time = 0;//アニメーションタイム
     int turn_time = 0;//ターン経過時間
@@ -35,10 +38,16 @@ public class PlayerController : MonoBehaviour
     public Button Concentlation_;
     public Button Magic_;
     public Button Heal_;
+
+    public Text Log;
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(HP);
+        GameObject Text = GameObject.Find("LogText");
+        Log = Text.GetComponent<Text>();
+
+
+        Debug.Log("主人公体力"+HP);
         money = Money;
         turn_Manager = GetComponent<turn_manager>();
         animator = GetComponent<Animator>();
@@ -53,7 +62,9 @@ public class PlayerController : MonoBehaviour
         if(HP <= 0)
         {
             HP = 100;
+            Item_reset();
             Enemy_controller.turn = 0;
+            Enemy_controller.HP = 150;
             SceneManager.LoadScene("Lose");
         }
 
@@ -97,12 +108,15 @@ public class PlayerController : MonoBehaviour
         {
             animation_time++;
             turn_time++;
-            if (animation_time > 400 && turn_time > 400)
+            if (animation_time > 300 && turn_time > 300)
             {
                 animator.SetBool("attack", false);
-                Debug.Log("アニメーション終了");
                 animation_time = 0;
                 turn_time = 0;
+                //Attack_damage = Attack;
+                Log.text = ("敵に" + Attack_damage + "ダメージ");
+                damage_Calculate.Enemey_Damage_Calculate(Attack_damage, enemy_Controller.Enemy_deffence);
+
                 turn_Manager.turn = false;
             }
         }
@@ -113,8 +127,8 @@ public class PlayerController : MonoBehaviour
             if (animation_time > 400 && turn_time > 400)
             {
                 animator.SetBool("magic", false);
-                Debug.Log("アニメーション終了");
                 animation_time = 0;
+                Log.text = ("敵に" + Attack_damage + "ダメージ");
                 turn_time = 0;
                 turn_Manager.turn = false;
             }
@@ -122,14 +136,16 @@ public class PlayerController : MonoBehaviour
         if (animator.GetBool("heal") == true)
         {
             animation_time++;
-            turn_time++;
-            if (animation_time > 400 && turn_time > 400)
+            if (animation_time > 400)
             {
                 animator.SetBool("heal", false);
-                Debug.Log("アニメーション終了");
                 animation_time = 0;
-                turn_time = 0;
-                turn_Manager.turn = false;
+                Log.text = ("主人公は回復した");
+                Attack_.interactable = true;
+                Magic_.interactable = true;
+                Heal_.interactable = true;
+                Concentlation_.interactable = true;
+
             }
         }
     }
@@ -140,11 +156,18 @@ public class PlayerController : MonoBehaviour
         intaract();
         if (turn_Manager.turn == true)
         {
-            Debug.Log("攻撃");
+            player_luck = Random.Range(1, max_luck);
+            if (player_luck != max_luck-1)
+            {
+                Attack_damage = Attack;
+            }
+            else if (player_luck == max_luck - 1)
+            {
+                Attack_damage = Attack + Attack / 2;
+                Debug.Log("主人公クリティカル");
+            }
+
             animator.SetBool("attack", true);
-            Attack_damage = Attack;
-            damage_Calculate.Enemey_Damage_Calculate(Attack_damage,enemy_Controller.Enemy_deffence);
-            
         }
     }
     public void concentration()
@@ -156,7 +179,6 @@ public class PlayerController : MonoBehaviour
         {
             if (MP < 100)
             {
-                Debug.Log("集中");
                 intaract();
                 MP += MP_max / 4;
                 //MPがMP_maxより大きければMP_maxの値に合わせる
@@ -168,7 +190,8 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                Debug.Log("集中力は足りている");
+                Log.text = ("主人公は十分集中している");
+
             }
         }
     }
@@ -180,7 +203,6 @@ public class PlayerController : MonoBehaviour
         {
             if(MP >= 25)
             {
-                Debug.Log("魔法");
                 intaract();
                 animator.SetBool("magic", true);
                 MP -= 25;
@@ -189,7 +211,7 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                Debug.Log("魔法不発");
+                Log.text = ("魔法不発");
             }
         }
     }
@@ -203,7 +225,7 @@ public class PlayerController : MonoBehaviour
             intaract();
             if (HP != HP_max && HP_Potion > 0)
             {
-                Debug.Log("回復");
+                //Debug.Log("回復");
                 animator.SetBool("heal", true);
                 HP_Potion -= 1;
                 HP += HP_max / 4;
@@ -216,12 +238,20 @@ public class PlayerController : MonoBehaviour
             }
             else　if(HP == HP_max)
             {
-                Debug.Log("体力は満タンだ！！！");
+                Log.text = ("体力は満タンだ！！！");
+
+
             }
             else if(HP_Potion < 1)
             {
-                Debug.Log("ポーションが足りない");
+                Log.text = ("ポーションが足りない");
+
             }
+            Attack_.interactable = true;
+            Magic_.interactable = true;
+            Heal_.interactable = true;
+            Concentlation_.interactable = true;
+
         }
     }
     void intaract()
@@ -230,5 +260,15 @@ public class PlayerController : MonoBehaviour
         Magic_.interactable = false;
         Heal_.interactable = false;
         Concentlation_.interactable = false;
+    }
+
+    public void Item_reset()
+    {
+        Item_Manager.Item["healdrink"] = false;
+        Item_Manager.Item["bowlingball"] = false;
+        Item_Manager.Item["CDplayer"] = false;
+        Item_Manager.Item["cd"] = false;
+        Item_Manager.Item["radio"] = false;
+        Item_Manager.Item["hourglass"] = false;
     }
 }

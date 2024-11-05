@@ -27,6 +27,7 @@ public class Item_Power : MonoBehaviour
         Item_Manager.Item.TryGetValue("CDplayer", out bool CDplayer_flag);
         Item_Manager.Item.TryGetValue("radio", out bool radio_flag);
         Item_Manager.Item.TryGetValue("hourglass", out bool hourglass_flag);
+        Item_Manager.Item.TryGetValue("healdrink", out bool healdrink_flag);
 
         if(bowlingball_flag == true)
         {
@@ -71,6 +72,12 @@ public class Item_Power : MonoBehaviour
                 PlayerController.HP -= 5;//‘Ì—Í‚ğ5Œ¸‚ç‚·
                 turn_compare = Enemy_controller.turn;//Ÿ‚Ìƒ^[ƒ“‚Ü‚Å”­“®‚µ‚È‚¢‚æ‚¤‚É‚·‚é
             }
+        }
+        if(healdrink_flag == true)
+        {
+            playercontroller.HP_Potion += 1;
+            Item_Manager.Item["healdrink"] = false;
+            healdrink_flag = false;
         }
     }
 }

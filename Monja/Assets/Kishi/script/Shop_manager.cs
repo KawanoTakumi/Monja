@@ -24,7 +24,6 @@ public class Shop_manager: MonoBehaviour
         Item_Library = GetComponent<Item_Library>();
 
         number1 = Random.Range(0, prefab.Length);
-        Debug.Log(number1);
         CreateObject1();
 
         do{
@@ -65,19 +64,16 @@ public class Shop_manager: MonoBehaviour
         if (flag_1 == true && button1.interactable == true)
         {
             button1.interactable = false;
-            Debug.Log(button1.interactable);
         }
 
         if (flag_2 == true && button2.interactable == true)
         {
             button2.interactable = false;
-            Debug.Log(button2.interactable);
         }
 
         if (flag_3 == true && button3.interactable == true)
         {
             button3.interactable = false;
-            Debug.Log(button3.interactable);
         }
 
     }
@@ -88,7 +84,6 @@ public class Shop_manager: MonoBehaviour
         button1 = obj1.GetComponent<Button>();
         obj1.name = "Item_Image_1";
         Item_Get_Check(button1);
-        Debug.Log(button1.tag);
     }
     void CreateObject2()
     {
@@ -96,7 +91,6 @@ public class Shop_manager: MonoBehaviour
         button2 = obj2.GetComponent<Button>();
         obj2.name = "Item_Image_2";
         Item_Get_Check(button2);
-        Debug.Log(button2.tag);
     }
     void CreateObject3()
     {
@@ -104,7 +98,6 @@ public class Shop_manager: MonoBehaviour
         button3 = obj3.GetComponent<Button>();
         obj3.name = "Item_Image_3";
         Item_Get_Check(button3);
-        Debug.Log(button3.tag);
     }
 
     void Item_Get_Check(Button button)
