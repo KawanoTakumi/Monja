@@ -58,22 +58,20 @@ public class Damage_calculate : MonoBehaviour
         {
             result = 0;
         }
-
         PlayerController.HP -= result;
         Player_animator.SetBool("Player_Damage", true);
-        Debug.Log(PlayerController.HP);
     }
     public void Enemey_Damage_Calculate(int attack,int diffence)
     {
         int result;
         //数値が0以下になったら0にする
         result = attack - diffence;
+        Debug.Log("ダメージ" + result);
         if (result < 0)
         {
             result = 0;
         }
         Enemy_controller.HP -= result;
         Enemy_animator.SetBool("Damage",true);
-        Debug.Log(Enemy_controller.HP);
     }
 }
