@@ -12,6 +12,7 @@ public class Enemy_controller : MonoBehaviour
     public int magic;
     public int magic_Diffence;
     public int money;
+    public  static int HP_MAX = 100;
 
     turn_manager turn_Manager;//turnManager“Ç‚İ‚İ
     Damage_calculate damage_Calculate;
