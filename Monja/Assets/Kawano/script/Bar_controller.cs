@@ -27,6 +27,6 @@ public class Bar_controller : MonoBehaviour
         HP_Bar.value = PlayerController.HP;
         MP_Bar.value = PlayerController.MP;
         Enemy_HP_Bar.value = Enemy_controller.HP;
-        Debug.Log(Enemy_controller.HP);
+        //Debug.Log(Enemy_controller.HP);
     }
 }
