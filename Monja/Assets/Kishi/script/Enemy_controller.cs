@@ -19,6 +19,7 @@ public class Enemy_controller : MonoBehaviour
     PlayerController playerController;
     GameObject player;
     Animator animator;
+    Animation animation;
     public int Enemy_attack;//攻撃力(計算後)
     public int Enemy_deffence;//防御力(計算後)
     int Enemy_act = 0;
@@ -67,7 +68,6 @@ public class Enemy_controller : MonoBehaviour
             //HPが0になったらクリア画面を出す
             if (HP <= 0)
             {
-                //PlayerController.HP = 100;
                 PlayerController.MP = 100;
                 HP = 100;
                 PlayerController.Money += money;
@@ -83,8 +83,6 @@ public class Enemy_controller : MonoBehaviour
             turn_time++;
             if (turn_time >= 90)
             {
-
-
                 Debug.Log("敵ターン終了");
                 Debug.Log("主人公体力" + PlayerController.HP);
                 turn += 1;
@@ -111,7 +109,7 @@ public class Enemy_controller : MonoBehaviour
         }
         void Attack()
         {
-            if(turn_time == 25)
+            if(turn_time >= 25)
             {
                 animator.SetBool("Attack", true);
             }
