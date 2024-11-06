@@ -47,7 +47,6 @@ public class PlayerController : MonoBehaviour
         Log = Text.GetComponent<Text>();
 
 
-        Debug.Log("主人公体力"+HP);
         money = Money;
         turn_Manager = GetComponent<turn_manager>();
         animator = GetComponent<Animator>();
@@ -114,10 +113,8 @@ public class PlayerController : MonoBehaviour
                 animator.SetBool("attack", false);
                 animation_time = 0;
                 turn_time = 0;
-                //Attack_damage = Attack;
-                Log.text = ("敵に" + Attack_damage + "ダメージ");
+                Attack_damage = Attack;
                 damage_Calculate.Enemey_Damage_Calculate(Attack_damage, enemy_Controller.Enemy_deffence);
-
                 turn_Manager.turn = false;
             }
         }
@@ -129,7 +126,6 @@ public class PlayerController : MonoBehaviour
             {
                 animator.SetBool("magic", false);
                 animation_time = 0;
-                Log.text = ("敵に" + Magic_damage + "ダメージ");
                 turn_time = 0;
                 turn_Manager.turn = false;
             }
