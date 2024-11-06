@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class Bar_controller : MonoBehaviour
 {
-    public PlayerController playerController;
-    public Enemy_controller enemy_Controller;
     public Slider HP_Bar;
     public Slider MP_Bar;
     public Slider Enemy_HP_Bar;
@@ -18,7 +16,9 @@ public class Bar_controller : MonoBehaviour
         HP_Bar.maxValue = PlayerController.HP_max;
         MP_Bar.value = PlayerController.MP_max;
         MP_Bar.maxValue = PlayerController.MP_max;
-        Enemy_HP_Bar.value = Enemy_controller.HP;
+        Enemy_HP_Bar.maxValue = Enemy_controller.HP_MAX;
+        // Enemy_HP_Bar.value = Enemy_controller.HP;
+        //Enemy_HP_Bar.maxValue = Enemy_controller.HP;
     }
 
     // Update is called once per frame
@@ -27,5 +27,6 @@ public class Bar_controller : MonoBehaviour
         HP_Bar.value = PlayerController.HP;
         MP_Bar.value = PlayerController.MP;
         Enemy_HP_Bar.value = Enemy_controller.HP;
+        Debug.Log(Enemy_controller.HP);
     }
 }
