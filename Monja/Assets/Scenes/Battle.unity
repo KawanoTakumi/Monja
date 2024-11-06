@@ -1875,7 +1875,7 @@ MonoBehaviour:
   Concentlation_: {fileID: 1656728079}
   Magic_: {fileID: 348858938}
   Heal_: {fileID: 1111548031}
-  Log: {fileID: 0}
+  Log: {fileID: 1265022589}
 --- !u!114 &1013919611
 MonoBehaviour:
   m_ObjectHideFlags: 0

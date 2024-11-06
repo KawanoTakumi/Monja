@@ -1085,18 +1085,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1040258327}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.0001299, y: 1.0001299, z: 1.0001299}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1123360769}
-  m_RootOrder: 1
+  m_Father: {fileID: 1292750243}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.13733871, y: 0.5}
   m_AnchorMax: {x: 0.13733871, y: 0.5}
-  m_AnchoredPosition: {x: 368, y: 580}
-  m_SizeDelta: {x: 877.64, y: 149.2}
+  m_AnchoredPosition: {x: 700.59, y: 356.35}
+  m_SizeDelta: {x: 781.39, y: 153.05}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1040258329
 MonoBehaviour:
@@ -1321,7 +1321,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1218276612}
-  - {fileID: 1040258328}
   m_Father: {fileID: 1292750243}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1484,7 +1483,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 40
+    m_FontSize: 32
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -1495,7 +1494,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u8CFC\u5165"
+  m_Text: "25G\n\u8CFC\u5165"
 --- !u!222 &1218276614
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1642,7 +1641,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 40
+    m_FontSize: 32
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -1653,7 +1652,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u8CFC\u5165"
+  m_Text: "35G\n\u8CFC\u5165"
 --- !u!222 &1244875304
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1858,6 +1857,7 @@ RectTransform:
   - {fileID: 1228164872}
   - {fileID: 932675902}
   - {fileID: 759063137}
+  - {fileID: 1040258328}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2055,7 +2055,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 40
+    m_FontSize: 32
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -2066,7 +2066,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u8CFC\u5165"
+  m_Text: "30G\n\u8CFC\u5165"
 --- !u!222 &1333730499
 CanvasRenderer:
   m_ObjectHideFlags: 0

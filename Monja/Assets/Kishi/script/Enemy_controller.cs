@@ -19,7 +19,6 @@ public class Enemy_controller : MonoBehaviour
     PlayerController playerController;
     GameObject player;
     Animator animator;
-    Animation animation;
     public int Enemy_attack;//攻撃力(計算後)
     public int Enemy_deffence;//防御力(計算後)
     int Enemy_act = 0;
@@ -27,7 +26,7 @@ public class Enemy_controller : MonoBehaviour
     bool Enemy_Skelton;
     public static int turn = 1;//ターン
     int turn_time = 0;
-    int animation_time = 0;
+    //int animation_time = 0;
 
 
     // Start is called before the first frame update
@@ -55,16 +54,6 @@ public class Enemy_controller : MonoBehaviour
             //EnemyAttackを初期化
             Enemy_attack = 0;
 
-            //アニメーション管理
-            if(animator.GetBool("Attack") == true)
-            {
-                animation_time++;
-                if (animation_time >= 60)
-                {
-                    animator.SetBool("Attack", false);
-                    animation_time = 0;
-                }
-            }
             //HPが0になったらクリア画面を出す
             if (HP <= 0)
             {
@@ -113,7 +102,6 @@ public class Enemy_controller : MonoBehaviour
             {
                 animator.SetBool("Attack", true);
             }
-            //int Enemy_Move = 1;
             Enemy_luck = Random.Range(1, 11);
             if (Enemy_luck <= 9)
             {
@@ -127,7 +115,6 @@ public class Enemy_controller : MonoBehaviour
         }
         void Defence()
         {
-            //int Enemy_Move = 3;
             Enemy_deffence += deffence;
         }
 
@@ -139,20 +126,22 @@ public class Enemy_controller : MonoBehaviour
             {
                 case 1:
                     Attack();
-                    Debug.Log("攻撃１");
                     damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Diffence);
                     break;
                 case 2:
                     Attack();
-                    Debug.Log("攻撃2");
                     damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Diffence);
                     break;
                 case 3:
                     Defence();
-                    Debug.Log("防御");
                     Enemy_deffence = deffence;
                     break;
             }
         }
+    }
+    //アニメーション終了用関数(bool型のみ)
+    public void Anim_Reset(string anim_tag)
+    {
+        animator.SetBool(anim_tag, false);
     }
 }

@@ -35,4 +35,9 @@ public class ChangeScene : MonoBehaviour
     {
         Scene_Change = true;
     }
+    //shop‚©‚çtitle‚É–ß‚éŽž‚ÉŽg—p
+    public void Player_Reset()
+    {
+        PlayerController.HP = PlayerController.HP_max;
+    }
 }

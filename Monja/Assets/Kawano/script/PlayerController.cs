@@ -29,9 +29,7 @@ public class PlayerController : MonoBehaviour
     Damage_calculate damage_Calculate;
     Enemy_controller enemy_Controller;
     GameObject Enemey;
-    Item_Manager Item_manager;
     public ChangeScene change;//チェンジシーン
-    int animation_time = 0;//アニメーションタイム
     int turn_time = 0;//ターン経過時間
 
     //ボタン関係変数
@@ -103,55 +101,13 @@ public class PlayerController : MonoBehaviour
         {
             Magic_Diffence = 0;
         }
-
-
-        if (animator.GetBool("attack") == true)
-        {
-            animation_time++;
-            turn_time++;
-            if (animation_time > 60 && turn_time > 60)
-            {
-                animator.SetBool("attack", false);
-                animation_time = 0;
-                turn_time = 0;
-                Attack_damage = Attack;
-                damage_Calculate.Enemey_Damage_Calculate(Attack_damage, enemy_Controller.Enemy_deffence);
-                turn_Manager.turn = false;
-            }
-        }
-        if (animator.GetBool("magic") == true)
-        {
-            animation_time++;
-            turn_time++;
-            if (animation_time > 60 && turn_time > 60)
-            {
-                animator.SetBool("magic", false);
-                animation_time = 0;
-                turn_time = 0;
-                turn_Manager.turn = false;
-            }
-        }
-        if (animator.GetBool("heal") == true)
-        {
-            animation_time++;
-            if (animation_time > 60)
-            {
-                animator.SetBool("heal", false);
-                animation_time = 0;
-                Log.text = ("主人公は回復した");
-                Attack_.interactable = true;
-                Magic_.interactable = true;
-                Heal_.interactable = true;
-                Concentlation_.interactable = true;
-
-            }
-        }
     }
     public void attack()
     {
         turn_Manager = GetComponent<turn_manager>();
         animator = GetComponent<Animator>();
-        intaract();
+        intaract_false();
+        animator.SetBool("attack", true);
         if (turn_Manager.turn == true)
         {
             player_luck = Random.Range(1, max_luck);
@@ -165,7 +121,9 @@ public class PlayerController : MonoBehaviour
                 Debug.Log("主人公クリティカル");
             }
 
-            animator.SetBool("attack", true);
+            Attack_damage = Attack;
+            damage_Calculate.Enemey_Damage_Calculate(Attack_damage, enemy_Controller.Enemy_deffence);
+
         }
     }
     public void concentration()
@@ -177,7 +135,7 @@ public class PlayerController : MonoBehaviour
         {
             if (MP < 100)
             {
-                intaract();
+                intaract_false();
                 MP += MP_max / 4;
                 //MPがMP_maxより大きければMP_maxの値に合わせる
                 if (MP > MP_max)
@@ -201,11 +159,17 @@ public class PlayerController : MonoBehaviour
         {
             if(MP >= 25)
             {
-                intaract();
+                intaract_false();
                 animator.SetBool("magic", true);
                 MP -= 25;
                 Magic_damage = Magic;
                 damage_Calculate.Enemey_Damage_Calculate(Magic_damage, enemy_Controller.magic_Diffence);
+                turn_time++;
+                if (turn_time > 60)
+                {
+                    turn_time = 0;
+                    turn_Manager.turn = false;
+                }
             }
             else
             {
@@ -220,7 +184,7 @@ public class PlayerController : MonoBehaviour
         
         if (turn_Manager.turn == true)
         {
-            intaract();
+            intaract_false();
             if (HP != HP_max && HP_Potion > 0)
             {
                 //Debug.Log("回復");
@@ -231,8 +195,10 @@ public class PlayerController : MonoBehaviour
                 if (HP > HP_max)
                 {
                     HP = HP_max;
+                    animator.SetBool("heal", false);
                 }
-                
+                Log.text = ("主人公は回復した");
+                intaract_true();
             }
             else　if(HP == HP_max)
             {
@@ -243,21 +209,23 @@ public class PlayerController : MonoBehaviour
             else if(HP_Potion < 1)
             {
                 Log.text = ("ポーションが足りない");
-
             }
-            Attack_.interactable = true;
-            Magic_.interactable = true;
-            Heal_.interactable = true;
-            Concentlation_.interactable = true;
-
+            intaract_true();
         }
     }
-    void intaract()
+    void intaract_false()
     {
         Attack_.interactable = false;
         Magic_.interactable = false;
         Heal_.interactable = false;
         Concentlation_.interactable = false;
+    }
+    void intaract_true()
+    {
+        Attack_.interactable = true;
+        Magic_.interactable = true;
+        Heal_.interactable = true;
+        Concentlation_.interactable = true;
     }
 
     public void Item_reset()
@@ -268,5 +236,11 @@ public class PlayerController : MonoBehaviour
         Item_Manager.Item["cd"] = false;
         Item_Manager.Item["radio"] = false;
         Item_Manager.Item["hourglass"] = false;
+    }
+    //アニメーションリセット（boolのみ）
+    public void Anim_Reset(string anim_tag)
+    {
+        animator.SetBool(anim_tag, false);
+        turn_Manager.turn = false;
     }
 }
