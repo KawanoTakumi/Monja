@@ -1949,6 +1949,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efc003b51a2a0c340ab4c10574e6801b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Log: {fileID: 1265022589}
 --- !u!1 &1110063399
 GameObject:
   m_ObjectHideFlags: 0
@@ -3749,7 +3750,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 40
-  deffence: 0
+  deffence: 5
   magic: 0
   magic_Diffence: 5
   money: 50
@@ -3767,6 +3768,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efc003b51a2a0c340ab4c10574e6801b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Log: {fileID: 0}
 --- !u!95 &2097196025
 Animator:
   serializedVersion: 5

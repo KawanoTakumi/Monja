@@ -70,23 +70,23 @@ public class Enemy_controller : MonoBehaviour
                 //PlayerController.HP = 100;
                 PlayerController.MP = 100;
                 HP = 100;
-                Debug.Log(PlayerController.HP);
                 PlayerController.Money += money;
                 turn = 1;
                 SceneManager.LoadScene("Win");
             }
-            if (Enemy_Skelton == true && turn_time == 0) //敵　スケルトン
+            if (Enemy_Skelton == true && turn_time == 35) //敵　スケルトン
             {
                 Skelton();
             }
 
 
             turn_time++;
-            if (turn_time > 60)
+            if (turn_time >= 90)
             {
 
 
                 Debug.Log("敵ターン終了");
+                Debug.Log("主人公体力" + PlayerController.HP);
                 turn += 1;
                 playerController.Attack_.interactable = true;
                 playerController.Magic_.interactable = true;
@@ -111,7 +111,7 @@ public class Enemy_controller : MonoBehaviour
         }
         void Attack()
         {
-            if(animator.GetBool("Attack") == false)
+            if(turn_time == 25)
             {
                 animator.SetBool("Attack", true);
             }
