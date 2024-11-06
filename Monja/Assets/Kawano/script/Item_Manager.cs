@@ -9,6 +9,8 @@ public class Item_Manager : MonoBehaviour
     public static IDictionary<string, bool> Item = new Dictionary<string, bool>();
     private void Awake()
     {
+        Application.targetFrameRate = 60;
+
         DontDestroyOnLoad(this);
         //«‘‚ÉƒL[‚ğİ’è
         if (Item.ContainsKey("healdrink") == false)

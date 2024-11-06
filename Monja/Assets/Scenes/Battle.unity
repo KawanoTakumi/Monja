@@ -1887,6 +1887,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75f88bce05720784690fdccbf4fbaaee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  log_text: {fileID: 1265022589}
 --- !u!114 &1013919612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1899,8 +1900,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5b2e17a19c88fd46ad70f6b96b81044, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerController: {fileID: 1013919610}
-  enemy_Controller: {fileID: 2097196022}
   HP_Bar: {fileID: 884395292}
   MP_Bar: {fileID: 1792437756}
   Enemy_HP_Bar: {fileID: 629880849}
@@ -1950,6 +1949,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efc003b51a2a0c340ab4c10574e6801b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Log: {fileID: 1265022589}
 --- !u!1 &1110063399
 GameObject:
   m_ObjectHideFlags: 0
@@ -3750,7 +3750,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 40
-  deffence: 0
+  deffence: 5
   magic: 0
   magic_Diffence: 5
   money: 50
@@ -3768,6 +3768,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efc003b51a2a0c340ab4c10574e6801b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Log: {fileID: 0}
 --- !u!95 &2097196025
 Animator:
   serializedVersion: 5

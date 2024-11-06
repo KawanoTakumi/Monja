@@ -47,7 +47,6 @@ public class PlayerController : MonoBehaviour
         Log = Text.GetComponent<Text>();
 
 
-        Debug.Log("主人公体力"+HP);
         money = Money;
         turn_Manager = GetComponent<turn_manager>();
         animator = GetComponent<Animator>();
@@ -62,6 +61,7 @@ public class PlayerController : MonoBehaviour
         if(HP <= 0)
         {
             HP = 100;
+            MP = 100;
             Item_reset();
             Enemy_controller.turn = 0;
             Enemy_controller.HP = 150;
@@ -108,15 +108,13 @@ public class PlayerController : MonoBehaviour
         {
             animation_time++;
             turn_time++;
-            if (animation_time > 300 && turn_time > 300)
+            if (animation_time > 60 && turn_time > 60)
             {
                 animator.SetBool("attack", false);
                 animation_time = 0;
                 turn_time = 0;
-                //Attack_damage = Attack;
-                Log.text = ("敵に" + Attack_damage + "ダメージ");
+                Attack_damage = Attack;
                 damage_Calculate.Enemey_Damage_Calculate(Attack_damage, enemy_Controller.Enemy_deffence);
-
                 turn_Manager.turn = false;
             }
         }
@@ -124,11 +122,10 @@ public class PlayerController : MonoBehaviour
         {
             animation_time++;
             turn_time++;
-            if (animation_time > 400 && turn_time > 400)
+            if (animation_time > 60 && turn_time > 60)
             {
                 animator.SetBool("magic", false);
                 animation_time = 0;
-                Log.text = ("敵に" + Attack_damage + "ダメージ");
                 turn_time = 0;
                 turn_Manager.turn = false;
             }
@@ -136,7 +133,7 @@ public class PlayerController : MonoBehaviour
         if (animator.GetBool("heal") == true)
         {
             animation_time++;
-            if (animation_time > 400)
+            if (animation_time > 60)
             {
                 animator.SetBool("heal", false);
                 animation_time = 0;
