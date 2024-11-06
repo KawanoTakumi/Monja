@@ -62,6 +62,7 @@ public class PlayerController : MonoBehaviour
         if(HP <= 0)
         {
             HP = 100;
+            MP = 100;
             Item_reset();
             Enemy_controller.turn = 0;
             Enemy_controller.HP = 150;
