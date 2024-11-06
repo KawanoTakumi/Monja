@@ -108,7 +108,7 @@ public class PlayerController : MonoBehaviour
         {
             animation_time++;
             turn_time++;
-            if (animation_time > 300 && turn_time > 300)
+            if (animation_time > 60 && turn_time > 60)
             {
                 animator.SetBool("attack", false);
                 animation_time = 0;
@@ -124,11 +124,11 @@ public class PlayerController : MonoBehaviour
         {
             animation_time++;
             turn_time++;
-            if (animation_time > 400 && turn_time > 400)
+            if (animation_time > 60 && turn_time > 60)
             {
                 animator.SetBool("magic", false);
                 animation_time = 0;
-                Log.text = ("敵に" + Attack_damage + "ダメージ");
+                Log.text = ("敵に" + Magic_damage + "ダメージ");
                 turn_time = 0;
                 turn_Manager.turn = false;
             }
@@ -136,7 +136,7 @@ public class PlayerController : MonoBehaviour
         if (animator.GetBool("heal") == true)
         {
             animation_time++;
-            if (animation_time > 400)
+            if (animation_time > 60)
             {
                 animator.SetBool("heal", false);
                 animation_time = 0;

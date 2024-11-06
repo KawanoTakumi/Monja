@@ -58,7 +58,7 @@ public class Enemy_controller : MonoBehaviour
             if(animator.GetBool("Attack") == true)
             {
                 animation_time++;
-                if (animation_time >= 300)
+                if (animation_time >= 60)
                 {
                     animator.SetBool("Attack", false);
                     animation_time = 0;
@@ -82,7 +82,7 @@ public class Enemy_controller : MonoBehaviour
 
 
             turn_time++;
-            if (turn_time > 400)
+            if (turn_time > 60)
             {
 
 
