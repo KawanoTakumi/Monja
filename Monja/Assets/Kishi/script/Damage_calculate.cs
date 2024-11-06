@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Damage_calculate : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class Damage_calculate : MonoBehaviour
     GameObject player;//プレイヤーオブジェクト
     Enemy_controller Enemycontoroller;
     GameObject enemey;//エネミーオブジェクト
+    public Text Log;
     Animator Player_animator;
     Animator Enemy_animator;
     int animation_time_E = 0;//エネミーのアニメーションタイム
@@ -58,22 +60,21 @@ public class Damage_calculate : MonoBehaviour
         {
             result = 0;
         }
-
-        Playercontroller.HP -= result;
+        PlayerController.HP -= result;
         Player_animator.SetBool("Player_Damage", true);
-        Debug.Log(Playercontroller.HP);
     }
     public void Enemey_Damage_Calculate(int attack,int diffence)
     {
         int result;
         //数値が0以下になったら0にする
         result = attack - diffence;
+        Debug.Log("ダメージ" + result);
         if (result < 0)
         {
             result = 0;
         }
-        Enemycontoroller.HP -= result;
-        Enemy_animator.SetBool("Damage",true);
-        Debug.Log(Enemycontoroller.HP);
+        Enemy_controller.HP -= result;
+        Log.text = ("敵に" +result+"ダメージ");
+        Enemy_animator.SetBool("Damage", true);
     }
 }

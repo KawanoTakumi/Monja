@@ -13,6 +13,7 @@ TagManager:
   - healdrink
   - hourglass
   - ono
+  - none
   layers:
   - Default
   - TransparentFX

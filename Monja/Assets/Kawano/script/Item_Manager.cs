@@ -5,25 +5,30 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Item_Manager : MonoBehaviour
 {
-    public Button button;
-    public bool bowlingball;
-    public bool radio;
+    //念のためstaticにしてどこでも値が保持されるようにする
+    public static IDictionary<string, bool> Item = new Dictionary<string, bool>();
+    private void Awake()
+    {
+        Application.targetFrameRate = 60;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        if (button == GameObject.FindWithTag("bowlingball"))
+        DontDestroyOnLoad(this);
+        //辞書にキーを設定
+        if (Item.ContainsKey("healdrink") == false)
         {
-            bowlingball = true;
-        }
-        else if (button == GameObject.FindWithTag("radio"))
-        {
-            radio = true;
+            Item.Add("none", false);//空のキーを設定（アイテムがないとき）
+            //アイテムをItem辞書に登録
+            Item.Add("healdrink", false);
+            Item.Add("bowlingball", false);
+            Item.Add("CDplayer", false);
+            Item.Add("cd", false);
+            Item.Add("radio", false);
+            Item.Add("hourglass", false);
         }
     }
-    // Update is called once per frame
-    void Update()
+
+    public void Start()
     {
-        
+       
     }
+
 }

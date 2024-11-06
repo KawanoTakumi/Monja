@@ -6,64 +6,43 @@ using UnityEngine.UI;
 public class Item_Library : MonoBehaviour
 {
     // Start is called before the first frame update
+    public int money;
+    int ItemValue1 = 25;
+    int ItemValue2 = 30;
+    int ItemValue3 = 35;
+    public bool GetFlag1 = false;
+    public bool GetFlag2 = false;
+    public bool GetFlag3= false;
+    //int Item_Check;
+    //int Item_number1;
+    //int Item_number2;
+    //int Item_number3;
+    public bool Flag_1 = false;
+    public bool Flag_2 = false;
+    public bool Flag_3 = false;
 
-    int Dummymoney = 100000000;
-    int ItemVlue1 = 25;
+
     public Text textbox;
-    bool GetFlag1 = false;
-    bool GetFlag2 = false;
-    bool GetFlag3= false;
-    int Item_Check;
-    int Item_number1;
-    int Item_number2;
-    int Item_number3;
-   public Button button1;
-   public Button button2;
-   public Button button3;
+
 
     Shop_manager shop_manager;
     
-
-    
     GameObject obj;
-
-    public  enum Item
-    {
-        Healdrink,
-        Bowlingball,
-        CDPlayer,
-        CD,
-        Radio,
-        Hourglass //砂時計
-    }
-    [SerializeField]
-    public bool[] ItemFlags;
-
 
     void Start()
     {
-        
+        //tagからvalueを取得
 
-        ItemFlags = new bool[6];
-        ItemFlags[(int)Item.Bowlingball] = false;
 
-        GameObject obj = GameObject.Find("gamemanager");
+        GameObject obj = GameObject.Find("shopmanager");
         shop_manager = obj.GetComponent<Shop_manager>();
-
-        //int Item_Check1 = shop_manager.random1;
-        //int Item_Check2 = shop_manager.random2;
-        //int Item_Check3 = shop_manager.random3;
-
-
-
 
     }
 
     // Update is called once per frame
     void Update()
     {
-       
-
+        money = PlayerController.Money;
     }
 
     //----------------------------
@@ -72,115 +51,84 @@ public class Item_Library : MonoBehaviour
 
     public void Buy1()
     {
-        if (Dummymoney >= ItemVlue1 && GetFlag1 == false)
+        if (money >= ItemValue1 && GetFlag1 == false)
         {
-
-
-            Item_number1 = shop_manager.number1;
-            switch(Item_number1)
+            if(Item_Manager.Item.TryGetValue(shop_manager.button1.tag,out bool button1))
             {
-                case 0:
-
-                    ItemFlags[(int)Item.Healdrink] = true;  break;
-                case 1:
-                    ItemFlags[(int)Item.Bowlingball] = true; break;
-                case 2:
-                    ItemFlags[(int)Item.CDPlayer] = true; break;
-                case 3:
-                    ItemFlags[(int)Item.CD] = true; break;
-                case 4:
-                    ItemFlags[(int)Item.Radio] = true; break;
-                case 5:
-                    ItemFlags[(int)Item.Hourglass] = true; break;
-
+                if(button1 == false)
+                {
+                    money -= ItemValue1;
+                }
             }
-          
-           
-            Dummymoney -= ItemVlue1;
-            Debug.Log(Dummymoney);
+
+            PlayerController.Money = money;//Player側の数も減らす
+            Debug.Log(money);
             GetFlag1 = true;
         }
-        else  if (Dummymoney - ItemVlue1 < 0)
+        else if (GetFlag1 == true)
         {
-            Debug.Log(Dummymoney);
+            textbox.text = "すでに持っています。";
+        }
+        else if (money - ItemValue1 < 0)
+        {
+            Debug.Log(money);
             textbox.text = "お金が足りません。";
         }
 
-       
     }
+
     public void Buy2()
     {
-        if (Dummymoney >= ItemVlue1 && GetFlag2 == false)
+        if (money >= ItemValue2 && GetFlag2 == false)
         {
-            Item_number2 = shop_manager.number2;
-            switch (Item_number2)
+            if (Item_Manager.Item.TryGetValue(shop_manager.button2.tag, out bool button2))
             {
-                case 0:
-                    ItemFlags[(int)Item.Healdrink] = true; break;
-                case 1:
-                    ItemFlags[(int)Item.Bowlingball] = true; break;
-                case 2:
-                    ItemFlags[(int)Item.CDPlayer] = true; break;
-                case 3:
-                    ItemFlags[(int)Item.CD] = true; break;
-                case 4:
-                    ItemFlags[(int)Item.Radio] = true; break;
-                case 5:
-                    ItemFlags[(int)Item.Hourglass] = true; break;
-
+                if (button2 == false)
+                {
+                    money -= ItemValue2;
+                }
             }
 
-
-            Dummymoney -= ItemVlue1;
-            Debug.Log(Dummymoney);
+            PlayerController.Money = money;//Player側の数も減らす
+            Debug.Log(money);
             GetFlag2 = true;
         }
-        else if (Dummymoney - ItemVlue1 < 0)
+        else if (GetFlag2 == true)
         {
-            Debug.Log(Dummymoney);
+            textbox.text = "すでに持っています。";
+        }
+        else if (money - ItemValue1 < 0)
+        {
+            Debug.Log(money);
             textbox.text = "お金が足りません。";
         }
 
-       
     }
     public void Buy3()
     {
-        if (Dummymoney >= ItemVlue1 && GetFlag3 == false)
+        if (money >= ItemValue3 && GetFlag3 == false)
         {
-            Item_number3 = shop_manager.number3;
-            switch (Item_number3)
+            if (Item_Manager.Item.TryGetValue(shop_manager.button3.tag, out bool button3))
             {
-                case 0:
-                    ItemFlags[(int)Item.Healdrink] = true; break;
-                case 1:
-                    ItemFlags[(int)Item.Bowlingball] = true; break;
-                case 2:
-                    ItemFlags[(int)Item.CDPlayer] = true; break;
-                case 3:
-                    ItemFlags[(int)Item.CD] = true; break;
-                case 4:
-                    ItemFlags[(int)Item.Radio] = true; break;
-                case 5:
-                    ItemFlags[(int)Item.Hourglass] = true; break;
-
+                if (button3 == false)
+                {
+                    money -= ItemValue3;
+                }
             }
 
-
-            Dummymoney -= ItemVlue1;
-            Debug.Log(Dummymoney);
+            PlayerController.Money = money;//Player側の数も減らす
+            Debug.Log(money);
             GetFlag3 = true;
         }
-        else if (Dummymoney - ItemVlue1 < 0)
+        else if (GetFlag3 == true)
         {
-            Debug.Log(Dummymoney);
+            textbox.text = "すでに持っています。";
+        }
+        else if (money - ItemValue1 < 0)
+        {
+            Debug.Log(money);
             textbox.text = "お金が足りません。";
         }
 
-       
-    }
-
-    public bool GetItemFlag(Item item)
-    {
-        return ItemFlags[(int)item];
     }
 }

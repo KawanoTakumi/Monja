@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PickUpItem : MonoBehaviour
 {
-    public Item item;
+    public Dictionary item;
     public Sprite sprite;
     // Start is called before the first frame update
     void Start()
