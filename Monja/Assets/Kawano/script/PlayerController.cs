@@ -24,7 +24,8 @@ public class PlayerController : MonoBehaviour
     public int max_luck;
     
     turn_manager turn_Manager;
-    Animator animator;
+    Animator animator;//プレイヤーアニメーター
+    public Animator Magic_Anim;//マジックアニメーションアニメーター
     Damage_calculate damage_Calculate;
     Enemy_controller enemy_Controller;
     GameObject Enemey;

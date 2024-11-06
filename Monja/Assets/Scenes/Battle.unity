@@ -1869,6 +1869,7 @@ MonoBehaviour:
   money: 0
   player_luck: 0
   max_luck: 5
+  Magic_Anim: {fileID: 0}
   change: {fileID: 754146519}
   Attack_: {fileID: 889787176}
   Concentlation_: {fileID: 1656728079}
