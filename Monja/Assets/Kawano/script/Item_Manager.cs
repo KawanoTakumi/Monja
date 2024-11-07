@@ -9,13 +9,12 @@ public class Item_Manager : MonoBehaviour
     public static IDictionary<string, bool> Item = new Dictionary<string, bool>();
     private void Awake()
     {
-        Application.targetFrameRate = 60;
-
         DontDestroyOnLoad(this);
+        Application.targetFrameRate = 60;
         //辞書にキーを設定
         if (Item.ContainsKey("healdrink") == false)
         {
-            Item.Add("none", false);//空のキーを設定（アイテムがないとき）
+            Item.Add("none", false);//空のキーを設定（アイテムがないときの状態）
             //アイテムをItem辞書に登録
             Item.Add("healdrink", false);
             Item.Add("bowlingball", false);
@@ -25,10 +24,8 @@ public class Item_Manager : MonoBehaviour
             Item.Add("hourglass", false);
         }
     }
-
     public void Start()
     {
        
     }
-
 }

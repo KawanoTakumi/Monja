@@ -11,12 +11,7 @@ public class ChangeScene : MonoBehaviour
     public void Start()
     {
         shop = GetComponent<Shop_manager>();
-    }
-    public void Update()
-    {
-        
-    }
-
+    } 
     //ƒV[ƒ“‚ğ“Ç‚İ‚Ş
     public void Load()
     {
@@ -45,5 +40,12 @@ public class ChangeScene : MonoBehaviour
         Item_Manager.Item["cd"] = false;
         Item_Manager.Item["radio"] = false;
         Item_Manager.Item["hourglass"] = false;
+    }
+
+    public void Item_num_Recet()
+    {
+        Shop_manager.tmp_1 = -1;
+        Shop_manager.tmp_2 = -1;
+        Shop_manager.tmp_3 = -1;
     }
 }

@@ -115,6 +115,7 @@ public class Enemy_controller : MonoBehaviour
         }
         void Defence()
         {
+            animator.SetBool("Guard", true);
             Enemy_deffence += deffence;
         }
 

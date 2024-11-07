@@ -10,13 +10,10 @@ public class Item_Library : MonoBehaviour
     int ItemValue1 = 25;
     int ItemValue2 = 30;
     int ItemValue3 = 35;
+    //取得フラグ
     public bool GetFlag1 = false;
     public bool GetFlag2 = false;
     public bool GetFlag3= false;
-    //int Item_Check;
-    //int Item_number1;
-    //int Item_number2;
-    //int Item_number3;
     public bool Flag_1 = false;
     public bool Flag_2 = false;
     public bool Flag_3 = false;
@@ -26,16 +23,10 @@ public class Item_Library : MonoBehaviour
 
 
     Shop_manager shop_manager;
-    
-    GameObject obj;
-
     void Start()
     {
-        //tagからvalueを取得
-
-
         GameObject obj = GameObject.Find("shopmanager");
-        shop_manager = obj.GetComponent<Shop_manager>();
+        shop_manager = obj.GetComponent<Shop_manager>();//ショップマネージャーを取得
 
     }
 
@@ -60,21 +51,19 @@ public class Item_Library : MonoBehaviour
                     money -= ItemValue1;
                 }
             }
-
             PlayerController.Money = money;//Player側の数も減らす
             Debug.Log(money);
             GetFlag1 = true;
         }
         else if (GetFlag1 == true)
         {
-            textbox.text = "すでに持っています。";
+            textbox.text = "そのアイテムはすでに持っています。";
         }
         else if (money - ItemValue1 < 0)
         {
             Debug.Log(money);
             textbox.text = "お金が足りません。";
         }
-
     }
 
     public void Buy2()
@@ -102,7 +91,6 @@ public class Item_Library : MonoBehaviour
             Debug.Log(money);
             textbox.text = "お金が足りません。";
         }
-
     }
     public void Buy3()
     {
@@ -129,6 +117,5 @@ public class Item_Library : MonoBehaviour
             Debug.Log(money);
             textbox.text = "お金が足りません。";
         }
-
     }
 }

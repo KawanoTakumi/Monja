@@ -63,7 +63,7 @@ public class Item_Power : MonoBehaviour
             {
                 playercontroller.Diffence += 10;//毎ターン防御力10上昇
                 PlayerController.HP -= 5;//体力を5減らす
-                log_text.text = ("ラジオの効果で-5HP");
+                log_text.text = "ラジオの効果で-5HP";
                 turn_compare = Enemy_controller.turn;
             }
         }
@@ -73,7 +73,7 @@ public class Item_Power : MonoBehaviour
             {
                 playercontroller.Attack += 10;//毎ターン攻撃力10上昇
                 PlayerController.HP -= 5;//体力を5減らす
-                log_text.text = ("砂時計の効果で-5HP");
+                log_text.text = "砂時計の効果で-5HP";
                 turn_compare = Enemy_controller.turn;//次のターンまで発動しないようにする
             }
         }

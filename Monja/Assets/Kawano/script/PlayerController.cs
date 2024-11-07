@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
 
     turn_manager turn_Manager;
     Animator animator;//プレイヤーアニメーター
-    Damage_calculate damage_Calculate;
+    Damage_calculate damage_Calculate;//ダメージサーキュレーター
     Enemy_controller enemy_Controller;
     GameObject Enemey;
     public ChangeScene change;//チェンジシーン
@@ -37,7 +37,7 @@ public class PlayerController : MonoBehaviour
     public Button Magic_;
     public Button Heal_;
 
-    public Text Log;
+    public Text Log;//テキストログ
     // Start is called before the first frame update
     void Start()
     {
@@ -117,12 +117,11 @@ public class PlayerController : MonoBehaviour
             else if (player_luck == max_luck - 1)
             {
                 Attack_damage = Attack + Attack / 2;
-                Debug.Log("主人公クリティカル");
+                Log.text = ("主人公クリティカル");
             }
 
             Attack_damage = Attack;
             damage_Calculate.Enemey_Damage_Calculate(Attack_damage, enemy_Controller.Enemy_deffence);
-
         }
     }
     public void concentration()

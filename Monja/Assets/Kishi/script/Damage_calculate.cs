@@ -69,13 +69,12 @@ public class Damage_calculate : MonoBehaviour
         int result;
         //数値が0以下になったら0にする
         result = attack - diffence;
-        Debug.Log("ダメージ" + result);
         if (result < 0)
         {
             result = 0;
         }
         Enemy_controller.HP -= result;
+        Log.text = ("敵に" + result + "ダメージ");
         Enemy_animator.SetBool("Damage", true);
-        Log.text = ("敵に" +result+"ダメージ");
     }
 }
