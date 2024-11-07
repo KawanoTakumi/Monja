@@ -36,7 +36,7 @@ public class Item_text : MonoBehaviour
         }
         else if (button == CompareTag("healdrink"))
         {
-            text.text = "LIFE\nジュース缶ジュース。\n体力を２５％回復する";
+            text.text = "LIFE\nジュース缶ジュース。\n[消費アイテム] \n体力を２５％回復する";
         }
         else if (button == CompareTag("hourglass"))
         {
