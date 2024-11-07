@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Enemy_controller : MonoBehaviour
 {
@@ -26,7 +27,7 @@ public class Enemy_controller : MonoBehaviour
     bool Enemy_Skelton;
     public static int turn = 1;//ターン
     int turn_time = 0;
-    //int animation_time = 0;
+    public Text Log;
 
 
     // Start is called before the first frame update
@@ -70,9 +71,9 @@ public class Enemy_controller : MonoBehaviour
 
 
             turn_time++;
-            if (turn_time >= 90)
+            if (turn_time >= 120)
             {
-                Debug.Log("敵ターン終了");
+                Log.text = ("敵ターン終了");
                 Debug.Log("主人公体力" + PlayerController.HP);
                 turn += 1;
                 playerController.Attack_.interactable = true;
@@ -82,6 +83,7 @@ public class Enemy_controller : MonoBehaviour
 
 
                 turn_Manager.turn = true;
+                Log.text = ("プレイヤーのターン");
                 //時間の初期化
                 turn_time = 0;
                 
@@ -98,10 +100,8 @@ public class Enemy_controller : MonoBehaviour
         }
         void Attack()
         {
-            if(turn_time >= 25)
-            {
-                animator.SetBool("Attack", true);
-            }
+            animator.SetBool("Attack", true);
+            Log.text = ("敵の攻撃");
             Enemy_luck = Random.Range(1, 11);
             if (Enemy_luck <= 9)
             {
@@ -110,7 +110,7 @@ public class Enemy_controller : MonoBehaviour
             else if (Enemy_luck == 10)
             {
                 Enemy_attack = attack + attack/2;
-                Debug.Log("クリティカル");
+                Log.text = ("敵クリティカル発生");
             }
         }
         void Defence()
@@ -120,7 +120,6 @@ public class Enemy_controller : MonoBehaviour
 
         void Skelton()
         {
-            Debug.Log("敵の攻撃");
             Enemy_act = Random.Range(1, 4);//1～3まで
             switch (Enemy_act)
             {
@@ -134,6 +133,7 @@ public class Enemy_controller : MonoBehaviour
                     break;
                 case 3:
                     Defence();
+                    Log.text = ("敵は防御した");
                     Enemy_deffence = deffence;
                     break;
             }
@@ -143,5 +143,9 @@ public class Enemy_controller : MonoBehaviour
     public void Anim_Reset(string anim_tag)
     {
         animator.SetBool(anim_tag, false);
+    }
+    public void Turn_Flag()
+    {
+        turn_Manager.turn = false;
     }
 }

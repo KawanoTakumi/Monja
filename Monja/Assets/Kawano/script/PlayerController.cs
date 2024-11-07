@@ -22,10 +22,9 @@ public class PlayerController : MonoBehaviour
     public int money;//一時確認用（あとで消す）
     public int player_luck;
     public int max_luck;
-    
+
     turn_manager turn_Manager;
     Animator animator;//プレイヤーアニメーター
-    public Animator Magic_Anim;//マジックアニメーションアニメーター
     Damage_calculate damage_Calculate;
     Enemy_controller enemy_Controller;
     GameObject Enemey;
@@ -61,7 +60,7 @@ public class PlayerController : MonoBehaviour
         {
             HP = 100;
             MP = 100;
-            Item_reset();
+            Item_Reset();
             Enemy_controller.turn = 0;
             Enemy_controller.HP = 150;
             SceneManager.LoadScene("Lose");
@@ -195,7 +194,6 @@ public class PlayerController : MonoBehaviour
                 if (HP > HP_max)
                 {
                     HP = HP_max;
-                    animator.SetBool("heal", false);
                 }
                 Log.text = ("主人公は回復した");
                 intaract_true();
@@ -227,8 +225,7 @@ public class PlayerController : MonoBehaviour
         Heal_.interactable = true;
         Concentlation_.interactable = true;
     }
-
-    public void Item_reset()
+    public void Item_Reset()
     {
         Item_Manager.Item["healdrink"] = false;
         Item_Manager.Item["bowlingball"] = false;
@@ -236,11 +233,14 @@ public class PlayerController : MonoBehaviour
         Item_Manager.Item["cd"] = false;
         Item_Manager.Item["radio"] = false;
         Item_Manager.Item["hourglass"] = false;
+
     }
     //アニメーションリセット（boolのみ）
     public void Anim_Reset(string anim_tag)
     {
         animator.SetBool(anim_tag, false);
+        if(anim_tag != "heal")
         turn_Manager.turn = false;
     }
+
 }

@@ -39,5 +39,11 @@ public class ChangeScene : MonoBehaviour
     public void Player_Reset()
     {
         PlayerController.HP = PlayerController.HP_max;
+        Item_Manager.Item["healdrink"] = false;
+        Item_Manager.Item["bowlingball"] = false;
+        Item_Manager.Item["CDplayer"] = false;
+        Item_Manager.Item["cd"] = false;
+        Item_Manager.Item["radio"] = false;
+        Item_Manager.Item["hourglass"] = false;
     }
 }

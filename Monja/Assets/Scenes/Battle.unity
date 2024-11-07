@@ -1869,7 +1869,6 @@ MonoBehaviour:
   money: 0
   player_luck: 0
   max_luck: 5
-  Magic_Anim: {fileID: 0}
   change: {fileID: 754146519}
   Attack_: {fileID: 889787176}
   Concentlation_: {fileID: 1656728079}
@@ -3757,6 +3756,7 @@ MonoBehaviour:
   money: 50
   Enemy_attack: 0
   Enemy_deffence: 5
+  Log: {fileID: 1265022589}
 --- !u!114 &2097196024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3769,7 +3769,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efc003b51a2a0c340ab4c10574e6801b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Log: {fileID: 0}
+  Log: {fileID: 1265022589}
 --- !u!95 &2097196025
 Animator:
   serializedVersion: 5
