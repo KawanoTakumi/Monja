@@ -79,8 +79,8 @@ public class Item_Power : MonoBehaviour
         }
         if(healdrink_flag == true)
         {
-            playercontroller.HP_Potion += 1;
-            Item_Manager.Item["healdrink"] = false;
+            PlayerController.HP_Potion += 1;
+            Item_Manager.Item["healdrink"] = false;//ヒールドリンクは何個でも持てるためフラグをfalse
             healdrink_flag = false;
         }
     }

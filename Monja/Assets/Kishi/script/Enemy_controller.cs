@@ -48,8 +48,7 @@ public class Enemy_controller : MonoBehaviour
         GameObject.FindWithTag("medhusa");
         GameObject.FindWithTag("sinigami");
         
-
-
+        //タグの比較
         if (CompareTag("skelton") == true)
         {
             Enemy_Skelton = true;
@@ -149,52 +148,23 @@ public class Enemy_controller : MonoBehaviour
             Enemy_deffence += deffence;
         }
 
-        void Magic()
-        {
-            Log.text = ("敵の魔法攻撃");
-            int magic_cnt = 0;
-            if(magic_cnt<3)
-            {
-                Enemy_Magic = magic;
-            }
-            else if(magic_cnt == 3)
-            {
-                Enemy_Magic = Enemy_Magic + magic;
-            }
-           
-        }
-        void sinigami_attack()
-        {
-            animator.SetBool("Attack", true);
-            Log.text = ("敵の攻撃");
-            Enemy_luck = Random.Range(1, 51);
-            if (Enemy_luck <=49)
-            {
-                Enemy_attack = attack;
-            }
-            else if (Enemy_luck == 50)
-            {
-                Enemy_attack = attack *666;
-                Log.text = ("死神クリティカル発生");
-                Debug.Log(Enemy_attack + "被ダメージ");
-            }
-        }
-        void medhusa_magic()
-        {
-            Log.text = ("敵の魔法攻撃");
-            Enemy_luck = Random.Range(1, 6);
-            if (Enemy_luck <= 4)
-            {
-                Enemy_Magic = magic;
-            }
-            else if (Enemy_luck == 5)
-            {
-                Enemy_Magic = 0;
-                poison = true;
-                Log.text = ("メデューサ毒発動");
-            }
-        }
+        //一旦使わないのでコメントアウト
+        
+        //void Magic()
+        //{
+        //    Log.text = ("敵の魔法攻撃");
+        //    int magic_cnt = 0;
+        //    if(magic_cnt<3)
+        //    {
+        //        Enemy_Magic = magic;
+        //    }
+        //    else if(magic_cnt == 3)
+        //    {
+        //        Enemy_Magic = Enemy_Magic + magic;
+        //    }
+        //}
 
+        //スケルトン
         void Skelton()
         {
             Enemy_act = Random.Range(1, 4);//1～3まで
@@ -216,6 +186,7 @@ public class Enemy_controller : MonoBehaviour
             }
         }
 
+        //メデューサ
         void Medhusa()
         {
             Enemy_act = Random.Range(1, 5);//1～4まで
@@ -241,7 +212,23 @@ public class Enemy_controller : MonoBehaviour
                     break;
             }
         }
+        void medhusa_magic()
+        {
+            Log.text = ("敵の魔法攻撃");
+            Enemy_luck = Random.Range(1, 6);
+            if (Enemy_luck <= 4)
+            {
+                Enemy_Magic = magic;
+            }
+            else if (Enemy_luck == 5)
+            {
+                Enemy_Magic = 0;
+                poison = true;
+                Log.text = ("メデューサ毒発動");
+            }
+        }
 
+        //死神
         void Sinigami()
         {
             Enemy_act = Random.Range(1, 5);//1～4まで
@@ -267,8 +254,25 @@ public class Enemy_controller : MonoBehaviour
                     break;
             }
         }
+        void sinigami_attack()
+        {
+            animator.SetBool("Attack", true);
+            Log.text = ("敵の攻撃");
+            Enemy_luck = Random.Range(1, 51);
+            if (Enemy_luck <= 49)
+            {
+                Enemy_attack = attack;
+            }
+            else if (Enemy_luck == 50)
+            {
+                Enemy_attack = attack * 666;
+                Log.text = ("死神クリティカル発生");
+                Debug.Log(Enemy_attack + "被ダメージ");
+            }
+        }
+
     }
-    
+
     //アニメーション終了用関数(bool型のみ)
     public void Anim_Reset(string anim_tag)
     {

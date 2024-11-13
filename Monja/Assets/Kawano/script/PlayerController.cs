@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
     public int Magic_Diffence;//魔法防御力
     public int Attack_damage;//攻撃力(計算後)
     public int Magic_damage;//魔法力(計算後)
-    public int HP_Potion;//HPポーションの数
+    public static int HP_Potion;//HPポーションの数
     public static int Money;//所持金額 //別のシーンでも呼ばれる
     public int money;//一時確認用（あとで消す）
     public int player_luck;
@@ -71,8 +71,7 @@ public class PlayerController : MonoBehaviour
             Enemy_controller.turn = 0;
             Enemy_controller.HP = 150;
             SceneManager.LoadScene("Lose");
-            ChangeScene.scene_cnt = 0;
-            ChangeScene.Boss_Number = 0;
+            ChangeScene.scene_cnt = 1;//最初のシーンがcase :1
         }
 
         //ステータス9999上限

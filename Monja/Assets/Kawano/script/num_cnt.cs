@@ -13,6 +13,7 @@ public class num_cnt : MonoBehaviour
     public Text magic_diffence_Text;//魔法防御力
     public Text turn_Text;//ターン数
     public Text player_money;//所持金額
+    public Text Heal_drink_num;//ヒールドリンクの所持数
     // Start is called before the first frame update
     void Start()
     {
@@ -29,5 +30,6 @@ public class num_cnt : MonoBehaviour
         magic_diffence_Text.text = string.Format("{0}",player.Magic_Diffence);
         turn_Text.text = string.Format("{0}", Enemy_controller.turn);
         player_money.text = string.Format("{0}", PlayerController.Money);
+        Heal_drink_num.text = string.Format("{0}", PlayerController.HP_Potion);
     }
 }
