@@ -67,9 +67,12 @@ public class PlayerController : MonoBehaviour
             HP = 100;
             MP = 100;
             Item_Reset();
+            //各種数値を初期化
             Enemy_controller.turn = 0;
             Enemy_controller.HP = 150;
             SceneManager.LoadScene("Lose");
+            ChangeScene.scene_cnt = 0;
+            ChangeScene.Boss_Number = 0;
         }
 
         //ステータス9999上限
@@ -204,7 +207,7 @@ public class PlayerController : MonoBehaviour
                 //Debug.Log("回復");
                 animator.SetBool("heal", true);
                 HP_Potion -= 1;
-                HP += HP_max / 4;
+                HP += HP_max / 2;
                 
                 if (HP > HP_max)
                 {

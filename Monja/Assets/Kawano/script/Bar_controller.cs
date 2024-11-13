@@ -25,5 +25,6 @@ public class Bar_controller : MonoBehaviour
         HP_Bar.value = PlayerController.HP;
         MP_Bar.value = PlayerController.MP;
         Enemy_HP_Bar.value = Enemy_controller.HP;
+        Enemy_HP_Bar.maxValue = Enemy_controller.HP_MAX;
     }
 }

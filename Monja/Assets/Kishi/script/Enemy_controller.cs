@@ -152,17 +152,16 @@ public class Enemy_controller : MonoBehaviour
         void Magic()
         {
             Log.text = ("敵の魔法攻撃");
-            Enemy_luck = Random.Range(1, 11);
-            if (Enemy_luck <= 9)
+            int magic_cnt = 0;
+            if(magic_cnt<3)
             {
                 Enemy_Magic = magic;
             }
-            else if (Enemy_luck == 10)
+            else if(magic_cnt == 3)
             {
-                Enemy_Magic = 0;
-                poison = true;
-                Log.text = ("メデューサ毒発動");
+                Enemy_Magic = Enemy_Magic + magic;
             }
+           
         }
         void sinigami_attack()
         {
@@ -178,6 +177,21 @@ public class Enemy_controller : MonoBehaviour
                 Enemy_attack = attack *666;
                 Log.text = ("死神クリティカル発生");
                 Debug.Log(Enemy_attack + "被ダメージ");
+            }
+        }
+        void medhusa_magic()
+        {
+            Log.text = ("敵の魔法攻撃");
+            Enemy_luck = Random.Range(1, 6);
+            if (Enemy_luck <= 4)
+            {
+                Enemy_Magic = magic;
+            }
+            else if (Enemy_luck == 5)
+            {
+                Enemy_Magic = 0;
+                poison = true;
+                Log.text = ("メデューサ毒発動");
             }
         }
 
@@ -208,11 +222,11 @@ public class Enemy_controller : MonoBehaviour
             switch (Enemy_act)
             {
                 case 1:
-                    Magic();
+                    medhusa_magic();
                     damage_Calculate.Player_Damage_Calculate(Enemy_Magic, playerController.Magic_Diffence);
                     break;
                 case 2:
-                    Magic();
+                    medhusa_magic();
                     damage_Calculate.Player_Damage_Calculate(Enemy_Magic, playerController.Magic_Diffence);
                     break;
                 case 3:
