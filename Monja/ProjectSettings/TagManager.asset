@@ -14,6 +14,7 @@ TagManager:
   - hourglass
   - ono
   - none
+  - medhusa
   layers:
   - Default
   - TransparentFX

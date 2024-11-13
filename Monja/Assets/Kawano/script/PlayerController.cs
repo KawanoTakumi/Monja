@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     public int money;//一時確認用（あとで消す）
     public int player_luck;
     public int max_luck;
+    int poison_cnt;
 
     turn_manager turn_Manager;
     Animator animator;//プレイヤーアニメーター
@@ -55,6 +56,11 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(enemy_Controller.poison == true)
+        {
+            poison_cnt += 5;
+            enemy_Controller.poison = false;
+        }
         //敗北
         if(HP <= 0)
         {
@@ -140,6 +146,11 @@ public class PlayerController : MonoBehaviour
                 {
                     MP = MP_max;
                 }
+                if(poison_cnt > 0)
+                {
+                    HP -= 5;
+                    poison_cnt -= 1;
+                }
                 turn_Manager.turn = false;
             }
             else
@@ -166,6 +177,11 @@ public class PlayerController : MonoBehaviour
                 if (turn_time > 60)
                 {
                     turn_time = 0;
+                    if (poison_cnt > 0)
+                    {
+                        HP -= 5;
+                        poison_cnt -= 1;
+                    }
                     turn_Manager.turn = false;
                 }
             }
@@ -239,6 +255,11 @@ public class PlayerController : MonoBehaviour
     {
         animator.SetBool(anim_tag, false);
         if(anim_tag != "heal")
+            if (poison_cnt > 0)
+            {
+                HP -= 5;
+                poison_cnt -= 1;
+            }
         turn_Manager.turn = false;
     }
 

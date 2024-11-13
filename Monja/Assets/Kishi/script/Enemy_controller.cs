@@ -22,12 +22,15 @@ public class Enemy_controller : MonoBehaviour
     Animator animator;
     public int Enemy_attack;//UŒ‚—Í(ŒvZŒã)
     public int Enemy_deffence;//–hŒä—Í(ŒvZŒã)
+    public int Enemy_Magic;//–‚–@UŒ‚—Í(ŒvZŒã)
     int Enemy_act = 0;
     int Enemy_luck = 0;
     bool Enemy_Skelton;
+    bool Boss_Medhusa;
     public static int turn = 1;//ƒ^[ƒ“
     int turn_time = 0;
     public Text Log;
+    public bool poison;
 
 
     // Start is called before the first frame update
@@ -39,10 +42,20 @@ public class Enemy_controller : MonoBehaviour
         turn_Manager = obj.GetComponent<turn_manager>();
         damage_Calculate = GetComponent<Damage_calculate>();
         animator = GetComponent<Animator>();
-        GameObject skelton = GameObject.FindWithTag("skelton");
-        if(CompareTag("skelton") == true)
+         GameObject.FindWithTag("skelton");
+        GameObject.FindWithTag("medhusa");
+
+        if (CompareTag("skelton") == true)
         {
             Enemy_Skelton = true;
+            HP = 100;
+            HP_MAX = 100;
+        }
+       else if(CompareTag("medhusa")==true)
+        {
+            Boss_Medhusa = true;
+            HP = 500;
+            HP_MAX = 500;
         }
     }
 
@@ -68,9 +81,11 @@ public class Enemy_controller : MonoBehaviour
             {
                 Skelton();
             }
-
-
-            turn_time++;
+            else if (Boss_Medhusa == true && turn_time == 35) //“G@ƒƒfƒ…[ƒTiƒ{ƒXj
+            {
+                Medhusa();
+            }
+                turn_time++;
             if (turn_time >= 120)
             {
                 Log.text = ("“Gƒ^[ƒ“I—¹");
@@ -119,6 +134,22 @@ public class Enemy_controller : MonoBehaviour
             Enemy_deffence += deffence;
         }
 
+        void Magic()
+        {
+            Log.text = ("“G‚Ì–‚–@UŒ‚");
+            Enemy_luck = Random.Range(1, 11);
+            if (Enemy_luck <= 9)
+            {
+                Enemy_Magic = magic;
+            }
+            else if (Enemy_luck == 10)
+            {
+                Enemy_Magic = 0;
+                poison = true;
+                Log.text = ("ƒƒfƒ…[ƒT“Å”­“®");
+            }
+        }
+
         void Skelton()
         {
             Enemy_act = Random.Range(1, 4);//1`3‚Ü‚Å
@@ -126,11 +157,11 @@ public class Enemy_controller : MonoBehaviour
             {
                 case 1:
                     Attack();
-                    damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Diffence);
+                    damage_Calculate.Player_Damage_Calculate(Enemy_Magic, playerController.Magic_Diffence);
                     break;
                 case 2:
                     Attack();
-                    damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Diffence);
+                    damage_Calculate.Player_Damage_Calculate(Enemy_Magic, playerController.Magic_Diffence);
                     break;
                 case 3:
                     Defence();
@@ -139,7 +170,34 @@ public class Enemy_controller : MonoBehaviour
                     break;
             }
         }
+
+        void Medhusa()
+        {
+            Enemy_act = Random.Range(1, 5);//1`4‚Ü‚Å
+            switch (Enemy_act)
+            {
+                case 1:
+                    Magic();
+                    damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Diffence);
+                    break;
+                case 2:
+                    Magic();
+                    damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Diffence);
+                    break;
+                case 3:
+                    Defence();
+                    Log.text = ("“G‚Í–hŒä‚µ‚½");
+                    Enemy_deffence = deffence;
+                    break;
+                case 4:
+                    Defence();
+                    Log.text = ("“G‚Í–hŒä‚µ‚½");
+                    Enemy_deffence = deffence;
+                    break;
+            }
+        }
     }
+    
     //ƒAƒjƒ[ƒVƒ‡ƒ“I—¹—pŠÖ”(boolŒ^‚Ì‚İ)
     public void Anim_Reset(string anim_tag)
     {
