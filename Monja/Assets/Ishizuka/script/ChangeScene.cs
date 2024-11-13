@@ -8,6 +8,9 @@ public class ChangeScene : MonoBehaviour
     public string sceneName;//切り替えるシーンの名前を入れる
     public Shop_manager shop;
     public static bool Scene_Change = false;
+    public static int Boss_Number = 0;
+    int Boss_Scene_Number;
+    public static int scene_cnt = 0;
     public void Start()
     {
         shop = GetComponent<Shop_manager>();
@@ -15,7 +18,7 @@ public class ChangeScene : MonoBehaviour
     //シーンを読み込む
     public void Load()
     {
-        if(Scene_Change == false)
+        if (Scene_Change == false)
         {
             SceneManager.LoadScene(sceneName);
         }
@@ -29,6 +32,22 @@ public class ChangeScene : MonoBehaviour
     public void change_scene()
     {
         Scene_Change = true;
+    }
+     public void Boss_Change_Scene()
+    {
+        if(scene_cnt >= 1)
+        {
+            //シーンカウントが３の時ボスシーンが呼び出される
+            Boss_Number++;
+            Boss_Scene_Number = Boss_Number;
+            Debug.Log(Boss_Scene_Number);
+            scene_cnt = 0;
+            //ボスのシーン
+            switch (Boss_Scene_Number)
+            {
+                case 1: SceneManager.LoadScene("Boss_Battle_01"); break;
+            }
+        }
     }
     //shopからtitleに戻る時に使用
     public void Player_Reset()
@@ -47,5 +66,9 @@ public class ChangeScene : MonoBehaviour
         Shop_manager.tmp_1 = -1;
         Shop_manager.tmp_2 = -1;
         Shop_manager.tmp_3 = -1;
+    }
+    public void Scene_Cnt()
+    {
+        scene_cnt++;
     }
 }
