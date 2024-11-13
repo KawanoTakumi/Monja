@@ -27,6 +27,7 @@ public class Enemy_controller : MonoBehaviour
     int Enemy_luck = 0;
     bool Enemy_Skelton;
     bool Boss_Medhusa;
+    bool Boss_sinigami;
     public static int turn = 1;//ターン
     int turn_time = 0;
     public Text Log;
@@ -44,6 +45,9 @@ public class Enemy_controller : MonoBehaviour
         animator = GetComponent<Animator>();
          GameObject.FindWithTag("skelton");
         GameObject.FindWithTag("medhusa");
+        GameObject.FindWithTag("sinigami");
+        
+
 
         if (CompareTag("skelton") == true)
         {
@@ -57,12 +61,18 @@ public class Enemy_controller : MonoBehaviour
             HP = 500;
             HP_MAX = 500;
         }
+        else if (CompareTag("sinigami") == true)
+        {
+            Boss_sinigami = true;
+            HP = 500;
+            HP_MAX = 500;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+       
         if (turn_Manager.turn == false)
         {
             //EnemyAttackを初期化
@@ -85,7 +95,11 @@ public class Enemy_controller : MonoBehaviour
             {
                 Medhusa();
             }
-                turn_time++;
+            else if (Boss_sinigami == true && turn_time == 35) //敵　メデューサ（ボス）
+            {
+                Sinigami();
+            }
+            turn_time++;
             if (turn_time >= 120)
             {
                 Log.text = ("敵ターン終了");
@@ -149,6 +163,22 @@ public class Enemy_controller : MonoBehaviour
                 Log.text = ("メデューサ毒発動");
             }
         }
+        void sinigami_attack()
+        {
+            animator.SetBool("Attack", true);
+            Log.text = ("敵の攻撃");
+            Enemy_luck = Random.Range(1, 51);
+            if (Enemy_luck <=49)
+            {
+                Enemy_attack = attack;
+            }
+            else if (Enemy_luck == 50)
+            {
+                Enemy_attack = attack *666;
+                Log.text = ("死神クリティカル発生");
+                Debug.Log(Enemy_attack + "被ダメージ");
+            }
+        }
 
         void Skelton()
         {
@@ -157,11 +187,11 @@ public class Enemy_controller : MonoBehaviour
             {
                 case 1:
                     Attack();
-                    damage_Calculate.Player_Damage_Calculate(Enemy_Magic, playerController.Magic_Diffence);
+                    damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Diffence);
                     break;
                 case 2:
                     Attack();
-                    damage_Calculate.Player_Damage_Calculate(Enemy_Magic, playerController.Magic_Diffence);
+                    damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Diffence);
                     break;
                 case 3:
                     Defence();
@@ -178,14 +208,40 @@ public class Enemy_controller : MonoBehaviour
             {
                 case 1:
                     Magic();
-                    damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Diffence);
+                    damage_Calculate.Player_Damage_Calculate(Enemy_Magic, playerController.Magic_Diffence);
                     break;
                 case 2:
                     Magic();
-                    damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Diffence);
+                    damage_Calculate.Player_Damage_Calculate(Enemy_Magic, playerController.Magic_Diffence);
                     break;
                 case 3:
                     Defence();
+                    Log.text = ("敵は防御した");
+                    Enemy_deffence = deffence;
+                    break;
+                case 4:
+                    Defence();
+                    Log.text = ("敵は防御した");
+                    Enemy_deffence = deffence;
+                    break;
+            }
+        }
+
+        void Sinigami()
+        {
+            Enemy_act = Random.Range(1, 5);//1～4まで
+            switch (Enemy_act)
+            {
+                case 1:
+                    sinigami_attack();
+                    damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Diffence);
+                    break;
+                case 2:
+                    Attack();
+                    damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Diffence);
+                    break;
+                case 3:
+                    Attack();
                     Log.text = ("敵は防御した");
                     Enemy_deffence = deffence;
                     break;
