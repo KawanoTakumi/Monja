@@ -16,12 +16,24 @@ public class Item_Manager : MonoBehaviour
         {
             Item.Add("none", false);//空のキーを設定（アイテムがないときの状態）
             //アイテムをItem辞書に登録
-            Item.Add("healdrink", false);
-            Item.Add("bowlingball", false);
-            Item.Add("CDplayer", false);
-            Item.Add("cd", false);
-            Item.Add("radio", false);
-            Item.Add("hourglass", false);
+            Item.Add("healdrink", false);//0
+            Item.Add("bowlingball", false);//1
+            Item.Add("CDplayer", false);//2
+            Item.Add("cd", false);//3
+            Item.Add("radio", false);//4
+            Item.Add("hourglass", false);//5
+
+            Item.Add("kesigomu", false);//6
+            Item.Add("TV", false);//7
+            Item.Add("CreditCard", false);//8
+            Item.Add("Mouse", false);//9
+            Item.Add("HandMirror", false);//10
+            Item.Add("bowlingpin", false);//11
+            Item.Add("baseball_ball", false);//12
+            Item.Add("dice", false);//13
+            Item.Add("dice", false);//14
+            Item.Add("dice", false);//15
+            Item.Add("dice", false);//16
         }
     }
     public void Start()
