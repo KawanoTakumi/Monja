@@ -51,6 +51,9 @@ public class ChangeScene : MonoBehaviour
             case 4: SceneManager.LoadScene("Battle"); break;//バトル４
             case 5: SceneManager.LoadScene("Battle"); break;//バトル５
             case 6: SceneManager.LoadScene("Boss_Battle_02"); break;//メデューサ バトル６
+            case 7: SceneManager.LoadScene("Battle"); break;//バトル７
+            case 8: SceneManager.LoadScene("Battle"); break;//バトル８
+            case 9: SceneManager.LoadScene("Boss_Battle_03"); break;//ドラゴン バトル９
         }
     }
     //shopからtitleに戻る時に使用
