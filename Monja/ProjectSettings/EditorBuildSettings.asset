@@ -12,17 +12,17 @@ EditorBuildSettings:
     path: Assets/Scenes/Title.unity
     guid: f28b16320d0257a4a8c443094b8ae5d8
   - enabled: 1
+    path: Assets/Scenes/Battle.unity
+    guid: df17fec40a1b6924fa547fb7bd88d7c9
+  - enabled: 1
     path: Assets/Scenes/motimono.unity
     guid: f4d0a229996a83b4382836c68073060c
-  - enabled: 1
-    path: Assets/Scenes/Win.unity
-    guid: 77b040bb6201b2140b0fb5f5d09547de
   - enabled: 1
     path: Assets/Scenes/shop.unity
     guid: 67d7c391139addc44955616bcad3cd38
   - enabled: 1
-    path: Assets/Scenes/Battle.unity
-    guid: df17fec40a1b6924fa547fb7bd88d7c9
+    path: Assets/Scenes/Win.unity
+    guid: 77b040bb6201b2140b0fb5f5d09547de
   - enabled: 1
     path: Assets/Scenes/Lose.unity
     guid: 9af6a67bae22500428f7d343eb33a954
@@ -35,4 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Boss_Battle_02.unity
     guid: e393bb96ffca04540a8b032a1f91421f
+  - enabled: 1
+    path: Assets/Scenes/Boss_Battle_03.unity
+    guid: 5cfdeff8dc0b47649b828a76013a72da
   m_configObjects: {}

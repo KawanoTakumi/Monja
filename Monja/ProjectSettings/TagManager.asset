@@ -16,6 +16,27 @@ TagManager:
   - none
   - medhusa
   - sinigami
+  - kesigomu
+  - TV
+  - CreditCard
+  - Mouse
+  - HandMirror
+  - bowlingpin
+  - baseball_ball
+  - dice
+  - Water bucket
+  - Popcorn
+  - Apple
+  - Scissors
+  - ice
+  - Pudding
+  - Drill
+  - Headphone
+  - Coffee
+  - Safetycone
+  - USB
+  - UtypeMagnet
+  - Smartphone
   layers:
   - Default
   - TransparentFX
