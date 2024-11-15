@@ -50,5 +50,118 @@ public class Item_text : MonoBehaviour
         {
             text.text = "CDプレーヤー\nCDをセットすることで音楽を聴ける。CDはどこ？\n物理防御力を20上昇させ、物理攻撃力を20減少させる";
         }
+        else if (button == CompareTag(""))
+        {
+            text.text = "CDプレーヤー\nCDをセットすることで音楽を聴ける。CDはどこ？\n物理防御力を20上昇させ、物理攻撃力を20減少させる";
+        }
+        else if (button == CompareTag("CDplayer"))
+        {
+            text.text = "CDプレーヤー\nCDをセットすることで音楽を聴ける。CDはどこ？\n物理防御力を20上昇させ、物理攻撃力を20減少させる";
+        }
+        else if (button == CompareTag("CDplayer"))
+        {
+            text.text = "CDプレーヤー\nCDをセットすることで音楽を聴ける。CDはどこ？\n物理防御力を20上昇させ、物理攻撃力を20減少させる";
+        }
+        else if (button == CompareTag("CDplayer"))
+        {
+            text.text = "CDプレーヤー\nCDをセットすることで音楽を聴ける。CDはどこ？\n物理防御力を20上昇させ、物理攻撃力を20減少させる";
+        }
+        else if (button == CompareTag("CDplayer"))
+        {
+            text.text = "CDプレーヤー\nCDをセットすることで音楽を聴ける。CDはどこ？\n物理防御力を20上昇させ、物理攻撃力を20減少させる";
+        }
+        else if (button == CompareTag("CDplayer"))
+        {
+            text.text = "CDプレーヤー\nCDをセットすることで音楽を聴ける。CDはどこ？\n物理防御力を20上昇させ、物理攻撃力を20減少させる";
+        }
+        else if (button == CompareTag("CDplayer"))
+        {
+            text.text = "CDプレーヤー\nCDをセットすることで音楽を聴ける。CDはどこ？\n物理防御力を20上昇させ、物理攻撃力を20減少させる";
+        }
+        else if (button == CompareTag("CDplayer"))
+        {
+            text.text = "CDプレーヤー\nCDをセットすることで音楽を聴ける。CDはどこ？\n物理防御力を20上昇させ、物理攻撃力を20減少させる";
+        }
+        else if (button == CompareTag("CDplayer"))
+        {
+            text.text = "CDプレーヤー\nCDをセットすることで音楽を聴ける。CDはどこ？\n物理防御力を20上昇させ、物理攻撃力を20減少させる";
+        }
+        else if (button == CompareTag("CDplayer"))
+        {
+            text.text = "CDプレーヤー\nCDをセットすることで音楽を聴ける。CDはどこ？\n物理防御力を20上昇させ、物理攻撃力を20減少させる";
+        }
+        else if (button == CompareTag("CDplayer"))
+        {
+            text.text = "CDプレーヤー\nCDをセットすることで音楽を聴ける。CDはどこ？\n物理防御力を20上昇させ、物理攻撃力を20減少させる";
+        }
+        else if (button == CompareTag("CDplayer"))
+        {
+            text.text = "CDプレーヤー\nCDをセットすることで音楽を聴ける。CDはどこ？\n物理防御力を20上昇させ、物理攻撃力を20減少させる";
+        }
+        else if (button == CompareTag("CDplayer"))
+        {
+            text.text = "CDプレーヤー\nCDをセットすることで音楽を聴ける。CDはどこ？\n物理防御力を20上昇させ、物理攻撃力を20減少させる";
+        }
+        else if (button == CompareTag("CDplayer"))
+        {
+            text.text = "CDプレーヤー\nCDをセットすることで音楽を聴ける。CDはどこ？\n物理防御力を20上昇させ、物理攻撃力を20減少させる";
+        }
+        else if (button == CompareTag("CDplayer"))
+        {
+            text.text = "CDプレーヤー\nCDをセットすることで音楽を聴ける。CDはどこ？\n物理防御力を20上昇させ、物理攻撃力を20減少させる";
+        }
+        else if (button == CompareTag("CDplayer"))
+        {
+            text.text = "CDプレーヤー\nCDをセットすることで音楽を聴ける。CDはどこ？\n物理防御力を20上昇させ、物理攻撃力を20減少させる";
+        }
+        else if (button == CompareTag("CDplayer"))
+        {
+            text.text = "CDプレーヤー\nCDをセットすることで音楽を聴ける。CDはどこ？\n物理防御力を20上昇させ、物理攻撃力を20減少させる";
+        }
+        else if (button == CompareTag("CDplayer"))
+        {
+            text.text = "CDプレーヤー\nCDをセットすることで音楽を聴ける。CDはどこ？\n物理防御力を20上昇させ、物理攻撃力を20減少させる";
+        }
+        else if (button == CompareTag("CDplayer"))
+        {
+            text.text = "CDプレーヤー\nCDをセットすることで音楽を聴ける。CDはどこ？\n物理防御力を20上昇させ、物理攻撃力を20減少させる";
+        }
+        else if (button == CompareTag("CDplayer"))
+        {
+            text.text = "CDプレーヤー\nCDをセットすることで音楽を聴ける。CDはどこ？\n物理防御力を20上昇させ、物理攻撃力を20減少させる";
+        }
+        else if (button == CompareTag("CDplayer"))
+        {
+            text.text = "CDプレーヤー\nCDをセットすることで音楽を聴ける。CDはどこ？\n物理防御力を20上昇させ、物理攻撃力を20減少させる";
+        }
+        else if (button == CompareTag("CDplayer"))
+        {
+            text.text = "CDプレーヤー\nCDをセットすることで音楽を聴ける。CDはどこ？\n物理防御力を20上昇させ、物理攻撃力を20減少させる";
+        }
+        else if (button == CompareTag("CDplayer"))
+        {
+            text.text = "CDプレーヤー\nCDをセットすることで音楽を聴ける。CDはどこ？\n物理防御力を20上昇させ、物理攻撃力を20減少させる";
+        }
+        else if (button == CompareTag("CDplayer"))
+        {
+            text.text = "CDプレーヤー\nCDをセットすることで音楽を聴ける。CDはどこ？\n物理防御力を20上昇させ、物理攻撃力を20減少させる";
+        }
+        else if (button == CompareTag("CDplayer"))
+        {
+            text.text = "CDプレーヤー\nCDをセットすることで音楽を聴ける。CDはどこ？\n物理防御力を20上昇させ、物理攻撃力を20減少させる";
+        }
+        else if (button == CompareTag("CDplayer"))
+        {
+            text.text = "CDプレーヤー\nCDをセットすることで音楽を聴ける。CDはどこ？\n物理防御力を20上昇させ、物理攻撃力を20減少させる";
+        }
+        else if (button == CompareTag("CDplayer"))
+        {
+            text.text = "CDプレーヤー\nCDをセットすることで音楽を聴ける。CDはどこ？\n物理防御力を20上昇させ、物理攻撃力を20減少させる";
+        }
+        else if (button == CompareTag("CDplayer"))
+        {
+            text.text = "CDプレーヤー\nCDをセットすることで音楽を聴ける。CDはどこ？\n物理防御力を20上昇させ、物理攻撃力を20減少させる";
+        }
+
     }
 }

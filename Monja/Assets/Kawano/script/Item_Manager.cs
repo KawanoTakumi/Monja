@@ -31,9 +31,24 @@ public class Item_Manager : MonoBehaviour
             Item.Add("bowlingpin", false);//11
             Item.Add("baseball_ball", false);//12
             Item.Add("dice", false);//13
-            Item.Add("dice", false);//14
-            Item.Add("dice", false);//15
-            Item.Add("dice", false);//16
+            Item.Add("Water bucket", false);//14
+            Item.Add("Popcorn", false);//15
+            Item.Add("Apple", false);//16
+            Item.Add("Scissors", false);//17
+            Item.Add("ice", false);//18
+            Item.Add("Pudding", false);//19
+            Item.Add("Drill", false);//20
+            Item.Add("Headphone", false);//21
+            Item.Add("Coffee", false);//22
+            Item.Add("Safetycone", false);//23
+            Item.Add("USB", false);//24
+            Item.Add("UtypeMagnet", false);//25
+            Item.Add("Smartphone", false);//26
+            Item.Add("ItypeMagnet", false);//27
+            Item.Add("Magnifying Speculum", false);//28
+            Item.Add("Mike", false);//29
+            Item.Add("Megaphone", false);//30
+            Item.Add("HandMill", false);//31
         }
     }
     public void Start()

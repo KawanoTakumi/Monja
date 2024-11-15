@@ -37,6 +37,12 @@ TagManager:
   - USB
   - UtypeMagnet
   - Smartphone
+  - ItypeMagnet
+  - Magnifying Speculum
+  - Mike
+  - Megaphone
+  - HandMill
+  - Magnet
   layers:
   - Default
   - TransparentFX
