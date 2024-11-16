@@ -24,6 +24,11 @@ public class PlayerController : MonoBehaviour
     public int max_luck;
     int poison_cnt;
 
+    public GameObject[] Effect;//エフェクト用
+    GameObject obj_player;
+    [SerializeField] GameObject _parentGameObject;
+
+
     turn_manager turn_Manager;
     Animator animator;//プレイヤーアニメーター
     Damage_calculate damage_Calculate;//ダメージサーキュレーター
@@ -56,6 +61,12 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //エフェクト削除
+        if(turn_Manager.turn == false)
+        {
+            Destroy(obj_player);
+        }
+        //毒ダメージ
         if(enemy_Controller.poison == true)
         {
             poison_cnt += 5;
@@ -172,6 +183,7 @@ public class PlayerController : MonoBehaviour
             {
                 intaract_false();
                 animator.SetBool("magic", true);
+                Create_Effect_Player(0, 5.7f, 0.9f);
                 MP -= 25;
                 Magic_damage = Magic;
                 damage_Calculate.Enemey_Damage_Calculate(Magic_damage, enemy_Controller.magic_Diffence);
@@ -204,7 +216,7 @@ public class PlayerController : MonoBehaviour
             if (HP != HP_max && HP_Potion > 0)
             {
                 //Debug.Log("回復");
-                animator.SetBool("heal", true);
+                Create_Effect_Player(1, -5.1f, 0.1f);
                 HP_Potion -= 1;
                 HP += HP_max / 2;
                 
@@ -264,5 +276,10 @@ public class PlayerController : MonoBehaviour
             }
         turn_Manager.turn = false;
     }
-
+    //エフェクトオブジェクト作成関数
+    public void Create_Effect_Player(int number, float Fx, float Fy)
+    {
+        obj_player = Instantiate(Effect[number], new Vector3(Fx, Fy, 0), Quaternion.identity, _parentGameObject.transform);
+        obj_player.name = "Effect_image_" + number;
+    }
 }

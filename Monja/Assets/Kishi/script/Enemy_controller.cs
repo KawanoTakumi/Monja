@@ -16,6 +16,10 @@ public class Enemy_controller : MonoBehaviour
     public int money;
     public  static int HP_MAX = 100;
 
+    public GameObject[] Effect;//エフェクト用
+    GameObject obj1;
+    [SerializeField] GameObject _parentGameObject;
+
     turn_manager turn_Manager;//turnManager読み込み
     Damage_calculate damage_Calculate;
     PlayerController playerController;
@@ -72,7 +76,10 @@ public class Enemy_controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+        if (turn_Manager.turn == true)
+        {
+            Destroy(obj1);
+        }
         if (turn_Manager.turn == false)
         {
             //EnemyAttackを初期化
@@ -144,7 +151,8 @@ public class Enemy_controller : MonoBehaviour
         }
         void Defence()
         {
-            animator.SetBool("Guard", true);
+            Create_Effect_Enemy(0, 2.3f, 0f);
+            
             Enemy_deffence += deffence;
         }
 
@@ -243,7 +251,7 @@ public class Enemy_controller : MonoBehaviour
                     damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Diffence);
                     break;
                 case 3:
-                    Attack();
+                    Defence();
                     Log.text = ("敵は防御した");
                     Enemy_deffence = deffence;
                     break;
@@ -281,5 +289,15 @@ public class Enemy_controller : MonoBehaviour
     public void Turn_Flag()
     {
         turn_Manager.turn = false;
+    }
+
+    //エフェクトオブジェクト作成関数
+    public void Create_Effect_Enemy(int number, float Fx, float Fy)
+    {
+        
+        {
+            obj1 = Instantiate(Effect[number], new Vector3(Fx, Fy, 0), Quaternion.identity, _parentGameObject.transform);
+            obj1.name = "Effect_image_"+number;
+        }
     }
 }

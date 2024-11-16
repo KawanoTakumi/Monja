@@ -1937,15 +1937,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6190e519a1569e540b6b6c0282d0879b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Attack: 30
-  Diffence: 30
-  Magic: 10
-  Magic_Diffence: 10
+  Attack: 25
+  Diffence: 25
+  Magic: 25
+  Magic_Diffence: 25
   Attack_damage: 0
   Magic_damage: 0
   money: 0
   player_luck: 0
   max_luck: 5
+  Effect:
+  - {fileID: 1970586632822164892, guid: fa0d56264dfbcd64ca333dc0f80d4760, type: 3}
+  - {fileID: 2159356408269481005, guid: f2580a5da0869f34a859503c60ba7ca9, type: 3}
+  _parentGameObject: {fileID: 1013919604}
   change: {fileID: 754146519}
   Attack_: {fileID: 889787176}
   Concentlation_: {fileID: 1656728079}
@@ -3993,6 +3997,9 @@ MonoBehaviour:
   magic: 0
   magic_Diffence: 5
   money: 50
+  Effect:
+  - {fileID: 8299584437378114090, guid: 8e11c902fcd31ff429c6fd4f84115c7f, type: 3}
+  _parentGameObject: {fileID: 2097196019}
   Enemy_attack: 0
   Enemy_deffence: 5
   Enemy_Magic: 0
