@@ -34,6 +34,7 @@ public class Enemy_controller : MonoBehaviour
     bool Boss_Medhusa;
     bool Boss_sinigami;
     public static int turn = 1;//ターン
+    public static bool tag_get = true;
     int turn_time = 0;
     public Text Log;
     public bool poison;
@@ -52,24 +53,30 @@ public class Enemy_controller : MonoBehaviour
         GameObject.FindWithTag("medhusa");
         GameObject.FindWithTag("sinigami");
         
-        //タグの比較
-        if (CompareTag("skelton") == true)
+        //持ち物画面から来た時に読み込まれないようにする
+        if(tag_get == true)
         {
-            Enemy_Skelton = true;
-            HP = 100;
-            HP_MAX = 100;
-        }
-       else if(CompareTag("medhusa")==true)
-        {
-            Boss_Medhusa = true;
-            HP = 500;
-            HP_MAX = 500;
-        }
-        else if (CompareTag("sinigami") == true)
-        {
-            Boss_sinigami = true;
-            HP = 500;
-            HP_MAX = 500;
+            tag_get = false;
+            //タグの比較
+            if (CompareTag("skelton") == true)
+            {
+                Enemy_Skelton = true;
+                HP = 100;
+                HP_MAX = 100;
+            }
+            else if (CompareTag("medhusa") == true)
+            {
+                Boss_Medhusa = true;
+                HP = 500;
+                HP_MAX = 500;
+            }
+            else if (CompareTag("sinigami") == true)
+            {
+                Boss_sinigami = true;
+                HP = 500;
+                HP_MAX = 500;
+            }
+
         }
     }
 
@@ -92,6 +99,7 @@ public class Enemy_controller : MonoBehaviour
                 HP = 100;
                 PlayerController.Money += money;
                 turn = 1;
+                tag_get = false;
                 SceneManager.LoadScene("Win");
             }
             if (Enemy_Skelton == true && turn_time == 35) //敵　スケルトン
@@ -224,13 +232,14 @@ public class Enemy_controller : MonoBehaviour
         {
             Log.text = ("敵の魔法攻撃");
             Enemy_luck = Random.Range(1, 6);
-            if (Enemy_luck <= 4)
+            if (Enemy_luck <= 1)
             {
                 Enemy_Magic = magic;
             }
-            else if (Enemy_luck == 5)
+            else if (Enemy_luck > 1)
             {
                 Enemy_Magic = 0;
+                Create_Effect_Enemy(1, 2.5f, 0.3f);
                 poison = true;
                 Log.text = ("メデューサ毒発動");
             }

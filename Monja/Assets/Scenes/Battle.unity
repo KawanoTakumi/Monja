@@ -2780,7 +2780,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: 20c313a177694e54895290f4a6754e2a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c4d45d8642b6c1443a64ed382d3d9739, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3999,6 +3999,7 @@ MonoBehaviour:
   money: 50
   Effect:
   - {fileID: 8299584437378114090, guid: 8e11c902fcd31ff429c6fd4f84115c7f, type: 3}
+  - {fileID: 2329906752926231860, guid: 0075ed2db53de8d4fa2a2489b8553aa7, type: 3}
   _parentGameObject: {fileID: 2097196019}
   Enemy_attack: 0
   Enemy_deffence: 5

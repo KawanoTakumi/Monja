@@ -2102,7 +2102,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1013919604}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.38, y: 0.25, z: 0}
+  m_LocalPosition: {x: -5.88, y: -0.25, z: 0}
   m_LocalScale: {x: 3.2266772, y: 3.3832576, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2150,6 +2150,10 @@ MonoBehaviour:
   money: 0
   player_luck: 0
   max_luck: 5
+  Effect:
+  - {fileID: 1970586632822164892, guid: fa0d56264dfbcd64ca333dc0f80d4760, type: 3}
+  - {fileID: 2159356408269481005, guid: f2580a5da0869f34a859503c60ba7ca9, type: 3}
+  _parentGameObject: {fileID: 1013919604}
   change: {fileID: 754146519}
   Attack_: {fileID: 889787176}
   Concentlation_: {fileID: 1656728079}
@@ -3214,7 +3218,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: 61ce67d4b13252b41a9b3911a3ed3871, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0f6c29b6aab79d24f81d56eef75eb565, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4464,7 +4468,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2097196019}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.4, y: 0.21, z: 0}
+  m_LocalPosition: {x: 7.29, y: 0.1, z: 0}
   m_LocalScale: {x: 3.2784917, y: 3.6985495, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4488,6 +4492,10 @@ MonoBehaviour:
   magic: 30
   magic_Diffence: 25
   money: 200
+  Effect:
+  - {fileID: 8299584437378114090, guid: 8e11c902fcd31ff429c6fd4f84115c7f, type: 3}
+  - {fileID: 2329906752926231860, guid: 0075ed2db53de8d4fa2a2489b8553aa7, type: 3}
+  _parentGameObject: {fileID: 2097196019}
   Enemy_attack: 0
   Enemy_deffence: 0
   Enemy_Magic: 0

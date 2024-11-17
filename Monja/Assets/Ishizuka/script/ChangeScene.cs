@@ -18,42 +18,50 @@ public class ChangeScene : MonoBehaviour
     //シーンを読み込む
     public void Load()
     {
-        if (Scene_Change == false)
-        {
             SceneManager.LoadScene(sceneName);
-        }
-        else if(Scene_Change == true)
-        {
-            Scene_Change = false;
-            SceneManager.LoadScene("shop");
-        }
     }
 
     public void change_scene()
     {
+        //shop_change用フラグ
+        Debug.Log("shop移行");
         Scene_Change = true;
+    }
+    public void shop_change()
+    {
+        //shopに戻る時用
+        if (Scene_Change == true)
+        {
+            Debug.Log("shop移行" + Scene_Change);
+            SceneManager.LoadScene("shop");
+            Scene_Change = false;
+        }
     }
     public void add_scene_num()
     {
+        //シーンナンバー加算
         scene_cnt++;
     }
 
     public void Enemy_Change_Scene()
     {
         Debug.Log("現在のシーン" + scene_cnt);
-        //バトルシーン(case: 3,6,9のときはボスシーン)
-        switch (scene_cnt)
+        if(Scene_Change == false)
         {
-            default: SceneManager.LoadScene("Battle"); break;//基本時なシーン
-            case 1: SceneManager.LoadScene("Battle");break;//バトル１
-            case 2: SceneManager.LoadScene("Battle");break;//バトル２
-            case 3: SceneManager.LoadScene("Boss_Battle_01"); break;//死神 バトル３
-            case 4: SceneManager.LoadScene("Battle"); break;//バトル４
-            case 5: SceneManager.LoadScene("Battle"); break;//バトル５
-            case 6: SceneManager.LoadScene("Boss_Battle_02"); break;//メデューサ バトル６
-            case 7: SceneManager.LoadScene("Battle"); break;//バトル７
-            case 8: SceneManager.LoadScene("Battle"); break;//バトル８
-            case 9: SceneManager.LoadScene("Boss_Battle_03"); break;//ドラゴン バトル９
+            //バトルシーン(case: 3,6,9のときはボスシーン)
+            switch (scene_cnt)
+            {
+                default: SceneManager.LoadScene("Battle"); break;//基本時なシーン
+                case 1: SceneManager.LoadScene("Battle"); break;//バトル１
+                case 2: SceneManager.LoadScene("Battle"); break;//バトル２
+                case 3: SceneManager.LoadScene("Boss_Battle_01"); break;//死神 バトル３
+                case 4: SceneManager.LoadScene("Battle"); break;//バトル４
+                case 5: SceneManager.LoadScene("Battle"); break;//バトル５
+                case 6: SceneManager.LoadScene("Boss_Battle_02"); break;//メデューサ バトル６
+                case 7: SceneManager.LoadScene("Battle"); break;//バトル７
+                case 8: SceneManager.LoadScene("Battle"); break;//バトル８
+                case 9: SceneManager.LoadScene("Boss_Battle_03"); break;//ドラゴン バトル９
+            }
         }
     }
     //shopからtitleに戻る時に使用

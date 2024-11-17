@@ -217,6 +217,13 @@ public class PlayerController : MonoBehaviour
             {
                 //Debug.Log("回復");
                 Create_Effect_Player(1, -5.1f, 0.1f);
+                int time_heal = 0;
+                time_heal++;
+                if(time_heal > 5)
+                {
+                    Destroy(obj_player);
+                }
+
                 HP_Potion -= 1;
                 HP += HP_max / 2;
                 
@@ -225,13 +232,11 @@ public class PlayerController : MonoBehaviour
                     HP = HP_max;
                 }
                 Log.text = ("主人公は回復した");
-                intaract_true();
+                //intaract_true();
             }
             else　if(HP == HP_max)
             {
                 Log.text = ("体力は満タンだ！！！");
-
-
             }
             else if(HP_Potion < 1)
             {
