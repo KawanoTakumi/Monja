@@ -75,13 +75,7 @@ public class PlayerController : MonoBehaviour
         //敗北
         if(HP <= 0)
         {
-            HP = 100;
-            MP = 100;
-            Item_Reset();
-            //各種数値を初期化
-            Enemy_controller.turn = 0;
-            Enemy_controller.HP = 150;
-            SceneManager.LoadScene("Lose");
+            animator.SetBool("death",true);
             ChangeScene.scene_cnt = 1;//最初のシーンがcase :1
         }
 
@@ -217,12 +211,6 @@ public class PlayerController : MonoBehaviour
             {
                 //Debug.Log("回復");
                 Create_Effect_Player(1, -5.1f, 0.1f);
-                int time_heal = 0;
-                time_heal++;
-                if(time_heal > 5)
-                {
-                    Destroy(obj_player);
-                }
 
                 HP_Potion -= 1;
                 HP += HP_max / 2;
@@ -286,5 +274,18 @@ public class PlayerController : MonoBehaviour
     {
         obj_player = Instantiate(Effect[number], new Vector3(Fx, Fy, 0), Quaternion.identity, _parentGameObject.transform);
         obj_player.name = "Effect_image_" + number;
+    }
+
+    public void Lose()
+    {
+        animator.SetBool("death", false);
+        HP = 100;
+        MP = 100;
+        Item_Reset();
+        //各種数値を初期化
+        Enemy_controller.turn = 0;
+        Enemy_controller.HP = 150;
+        Enemy_controller.tag_get = true;
+        SceneManager.LoadScene("Lose");
     }
 }

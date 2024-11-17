@@ -4437,7 +4437,7 @@ MonoBehaviour:
   money: 50
   Effect:
   - {fileID: 8299584437378114090, guid: 8e11c902fcd31ff429c6fd4f84115c7f, type: 3}
-  - {fileID: 2329906752926231860, guid: 0075ed2db53de8d4fa2a2489b8553aa7, type: 3}
+  - {fileID: 2236721021397524764, guid: fb40ee0bf024a06419a027d823aec956, type: 3}
   _parentGameObject: {fileID: 2097196019}
   Enemy_attack: 0
   Enemy_deffence: 5

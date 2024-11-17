@@ -99,7 +99,7 @@ public class Enemy_controller : MonoBehaviour
                 HP = 100;
                 PlayerController.Money += money;
                 turn = 1;
-                tag_get = false;
+                tag_get = true;
                 SceneManager.LoadScene("Win");
             }
             if (Enemy_Skelton == true && turn_time == 35) //敵　スケルトン
@@ -284,6 +284,7 @@ public class Enemy_controller : MonoBehaviour
             {
                 Enemy_attack = attack * 666;
                 Log.text = ("死神クリティカル発生");
+                Create_Effect_Enemy(1, 2.5f, 0.3f);
                 Debug.Log(Enemy_attack + "被ダメージ");
             }
         }
