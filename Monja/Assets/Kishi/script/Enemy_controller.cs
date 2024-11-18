@@ -115,7 +115,7 @@ public class Enemy_controller : MonoBehaviour
                 Sinigami();
             }
             turn_time++;
-            if (turn_time >= 120)
+            if (turn_time >= 500)
             {
                 Log.text = ("敵ターン終了");
                 Debug.Log("主人公体力" + PlayerController.HP);

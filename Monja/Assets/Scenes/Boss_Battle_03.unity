@@ -2158,6 +2158,16 @@ MonoBehaviour:
   Magic_: {fileID: 348858938}
   Heal_: {fileID: 1111548031}
   Log: {fileID: 1265022589}
+  audioSource_Attack: {fileID: 0}
+  clip_attack: {fileID: 0}
+  audioSource_Magic: {fileID: 0}
+  clip_magic: {fileID: 0}
+  audioSource_Conce: {fileID: 0}
+  clip_conce: {fileID: 0}
+  audioSource_Heal: {fileID: 0}
+  clip_heal: {fileID: 0}
+  audioSource_Critical: {fileID: 0}
+  clip_critical: {fileID: 0}
 --- !u!114 &1013919611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4494,7 +4504,7 @@ MonoBehaviour:
   money: 200
   Effect:
   - {fileID: 8299584437378114090, guid: 8e11c902fcd31ff429c6fd4f84115c7f, type: 3}
-  - {fileID: 2329906752926231860, guid: 0075ed2db53de8d4fa2a2489b8553aa7, type: 3}
+  - {fileID: 718690403272715185, guid: a8dc17518bca8c040b4b5f78d341013c, type: 3}
   _parentGameObject: {fileID: 2097196019}
   Enemy_attack: 0
   Enemy_deffence: 0
