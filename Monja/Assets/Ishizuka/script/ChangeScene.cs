@@ -9,7 +9,6 @@ public class ChangeScene : MonoBehaviour
     public Shop_manager shop;
     public static bool Scene_Change = false;
     public static int Boss_Number = 0;
-    int Boss_Scene_Number;
     public static int scene_cnt = 1;//最初のシーンがcase :1
     public void Start()
     {
@@ -23,8 +22,6 @@ public class ChangeScene : MonoBehaviour
 
     public void change_scene()
     {
-        //shop_change用フラグ
-        Debug.Log("shop移行");
         Scene_Change = true;
     }
     public void shop_change()
@@ -81,5 +78,9 @@ public class ChangeScene : MonoBehaviour
         Shop_manager.tmp_1 = -1;
         Shop_manager.tmp_2 = -1;
         Shop_manager.tmp_3 = -1;
+    }
+    public void shop_go()
+    {
+        SceneManager.LoadScene("shop");
     }
 }
