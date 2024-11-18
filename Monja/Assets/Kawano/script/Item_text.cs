@@ -144,7 +144,7 @@ public class Item_text : MonoBehaviour
         }
         else if (button == CompareTag("Mike"))
         {
-            text.text = "マイク\n音を拾うことができる機械。Hey Say\n";
+            text.text = "マイク\n音を拾うことができる機械。Say Yeah!!\n";
         }
         else if (button == CompareTag("Megaphon"))
         {

@@ -22,7 +22,6 @@ public class Item_Manager : MonoBehaviour
             Item.Add("cd", false);//3
             Item.Add("radio", false);//4
             Item.Add("hourglass", false);//5
-
             Item.Add("kesigomu", false);//6
             Item.Add("TV", false);//7
             Item.Add("CreditCard", false);//8
