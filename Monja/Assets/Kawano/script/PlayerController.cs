@@ -45,6 +45,19 @@ public class PlayerController : MonoBehaviour
 
     public Text Log;//テキストログ
     // Start is called before the first frame update
+
+    //オーディオ
+    public AudioSource audioSource_Attack;
+    [SerializeField] AudioClip clip_attack;
+    public AudioSource audioSource_Magic;
+    [SerializeField] AudioClip clip_magic;
+    public AudioSource audioSource_Conce;
+    [SerializeField] AudioClip clip_conce;
+    public AudioSource audioSource_Heal;
+    [SerializeField] AudioClip clip_heal;
+    public AudioSource audioSource_Critical;
+    [SerializeField] AudioClip clip_critical;
+
     void Start()
     {
         GameObject Text = GameObject.Find("LogText");
@@ -125,6 +138,7 @@ public class PlayerController : MonoBehaviour
             player_luck = Random.Range(1, max_luck);
             if (player_luck != max_luck-1)
             {
+
                 Attack_damage = Attack;
             }
             else if (player_luck == max_luck - 1)
@@ -147,6 +161,7 @@ public class PlayerController : MonoBehaviour
             if (MP < 100)
             {
                 intaract_false();
+                animator.SetBool("cons", true);
                 MP += MP_max / 4;
                 //MPがMP_maxより大きければMP_maxの値に合わせる
                 if (MP > MP_max)
@@ -209,6 +224,7 @@ public class PlayerController : MonoBehaviour
             intaract_false();
             if (HP != HP_max && HP_Potion > 0)
             {
+                animator.SetBool("heal", true);
                 //Debug.Log("回復");
                 Create_Effect_Player(1, -5.1f, 0.1f);
 
@@ -286,6 +302,42 @@ public class PlayerController : MonoBehaviour
         Enemy_controller.turn = 0;
         Enemy_controller.HP = 150;
         Enemy_controller.tag_get = true;
+        Money = 0;
         SceneManager.LoadScene("Lose");
+    }
+    public void SE_Play_Attack()
+    {
+        //遅延
+        Invoke("DelayMethod", 1.0f);
+
+        audioSource_Attack.PlayOneShot(clip_attack);
+    }
+    public void SE_Play_Magic()
+    {
+        //遅延
+        Invoke("DelayMethod", 1.0f);
+
+        audioSource_Magic.PlayOneShot(clip_magic);
+    }
+    public void SE_Play_Conce()
+    {
+        //遅延
+        Invoke("DelayMethod", 1.0f);
+
+        audioSource_Conce.PlayOneShot(clip_conce);
+    }
+    public void SE_Play_Heal()
+    {
+        //遅延
+        Invoke("DelayMethod", 1.0f);
+
+        audioSource_Heal.PlayOneShot(clip_heal);
+    }
+    public void SE_Play_Critical()
+    {
+        //遅延
+        Invoke("DelayMethod", 1.0f);
+
+        audioSource_Critical.PlayOneShot(clip_critical);
     }
 }
