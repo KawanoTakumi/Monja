@@ -50,117 +50,109 @@ public class Item_text : MonoBehaviour
         {
             text.text = "CDプレーヤー\nCDをセットすることで音楽を聴ける。CDはどこ？\n物理防御力を20上昇させ、物理攻撃力を20減少させる";
         }
-        else if (button == CompareTag(""))
+        else if (button == CompareTag("kesigomu"))
         {
-            text.text = "CDプレーヤー\nCDをセットすることで音楽を聴ける。CDはどこ？\n物理防御力を20上昇させ、物理攻撃力を20減少させる";
+            text.text = "消しゴム\n書いたものを消せる。無駄なものも消そう\n";
         }
-        else if (button == CompareTag("CDplayer"))
+        else if (button == CompareTag("TV"))
         {
-            text.text = "CDプレーヤー\nCDをセットすることで音楽を聴ける。CDはどこ？\n物理防御力を20上昇させ、物理攻撃力を20減少させる";
+            text.text = "テレビ\n映像を視聴できる機械。あなたのお好きな番組は何？\n";
         }
-        else if (button == CompareTag("CDplayer"))
+        else if (button == CompareTag("CreditCard"))
         {
-            text.text = "CDプレーヤー\nCDをセットすることで音楽を聴ける。CDはどこ？\n物理防御力を20上昇させ、物理攻撃力を20減少させる";
+            text.text = "クレジットカード\nお金を入れておけるカード。色でその人の価値がわかる。\n";
         }
-        else if (button == CompareTag("CDplayer"))
+        else if (button == CompareTag("Mouse"))
         {
-            text.text = "CDプレーヤー\nCDをセットすることで音楽を聴ける。CDはどこ？\n物理防御力を20上昇させ、物理攻撃力を20減少させる";
+            text.text = "マウス\nパソコンを使うときに必須の機械。マウスなしは考えられない\n";
         }
-        else if (button == CompareTag("CDplayer"))
+        else if (button == CompareTag("HandMirror"))
         {
-            text.text = "CDプレーヤー\nCDをセットすることで音楽を聴ける。CDはどこ？\n物理防御力を20上昇させ、物理攻撃力を20減少させる";
+            text.text = "ハンドミラー\n手軽に容姿を確認できるコンパクトな鏡。鏡よ鏡、美しいのは誰？\n";
         }
-        else if (button == CompareTag("CDplayer"))
+        else if (button == CompareTag("bowlingpin"))
         {
-            text.text = "CDプレーヤー\nCDをセットすることで音楽を聴ける。CDはどこ？\n物理防御力を20上昇させ、物理攻撃力を20減少させる";
+            text.text = "ボウリングピン\nボウリングで得点を決めるためのもの。僕にはあてないで\n";
         }
-        else if (button == CompareTag("CDplayer"))
+        else if (button == CompareTag("baseball_ball"))
         {
-            text.text = "CDプレーヤー\nCDをセットすることで音楽を聴ける。CDはどこ？\n物理防御力を20上昇させ、物理攻撃力を20減少させる";
+            text.text = "野球ボール\n野球用のボール。ストラーイク、バッターアウト\n";
         }
-        else if (button == CompareTag("CDplayer"))
+        else if (button == CompareTag("dice"))
         {
-            text.text = "CDプレーヤー\nCDをセットすることで音楽を聴ける。CDはどこ？\n物理防御力を20上昇させ、物理攻撃力を20減少させる";
+            text.text = "サイコロ\nランダムで数字を決めるための道具。ランダムっていいよね\n";
         }
-        else if (button == CompareTag("CDplayer"))
+        else if (button == CompareTag("Water bucket"))
         {
-            text.text = "CDプレーヤー\nCDをセットすることで音楽を聴ける。CDはどこ？\n物理防御力を20上昇させ、物理攻撃力を20減少させる";
+            text.text = "水入りのバケツ\n水が入ったバケツ。アイスバケツチャレンジ！！！\n";
         }
-        else if (button == CompareTag("CDplayer"))
+        else if (button == CompareTag("Popcorn"))
         {
-            text.text = "CDプレーヤー\nCDをセットすることで音楽を聴ける。CDはどこ？\n物理防御力を20上昇させ、物理攻撃力を20減少させる";
+            text.text = "ポップコーン\nトウモロコシを高温ではじけさせたお菓子。映画のお供\n";
         }
-        else if (button == CompareTag("CDplayer"))
+        else if (button == CompareTag("Apple"))
         {
-            text.text = "CDプレーヤー\nCDをセットすることで音楽を聴ける。CDはどこ？\n物理防御力を20上昇させ、物理攻撃力を20減少させる";
+            text.text = "リンゴ\n赤くて甘い木に実る果実。ひらめきの種\n";
         }
-        else if (button == CompareTag("CDplayer"))
+        else if (button == CompareTag("Scissors"))
         {
-            text.text = "CDプレーヤー\nCDをセットすることで音楽を聴ける。CDはどこ？\n物理防御力を20上昇させ、物理攻撃力を20減少させる";
+            text.text = "ハサミ\n紙などを切るためお道具。どんなカットがお好み？\n";
         }
-        else if (button == CompareTag("CDplayer"))
+        else if (button == CompareTag("ice"))
         {
-            text.text = "CDプレーヤー\nCDをセットすることで音楽を聴ける。CDはどこ？\n物理防御力を20上昇させ、物理攻撃力を20減少させる";
+            text.text = "氷\n水を凍らせるとできる物体。よくスベる\n";
         }
-        else if (button == CompareTag("CDplayer"))
+        else if (button == CompareTag("Pudding"))
         {
-            text.text = "CDプレーヤー\nCDをセットすることで音楽を聴ける。CDはどこ？\n物理防御力を20上昇させ、物理攻撃力を20減少させる";
+            text.text = "プリン\n卵を牛乳などと一緒に固めた甘いお菓子。至福の時間\n";
         }
-        else if (button == CompareTag("CDplayer"))
+        else if (button == CompareTag("Drill"))
         {
-            text.text = "CDプレーヤー\nCDをセットすることで音楽を聴ける。CDはどこ？\n物理防御力を20上昇させ、物理攻撃力を20減少させる";
+            text.text = "ドリル\n物に穴を開ける道具。これを持って笑顔のやつは危なすぎる\n";
         }
-        else if (button == CompareTag("CDplayer"))
+        else if (button == CompareTag("Headphone"))
         {
-            text.text = "CDプレーヤー\nCDをセットすることで音楽を聴ける。CDはどこ？\n物理防御力を20上昇させ、物理攻撃力を20減少させる";
+            text.text = "ヘッドフォン\n頭につけることで音楽を聞くことができる道具。自分の世界に入ってしまう\n";
         }
-        else if (button == CompareTag("CDplayer"))
+        else if (button == CompareTag("UtypeMagnet"))
         {
-            text.text = "CDプレーヤー\nCDをセットすることで音楽を聴ける。CDはどこ？\n物理防御力を20上昇させ、物理攻撃力を20減少させる";
+            text.text = "U字型マグネット\nU字型のマグネット。強力な磁力を帯びている。敵の武器も引っ付く\n";
         }
-        else if (button == CompareTag("CDplayer"))
+        else if (button == CompareTag("Coffee"))
         {
-            text.text = "CDプレーヤー\nCDをセットすることで音楽を聴ける。CDはどこ？\n物理防御力を20上昇させ、物理攻撃力を20減少させる";
+            text.text = "コーヒー\n豆を焙煎した飲料水。とても苦い。\nChill Time !!!\n";
         }
-        else if (button == CompareTag("CDplayer"))
+        else if (button == CompareTag("Safetycone"))
         {
-            text.text = "CDプレーヤー\nCDをセットすることで音楽を聴ける。CDはどこ？\n物理防御力を20上昇させ、物理攻撃力を20減少させる";
+            text.text = "三角コーン\n危険な場所に設置してあるもの。たまにあたられる不運な奴\n";
         }
-        else if (button == CompareTag("CDplayer"))
+        else if (button == CompareTag("USB"))
         {
-            text.text = "CDプレーヤー\nCDをセットすることで音楽を聴ける。CDはどこ？\n物理防御力を20上昇させ、物理攻撃力を20減少させる";
+            text.text = "USBメモリ\nパソコンから情報を保存できる機械。なくしたら終わり\n";
         }
-        else if (button == CompareTag("CDplayer"))
+        else if (button == CompareTag("Smartphone"))
         {
-            text.text = "CDプレーヤー\nCDをセットすることで音楽を聴ける。CDはどこ？\n物理防御力を20上昇させ、物理攻撃力を20減少させる";
+            text.text = "スマートフォン\n値段が高い様々な機能のついた電話機器。りんごのマーク。\n";
         }
-        else if (button == CompareTag("CDplayer"))
+        else if (button == CompareTag("ItypeMagnet"))
         {
-            text.text = "CDプレーヤー\nCDをセットすることで音楽を聴ける。CDはどこ？\n物理防御力を20上昇させ、物理攻撃力を20減少させる";
+            text.text = "I字型マグネット\nI字型のマグネット。U字型とたいして変わらない。\n";
         }
-        else if (button == CompareTag("CDplayer"))
+        else if (button == CompareTag("Magnifying Speculum"))
         {
-            text.text = "CDプレーヤー\nCDをセットすることで音楽を聴ける。CDはどこ？\n物理防御力を20上昇させ、物理攻撃力を20減少させる";
+            text.text = "虫眼鏡\n物を拡大して見ることができるツール。黒紙と空が晴れていたらさあいこう！！\n";
         }
-        else if (button == CompareTag("CDplayer"))
+        else if (button == CompareTag("Mike"))
         {
-            text.text = "CDプレーヤー\nCDをセットすることで音楽を聴ける。CDはどこ？\n物理防御力を20上昇させ、物理攻撃力を20減少させる";
+            text.text = "マイク\n音を拾うことができる機械。Hey Say\n";
         }
-        else if (button == CompareTag("CDplayer"))
+        else if (button == CompareTag("Megaphon"))
         {
-            text.text = "CDプレーヤー\nCDをセットすることで音楽を聴ける。CDはどこ？\n物理防御力を20上昇させ、物理攻撃力を20減少させる";
+            text.text = "メガホン\n音を大きくする機械。もう大声を出さなくてもいい\n";
         }
-        else if (button == CompareTag("CDplayer"))
+        else if (button == CompareTag("HandMill"))
         {
-            text.text = "CDプレーヤー\nCDをセットすることで音楽を聴ける。CDはどこ？\n物理防御力を20上昇させ、物理攻撃力を20減少させる";
-        }
-        else if (button == CompareTag("CDplayer"))
-        {
-            text.text = "CDプレーヤー\nCDをセットすることで音楽を聴ける。CDはどこ？\n物理防御力を20上昇させ、物理攻撃力を20減少させる";
-        }
-        else if (button == CompareTag("CDplayer"))
-        {
-            text.text = "CDプレーヤー\nCDをセットすることで音楽を聴ける。CDはどこ？\n物理防御力を20上昇させ、物理攻撃力を20減少させる";
+            text.text = "ハンドミル\n豆を挽くための道具。香ばしい香りがしてるぜ。\n";
         }
 
     }

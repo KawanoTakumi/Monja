@@ -100,7 +100,7 @@ public class Enemy_controller : MonoBehaviour
                 PlayerController.Money += money;
                 turn = 1;
                 tag_get = true;
-                SceneManager.LoadScene("Win");
+                animator.SetBool("death", true);//deathフラグをtrueにする
             }
             if (Enemy_Skelton == true && turn_time == 35) //敵　スケルトン
             {
@@ -309,5 +309,10 @@ public class Enemy_controller : MonoBehaviour
             obj1 = Instantiate(Effect[number], new Vector3(Fx, Fy, 0), Quaternion.identity, _parentGameObject.transform);
             obj1.name = "Effect_image_"+number;
         }
+    }
+    public void Win()
+    {
+        animator.SetBool("death", false);
+        SceneManager.LoadScene("Win");
     }
 }
