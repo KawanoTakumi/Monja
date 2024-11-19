@@ -1,18 +1,31 @@
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
 public class Item_SE : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private AudioSource audioSource;
+
+    private void Start()
     {
-        
+        audioSource = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
     void Update()
     {
+        //if()
+        //{
+          
+        //}
+        //else
+        //{
         
+        //}
+    }
+
+    public void hit_se()
+    {
+        GetComponent<AudioSource>().Play();  // Œø‰Ê‰¹‚ð–Â‚ç‚·
+
     }
 }

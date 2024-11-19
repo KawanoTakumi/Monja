@@ -23,7 +23,11 @@ public class ChangeScene : MonoBehaviour
 
     public void change_scene()
     {
+        ////’x‰„
+        //Invoke("DelayMethod", 8000.0f);
         Scene_Change = true;
+      
+
     }
     public void shop_change()
     {
@@ -103,4 +107,7 @@ public class ChangeScene : MonoBehaviour
     {
         SceneManager.LoadScene("shop_back");
     }
+    
+ 
+    
 }
