@@ -314,7 +314,7 @@ public class PlayerController : MonoBehaviour
     public void SE_Play_Attack()
     {
         //遅延
-        Invoke("DelayMethod", 1.0f);
+        Invoke("DelayMethod", 80.0f);
 
         audioSource_Attack.PlayOneShot(clip_attack);
     }
@@ -342,7 +342,7 @@ public class PlayerController : MonoBehaviour
     public void SE_Play_Critical()
     {
         //遅延
-        Invoke("DelayMethod", 1.0f);
+        Invoke("DelayMethod", 180.0f);
 
         audioSource_Critical.PlayOneShot(clip_critical);
     }
