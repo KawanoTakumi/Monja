@@ -2455,6 +2455,8 @@ MonoBehaviour:
   Effect:
   - {fileID: 1970586632822164892, guid: fa0d56264dfbcd64ca333dc0f80d4760, type: 3}
   - {fileID: 2159356408269481005, guid: f2580a5da0869f34a859503c60ba7ca9, type: 3}
+  - {fileID: 2596994626386688691, guid: 322f2de6aa74eaa408dcb550d932a6c8, type: 3}
+  - {fileID: 1017118353004026684, guid: a0b09c63d7f46854eb766935771bd761, type: 3}
   _parentGameObject: {fileID: 1013919604}
   change: {fileID: 754146519}
   Attack_: {fileID: 889787176}

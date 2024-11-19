@@ -197,13 +197,14 @@ public class PlayerController : MonoBehaviour
                 {
                     case 0: Create_Effect_Player(0, 5.7f, 0.9f); break;
                     case 1: Create_Effect_Player(2, 0f, 0f);break;
+                    case 2: Create_Effect_Player(3, 0f, 0f);break;
                 }
 
                 MP -= 25;
                 Magic_damage = Magic;
                 damage_Calculate.Enemey_Damage_Calculate(Magic_damage, enemy_Controller.magic_Diffence);
                 turn_time++;
-                if (turn_time > 60)
+                if (turn_time > 300)
                 {
                     turn_time = 0;
                     if (poison_cnt > 0)
@@ -216,7 +217,7 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                Log.text = ("魔法不発");
+                Log.text = ("魔法は打てない");
             }
         }
     }

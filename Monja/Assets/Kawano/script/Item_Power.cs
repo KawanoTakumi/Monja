@@ -13,6 +13,7 @@ public class Item_Power : MonoBehaviour
 
     bool adapt_bowlingball = true;//ボウリング用適応変数(bowlingball)
     bool adapt_CDplayer = true;//CDプレーヤー用適応変数(CDplayer)
+    bool adapt_kesigomu = true;
     bool adapt_TV = true;
     bool adapt_CreditCard = true;
     bool adapt_Mouse = true;
@@ -156,11 +157,11 @@ public class Item_Power : MonoBehaviour
         }
         if(kesigomu_flag == true)
         {
-            if(turn_compare < Enemy_controller.turn)
+            if(adapt_kesigomu == true)
             {
                 playercontroller.Attack += 25;
                 playercontroller.Magic -= playercontroller.Attack / 2;
-                turn_compare = Enemy_controller.turn;
+                adapt_kesigomu = false;
             }
         }
         if(TV_flag == true)
@@ -399,10 +400,5 @@ public class Item_Power : MonoBehaviour
                 adapt_HandMill = false;
             }
         }
-    }
-    //魔法攻撃を後から変更するための関数（アイテム画面でボタンを押したらその魔法攻撃になる）
-    public void magic_number(int num_M)
-    {
-        PlayerController.magic_number = num_M;
     }
 }
