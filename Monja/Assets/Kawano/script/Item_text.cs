@@ -52,108 +52,107 @@ public class Item_text : MonoBehaviour
         }
         else if (button == CompareTag("kesigomu"))
         {
-            text.text = "消しゴム\n書いたものを消せる。無駄なものも消そう\n";
+            text.text = "消しゴム\n書いたものを消せる。無駄なものも消そう\n物理攻撃力が高いほど魔法攻撃力を下げる";
         }
         else if (button == CompareTag("TV"))
         {
-            text.text = "テレビ\n映像を視聴できる機械。あなたのお好きな番組は何？\n";
+            text.text = "テレビ\n映像を視聴できる機械。あなたのお好きな番組は何？\n魔法攻撃力２０につき２上昇させる";
         }
         else if (button == CompareTag("CreditCard"))
         {
-            text.text = "クレジットカード\nお金を入れておけるカード。色でその人の価値がわかる。\n";
+            text.text = "クレジットカード\nお金を入れておけるカード。色でその人の価値がわかる。\n獲得金額を４０増加させる\n";
         }
         else if (button == CompareTag("Mouse"))
         {
-            text.text = "マウス\nパソコンを使うときに必須の機械。マウスなしは考えられない\n";
+            text.text = "マウス\nパソコンを使うときに必須の機械。マウスなしは考えられない\n魔法攻撃力を２０増加させ、魔法のカーソルで攻撃する（魔法攻撃が変化）";
         }
         else if (button == CompareTag("HandMirror"))
         {
-            text.text = "ハンドミラー\n手軽に容姿を確認できるコンパクトな鏡。鏡よ鏡、美しいのは誰？\n";
+            text.text = "ハンドミラー\n手軽に容姿を確認できるコンパクトな鏡。鏡よ鏡、美しいのは誰？\n物理防御力と魔法防御力を３０増加させる\n";
         }
         else if (button == CompareTag("bowlingpin"))
         {
-            text.text = "ボウリングピン\nボウリングで得点を決めるためのもの。僕にはあてないで\n";
+            text.text = "ボウリングピン\nボウリングで得点を決めるためのもの。僕にはあてないで\n戦闘開始時、物理攻撃力が高いほど獲得金額が増加";
         }
         else if (button == CompareTag("baseball_ball"))
         {
-            text.text = "野球ボール\n野球用のボール。ストラーイク、バッターアウト\n";
+            text.text = "野球ボール\n野球用のボール。ストラーイク、バッターアウト\n物理攻撃力を３０増加し物理防御力を３０減少させる";
         }
         else if (button == CompareTag("dice"))
         {
-            text.text = "サイコロ\nランダムで数字を決めるための道具。ランダムっていいよね\n";
+            text.text = "サイコロ\nランダムで数字を決めるための道具。ランダムっていいよね\n１ターンごとにランダムなステータスを５増加させる";
         }
         else if (button == CompareTag("Water bucket"))
         {
-            text.text = "水入りのバケツ\n水が入ったバケツ。アイスバケツチャレンジ！！！\n";
+            text.text = "水入りのバケツ\n水が入ったバケツ。アイスバケツチャレンジ！！！\n魔法防御力を２０増加させ、水の弾で攻撃する（魔法攻撃が変化）";
         }
         else if (button == CompareTag("Popcorn"))
         {
-            text.text = "ポップコーン\nトウモロコシを高温ではじけさせたお菓子。映画のお供\n";
+            text.text = "ポップコーン\nトウモロコシを高温ではじけさせたお菓子。映画のお供\n戦闘開始時、体力を４０回復させる";
         }
         else if (button == CompareTag("Apple"))
         {
-            text.text = "リンゴ\n赤くて甘い木に実る果実。ひらめきの種\n";
+            text.text = "リンゴ\n赤くて甘い木に実る果実。ひらめきの種\n戦闘開始時、体力を３０回復し、魔法攻撃力を１５増加させる";
         }
         else if (button == CompareTag("Scissors"))
         {
-            text.text = "ハサミ\n紙などを切るためお道具。どんなカットがお好み？\n";
+            text.text = "ハサミ\n紙などを切るためお道具。どんなカットがお好み？\n物理攻撃力を２０増加させ、ハサミを投げて攻撃する（魔法攻撃が変化）";
         }
         else if (button == CompareTag("ice"))
         {
-            text.text = "氷\n水を凍らせるとできる物体。よくスベる\n";
+            text.text = "氷\n水を凍らせるとできる物体。よくスベる\n魔法攻撃力を２０増加させ、氷の弾で攻撃する（魔法攻撃が変化）";
         }
         else if (button == CompareTag("Pudding"))
         {
-            text.text = "プリン\n卵を牛乳などと一緒に固めた甘いお菓子。至福の時間\n";
+            text.text = "プリン\n卵を牛乳などと一緒に固めた甘いお菓子。至福の時間\n戦闘開始時体力を完全に回復する。\nリンゴを持っていると戦闘ごとに最大体力が３０増加する";
         }
         else if (button == CompareTag("Drill"))
         {
-            text.text = "ドリル\n物に穴を開ける道具。これを持って笑顔のやつは危なすぎる\n";
+            text.text = "ドリル\n物に穴を開ける道具。これを持っている笑顔のやつは怖すぎる\n物理攻撃力を５０増加させ物理防御力を５０減少させる";
         }
         else if (button == CompareTag("Headphone"))
         {
-            text.text = "ヘッドフォン\n頭につけることで音楽を聞くことができる道具。自分の世界に入ってしまう\n";
+            text.text = "ヘッドフォン\n頭につけることで音楽を聞くことができる道具。自分の世界に入ってしまう\nターンごとに物理攻撃力と物理防御力を３減らし\n体力を１０回復させる";
         }
         else if (button == CompareTag("UtypeMagnet"))
         {
-            text.text = "U字型マグネット\nU字型のマグネット。強力な磁力を帯びている。敵の武器も引っ付く\n";
+            text.text = "U字型マグネット\nU字型のマグネット。強力な磁力を帯びている。敵の武器も引っ付く\n赤い磁力の弾で攻撃する（魔法攻撃が変化）";
         }
         else if (button == CompareTag("Coffee"))
         {
-            text.text = "コーヒー\n豆を焙煎した飲料水。とても苦い。\nChill Time !!!\n";
+            text.text = "コーヒー\n豆を焙煎した飲料水。とても苦い。\nChill Time !!!\n体力を２０減らし魔法攻撃力を３０増加させる";
         }
         else if (button == CompareTag("Safetycone"))
         {
-            text.text = "三角コーン\n危険な場所に設置してあるもの。たまにあたられる不運な奴\n";
+            text.text = "三角コーン\n危険な場所に設置してあるもの。たまに蹴られる不運な奴\n５０％の確率で物理攻撃力と物理防御力を４０増加";
         }
         else if (button == CompareTag("USB"))
         {
-            text.text = "USBメモリ\nパソコンから情報を保存できる機械。なくしたら終わり\n";
+            text.text = "USBメモリ\nパソコンから情報を保存できる機械。なくしたら終わり\n魔法攻撃力を３０増加させ魔法防御力を２０減少させる";
         }
         else if (button == CompareTag("Smartphone"))
         {
-            text.text = "スマートフォン\n値段が高い様々な機能のついた電話機器。りんごのマーク。\n";
+            text.text = "スマートフォン\n値段が高い様々な機能のついた電話機器。りんごのマーク。\n魔法攻撃力が高いほど魔法防御力を増加させる";
         }
         else if (button == CompareTag("ItypeMagnet"))
         {
-            text.text = "I字型マグネット\nI字型のマグネット。U字型とたいして変わらない。\n";
+            text.text = "I字型マグネット\nI字型のマグネット。U字型とたいして変わらない。\n青い磁力の弾で攻撃（魔法攻撃が変化）";
         }
         else if (button == CompareTag("Magnifying Speculum"))
         {
-            text.text = "虫眼鏡\n物を拡大して見ることができるツール。黒紙と空が晴れていたらさあいこう！！\n";
+            text.text = "虫眼鏡\n物を拡大して見ることができるツール。黒紙と空が晴れていたらさあいこう！！\n物理防御力と魔法防御力を毎ターン１０増加させる";
         }
         else if (button == CompareTag("Mike"))
         {
-            text.text = "マイク\n音を拾うことができる機械。Hey Say\n";
+            text.text = "マイク\n音を拾うことができる機械。Say Yeah!!\n魔法攻撃力を３０増加させ音符で攻撃する（魔法攻撃が変化）";
         }
         else if (button == CompareTag("Megaphon"))
         {
-            text.text = "メガホン\n音を大きくする機械。もう大声を出さなくてもいい\n";
+            text.text = "メガホン\n音を大きくする機械。もう大声を出さなくてもいい\n物理防御力を２０増加させる";
         }
         else if (button == CompareTag("HandMill"))
         {
-            text.text = "ハンドミル\n豆を挽くための道具。香ばしい香りがしてるぜ。\n";
+            text.text = "ハンドミル\n豆を挽くための道具。香ばしい香りがしてるぜ。\nコーヒーを持っている時魔法攻撃力を６０増加させる\n持っていない時は攻撃力を３０減少させる";
         }
-
     }
 }

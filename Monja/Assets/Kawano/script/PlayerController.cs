@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     public int money;//一時確認用（あとで消す）
     public int player_luck;
     public int max_luck;
+    public static int magic_number = 0;//魔法番号(撃てる魔法の種類)
     int poison_cnt;
 
     public GameObject[] Effect;//エフェクト用
@@ -192,7 +193,12 @@ public class PlayerController : MonoBehaviour
             {
                 intaract_false();
                 animator.SetBool("magic", true);
-                Create_Effect_Player(0, 5.7f, 0.9f);
+                switch (magic_number)
+                {
+                    case 0: Create_Effect_Player(1, 5.7f, 0.9f); break;
+                    case 1: Create_Effect_Player(2, 0f, 0f);break;
+                }
+
                 MP -= 25;
                 Magic_damage = Magic;
                 damage_Calculate.Enemey_Damage_Calculate(Magic_damage, enemy_Controller.magic_Diffence);
@@ -226,7 +232,7 @@ public class PlayerController : MonoBehaviour
             {
                 animator.SetBool("heal", true);
                 //Debug.Log("回復");
-                Create_Effect_Player(1, -5.1f, 0.1f);
+                Create_Effect_Player(0, -5.1f, 0.1f);
 
                 HP_Potion -= 1;
                 HP += HP_max / 2;

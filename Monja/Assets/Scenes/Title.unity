@@ -225,7 +225,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 125877553}
         m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
-        m_MethodName: Load
+        m_MethodName: Work_Cange_Scene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

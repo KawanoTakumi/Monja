@@ -13,6 +13,7 @@ public class ChangeScene : MonoBehaviour
     public void Start()
     {
         shop = GetComponent<Shop_manager>();
+        
     } 
     //シーンを読み込む
     public void Load()
@@ -39,7 +40,22 @@ public class ChangeScene : MonoBehaviour
         //シーンナンバー加算
         scene_cnt++;
     }
+    public void Work_Cange_Scene()
+    {
+        switch (scene_cnt)
+        {
+            case 1: SceneManager.LoadScene("work_01"); break;
+            case 2: SceneManager.LoadScene("work_01"); break;
+            case 3: SceneManager.LoadScene("work_01"); break;
+            case 4: SceneManager.LoadScene("work_02"); break;
+            case 5: SceneManager.LoadScene("work_02"); break;
+            case 6: SceneManager.LoadScene("work_02"); break;
+            case 7: SceneManager.LoadScene("work_03"); break;
+            case 8: SceneManager.LoadScene("work_03"); break;
+            case 9: SceneManager.LoadScene("work_03"); break;
 
+        }
+    }
     public void Enemy_Change_Scene()
     {
         Debug.Log("現在のシーン" + scene_cnt);
@@ -82,5 +98,9 @@ public class ChangeScene : MonoBehaviour
     public void shop_go()
     {
         SceneManager.LoadScene("shop");
+    }
+    public void back_shop()
+    {
+        SceneManager.LoadScene("shop_back");
     }
 }
