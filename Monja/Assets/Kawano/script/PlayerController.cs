@@ -139,13 +139,13 @@ public class PlayerController : MonoBehaviour
             player_luck = Random.Range(1, max_luck);
             if (player_luck != max_luck-1)
             {
-
                 Attack_damage = Attack;
             }
-            else if (player_luck == max_luck - 1)
+            else if (player_luck == max_luck - 1 || Item_Power.dice_crit == true)
             {
                 Attack_damage = Attack + Attack / 2;
                 Log.text = ("主人公クリティカル");
+                Item_Power.dice_crit = false;
             }
 
             Attack_damage = Attack;
@@ -195,7 +195,7 @@ public class PlayerController : MonoBehaviour
                 animator.SetBool("magic", true);
                 switch (magic_number)
                 {
-                    case 0: Create_Effect_Player(1, 5.7f, 0.9f); break;
+                    case 0: Create_Effect_Player(0, 5.7f, 0.9f); break;
                     case 1: Create_Effect_Player(2, 0f, 0f);break;
                 }
 
