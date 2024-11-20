@@ -9,7 +9,7 @@ public class Item_Power : MonoBehaviour
     public Enemy_controller enemy_Controller;
     public Text log_text;
     int turn_compare = 0;//ターン数比較用()
-    static bool start_cnt = true;//主に回復系用
+    public static bool start_cnt = true;//主に回復系用
 
     bool adapt_bowlingball = true;//ボウリング用適応変数(bowlingball)
     bool adapt_CDplayer = true;//CDプレーヤー用適応変数(CDplayer)

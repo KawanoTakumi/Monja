@@ -38,7 +38,7 @@ public class Enemy_controller : MonoBehaviour
     int turn_time = 0;
     public Text Log;
     public bool poison;
-
+    public static bool End_GAme_Flag = false;
 
     // Start is called before the first frame update
     void Start()
@@ -313,6 +313,13 @@ public class Enemy_controller : MonoBehaviour
     public void Win()
     {
         animator.SetBool("death", false);
-        SceneManager.LoadScene("Win");
+        if (ChangeScene.scene_cnt >= 9)
+        {
+            SceneManager.LoadScene("ending");
+        }
+        else
+        {
+            SceneManager.LoadScene("Win");
+        }
     }
 }
