@@ -278,6 +278,32 @@ public class PlayerController : MonoBehaviour
         Item_Manager.Item["cd"] = false;
         Item_Manager.Item["radio"] = false;
         Item_Manager.Item["hourglass"] = false;
+        Item_Manager.Item["kesigomu"] = false;
+        Item_Manager.Item["TV"] = false;
+        Item_Manager.Item["CreditCard"] = false;
+        Item_Manager.Item["Mouse"] = false;
+        Item_Manager.Item["HandMirror"] = false;
+        Item_Manager.Item["bowlingpin"] = false;
+        Item_Manager.Item["baseball_ball"] = false;
+        Item_Manager.Item["dice"] = false;
+        Item_Manager.Item["Water bucket"] = false;
+        Item_Manager.Item["Popcorn"] = false;
+        Item_Manager.Item["Apple"] = false;
+        Item_Manager.Item["Scissors"]= false;
+        Item_Manager.Item["ice"]= false;
+        Item_Manager.Item["Pudding"]= false;
+        Item_Manager.Item["Drill"]= false;
+        Item_Manager.Item["Headphone"]= false;
+        Item_Manager.Item["Coffee"]= false;
+        Item_Manager.Item["Safetycone"]= false;
+        Item_Manager.Item["USB"]= false;
+        Item_Manager.Item["UtypeMagnet"]= false;
+        Item_Manager.Item["Smartphone"]= false;
+        Item_Manager.Item["ItypeMagnet"]= false;
+        Item_Manager.Item["Magnifying Speculum"]= false;
+        Item_Manager.Item["Mike"]= false;
+        Item_Manager.Item["Megaphone"]= false;
+        Item_Manager.Item["HandMill"]= false;
 
     }
     //アニメーションリセット（boolのみ）
