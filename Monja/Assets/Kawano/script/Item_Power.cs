@@ -244,7 +244,7 @@ public class Item_Power : MonoBehaviour
         {
             if (adapt_Popcorn == true && start_cnt == true)
             {
-                PlayerController.HP += 10;
+                PlayerController.HP += 40;
                 adapt_Popcorn = false;
             }
         }
