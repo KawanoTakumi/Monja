@@ -43,6 +43,12 @@ TagManager:
   - Megaphone
   - HandMill
   - Magnet
+  - centaurus
+  - richie
+  - minotaurus
+  - cockatrice
+  - knight
+  - dragon
   layers:
   - Default
   - TransparentFX
