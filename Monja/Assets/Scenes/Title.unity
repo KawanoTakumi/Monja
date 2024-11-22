@@ -138,6 +138,7 @@ GameObject:
   - component: {fileID: 125877553}
   - component: {fileID: 125877558}
   - component: {fileID: 125877559}
+  - component: {fileID: 125877560}
   m_Layer: 5
   m_Name: Start_Button
   m_TagString: Untagged
@@ -393,6 +394,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d77e516a60506b4a8b5cbe69e8a2bf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &125877560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 125877551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74da8a62fed5efa4ebdfe28f65622f3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &220012489
 GameObject:
   m_ObjectHideFlags: 0
@@ -408,6 +421,7 @@ GameObject:
   - component: {fileID: 220012491}
   - component: {fileID: 220012495}
   - component: {fileID: 220012496}
+  - component: {fileID: 220012498}
   m_Layer: 5
   m_Name: End_Button
   m_TagString: Untagged
@@ -659,6 +673,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7d77e516a60506b4a8b5cbe69e8a2bf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &220012498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 220012489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74da8a62fed5efa4ebdfe28f65622f3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &558177520
@@ -1116,6 +1142,7 @@ GameObject:
   - component: {fileID: 2105629565}
   - component: {fileID: 2105629569}
   - component: {fileID: 2105629570}
+  - component: {fileID: 2105629572}
   m_Layer: 5
   m_Name: Settei_Button
   m_TagString: Untagged
@@ -1369,6 +1396,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7d77e516a60506b4a8b5cbe69e8a2bf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2105629572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2105629563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74da8a62fed5efa4ebdfe28f65622f3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &8914400353634039775
