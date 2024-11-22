@@ -39,6 +39,7 @@ public class Enemy_controller : MonoBehaviour
     public Text Log;
     public bool poison;
     public static bool End_GAme_Flag = false;
+    public GameObject HP_Bar;
 
     // Start is called before the first frame update
     void Start()
@@ -96,10 +97,11 @@ public class Enemy_controller : MonoBehaviour
             if (HP <= 0)
             {
                 PlayerController.MP = 100;
-                HP = 100;
                 PlayerController.Money += money;
                 turn = 1;
                 tag_get = true;
+                HP_Bar.SetActive(false);//HPバーwo
+ 
                 animator.SetBool("death", true);//deathフラグをtrueにする
             }
             if (Enemy_Skelton == true && turn_time == 35) //敵　スケルトン
