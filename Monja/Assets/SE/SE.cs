@@ -6,6 +6,7 @@ public class SE : MonoBehaviour
 {
     private AudioSource audioSourceSE;
     public AudioClip se;
+    
 
     public static SE Instance
     {
@@ -25,7 +26,7 @@ public class SE : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        //audioSourceSE = this.GetComponent();
+       // audioSourceSE = this.GetComponent();
     }
 
     // Update is called once per frame

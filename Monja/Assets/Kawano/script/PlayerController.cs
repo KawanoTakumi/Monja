@@ -139,11 +139,15 @@ public class PlayerController : MonoBehaviour
             player_luck = Random.Range(1, max_luck);
             if (player_luck != max_luck-1)
             {
+                //遅延
+                Invoke("SE_Play_Attack", 1.0f);
 
                 Attack_damage = Attack;
             }
             else if (player_luck == max_luck - 1)
             {
+                //遅延
+                Invoke("SE_Play_Critical", 80.0f);
                 Attack_damage = Attack + Attack / 2;
                 Log.text = ("主人公クリティカル");
             }
@@ -161,6 +165,9 @@ public class PlayerController : MonoBehaviour
         {
             if (MP < 100)
             {
+                //遅延
+                Invoke("SE_Play_Conce", 80.0f);
+
                 intaract_false();
                 animator.SetBool("cons", true);
                 MP += MP_max / 4;
@@ -191,6 +198,9 @@ public class PlayerController : MonoBehaviour
         {
             if(MP >= 25)
             {
+                //遅延
+                Invoke("SE_Play_Magic", 80.0f);
+
                 intaract_false();
                 animator.SetBool("magic", true);
                 switch (magic_number)
@@ -230,6 +240,9 @@ public class PlayerController : MonoBehaviour
             intaract_false();
             if (HP != HP_max && HP_Potion > 0)
             {
+                //遅延
+                Invoke("SE_Play_Heal", 80.0f);
+
                 animator.SetBool("heal", true);
                 //Debug.Log("回復");
                 Create_Effect_Player(0, -5.1f, 0.1f);
@@ -313,37 +326,22 @@ public class PlayerController : MonoBehaviour
     }
     public void SE_Play_Attack()
     {
-        //遅延
-        Invoke("DelayMethod", 80.0f);
-
         audioSource_Attack.PlayOneShot(clip_attack);
     }
     public void SE_Play_Magic()
     {
-        //遅延
-        Invoke("DelayMethod", 1.0f);
-
         audioSource_Magic.PlayOneShot(clip_magic);
     }
     public void SE_Play_Conce()
     {
-        //遅延
-        Invoke("DelayMethod", 1.0f);
-
         audioSource_Conce.PlayOneShot(clip_conce);
     }
     public void SE_Play_Heal()
     {
-        //遅延
-        Invoke("DelayMethod", 1.0f);
-
         audioSource_Heal.PlayOneShot(clip_heal);
     }
     public void SE_Play_Critical()
     {
-        //遅延
-        Invoke("DelayMethod", 180.0f);
-
         audioSource_Critical.PlayOneShot(clip_critical);
     }
 }
