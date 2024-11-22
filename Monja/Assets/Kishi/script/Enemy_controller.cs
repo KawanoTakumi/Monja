@@ -332,7 +332,7 @@ public class Enemy_controller : MonoBehaviour
                     break;
                 case 3:
                     Defence();
-                    Log.text = ("は防御した");
+                    Log.text = ("コカトリスは防御した");
                     break;
             }
         }
