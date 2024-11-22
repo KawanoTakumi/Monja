@@ -15,6 +15,21 @@ EditorBuildSettings:
     path: Assets/Scenes/Battle.unity
     guid: df17fec40a1b6924fa547fb7bd88d7c9
   - enabled: 1
+    path: Assets/Scenes/Battle_2.unity
+    guid: 02a39d85623415943883b795c339c1eb
+  - enabled: 1
+    path: Assets/Scenes/Battle_4.unity
+    guid: 09539e447bee2b0488aa97f9c6d179ad
+  - enabled: 1
+    path: Assets/Scenes/Battle_5.unity
+    guid: 9f1b37720e0b0674ea512ffd2e59b5f8
+  - enabled: 1
+    path: Assets/Scenes/Battle_7.unity
+    guid: 2d38274a08b58314a99710f5297799e8
+  - enabled: 1
+    path: Assets/Scenes/Battle_8.unity
+    guid: b708b5539d411894c955c8ff5f40d68b
+  - enabled: 1
     path: Assets/Scenes/motimono.unity
     guid: f4d0a229996a83b4382836c68073060c
   - enabled: 1
