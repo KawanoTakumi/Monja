@@ -56,7 +56,7 @@ public class Item_text : MonoBehaviour
         }
         else if (button == CompareTag("TV"))
         {
-            text.text = "テレビ\n映像を視聴できる機械。あなたのお好きな番組は何？\n魔法攻撃力２０につき２上昇させる";
+            text.text = "テレビ\n映像を視聴できる機械。あなたのお好きな番組は何？\n魔法攻撃力２０につき魔法攻撃力を２上昇させる";
         }
         else if (button == CompareTag("CreditCard"))
         {
@@ -80,7 +80,7 @@ public class Item_text : MonoBehaviour
         }
         else if (button == CompareTag("dice"))
         {
-            text.text = "サイコロ\nランダムで数字を決めるための道具。ランダムっていいよね\n１ターンごとにランダムなステータスを５増加させる";
+            text.text = "サイコロ\nランダムで数字を決めるための道具。1d6? 2d6?\n１ターンごとにランダムな効果を発動";
         }
         else if (button == CompareTag("Water bucket"))
         {
@@ -88,7 +88,7 @@ public class Item_text : MonoBehaviour
         }
         else if (button == CompareTag("Popcorn"))
         {
-            text.text = "ポップコーン\nトウモロコシを高温ではじけさせたお菓子。映画のお供\n戦闘開始時、体力を４０回復させる";
+            text.text = "ポップコーン\nトウモロコシを高温ではじけさせたお菓子。映画には必須のお供\n戦闘開始時、体力を４０回復させる";
         }
         else if (button == CompareTag("Apple"))
         {
@@ -100,7 +100,7 @@ public class Item_text : MonoBehaviour
         }
         else if (button == CompareTag("ice"))
         {
-            text.text = "氷\n水を凍らせるとできる物体。よくスベる\n魔法攻撃力を２０増加させ、氷の弾で攻撃する（アイテム画面でアイテムを押すと魔法攻撃が変化）";
+            text.text = "氷\n水を凍らせるとできる物体。かき氷にしますか？\n魔法攻撃力を２０増加させ、氷の弾で攻撃する（アイテム画面でアイテムを押すと魔法攻撃が変化）";
         }
         else if (button == CompareTag("Pudding"))
         {
@@ -112,11 +112,11 @@ public class Item_text : MonoBehaviour
         }
         else if (button == CompareTag("Headphone"))
         {
-            text.text = "ヘッドフォン\n頭につけることで音楽を聞くことができる道具。自分の世界に入ってしまう\nターンごとに物理攻撃力と物理防御力を３減らし\n体力を１０回復させる";
+            text.text = "ヘッドフォン\n頭につけることで音楽を聞くことができる道具。\n自分の世界に入ってしまう\nターンごとに物理攻撃力と物理防御力を３減らし\n体力を１０回復させる";
         }
         else if (button == CompareTag("UtypeMagnet"))
         {
-            text.text = "U字型マグネット\nU字型のマグネット。強力な磁力を帯びている。敵の武器も引っ付く\n魔法攻撃力２０増加する";
+            text.text = "U字型マグネット\nU字型のマグネット。強力な磁力を帯びている。\n敵の武器も引っ付く\n魔法攻撃力２０増加する";
         }
         else if (button == CompareTag("Coffee"))
         {
@@ -124,7 +124,7 @@ public class Item_text : MonoBehaviour
         }
         else if (button == CompareTag("Safetycone"))
         {
-            text.text = "三角コーン\n危険な場所に設置してあるもの。たまに蹴られる不運な奴\n５０％の確率で物理攻撃力と物理防御力を４０増加";
+            text.text = "三角コーン\n危険な場所に設置してあるもの。\nたまに蹴られる不運な奴\n５０％の確率で物理攻撃力と物理防御力を４０増加";
         }
         else if (button == CompareTag("USB"))
         {
