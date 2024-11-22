@@ -107,7 +107,4 @@ public class ChangeScene : MonoBehaviour
     {
         SceneManager.LoadScene("shop_back");
     }
-    
- 
-    
 }

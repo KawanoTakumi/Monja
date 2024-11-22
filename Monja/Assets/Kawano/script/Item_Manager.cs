@@ -50,8 +50,4 @@ public class Item_Manager : MonoBehaviour
             Item.Add("HandMill", false);//31
         }
     }
-    public void Start()
-    {
-       
-    }
 }

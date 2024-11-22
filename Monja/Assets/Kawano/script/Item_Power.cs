@@ -6,12 +6,14 @@ using UnityEngine.UI;
 public class Item_Power : MonoBehaviour
 {
     PlayerController playercontroller;
+    public Enemy_controller enemy_Controller;
     public Text log_text;
     int turn_compare = 0;//ターン数比較用()
-    static bool start_cnt = true;//主に回復系用
+    public static bool start_cnt = true;//主に回復系用
 
     bool adapt_bowlingball = true;//ボウリング用適応変数(bowlingball)
     bool adapt_CDplayer = true;//CDプレーヤー用適応変数(CDplayer)
+    bool adapt_kesigomu = true;
     bool adapt_TV = true;
     bool adapt_CreditCard = true;
     bool adapt_Mouse = true;
@@ -23,8 +25,20 @@ public class Item_Power : MonoBehaviour
     bool adapt_Apple = true;
     bool adapt_Scissors = true;
     bool adapt_ice = true;
+    bool adapt_Drill = true;
+    bool adapt_Utype_M = true;
+    bool adapt_Coffee = true;
+    bool adapt_SafetyCorn = true;
+    bool adapt_USB = true;
+    bool adapt_SmartPhone = true;
+    bool adapt_Itype_M = true;
+    bool adapt_Mike = true;
+    bool adapt_Megaphone = true;
+    bool adapt_HandMill = true;
 
     int dice_random = 0;
+    int safetycorn_random = 0;
+    public static bool dice_crit = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -57,6 +71,22 @@ public class Item_Power : MonoBehaviour
         Item_Manager.Item.TryGetValue("Scissors", out bool Scissors_flag);
         Item_Manager.Item.TryGetValue("ice", out bool ice_flag);
         Item_Manager.Item.TryGetValue("Pudding", out bool Pudding_flag);
+
+        Item_Manager.Item.TryGetValue("Drill", out bool Drill_flag);
+        Item_Manager.Item.TryGetValue("Headphone", out bool Headphone_flag);
+        Item_Manager.Item.TryGetValue("UtypeMagnet", out bool UtypeMagnet_flag);
+        Item_Manager.Item.TryGetValue("Coffee", out bool Coffee_flag);
+        Item_Manager.Item.TryGetValue("Safetycone", out bool Safetycone_flag);
+        Item_Manager.Item.TryGetValue("USB", out bool USB_flag);
+        Item_Manager.Item.TryGetValue("Smartphone", out bool Smartphone_flag);
+        Item_Manager.Item.TryGetValue("ItypeMagnet", out bool ItypeMagnet_flag);
+        Item_Manager.Item.TryGetValue("Magnifying Speculum", out bool MagnifyingSpeculum_flag);
+        Item_Manager.Item.TryGetValue("Mike", out bool Mike_flag);
+
+        Item_Manager.Item.TryGetValue("Megaphonee", out bool Megaphone_flag);
+        Item_Manager.Item.TryGetValue("HandMill", out bool HandMill_flag);
+
+
 
 
         if (Enemy_controller.turn != 1)
@@ -127,17 +157,18 @@ public class Item_Power : MonoBehaviour
         }
         if(kesigomu_flag == true)
         {
-            if(turn_compare < Enemy_controller.turn)
+            if(adapt_kesigomu == true)
             {
+                playercontroller.Attack += 25;
                 playercontroller.Magic -= playercontroller.Attack / 2;
-                turn_compare = Enemy_controller.turn;
+                adapt_kesigomu = false;
             }
         }
         if(TV_flag == true)
         {
             if(adapt_TV == true)
             {
-                playercontroller.Magic += (playercontroller.Magic / 20) * 2;
+                playercontroller.Magic += (playercontroller.Magic / 20) * 4;
                 adapt_TV = false;
             }
         }
@@ -168,6 +199,7 @@ public class Item_Power : MonoBehaviour
         }
         if(bowlingpin_flag == true)
         {
+            //一番下
             if(adapt_bowlingpin == true)
             {
                 PlayerController.Money += playercontroller.Attack / 6;
@@ -187,13 +219,15 @@ public class Item_Power : MonoBehaviour
         {
             if(turn_compare < Enemy_controller.turn)
             {
-                dice_random = Random.Range(1, 5);
+                dice_random = Random.Range(1, 7);
                 switch (dice_random)
                 {
-                    case 1: playercontroller.Attack += 5;return;
-                    case 2: playercontroller.Diffence += 5;return;
-                    case 3: playercontroller.Magic += 5;return;
-                    case 4: playercontroller.Magic_Diffence += 5;return;
+                    case 1: playercontroller.Attack += 10;break;
+                    case 2: playercontroller.Attack -= 5;break;
+                    case 3: playercontroller.Magic += 10; break;
+                    case 4: playercontroller.Magic -= 5; break;
+                    case 5: PlayerController.Money += 50;break;
+                    case 6: dice_crit = true; break;
                 }
                 turn_compare = Enemy_controller.turn;
             }
@@ -249,13 +283,122 @@ public class Item_Power : MonoBehaviour
             }
             if(start_cnt == true)
             {
-                PlayerController.HP = PlayerController.HP_max;
+                PlayerController.HP = PlayerController.HP_max /4;
             }
         }
-    }
-    //魔法攻撃を後から変更するための関数（アイテム画面でボタンを押したらその魔法攻撃になる）
-    public void magic_number(int num_M)
-    {
-        PlayerController.magic_number = num_M;
+        if(Drill_flag == true)
+        {
+            if(adapt_Drill == true)
+            {
+                playercontroller.Attack += enemy_Controller.deffence / 2;
+                adapt_Drill = false;
+            }
+        }
+        if(Headphone_flag)
+        {
+            if (turn_compare < Enemy_controller.turn)
+            {
+                playercontroller.Attack -= 3;
+                playercontroller.Diffence -= 3;
+                PlayerController.HP += 10;
+                turn_compare = Enemy_controller.turn;
+            }
+        }
+        if(UtypeMagnet_flag == true)
+        {
+            if (adapt_Utype_M == true)
+            {
+                playercontroller.Magic += 20;
+                adapt_Utype_M = false;
+            }
+        }
+        if(Coffee_flag == true)
+        {
+            if(adapt_Coffee == true)
+            {
+                PlayerController.HP -= 20;
+                playercontroller.Magic += 30;
+                adapt_Coffee = false;
+            }
+        }
+        if(Safetycone_flag == true)
+        {
+            if(adapt_SafetyCorn == true)
+            {
+                safetycorn_random = Random.Range(1, 3);
+                if(safetycorn_random == 1)
+                {
+                    adapt_SafetyCorn = false;
+                }
+                else if(safetycorn_random == 2)
+                {
+                    playercontroller.Attack += 40;
+                    playercontroller.Diffence += 40;
+                    adapt_SafetyCorn = false;
+                }
+            }
+        }
+        if(USB_flag == true)
+        {
+            if(adapt_USB == true)
+            {
+                playercontroller.Magic += 30;
+                playercontroller.Magic_Diffence -= 20;
+                adapt_USB = false;
+            }
+        }
+        if(Smartphone_flag == true)
+        {
+            if(adapt_SmartPhone == true)
+            {
+                playercontroller.Magic_Diffence += playercontroller.Magic / 4;
+            }
+        }
+        if(ItypeMagnet_flag == true)
+        {
+            if(adapt_Itype_M == true)
+            {
+                playercontroller.Magic_Diffence += 20;
+                adapt_Itype_M = false;
+            }
+        }
+        if(MagnifyingSpeculum_flag == true)
+        {
+            if(turn_compare < Enemy_controller.turn)
+            {
+                playercontroller.Diffence += 10;
+                playercontroller.Magic_Diffence += 10;
+                turn_compare = Enemy_controller.turn;
+            }
+        }
+        if(Mike_flag == true)
+        {
+            if(adapt_Mike == true)
+            {
+                playercontroller.Magic += 30;
+                adapt_Mike = false;
+            }
+        }
+        if(Megaphone_flag == true)
+        {
+            if(adapt_Megaphone == true)
+            {
+                playercontroller.Diffence += 20;
+                adapt_Megaphone = false;
+            }
+        }
+        if(HandMill_flag == true)
+        {
+            if(adapt_HandMill == true && Coffee_flag == true)
+            {
+                playercontroller.Magic += 60;
+                adapt_HandMill = false;
+            }
+            if(adapt_HandMill == true)
+            {
+                playercontroller.Magic -= 30;
+                adapt_HandMill = false;
+            }
+        }
     }
 }

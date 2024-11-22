@@ -139,17 +139,13 @@ public class PlayerController : MonoBehaviour
             player_luck = Random.Range(1, max_luck);
             if (player_luck != max_luck-1)
             {
-                //遅延
-                Invoke("SE_Play_Attack", 1.0f);
-
                 Attack_damage = Attack;
             }
-            else if (player_luck == max_luck - 1)
+            else if (player_luck == max_luck - 1 || Item_Power.dice_crit == true)
             {
-                //遅延
-                Invoke("SE_Play_Critical", 80.0f);
                 Attack_damage = Attack + Attack / 2;
                 Log.text = ("主人公クリティカル");
+                Item_Power.dice_crit = false;
             }
 
             Attack_damage = Attack;
@@ -165,9 +161,6 @@ public class PlayerController : MonoBehaviour
         {
             if (MP < 100)
             {
-                //遅延
-                Invoke("SE_Play_Conce", 80.0f);
-
                 intaract_false();
                 animator.SetBool("cons", true);
                 MP += MP_max / 4;
@@ -198,22 +191,20 @@ public class PlayerController : MonoBehaviour
         {
             if(MP >= 25)
             {
-                //遅延
-                Invoke("SE_Play_Magic", 80.0f);
-
                 intaract_false();
                 animator.SetBool("magic", true);
                 switch (magic_number)
                 {
-                    case 0: Create_Effect_Player(1, 5.7f, 0.9f); break;
+                    case 0: Create_Effect_Player(0, 5.7f, 0.9f); break;
                     case 1: Create_Effect_Player(2, 0f, 0f);break;
+                    case 2: Create_Effect_Player(3, 0f, 0f);break;
                 }
 
                 MP -= 25;
                 Magic_damage = Magic;
                 damage_Calculate.Enemey_Damage_Calculate(Magic_damage, enemy_Controller.magic_Diffence);
                 turn_time++;
-                if (turn_time > 60)
+                if (turn_time > 300)
                 {
                     turn_time = 0;
                     if (poison_cnt > 0)
@@ -226,7 +217,7 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                Log.text = ("魔法不発");
+                Log.text = ("魔法は打てない");
             }
         }
     }
@@ -240,9 +231,6 @@ public class PlayerController : MonoBehaviour
             intaract_false();
             if (HP != HP_max && HP_Potion > 0)
             {
-                //遅延
-                Invoke("SE_Play_Heal", 80.0f);
-
                 animator.SetBool("heal", true);
                 //Debug.Log("回復");
                 Create_Effect_Player(0, -5.1f, 0.1f);
@@ -290,6 +278,32 @@ public class PlayerController : MonoBehaviour
         Item_Manager.Item["cd"] = false;
         Item_Manager.Item["radio"] = false;
         Item_Manager.Item["hourglass"] = false;
+        Item_Manager.Item["kesigomu"] = false;
+        Item_Manager.Item["TV"] = false;
+        Item_Manager.Item["CreditCard"] = false;
+        Item_Manager.Item["Mouse"] = false;
+        Item_Manager.Item["HandMirror"] = false;
+        Item_Manager.Item["bowlingpin"] = false;
+        Item_Manager.Item["baseball_ball"] = false;
+        Item_Manager.Item["dice"] = false;
+        Item_Manager.Item["Water bucket"] = false;
+        Item_Manager.Item["Popcorn"] = false;
+        Item_Manager.Item["Apple"] = false;
+        Item_Manager.Item["Scissors"]= false;
+        Item_Manager.Item["ice"]= false;
+        Item_Manager.Item["Pudding"]= false;
+        Item_Manager.Item["Drill"]= false;
+        Item_Manager.Item["Headphone"]= false;
+        Item_Manager.Item["Coffee"]= false;
+        Item_Manager.Item["Safetycone"]= false;
+        Item_Manager.Item["USB"]= false;
+        Item_Manager.Item["UtypeMagnet"]= false;
+        Item_Manager.Item["Smartphone"]= false;
+        Item_Manager.Item["ItypeMagnet"]= false;
+        Item_Manager.Item["Magnifying Speculum"]= false;
+        Item_Manager.Item["Mike"]= false;
+        Item_Manager.Item["Megaphone"]= false;
+        Item_Manager.Item["HandMill"]= false;
 
     }
     //アニメーションリセット（boolのみ）
@@ -326,22 +340,37 @@ public class PlayerController : MonoBehaviour
     }
     public void SE_Play_Attack()
     {
+        //遅延
+        Invoke("DelayMethod", 80.0f);
+
         audioSource_Attack.PlayOneShot(clip_attack);
     }
     public void SE_Play_Magic()
     {
+        //遅延
+        Invoke("DelayMethod", 1.0f);
+
         audioSource_Magic.PlayOneShot(clip_magic);
     }
     public void SE_Play_Conce()
     {
+        //遅延
+        Invoke("DelayMethod", 1.0f);
+
         audioSource_Conce.PlayOneShot(clip_conce);
     }
     public void SE_Play_Heal()
     {
+        //遅延
+        Invoke("DelayMethod", 1.0f);
+
         audioSource_Heal.PlayOneShot(clip_heal);
     }
     public void SE_Play_Critical()
     {
+        //遅延
+        Invoke("DelayMethod", 180.0f);
+
         audioSource_Critical.PlayOneShot(clip_critical);
     }
 }

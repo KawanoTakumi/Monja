@@ -52,7 +52,7 @@ public class Item_text : MonoBehaviour
         }
         else if (button == CompareTag("kesigomu"))
         {
-            text.text = "消しゴム\n書いたものを消せる。無駄なものも消そう\n物理攻撃力が高いほど魔法攻撃力を下げる";
+            text.text = "消しゴム\n書いたものを消せる。無駄なものも消そう\n物理攻撃力を２５増加させ、物理攻撃力が高いほど魔法攻撃力を下げる";
         }
         else if (button == CompareTag("TV"))
         {
@@ -64,7 +64,7 @@ public class Item_text : MonoBehaviour
         }
         else if (button == CompareTag("Mouse"))
         {
-            text.text = "マウス\nパソコンを使うときに必須の機械。マウスなしは考えられない\n魔法攻撃力を２０増加させ、魔法のカーソルで攻撃する（魔法攻撃が変化）";
+            text.text = "マウス\nパソコンを使うときに必須の機械。マウスなしは考えられない\n魔法攻撃力を２０増加させる";
         }
         else if (button == CompareTag("HandMirror"))
         {
@@ -84,7 +84,7 @@ public class Item_text : MonoBehaviour
         }
         else if (button == CompareTag("Water bucket"))
         {
-            text.text = "水入りのバケツ\n水が入ったバケツ。アイスバケツチャレンジ！！！\n魔法防御力を２０増加させ、水の弾で攻撃する（魔法攻撃が変化）";
+            text.text = "水入りのバケツ\n水が入ったバケツ。アイスバケツチャレンジ！！！\n魔法防御力を２０増加させる";
         }
         else if (button == CompareTag("Popcorn"))
         {
@@ -96,11 +96,11 @@ public class Item_text : MonoBehaviour
         }
         else if (button == CompareTag("Scissors"))
         {
-            text.text = "ハサミ\n紙などを切るためお道具。どんなカットがお好み？\n物理攻撃力を２０増加させ、ハサミを投げて攻撃する（魔法攻撃が変化）";
+            text.text = "ハサミ\n紙などを切るためお道具。どんなカットがお好み？\n物理攻撃力を２０増加させる";
         }
         else if (button == CompareTag("ice"))
         {
-            text.text = "氷\n水を凍らせるとできる物体。よくスベる\n魔法攻撃力を２０増加させ、氷の弾で攻撃する（魔法攻撃が変化）";
+            text.text = "氷\n水を凍らせるとできる物体。よくスベる\n魔法攻撃力を２０増加させ、氷の弾で攻撃する（アイテム画面でアイテムを押すと魔法攻撃が変化）";
         }
         else if (button == CompareTag("Pudding"))
         {
@@ -108,7 +108,7 @@ public class Item_text : MonoBehaviour
         }
         else if (button == CompareTag("Drill"))
         {
-            text.text = "ドリル\n物に穴を開ける道具。これを持っている笑顔のやつは怖すぎる\n物理攻撃力を５０増加させ物理防御力を５０減少させる";
+            text.text = "ドリル\n物に穴を開ける道具。穴の開けすぎには注意\nエネミーの物理攻撃力分プレイヤー攻撃力を増加させ、エネミーの物理防御力分プレイヤーの物理防御力を減少させる";
         }
         else if (button == CompareTag("Headphone"))
         {
@@ -116,7 +116,7 @@ public class Item_text : MonoBehaviour
         }
         else if (button == CompareTag("UtypeMagnet"))
         {
-            text.text = "U字型マグネット\nU字型のマグネット。強力な磁力を帯びている。敵の武器も引っ付く\n赤い磁力の弾で攻撃する（魔法攻撃が変化）";
+            text.text = "U字型マグネット\nU字型のマグネット。強力な磁力を帯びている。敵の武器も引っ付く\n魔法攻撃力２０増加する";
         }
         else if (button == CompareTag("Coffee"))
         {
@@ -136,15 +136,15 @@ public class Item_text : MonoBehaviour
         }
         else if (button == CompareTag("ItypeMagnet"))
         {
-            text.text = "I字型マグネット\nI字型のマグネット。U字型とたいして変わらない。\n青い磁力の弾で攻撃（魔法攻撃が変化）";
+            text.text = "I字型マグネット\nI字型のマグネット。U字型とたいして変わらない。\n魔法防御力を２０増加させる";
         }
         else if (button == CompareTag("Magnifying Speculum"))
         {
-            text.text = "虫眼鏡\n物を拡大して見ることができるツール。黒紙と空が晴れていたらさあいこう！！\n物理防御力と魔法防御力を毎ターン１０増加させる";
+            text.text = "虫眼鏡\n物を拡大して見ることができるツール。黒紙と空が晴れていたら最高da！！\n物理防御力と魔法防御力を毎ターン１０増加させる";
         }
         else if (button == CompareTag("Mike"))
         {
-            text.text = "マイク\n音を拾うことができる機械。Say Yeah!!\n魔法攻撃力を３０増加させ音符で攻撃する（魔法攻撃が変化）";
+            text.text = "マイク\n音を拾うことができる機械。Say Yeah!!\n魔法攻撃力を３０増加させ音のノイズで攻撃する（アイテム画面でアイテムを押すと魔法攻撃が変化）";
         }
         else if (button == CompareTag("Megaphon"))
         {
@@ -152,7 +152,15 @@ public class Item_text : MonoBehaviour
         }
         else if (button == CompareTag("HandMill"))
         {
-            text.text = "ハンドミル\n豆を挽くための道具。香ばしい香りがしてるぜ。\nコーヒーを持っている時魔法攻撃力を６０増加させる\n持っていない時は攻撃力を３０減少させる";
+            text.text = "ハンドミル\n豆を挽くための道具。香ばしい香りがしてるぜ。\nコーヒーを持っている時魔法攻撃力を６０増加させる\n持っていない時は魔法攻撃力を３０減少させる";
         }
     }
+
+    //魔法攻撃を後から変更するための関数（アイテム画面でボタンを押したらその魔法攻撃になる）
+    public void magic_number(int num_M)
+    {
+        PlayerController.magic_number = num_M;
+    }
+
+
 }
