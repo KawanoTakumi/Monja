@@ -155,7 +155,6 @@ public class Enemy_controller : MonoBehaviour
             if (HP <= 0)
             {
                 PlayerController.MP = 100;
-                PlayerController.Money += money;
                 turn = 1;
                 tag_get = true;
                 HP_Bar.SetActive(false);//HPƒo[wo
@@ -541,10 +540,12 @@ public class Enemy_controller : MonoBehaviour
         animator.SetBool("death", false);
         if (ChangeScene.scene_cnt >= 9)
         {
+            PlayerController.Money += money;
             SceneManager.LoadScene("ending");
         }
         else
         {
+            PlayerController.Money += money;
             SceneManager.LoadScene("Win");
         }
     }

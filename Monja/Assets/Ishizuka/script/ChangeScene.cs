@@ -46,6 +46,7 @@ public class ChangeScene : MonoBehaviour
     }
     public void Work_Cange_Scene()
     {
+        
         switch (scene_cnt)
         {
             case 1: SceneManager.LoadScene("work_01"); break;
