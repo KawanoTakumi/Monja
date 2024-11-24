@@ -13,7 +13,7 @@ public class MouseSE : MonoBehaviour
     {
         if (first_hit == false)
         {
-            Debug.Log("マウスが乗っています");
+            Debug.Log("マウスがオブジェクトに乗っています");
             GetComponent<AudioSource>().Play();  // 効果音を鳴らす
             first_hit = true;
         }
