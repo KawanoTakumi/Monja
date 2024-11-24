@@ -136,19 +136,19 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("attack", true);
         if (turn_Manager.turn == true)
         {
-            player_luck = Random.Range(1, max_luck);
-            if (player_luck != max_luck-1)
-            {
-                //遅延
-                Invoke("SE_Play_Attack", 300.0f);
+            player_luck = Random.Range(1, 2);//max_luck);
+            //if (player_luck == max_luck-1)
+            //{
+            //    //遅延
+            //    Invoke("SE_Play_Attack", 300.0f);
 
-                Attack_damage = Attack;
-            }
-            else if (player_luck == max_luck - 1 || Item_Power.dice_crit == true)
+            //    Attack_damage = Attack;
+            //}
+            if (player_luck == 1 || Item_Power.dice_crit == true)//max_luck - 1 || Item_Power.dice_crit == true)
             {
                 //遅延
                 Invoke("SE_Play_Critical", 180.0f);
-
+                Debug.Log("aaa");
                 Attack_damage = Attack + Attack / 2;
                 Log.text = ("主人公クリティカル");
                 Item_Power.dice_crit = false;

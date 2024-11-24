@@ -4,16 +4,24 @@ using UnityEngine;
 
 public class MouseSE : MonoBehaviour
 {
-   
+    private new AudioSource audio;
+    public AudioClip Sound;
+    bool first_hit = false;//最初にオブジェクトに乗った時だけ反応させる
+
     //マウスがUIの上に乗ったら音が鳴る
-    void OnMouseEnter()
+    public void OnMouseEnter()
     {
-        Debug.Log("abcd");
+        if (first_hit == false)
+        {
+            Debug.Log("マウスが乗っています");
             GetComponent<AudioSource>().Play();  // 効果音を鳴らす
+            first_hit = true;
+        }
     }
-    void OnMouseExit()
+    //マウスがUIから離れたとき
+    public void OnMouseExit()
     {
         Debug.Log("マウスがオブジェクトから離れました。");
-        
+        first_hit = false;
     }
 }
