@@ -130,9 +130,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 369285360025072898, guid: c73c7eb0f7c45fa43a4512ad34fc0033, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 369285360025072899, guid: c73c7eb0f7c45fa43a4512ad34fc0033, type: 3}
       propertyPath: m_Name
       value: button_audio
+      objectReference: {fileID: 0}
+    - target: {fileID: 369285360025072899, guid: c73c7eb0f7c45fa43a4512ad34fc0033, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 369285360025072901, guid: c73c7eb0f7c45fa43a4512ad34fc0033, type: 3}
       propertyPath: m_RootOrder
@@ -466,7 +474,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button_Audio: {fileID: 459245342}
-  Sound: {fileID: 0}
 --- !u!61 &125877561
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -711,7 +718,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 749cd2fe0e2023441a5608ed99fc1327, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -821,7 +828,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button_Audio: {fileID: 459245342}
-  Sound: {fileID: 0}
 --- !u!114 &220012499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1327,7 +1333,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button_Audio: {fileID: 0}
-  Sound: {fileID: 0}
 --- !u!114 &1899816426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1341,7 +1346,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button_Audio: {fileID: 0}
-  Sound: {fileID: 0}
 --- !u!1 &2105629563
 GameObject:
   m_ObjectHideFlags: 0
@@ -1629,7 +1633,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button_Audio: {fileID: 459245342}
-  Sound: {fileID: 8300000, guid: 8080fab93ebadf9459ea5d2890bdd956, type: 3}
 --- !u!61 &2105629573
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1776,6 +1779,10 @@ PrefabInstance:
     - target: {fileID: 8914400355081705788, guid: d99a4518af5efbd4380cd798b0d10d2c, type: 3}
       propertyPath: m_Name
       value: BGM_Manager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8914400355081705788, guid: d99a4518af5efbd4380cd798b0d10d2c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d99a4518af5efbd4380cd798b0d10d2c, type: 3}

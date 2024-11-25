@@ -158,7 +158,7 @@ public class Enemy_controller : MonoBehaviour
                 PlayerController.MP = 100;
                 turn = 1;
                 tag_get = true;
-                HP_Bar.SetActive(false);//HPバーwo
+                HP_Bar.SetActive(false);//HPバー
  
                 animator.SetBool("death", true);//deathフラグをtrueにする
             }
@@ -541,6 +541,7 @@ public class Enemy_controller : MonoBehaviour
         animator.SetBool("death", false);
         Monster.SetActive(false);
         Destroy(obj1);
+        Cut_In.first_flag = true;
         if (ChangeScene.scene_cnt >= 9)
         {
             PlayerController.Money += money;
