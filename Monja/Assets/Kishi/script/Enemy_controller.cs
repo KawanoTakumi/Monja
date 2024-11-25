@@ -239,7 +239,7 @@ public class Enemy_controller : MonoBehaviour
             else if (Enemy_luck == Enemy_luck_Max-1)
             {
                 Enemy_attack = attack + attack/2;
-                Log.text = ("“GƒNƒŠƒeƒBƒJƒ‹”­¶");
+              
             }
         }
         void Defence()
@@ -258,6 +258,7 @@ public class Enemy_controller : MonoBehaviour
             if (magic_cnt < 3)
             {
                 Enemy_Magic = magic;
+                magic_cnt++;
             }
             else if (magic_cnt == 3)
             {
@@ -321,13 +322,13 @@ public class Enemy_controller : MonoBehaviour
             switch (Enemy_act)
             {
                 case 1:
-                    Attack();
-                    Log.text = ("“G‚ÌUŒ‚");
-                    damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Diffence);
+                    Magic();
+                    Log.text = ("ƒRƒJƒgƒŠƒX‚ÌUŒ‚");
+                    damage_Calculate.Player_Damage_Calculate(Enemy_Magic, playerController.Magic_Diffence);
                     break;
                 case 2:
                     Attack();
-                    Log.text = ("“G‚ÌUŒ‚");
+                    Log.text = ("ƒRƒJƒgƒŠƒX‚ÌUŒ‚");
                     damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Diffence);
                     break;
                 case 3:
@@ -347,7 +348,7 @@ public class Enemy_controller : MonoBehaviour
                     damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Diffence);
                     break;
                 case 2:
-                    Attack();
+                    Heal();
                     Log.text = ("ƒiƒCƒg‚ÌUŒ‚");
                     damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Diffence);
                     break;
@@ -365,12 +366,12 @@ public class Enemy_controller : MonoBehaviour
                 case 1:
                     Magic();
                     Log.text = ("ƒŠƒbƒ`‚Ì–‚–@UŒ‚");
-                    damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Diffence);
+                    damage_Calculate.Player_Damage_Calculate(Enemy_Magic, playerController.Magic_Diffence);
                     break;
                 case 2:
                     Magic();
                     Log.text = ("ƒŠƒbƒ`‚Ì–‚–@UŒ‚");
-                    damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Diffence);
+                    damage_Calculate.Player_Damage_Calculate(Enemy_Magic, playerController.Magic_Diffence);
                     break;
                 case 3:
                     Heal();
@@ -385,17 +386,18 @@ public class Enemy_controller : MonoBehaviour
             {
                 case 1:
                     Attack();
-                    Log.text = ("ƒPƒ“ƒ^ƒEƒƒX‚ÌUŒ‚");
+                    Log.text = ("ƒPƒ“ƒ^ƒEƒƒX‚Ì‹|UŒ‚");
                     damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Diffence);
                     break;
                 case 2:
                     Attack();
-                    Log.text = ("ƒPƒ“ƒ^ƒEƒƒX‚ÌUŒ‚");
+                    Log.text = ("ƒPƒ“ƒ^ƒEƒƒX‚Ì‹|UŒ‚");
                     damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Diffence);
                     break;
                 case 3:
-                    Defence();
-                    Log.text = ("ƒPƒ“ƒ^ƒEƒƒX‚Í–hŒä‚µ‚½");
+                    Attack();
+                    Log.text = ("ƒPƒ“ƒ^ƒEƒƒX‚ÌUŒ‚");
+                    damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Diffence);
                     break;
             }
         }
@@ -455,7 +457,7 @@ public class Enemy_controller : MonoBehaviour
                     damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Diffence);
                     break;
                 case 2:
-                    Attack();
+                    sinigami_attack();
                     Log.text = ("€_‚ÌUŒ‚");
                     damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Diffence);
                     break;
@@ -492,26 +494,58 @@ public class Enemy_controller : MonoBehaviour
             switch (Enemy_act)
             {
                 case 1:
-                    sinigami_attack();
-                    Log.text = ("“G‚ÌUŒ‚");
+                    dragon_attack();
+                    Log.text = ("ƒhƒ‰ƒSƒ“‚ÌUŒ‚");
                     damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Diffence);
                     break;
                 case 2:
-                    Attack();
-                    Log.text = ("“G‚ÌUŒ‚");
+                    dragon_magic();
+                    Log.text = ("ƒhƒ‰ƒSƒ“‚Ì–‚–@UŒ‚");
                     damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Diffence);
                     break;
                 case 3:
-                    Defence();
-                    Log.text = ("‚Í–hŒä‚µ‚½");
+                    dragon_attack();
+                    Log.text = ("ƒhƒ‰ƒSƒ“‚ÌUŒ‚");
                     Enemy_deffence = deffence;
                     break;
                 case 4:
-                    Defence();
-                    Log.text = ("‚Í–hŒä‚µ‚½");
-                    Enemy_deffence = deffence;
+                    dragon_Heal();
+                    Log.text = ("ƒhƒ‰ƒSƒ“‚Í–hŒä‚µ‚½");
                     break;
             }
+        }
+        void dragon_attack()
+        {
+            animator.SetBool("Attack", true);
+            Enemy_luck = Random.Range(1, 6);
+            if (Enemy_luck <= 4)
+            {
+                Enemy_attack = attack;
+            }
+            else if (Enemy_luck == 5)
+            {
+                Enemy_attack += attack;
+                Log.text = ("—´‚Ì‚—g");
+                Create_Effect_Enemy(1, 2.5f, 0.3f);
+            }
+        }
+        void dragon_magic()
+        {
+            Log.text = ("“G‚Ì–‚–@UŒ‚");
+            int magic_cnt = 0;
+            if (magic_cnt < 2)
+            {
+                Enemy_Magic = magic;
+                magic_cnt++;
+            }
+            else if (magic_cnt >= 2)
+            {
+                Enemy_Magic = magic + Enemy_attack;
+            }
+        }
+        void dragon_Heal()
+        {
+            HP += HP / 10 + Enemy_attack;
         }
 
 
