@@ -248,7 +248,7 @@ public class Enemy_controller : MonoBehaviour
             Enemy_deffence += deffence;
         }
 
-        //ˆê’Ug‚í‚È‚¢‚Ì‚ÅƒRƒƒ“ƒgƒAƒEƒg
+     
 
         void Magic()
         {
@@ -277,17 +277,17 @@ public class Enemy_controller : MonoBehaviour
             {
                 case 1:
                     Attack();
-                    Log.text = ("“G‚ÌUŒ‚");
+                    Log.text = ("ƒXƒPƒ‹ƒgƒ“‚ÌUŒ‚");
                     damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Diffence);
                     break;
                 case 2:
                     Attack();
-                    Log.text = ("“G‚ÌUŒ‚");
+                    Log.text = ("ƒXƒPƒ‹ƒgƒ“‚ÌUŒ‚");
                     damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Diffence);
                     break;
                 case 3:
                     Defence();
-                    Log.text = ("‚Í–hŒä‚µ‚½");
+                    Log.text = ("ƒXƒPƒ‹ƒgƒ“‚Í–hŒä‚µ‚½");
                     Enemy_deffence = deffence;
                     break;
             }
@@ -299,17 +299,17 @@ public class Enemy_controller : MonoBehaviour
             {
                 case 1:
                     Attack();
-                    Log.text = ("“G‚ÌUŒ‚");
+                    Log.text = ("ƒ~ƒmƒ^ƒEƒƒX‚ÌUŒ‚");
                     damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Diffence);
                     break;
                 case 2:
                     Attack();
-                    Log.text = ("“G‚ÌUŒ‚");
+                    Log.text = ("ƒ~ƒmƒ^ƒEƒƒX‚ÌUŒ‚");
                     damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Diffence);
                     break;
                 case 3:
                     Defence();
-                    Log.text = ("‚Í–hŒä‚µ‚½");
+                    Log.text = ("ƒ~ƒmƒ^ƒEƒƒX‚Í–hŒä‚µ‚½");
                     Enemy_deffence = deffence;
                     break;
             }

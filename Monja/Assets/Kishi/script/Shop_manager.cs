@@ -26,6 +26,7 @@ public class Shop_manager: MonoBehaviour
 
     void Start()
     {
+        Debug.Log("a");
         Item_Library = GetComponent<Item_Library>();
 
         number1 = Random.Range(0, prefab.Length);
@@ -147,5 +148,11 @@ public class Shop_manager: MonoBehaviour
         {
             button.interactable = false;
         }
+    }
+
+    public void shop_reroll()
+    {
+
+        Start();
     }
 }
