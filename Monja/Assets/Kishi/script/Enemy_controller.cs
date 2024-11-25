@@ -323,7 +323,7 @@ public class Enemy_controller : MonoBehaviour
             {
                 case 1:
                     Magic();
-                    Log.text = ("コカトリスの攻撃");
+                    Log.text = ("コカトリスの魔法攻撃");
                     damage_Calculate.Player_Damage_Calculate(Enemy_Magic, playerController.Magic_Diffence);
                     break;
                 case 2:
@@ -349,7 +349,7 @@ public class Enemy_controller : MonoBehaviour
                     break;
                 case 2:
                     Heal();
-                    Log.text = ("ナイトの攻撃");
+                    Log.text = ("ナイトは回復した");
                     damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Diffence);
                     break;
                 case 3:
