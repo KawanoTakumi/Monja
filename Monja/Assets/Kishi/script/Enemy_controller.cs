@@ -17,6 +17,7 @@ public class Enemy_controller : MonoBehaviour
     public  static int HP_MAX = 100;
 
     public GameObject[] Effect;//エフェクト用
+    public GameObject Monster;
     GameObject obj1;
     [SerializeField] GameObject _parentGameObject;
 
@@ -538,6 +539,8 @@ public class Enemy_controller : MonoBehaviour
     public void Win()
     {
         animator.SetBool("death", false);
+        Monster.SetActive(false);
+        Destroy(obj1);
         if (ChangeScene.scene_cnt >= 9)
         {
             PlayerController.Money += money;
