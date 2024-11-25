@@ -283,7 +283,7 @@ public class Item_Power : MonoBehaviour
             }
             if(start_cnt == true)
             {
-                PlayerController.HP = PlayerController.HP_max /4;
+                PlayerController.HP += PlayerController.HP_max / 4;
             }
         }
         if(Drill_flag == true)

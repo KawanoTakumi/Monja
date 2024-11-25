@@ -111,29 +111,29 @@ public class Enemy_controller : MonoBehaviour
             else if (CompareTag("cockatrice") == true)
             {
                 Enemy_Cockatrice = true;
-                HP = 550;
-                HP_MAX = 500;
+                HP = 450;
+                HP_MAX = 450;
                 Enemy_luck_Max = 16;
             }
             else if (CompareTag("medhusa") == true)
             {
                 Boss_Medhusa = true;
-                HP =650;
-                HP_MAX = 650;
+                HP =550;
+                HP_MAX = 550;
                 Enemy_luck_Max = 0;
             }
             else if (CompareTag("sinigami") == true)
             {
                 Boss_sinigami = true;
-                HP = 500;
-                HP_MAX = 500;
+                HP = 300;
+                HP_MAX = 300;
                 Enemy_luck_Max = 26;
             }
             else if (CompareTag("dragon") == true)
             {
                 Boss_Dragon = true;
-                HP = 1000;
-                HP_MAX = 1000;
+                HP = 800;
+                HP_MAX = 800;
                 Enemy_luck_Max = 11;
             }
 
@@ -156,51 +156,50 @@ public class Enemy_controller : MonoBehaviour
             if (HP <= 0)
             {
                 PlayerController.MP = 100;
-                turn = 1;
                 tag_get = true;
                 HP_Bar.SetActive(false);//HPバー
  
                 animator.SetBool("death", true);//deathフラグをtrueにする
             }
-            if (Enemy_Skelton == true && turn_time == 35) //敵　スケルトン
+            if (Enemy_Skelton == true && turn_time == 10) //敵　スケルトン
             {
                 Skelton();
             }
-            else if (Enemy_Centaurus == true && turn_time == 35) //敵　メデューサ（ボス）
+            else if (Enemy_Centaurus == true && turn_time == 10) //敵　メデューサ（ボス）
             {
                 Centaurus();
             }
-            else if (Enemy_Richie == true && turn_time == 35) //敵　メデューサ（ボス）
+            else if (Enemy_Richie == true && turn_time == 10) //敵　メデューサ（ボス）
             {
                 Richie();
             }
-            else if (Enemy_Knight == true && turn_time == 35) //敵　メデューサ（ボス）
+            else if (Enemy_Knight == true && turn_time == 10) //敵　メデューサ（ボス）
             {
                 Knight();
             }
-            else if (Enemy_Cockatrice == true && turn_time == 35) //敵　メデューサ（ボス）
+            else if (Enemy_Cockatrice == true && turn_time == 10) //敵　メデューサ（ボス）
             {
                 Cockatrice();
             }
-            else if (Enemy_Minotaurus == true && turn_time == 35) //敵　メデューサ（ボス）
+            else if (Enemy_Minotaurus == true && turn_time == 10) //敵　メデューサ（ボス）
             {
                 Minotaurus();
             }
 
-            else if (Boss_Medhusa == true && turn_time == 35) //敵　メデューサ（ボス）
+            else if (Boss_Medhusa == true && turn_time == 10) //敵　メデューサ（ボス）
             {
                 Medhusa();
             }
-            else if (Boss_sinigami == true && turn_time == 35) //敵　メデューサ（ボス）
+            else if (Boss_sinigami == true && turn_time == 10) //敵　メデューサ（ボス）
             {
                 Sinigami();
             }
-            else if (Boss_Dragon == true && turn_time == 35) //敵　メデューサ（ボス）
+            else if (Boss_Dragon == true && turn_time == 10) //敵　メデューサ（ボス）
             {
                 Dragon();
             }
             turn_time++;
-            if (turn_time >= 150)
+            if (turn_time >= 200)
             {
                 Log.text = ("敵ターン終了");
                 Debug.Log("主人公体力" + PlayerController.HP);
@@ -246,7 +245,7 @@ public class Enemy_controller : MonoBehaviour
         {
             Create_Effect_Enemy(0, 2.3f, 0f);
             
-            Enemy_deffence += deffence;
+            Enemy_deffence = deffence;
         }
 
      
@@ -575,6 +574,7 @@ public class Enemy_controller : MonoBehaviour
         animator.SetBool("death", false);
         Monster.SetActive(false);
         Destroy(obj1);
+        turn = 1;
         Cut_In.first_flag = true;
         if (ChangeScene.scene_cnt >= 9)
         {

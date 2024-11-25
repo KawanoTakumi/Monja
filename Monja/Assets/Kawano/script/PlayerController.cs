@@ -150,6 +150,8 @@ public class PlayerController : MonoBehaviour
                 Invoke("SE_Play_Critical", 180.0f);
                 Debug.Log("aaa");
                 Attack_damage = Attack + Attack / 2;
+
+                enemy_Controller.Create_Effect_Enemy(2, 0.0f, 0.0f);
                 Log.text = ("主人公クリティカル");
                 Item_Power.dice_crit = false;
             }
@@ -247,7 +249,7 @@ public class PlayerController : MonoBehaviour
 
                 animator.SetBool("heal", true);
                 //Debug.Log("回復");
-                Create_Effect_Player(0, -5.1f, 0.1f);
+                Create_Effect_Player(1, -5.1f, 0.1f);
 
                 HP_Potion -= 1;
                 HP += HP_max / 2;
