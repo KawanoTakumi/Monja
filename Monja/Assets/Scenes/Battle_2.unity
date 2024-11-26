@@ -760,7 +760,7 @@ AudioSource:
   m_GameObject: {fileID: 348858936}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 4594366515453584356, guid: f056be45a62b3d04f9301b9a0ac19720, type: 2}
   m_audioClip: {fileID: 8300000, guid: 46981e05d4227af4cb997d6a42b8667c, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -2086,7 +2086,7 @@ AudioSource:
   m_GameObject: {fileID: 889787174}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 7050972868694844324, guid: f056be45a62b3d04f9301b9a0ac19720, type: 2}
   m_audioClip: {fileID: 8300000, guid: d5f7b1cd8ad265b4687b1d8bd980f6e9, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -2529,7 +2529,7 @@ AudioSource:
   m_GameObject: {fileID: 1111548029}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 7050972868694844324, guid: f056be45a62b3d04f9301b9a0ac19720, type: 2}
   m_audioClip: {fileID: 8300000, guid: 0e7749f107b09634bb2a45218da5d05a, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -3760,7 +3760,7 @@ AudioSource:
   m_GameObject: {fileID: 1656728077}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 7050972868694844324, guid: f056be45a62b3d04f9301b9a0ac19720, type: 2}
   m_audioClip: {fileID: 8300000, guid: 43376ed47ccd67d4c81af31b4e76f903, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -4416,7 +4416,6 @@ MonoBehaviour:
   Magic_damage: 0
   money: 0
   player_luck: 0
-  max_luck: 5
   Effect:
   - {fileID: 1970586632822164892, guid: fa0d56264dfbcd64ca333dc0f80d4760, type: 3}
   - {fileID: 2159356408269481005, guid: f2580a5da0869f34a859503c60ba7ca9, type: 3}

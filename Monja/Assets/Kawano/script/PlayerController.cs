@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     public static int Money;//所持金額 //別のシーンでも呼ばれる
     public int money;//一時確認用（あとで消す）
     public int player_luck;
-    public int max_luck;
+    public static int max_luck = 11;
     public static int magic_number = 0;//魔法番号(撃てる魔法の種類)
     int poison_cnt;
 
@@ -136,19 +136,18 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("attack", true);
         if (turn_Manager.turn == true)
         {
-            player_luck = Random.Range(1, 2);//max_luck);
-            //if (player_luck == max_luck-1)
-            //{
-            //    //遅延
-            //    Invoke("SE_Play_Attack", 300.0f);
-
-            //    Attack_damage = Attack;
-            //}
-            if (player_luck == 1 || Item_Power.dice_crit == true)//max_luck - 1 || Item_Power.dice_crit == true)
+            player_luck = Random.Range(1,max_luck);
+            if (player_luck <= max_luck - 2)
             {
                 //遅延
-                Invoke("SE_Play_Critical", 180.0f);
-                Debug.Log("aaa");
+                Invoke("SE_Play_Attack", 300.0f);
+
+                Attack_damage = Attack;
+            }
+            if (player_luck == max_luck -1 || Item_Power.dice_crit == true)
+            {
+                //遅延
+               // Invoke("SE_Play_Critical", 1.0f);
                 Attack_damage = Attack + Attack / 2;
 
                 enemy_Controller.Create_Effect_Enemy(2, 0.0f, 0.0f);
@@ -202,8 +201,6 @@ public class PlayerController : MonoBehaviour
         {
             if(MP >= 25)
             {
-                //遅延
-                Invoke("SE_Play_Magic", 60.0f);
 
                 intaract_false();
                 animator.SetBool("magic", true);
@@ -218,6 +215,9 @@ public class PlayerController : MonoBehaviour
                 Magic_damage = Magic;
                 damage_Calculate.Enemey_Damage_Calculate(Magic_damage, enemy_Controller.magic_Diffence);
                 turn_time++;
+
+                //遅延
+                Invoke("SE_Play_Magic", 60.0f);
                 if (turn_time > 300)
                 {
                     turn_time = 0;
@@ -374,5 +374,6 @@ public class PlayerController : MonoBehaviour
     public void SE_Play_Critical()
     {
         audioSource_Critical.PlayOneShot(clip_critical);
+        Debug.Log("aaa");
     }
 }

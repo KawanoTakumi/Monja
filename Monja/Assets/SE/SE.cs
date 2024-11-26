@@ -32,6 +32,6 @@ public class SE : MonoBehaviour
     // Update is called once per frame
     public void SettingPlaySE()
     {
-        audioSourceSE.PlayOneShot(se);
+       // audioSourceSE.PlayOneShot(se);
     }
 }
