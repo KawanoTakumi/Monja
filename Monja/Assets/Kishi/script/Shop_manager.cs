@@ -9,9 +9,12 @@ public class Shop_manager: MonoBehaviour
 {
     // オブジェクトを生成する元となるPrefabへの参照を保持します。
     public GameObject[] prefab;
-    public int number1;
-    public int number2;
-    public int number3;
+    int number1;
+    int number2;
+    int number3;
+    GameObject obj1;
+    GameObject obj2;
+    GameObject obj3;
     public bool item_flag;
     public Item_Library Item_Library;
 
@@ -27,7 +30,6 @@ public class Shop_manager: MonoBehaviour
 
     void Start()
     {
-        Debug.Log("a");
         shop_select();
     }
 
@@ -70,12 +72,12 @@ public class Shop_manager: MonoBehaviour
         }
 
     }
-    void CreateObject1()
+    public void CreateObject1()
     {
         if(tmp_1 == -1)
         {
             // ゲームオブジェクトを生成します。
-            GameObject obj1 = Instantiate(prefab[number1], new Vector3(-3.6f, 1.55f, 0), Quaternion.identity, _parentGameObject.transform);
+            obj1 = Instantiate(prefab[number1], new Vector3(-3.6f, 1.55f, 0), Quaternion.identity, _parentGameObject.transform);
             button1 = obj1.GetComponent<Button>();
             obj1.name = "Item_Image_1";
             tmp_1 = number1;
@@ -84,18 +86,18 @@ public class Shop_manager: MonoBehaviour
         else
         {
             // ゲームオブジェクトを生成します。
-            GameObject obj1 = Instantiate(prefab[tmp_1], new Vector3(-3.6f, 1.55f, 0), Quaternion.identity, _parentGameObject.transform);
+            obj1 = Instantiate(prefab[tmp_1], new Vector3(-3.6f, 1.55f, 0), Quaternion.identity, _parentGameObject.transform);
             button1 = obj1.GetComponent<Button>();
             obj1.name = "Item_Image_1";
             Item_Get_Check(button1);
         }
 
     }
-    void CreateObject2()
+    public void CreateObject2()
     {
         if(tmp_2 == -1)
         {
-            GameObject obj2 = Instantiate(prefab[number2], new Vector3(-0.15f, 1.55f, 0), Quaternion.identity, _parentGameObject.transform);
+            obj2 = Instantiate(prefab[number2], new Vector3(-0.15f, 1.55f, 0), Quaternion.identity, _parentGameObject.transform);
             button2 = obj2.GetComponent<Button>();
             obj2.name = "Item_Image_2";
             tmp_2 = number2;
@@ -103,17 +105,17 @@ public class Shop_manager: MonoBehaviour
         }
         else
         {
-            GameObject obj2 = Instantiate(prefab[tmp_2], new Vector3(-0.15f, 1.55f, 0), Quaternion.identity, _parentGameObject.transform);
+            obj2 = Instantiate(prefab[tmp_2], new Vector3(-0.15f, 1.55f, 0), Quaternion.identity, _parentGameObject.transform);
             button2 = obj2.GetComponent<Button>();
             obj2.name = "Item_Image_2";
             Item_Get_Check(button2);
         }
     }
-    void CreateObject3()
+    public void CreateObject3()
     {
         if(tmp_3 == -1)
         {
-            GameObject obj3 = Instantiate(prefab[number3], new Vector3(3.6f, 1.55f, 0), Quaternion.identity, _parentGameObject.transform);
+            obj3 = Instantiate(prefab[number3], new Vector3(3.6f, 1.55f, 0), Quaternion.identity, _parentGameObject.transform);
             button3 = obj3.GetComponent<Button>();
             obj3.name = "Item_Image_3";
             tmp_3 = number3;
@@ -121,7 +123,7 @@ public class Shop_manager: MonoBehaviour
         }
         else
         {
-            GameObject obj3 = Instantiate(prefab[tmp_3], new Vector3(3.6f, 1.55f, 0), Quaternion.identity, _parentGameObject.transform);
+            obj3 = Instantiate(prefab[tmp_3], new Vector3(3.6f, 1.55f, 0), Quaternion.identity, _parentGameObject.transform);
             button3 = obj3.GetComponent<Button>();
             obj3.name = "Item_Image_3";
             Item_Get_Check(button3);
@@ -136,11 +138,9 @@ public class Shop_manager: MonoBehaviour
             button.interactable = false;
         }
     }
-
     public void shop_select()
     {
         Item_Library = GetComponent<Item_Library>();
-
         number1 = Random.Range(0, prefab.Length);
         CreateObject1();
 
@@ -155,18 +155,28 @@ public class Shop_manager: MonoBehaviour
             number3 = Random.Range(0, prefab.Length);
         } while (number3 == number2 || number3 == number1);
         CreateObject3();
+
+
+
     }
 
     public void shop_reroll()
     {
+
         if (PlayerController.Money >= 40)
         {
             PlayerController.Money -= 40;
+            Destroy(obj1);
+            Destroy(obj2);
+            Destroy(obj3);
+            tmp_1 = -1;
+            tmp_2 = -1;
+            tmp_3 = -1;
             shop_select();
         }
         else
         {
-            text.text = ("お金が足りません");
+            text.text = ("リロールは40G必要です");
         }
     }
 }

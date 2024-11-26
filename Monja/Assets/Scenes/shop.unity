@@ -1644,9 +1644,6 @@ MonoBehaviour:
   - {fileID: 1790367374356729537, guid: 699a6b6c8eadd2242a10d81e68a8d8bf, type: 3}
   - {fileID: 2592230001459689528, guid: 672e41021f1aa394eb5d19ad3a48020d, type: 3}
   - {fileID: 2531010126652478806, guid: a1614076fa960c842a224c340e7093a7, type: 3}
-  number1: 0
-  number2: 0
-  number3: 0
   item_flag: 0
   Item_Library: {fileID: 1035226743}
   button1: {fileID: 1123360770}
@@ -3324,8 +3321,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -150.65, y: 362.13}
-  m_SizeDelta: {x: 202.71, y: 85.96}
+  m_AnchoredPosition: {x: -150.77, y: 369.69}
+  m_SizeDelta: {x: 170.35, y: 161.17}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1938886299
 MonoBehaviour:
@@ -3403,8 +3400,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 15e5ada6e7d38a849aa1cff429542cd8, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
