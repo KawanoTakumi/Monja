@@ -7,7 +7,10 @@ using UnityEngine.SceneManagement;
 public class intro_script : MonoBehaviour
 {
     public Text text_box;
-    
+    public AudioSource audioSource_Work;
+    [SerializeField] AudioClip clip_work;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,5 +33,9 @@ public class intro_script : MonoBehaviour
             case 4: text_box.text = "・・・足を滑らせて穴の中に落ちながら。";break;
             case 5: SceneManager.LoadScene("work_01");break;
         }
+    }
+    public void SE_Play_Intro()
+    {
+        audioSource_Work.PlayOneShot(clip_work);
     }
 }

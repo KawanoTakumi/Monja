@@ -502,12 +502,12 @@ public class Enemy_controller : MonoBehaviour
                 case 2:
                     dragon_magic();
                     Log.text = ("ƒhƒ‰ƒSƒ“‚Ì–‚–@UŒ‚");
-                    damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Diffence);
+                    damage_Calculate.Player_Damage_Calculate(Enemy_Magic, playerController.Magic_Diffence);
                     break;
                 case 3:
                     dragon_attack();
                     Log.text = ("ƒhƒ‰ƒSƒ“‚ÌUŒ‚");
-                    Enemy_deffence = deffence;
+                    damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Diffence);
                     break;
                 case 4:
                     dragon_Heal();
