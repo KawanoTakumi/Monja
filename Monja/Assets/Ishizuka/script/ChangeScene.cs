@@ -9,7 +9,7 @@ public class ChangeScene : MonoBehaviour
     public Shop_manager shop;
     public static bool Scene_Change = false;
     public static int Boss_Number = 0;
-    public static int scene_cnt = 1;//最初のシーンがcase :1
+    public static int scene_cnt = 0;
     public void Start()
     {
         shop = GetComponent<Shop_manager>();
@@ -69,6 +69,7 @@ public class ChangeScene : MonoBehaviour
             //バトルシーン(case: 3,6,9のときはボスシーン)
             switch (scene_cnt)
             {
+                case 0: SceneManager.LoadScene("Title");break;//タイトル
                 case 1: SceneManager.LoadScene("Battle"); break;//バトル１
                 case 2: SceneManager.LoadScene("Battle_2"); break;//バトル２
                 case 3: SceneManager.LoadScene("Boss_Battle_01"); break;//死神 バトル３

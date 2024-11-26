@@ -5,13 +5,16 @@ using UnityEngine;
 public class MouseSE : MonoBehaviour
 {
     //private new AudioSource audio;
-    public AudioSource button_Audio;//ボタン用のSE
+    GameObject obj;
+    AudioSource button_Audio;//ボタン用のSE
     AudioClip Sound;
     bool first_hit = false;//最初にオブジェクトに乗った時だけ反応させる
 
     public void Start()
     {
         //Sound = GetComponent<AudioClip>();
+        obj = GameObject.Find("button_audio");
+        button_Audio = obj.GetComponent<AudioSource>();
     }
 
     //マウスがUIの上に乗ったら音が鳴る

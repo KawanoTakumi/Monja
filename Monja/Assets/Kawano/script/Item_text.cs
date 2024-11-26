@@ -104,7 +104,7 @@ public class Item_text : MonoBehaviour
         }
         else if (button == CompareTag("Pudding"))
         {
-            text.text = "プリン\n卵を牛乳などと一緒に固めた甘いお菓子。至福の時間\n戦闘開始時体力を完全に回復する。\nリンゴを持っていると戦闘ごとに最大体力が３０増加する";
+            text.text = "プリン\n卵を牛乳などと一緒に固めた甘いお菓子。至福の時間\n戦闘開始時体力を最大値の25%分回復する。\nリンゴを持っていると戦闘ごとに最大体力が30増加する";
         }
         else if (button == CompareTag("Drill"))
         {
@@ -146,7 +146,7 @@ public class Item_text : MonoBehaviour
         {
             text.text = "マイク\n音を拾うことができる機械。Say Yeah!!\n魔法攻撃力を３０増加させ音のノイズで攻撃する（アイテム画面でアイテムを押すと魔法攻撃が変化）";
         }
-        else if (button == CompareTag("Megaphon"))
+        else if (button == CompareTag("Megaphone"))
         {
             text.text = "メガホン\n音を大きくする機械。もう大声を出さなくてもいい\n物理防御力を２０増加させる";
         }
