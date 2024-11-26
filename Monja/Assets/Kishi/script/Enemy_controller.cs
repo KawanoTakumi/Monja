@@ -125,8 +125,8 @@ public class Enemy_controller : MonoBehaviour
             else if (CompareTag("sinigami") == true)
             {
                 Boss_sinigami = true;
-                HP = 500;
-                HP_MAX = 500;
+                HP = 250;
+                HP_MAX = 250;
                 Enemy_luck_Max = 26;
             }
             else if (CompareTag("dragon") == true)
