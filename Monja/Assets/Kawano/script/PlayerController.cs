@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     public int Attack_damage;//攻撃力(計算後)
     public int Magic_damage;//魔法力(計算後)
     public static int HP_Potion;//HPポーションの数
-    public static int Money;//所持金額 //別のシーンでも呼ばれる
+    public static int Money = 200;//所持金額 //別のシーンでも呼ばれる
     public int money;//一時確認用（あとで消す）
     public int player_luck;
     public int max_luck;

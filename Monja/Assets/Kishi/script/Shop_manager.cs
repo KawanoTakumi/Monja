@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
 public class Shop_manager: MonoBehaviour
@@ -21,27 +22,13 @@ public class Shop_manager: MonoBehaviour
     public static int tmp_1 = -1;
     public static int tmp_2 = -1;
     public static int tmp_3 = -1;
-
+    public Text text;
     [SerializeField] GameObject _parentGameObject;
 
     void Start()
     {
         Debug.Log("a");
-        Item_Library = GetComponent<Item_Library>();
-
-        number1 = Random.Range(0, prefab.Length);
-        CreateObject1();
-
-        do{
-            number2 = Random.Range(0, prefab.Length);
-        } while (number2 == number1);
-        CreateObject2();
-
-        do{
-            number3 = Random.Range(0, prefab.Length);
-        } while (number3 == number2 || number3 == number1);
-        CreateObject3();
-
+        shop_select();
     }
 
     public void Update()
@@ -150,9 +137,36 @@ public class Shop_manager: MonoBehaviour
         }
     }
 
+    public void shop_select()
+    {
+        Item_Library = GetComponent<Item_Library>();
+
+        number1 = Random.Range(0, prefab.Length);
+        CreateObject1();
+
+        do
+        {
+            number2 = Random.Range(0, prefab.Length);
+        } while (number2 == number1);
+        CreateObject2();
+
+        do
+        {
+            number3 = Random.Range(0, prefab.Length);
+        } while (number3 == number2 || number3 == number1);
+        CreateObject3();
+    }
+
     public void shop_reroll()
     {
-
-       
+        if (PlayerController.Money >= 40)
+        {
+            PlayerController.Money -= 40;
+            shop_select();
+        }
+        else
+        {
+            text.text = ("‚¨‹à‚ª‘«‚è‚Ü‚¹‚ñ");
+        }
     }
 }
