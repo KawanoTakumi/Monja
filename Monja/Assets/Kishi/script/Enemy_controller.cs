@@ -32,6 +32,8 @@ public class Enemy_controller : MonoBehaviour
     int Enemy_act = 0;
     int Enemy_luck = 0;
     static int Enemy_luck_Max;
+    static int magic_cnt = 0;
+
     bool Enemy_Skelton;
     bool Enemy_Centaurus;
     bool Enemy_Richie;
@@ -48,6 +50,7 @@ public class Enemy_controller : MonoBehaviour
     public bool poison;
     public static bool End_GAme_Flag = false;
     public GameObject HP_Bar;
+
 
     // Start is called before the first frame update
     void Start()
@@ -253,7 +256,6 @@ public class Enemy_controller : MonoBehaviour
         void Magic()
         {
             Log.text = ("ìGÇÃñÇñ@çUåÇ");
-            int magic_cnt = 0;
             if (magic_cnt < 3)
             {
                 Enemy_Magic = magic;
@@ -531,7 +533,6 @@ public class Enemy_controller : MonoBehaviour
         void dragon_magic()
         {
             Log.text = ("ìGÇÃñÇñ@çUåÇ");
-            int magic_cnt = 0;
             if (magic_cnt < 2)
             {
                 Enemy_Magic = magic;
@@ -574,6 +575,7 @@ public class Enemy_controller : MonoBehaviour
         animator.SetBool("death", false);
         Monster.SetActive(false);
         Destroy(obj1);
+        magic_cnt = 0;
         turn = 1;
         Cut_In.first_flag = true;
         if (ChangeScene.scene_cnt >= 9)
@@ -587,4 +589,9 @@ public class Enemy_controller : MonoBehaviour
             SceneManager.LoadScene("Win");
         }
     }
+    public void Crit_Del()
+    {
+        Destroy(obj1);
+    }
+
 }

@@ -4,6 +4,8 @@ using UnityEngine;
 public class Cut_In : MonoBehaviour
 {
     public GameObject Cut_Scene;
+    public AudioSource Cut_In_SE;//カットイン用SE
+    public AudioClip clip;
     public static bool first_flag = true;//初回のみ再生
 
     public void Update()
@@ -26,5 +28,10 @@ public class Cut_In : MonoBehaviour
         {
             Cut_Scene.SetActive(false);
         }
+    }
+    //カットインサウンド関数
+    public void Cut_In_Sound()
+    {
+        Cut_In_SE.PlayOneShot(clip);
     }
 }

@@ -1306,6 +1306,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Cut_Scene: {fileID: 1914041795}
+  Cut_In_SE: {fileID: 0}
+  clip: {fileID: 0}
 --- !u!1 &583987172
 GameObject:
   m_ObjectHideFlags: 0
@@ -1639,7 +1641,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -702.8, y: 406.45}
+  m_AnchoredPosition: {x: -517, y: 406.45}
   m_SizeDelta: {x: 172.07, y: 71.16}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &754146516
@@ -2677,10 +2679,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6190e519a1569e540b6b6c0282d0879b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Attack: 30
-  Diffence: 30
-  Magic: 10
-  Magic_Diffence: 10
+  Attack: 25
+  Diffence: 25
+  Magic: 25
+  Magic_Diffence: 25
   Attack_damage: 0
   Magic_damage: 0
   money: 0
@@ -4571,7 +4573,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -504.00003, y: 369.64}
+  m_AnchoredPosition: {x: -699, y: 369.64}
   m_SizeDelta: {x: 190.07, y: 160.29}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1884345785

@@ -152,6 +152,7 @@ public class PlayerController : MonoBehaviour
                 Attack_damage = Attack + Attack / 2;
 
                 enemy_Controller.Create_Effect_Enemy(2, 0.0f, 0.0f);
+                
                 Log.text = ("主人公クリティカル");
                 Item_Power.dice_crit = false;
             }

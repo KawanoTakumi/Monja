@@ -153,6 +153,6 @@ public class Shop_manager: MonoBehaviour
     public void shop_reroll()
     {
 
-        Start();
+       
     }
 }
