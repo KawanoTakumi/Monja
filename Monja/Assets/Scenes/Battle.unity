@@ -3140,7 +3140,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP_Bar: {fileID: 1560525733}
   MP_Bar: {fileID: 1135844032}
-  Enemy_HP_Bar: {fileID: 0}
+  Enemy_HP_Bar: {fileID: 1765390290}
 --- !u!114 &1013919613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5446,7 +5446,7 @@ MonoBehaviour:
   Enemy_Magic: 0
   Log: {fileID: 1265022589}
   poison: 0
-  HP_Bar: {fileID: 0}
+  HP_Bar: {fileID: 1765390288}
 --- !u!114 &2097196024
 MonoBehaviour:
   m_ObjectHideFlags: 0

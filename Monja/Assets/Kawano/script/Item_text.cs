@@ -112,7 +112,7 @@ public class Item_text : MonoBehaviour
         }
         else if (button == CompareTag("Headphone"))
         {
-            text.text = "ヘッドフォン\n頭につけることで音楽を聞くことができる道具。\n自分の世界に入ってしまう\nターンごとに物理攻撃力と物理防御力を３減らし\n体力を１０回復させる";
+            text.text = "ヘッドフォン\n頭につけることで音楽を聞くことができる道具。自分の世界に入ってしまう\nターン毎に物理攻撃力と物理防御力を３減少\n体力を１０回復";
         }
         else if (button == CompareTag("UtypeMagnet"))
         {
