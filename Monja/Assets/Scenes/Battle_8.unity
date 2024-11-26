@@ -904,7 +904,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74da8a62fed5efa4ebdfe28f65622f3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button_Audio: {fileID: 1806543678}
 --- !u!1 &395539303
 GameObject:
   m_ObjectHideFlags: 0
@@ -1472,7 +1471,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -697.54, y: 396.52}
+  m_AnchoredPosition: {x: -510, y: 396.52}
   m_SizeDelta: {x: 204.91, y: 87.58}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &754146516
@@ -1760,7 +1759,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74da8a62fed5efa4ebdfe28f65622f3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button_Audio: {fileID: 1806543678}
 --- !u!1 &860605810
 GameObject:
   m_ObjectHideFlags: 0
@@ -1804,7 +1802,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -504.00003, y: 369.64}
+  m_AnchoredPosition: {x: -696, y: 369.64}
   m_SizeDelta: {x: 190.07, y: 160.29}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &860605812
@@ -1911,7 +1909,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74da8a62fed5efa4ebdfe28f65622f3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button_Audio: {fileID: 0}
 --- !u!114 &860605816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2566,7 +2563,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74da8a62fed5efa4ebdfe28f65622f3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button_Audio: {fileID: 1806543678}
 --- !u!114 &889787182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3287,7 +3283,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74da8a62fed5efa4ebdfe28f65622f3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button_Audio: {fileID: 1806543678}
 --- !u!1 &1138115242
 GameObject:
   m_ObjectHideFlags: 0
@@ -4141,7 +4136,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74da8a62fed5efa4ebdfe28f65622f3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button_Audio: {fileID: 1806543678}
 --- !u!1 &1734433735
 GameObject:
   m_ObjectHideFlags: 0
@@ -4453,11 +4447,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!82 &1806543678 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 369285360025072898, guid: c73c7eb0f7c45fa43a4512ad34fc0033, type: 3}
-  m_PrefabInstance: {fileID: 1930828458}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1873193600
 GameObject:
   m_ObjectHideFlags: 0
