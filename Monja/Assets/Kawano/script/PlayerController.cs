@@ -141,7 +141,7 @@ public class PlayerController : MonoBehaviour
             if (player_luck < max_luck - 1)
             {
                 //遅延
-                Invoke("SE_Play_Attack", 300.0f);
+                Invoke("SE_Play_Attack", 1000.0f);
 
                 Attack_damage = Attack;
             }
