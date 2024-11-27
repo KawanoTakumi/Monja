@@ -56,8 +56,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] AudioClip clip_conce;
     public AudioSource audioSource_Heal;
     [SerializeField] AudioClip clip_heal;
-    public AudioSource audioSource_Critical;
-    [SerializeField] AudioClip clip_critical;
+    //public AudioSource audioSource_Critical;
+    //[SerializeField] AudioClip clip_critical;
 
     void Start()
     {
@@ -147,8 +147,9 @@ public class PlayerController : MonoBehaviour
             }
             if (player_luck == max_luck -1 || Item_Power.dice_crit == true)
             {
-                //遅延
-               // Invoke("SE_Play_Critical", 1.0f);
+                //Debug.Log("aaaa");
+                ////遅延
+                //Invoke("SE_Play_Critical", 1.0f);
                 Attack_damage = Attack + Attack / 2;
 
                 enemy_Controller.Create_Effect_Enemy(2, 3.0f, 0.0f);
@@ -379,8 +380,8 @@ public class PlayerController : MonoBehaviour
     {
         audioSource_Heal.PlayOneShot(clip_heal);
     }
-    public void SE_Play_Critical()
-    {
-        audioSource_Critical.PlayOneShot(clip_critical);
-    }
+    //public void SE_Play_Critical()
+    //{
+    //    audioSource_Critical.PlayOneShot(clip_critical);
+    //}
 }
