@@ -43,6 +43,7 @@ public class ChangeScene : MonoBehaviour
     {
         //シーンナンバー加算
         scene_cnt++;
+        Debug.Log(scene_cnt);
     }
     public void Work_Cange_Scene()
     {
@@ -66,19 +67,20 @@ public class ChangeScene : MonoBehaviour
         Debug.Log("現在のシーン" + scene_cnt);
         if(Scene_Change == false)
         {
+            
             //バトルシーン(case: 3,6,9のときはボスシーン)
             switch (scene_cnt)
             {
-                case 0: SceneManager.LoadScene("Title");break;//タイトル
-                case 1: SceneManager.LoadScene("Battle"); break;//バトル１
-                case 2: SceneManager.LoadScene("Battle_2"); break;//バトル２
-                case 3: SceneManager.LoadScene("Boss_Battle_01"); break;//死神 バトル３
-                case 4: SceneManager.LoadScene("Battle_4"); break;//バトル４
-                case 5: SceneManager.LoadScene("Battle_5"); break;//バトル５
-                case 6: SceneManager.LoadScene("Boss_Battle_02"); break;//メデューサ バトル６
-                case 7: SceneManager.LoadScene("Battle_7"); break;//バトル７
-                case 8: SceneManager.LoadScene("Battle_8"); break;//バトル８
-                case 9: SceneManager.LoadScene("Boss_Battle_03"); break;//ドラゴン バトル９
+                case 0: SceneManager.LoadScene("Title");break;           //タイトル
+                case 1: SceneManager.LoadScene("Battle"); break;         //スケルトン　  バトル１
+                case 2: SceneManager.LoadScene("Battle_2"); break;       //リッチ　      バトル２
+                case 3: SceneManager.LoadScene("Boss_Battle_01"); break; //死神　        バトル３
+                case 4: SceneManager.LoadScene("Battle_4"); break;       //ミノタウロス　バトル４
+                case 5: SceneManager.LoadScene("Battle_5"); break;       //ケンタウロス　バトル５
+                case 6: SceneManager.LoadScene("Boss_Battle_02"); break; //メデューサ    バトル６
+                case 7: SceneManager.LoadScene("Battle_7"); break;       //コカトリス　  バトル７
+                case 8: SceneManager.LoadScene("Battle_8"); break;       //ナイト　      バトル８
+                case 9: SceneManager.LoadScene("Boss_Battle_03"); break; //ドラゴン      バトル９
             }
         }
     }

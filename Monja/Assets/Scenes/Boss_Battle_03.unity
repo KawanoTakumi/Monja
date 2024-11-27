@@ -1232,8 +1232,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.085}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1142.46, y: -290.88}
-  m_SizeDelta: {x: 571.68, y: 810.56}
+  m_AnchoredPosition: {x: 1444.19, y: -175.22}
+  m_SizeDelta: {x: 1103.47, y: 1177.84}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &427628433
 Animator:
@@ -2687,7 +2687,6 @@ MonoBehaviour:
   Magic_damage: 0
   money: 0
   player_luck: 0
-  max_luck: 10
   Effect:
   - {fileID: 1970586632822164892, guid: fa0d56264dfbcd64ca333dc0f80d4760, type: 3}
   - {fileID: 2159356408269481005, guid: f2580a5da0869f34a859503c60ba7ca9, type: 3}
@@ -2773,7 +2772,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43ca332191cee654ab73deacc4732459, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turn: 1
   turn_text: {fileID: 2031012978}
 --- !u!114 &1013919615
 MonoBehaviour:

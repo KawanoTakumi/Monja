@@ -34,15 +34,15 @@ public class Enemy_controller : MonoBehaviour
     static int Enemy_luck_Max;
     static int magic_cnt = 0;
 
-    bool Enemy_Skelton;
-    bool Enemy_Centaurus;
-    bool Enemy_Richie;
-    bool Enemy_Knight;
-    bool Enemy_Minotaurus;
-    bool Enemy_Cockatrice;
-    bool Boss_Medhusa;
-    bool Boss_sinigami;
-    bool Boss_Dragon;
+    static bool Enemy_Skelton;
+    static bool Enemy_Centaurus;
+    static bool Enemy_Richie;
+    static bool Enemy_Knight;
+    static bool Enemy_Minotaurus;
+    static bool Enemy_Cockatrice;
+    static bool Boss_Medhusa;
+    static bool Boss_sinigami;
+    static bool Boss_Dragon;
     public static int turn = 1;//ターン
     public static bool tag_get = true;
     int turn_time = 0;
@@ -75,20 +75,13 @@ public class Enemy_controller : MonoBehaviour
         if (tag_get == true)
         {
             tag_get = false;
-            //タグの比較
+            
             if (CompareTag("skelton") == true)
             {
                 Enemy_Skelton = true;
                 HP = 75;
                 HP_MAX = 75;
                 Enemy_luck_Max = 16;
-            }
-            else if (CompareTag("centaurus") == true)
-            {
-               Enemy_Centaurus = true;
-                HP = 200;
-                HP_MAX = 200;
-                Enemy_luck_Max = 11;
             }
             else if (CompareTag("richie") == true)
             {
@@ -97,63 +90,81 @@ public class Enemy_controller : MonoBehaviour
                 HP_MAX = 100;
                 Enemy_luck_Max = 0;
             }
+            else if (CompareTag("sinigami") == true)
+            {
+                Boss_sinigami = true;
+                HP = 240;
+                HP_MAX = 240;
+                Enemy_luck_Max = 26;
+            }
             else if (CompareTag("minotaurus") == true)
             {
                 Enemy_Minotaurus = true;
+                HP = 320;
+                HP_MAX = 320;
+                Enemy_luck_Max = 9;
+            }
+            else if (CompareTag("centaurus") == true)
+            {
+               Enemy_Centaurus = true;
                 HP = 350;
                 HP_MAX = 350;
-                Enemy_luck_Max = 9;
-            }
-            else if (CompareTag("knight") == true)
-            {
-                Enemy_Knight = true;
-                HP = 600;
-                HP_MAX = 600;
-                Enemy_luck_Max = 9;
-            }
-            else if (CompareTag("cockatrice") == true)
-            {
-                Enemy_Cockatrice = true;
-                HP = 450;
-                HP_MAX = 450;
-                Enemy_luck_Max = 16;
+                Enemy_luck_Max = 11;
             }
             else if (CompareTag("medhusa") == true)
             {
                 Boss_Medhusa = true;
-                HP =550;
-                HP_MAX = 550;
+                HP = 400;
+                HP_MAX = 400;
                 Enemy_luck_Max = 0;
             }
-            else if (CompareTag("sinigami") == true)
+            else if (CompareTag("cockatrice") == true)
             {
-                Boss_sinigami = true;
-                HP = 300;
-                HP_MAX = 300;
-                Enemy_luck_Max = 26;
+                Enemy_Cockatrice = true;
+                HP = 430;
+                HP_MAX = 430;
+                Enemy_luck_Max = 16;
+            }
+            else if (CompareTag("knight") == true)
+            {
+                Enemy_Knight = true;
+                HP = 490;
+                HP_MAX = 490;
+                Enemy_luck_Max = 9;
             }
             else if (CompareTag("dragon") == true)
             {
                 Boss_Dragon = true;
-                HP = 800;
-                HP_MAX = 800;
+                HP = 550;
+                HP_MAX = 550;
                 Enemy_luck_Max = 11;
             }
-
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (turn_Manager.turn == true)
+        //タグを探す
+        GameObject.FindWithTag("skelton");
+        GameObject.FindWithTag("centaurus");
+        GameObject.FindWithTag("richie");
+        GameObject.FindWithTag("minotaurus");
+        GameObject.FindWithTag("knight");
+        GameObject.FindWithTag("cockatrice");
+        GameObject.FindWithTag("medhusa");
+        GameObject.FindWithTag("sinigami");
+        GameObject.FindWithTag("dragon");
+
+        if (turn_manager.turn == true)
         {
             Destroy(obj1);
         }
-        if (turn_Manager.turn == false)
+        if (turn_manager.turn != true)
         {
             //EnemyAttackを初期化
             Enemy_attack = 0;
+            Enemy_Magic = 0;
 
             //HPが0になったらクリア画面を出す
             if (HP <= 0)
@@ -161,10 +172,10 @@ public class Enemy_controller : MonoBehaviour
                 PlayerController.MP = 100;
                 tag_get = true;
                 HP_Bar.SetActive(false);//HPバー
- 
                 animator.SetBool("death", true);//deathフラグをtrueにする
+                turn_manager.turn = true;
             }
-            if (Enemy_Skelton == true && turn_time == 10) //敵　スケルトン
+            if (Enemy_Skelton == true && turn_time == 30) //敵　スケルトン
             {
                 Skelton();
             }
@@ -201,6 +212,7 @@ public class Enemy_controller : MonoBehaviour
             {
                 Dragon();
             }
+            //ターンタイムが数値より大きくなったらターン変更
             turn_time++;
             if (turn_time >= 200)
             {
@@ -213,7 +225,7 @@ public class Enemy_controller : MonoBehaviour
                 playerController.Concentlation_.interactable = true;
 
 
-                turn_Manager.turn = true;
+                turn_manager.turn = true;
                 Log.text = ("プレイヤーのターン");
                 //時間の初期化
                 turn_time = 0;
@@ -250,8 +262,6 @@ public class Enemy_controller : MonoBehaviour
             
             Enemy_deffence = deffence;
         }
-
-     
 
         void Magic()
         {
@@ -488,7 +498,6 @@ public class Enemy_controller : MonoBehaviour
             }
         }
         
-       
         void Dragon()
         {
             Enemy_act = Random.Range(1, 5);//1～4まで
@@ -547,8 +556,6 @@ public class Enemy_controller : MonoBehaviour
         {
             HP += HP / 10 + Enemy_attack;
         }
-
-
     }
 
     //アニメーション終了用関数(bool型のみ)
@@ -558,13 +565,12 @@ public class Enemy_controller : MonoBehaviour
     }
     public void Turn_Flag()
     {
-        turn_Manager.turn = false;
+        turn_manager.turn = false;
     }
 
     //エフェクトオブジェクト作成関数
     public void Create_Effect_Enemy(int number, float Fx, float Fy)
     {
-        
         {
             obj1 = Instantiate(Effect[number], new Vector3(Fx, Fy, 0), Quaternion.identity, _parentGameObject.transform);
             obj1.name = "Effect_image_"+number;
@@ -574,6 +580,7 @@ public class Enemy_controller : MonoBehaviour
     {
         animator.SetBool("death", false);
         Monster.SetActive(false);
+        Win_Reset();
         Destroy(obj1);
         magic_cnt = 0;
         turn = 1;
@@ -594,4 +601,16 @@ public class Enemy_controller : MonoBehaviour
         Destroy(obj1);
     }
 
+    void Win_Reset()
+    {
+        Enemy_Skelton = false;
+        Enemy_Centaurus = false;
+        Enemy_Richie = false;
+        Enemy_Knight = false;
+        Enemy_Minotaurus = false;
+        Enemy_Cockatrice = false;
+        Boss_Medhusa = false;
+        Boss_sinigami = false;
+        Boss_Dragon = false;
+    }
 }

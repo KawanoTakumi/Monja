@@ -18,10 +18,10 @@ public class PlayerController : MonoBehaviour
     public int Attack_damage;//攻撃力(計算後)
     public int Magic_damage;//魔法力(計算後)
     public static int HP_Potion;//HPポーションの数
-    public static int Money = 200;//所持金額 //別のシーンでも呼ばれる
+    public static int Money;//所持金額 //別のシーンでも呼ばれる
     public int money;//一時確認用（あとで消す）
     public int player_luck;
-    public static int max_luck = 11;
+    public static int max_luck = 3;
     public static int magic_number = 0;//魔法番号(撃てる魔法の種類)
     int poison_cnt;
 
@@ -67,6 +67,7 @@ public class PlayerController : MonoBehaviour
 
         money = Money;
         turn_Manager = GetComponent<turn_manager>();
+        turn_manager.turn = true;
         animator = GetComponent<Animator>();
         damage_Calculate = GetComponent<Damage_calculate>();
         Enemey = GameObject.Find("Monster");
@@ -76,7 +77,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         //エフェクト削除
-        if(turn_Manager.turn == false)
+        if(turn_manager.turn == false)
         {
             Destroy(obj_player);
         }
@@ -123,7 +124,7 @@ public class PlayerController : MonoBehaviour
         {
             Magic = 0;
         }
-        if (Magic_Diffence >= 0)
+        if (Magic_Diffence < 0)
         {
             Magic_Diffence = 0;
         }
@@ -134,10 +135,10 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         intaract_false();
         animator.SetBool("attack", true);
-        if (turn_Manager.turn == true)
+        if (turn_manager.turn == true)
         {
             player_luck = Random.Range(1,max_luck);
-            if (player_luck <= max_luck - 2)
+            if (player_luck < max_luck - 1)
             {
                 //遅延
                 Invoke("SE_Play_Attack", 300.0f);
@@ -150,7 +151,7 @@ public class PlayerController : MonoBehaviour
                // Invoke("SE_Play_Critical", 1.0f);
                 Attack_damage = Attack + Attack / 2;
 
-                enemy_Controller.Create_Effect_Enemy(2, 0.0f, 0.0f);
+                enemy_Controller.Create_Effect_Enemy(2, 3.0f, 0.0f);
                 
                 Log.text = ("主人公クリティカル");
                 Item_Power.dice_crit = false;
@@ -165,7 +166,7 @@ public class PlayerController : MonoBehaviour
         turn_Manager = GetComponent<turn_manager>();
         animator = GetComponent<Animator>();
 
-        if (turn_Manager.turn == true)
+        if (turn_manager.turn == true)
         {
             if (MP < 100)
             {
@@ -184,7 +185,7 @@ public class PlayerController : MonoBehaviour
                     HP -= 5;
                     poison_cnt -= 1;
                 }
-                turn_Manager.turn = false;
+                turn_manager.turn = false;
             }
             else
             {
@@ -197,7 +198,7 @@ public class PlayerController : MonoBehaviour
     {
         turn_Manager = GetComponent<turn_manager>();
         animator = GetComponent<Animator>();
-        if (turn_Manager.turn == true)
+        if (turn_manager.turn == true)
         {
             if(MP >= 25)
             {
@@ -226,7 +227,7 @@ public class PlayerController : MonoBehaviour
                         HP -= 5;
                         poison_cnt -= 1;
                     }
-                    turn_Manager.turn = false;
+                    turn_manager.turn = false;
                 }
             }
             else
@@ -240,7 +241,7 @@ public class PlayerController : MonoBehaviour
         turn_Manager = GetComponent<turn_manager>();
         animator = GetComponent<Animator>();
         
-        if (turn_Manager.turn == true)
+        if (turn_manager.turn == true)
         {
             intaract_false();
             if (HP != HP_max && HP_Potion > 0)
@@ -333,7 +334,7 @@ public class PlayerController : MonoBehaviour
                 HP -= 5;
                 poison_cnt -= 1;
             }
-        turn_Manager.turn = false;
+        turn_manager.turn = false;
     }
     //エフェクトオブジェクト作成関数
     public void Create_Effect_Player(int number, float Fx, float Fy)
@@ -341,13 +342,20 @@ public class PlayerController : MonoBehaviour
         obj_player = Instantiate(Effect[number], new Vector3(Fx, Fy, 0), Quaternion.identity, _parentGameObject.transform);
         obj_player.name = "Effect_image_" + number;
     }
-
+    public void Crit_Effect()
+    {
+        if(player_luck == max_luck - 1)
+        {
+            Create_Effect_Player(4, 8.0f, 0.0f);
+        }
+    }
     public void Lose()
     {
         animator.SetBool("death", false);
         HP = 100;
         MP = 100;
         Item_Reset();
+        magic_number = 0;
         //各種数値を初期化
         Enemy_controller.turn = 0;
         Enemy_controller.HP = 150;
@@ -374,6 +382,5 @@ public class PlayerController : MonoBehaviour
     public void SE_Play_Critical()
     {
         audioSource_Critical.PlayOneShot(clip_critical);
-        Debug.Log("aaa");
     }
 }
