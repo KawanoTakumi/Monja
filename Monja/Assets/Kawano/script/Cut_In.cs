@@ -24,7 +24,7 @@ public class Cut_In : MonoBehaviour
     }
     public void first_scene()
     {
-        if(Item_Power.start_cnt == false)
+        if(Enemy_controller.turn != 1)
         {
             Cut_Scene.SetActive(false);
         }

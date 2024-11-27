@@ -142,17 +142,17 @@ public class Item_text : MonoBehaviour
         else if (button == CompareTag("UtypeMagnet"))
         {
             itemname.text = "U字型マグネット";
-            text.text = "U字型のマグネット。強力な磁力を帯びている。\n敵の武器も引っ付く\n魔法攻撃力２０増加する";
+            text.text = "U字型のマグネット。強力な磁力を帯びている。敵の武器も引っ付く\n魔法攻撃力２０増加する";
         }
         else if (button == CompareTag("Coffee"))
         {
             itemname.text = "コーヒー";
-            text.text = "豆を焙煎した飲料水。とても苦い。\nChill Time !!!\n体力を２０減らし魔法攻撃力を３０増加させる";
+            text.text = "豆を焙煎した飲料水。とても苦い。Chill Time !!!\n体力を２０減らし魔法攻撃力を３０増加させる";
         }
         else if (button == CompareTag("Safetycone"))
         {
             itemname.text = "三角コーン";
-            text.text = "危険な場所に設置してあるもの。\nたまに蹴られる不運な奴\n５０％の確率で物理攻撃力と物理防御力を４０増加";
+            text.text = "危険な場所に設置してあるもの。たまに蹴られる不運な奴\n５０％の確率で物理攻撃力と物理防御力を４０増加";
         }
         else if (button == CompareTag("USB"))
         {
@@ -172,7 +172,7 @@ public class Item_text : MonoBehaviour
         else if (button == CompareTag("Magnifying Speculum"))
         {
             itemname.text = "虫眼鏡";
-            text.text = "物を拡大して見ることができるツール。黒紙と空が晴れていたら最高da！！\n物理防御力と魔法防御力を毎ターン１０増加させる";
+            text.text = "物を拡大して見ることができる道具。レンズが輝く\n物理防御力と魔法防御力を毎ターン１０増加させる";
         }
         else if (button == CompareTag("Mike"))
         {

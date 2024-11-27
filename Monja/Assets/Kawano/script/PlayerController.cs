@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     public static int Money;//所持金額 //別のシーンでも呼ばれる
     public int money;//一時確認用（あとで消す）
     public int player_luck;
-    public static int max_luck = 3;
+    public static int max_luck = 11;
     public static int magic_number = 0;//魔法番号(撃てる魔法の種類)
     int poison_cnt;
     bool cons_flag = false;
@@ -57,8 +57,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] AudioClip clip_conce;
     public AudioSource audioSource_Heal;
     [SerializeField] AudioClip clip_heal;
-    //public AudioSource audioSource_Critical;
-    //[SerializeField] AudioClip clip_critical;
+    public AudioSource audioSource_Critical;
+    [SerializeField] AudioClip clip_critical;
 
     void Start()
     {
@@ -150,7 +150,7 @@ public class PlayerController : MonoBehaviour
             {
                 //Debug.Log("aaaa");
                 ////遅延
-                //Invoke("SE_Play_Critical", 1.0f);
+                Invoke("SE_Play_Critical", 1.0f);
                 Attack_damage = Attack + Attack / 2;
 
                 enemy_Controller.Create_Effect_Enemy(2, 3.0f, 0.0f);
@@ -228,7 +228,7 @@ public class PlayerController : MonoBehaviour
                 turn_time++;
 
                 //遅延
-                Invoke("SE_Play_Magic", 60.0f);
+                Invoke("SE_Play_Magic", 30.0f);
                 if (turn_time > 300)
                 {
                     turn_time = 0;
@@ -362,8 +362,8 @@ public class PlayerController : MonoBehaviour
     public void Lose()
     {
         animator.SetBool("death", false);
-        HP = 100;
-        MP = 100;
+        HP = HP_max;
+        MP = MP_max;
         Item_Reset();
         magic_number = 0;
         //各種数値を初期化
@@ -389,8 +389,8 @@ public class PlayerController : MonoBehaviour
     {
         audioSource_Heal.PlayOneShot(clip_heal);
     }
-    //public void SE_Play_Critical()
-    //{
-    //    audioSource_Critical.PlayOneShot(clip_critical);
-    //}
+    public void SE_Play_Critical()
+    {
+        audioSource_Critical.PlayOneShot(clip_critical);
+    }
 }

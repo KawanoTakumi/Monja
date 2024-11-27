@@ -9,7 +9,6 @@ public class Item_Power : MonoBehaviour
     public Enemy_controller enemy_Controller;
     public Text log_text;
     int turn_compare = 0;//ターン数比較用()
-    public static bool start_cnt = true;//主に回復系用
 
     bool adapt_bowlingball = true;//ボウリング用適応変数(bowlingball)
     bool adapt_CDplayer = true;//CDプレーヤー用適応変数(CDplayer)
@@ -35,7 +34,7 @@ public class Item_Power : MonoBehaviour
     bool adapt_Mike = true;
     bool adapt_Megaphone = true;
     bool adapt_HandMill = true;
-
+    bool adapt_Pudding = true;
     int dice_random = 0;
     int safetycorn_random = 0;
     public static bool dice_crit = false;
@@ -85,18 +84,6 @@ public class Item_Power : MonoBehaviour
 
         Item_Manager.Item.TryGetValue("Megaphonee", out bool Megaphone_flag);
         Item_Manager.Item.TryGetValue("HandMill", out bool HandMill_flag);
-
-
-
-
-        if (Enemy_controller.turn != 1)
-        {
-            start_cnt = false;
-        }
-        else
-        {
-            start_cnt = true;
-        }
 
         //----------------------
         //   アイテム効果
@@ -242,7 +229,7 @@ public class Item_Power : MonoBehaviour
         }
         if(Popcorn_flag == true)
         {
-            if (adapt_Popcorn == true && start_cnt == true)
+            if (adapt_Popcorn == true && adapt_Popcorn == true)
             {
                 PlayerController.HP += 40;
                 adapt_Popcorn = false;
@@ -252,9 +239,7 @@ public class Item_Power : MonoBehaviour
         {
             if(adapt_Apple == true)
             {
-                if(start_cnt == true)
                 PlayerController.HP += 30;
-
                 playercontroller.Magic += 15;
                 adapt_Apple = false;
             }
@@ -277,13 +262,15 @@ public class Item_Power : MonoBehaviour
         }
         if(Pudding_flag == true)
         {
-            if(Apple_flag == true && start_cnt == true)
+            if(Apple_flag == true && adapt_Pudding == true)
             {
                 PlayerController.HP_max += 30;
+                adapt_Pudding = false;
             }
-            if(start_cnt == true)
+            else if(adapt_Pudding == true)
             {
                 PlayerController.HP += PlayerController.HP_max / 4;
+                adapt_Pudding = false;
             }
         }
         if(Drill_flag == true)

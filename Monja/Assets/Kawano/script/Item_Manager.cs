@@ -34,7 +34,7 @@ public class Item_Manager : MonoBehaviour
             Item.Add("Apple", false);//16
             Item.Add("Scissors", false);//17
             Item.Add("ice", false);//18
-            Item.Add("Pudding", false);//19
+            Item.Add("Pudding",false);//19
             Item.Add("Drill", false);//20
             Item.Add("Headphone", false);//21
             Item.Add("Coffee", false);//22

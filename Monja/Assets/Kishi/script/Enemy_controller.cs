@@ -171,6 +171,7 @@ public class Enemy_controller : MonoBehaviour
             {
                 PlayerController.MP = 100;
                 tag_get = true;
+                Destroy(obj1);
                 HP_Bar.SetActive(false);//HPバー
                 animator.SetBool("death", true);//deathフラグをtrueにする
                 turn_manager.turn = true;
@@ -406,9 +407,8 @@ public class Enemy_controller : MonoBehaviour
                     damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Diffence);
                     break;
                 case 3:
-                    Attack();
-                    Log.text = ("ケンタウロスの攻撃");
-                    damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Diffence);
+                    Defence();
+                    Log.text = ("ケンタウロスは防御した");
                     break;
             }
         }
@@ -520,21 +520,21 @@ public class Enemy_controller : MonoBehaviour
                     break;
                 case 4:
                     dragon_Heal();
-                    Log.text = ("ドラゴンは防御した");
+                    Log.text = ("ドラゴンは回復した");
                     break;
             }
         }
         void dragon_attack()
         {
-            animator.SetBool("Attack", true);
             Enemy_luck = Random.Range(1, 6);
             if (Enemy_luck <= 4)
             {
+                animator.SetBool("Attack", true);
                 Enemy_attack = attack;
             }
             else if (Enemy_luck == 5)
             {
-                Enemy_attack += attack;
+                Enemy_attack = attack + 20;
                 Log.text = ("龍の高揚");
                 Create_Effect_Enemy(1, 2.5f, 0.3f);
             }

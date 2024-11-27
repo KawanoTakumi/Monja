@@ -1228,8 +1228,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Cut_Scene: {fileID: 1914041795}
-  Cut_In_SE: {fileID: 0}
-  clip: {fileID: 0}
+  Cut_In_SE: {fileID: 1545415197}
+  clip: {fileID: 8300000, guid: 15a4a12db625cab40b86e139b8da3386, type: 3}
 --- !u!1 &583987172
 GameObject:
   m_ObjectHideFlags: 0
@@ -3918,6 +3918,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1545415197 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5292537002824185132, guid: ccb697ba6dc078345a640e56dea3a19d, type: 3}
+  m_PrefabInstance: {fileID: 587849947}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1585061964
 GameObject:
   m_ObjectHideFlags: 0
