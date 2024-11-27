@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 public class Item_Manager : MonoBehaviour
 {
     //”O‚Ì‚½‚ßstatic‚É‚µ‚Ä‚Ç‚±‚Å‚à’l‚ª•Û‚³‚ê‚é‚æ‚¤‚É‚·‚é

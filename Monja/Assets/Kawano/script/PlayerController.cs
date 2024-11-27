@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour
     public static int max_luck = 3;
     public static int magic_number = 0;//魔法番号(撃てる魔法の種類)
     int poison_cnt;
+    bool cons_flag = false;
 
     public GameObject[] Effect;//エフェクト用
     GameObject obj_player;
@@ -172,7 +173,9 @@ public class PlayerController : MonoBehaviour
             {
                 intaract_false();
                 animator.SetBool("cons", true);
-                MP += MP_max / 4;
+                MP += MP_max / 2;
+                Magic += 10;
+                cons_flag = true;
                 //MPがMP_maxより大きければMP_maxの値に合わせる
                 if (MP > MP_max)
                 {
@@ -215,6 +218,12 @@ public class PlayerController : MonoBehaviour
                 MP -= 25;
                 Magic_damage = Magic;
                 damage_Calculate.Enemey_Damage_Calculate(Magic_damage, enemy_Controller.magic_Diffence);
+                if(cons_flag == true)
+                {
+                    Magic -= 10;
+                    cons_flag = false;
+                }
+
                 turn_time++;
 
                 //遅延
