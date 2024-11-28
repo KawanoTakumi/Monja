@@ -230,7 +230,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 139.29, y: 20}
+  m_AnchoredPosition: {x: 14, y: -102}
   m_SizeDelta: {x: 325.26, y: 131.08}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &125877553
@@ -373,7 +373,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 1.1716127
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -585,8 +585,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 704.96, y: -52}
-  m_SizeDelta: {x: 198.23, y: 83.24}
+  m_AnchoredPosition: {x: 15, y: -367.64}
+  m_SizeDelta: {x: 308.19, y: 117.97}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &220012491
 MonoBehaviour:
