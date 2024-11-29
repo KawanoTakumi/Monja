@@ -31,7 +31,6 @@ public class ChangeScene : MonoBehaviour
         //shopに戻る時用
         if (Scene_Change == true)
         {
-            Debug.Log("shop移行" + Scene_Change);
             SceneManager.LoadScene("shop");
             Scene_Change = false;
         }
@@ -40,11 +39,14 @@ public class ChangeScene : MonoBehaviour
     {
         //シーンナンバー加算
         scene_cnt++;
-        Debug.Log(scene_cnt);
     }
     public void reset_scene_num()
     {
         scene_cnt = 0;
+    }
+    public void first_turn_flag()
+    {
+        Item_Power.first_turn = false;
     }
     public void Work_Cange_Scene()
     {
@@ -66,10 +68,8 @@ public class ChangeScene : MonoBehaviour
     }
     public void Enemy_Change_Scene()
     {
-        Debug.Log("現在のシーン" + scene_cnt);
         if(Scene_Change == false)
         {
-            
             //バトルシーン(case: 3,6,9のときはボスシーン)
             switch (scene_cnt)
             {

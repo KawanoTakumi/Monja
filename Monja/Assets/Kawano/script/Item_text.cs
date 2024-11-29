@@ -42,7 +42,7 @@ public class Item_text : MonoBehaviour
         else if (button == CompareTag("healdrink"))
         {
             itemname.text = "LIFE";
-            text.text = "ジュース缶ジュース。\n[消費アイテム] 　体力を２５％回復する";
+            text.text = "缶ジュース。甘くておいしい\n[消費アイテム] 体力を２５％回復する";
         }
         else if (button == CompareTag("hourglass"))
         {
@@ -82,7 +82,7 @@ public class Item_text : MonoBehaviour
         else if (button == CompareTag("HandMirror"))
         {
             itemname.text = "ハンドミラー";
-            text.text = "手軽に容姿を確認できるコンパクトな鏡。鏡よ鏡、美しいのは誰？\n物理防御力と魔法防御力を１５増加させる\n";
+            text.text = "手軽に容姿を確認できるコンパクトな鏡。鏡よ鏡、美しいのは誰？\n物理防御力と魔法防御力を１５増加させる";
         }
         else if (button == CompareTag("bowlingpin"))
         {
@@ -127,7 +127,7 @@ public class Item_text : MonoBehaviour
         else if (button == CompareTag("Pudding"))
         {
             itemname.text = "プリン";
-            text.text = "卵を牛乳などと一緒に固めた甘いお菓子。至福の時間\n戦闘開始時体力を最大値の25%分回復する。\nリンゴを持っていると戦闘ごとに最大体力が30増加する";
+            text.text = "卵を牛乳などと一緒に固めた甘いお菓子。至福の時間\n戦闘開始時体力を最大値の25%分回復する。\nまた、リンゴを持っていると戦闘ごとに最大体力が30増加する";
         }
         else if (button == CompareTag("Drill"))
         {
@@ -196,6 +196,4 @@ public class Item_text : MonoBehaviour
     {
         PlayerController.magic_number = num_M;
     }
-
-
 }

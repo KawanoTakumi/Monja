@@ -1518,9 +1518,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 754146519}
-        m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
-        m_MethodName: Load
+      - m_Target: {fileID: 754146520}
+        m_TargetAssemblyTypeName: Audio, Assembly-CSharp
+        m_MethodName: hit_se
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1530,9 +1530,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 754146520}
-        m_TargetAssemblyTypeName: Audio, Assembly-CSharp
-        m_MethodName: hit_se
+      - m_Target: {fileID: 754146519}
+        m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
+        m_MethodName: first_turn_flag
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 754146519}
+        m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
+        m_MethodName: Load
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2307,6 +2319,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 934638373}
   m_CullTransparentMesh: 1
+--- !u!1001 &977686191
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4243482730140551696, guid: cbf198b11dd69c243ae02d0cc9208ceb, type: 3}
+      propertyPath: m_Name
+      value: SE_manager
+      objectReference: {fileID: 0}
+    - target: {fileID: 4243482730140551702, guid: cbf198b11dd69c243ae02d0cc9208ceb, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4243482730140551702, guid: cbf198b11dd69c243ae02d0cc9208ceb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.0925286
+      objectReference: {fileID: 0}
+    - target: {fileID: 4243482730140551702, guid: cbf198b11dd69c243ae02d0cc9208ceb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.44229257
+      objectReference: {fileID: 0}
+    - target: {fileID: 4243482730140551702, guid: cbf198b11dd69c243ae02d0cc9208ceb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.08832583
+      objectReference: {fileID: 0}
+    - target: {fileID: 4243482730140551702, guid: cbf198b11dd69c243ae02d0cc9208ceb, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4243482730140551702, guid: cbf198b11dd69c243ae02d0cc9208ceb, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4243482730140551702, guid: cbf198b11dd69c243ae02d0cc9208ceb, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4243482730140551702, guid: cbf198b11dd69c243ae02d0cc9208ceb, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4243482730140551702, guid: cbf198b11dd69c243ae02d0cc9208ceb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4243482730140551702, guid: cbf198b11dd69c243ae02d0cc9208ceb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4243482730140551702, guid: cbf198b11dd69c243ae02d0cc9208ceb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cbf198b11dd69c243ae02d0cc9208ceb, type: 3}
 --- !u!1 &1110063399
 GameObject:
   m_ObjectHideFlags: 0
@@ -3305,9 +3374,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1314719150}
-        m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
-        m_MethodName: Load
+      - m_Target: {fileID: 1314719148}
+        m_TargetAssemblyTypeName: Audio, Assembly-CSharp
+        m_MethodName: hit_se
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3317,9 +3386,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1314719148}
-        m_TargetAssemblyTypeName: Audio, Assembly-CSharp
-        m_MethodName: hit_se
+      - m_Target: {fileID: 1314719150}
+        m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
+        m_MethodName: first_turn_flag
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1314719150}
+        m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
+        m_MethodName: Load
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4382,6 +4463,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turn_text: {fileID: 2031012978}
+  Log_text: {fileID: 1265022589}
 --- !u!114 &1930081986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5115,6 +5197,7 @@ GameObject:
   - component: {fileID: 2097196022}
   - component: {fileID: 2097196024}
   - component: {fileID: 2097196025}
+  - component: {fileID: 2097196026}
   m_Layer: 0
   m_Name: Monster
   m_TagString: richie
@@ -5251,6 +5334,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &2097196026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2097196019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf8040cb1b65f324b84719cb8f66b548, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SE_Source: {fileID: 2119302821}
+  se_1: {fileID: 8300000, guid: 23cccebae18cdf541be4ccd38264e4d6, type: 3}
+  se_2: {fileID: 8300000, guid: e5dcba7423a42484c894f1592d2e71c0, type: 3}
+  se_3: {fileID: 8300000, guid: 2a933e09abf5965449e018a974e94834, type: 3}
 --- !u!1 &2102821929
 GameObject:
   m_ObjectHideFlags: 0
@@ -5386,6 +5485,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c73c7eb0f7c45fa43a4512ad34fc0033, type: 3}
+--- !u!82 &2119302821 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 4243482730140551703, guid: cbf198b11dd69c243ae02d0cc9208ceb, type: 3}
+  m_PrefabInstance: {fileID: 977686191}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2124820567
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,13 +10,6 @@ public class Setting_Manager : MonoBehaviour
     public AudioSource sorce_3;//3
     public AudioSource sorce_4;//4
     public AudioSource sorce_5;//5
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
     void Update()
     {
         sorce_1.volume = Slider_Manager.Music_Volume;

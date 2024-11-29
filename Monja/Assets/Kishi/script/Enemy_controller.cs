@@ -20,9 +20,9 @@ public class Enemy_controller : MonoBehaviour
     public GameObject Monster;
     GameObject obj1;
     [SerializeField] GameObject _parentGameObject;
-
     turn_manager turn_Manager;//turnManager読み込み
     Damage_calculate damage_Calculate;
+    Enemy_SE enemy_SE;
     PlayerController playerController;
     GameObject player;
     Animator animator;
@@ -59,6 +59,7 @@ public class Enemy_controller : MonoBehaviour
         playerController = player.GetComponent<PlayerController>();
         GameObject obj = GameObject.Find("Player");
         turn_Manager = obj.GetComponent<turn_manager>();
+        enemy_SE = GetComponent<Enemy_SE>();
         damage_Calculate = GetComponent<Damage_calculate>();
         animator = GetComponent<Animator>();
         GameObject.FindWithTag("skelton");
@@ -218,14 +219,12 @@ public class Enemy_controller : MonoBehaviour
             if (turn_time >= 200)
             {
                 Log.text = ("敵ターン終了");
-                Debug.Log("主人公体力" + PlayerController.HP);
                 turn += 1;
                 playerController.Attack_.interactable = true;
                 playerController.Magic_.interactable = true;
                 playerController.Heal_.interactable = true;
                 playerController.Concentlation_.interactable = true;
-
-
+                Item_Power.first_turn = false;
                 turn_manager.turn = true;
                 Log.text = ("プレイヤーのターン");
                 //時間の初期化
@@ -260,7 +259,7 @@ public class Enemy_controller : MonoBehaviour
         void Defence()
         {
             Create_Effect_Enemy(0, 2.3f, 0f);
-            
+            enemy_SE.SE_Monster(2);
             Enemy_deffence = deffence;
         }
 
@@ -590,11 +589,13 @@ public class Enemy_controller : MonoBehaviour
         if (ChangeScene.scene_cnt >= 9)
         {
             PlayerController.Money += money;
+            Item_Power.first_turn = true;
             SceneManager.LoadScene("ending");
         }
         else
         {
             PlayerController.Money += money;
+            Item_Power.first_turn = true;
             SceneManager.LoadScene("Win");
         }
     }
@@ -602,7 +603,6 @@ public class Enemy_controller : MonoBehaviour
     {
         Destroy(obj1);
     }
-
     void Win_Reset()
     {
         Enemy_Skelton = false;

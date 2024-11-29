@@ -124,6 +124,10 @@ public class PlayerController : MonoBehaviour
         {
             Magic_Diffence = 9999;
         }
+        if(HP >= HP_max)
+        {
+            HP = HP_max;
+        }
         //ステータス0下限
         if (Attack < 0)
         {
@@ -185,6 +189,7 @@ public class PlayerController : MonoBehaviour
                 animator.SetBool("cons", true);
                 MP += MP_max / 2;
                 Magic += 10;
+                Log.text = "主人公は集中した";
                 cons_flag = true;
                 //MPがMP_maxより大きければMP_maxの値に合わせる
                 if (MP > MP_max)
@@ -217,6 +222,7 @@ public class PlayerController : MonoBehaviour
             {
 
                 intaract_false();
+                Log.text = "主人公は魔法を撃った";
                 animator.SetBool("magic", true);
                 switch (magic_number)
                 {
@@ -251,7 +257,7 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                Log.text = ("魔法は打てない");
+                Log.text = ("MPが足りない");
             }
         }
     }
@@ -353,6 +359,7 @@ public class PlayerController : MonoBehaviour
                 HP -= 5;
                 poison_cnt -= 1;
             }
+        Log.text = "";
         turn_manager.turn = false;
     }
     //エフェクトオブジェクト作成関数
@@ -387,6 +394,7 @@ public class PlayerController : MonoBehaviour
         magic_number = 0;
         //各種数値を初期化
         Item_Power.turn_compare = 0;
+        Item_Power.first_turn = true;
         Enemy_controller.turn = 0;
         Enemy_controller.HP = 150;
         Enemy_controller.tag_get = true;

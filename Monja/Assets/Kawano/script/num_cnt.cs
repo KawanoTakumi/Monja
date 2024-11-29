@@ -14,13 +14,6 @@ public class num_cnt : MonoBehaviour
     public Text turn_Text;//ターン数
     public Text player_money;//所持金額
     public Text Heal_drink_num;//ヒールドリンクの所持数
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
     void Update()
     {
         //intをstringに変換

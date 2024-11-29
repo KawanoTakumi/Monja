@@ -25,6 +25,7 @@ public class Item_Manager : MonoBehaviour
             Item.Add("TV", false);//7
             Item.Add("CreditCard", false);//8
             Item.Add("Mouse", false);//9
+
             Item.Add("HandMirror", false);//10
             Item.Add("bowlingpin", false);//11
             Item.Add("baseball_ball", false);//12
@@ -35,6 +36,7 @@ public class Item_Manager : MonoBehaviour
             Item.Add("Scissors", false);//17
             Item.Add("ice", false);//18
             Item.Add("Pudding",false);//19
+
             Item.Add("Drill", false);//20
             Item.Add("Headphone", false);//21
             Item.Add("Coffee", false);//22
@@ -45,6 +47,7 @@ public class Item_Manager : MonoBehaviour
             Item.Add("ItypeMagnet", false);//27
             Item.Add("Magnifying Speculum",false);//28
             Item.Add("Mike", false);//29
+
             Item.Add("Megaphone", false);//30
             Item.Add("HandMill", false);//31
         }

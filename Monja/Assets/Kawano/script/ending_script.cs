@@ -5,10 +5,7 @@ using UnityEngine.UI;
 
 public class ending_script : MonoBehaviour
 {
-    int text_num;//テキストの番号
     public Text text_box;//テキストボックス
-    // Start is called before the first frame update
-
     public void Text_Change(int Number)
     {
         switch (Number)

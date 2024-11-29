@@ -11,18 +11,6 @@ public class Item_SE : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
-    void Update()
-    {
-        //if()
-        //{
-          
-        //}
-        //else
-        //{
-        
-        //}
-    }
-
     public void hit_se()
     {
         GetComponent<AudioSource>().Play();  // Œø‰Ê‰¹‚ð–Â‚ç‚·

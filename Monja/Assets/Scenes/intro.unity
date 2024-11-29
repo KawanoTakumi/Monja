@@ -820,6 +820,8 @@ MonoBehaviour:
   text_box: {fileID: 1584222037}
   audioSource_Work: {fileID: 1905101177}
   clip_work: {fileID: 8300000, guid: 49b00cfcc30aa2d4b848c7ec9a987dcd, type: 3}
+  clip_work2: {fileID: 8300000, guid: 620d4845d4f8032489532dea968595df, type: 3}
+  clip_work3: {fileID: 8300000, guid: 261b5c624ed28c04e83c32dc72216d5d, type: 3}
 --- !u!114 &1905101176
 MonoBehaviour:
   m_ObjectHideFlags: 0

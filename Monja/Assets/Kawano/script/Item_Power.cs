@@ -9,7 +9,7 @@ public class Item_Power : MonoBehaviour
     public Enemy_controller enemy_Controller;
     public Text log_text;
     public static int turn_compare = 0;//ターン数比較用()
-
+    public static bool first_turn = true;
 
     bool adapt_bowlingball = true;//ボウリング用適応変数(bowlingball)
     bool adapt_CDplayer = true;//CDプレーヤー用適応変数(CDplayer)
@@ -99,7 +99,7 @@ public class Item_Power : MonoBehaviour
 
         if (bowlingball_flag == true)
         {
-            if(adapt_bowlingball == true)
+            if(adapt_bowlingball == true && first_turn == true)
             {
                 playercontroller.Attack += 20;//攻撃力20上昇
                 playercontroller.Diffence -= 20;//防御力20減少
@@ -116,7 +116,7 @@ public class Item_Power : MonoBehaviour
         }
         if(CDplayer_flag == true)
         {
-            if(adapt_CDplayer == true)
+            if(adapt_CDplayer == true && first_turn == true)
             {
                 playercontroller.Attack -= 20;//攻撃力20減少
                 playercontroller.Diffence += 20;//防御力20上昇
@@ -145,7 +145,7 @@ public class Item_Power : MonoBehaviour
         }
         if(kesigomu_flag == true)
         {
-            if(adapt_kesigomu == true)
+            if(adapt_kesigomu == true && first_turn == true)
             {
                 playercontroller.Attack += 20;
                 playercontroller.Magic -= playercontroller.Attack / 2;
@@ -154,7 +154,7 @@ public class Item_Power : MonoBehaviour
         }
         if(TV_flag == true)
         {
-            if(adapt_TV == true)
+            if(adapt_TV == true && first_turn == true)
             {
                 playercontroller.Magic += (playercontroller.Magic / 20) * 4;
                 adapt_TV = false;
@@ -162,7 +162,7 @@ public class Item_Power : MonoBehaviour
         }
         if(CreditCard_flag == true)
         {
-            if(adapt_CreditCard == true)
+            if(adapt_CreditCard == true && first_turn == true)
             {
                 PlayerController.Money += 40;
                 adapt_CreditCard = false;
@@ -170,7 +170,7 @@ public class Item_Power : MonoBehaviour
         }
         if(Mouse_flag == true)
         {
-            if(adapt_Mouse == true)
+            if(adapt_Mouse == true && first_turn == true)
             {
                 playercontroller.Magic += 20;
                 adapt_Mouse = false;
@@ -178,25 +178,16 @@ public class Item_Power : MonoBehaviour
         }
         if(HandMirror_flag == true)
         {
-            if(adapt_HandMirror == true)
+            if(adapt_HandMirror == true && first_turn == true)
             {
                 playercontroller.Diffence += 15;
                 playercontroller.Magic_Diffence += 15;
                 adapt_HandMirror = false;
             }
         }
-        if(bowlingpin_flag == true)
-        {
-            //一番下
-            if(adapt_bowlingpin == true)
-            {
-                PlayerController.Money += playercontroller.Attack / 6;
-                adapt_bowlingpin = false;
-            }
-        }
         if(baseball_ball_flag == true)
         {
-            if(adapt_baseball_ball == true)
+            if(adapt_baseball_ball == true && first_turn == true)
             {
                 playercontroller.Attack += 15;
                 playercontroller.Diffence -= 5;
@@ -222,7 +213,7 @@ public class Item_Power : MonoBehaviour
         }
         if(Waterbucket_flag == true)
         {
-            if(adapt_Waterbucket == true)
+            if(adapt_Waterbucket == true && first_turn == true)
             {
                 playercontroller.Magic_Diffence += 20;
                 adapt_Waterbucket = false;
@@ -230,7 +221,7 @@ public class Item_Power : MonoBehaviour
         }
         if(Popcorn_flag == true)
         {
-            if (adapt_Popcorn == true && adapt_Popcorn == true)
+            if (adapt_Popcorn == true && first_turn == true)
             {
                 PlayerController.HP += 40;
                 adapt_Popcorn = false;
@@ -238,7 +229,7 @@ public class Item_Power : MonoBehaviour
         }
         if(Apple_flag == true)
         {
-            if(adapt_Apple == true)
+            if(adapt_Apple == true && first_turn == true)
             {
                 PlayerController.HP += 30;
                 playercontroller.Magic += 15;
@@ -247,7 +238,7 @@ public class Item_Power : MonoBehaviour
         }
         if(Scissors_flag == true)
         {
-            if(adapt_Scissors == true)
+            if(adapt_Scissors == true && first_turn == true)
             {
                 playercontroller.Attack += 20;
                 adapt_Scissors = false;
@@ -255,7 +246,7 @@ public class Item_Power : MonoBehaviour
         }
         if (ice_flag == true)
         {
-            if(adapt_ice == true)
+            if(adapt_ice == true && first_turn == true)
             {
                 playercontroller.Magic += 20;
                 adapt_ice = false;
@@ -263,12 +254,12 @@ public class Item_Power : MonoBehaviour
         }
         if(Pudding_flag == true)
         {
-            if(Apple_flag == true && adapt_Pudding == true)
+            if(Apple_flag == true && adapt_Pudding == true && first_turn == true)
             {
                 PlayerController.HP_max += 30;
                 adapt_Pudding = false;
             }
-            else if(adapt_Pudding == true)
+            else if(adapt_Pudding == true && first_turn == true)
             {
                 PlayerController.HP += PlayerController.HP_max / 4;
                 adapt_Pudding = false;
@@ -276,7 +267,7 @@ public class Item_Power : MonoBehaviour
         }
         if(Drill_flag == true)
         {
-            if(adapt_Drill == true)
+            if(adapt_Drill == true && first_turn == true)
             {
                 playercontroller.Attack += enemy_Controller.deffence / 2;
                 adapt_Drill = false;
@@ -294,7 +285,7 @@ public class Item_Power : MonoBehaviour
         }
         if(UtypeMagnet_flag == true)
         {
-            if (adapt_Utype_M == true)
+            if (adapt_Utype_M == true && first_turn == true)
             {
                 playercontroller.Magic += 20;
                 adapt_Utype_M = false;
@@ -302,7 +293,7 @@ public class Item_Power : MonoBehaviour
         }
         if(Coffee_flag == true)
         {
-            if(adapt_Coffee == true)
+            if(adapt_Coffee == true && first_turn == true)
             {
                 PlayerController.HP -= 20;
                 playercontroller.Magic += 30;
@@ -311,7 +302,7 @@ public class Item_Power : MonoBehaviour
         }
         if(Safetycone_flag == true)
         {
-            if(adapt_SafetyCorn == true)
+            if(adapt_SafetyCorn == true && first_turn == true)
             {
                 safetycorn_random = Random.Range(1, 3);
                 if(safetycorn_random == 1)
@@ -328,7 +319,7 @@ public class Item_Power : MonoBehaviour
         }
         if(USB_flag == true)
         {
-            if(adapt_USB == true)
+            if(adapt_USB == true && first_turn == true)
             {
                 playercontroller.Magic += 30;
                 playercontroller.Magic_Diffence -= 20;
@@ -337,7 +328,7 @@ public class Item_Power : MonoBehaviour
         }
         if(Smartphone_flag == true)
         {
-            if(adapt_SmartPhone == true)
+            if(adapt_SmartPhone == true && first_turn == true)
             {
                 playercontroller.Magic_Diffence += playercontroller.Magic / 4;
                 adapt_SmartPhone = false;
@@ -345,7 +336,7 @@ public class Item_Power : MonoBehaviour
         }
         if(ItypeMagnet_flag == true)
         {
-            if(adapt_Itype_M == true)
+            if(adapt_Itype_M == true && first_turn == true)
             {
                 playercontroller.Magic_Diffence += 20;
                 adapt_Itype_M = false;
@@ -355,7 +346,6 @@ public class Item_Power : MonoBehaviour
         {
             if(turn_compare < Enemy_controller.turn)
             {
-                Debug.Log("よかったね");
                 playercontroller.Diffence += 10;
                 playercontroller.Magic_Diffence += 10;
                 turn_compare = Enemy_controller.turn;
@@ -363,7 +353,7 @@ public class Item_Power : MonoBehaviour
         }
         if(Mike_flag == true)
         {
-            if(adapt_Mike == true)
+            if(adapt_Mike == true && first_turn == true)
             {
                 playercontroller.Magic += 30;
                 adapt_Mike = false;
@@ -371,7 +361,7 @@ public class Item_Power : MonoBehaviour
         }
         if(Megaphone_flag == true)
         {
-            if(adapt_Megaphone == true)
+            if(adapt_Megaphone == true && first_turn == true)
             {
                 playercontroller.Diffence += 20;
                 adapt_Megaphone = false;
@@ -379,15 +369,24 @@ public class Item_Power : MonoBehaviour
         }
         if(HandMill_flag == true)
         {
-            if(adapt_HandMill == true && Coffee_flag == true)
+            if(adapt_HandMill == true && Coffee_flag == true && first_turn == true)
             {
                 playercontroller.Magic += 60;
                 adapt_HandMill = false;
             }
-            if(adapt_HandMill == true)
+            else if(adapt_HandMill == true && first_turn == true)
             {
                 playercontroller.Magic -= 30;
                 adapt_HandMill = false;
+            }
+        }
+        if (bowlingpin_flag == true)
+        {
+            //一番下
+            if (adapt_bowlingpin == true && first_turn == true)
+            {
+                PlayerController.Money += playercontroller.Attack / 6;
+                adapt_bowlingpin = false;
             }
         }
     }

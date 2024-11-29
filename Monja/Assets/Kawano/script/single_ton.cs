@@ -18,9 +18,4 @@ public class single_ton : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
