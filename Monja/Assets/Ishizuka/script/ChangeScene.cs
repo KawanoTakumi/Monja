@@ -50,6 +50,7 @@ public class ChangeScene : MonoBehaviour
         
         switch (scene_cnt)
         {
+            case 0: SceneManager.LoadScene("Title"); break;           //ƒ^ƒCƒgƒ‹
             case 1: SceneManager.LoadScene("work_01"); break;
             case 2: SceneManager.LoadScene("work_01"); break;
             case 3: SceneManager.LoadScene("work_01"); break;
