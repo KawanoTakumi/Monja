@@ -20,7 +20,7 @@ public class Item_Manager : MonoBehaviour
             Item.Add("CDplayer", false);//2
             Item.Add("cd", false);//3
             Item.Add("radio", false);//4
-            Item.Add("hourglass", false);//5
+            Item.Add("hourglass", true);//5
             Item.Add("kesigomu", false);//6
             Item.Add("TV", false);//7
             Item.Add("CreditCard", false);//8
@@ -43,7 +43,7 @@ public class Item_Manager : MonoBehaviour
             Item.Add("UtypeMagnet", false);//25
             Item.Add("Smartphone", false);//26
             Item.Add("ItypeMagnet", false);//27
-            Item.Add("Magnifying Speculum", false);//28
+            Item.Add("Magnifying Speculum",false);//28
             Item.Add("Mike", false);//29
             Item.Add("Megaphone", false);//30
             Item.Add("HandMill", false);//31

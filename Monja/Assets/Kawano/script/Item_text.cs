@@ -62,12 +62,12 @@ public class Item_text : MonoBehaviour
         else if (button == CompareTag("kesigomu"))
         {
             itemname.text = "消しゴム";
-            text.text = "書いたものを消せる。無駄なものも消そう\n物理攻撃力を２５増加させ、物理攻撃力が高いほど魔法攻撃力を下げる";
+            text.text = "書いたものを消せる。無駄なものも消そう\n物理攻撃力を２０増加させ、物理攻撃力が高いほど魔法攻撃力を下げる";
         }
         else if (button == CompareTag("TV"))
         {
             itemname.text = "テレビ";
-            text.text = "映像を視聴できる機械。あなたのお好きな番組は何？\n魔法攻撃力２０につき魔法攻撃力を２上昇させる";
+            text.text = "映像を視聴できる機械。あなたのお好きな番組は何？\n魔法攻撃力５につき魔法攻撃力を３上昇させる";
         }
         else if (button == CompareTag("CreditCard"))
         {
@@ -82,7 +82,7 @@ public class Item_text : MonoBehaviour
         else if (button == CompareTag("HandMirror"))
         {
             itemname.text = "ハンドミラー";
-            text.text = "手軽に容姿を確認できるコンパクトな鏡。鏡よ鏡、美しいのは誰？\n物理防御力と魔法防御力を３０増加させる\n";
+            text.text = "手軽に容姿を確認できるコンパクトな鏡。鏡よ鏡、美しいのは誰？\n物理防御力と魔法防御力を１５増加させる\n";
         }
         else if (button == CompareTag("bowlingpin"))
         {
@@ -92,7 +92,7 @@ public class Item_text : MonoBehaviour
         else if (button == CompareTag("baseball_ball"))
         {
             itemname.text = "野球ボール";
-            text.text = "野球用のボール。ストラーイク、バッターアウト\n物理攻撃力を３０増加し物理防御力を３０減少させる";
+            text.text = "野球用のボール。ストラーイク、バッターアウト\n物理攻撃力を１５増加し物理防御力を５減少させる";
         }
         else if (button == CompareTag("dice"))
         {

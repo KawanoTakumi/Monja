@@ -8,7 +8,8 @@ public class Item_Power : MonoBehaviour
     PlayerController playercontroller;
     public Enemy_controller enemy_Controller;
     public Text log_text;
-    int turn_compare = 0;//ターン数比較用()
+    static int turn_compare = 0;//ターン数比較用()
+
 
     bool adapt_bowlingball = true;//ボウリング用適応変数(bowlingball)
     bool adapt_CDplayer = true;//CDプレーヤー用適応変数(CDplayer)
@@ -82,7 +83,7 @@ public class Item_Power : MonoBehaviour
         Item_Manager.Item.TryGetValue("Magnifying Speculum", out bool MagnifyingSpeculum_flag);
         Item_Manager.Item.TryGetValue("Mike", out bool Mike_flag);
 
-        Item_Manager.Item.TryGetValue("Megaphonee", out bool Megaphone_flag);
+        Item_Manager.Item.TryGetValue("Megaphone", out bool Megaphone_flag);
         Item_Manager.Item.TryGetValue("HandMill", out bool HandMill_flag);
 
         //----------------------
@@ -136,6 +137,7 @@ public class Item_Power : MonoBehaviour
         {
             if(turn_compare < Enemy_controller.turn)
             {
+                
                 playercontroller.Attack += 10;//毎ターン攻撃力10上昇
                 PlayerController.HP -= 5;//体力を5減らす
                 log_text.text = "砂時計の効果で-5HP";
@@ -146,7 +148,7 @@ public class Item_Power : MonoBehaviour
         {
             if(adapt_kesigomu == true)
             {
-                playercontroller.Attack += 25;
+                playercontroller.Attack += 20;
                 playercontroller.Magic -= playercontroller.Attack / 2;
                 adapt_kesigomu = false;
             }
@@ -179,8 +181,8 @@ public class Item_Power : MonoBehaviour
         {
             if(adapt_HandMirror == true)
             {
-                playercontroller.Diffence += 30;
-                playercontroller.Magic_Diffence += 30;
+                playercontroller.Diffence += 15;
+                playercontroller.Magic_Diffence += 15;
                 adapt_HandMirror = false;
             }
         }
@@ -197,8 +199,8 @@ public class Item_Power : MonoBehaviour
         {
             if(adapt_baseball_ball == true)
             {
-                playercontroller.Attack += 30;
-                playercontroller.Diffence -= 30;
+                playercontroller.Attack += 15;
+                playercontroller.Diffence -= 5;
                 adapt_baseball_ball = false;
             }
         }
@@ -339,6 +341,7 @@ public class Item_Power : MonoBehaviour
             if(adapt_SmartPhone == true)
             {
                 playercontroller.Magic_Diffence += playercontroller.Magic / 4;
+                adapt_SmartPhone = false;
             }
         }
         if(ItypeMagnet_flag == true)
@@ -353,6 +356,7 @@ public class Item_Power : MonoBehaviour
         {
             if(turn_compare < Enemy_controller.turn)
             {
+                Debug.Log("よかったね");
                 playercontroller.Diffence += 10;
                 playercontroller.Magic_Diffence += 10;
                 turn_compare = Enemy_controller.turn;

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class ChangeScene : MonoBehaviour
 {
@@ -23,11 +24,7 @@ public class ChangeScene : MonoBehaviour
 
     public void change_scene()
     {
-        ////遅延
-        //Invoke("DelayMethod", 8000.0f);
         Scene_Change = true;
-      
-
     }
     public void shop_change()
     {
@@ -44,6 +41,10 @@ public class ChangeScene : MonoBehaviour
         //シーンナンバー加算
         scene_cnt++;
         Debug.Log(scene_cnt);
+    }
+    public void reset_scene_num()
+    {
+        scene_cnt = 0;
     }
     public void Work_Cange_Scene()
     {
@@ -85,7 +86,7 @@ public class ChangeScene : MonoBehaviour
             }
         }
     }
-    //shopからtitleに戻る時に使用
+    //titleに戻る時に使用
     public void Player_Reset()
     {
         PlayerController.HP = PlayerController.HP_max;
@@ -121,7 +122,7 @@ public class ChangeScene : MonoBehaviour
         Item_Manager.Item["Mike"] = false;
         Item_Manager.Item["Megaphone"] = false;
         Item_Manager.Item["HandMill"] = false;
-
+        scene_cnt = 0;
     }
 
     public void Item_num_Recet()

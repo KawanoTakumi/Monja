@@ -29,8 +29,6 @@ public class PlayerController : MonoBehaviour
     public GameObject[] Effect;//エフェクト用
     GameObject obj_player;
     [SerializeField] GameObject _parentGameObject;
-
-
     turn_manager turn_Manager;
     Animator animator;//プレイヤーアニメーター
     Damage_calculate damage_Calculate;//ダメージサーキュレーター
@@ -44,6 +42,10 @@ public class PlayerController : MonoBehaviour
     public Button Concentlation_;
     public Button Magic_;
     public Button Heal_;
+    static int Attack_tmp = 25;
+    static int Deffence_tmp = 25;
+    static int Magic_tmp = 25;
+    static int MagicDeffence_tmp = 25;
 
     public Text Log;//テキストログ
     // Start is called before the first frame update
@@ -64,7 +66,11 @@ public class PlayerController : MonoBehaviour
     {
         GameObject Text = GameObject.Find("LogText");
         Log = Text.GetComponent<Text>();
-
+        //数値を適用
+        Attack = Attack_tmp;
+        Diffence = Deffence_tmp;
+        Magic = Magic_tmp;
+        Magic_Diffence = MagicDeffence_tmp;
 
         money = Money;
         turn_Manager = GetComponent<turn_manager>();
@@ -77,8 +83,14 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //数値を保存
+        Attack_tmp = Attack;
+        Deffence_tmp = Diffence;
+        Magic_tmp = Magic;
+        MagicDeffence_tmp = Magic_Diffence;
+
         //エフェクト削除
-        if(turn_manager.turn == false)
+        if (turn_manager.turn == false)
         {
             Destroy(obj_player);
         }
@@ -148,9 +160,6 @@ public class PlayerController : MonoBehaviour
             }
             if (player_luck == max_luck -1 || Item_Power.dice_crit == true)
             {
-                //Debug.Log("aaaa");
-                ////遅延
-                Invoke("SE_Play_Critical", 1.0f);
                 Attack_damage = Attack + Attack / 2;
 
                 enemy_Controller.Create_Effect_Enemy(2, 3.0f, 0.0f);
@@ -357,6 +366,7 @@ public class PlayerController : MonoBehaviour
         if(player_luck == max_luck - 1)
         {
             Create_Effect_Player(4, 8.0f, 0.0f);
+            Invoke(nameof(SE_Play_Critical), 1.0f);
         }
     }
     public void Lose()
