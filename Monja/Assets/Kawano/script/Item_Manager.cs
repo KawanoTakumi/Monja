@@ -20,7 +20,7 @@ public class Item_Manager : MonoBehaviour
             Item.Add("CDplayer", false);//2
             Item.Add("cd", false);//3
             Item.Add("radio", false);//4
-            Item.Add("hourglass", true);//5
+            Item.Add("hourglass", false);//5
             Item.Add("kesigomu", false);//6
             Item.Add("TV", false);//7
             Item.Add("CreditCard", false);//8
