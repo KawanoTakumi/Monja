@@ -8,7 +8,7 @@ public class Item_Power : MonoBehaviour
     PlayerController playercontroller;
     public Enemy_controller enemy_Controller;
     public Text log_text;
-    static int turn_compare = 0;//ターン数比較用()
+    public static int turn_compare = 0;//ターン数比較用()
 
 
     bool adapt_bowlingball = true;//ボウリング用適応変数(bowlingball)
@@ -137,7 +137,6 @@ public class Item_Power : MonoBehaviour
         {
             if(turn_compare < Enemy_controller.turn)
             {
-                
                 playercontroller.Attack += 10;//毎ターン攻撃力10上昇
                 PlayerController.HP -= 5;//体力を5減らす
                 log_text.text = "砂時計の効果で-5HP";

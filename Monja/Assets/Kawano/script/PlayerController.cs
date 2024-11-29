@@ -369,14 +369,24 @@ public class PlayerController : MonoBehaviour
             Invoke(nameof(SE_Play_Critical), 1.0f);
         }
     }
+    public void Status_reset()
+    {
+        Attack_tmp = 25;
+        Deffence_tmp = 25;
+        Magic_tmp = 25;
+        MagicDeffence_tmp = 25;
+    }
+
     public void Lose()
     {
         animator.SetBool("death", false);
         HP = HP_max;
         MP = MP_max;
         Item_Reset();
+        Status_reset();
         magic_number = 0;
         //各種数値を初期化
+        Item_Power.turn_compare = 0;
         Enemy_controller.turn = 0;
         Enemy_controller.HP = 150;
         Enemy_controller.tag_get = true;
