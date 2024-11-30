@@ -1235,8 +1235,8 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
-      value: 0
+      time: 0.14124298
+      value: 0.2041626
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -4625,7 +4625,7 @@ Transform:
   m_Children:
   - {fileID: 723668331}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1774975671
 MonoBehaviour:
@@ -5504,7 +5504,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1559270969831591656, guid: 386d31e0ed3b7e74c917d4ad733b1317, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1559270969831591656, guid: 386d31e0ed3b7e74c917d4ad733b1317, type: 3}
       propertyPath: m_LocalPosition.x

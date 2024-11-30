@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     public static int Money;//所持金額 //別のシーンでも呼ばれる
     public int money;//一時確認用（あとで消す）
     public int player_luck;
-    public static int max_luck = 11;
+    public static int max_luck = 3;
     public static int magic_number = 0;//魔法番号(撃てる魔法の種類)
     int poison_cnt;
     bool cons_flag = false;
@@ -48,7 +48,6 @@ public class PlayerController : MonoBehaviour
     static int MagicDeffence_tmp = 25;
 
     public Text Log;//テキストログ
-    // Start is called before the first frame update
 
     //オーディオ
     public AudioSource audioSource_Attack;
@@ -80,7 +79,6 @@ public class PlayerController : MonoBehaviour
         Enemey = GameObject.Find("Monster");
         enemy_Controller = Enemey.GetComponent<Enemy_controller>();
     }
-    // Update is called once per frame
     void Update()
     {
         //数値を保存
@@ -158,16 +156,13 @@ public class PlayerController : MonoBehaviour
             if (player_luck < max_luck - 1)
             {
                 //遅延
-                Invoke("SE_Play_Attack", 1000.0f);
+                Invoke("SE_Play_Attack", 500.0f);
 
                 Attack_damage = Attack;
             }
             if (player_luck == max_luck -1 || Item_Power.dice_crit == true)
             {
-                Attack_damage = Attack + Attack / 2;
-
-                enemy_Controller.Create_Effect_Enemy(2, 3.0f, 0.0f);
-                
+                Attack_damage = Attack + Attack / 2;                
                 Log.text = ("主人公クリティカル");
                 Item_Power.dice_crit = false;
             }
@@ -368,12 +363,17 @@ public class PlayerController : MonoBehaviour
         obj_player = Instantiate(Effect[number], new Vector3(Fx, Fy, 0), Quaternion.identity, _parentGameObject.transform);
         obj_player.name = "Effect_image_" + number;
     }
-    public void Crit_Effect()
+    public void Crit_Effect(int num)
     {
-        if(player_luck == max_luck - 1)
+
+        if(player_luck == max_luck - 1 || Item_Power.dice_crit == true)
         {
-            Create_Effect_Player(4, 8.0f, 0.0f);
-            Invoke(nameof(SE_Play_Critical), 1.0f);
+            switch (num)
+            {
+                case 1: SE_Play_Critical();break;
+                case 2: Create_Effect_Player(4, 5.0f, 0.0f);break;
+                case 3:Destroy(obj_player);break;
+            }
         }
     }
     public void Status_reset()
