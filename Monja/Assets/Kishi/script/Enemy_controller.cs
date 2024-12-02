@@ -52,6 +52,10 @@ public class Enemy_controller : MonoBehaviour
     public static bool End_GAme_Flag = false;
     public GameObject HP_Bar;
 
+    //各シーン到達後trueにする
+    public static bool Sinigami_flag = false;
+    public static bool Medhusa_flag = false;
+    public static bool Dragon_flag = false;
 
     // Start is called before the first frame update
     void Start()
@@ -88,8 +92,8 @@ public class Enemy_controller : MonoBehaviour
             else if (CompareTag("richie") == true)
             {
                 Enemy_Richie = true;
-                HP = 100;
-                HP_MAX = 100;
+                HP = 120;
+                HP_MAX = 120;
                 Enemy_luck_Max = 0;
             }
             else if (CompareTag("sinigami") == true)
@@ -109,36 +113,36 @@ public class Enemy_controller : MonoBehaviour
             else if (CompareTag("centaurus") == true)
             {
                Enemy_Centaurus = true;
-                HP = 350;
-                HP_MAX = 350;
+                HP = 380;
+                HP_MAX = 380;
                 Enemy_luck_Max = 11;
             }
             else if (CompareTag("medhusa") == true)
             {
                 Boss_Medhusa = true;
-                HP = 400;
-                HP_MAX = 400;
+                HP = 460;
+                HP_MAX = 460;
                 Enemy_luck_Max = 0;
             }
             else if (CompareTag("cockatrice") == true)
             {
                 Enemy_Cockatrice = true;
-                HP = 430;
-                HP_MAX = 430;
+                HP = 570;
+                HP_MAX = 570;
                 Enemy_luck_Max = 16;
             }
             else if (CompareTag("knight") == true)
             {
                 Enemy_Knight = true;
-                HP = 490;
-                HP_MAX = 490;
+                HP = 680;
+                HP_MAX = 680;
                 Enemy_luck_Max = 9;
             }
             else if (CompareTag("dragon") == true)
             {
                 Boss_Dragon = true;
-                HP = 550;
-                HP_MAX = 550;
+                HP = 800;
+                HP_MAX = 800;
                 Enemy_luck_Max = 11;
             }
         }
@@ -601,6 +605,7 @@ public class Enemy_controller : MonoBehaviour
         {
             PlayerController.Money += money;
             Item_Power.first_turn = true;
+            Dragon_flag = true;
             ChangeScene.Title_Reset();
             SceneManager.LoadScene("ending");
         }
@@ -608,6 +613,14 @@ public class Enemy_controller : MonoBehaviour
         {
             PlayerController.Money += money;
             Item_Power.first_turn = true;
+            if(ChangeScene.scene_cnt >= 6)
+            {
+                Medhusa_flag = true;
+            }
+            else if(ChangeScene.scene_cnt >= 3)
+            {
+                Sinigami_flag = true;
+            }
             SceneManager.LoadScene("Win");
         }
     }

@@ -36,6 +36,12 @@ public class Item_Power : MonoBehaviour
     bool adapt_Megaphone = true;
     bool adapt_HandMill = true;
     bool adapt_Pudding = true;
+    bool adapt_Sinigami_kama = true;
+    bool adapt_Sinigami_robe = true;
+    bool adapt_Medhusa_Scale = true;
+    bool adapt_Medhusa_MagicBook = true;
+    bool adapt_Dragon_Juwel = true;
+    bool adapt_Dragon_Tooth = true;
     int dice_random = 0;
     int safetycorn_random = 0;
     public static bool dice_crit = false;
@@ -85,6 +91,12 @@ public class Item_Power : MonoBehaviour
 
         Item_Manager.Item.TryGetValue("Megaphone", out bool Megaphone_flag);
         Item_Manager.Item.TryGetValue("HandMill", out bool HandMill_flag);
+        Item_Manager.Item.TryGetValue("Kama", out bool Sinigami_Kama_flag);
+        Item_Manager.Item.TryGetValue("Robe", out bool Sinigami_Robe_flag);
+        Item_Manager.Item.TryGetValue("Scale", out bool Medhusa_Scale_flag);
+        Item_Manager.Item.TryGetValue("MagicBook", out bool Medhusa_MagicBook_flag);
+        Item_Manager.Item.TryGetValue("Juwel", out bool Dragon_Juwel_flag);
+        Item_Manager.Item.TryGetValue("Tooth", out bool Dragon_Tooth_flag);
 
         //----------------------
         //   アイテム効果
@@ -110,7 +122,7 @@ public class Item_Power : MonoBehaviour
         {
             if(turn_compare < Enemy_controller.turn)
             {
-                playercontroller.Attack += playercontroller.Diffence / 2;//attackにdiffenceの1/2の数字を加算
+                playercontroller.Attack += playercontroller.Diffence / 2;//attackにdiffenceの1/4の数字を加算
                 turn_compare = Enemy_controller.turn;//次のターンまで発動しないようにする
             }
         }
@@ -127,9 +139,16 @@ public class Item_Power : MonoBehaviour
         {
             if(turn_compare < Enemy_controller.turn)
             {
-                playercontroller.Diffence += 10;//毎ターン防御力10上昇
-                PlayerController.HP -= 5;//体力を5減らす
-                log_text.text = "ラジオの効果で-5HP";
+                if(PlayerController.HP > 5)
+                {
+                    playercontroller.Diffence += 10;//毎ターン防御力10上昇
+                    PlayerController.HP -= 5;//体力を5減らす
+                    log_text.text = "ラジオの効果で-5HP";
+                }
+                else
+                {
+                    log_text.text = "効果は発動しなかった";
+                }
                 turn_compare = Enemy_controller.turn;
             }
         }
@@ -137,9 +156,16 @@ public class Item_Power : MonoBehaviour
         {
             if(turn_compare < Enemy_controller.turn)
             {
-                playercontroller.Attack += 10;//毎ターン攻撃力10上昇
-                PlayerController.HP -= 5;//体力を5減らす
-                log_text.text = "砂時計の効果で-5HP";
+                if(PlayerController.HP > 5)
+                {
+                    playercontroller.Attack += 10;//毎ターン攻撃力10上昇
+                    PlayerController.HP -= 5;//体力を5減らす
+                    log_text.text = "砂時計の効果で-5HP";
+                }
+                else
+                {
+                    log_text.text = "効果は発動しなかった";
+                }
                 turn_compare = Enemy_controller.turn;//次のターンまで発動しないようにする
             }
         }
@@ -378,6 +404,53 @@ public class Item_Power : MonoBehaviour
             {
                 playercontroller.Magic -= 30;
                 adapt_HandMill = false;
+            }
+        }
+        if(Sinigami_Kama_flag == true)
+        {
+            if(adapt_Sinigami_kama == true)
+            {
+
+                adapt_Sinigami_kama = false;
+            }
+        }
+        if(Sinigami_Robe_flag == true)
+        {
+            if(adapt_Sinigami_robe == true)
+            {
+
+                adapt_Sinigami_robe = false;
+            }
+        }
+        if(Medhusa_Scale_flag == true)
+        {
+            if(adapt_Medhusa_Scale == true)
+            {
+
+                adapt_Medhusa_Scale = false;
+            }
+        }
+        if(Medhusa_MagicBook_flag == true)
+        {
+            if(adapt_Medhusa_MagicBook == true)
+            {
+
+                adapt_Medhusa_MagicBook = false;
+            }
+        }
+        if(Dragon_Juwel_flag == true)
+        {
+            if(adapt_Dragon_Juwel == true)
+            {
+                adapt_Dragon_Juwel = false;
+            }
+        }
+        if(Dragon_Tooth_flag == true)
+        {
+            if(adapt_Dragon_Tooth == true)
+            {
+
+                adapt_Dragon_Tooth = false;
             }
         }
         if (bowlingpin_flag == true)

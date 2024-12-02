@@ -17,7 +17,7 @@ public class Shop_manager: MonoBehaviour
     GameObject obj3;
     public bool item_flag;
     public Item_Library Item_Library;
-
+    int Boss_Item_Length;
     public Button button1;
     public Button button2;
     public Button button3;
@@ -141,23 +141,61 @@ public class Shop_manager: MonoBehaviour
     public void shop_select()
     {
         Item_Library = GetComponent<Item_Library>();
-        number1 = Random.Range(0, prefab.Length);
+        switch(ChangeScene.scene_cnt)
+        {
+            default: number1 = Random.Range(0, prefab.Length - 6);break;
+            case 1:number1 = 1;break;
+            case 2:number1 = 6;break;
+            case 3:number1 = 9;break;
+            case 4:number1 = 14;break;
+            case 5:number1 = 20;break;
+            case 6:number1 = 23;break;
+            case 7:number1 = 26;break;
+            case 8:number1 = 28;break;
+        }
         CreateObject1();
-
         do
         {
-            number2 = Random.Range(0, prefab.Length);
+            if (Enemy_controller.Dragon_flag == true)
+            {
+                number2 = Random.Range(0, prefab.Length);
+            }
+            else if (Enemy_controller.Medhusa_flag == true)
+            {
+                number2 = Random.Range(0, prefab.Length - 2);
+            }
+            else if (Enemy_controller.Sinigami_flag == true)
+            {
+                number2 = Random.Range(31, prefab.Length - 4);
+            }
+            else
+            {
+                number2 = Random.Range(0, prefab.Length - 6);
+            }
         } while (number2 == number1);
         CreateObject2();
 
         do
         {
-            number3 = Random.Range(0, prefab.Length);
+            if (Enemy_controller.Dragon_flag == true)
+            {
+                number3 = Random.Range(0, prefab.Length);
+            }
+            else if (Enemy_controller.Medhusa_flag == true)
+            {
+                number3 = Random.Range(0, prefab.Length - 2);
+            }
+            else if (Enemy_controller.Sinigami_flag == true)
+            {
+                number3 = Random.Range(0, prefab.Length - 4);
+            }
+            else
+            {
+                number3 = Random.Range(0, prefab.Length - 6);
+            }
+
         } while (number3 == number2 || number3 == number1);
         CreateObject3();
-
-
-
     }
 
     public void shop_reroll()

@@ -5381,10 +5381,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb3a806902d7b3441bc0d68101c047e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attack: 40
-  deffence: 20
+  attack: 45
+  deffence: 25
   magic: 0
-  magic_Diffence: 15
+  magic_Diffence: 20
   money: 75
   Effect:
   - {fileID: 8299584437378114090, guid: 8e11c902fcd31ff429c6fd4f84115c7f, type: 3}

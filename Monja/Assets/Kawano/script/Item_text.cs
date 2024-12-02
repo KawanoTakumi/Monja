@@ -189,6 +189,36 @@ public class Item_text : MonoBehaviour
             itemname.text = "ハンドミル";
             text.text = "豆を挽くための道具。香ばしい香りがしてるぜ。\nコーヒーを持っている時魔法攻撃力を６０増加させる\n持っていない時は魔法攻撃力を３０減少させる";
         }
+        else if(button == CompareTag("Kama"))
+        {
+            itemname.text = "死神の鎌";
+            text.text = "切れ味がいい鎌。魂まで刈ってしまう";
+        }
+        else if (button == CompareTag("Robe"))
+        {
+            itemname.text = "死神のローブ";
+            text.text = "死神が着ていたローブ。ひんやりと冷たい";
+        }
+        else if (button == CompareTag("Uroko"))
+        {
+            itemname.text = "メデューサの鱗";
+            text.text = "メデューサの尻尾の部分の鱗。とても硬い";
+        }
+        else if (button == CompareTag("MagicBook"))
+        {
+            itemname.text = "メデューサの魔導書";
+            text.text = "メデューサが使っていた魔導書。書かれている文字は解読できない";
+        }
+        else if (button == CompareTag("Juwel"))
+        {
+            itemname.text = "ドラゴンの炎の結晶";
+            text.text = "ドラゴンの体内で生成された結晶。ほんのりと暖かい";
+        }
+        else if (button == CompareTag("Tooth"))
+        {
+            itemname.text = "ドラゴンの牙";
+            text.text = "ドラゴンの鋭い牙。取り扱いには注意";
+        }
     }
 
     //魔法攻撃を後から変更するための関数（アイテム画面でボタンを押したらその魔法攻撃になる）

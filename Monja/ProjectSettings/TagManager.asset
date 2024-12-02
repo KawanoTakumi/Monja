@@ -49,6 +49,12 @@ TagManager:
   - cockatrice
   - knight
   - dragon
+  - Kama
+  - Robe
+  - MagicBook
+  - Juwel
+  - Tooth
+  - Scale
   layers:
   - Default
   - TransparentFX

@@ -18,7 +18,6 @@ public class Bar_controller : MonoBehaviour
         MP_Bar.maxValue = PlayerController.MP_max;
         Enemy_HP_Bar.maxValue = Enemy_controller.HP_MAX;
     }
-
     // Update is called once per frame
     void Update()
     {

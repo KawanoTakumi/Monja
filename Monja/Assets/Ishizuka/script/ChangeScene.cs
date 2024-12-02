@@ -11,6 +11,7 @@ public class ChangeScene : MonoBehaviour
     public static bool Scene_Change = false;
     public static int Boss_Number = 0;
     public static int scene_cnt = 0;
+
     public void Start()
     {
         shop = GetComponent<Shop_manager>();
