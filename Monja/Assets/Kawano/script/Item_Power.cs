@@ -408,48 +408,55 @@ public class Item_Power : MonoBehaviour
         }
         if(Sinigami_Kama_flag == true)
         {
-            if(adapt_Sinigami_kama == true)
+            if(adapt_Sinigami_kama == true && first_turn == true)
             {
-
+                playercontroller.Attack += 40;
+                PlayerController.max_luck -= 1;
                 adapt_Sinigami_kama = false;
             }
         }
         if(Sinigami_Robe_flag == true)
         {
-            if(adapt_Sinigami_robe == true)
+            if(adapt_Sinigami_robe == true && first_turn == true)
             {
-
+                playercontroller.Diffence += 40;
+                PlayerController.max_luck -= 1;
                 adapt_Sinigami_robe = false;
             }
         }
         if(Medhusa_Scale_flag == true)
         {
-            if(adapt_Medhusa_Scale == true)
+            if(adapt_Medhusa_Scale == true && first_turn == true)
             {
-
+                playercontroller.Magic += 40;
+                PlayerController.max_luck -= 1;
                 adapt_Medhusa_Scale = false;
             }
         }
         if(Medhusa_MagicBook_flag == true)
         {
-            if(adapt_Medhusa_MagicBook == true)
+            if(adapt_Medhusa_MagicBook == true && first_turn == true)
             {
-
+                playercontroller.Magic_Diffence += 40;
+                PlayerController.max_luck -= 1;
                 adapt_Medhusa_MagicBook = false;
             }
         }
         if(Dragon_Juwel_flag == true)
         {
-            if(adapt_Dragon_Juwel == true)
+            if(adapt_Dragon_Juwel == true && first_turn == true)
             {
+                PlayerController.HP_max += 20;
+                PlayerController.HP += 20;
                 adapt_Dragon_Juwel = false;
             }
         }
         if(Dragon_Tooth_flag == true)
         {
-            if(adapt_Dragon_Tooth == true)
+            if(adapt_Dragon_Tooth == true && first_turn == true)
             {
-
+                PlayerController.MP_max += 20;
+                PlayerController.MP += 20;
                 adapt_Dragon_Tooth = false;
             }
         }

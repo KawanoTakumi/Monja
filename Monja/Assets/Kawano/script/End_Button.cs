@@ -8,4 +8,11 @@ public class End_Button : MonoBehaviour
     {
         Application.Quit();
     }
+    public void Update()
+    {
+        if(Input.GetKey(KeyCode.Escape))
+        {
+
+        }
+    }
 }

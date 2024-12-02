@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     public static int Money;//所持金額 //別のシーンでも呼ばれる
     public int money;//一時確認用（あとで消す）
     public int player_luck;//プレイヤーのラック
-    public static int max_luck = 11;//最大ラック
+    public static int max_luck = 13;//最大ラック
     public static int magic_number = 0;//魔法番号(撃てる魔法の種類)
     int poison_cnt;
     bool cons_flag = false;
@@ -153,7 +153,6 @@ public class PlayerController : MonoBehaviour
         if (turn_manager.turn == true)
         {
             player_luck = Random.Range(1,max_luck);
-            Destroy(enemy_Controller.obj2);
             if (player_luck < max_luck - 1)
             {
                 //遅延
@@ -219,7 +218,6 @@ public class PlayerController : MonoBehaviour
                 intaract_false();
                 Log.text = "主人公は魔法を撃った";
                 animator.SetBool("magic", true);
-                Destroy(enemy_Controller.obj2);
                 switch (magic_number)
                 {
                     case 0: Create_Effect_Player(0, 5.7f, 0.9f); break;
@@ -405,10 +403,12 @@ public class PlayerController : MonoBehaviour
     public void SE_Play_Attack()
     {
         audioSource_Attack.PlayOneShot(clip_attack);
+        Destroy(enemy_Controller.obj2);
     }
     public void SE_Play_Magic()
     {
         audioSource_Magic.PlayOneShot(clip_magic);
+        Destroy(enemy_Controller.obj2);
     }
     public void SE_Play_Conce()
     {

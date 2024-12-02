@@ -5343,6 +5343,7 @@ MonoBehaviour:
   - {fileID: 8299584437378114090, guid: 8e11c902fcd31ff429c6fd4f84115c7f, type: 3}
   - {fileID: 8770600068115727514, guid: 976d6d9efbaeded44a24ae3e576007fb, type: 3}
   Monster: {fileID: 2097196019}
+  obj2: {fileID: 0}
   _parentGameObject: {fileID: 2097196019}
   Enemy_attack: 0
   Enemy_deffence: 5
@@ -5601,6 +5602,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4243482730140551702, guid: cbf198b11dd69c243ae02d0cc9208ceb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4243482730140551703, guid: cbf198b11dd69c243ae02d0cc9208ceb, type: 3}
+      propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

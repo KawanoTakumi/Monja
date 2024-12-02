@@ -192,32 +192,32 @@ public class Item_text : MonoBehaviour
         else if(button == CompareTag("Kama"))
         {
             itemname.text = "死神の鎌";
-            text.text = "切れ味がいい鎌。魂まで刈ってしまう";
+            text.text = "切れ味がいい鎌。魂まで刈ってしまう\n物理攻撃力を40増加させ、少しクリティカルが出やすくなる";
         }
         else if (button == CompareTag("Robe"))
         {
             itemname.text = "死神のローブ";
-            text.text = "死神が着ていたローブ。ひんやりと冷たい";
+            text.text = "死神が着ていたローブ。ひんやりと冷たい\n物理防御力を40増加させ、少しクリティカルが出やすくなる";
         }
-        else if (button == CompareTag("Uroko"))
+        else if (button == CompareTag("Scale"))
         {
             itemname.text = "メデューサの鱗";
-            text.text = "メデューサの尻尾の部分の鱗。とても硬い";
+            text.text = "メデューサの尻尾の部分の鱗。とても硬い\n魔法攻撃力を40増加させ、少しクリティカルが出やすくなる";
         }
         else if (button == CompareTag("MagicBook"))
         {
             itemname.text = "メデューサの魔導書";
-            text.text = "メデューサが使っていた魔導書。書かれている文字は解読できない";
+            text.text = "メデューサが使っていた魔導書。書かれている文字は解読できない\n魔法防御力を40増加させ、少しクリティカルが出やすくなる";
         }
         else if (button == CompareTag("Juwel"))
         {
             itemname.text = "ドラゴンの炎の結晶";
-            text.text = "ドラゴンの体内で生成された結晶。ほんのりと暖かい";
+            text.text = "ドラゴンの体内で生成された結晶。ほんのりと暖かい\n最大体力を20増加させる";
         }
         else if (button == CompareTag("Tooth"))
         {
             itemname.text = "ドラゴンの牙";
-            text.text = "ドラゴンの鋭い牙。取り扱いには注意";
+            text.text = "ドラゴンの鋭い牙。取り扱いには注意\n最大を20増加させる";
         }
     }
 
