@@ -307,7 +307,7 @@ public class PlayerController : MonoBehaviour
         Heal_.interactable = true;
         Concentlation_.interactable = true;
     }
-    public void Item_Reset()
+    public static void Item_Reset()
     {
         Item_Manager.Item["healdrink"] = false;
         Item_Manager.Item["bowlingball"] = false;
@@ -375,7 +375,7 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-    public void Status_reset()
+    public static void Status_reset()
     {
         Attack_tmp = 25;
         Deffence_tmp = 25;

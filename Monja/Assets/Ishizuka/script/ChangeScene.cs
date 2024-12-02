@@ -139,4 +139,19 @@ public class ChangeScene : MonoBehaviour
     {
         SceneManager.LoadScene("shop_back");
     }
+    public void Title_Reset()
+    {
+        PlayerController.HP = PlayerController.HP_max;
+        PlayerController.MP = PlayerController.MP_max;
+        PlayerController.magic_number = 0;
+        PlayerController.Money = 0;
+        PlayerController.Status_reset();
+        PlayerController.Item_Reset();
+        //Šeí”’l‚ğ‰Šú‰»
+        Item_Power.turn_compare = 0;
+        Item_Power.first_turn = true;
+        Enemy_controller.turn = 0;
+        Enemy_controller.HP = 150;
+        Enemy_controller.tag_get = true;
+    }
 }

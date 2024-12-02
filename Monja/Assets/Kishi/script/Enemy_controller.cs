@@ -580,7 +580,7 @@ public class Enemy_controller : MonoBehaviour
         animator.SetBool("death", false);
         Monster.SetActive(false);
         Win_Reset();
-        playerController.Status_reset();
+        PlayerController.Status_reset();
         Item_Power.turn_compare = 0;
         Destroy(obj1);
         magic_cnt = 0;
