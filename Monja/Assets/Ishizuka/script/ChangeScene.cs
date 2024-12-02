@@ -139,7 +139,7 @@ public class ChangeScene : MonoBehaviour
     {
         SceneManager.LoadScene("shop_back");
     }
-    public void Title_Reset()
+    public static void Title_Reset()
     {
         PlayerController.HP = PlayerController.HP_max;
         PlayerController.MP = PlayerController.MP_max;

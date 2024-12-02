@@ -403,10 +403,12 @@ public class PlayerController : MonoBehaviour
     public void SE_Play_Attack()
     {
         audioSource_Attack.PlayOneShot(clip_attack);
+        Destroy(enemy_Controller.obj2);
     }
     public void SE_Play_Magic()
     {
         audioSource_Magic.PlayOneShot(clip_magic);
+        Destroy(enemy_Controller.obj2);
     }
     public void SE_Play_Conce()
     {

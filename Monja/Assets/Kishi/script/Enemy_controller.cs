@@ -19,6 +19,7 @@ public class Enemy_controller : MonoBehaviour
     public GameObject[] Effect;//エフェクト用
     public GameObject Monster;
     GameObject obj1;
+    public GameObject obj2;
     [SerializeField] GameObject _parentGameObject;
     turn_manager turn_Manager;//turnManager読み込み
     Damage_calculate damage_Calculate;
@@ -260,7 +261,7 @@ public class Enemy_controller : MonoBehaviour
         {
             Create_Effect_Enemy(0, 2.3f, 0f);
             enemy_SE.SE_Monster(2);
-            Enemy_deffence = deffence;
+            Enemy_deffence += deffence;
         }
 
         void Magic()
@@ -570,9 +571,19 @@ public class Enemy_controller : MonoBehaviour
     //エフェクトオブジェクト作成関数
     public void Create_Effect_Enemy(int number, float Fx, float Fy)
     {
+        switch(number)
         {
-            obj1 = Instantiate(Effect[number], new Vector3(Fx, Fy, 0), Quaternion.identity, _parentGameObject.transform);
-            obj1.name = "Effect_image_"+number;
+            default:
+                {
+                    obj1 = Instantiate(Effect[number], new Vector3(Fx, Fy, 0), Quaternion.identity, _parentGameObject.transform);
+                    obj1.name = "Effect_image_" + number;
+                }break;
+            case 0:
+                {
+                    obj2 = Instantiate(Effect[number], new Vector3(Fx, Fy, 0), Quaternion.identity, _parentGameObject.transform);
+                    obj2.name = "Effect_image_" + number;
+                }
+                break;
         }
     }
     public void Win()
@@ -590,6 +601,7 @@ public class Enemy_controller : MonoBehaviour
         {
             PlayerController.Money += money;
             Item_Power.first_turn = true;
+            ChangeScene.Title_Reset();
             SceneManager.LoadScene("ending");
         }
         else
