@@ -145,12 +145,12 @@ public class Shop_manager: MonoBehaviour
         {
             default: number1 = Random.Range(0, prefab.Length - 6);break;
             case 1:number1 = 1;break;
-            case 2:number1 = 6;break;
+            case 2:number1 = 0;break;
             case 3:number1 = 9;break;
             case 4:number1 = 14;break;
-            case 5:number1 = 20;break;
+            case 5:number1 = 0;break;
             case 6:number1 = 23;break;
-            case 7:number1 = 26;break;
+            case 7:number1 = 0;break;
             case 8:number1 = 28;break;
         }
         CreateObject1();
