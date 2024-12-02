@@ -230,7 +230,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 14, y: -82}
+  m_AnchoredPosition: {x: 14, y: -106}
   m_SizeDelta: {x: 325.26, y: 131.08}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &125877553
@@ -291,9 +291,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 125877553}
-        m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
-        m_MethodName: Load
+      - m_Target: {fileID: 125877559}
+        m_TargetAssemblyTypeName: Audio, Assembly-CSharp
+        m_MethodName: hit_se
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -303,9 +303,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 125877559}
-        m_TargetAssemblyTypeName: Audio, Assembly-CSharp
-        m_MethodName: hit_se
+      - m_Target: {fileID: 125877553}
+        m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
+        m_MethodName: Load
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -585,8 +585,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 15, y: -367.64}
-  m_SizeDelta: {x: 308.19, y: 117.97}
+  m_AnchoredPosition: {x: 15.002, y: -362.78}
+  m_SizeDelta: {x: 456.58, y: 125.64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &220012491
 MonoBehaviour:
@@ -644,9 +644,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 220012491}
-        m_TargetAssemblyTypeName: End_Button, Assembly-CSharp
-        m_MethodName: End_button
+      - m_Target: {fileID: 220012496}
+        m_TargetAssemblyTypeName: Audio, Assembly-CSharp
+        m_MethodName: hit_se
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -656,9 +656,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 220012496}
-        m_TargetAssemblyTypeName: Audio, Assembly-CSharp
-        m_MethodName: hit_se
+      - m_Target: {fileID: 220012491}
+        m_TargetAssemblyTypeName: End_Button, Assembly-CSharp
+        m_MethodName: End_button
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1730,9 +1730,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2105629565}
-        m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
-        m_MethodName: Load
+      - m_Target: {fileID: 2105629570}
+        m_TargetAssemblyTypeName: Audio, Assembly-CSharp
+        m_MethodName: hit_se
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1742,9 +1742,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2105629570}
-        m_TargetAssemblyTypeName: Audio, Assembly-CSharp
-        m_MethodName: hit_se
+      - m_Target: {fileID: 2105629565}
+        m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
+        m_MethodName: Load
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2017,11 +2017,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8914400355081705787, guid: d99a4518af5efbd4380cd798b0d10d2c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.4211786
+      value: -10.41
       objectReference: {fileID: 0}
     - target: {fileID: 8914400355081705787, guid: d99a4518af5efbd4380cd798b0d10d2c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.17659532
+      value: 4.35
       objectReference: {fileID: 0}
     - target: {fileID: 8914400355081705787, guid: d99a4518af5efbd4380cd798b0d10d2c, type: 3}
       propertyPath: m_LocalPosition.z

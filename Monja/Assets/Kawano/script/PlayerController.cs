@@ -20,8 +20,8 @@ public class PlayerController : MonoBehaviour
     public static int HP_Potion;//HPポーションの数
     public static int Money;//所持金額 //別のシーンでも呼ばれる
     public int money;//一時確認用（あとで消す）
-    public int player_luck;
-    public static int max_luck = 3;
+    public int player_luck;//プレイヤーのラック
+    public static int max_luck = 3;//最大ラック
     public static int magic_number = 0;//魔法番号(撃てる魔法の種類)
     int poison_cnt;
     bool cons_flag = false;
@@ -182,6 +182,7 @@ public class PlayerController : MonoBehaviour
             {
                 intaract_false();
                 animator.SetBool("cons", true);
+                Invoke("SE_Play_Conce", 1.0f);
                 MP += MP_max / 2;
                 Magic += 10;
                 Log.text = "主人公は集中した";
@@ -193,8 +194,6 @@ public class PlayerController : MonoBehaviour
                 }
                 if(poison_cnt > 0)
                 {
-                    //遅延
-                    Invoke("SE_Play_Conce", 1.0f);
                     HP -= 5;
                     poison_cnt -= 1;
                 }

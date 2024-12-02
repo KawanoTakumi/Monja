@@ -72,12 +72,12 @@ public class Item_text : MonoBehaviour
         else if (button == CompareTag("CreditCard"))
         {
             itemname.text = "クレジットカード";
-            text.text = "お金を入れておけるカード。色でその人の価値がわかる。\n獲得金額を４０増加させる\n";
+            text.text = "お金を入れておけるカード。色でその人の価値がわかる。\n戦闘開始後２０G所持金に追加する\n";
         }
         else if (button == CompareTag("Mouse"))
         {
             itemname.text = "マウス";
-            text.text = "パソコンを使うときに必須の機械。マウスなしは考えられない\n魔法攻撃力を２０増加させる";
+            text.text = "パソコンを使うときに必須の機械。マウスなしは考えられない\n魔法攻撃力を１０増加させる";
         }
         else if (button == CompareTag("HandMirror"))
         {
@@ -92,7 +92,7 @@ public class Item_text : MonoBehaviour
         else if (button == CompareTag("baseball_ball"))
         {
             itemname.text = "野球ボール";
-            text.text = "野球用のボール。ストラーイク、バッターアウト\n物理攻撃力を１５増加し物理防御力を５減少させる";
+            text.text = "野球用のボール。ストラーイク、バッターアウト\n物理攻撃力を１５増加し物理防御力を１０減少させる";
         }
         else if (button == CompareTag("dice"))
         {
@@ -102,12 +102,12 @@ public class Item_text : MonoBehaviour
         else if (button == CompareTag("Water bucket"))
         {
             itemname.text = "水入りのバケツ";
-            text.text = "水が入ったバケツ。アイスバケツチャレンジ！！！\n魔法防御力を２０増加させる";
+            text.text = "水が入ったバケツ。アイスバケツチャレンジ！！！\n魔法防御力を１０増加させる";
         }
         else if (button == CompareTag("Popcorn"))
         {
             itemname.text = "ポップコーン";
-            text.text = "トウモロコシを高温ではじけさせたお菓子。映画には必須のお供\n戦闘開始時、体力を４０回復させる";
+            text.text = "トウモロコシを高温ではじけさせたお菓子。映画には必須のお供\n戦闘開始時、体力を２０回復させる";
         }
         else if (button == CompareTag("Apple"))
         {
@@ -122,7 +122,7 @@ public class Item_text : MonoBehaviour
         else if (button == CompareTag("ice"))
         {
             itemname.text = "氷";
-            text.text = "水を凍らせるとできる物体。かき氷にしますか？\n魔法攻撃力を２０増加させ、氷の弾で攻撃する（アイテム画面でアイテムを押すと魔法攻撃が変化）";
+            text.text = "水を凍らせるとできる物体。かき氷にしますか？\n魔法攻撃力を１０増加させ、氷の弾で攻撃する（アイテム画面でアイテムを押すと魔法攻撃が変化）";
         }
         else if (button == CompareTag("Pudding"))
         {
@@ -152,12 +152,12 @@ public class Item_text : MonoBehaviour
         else if (button == CompareTag("Safetycone"))
         {
             itemname.text = "三角コーン";
-            text.text = "危険な場所に設置してあるもの。たまに蹴られる不運な奴\n５０％の確率で物理攻撃力と物理防御力を４０増加";
+            text.text = "危険な場所に設置してあるもの。たまに蹴られる不運な奴\n２５％の確率で物理攻撃力と物理防御力を４０増加";
         }
         else if (button == CompareTag("USB"))
         {
             itemname.text = "USBメモリ";
-            text.text = "パソコンから情報を保存できる機械。なくしたら終わり\n魔法攻撃力を３０増加させ魔法防御力を２０減少させる";
+            text.text = "パソコンから情報を保存できる機械。なくしたら終わり\n魔法攻撃力を２０増加させ魔法防御力を１０減少させる";
         }
         else if (button == CompareTag("Smartphone"))
         {
