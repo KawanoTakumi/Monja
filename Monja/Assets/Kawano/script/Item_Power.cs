@@ -322,6 +322,10 @@ public class Item_Power : MonoBehaviour
             if(adapt_Coffee == true && first_turn == true)
             {
                 PlayerController.HP -= 20;
+                if(PlayerController.HP < 6)
+                {
+                    PlayerController.HP = 5;
+                }
                 playercontroller.Magic += 30;
                 adapt_Coffee = false;
             }

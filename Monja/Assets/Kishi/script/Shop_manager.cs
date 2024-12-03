@@ -141,17 +141,21 @@ public class Shop_manager: MonoBehaviour
     public void shop_select()
     {
         Item_Library = GetComponent<Item_Library>();
-        switch(ChangeScene.scene_cnt)
+        if (Enemy_controller.Dragon_flag == true)
         {
-            default: number1 = Random.Range(0, prefab.Length - 6);break;
-            case 1:number1 = 1;break;
-            case 2:number1 = 0;break;
-            case 3:number1 = 9;break;
-            case 4:number1 = 14;break;
-            case 5:number1 = 0;break;
-            case 6:number1 = 23;break;
-            case 7:number1 = 0;break;
-            case 8:number1 = 28;break;
+            number1 = Random.Range(0, prefab.Length);
+        }
+        else if (Enemy_controller.Medhusa_flag == true)
+        {
+            number1 = Random.Range(0, prefab.Length - 2);
+        }
+        else if (Enemy_controller.Sinigami_flag == true)
+        {
+            number1 = Random.Range(0, prefab.Length - 4);
+        }
+        else
+        {
+            number1 = Random.Range(0, prefab.Length - 6);
         }
         CreateObject1();
         do
@@ -166,7 +170,7 @@ public class Shop_manager: MonoBehaviour
             }
             else if (Enemy_controller.Sinigami_flag == true)
             {
-                number2 = Random.Range(31, prefab.Length - 4);
+                number2 = Random.Range(0, prefab.Length - 4);
             }
             else
             {

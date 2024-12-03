@@ -123,6 +123,13 @@ public class ChangeScene : MonoBehaviour
         Item_Manager.Item["Mike"] = false;
         Item_Manager.Item["Megaphone"] = false;
         Item_Manager.Item["HandMill"] = false;
+        Item_Manager.Item["Kama"] = false;
+        Item_Manager.Item["Robe"] = false;
+        Item_Manager.Item["Scale"] = false;
+        Item_Manager.Item["MagicBook"] = false;
+        Item_Manager.Item["Juwel"] = false;
+        Item_Manager.Item["Tooth"] = false;
+
         scene_cnt = 0;
     }
 

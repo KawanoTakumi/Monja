@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     public static int magic_number = 0;//魔法番号(撃てる魔法の種類)
     int poison_cnt;
     bool cons_flag = false;
+    public Button Item_button;
 
     public GameObject[] Effect;//エフェクト用
     GameObject obj_player;
@@ -182,7 +183,6 @@ public class PlayerController : MonoBehaviour
             {
                 intaract_false();
                 animator.SetBool("cons", true);
-                Invoke("SE_Play_Conce", 1.0f);
                 MP += MP_max / 2;
                 Magic += 10;
                 Log.text = "主人公は集中した";
@@ -197,7 +197,6 @@ public class PlayerController : MonoBehaviour
                     HP -= 5;
                     poison_cnt -= 1;
                 }
-                turn_manager.turn = false;
             }
             else
             {
@@ -280,7 +279,6 @@ public class PlayerController : MonoBehaviour
                     HP = HP_max;
                 }
                 Log.text = ("主人公は回復した");
-                //intaract_true();
             }
             else　if(HP == HP_max)
             {
@@ -299,6 +297,7 @@ public class PlayerController : MonoBehaviour
         Magic_.interactable = false;
         Heal_.interactable = false;
         Concentlation_.interactable = false;
+        Item_button.interactable = false;
     }
     void intaract_true()
     {
@@ -306,6 +305,7 @@ public class PlayerController : MonoBehaviour
         Magic_.interactable = true;
         Heal_.interactable = true;
         Concentlation_.interactable = true;
+        Item_button.interactable = true;
     }
     public static void Item_Reset()
     {
@@ -341,6 +341,12 @@ public class PlayerController : MonoBehaviour
         Item_Manager.Item["Mike"]= false;
         Item_Manager.Item["Megaphone"]= false;
         Item_Manager.Item["HandMill"]= false;
+        Item_Manager.Item["Kama"]= false;
+        Item_Manager.Item["Robe"]= false;
+        Item_Manager.Item["Scale"]= false;
+        Item_Manager.Item["MagicBook"]= false;
+        Item_Manager.Item["Juwel"]= false;
+        Item_Manager.Item["Tooth"]= false;
 
     }
     //アニメーションリセット（boolのみ）
@@ -348,13 +354,15 @@ public class PlayerController : MonoBehaviour
     {
         animator.SetBool(anim_tag, false);
         if(anim_tag != "heal")
+        {
             if (poison_cnt > 0)
             {
                 HP -= 5;
                 poison_cnt -= 1;
             }
-        Log.text = "";
-        turn_manager.turn = false;
+            Log.text = "";
+            turn_manager.turn = false;
+        }
     }
     //エフェクトオブジェクト作成関数
     public void Create_Effect_Player(int number, float Fx, float Fy)
