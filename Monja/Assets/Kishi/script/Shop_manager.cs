@@ -22,6 +22,7 @@ public class Shop_manager: MonoBehaviour
     public Button button2;
     public Button button3;
 
+    static int shop_max = 1;
     public static int tmp_1 = -1;
     public static int tmp_2 = -1;
     public static int tmp_3 = -1;
@@ -140,42 +141,65 @@ public class Shop_manager: MonoBehaviour
     }
     public void shop_select()
     {
-        Item_Library = GetComponent<Item_Library>();
-        if (Enemy_controller.Dragon_flag == true)
+        int switch_num;
+
+        if(Enemy_controller.Dragon_flag == true)
         {
-            number1 = Random.Range(0, prefab.Length);
-        }
-        else if (Enemy_controller.Medhusa_flag == true)
-        {
-            number1 = Random.Range(0, prefab.Length - 2);
-        }
-        else if (Enemy_controller.Sinigami_flag == true)
-        {
-            number1 = Random.Range(0, prefab.Length - 4);
+            switch_num = Random.Range(0, 1);
+            switch(switch_num)
+            {
+                case 0:number1 = Random.Range(0, prefab.Length - 6);break;
+                case 1:number1 = Random.Range(36, 38);break;
+            }
         }
         else
         {
-            number1 = Random.Range(0, prefab.Length - 6);
+            switch (ChangeScene.scene_cnt)
+            {
+                case 3: shop_max = 2; break;
+                case 6: shop_max = 3; break;
+            }
+            Item_Library = GetComponent<Item_Library>();
+            switch_num = Random.Range(0, shop_max);
+            switch (switch_num)
+            {
+                case 0: number1 = Random.Range(0, prefab.Length - 6); break;
+                case 1: number1 = Random.Range(0, prefab.Length - 4); break;
+                case 2: number1 = Random.Range(0, prefab.Length - 2); break;
+            }
+
         }
         CreateObject1();
+
         do
         {
             if (Enemy_controller.Dragon_flag == true)
             {
-                number2 = Random.Range(0, prefab.Length);
-            }
-            else if (Enemy_controller.Medhusa_flag == true)
-            {
-                number2 = Random.Range(0, prefab.Length - 2);
-            }
-            else if (Enemy_controller.Sinigami_flag == true)
-            {
-                number2 = Random.Range(0, prefab.Length - 4);
+                switch_num = Random.Range(0, 1);
+                switch (switch_num)
+                {
+                    case 0: number2 = Random.Range(0, prefab.Length - 6); break;
+                    case 1: number2 = Random.Range(36, 38); break;
+                }
             }
             else
             {
-                number2 = Random.Range(0, prefab.Length - 6);
+                switch (ChangeScene.scene_cnt)
+                {
+                    case 3: shop_max = 2; break;
+                    case 6: shop_max = 3; break;
+                }
+                Item_Library = GetComponent<Item_Library>();
+                switch_num = Random.Range(0, shop_max);
+                switch (switch_num)
+                {
+                    case 0: number2 = Random.Range(0, prefab.Length - 6); break;
+                    case 1: number2 = Random.Range(0, prefab.Length - 4); break;
+                    case 2: number2 = Random.Range(0, prefab.Length - 2); break;
+                }
+
             }
+
         } while (number2 == number1);
         CreateObject2();
 
@@ -183,21 +207,29 @@ public class Shop_manager: MonoBehaviour
         {
             if (Enemy_controller.Dragon_flag == true)
             {
-                number3 = Random.Range(0, prefab.Length);
-            }
-            else if (Enemy_controller.Medhusa_flag == true)
-            {
-                number3 = Random.Range(0, prefab.Length - 2);
-            }
-            else if (Enemy_controller.Sinigami_flag == true)
-            {
-                number3 = Random.Range(0, prefab.Length - 4);
+                switch_num = Random.Range(0, 1);
+                switch (switch_num)
+                {
+                    case 0: number3 = Random.Range(0, prefab.Length - 6); break;
+                    case 1: number3 = Random.Range(36, 38); break;
+                }
             }
             else
             {
-                number3 = Random.Range(0, prefab.Length - 6);
+                switch (ChangeScene.scene_cnt)
+                {
+                    case 3: shop_max = 2; break;
+                    case 6: shop_max = 3; break;
+                }
+                Item_Library = GetComponent<Item_Library>();
+                switch_num = Random.Range(0, shop_max);
+                switch (switch_num)
+                {
+                    case 0: number3 = Random.Range(0, prefab.Length - 6); break;
+                    case 1: number3 = Random.Range(0, prefab.Length - 4); break;
+                    case 2: number3 = Random.Range(0, prefab.Length - 2); break;
+                }
             }
-
         } while (number3 == number2 || number3 == number1);
         CreateObject3();
     }
@@ -208,9 +240,13 @@ public class Shop_manager: MonoBehaviour
         if (PlayerController.Money >= 40)
         {
             PlayerController.Money -= 40;
+            
             Destroy(obj1);
+            Item_Library.GetFlag1 = false;
             Destroy(obj2);
+            Item_Library.GetFlag2 = false;
             Destroy(obj3);
+            Item_Library.GetFlag3 = false;
             tmp_1 = -1;
             tmp_2 = -1;
             tmp_3 = -1;

@@ -225,10 +225,7 @@ public class Enemy_controller : MonoBehaviour
             {
                 Log.text = ("敵ターン終了");
                 turn += 1;
-                playerController.Attack_.interactable = true;
-                playerController.Magic_.interactable = true;
-                playerController.Heal_.interactable = true;
-                playerController.Concentlation_.interactable = true;
+                playerController.intaract_true();
                 Item_Power.first_turn = false;
                 turn_manager.turn = true;
                 Log.text = ("プレイヤーのターン");

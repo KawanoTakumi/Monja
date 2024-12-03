@@ -11,9 +11,9 @@ public class Item_Library : MonoBehaviour
     int ItemValue2 = 30;
     int ItemValue3 = 35;
     //Žæ“¾ƒtƒ‰ƒO
-    public bool GetFlag1 = false;
-    public bool GetFlag2 = false;
-    public bool GetFlag3= false;
+    public static bool GetFlag1 = false;
+    public static bool GetFlag2 = false;
+    public static bool GetFlag3 = false;
     public bool Flag_1 = false;
     public bool Flag_2 = false;
     public bool Flag_3 = false;

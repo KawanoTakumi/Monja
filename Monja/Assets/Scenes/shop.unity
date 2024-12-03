@@ -141,7 +141,7 @@ GameObject:
   - component: {fileID: 30034497}
   m_Layer: 5
   m_Name: Buy_Button_3
-  m_TagString: radio
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -700,7 +700,7 @@ GameObject:
   - component: {fileID: 525141359}
   m_Layer: 5
   m_Name: Buy_Button_2
-  m_TagString: cd
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1750,9 +1750,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   money: 0
-  GetFlag1: 0
-  GetFlag2: 0
-  GetFlag3: 0
   Flag_1: 0
   Flag_2: 0
   Flag_3: 0
@@ -2282,7 +2279,7 @@ GameObject:
   - component: {fileID: 1123360775}
   m_Layer: 5
   m_Name: Buy_Button_1
-  m_TagString: hourglass
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
