@@ -243,10 +243,13 @@ public class Enemy_controller : MonoBehaviour
                 }
             }
         }
-        void Attack()
+        void Attack(int paturn)
         {
-            animator.SetBool("Attack", true);
-          
+            switch(paturn)
+            {
+                case 1: animator.SetBool("Attack", true);break;
+            }
+
             Enemy_luck = Random.Range(1, Enemy_luck_Max);
             if (Enemy_luck <= 9)
             {
@@ -267,7 +270,6 @@ public class Enemy_controller : MonoBehaviour
 
         void Magic()
         {
-            Log.text = ("“G‚Ì–‚–@UŒ‚");
             if (magic_cnt < 3)
             {
                 Enemy_Magic = magic;
@@ -291,12 +293,12 @@ public class Enemy_controller : MonoBehaviour
             switch (Enemy_act)
             {
                 case 1:
-                    Attack();
+                    Attack(1);
                     Log.text = ("ƒXƒPƒ‹ƒgƒ“‚ÌUŒ‚");
                     damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Diffence);
                     break;
                 case 2:
-                    Attack();
+                    Attack(1);
                     Log.text = ("ƒXƒPƒ‹ƒgƒ“‚ÌUŒ‚");
                     damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Diffence);
                     break;
@@ -313,12 +315,12 @@ public class Enemy_controller : MonoBehaviour
             switch (Enemy_act)
             {
                 case 1:
-                    Attack();
+                    Attack(1);
                     Log.text = ("ƒ~ƒmƒ^ƒEƒƒX‚ÌUŒ‚");
                     damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Diffence);
                     break;
                 case 2:
-                    Attack();
+                    Attack(1);
                     Log.text = ("ƒ~ƒmƒ^ƒEƒƒX‚ÌUŒ‚");
                     damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Diffence);
                     break;
@@ -340,7 +342,7 @@ public class Enemy_controller : MonoBehaviour
                     damage_Calculate.Player_Damage_Calculate(Enemy_Magic, playerController.Magic_Diffence);
                     break;
                 case 2:
-                    Attack();
+                    Attack(1);
                     Log.text = ("ƒRƒJƒgƒŠƒX‚ÌUŒ‚");
                     damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Diffence);
                     break;
@@ -356,7 +358,7 @@ public class Enemy_controller : MonoBehaviour
             switch (Enemy_act)
             {
                 case 1:
-                    Attack();
+                    Attack(1);
                     Log.text = ("ƒiƒCƒg‚ÌUŒ‚");
                     damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Diffence);
                     break;
@@ -398,13 +400,15 @@ public class Enemy_controller : MonoBehaviour
             switch (Enemy_act)
             {
                 case 1:
-                    Attack();
+                    Attack(0);
                     Log.text = ("ƒPƒ“ƒ^ƒEƒƒX‚Ì‹|UŒ‚");
+                    Create_Effect_Enemy(1, 0.0f, 0.0f);
                     damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Diffence);
                     break;
                 case 2:
-                    Attack();
+                    Attack(0);
                     Log.text = ("ƒPƒ“ƒ^ƒEƒƒX‚Ì‹|UŒ‚");
+                    Create_Effect_Enemy(1, 0.0f, 0.0f);
                     damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Diffence);
                     break;
                 case 3:
