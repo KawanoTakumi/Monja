@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class Scene_State : MonoBehaviour
 {
     public Animator anim;

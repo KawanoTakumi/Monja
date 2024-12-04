@@ -12,6 +12,7 @@ public class Item_Power : MonoBehaviour
     public static bool first_turn = true;
 
     bool adapt_bowlingball = true;//ボウリング用適応変数(bowlingball)
+    bool adapt_cd = true;
     bool adapt_CDplayer = true;//CDプレーヤー用適応変数(CDplayer)
     bool adapt_kesigomu = true;
     bool adapt_TV = true;
@@ -121,10 +122,10 @@ public class Item_Power : MonoBehaviour
         }
         if(cd_flag == true)
         {
-            if(turn_compare < Enemy_controller.turn)
+            if(adapt_cd == true && first_turn == true)
             {
-                playercontroller.Attack += playercontroller.Diffence / 2;//attackにdiffenceの1/4の数字を加算
-                turn_compare = Enemy_controller.turn;//次のターンまで発動しないようにする
+                playercontroller.Attack += playercontroller.Diffence / 6;//attackにdiffenceの1/6の数字を加算
+                adapt_cd = false;
             }
         }
         if(CDplayer_flag == true)
@@ -140,7 +141,7 @@ public class Item_Power : MonoBehaviour
         {
             if(turn_compare < Enemy_controller.turn)
             {
-                if(PlayerController.HP > 5)
+                if(PlayerController.HP > 6)
                 {
                     playercontroller.Diffence += 10;//毎ターン防御力10上昇
                     PlayerController.HP -= 5;//体力を5減らす
@@ -157,7 +158,7 @@ public class Item_Power : MonoBehaviour
         {
             if(turn_compare < Enemy_controller.turn)
             {
-                if(PlayerController.HP > 5)
+                if(PlayerController.HP > 6)
                 {
                     playercontroller.Attack += 10;//毎ターン攻撃力10上昇
                     PlayerController.HP -= 5;//体力を5減らす
@@ -229,10 +230,10 @@ public class Item_Power : MonoBehaviour
                 switch (dice_random)
                 {
                     case 1: playercontroller.Attack += 10;break;
-                    case 2: playercontroller.Attack -= 5;break;
+                    case 2: playercontroller.Attack -= 10;break;
                     case 3: playercontroller.Magic += 10; break;
-                    case 4: playercontroller.Magic -= 5; break;
-                    case 5: PlayerController.Money += 30;break;
+                    case 4: playercontroller.Magic -= 10; break;
+                    case 5: PlayerController.Money += 5;break;
                     case 6: dice_crit = true; break;//クリティカル発生
                 }
                 turn_compare = Enemy_controller.turn;
@@ -391,8 +392,8 @@ public class Item_Power : MonoBehaviour
         {
             if(turn_compare < Enemy_controller.turn)
             {
-                playercontroller.Diffence += 10;
-                playercontroller.Magic_Diffence += 10;
+                playercontroller.Diffence += 3;
+                playercontroller.Magic_Diffence += 3;
                 turn_compare = Enemy_controller.turn;
             }
         }
@@ -430,8 +431,8 @@ public class Item_Power : MonoBehaviour
             if(adapt_Sinigami_kama == true && first_turn == true)
             {
                 playercontroller.Attack += 40;
-                PlayerController.max_luck -= 7;
-                //Sinigami_Crit_Effect = true;//死神のクリティカルエフェクト発生
+                PlayerController.max_luck = 2;
+                Sinigami_Crit_Effect = true;//死神のクリティカルエフェクト発生
                 adapt_Sinigami_kama = false;
             }
         }

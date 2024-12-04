@@ -416,6 +416,8 @@ public class PlayerController : MonoBehaviour
         Item_Reset();
         Status_reset();
         magic_number = 0;
+        Shop_manager.shop_max = 2;
+        Shop_manager.shop_min = 1;
         //各種数値を初期化
         Item_Power.turn_compare = 0;
         Item_Power.first_turn = true;
