@@ -311,9 +311,16 @@ public class Item_Power : MonoBehaviour
         {
             if (turn_compare < Enemy_controller.turn)
             {
-                playercontroller.Attack -= 3;
-                playercontroller.Diffence -= 3;
-                PlayerController.HP += 10;
+                if (playercontroller.Attack <= 3 || playercontroller.Diffence <= 3)
+                {
+                    log_text.text = "ƒwƒbƒhƒzƒ“‚ÌŒø‰Ê‚Í”­“®‚µ‚È‚©‚Á‚½";
+                }
+                else
+                {
+                    playercontroller.Attack -= 3;
+                    playercontroller.Diffence -= 3;
+                    PlayerController.HP += 10;
+                }
                 turn_compare = Enemy_controller.turn;
             }
         }
