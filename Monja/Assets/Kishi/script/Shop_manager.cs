@@ -234,6 +234,12 @@ public class Shop_manager: MonoBehaviour
         CreateObject3();
     }
 
+    public void Getflag_reset()
+    {
+        Item_Library.GetFlag1 = false;
+        Item_Library.GetFlag2 = false;
+        Item_Library.GetFlag3 = false;
+    }
     public void shop_reroll()
     {
 

@@ -166,6 +166,10 @@ public class PlayerController : MonoBehaviour
             {
                 Attack_damage = Attack + Attack / 2;                
                 Log.text = ("主人公クリティカル");
+                //if(Item_Power.Sinigami_Crit_Effect == true)
+                //{
+
+                //}
                 Item_Power.dice_crit = false;
             }
 
@@ -382,7 +386,16 @@ public class PlayerController : MonoBehaviour
             switch (num)
             {
                 case 1: SE_Play_Critical();break;
-                case 2: Create_Effect_Player(4, 5.0f, 0.0f);break;
+                case 2:
+                    if(Item_Power.Sinigami_Crit_Effect == true)
+                    {
+                        Create_Effect_Player(5, 5.0f, 0.0f);
+                    }
+                    else
+                    {
+                        Create_Effect_Player(4, 5.0f, 0.0f);
+                    }
+                    break;
                 case 3:Destroy(obj_player);break;
             }
         }

@@ -44,6 +44,7 @@ public class Item_Power : MonoBehaviour
     bool adapt_Dragon_Tooth = true;
     int dice_random = 0;
     int safetycorn_random = 0;
+    public static bool Sinigami_Crit_Effect = false;
     public static bool dice_crit = false;
     // Start is called before the first frame update
     void Start()
@@ -264,10 +265,17 @@ public class Item_Power : MonoBehaviour
         }
         if(Scissors_flag == true)
         {
+            //戦闘開始時の効果
             if(adapt_Scissors == true && first_turn == true)
             {
                 playercontroller.Attack += 20;
                 adapt_Scissors = false;
+            }
+            //ターン毎の効果
+            if (turn_compare < Enemy_controller.turn)
+            {
+                playercontroller.Diffence -= 2;
+                turn_compare = Enemy_controller.turn;
             }
         }
         if (ice_flag == true)
@@ -415,7 +423,8 @@ public class Item_Power : MonoBehaviour
             if(adapt_Sinigami_kama == true && first_turn == true)
             {
                 playercontroller.Attack += 40;
-                PlayerController.max_luck -= 1;
+                PlayerController.max_luck -= 7;
+                //Sinigami_Crit_Effect = true;//死神のクリティカルエフェクト発生
                 adapt_Sinigami_kama = false;
             }
         }
@@ -424,7 +433,7 @@ public class Item_Power : MonoBehaviour
             if(adapt_Sinigami_robe == true && first_turn == true)
             {
                 playercontroller.Diffence += 40;
-                PlayerController.max_luck -= 1;
+                PlayerController.max_luck -= 4;
                 adapt_Sinigami_robe = false;
             }
         }
@@ -432,7 +441,7 @@ public class Item_Power : MonoBehaviour
         {
             if(adapt_Medhusa_Scale == true && first_turn == true)
             {
-                playercontroller.Magic += 40;
+                playercontroller.Magic_Diffence += 40;
                 PlayerController.max_luck -= 1;
                 adapt_Medhusa_Scale = false;
             }
@@ -441,7 +450,7 @@ public class Item_Power : MonoBehaviour
         {
             if(adapt_Medhusa_MagicBook == true && first_turn == true)
             {
-                playercontroller.Magic_Diffence += 40;
+                playercontroller.Magic += 40;
                 PlayerController.max_luck -= 1;
                 adapt_Medhusa_MagicBook = false;
             }

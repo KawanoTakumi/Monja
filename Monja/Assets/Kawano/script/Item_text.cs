@@ -42,7 +42,7 @@ public class Item_text : MonoBehaviour
         else if (button == CompareTag("healdrink"))
         {
             itemname.text = "LIFE";
-            text.text = "缶ジュース。甘くておいしい\n[消費アイテム] 体力を２５％回復する";
+            text.text = "缶ジュース。甘くておいしい\n[消費アイテム] 体力を半分回復する";
         }
         else if (button == CompareTag("hourglass"))
         {
@@ -117,7 +117,7 @@ public class Item_text : MonoBehaviour
         else if (button == CompareTag("Scissors"))
         {
             itemname.text = "ハサミ";
-            text.text = "紙などを切るためお道具。どんなカットがお好み？\n物理攻撃力を２０増加させる";
+            text.text = "紙などを切るためお道具。どんなカットがお好み？\n物理攻撃力を30増加させるがターン毎に物理防御力を2減少させる";
         }
         else if (button == CompareTag("ice"))
         {
@@ -192,12 +192,12 @@ public class Item_text : MonoBehaviour
         else if(button == CompareTag("Kama"))
         {
             itemname.text = "死神の鎌";
-            text.text = "切れ味がいい鎌。魂まで刈ってしまう\n物理攻撃力を40増加させ、少しクリティカルが出やすくなる";
+            text.text = "切れ味がいい鎌。魂まで刈ってしまう\n物理攻撃力を40増加させ、クリティカルがかなり発生しやすくなる";
         }
         else if (button == CompareTag("Robe"))
         {
             itemname.text = "死神のローブ";
-            text.text = "死神が着ていたローブ。ひんやりと冷たい\n物理防御力を40増加させ、少しクリティカルが出やすくなる";
+            text.text = "死神が着ていたローブ。ひんやりと冷たい\n物理防御力を40増加させ、クリティカルがかなり発生しやすくなる";
         }
         else if (button == CompareTag("Scale"))
         {
