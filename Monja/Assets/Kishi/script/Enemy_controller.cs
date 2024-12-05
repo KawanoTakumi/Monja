@@ -113,8 +113,8 @@ public class Enemy_controller : MonoBehaviour
             else if (CompareTag("centaurus") == true)
             {
                Enemy_Centaurus = true;
-                HP = 380;
-                HP_MAX = 380;
+                HP = 400;
+                HP_MAX = 400;
                 Enemy_luck_Max = 11;
             }
             else if (CompareTag("medhusa") == true)
@@ -141,8 +141,8 @@ public class Enemy_controller : MonoBehaviour
             else if (CompareTag("dragon") == true)
             {
                 Boss_Dragon = true;
-                HP = 800;
-                HP_MAX = 800;
+                HP = 1000;
+                HP_MAX = 1000;
                 Enemy_luck_Max = 11;
             }
         }
@@ -182,7 +182,7 @@ public class Enemy_controller : MonoBehaviour
                 animator.SetBool("death", true);//deathフラグをtrueにする
                 turn_manager.turn = true;
             }
-            if (Enemy_Skelton == true && turn_time == 30) //敵　スケルトン
+            if (Enemy_Skelton == true && turn_time == 10) //敵　スケルトン
             {
                 Skelton();
             }
@@ -601,6 +601,7 @@ public class Enemy_controller : MonoBehaviour
         Destroy(obj1);
         magic_cnt = 0;
         turn = 1;
+        Shop_manager.shop_max = 2;
         Cut_In.first_flag = true;
         if (ChangeScene.scene_cnt >= 9)
         {

@@ -2784,6 +2784,7 @@ MonoBehaviour:
   - {fileID: 2596994626386688691, guid: 322f2de6aa74eaa408dcb550d932a6c8, type: 3}
   - {fileID: 1017118353004026684, guid: a0b09c63d7f46854eb766935771bd761, type: 3}
   - {fileID: 8770600068115727514, guid: 976d6d9efbaeded44a24ae3e576007fb, type: 3}
+  - {fileID: 3829796316166014384, guid: cd5836ad580d71b4b93459ff5afabc79, type: 3}
   _parentGameObject: {fileID: 1013919604}
   change: {fileID: 754146519}
   Attack_: {fileID: 889787176}
@@ -5954,11 +5955,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb3a806902d7b3441bc0d68101c047e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attack: 65
+  attack: 80
   deffence: 30
-  magic: 50
+  magic: 60
   magic_Diffence: 25
-  money: 200
+  money: 10
   Effect:
   - {fileID: 8299584437378114090, guid: 8e11c902fcd31ff429c6fd4f84115c7f, type: 3}
   - {fileID: 718690403272715185, guid: a8dc17518bca8c040b4b5f78d341013c, type: 3}

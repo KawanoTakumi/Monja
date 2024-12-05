@@ -172,7 +172,7 @@ public class Item_text : MonoBehaviour
         else if (button == CompareTag("Magnifying Speculum"))
         {
             itemname.text = "虫眼鏡";
-            text.text = "物を拡大して見ることができる道具。レンズが輝く\n物理防御力と魔法防御力を毎ターン１０増加させる";
+            text.text = "物を拡大して見ることができる道具。レンズが輝く\n物理防御力と魔法防御力を毎ターン3増加させる";
         }
         else if (button == CompareTag("Mike"))
         {

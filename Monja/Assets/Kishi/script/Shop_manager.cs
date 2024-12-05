@@ -17,12 +17,11 @@ public class Shop_manager: MonoBehaviour
     GameObject obj3;
     public bool item_flag;
     public Item_Library Item_Library;
-    int Boss_Item_Length;
     public Button button1;
     public Button button2;
     public Button button3;
-
-    static int shop_max = 1;
+    public static int shop_min = 1;
+    public static int shop_max = 2;
     public static int tmp_1 = -1;
     public static int tmp_2 = -1;
     public static int tmp_3 = -1;
@@ -142,98 +141,48 @@ public class Shop_manager: MonoBehaviour
     public void shop_select()
     {
         int switch_num;
-
-        if(Enemy_controller.Dragon_flag == true)
+        Item_Library = GetComponent<Item_Library>();
+        switch (ChangeScene.scene_cnt)
         {
-            switch_num = Random.Range(0, 1);
-            switch(switch_num)
-            {
-                case 0:number1 = Random.Range(0, prefab.Length - 6);break;
-                case 1:number1 = Random.Range(36, 38);break;
-            }
+            case 3: shop_max = 3; break;
+            case 6: shop_max = 4; break;
+            case 9: shop_min = 0;break;
         }
-        else
+        switch_num = Random.Range(shop_min, shop_max);
+        switch (switch_num)
         {
-            switch (ChangeScene.scene_cnt)
-            {
-                case 3: shop_max = 2; break;
-                case 6: shop_max = 3; break;
-            }
-            Item_Library = GetComponent<Item_Library>();
-            switch_num = Random.Range(0, shop_max);
-            switch (switch_num)
-            {
-                case 0: number1 = Random.Range(0, prefab.Length - 6); break;
-                case 1: number1 = Random.Range(0, prefab.Length - 4); break;
-                case 2: number1 = Random.Range(0, prefab.Length - 2); break;
-            }
-
+            case 0: number1 = Random.Range(36, 38); break;
+            case 1: number1 = Random.Range(0, prefab.Length - 6); break;
+            case 2: number1 = Random.Range(0, prefab.Length - 4); break;
+            case 3: number1 = Random.Range(0, prefab.Length - 2); break;
         }
         CreateObject1();
-
         do
         {
-            if (Enemy_controller.Dragon_flag == true)
+            switch_num = Random.Range(shop_min, shop_max);
+            switch (switch_num)
             {
-                switch_num = Random.Range(0, 1);
-                switch (switch_num)
-                {
-                    case 0: number2 = Random.Range(0, prefab.Length - 6); break;
-                    case 1: number2 = Random.Range(36, 38); break;
-                }
+                case 0: number2 = Random.Range(36, 38); break;
+                case 1: number2 = Random.Range(0, prefab.Length - 6); break;
+                case 2: number2 = Random.Range(0, prefab.Length - 4); break;
+                case 3: number2 = Random.Range(0, prefab.Length - 2); break;
             }
-            else
-            {
-                switch (ChangeScene.scene_cnt)
-                {
-                    case 3: shop_max = 2; break;
-                    case 6: shop_max = 3; break;
-                }
-                Item_Library = GetComponent<Item_Library>();
-                switch_num = Random.Range(0, shop_max);
-                switch (switch_num)
-                {
-                    case 0: number2 = Random.Range(0, prefab.Length - 6); break;
-                    case 1: number2 = Random.Range(0, prefab.Length - 4); break;
-                    case 2: number2 = Random.Range(0, prefab.Length - 2); break;
-                }
-
-            }
-
         } while (number2 == number1);
         CreateObject2();
 
         do
         {
-            if (Enemy_controller.Dragon_flag == true)
+            switch_num = Random.Range(shop_min, shop_max);
+            switch (switch_num)
             {
-                switch_num = Random.Range(0, 1);
-                switch (switch_num)
-                {
-                    case 0: number3 = Random.Range(0, prefab.Length - 6); break;
-                    case 1: number3 = Random.Range(36, 38); break;
-                }
-            }
-            else
-            {
-                switch (ChangeScene.scene_cnt)
-                {
-                    case 3: shop_max = 2; break;
-                    case 6: shop_max = 3; break;
-                }
-                Item_Library = GetComponent<Item_Library>();
-                switch_num = Random.Range(0, shop_max);
-                switch (switch_num)
-                {
-                    case 0: number3 = Random.Range(0, prefab.Length - 6); break;
-                    case 1: number3 = Random.Range(0, prefab.Length - 4); break;
-                    case 2: number3 = Random.Range(0, prefab.Length - 2); break;
-                }
+                case 0: number3 = Random.Range(36, 38); break;
+                case 1: number3 = Random.Range(0, prefab.Length - 6); break;
+                case 2: number3 = Random.Range(0, prefab.Length - 4); break;
+                case 3: number3 = Random.Range(0, prefab.Length - 2); break;
             }
         } while (number3 == number2 || number3 == number1);
         CreateObject3();
     }
-
     public void Getflag_reset()
     {
         Item_Library.GetFlag1 = false;
