@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3308651837154014164}
   - component: {fileID: 6007683614513092253}
   m_Layer: 0
-  m_Name: poison_Ball
+  m_Name: poison_snake
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: b1356848ba935e04685d35f2a3724748, type: 3}
+  m_Sprite: {fileID: -850100321, guid: 9cda3956530eb254d8fe3c8f25c3102a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

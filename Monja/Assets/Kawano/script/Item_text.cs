@@ -47,7 +47,7 @@ public class Item_text : MonoBehaviour
         else if (button == CompareTag("hourglass"))
         {
             itemname.text = "砂時計";
-            text.text = "砂を使った時計。時間は有限。\n１ターンごとに攻撃力を10上昇させ、体力を5減少させる";
+            text.text = "砂を使った時計。時間は有限。\n１ターンごとに物理攻撃力を10上昇させ、体力を5減少させる";
         }
         else if (button == CompareTag("cd"))
         {
@@ -197,17 +197,17 @@ public class Item_text : MonoBehaviour
         else if (button == CompareTag("Robe"))
         {
             itemname.text = "死神のローブ";
-            text.text = "死神が着ていたローブ。ひんやりと冷たい\n物理防御力を40増加させ、クリティカルがかなり発生しやすくなる";
+            text.text = "死神が着ていたローブ。ひんやりと冷たい\n物理防御力を40増加させ、クリティカルが発生しやすくなる";
         }
         else if (button == CompareTag("Scale"))
         {
             itemname.text = "メデューサの鱗";
-            text.text = "メデューサの尻尾の部分の鱗。とても硬い\n魔法攻撃力を40増加させ、少しクリティカルが出やすくなる";
+            text.text = "メデューサの尻尾の部分の鱗。とても硬い\n魔法攻撃力を40増加させ、クリティカルが出やすくなる";
         }
         else if (button == CompareTag("MagicBook"))
         {
             itemname.text = "メデューサの魔導書";
-            text.text = "メデューサが使っていた魔導書。書かれている文字は解読できない\n魔法防御力を40増加させ、少しクリティカルが出やすくなる";
+            text.text = "メデューサが使っていた魔導書。書かれている文字は解読できない\n魔法防御力を40増加させ、クリティカルが出やすくなる\n（アイテム画面でアイテムを押すと魔法攻撃が変化）";
         }
         else if (button == CompareTag("Juwel"))
         {

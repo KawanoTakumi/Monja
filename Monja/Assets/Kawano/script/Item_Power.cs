@@ -338,10 +338,13 @@ public class Item_Power : MonoBehaviour
         {
             if(adapt_Coffee == true && first_turn == true)
             {
-                PlayerController.HP -= 20;
                 if(PlayerController.HP < 6)
                 {
                     PlayerController.HP = 5;
+                }
+                else
+                {
+                    PlayerController.HP -= 20;
                 }
                 playercontroller.Magic += 30;
                 adapt_Coffee = false;
@@ -432,7 +435,7 @@ public class Item_Power : MonoBehaviour
             if(adapt_Sinigami_kama == true && first_turn == true)
             {
                 playercontroller.Attack += 40;
-                PlayerController.max_luck = 2;
+                PlayerController.max_luck -= 3;
                 Sinigami_Crit_Effect = true;//死神のクリティカルエフェクト発生
                 adapt_Sinigami_kama = false;
             }
@@ -442,7 +445,7 @@ public class Item_Power : MonoBehaviour
             if(adapt_Sinigami_robe == true && first_turn == true)
             {
                 playercontroller.Diffence += 40;
-                PlayerController.max_luck -= 4;
+                PlayerController.max_luck -= 3;
                 adapt_Sinigami_robe = false;
             }
         }
@@ -451,7 +454,7 @@ public class Item_Power : MonoBehaviour
             if(adapt_Medhusa_Scale == true && first_turn == true)
             {
                 playercontroller.Magic_Diffence += 40;
-                PlayerController.max_luck -= 1;
+                PlayerController.max_luck -= 3;
                 adapt_Medhusa_Scale = false;
             }
         }
@@ -460,7 +463,7 @@ public class Item_Power : MonoBehaviour
             if(adapt_Medhusa_MagicBook == true && first_turn == true)
             {
                 playercontroller.Magic += 40;
-                PlayerController.max_luck -= 1;
+                PlayerController.max_luck -= 3;
                 Medhusa_Magic_flag = true;
                 adapt_Medhusa_MagicBook = false;
             }
