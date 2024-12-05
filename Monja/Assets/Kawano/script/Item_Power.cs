@@ -46,6 +46,7 @@ public class Item_Power : MonoBehaviour
     int dice_random = 0;
     int safetycorn_random = 0;
     public static bool Sinigami_Crit_Effect = false;
+    public static bool Medhusa_Magic_flag = false;
     public static bool dice_crit = false;
     // Start is called before the first frame update
     void Start()
@@ -460,6 +461,7 @@ public class Item_Power : MonoBehaviour
             {
                 playercontroller.Magic += 40;
                 PlayerController.max_luck -= 1;
+                Medhusa_Magic_flag = true;
                 adapt_Medhusa_MagicBook = false;
             }
         }

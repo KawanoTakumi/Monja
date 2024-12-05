@@ -144,6 +144,10 @@ public class PlayerController : MonoBehaviour
         {
             Magic_Diffence = 0;
         }
+        if(max_luck < 2)
+        {
+            max_luck = 2;
+        }
     }
     public void attack()
     {
@@ -166,10 +170,6 @@ public class PlayerController : MonoBehaviour
             {
                 Attack_damage = Attack + Attack / 2;                
                 Log.text = ("主人公クリティカル");
-                //if(Item_Power.Sinigami_Crit_Effect == true)
-                //{
-
-                //}
                 Item_Power.dice_crit = false;
             }
 
@@ -229,6 +229,7 @@ public class PlayerController : MonoBehaviour
                     case 0: Create_Effect_Player(0, 5.7f, 0.9f); break;
                     case 1: Create_Effect_Player(2, 0f, 0f);break;
                     case 2: Create_Effect_Player(3, 0f, 0f);break;
+                    case 6: Create_Effect_Player(6, 0f, 0f);break;
                 }
 
                 MP -= 25;

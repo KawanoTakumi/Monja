@@ -50,7 +50,7 @@ public class Item_Manager : MonoBehaviour
 
             Item.Add("Megaphone", false);//30
             Item.Add("HandMill", false);//31
-            Item.Add("Kama", true);//32
+            Item.Add("Kama", false);//32
             Item.Add("Robe", false);//33
             Item.Add("Scale", false);//34
             Item.Add("MagicBook", false);//35

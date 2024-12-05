@@ -2848,6 +2848,7 @@ MonoBehaviour:
   - {fileID: 1017118353004026684, guid: a0b09c63d7f46854eb766935771bd761, type: 3}
   - {fileID: 8770600068115727514, guid: 976d6d9efbaeded44a24ae3e576007fb, type: 3}
   - {fileID: 3829796316166014384, guid: cd5836ad580d71b4b93459ff5afabc79, type: 3}
+  - {fileID: 6506879874350029958, guid: 685d751e53b102045a89fb3d66a5f28e, type: 3}
   _parentGameObject: {fileID: 1013919604}
   change: {fileID: 754146519}
   Attack_: {fileID: 889787176}
