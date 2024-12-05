@@ -2778,6 +2778,7 @@ MonoBehaviour:
   money: 0
   player_luck: 0
   Item_button: {fileID: 754146516}
+  Setting_Button: {fileID: 1884345792}
   Effect:
   - {fileID: 1970586632822164892, guid: fa0d56264dfbcd64ca333dc0f80d4760, type: 3}
   - {fileID: 2159356408269481005, guid: f2580a5da0869f34a859503c60ba7ca9, type: 3}

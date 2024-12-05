@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
     int poison_cnt;
     bool cons_flag = false;
     public Button Item_button;
+    public Button Setting_Button;
 
     public GameObject[] Effect;//エフェクト用
     GameObject obj_player;
@@ -307,6 +308,7 @@ public class PlayerController : MonoBehaviour
         Heal_.interactable = false;
         Concentlation_.interactable = false;
         Item_button.interactable = false;
+        Setting_Button.interactable = false;
     }
     public void intaract_true()
     {
@@ -315,6 +317,7 @@ public class PlayerController : MonoBehaviour
         Heal_.interactable = true;
         Concentlation_.interactable = true;
         Item_button.interactable = true;
+        Setting_Button.interactable = true;
     }
     public static void Item_Reset()
     {
