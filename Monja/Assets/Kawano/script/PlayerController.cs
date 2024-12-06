@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
     public Button Setting_Button;
 
     public GameObject[] Effect;//エフェクト用
-    GameObject obj_player;
+    public GameObject obj_player;
     [SerializeField] GameObject _parentGameObject;
     turn_manager turn_Manager;
     Animator animator;//プレイヤーアニメーター
@@ -38,6 +38,7 @@ public class PlayerController : MonoBehaviour
     GameObject Enemey;
     public ChangeScene change;//チェンジシーン
     int turn_time = 0;//ターン経過時間
+    bool button_check = false;
 
     //ボタン関係変数
     public Button Attack_;
@@ -50,6 +51,7 @@ public class PlayerController : MonoBehaviour
     static int MagicDeffence_tmp = 25;
 
     public Text Log;//テキストログ
+    public Text Log_2;
 
     //オーディオ
     public AudioSource audioSource_Attack;
@@ -72,7 +74,7 @@ public class PlayerController : MonoBehaviour
         Diffence = Deffence_tmp;
         Magic = Magic_tmp;
         Magic_Diffence = MagicDeffence_tmp;
-
+        Log.text = "プレイヤーのターン";
         money = Money;
         turn_Manager = GetComponent<turn_manager>();
         turn_manager.turn = true;
@@ -104,6 +106,7 @@ public class PlayerController : MonoBehaviour
         if(HP <= 0)
         {
             animator.SetBool("death",true);
+            Log.text = "倒れてしまった";
             ChangeScene.scene_cnt = 1;//最初のシーンがcase :1
         }
 
@@ -149,6 +152,23 @@ public class PlayerController : MonoBehaviour
         {
             max_luck = 2;
         }
+        if(button_check == true)
+        {
+            turn_time++;
+            if (turn_time > turn_manager.turn_time_max)
+            {
+                turn_time = 0;
+                button_check = false;
+                if (poison_cnt > 0)
+                {
+                    HP -= 5;
+                    poison_cnt -= 1;
+                }
+                Log.text = "";
+                turn_manager.turn = false;
+            }
+        }
+
     }
     public void attack()
     {
@@ -158,6 +178,8 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("attack", true);
         if (turn_manager.turn == true)
         {
+            button_check = true;
+            Log.text = "主人公は攻撃した";
             Item_button.interactable = false;
             player_luck = Random.Range(1,max_luck);
             if (player_luck < max_luck - 1)
@@ -186,6 +208,7 @@ public class PlayerController : MonoBehaviour
 
         if (turn_manager.turn == true)
         {
+            button_check = true;
             if (MP < 100)
             {
                 intaract_false();
@@ -220,6 +243,7 @@ public class PlayerController : MonoBehaviour
         {
             if(MP >= 25)
             {
+                button_check = true;
                 Item_button.interactable = false;
 
                 intaract_false();
@@ -242,20 +266,9 @@ public class PlayerController : MonoBehaviour
                     cons_flag = false;
                 }
 
-                turn_time++;
 
                 //遅延
                 Invoke("SE_Play_Magic", 30.0f);
-                if (turn_time > 300)
-                {
-                    turn_time = 0;
-                    if (poison_cnt > 0)
-                    {
-                        HP -= 5;
-                        poison_cnt -= 1;
-                    }
-                    turn_manager.turn = false;
-                }
             }
             else
             {
@@ -274,6 +287,7 @@ public class PlayerController : MonoBehaviour
             Item_button.interactable = false;
             if (HP != HP_max && HP_Potion > 0)
             {
+                button_check = true;
                 //遅延
                 Invoke("SE_Play_Heal", 1.0f);
 
@@ -372,8 +386,6 @@ public class PlayerController : MonoBehaviour
                 HP -= 5;
                 poison_cnt -= 1;
             }
-            Log.text = "";
-            turn_manager.turn = false;
         }
     }
     //エフェクトオブジェクト作成関数
@@ -381,6 +393,14 @@ public class PlayerController : MonoBehaviour
     {
         obj_player = Instantiate(Effect[number], new Vector3(Fx, Fy, 0), Quaternion.identity, _parentGameObject.transform);
         obj_player.name = "Effect_image_" + number;
+    }
+    public void Magic_Effect()
+    {
+        switch(magic_number)
+        {
+            case 1:enemy_Controller.deffence -= 3;Log_2.text = "魔法効果で相手の物理防御が5低下"; break;
+            case 2:enemy_Controller.magic_Diffence -= 3; Log_2.text = "魔法効果で相手の魔法防御が5低下"; break;
+        }
     }
     public void Crit_Effect(int num)
     {

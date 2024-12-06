@@ -166,7 +166,7 @@ public class Enemy_controller : MonoBehaviour
         {
             Destroy(obj1);
         }
-        if (turn_manager.turn != true)
+        if (turn_manager.turn == false)
         {
             //EnemyAttackを初期化
             Enemy_attack = 0;
@@ -178,9 +178,11 @@ public class Enemy_controller : MonoBehaviour
                 PlayerController.MP = 100;
                 tag_get = true;
                 Destroy(obj1);
+                Destroy(playerController.obj_player);
                 HP_Bar.SetActive(false);//HPバー
                 animator.SetBool("death", true);//deathフラグをtrueにする
                 turn_manager.turn = true;
+                Log.text = "戦闘に勝利した！！！";
             }
             if (Enemy_Skelton == true && turn_time == 10) //敵　スケルトン
             {
@@ -221,7 +223,7 @@ public class Enemy_controller : MonoBehaviour
             }
             //ターンタイムが数値より大きくなったらターン変更
             turn_time++;
-            if (turn_time >= 200)
+            if (turn_time > turn_manager.turn_time_max)
             {
                 Log.text = ("敵ターン終了");
                 turn += 1;
@@ -248,6 +250,7 @@ public class Enemy_controller : MonoBehaviour
             switch(paturn)
             {
                 case 1: animator.SetBool("Attack", true);break;
+                case 2:Create_Effect_Enemy(1, 0.0f,0.0f);break;
             }
 
             Enemy_luck = Random.Range(1, Enemy_luck_Max);
@@ -309,6 +312,31 @@ public class Enemy_controller : MonoBehaviour
                     break;
             }
         }
+        //リッチ
+        void Richie()
+        {
+            Enemy_act = Random.Range(1, 4);//1～3まで
+            switch (Enemy_act)
+            {
+                case 1:
+                    Magic();
+                    Log.text = ("リッチの魔法攻撃");
+                    Create_Effect_Enemy(1, 5.5f, 0.4f);
+                    damage_Calculate.Player_Damage_Calculate(Enemy_Magic, playerController.Magic_Diffence);
+                    break;
+                case 2:
+                    Magic();
+                    Log.text = ("リッチの魔法攻撃");
+                    Create_Effect_Enemy(1, 5.5f, 0.4f);
+                    damage_Calculate.Player_Damage_Calculate(Enemy_Magic, playerController.Magic_Diffence);
+                    break;
+                case 3:
+                    Heal();
+                    Log.text = ("リッチは回復した");
+                    break;
+            }
+        }
+
         void Minotaurus()
         {
             Enemy_act = Random.Range(1, 4);//1～3まで
@@ -331,6 +359,28 @@ public class Enemy_controller : MonoBehaviour
                     break;
             }
         }
+        void Centaurus()
+        {
+            Enemy_act = Random.Range(1, 4);//1～3まで
+            switch (Enemy_act)
+            {
+                case 1:
+                    Attack(2);
+                    Log.text = ("ケンタウロスの弓攻撃");
+                    damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Diffence);
+                    break;
+                case 2:
+                    Attack(2);
+                    Log.text = ("ケンタウロスの弓攻撃");
+                    damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Diffence);
+                    break;
+                case 3:
+                    Defence();
+                    Log.text = ("ケンタウロスは防御した");
+                    break;
+            }
+        }
+
         void Cockatrice()
         {
             Enemy_act = Random.Range(1, 4);//1～3まで
@@ -358,7 +408,7 @@ public class Enemy_controller : MonoBehaviour
             switch (Enemy_act)
             {
                 case 1:
-                    Attack(1);
+                    Attack(2);
                     Log.text = ("ナイトの攻撃");
                     damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Diffence);
                     break;
@@ -370,52 +420,6 @@ public class Enemy_controller : MonoBehaviour
                 case 3:
                     Defence();
                     Log.text = ("ナイトは防御した");
-                    break;
-            }
-        }
-        void Richie()
-        {
-            Enemy_act = Random.Range(1, 4);//1～3まで
-            switch (Enemy_act)
-            {
-                case 1:
-                    Magic();
-                    Log.text = ("リッチの魔法攻撃");
-                    Create_Effect_Enemy(1, 5.5f, 0.4f);
-                    damage_Calculate.Player_Damage_Calculate(Enemy_Magic, playerController.Magic_Diffence);
-                    break;
-                case 2:
-                    Magic();
-                    Log.text = ("リッチの魔法攻撃");
-                    Create_Effect_Enemy(1, 5.5f, 0.4f);
-                    damage_Calculate.Player_Damage_Calculate(Enemy_Magic, playerController.Magic_Diffence);
-                    break;
-                case 3:
-                    Heal();
-                    Log.text = ("リッチは回復した");
-                    break;
-            }
-        }
-        void Centaurus()
-        {
-            Enemy_act = Random.Range(1, 4);//1～3まで
-            switch (Enemy_act)
-            {
-                case 1:
-                    Attack(0);
-                    Log.text = ("ケンタウロスの弓攻撃");
-                    Create_Effect_Enemy(1, 0.0f, 0.0f);
-                    damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Diffence);
-                    break;
-                case 2:
-                    Attack(0);
-                    Log.text = ("ケンタウロスの弓攻撃");
-                    Create_Effect_Enemy(1, 0.0f, 0.0f);
-                    damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Diffence);
-                    break;
-                case 3:
-                    Defence();
-                    Log.text = ("ケンタウロスは防御した");
                     break;
             }
         }
