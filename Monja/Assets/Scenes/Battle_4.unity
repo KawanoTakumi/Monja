@@ -5357,7 +5357,7 @@ MonoBehaviour:
   money: 75
   Effect:
   - {fileID: 8299584437378114090, guid: 8e11c902fcd31ff429c6fd4f84115c7f, type: 3}
-  - {fileID: 8299584437378114090, guid: 8e11c902fcd31ff429c6fd4f84115c7f, type: 3}
+  - {fileID: 3841687375311422541, guid: a354262969f9b404abaee5f657949991, type: 3}
   - {fileID: 8770600068115727514, guid: 976d6d9efbaeded44a24ae3e576007fb, type: 3}
   Monster: {fileID: 2097196019}
   obj2: {fileID: 0}

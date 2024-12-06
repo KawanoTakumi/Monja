@@ -425,6 +425,7 @@ public class PlayerController : MonoBehaviour
         //各種数値を初期化
         Item_Power.turn_compare = 0;
         Item_Power.first_turn = true;
+        Item_Power.Sinigami_Crit_Effect = false;
         Enemy_controller.turn = 0;
         Enemy_controller.HP = 150;
         Enemy_controller.tag_get = true;

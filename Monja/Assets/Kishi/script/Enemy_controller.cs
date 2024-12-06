@@ -381,11 +381,13 @@ public class Enemy_controller : MonoBehaviour
                 case 1:
                     Magic();
                     Log.text = ("リッチの魔法攻撃");
+                    Create_Effect_Enemy(1, 5.5f, 0.4f);
                     damage_Calculate.Player_Damage_Calculate(Enemy_Magic, playerController.Magic_Diffence);
                     break;
                 case 2:
                     Magic();
                     Log.text = ("リッチの魔法攻撃");
+                    Create_Effect_Enemy(1, 5.5f, 0.4f);
                     damage_Calculate.Player_Damage_Calculate(Enemy_Magic, playerController.Magic_Diffence);
                     break;
                 case 3:
@@ -607,6 +609,7 @@ public class Enemy_controller : MonoBehaviour
         {
             PlayerController.Money += money;
             Item_Power.first_turn = true;
+            Item_Power.Sinigami_Crit_Effect = false;
             Dragon_flag = true;
             ChangeScene.Title_Reset();
             SceneManager.LoadScene("ending");
@@ -641,5 +644,9 @@ public class Enemy_controller : MonoBehaviour
         Boss_Medhusa = false;
         Boss_sinigami = false;
         Boss_Dragon = false;
+    }
+    public void Attack_Effect()
+    {
+        obj1 = Instantiate(Effect[1], new Vector3(0.0f, 0.0f, 0), Quaternion.identity, _parentGameObject.transform);
     }
 }
