@@ -396,12 +396,19 @@ public class PlayerController : MonoBehaviour
     }
     public void Magic_Effect()
     {
-        switch(magic_number)
+        int eff_random = 0;
+        eff_random = Random.Range(1, 5);
+        if(eff_random == 4)
         {
-            case 1:enemy_Controller.deffence -= 3;Log_2.text = "魔法効果で相手の物理防御が5低下"; break;
-            case 2:enemy_Controller.magic_Diffence -= 3; Log_2.text = "魔法効果で相手の魔法防御が5低下"; break;
+            switch(magic_number)
+            {
+                case 1: enemy_Controller.deffence -= 3; Log_2.text = "魔法効果で相手の物理防御が5低下"; break;
+                case 2: enemy_Controller.magic_Diffence -= 3; Log_2.text = "魔法効果で相手の魔法防御が5低下"; break;
+                case 6: Enemy_controller.HP -= 5; Log_2.text = "敵に毒で５ダメージ与えた";break;
+            }
         }
     }
+
     public void Crit_Effect(int num)
     {
 
