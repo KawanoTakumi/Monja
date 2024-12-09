@@ -25,6 +25,7 @@ public class Enemy_controller : MonoBehaviour
     Damage_calculate damage_Calculate;
     Enemy_SE enemy_SE;
     PlayerController playerController;
+    public Status_Controller status_;
     GameObject player;
     Animator animator;
     public int Enemy_attack;//攻撃力(計算後)
@@ -51,6 +52,7 @@ public class Enemy_controller : MonoBehaviour
     public bool poison;
     public static bool End_Game_Flag = false;
     public static bool Freeze_turn = false;
+    public static bool Stone_turn = false;
     public GameObject HP_Bar;
 
     //各シーン到達後trueにする
@@ -452,6 +454,8 @@ public class Enemy_controller : MonoBehaviour
         //メデューサ
         void Medhusa()
         {
+            int stone_luck;
+            stone_luck = Random.Range(0, 5);
             Enemy_act = Random.Range(1, 5);//1～4まで
             switch (Enemy_act)
             {
@@ -462,8 +466,14 @@ public class Enemy_controller : MonoBehaviour
                     break;
                 case 2:
                     medhusa_magic();
-                    Log.text = ("メデューサの魔法攻撃");
-                    damage_Calculate.Player_Damage_Calculate(Enemy_Magic, playerController.Magic_Diffence);
+                    Log.text = ("メデューサの石化攻撃");
+                    switch(stone_luck)
+                    {
+                        case 1:
+                        case 2:
+                        case 3:
+                        case 4: Log.text = "石化してしまった";status_.Status_Effect(true, 1); Stone_turn = true;break;
+                    }
                     break;
                 case 3:
                     Heal();
@@ -631,6 +641,7 @@ public class Enemy_controller : MonoBehaviour
         Item_Power.turn_compare = 0;
         Freeze_turn = false;
         Destroy(obj1);
+        Destroy(Status_Controller.eff_obj);
         magic_cnt = 0;
         turn = 1;
         Shop_manager.shop_max = 2;

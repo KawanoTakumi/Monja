@@ -31,6 +31,7 @@ public class PlayerController : MonoBehaviour
     public GameObject[] Effect;//エフェクト用
     public GameObject obj_player;
     [SerializeField] GameObject _parentGameObject;
+    public Status_Controller status_;
     turn_manager turn_Manager;
     Animator animator;//プレイヤーアニメーター
     Damage_calculate damage_Calculate;//ダメージサーキュレーター
@@ -95,6 +96,12 @@ public class PlayerController : MonoBehaviour
         if (turn_manager.turn == false)
         {
             Destroy(obj_player);
+        }
+        //石化状態
+        if(Enemy_controller.Stone_turn == true)
+        {
+            Enemy_controller.Stone_turn = false;
+            turn_manager.turn = false;
         }
         //毒ダメージ
         if(enemy_Controller.poison == true)
@@ -323,6 +330,7 @@ public class PlayerController : MonoBehaviour
         Concentlation_.interactable = false;
         Item_button.interactable = false;
         Setting_Button.interactable = false;
+        Destroy(Status_Controller.eff_obj);
     }
     public void intaract_true()
     {
@@ -402,7 +410,7 @@ public class PlayerController : MonoBehaviour
         {
             switch(magic_number)
             {
-                case 1: Enemy_controller.Freeze_turn = true; Log_2.text = "相手が凍り次のターンになった"; break;
+                case 1: Enemy_controller.Freeze_turn = true; status_.Status_Effect(false, 0); Log_2.text = "相手が凍り次のターンになった"; break;
                 case 2: enemy_Controller.magic_Diffence -= 3; Log_2.text = "相手の魔法防御力が3下がった"; break;
                 case 6: Enemy_controller.HP -= 5; Log_2.text = "毒で５ダメージ与えた";break;
             }
