@@ -49,7 +49,8 @@ public class Enemy_controller : MonoBehaviour
     int turn_time = 0;
     public Text Log;
     public bool poison;
-    public static bool End_GAme_Flag = false;
+    public static bool End_Game_Flag = false;
+    public static bool Freeze_turn = false;
     public GameObject HP_Bar;
 
     //各シーン到達後trueにする
@@ -171,7 +172,31 @@ public class Enemy_controller : MonoBehaviour
             //EnemyAttackを初期化
             Enemy_attack = 0;
             Enemy_Magic = 0;
+            if(Freeze_turn == true)
+            {
+                Freeze_turn = false;
+                if(HP > 0)
+                {
+                    turn += 1;
+                }
+                playerController.intaract_true();
+                Item_Power.first_turn = false;
+                Destroy(playerController.obj_player);
+                turn_manager.turn = true;
+                Log.text = ("プレイヤーのターン");
+                //時間の初期化
+                turn_time = 0;
 
+                if (turn >= 5)
+                {
+                    money -= 5;//ターンが５よりも大きくなったら獲得金額を５ずつ減らす
+                    //moneyが0以下になったら、moneyを0にする
+                    if (money <= 0)
+                    {
+                        money = 0;
+                    }
+                }
+            }
             //HPが0になったらクリア画面を出す
             if (HP <= 0)
             {
@@ -604,6 +629,7 @@ public class Enemy_controller : MonoBehaviour
         Win_Reset();
         PlayerController.Status_reset();
         Item_Power.turn_compare = 0;
+        Freeze_turn = false;
         Destroy(obj1);
         magic_cnt = 0;
         turn = 1;

@@ -397,14 +397,14 @@ public class PlayerController : MonoBehaviour
     public void Magic_Effect()
     {
         int eff_random = 0;
-        eff_random = Random.Range(1, 5);
-        if(eff_random == 4)
+        eff_random = Random.Range(1, 2);
+        if(eff_random == 1)
         {
             switch(magic_number)
             {
-                case 1: enemy_Controller.deffence -= 3; Log_2.text = "魔法効果で相手の物理防御が5低下"; break;
-                case 2: enemy_Controller.magic_Diffence -= 3; Log_2.text = "魔法効果で相手の魔法防御が5低下"; break;
-                case 6: Enemy_controller.HP -= 5; Log_2.text = "敵に毒で５ダメージ与えた";break;
+                case 1: Enemy_controller.Freeze_turn = true; Log_2.text = "相手が凍り次のターンになった"; break;
+                case 2: enemy_Controller.magic_Diffence -= 3; Log_2.text = "相手の魔法防御力が3下がった"; break;
+                case 6: Enemy_controller.HP -= 5; Log_2.text = "毒で５ダメージ与えた";break;
             }
         }
     }
@@ -455,6 +455,7 @@ public class PlayerController : MonoBehaviour
         Item_Power.Sinigami_Crit_Effect = false;
         Enemy_controller.turn = 0;
         Enemy_controller.HP = 150;
+        Enemy_controller.Freeze_turn = false;
         Enemy_controller.tag_get = true;
         Money = 0;
         SceneManager.LoadScene("Lose");
