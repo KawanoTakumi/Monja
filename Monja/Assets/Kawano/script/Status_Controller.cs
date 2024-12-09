@@ -18,7 +18,7 @@ public class Status_Controller : MonoBehaviour
         {
             case 0:Create_Effect_Status(0, 0.0f, 0.0f);break;//“€Œ‹
             case 1:Create_Effect_Status(1, 0.0f, 0.0f);break;//Î‰»
-            //case 2:Create_Effect_Status(2, 0.0f, 0.0f);break;//“Å
+            case 2:Create_Effect_Status(2, 0.0f, 0.0f);break;//“Å
         }
     }
     public void Create_Effect_Status(int number, float Fx, float Fy)

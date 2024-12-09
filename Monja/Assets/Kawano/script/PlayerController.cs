@@ -391,6 +391,7 @@ public class PlayerController : MonoBehaviour
         {
             if (poison_cnt > 0)
             {
+                status_.Status_Effect(true,2);
                 HP -= 5;
                 poison_cnt -= 1;
             }
