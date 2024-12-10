@@ -50,6 +50,7 @@ public class Enemy_controller : MonoBehaviour
     int turn_time = 0;
     public Text Log;
     public bool poison;
+    public bool OnFire;
     public static bool End_Game_Flag = false;
     public static bool Freeze_turn = false;
     public static bool Stone_turn = false;
@@ -202,7 +203,7 @@ public class Enemy_controller : MonoBehaviour
             //HPが0になったらクリア画面を出す
             if (HP <= 0)
             {
-                PlayerController.MP = 100;
+                PlayerController.MP = PlayerController.MP_max;
                 tag_get = true;
                 Destroy(obj1);
                 Destroy(playerController.obj_player);
@@ -215,23 +216,23 @@ public class Enemy_controller : MonoBehaviour
             {
                 Skelton();
             }
-            else if (Enemy_Centaurus == true && turn_time == 10) //敵　メデューサ（ボス）
+            else if (Enemy_Centaurus == true && turn_time == 10) //敵　ケンタウロス
             {
                 Centaurus();
             }
-            else if (Enemy_Richie == true && turn_time == 10) //敵　メデューサ（ボス）
+            else if (Enemy_Richie == true && turn_time == 10) //敵　リッチ
             {
                 Richie();
             }
-            else if (Enemy_Knight == true && turn_time == 10) //敵　メデューサ（ボス）
+            else if (Enemy_Knight == true && turn_time == 10) //敵　ナイト
             {
                 Knight();
             }
-            else if (Enemy_Cockatrice == true && turn_time == 10) //敵　メデューサ（ボス）
+            else if (Enemy_Cockatrice == true && turn_time == 10) //敵　コカトリス
             {
                 Cockatrice();
             }
-            else if (Enemy_Minotaurus == true && turn_time == 10) //敵　メデューサ（ボス）
+            else if (Enemy_Minotaurus == true && turn_time == 10) //敵　ミノタウロス
             {
                 Minotaurus();
             }
@@ -240,11 +241,11 @@ public class Enemy_controller : MonoBehaviour
             {
                 Medhusa();
             }
-            else if (Boss_sinigami == true && turn_time == 10) //敵　メデューサ（ボス）
+            else if (Boss_sinigami == true && turn_time == 10) //敵　死神（ボス）
             {
                 Sinigami();
             }
-            else if (Boss_Dragon == true && turn_time == 10) //敵　メデューサ（ボス）
+            else if (Boss_Dragon == true && turn_time == 10) //敵　ドラゴン（ボス）
             {
                 Dragon();
             }
@@ -471,7 +472,7 @@ public class Enemy_controller : MonoBehaviour
                     {
                         case 1:
                         case 2:
-                        case 3:
+                        case 3:Log.text = "石化しなかった";break;
                         case 4: Log.text = "石化してしまった";status_.Status_Effect(true, 1); Stone_turn = true;break;
                     }
                     break;
@@ -510,12 +511,10 @@ public class Enemy_controller : MonoBehaviour
             {
                 case 1:
                     sinigami_attack();
-                    Log.text = ("死神の攻撃");
                     damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Diffence);
                     break;
                 case 2:
                     sinigami_attack();
-                    Log.text = ("死神の攻撃");
                     damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Diffence);
                     break;
                 case 3:
@@ -534,6 +533,7 @@ public class Enemy_controller : MonoBehaviour
             Enemy_luck = Random.Range(1, 21);
             if (Enemy_luck <= 19)
             {
+                Log.text = ("死神の攻撃");
                 Enemy_attack = attack;
             }
             else if (Enemy_luck == 20)
@@ -551,7 +551,6 @@ public class Enemy_controller : MonoBehaviour
             {
                 case 1:
                     dragon_attack();
-                    Log.text = ("ドラゴンの攻撃");
                     damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Diffence);
                     break;
                 case 2:
@@ -561,7 +560,6 @@ public class Enemy_controller : MonoBehaviour
                     break;
                 case 3:
                     dragon_attack();
-                    Log.text = ("ドラゴンの攻撃");
                     damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Diffence);
                     break;
                 case 4:
@@ -576,6 +574,7 @@ public class Enemy_controller : MonoBehaviour
             if (Enemy_luck <= 4)
             {
                 animator.SetBool("Attack", true);
+                Log.text = ("ドラゴンの攻撃");
                 Enemy_attack = attack;
             }
             else if (Enemy_luck == 5)
@@ -587,7 +586,6 @@ public class Enemy_controller : MonoBehaviour
         }
         void dragon_magic()
         {
-            Log.text = ("敵の魔法攻撃");
             if (magic_cnt < 2)
             {
                 Enemy_Magic = magic;
@@ -595,6 +593,7 @@ public class Enemy_controller : MonoBehaviour
             }
             else if (magic_cnt >= 2)
             {
+                OnFire = true;
                 Enemy_Magic = magic + Enemy_attack;
             }
         }

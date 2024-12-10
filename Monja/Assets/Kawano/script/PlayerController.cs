@@ -23,7 +23,8 @@ public class PlayerController : MonoBehaviour
     public int player_luck;//プレイヤーのラック
     public static int max_luck = 13;//最大ラック
     public static int magic_number = 0;//魔法番号(撃てる魔法の種類)
-    int poison_cnt;
+    int poison_cnt;//毒のターン数
+    int OnFire_cnt;//延焼のターン数
     bool cons_flag = false;
     public Button Item_button;
     public Button Setting_Button;
@@ -106,8 +107,13 @@ public class PlayerController : MonoBehaviour
         //毒ダメージ
         if(enemy_Controller.poison == true)
         {
-            poison_cnt += 5;
+            poison_cnt += 3;
             enemy_Controller.poison = false;
+        }
+        if(enemy_Controller.OnFire == true)
+        {
+            OnFire_cnt += 2;
+            enemy_Controller.OnFire = false;
         }
         //敗北
         if(HP <= 0)
@@ -228,11 +234,6 @@ public class PlayerController : MonoBehaviour
                 if (MP > MP_max)
                 {
                     MP = MP_max;
-                }
-                if(poison_cnt > 0)
-                {
-                    HP -= 5;
-                    poison_cnt -= 1;
                 }
             }
             else
@@ -392,8 +393,14 @@ public class PlayerController : MonoBehaviour
             if (poison_cnt > 0)
             {
                 status_.Status_Effect(true,2);
-                HP -= 5;
+                HP -= 2;
                 poison_cnt -= 1;
+            }
+            if(OnFire_cnt > 0)
+            {
+                status_.Status_Effect(true, 3);
+                HP -= 10;
+                OnFire_cnt -= 1;
             }
         }
     }
@@ -406,8 +413,8 @@ public class PlayerController : MonoBehaviour
     public void Magic_Effect()
     {
         int eff_random = 0;
-        eff_random = Random.Range(1, 2);
-        if(eff_random == 1)
+        eff_random = Random.Range(0, 101);
+        if(eff_random <= 24)
         {
             switch(magic_number)
             {
