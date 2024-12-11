@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
     public static int max_luck = 13;//最大ラック
     public static int magic_number = 0;//魔法番号(撃てる魔法の種類)
     int poison_cnt;//毒のターン数
-    int OnFire_cnt = 2;//延焼のターン数
+    int OnFire_cnt;//延焼のターン数
     bool cons_flag = false;
     public Button Item_button;
     public Button Setting_Button;
@@ -174,9 +174,19 @@ public class PlayerController : MonoBehaviour
                 button_check = false;
                 if (poison_cnt > 0)
                 {
-                    HP -= 5;
+                    HP -= 2;
+                    Log.text = "毒の効果で体力が2減った";
+                    status_.Status_Effect(true, 2);
                     poison_cnt -= 1;
                 }
+                if (OnFire_cnt > 0)
+                {
+                    HP -= 8;
+                    Log.text = "延焼効果で体力が8減った";
+                    status_.Status_Effect(true, 3);
+                    OnFire_cnt -= 1;
+                }
+
                 Log.text = "";
                 turn_manager.turn = false;
             }
@@ -384,23 +394,6 @@ public class PlayerController : MonoBehaviour
     public void Anim_Reset(string anim_tag)
     {
         animator.SetBool(anim_tag, false);
-        if(anim_tag != "heal")
-        {
-            if (poison_cnt > 0)
-            {
-                status_.Status_Effect(true,2);
-                Log.text = "毒の効果で体力が2減った";
-                HP -= 2;
-                poison_cnt -= 1;
-            }
-            if(OnFire_cnt > 0)
-            {
-                status_.Status_Effect(true, 3);
-                Log.text = "延焼効果で体力が5減った";
-                HP -= 5;
-                OnFire_cnt -= 1;
-            }
-        }
     }
     //エフェクトオブジェクト作成関数
     public void Create_Effect_Player(int number, float Fx, float Fy)
