@@ -49,12 +49,13 @@ public class Enemy_controller : MonoBehaviour
     public static bool tag_get = true;
     int turn_time = 0;
     public Text Log;
+    public static bool End_Game_Flag = false;
+    public GameObject HP_Bar;
+    //状態異常変数
     public bool poison;
     public bool OnFire;
-    public static bool End_Game_Flag = false;
     public static bool Freeze_turn = false;
     public static bool Stone_turn = false;
-    public GameObject HP_Bar;
 
     //各シーン到達後trueにする
     public static bool Sinigami_flag = false;

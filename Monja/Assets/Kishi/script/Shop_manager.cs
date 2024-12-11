@@ -146,7 +146,7 @@ public class Shop_manager: MonoBehaviour
         {
             case 3: shop_max = 3; break;
             case 6: shop_max = 4; break;
-            case 9: shop_min = 0;break;
+            case 9: shop_min = 0; break;
         }
         switch_num = Random.Range(shop_min, shop_max);
         switch (switch_num)

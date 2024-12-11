@@ -31,8 +31,8 @@ public class Item_text : MonoBehaviour
 
         if (button == CompareTag("bowlingball"))
         {
-            itemname.text = "ボーリングの玉";
-            text.text = "ボーリングに使われていた玉。少し重い。\n物理攻撃力を20上昇させ、物理防御力を20減少させる";
+            itemname.text = "ボウリングの玉";
+            text.text = "ボウリングに使われていた玉。少し重い。\n物理攻撃力を20上昇させ、物理防御力を20減少させる";
         }
         else if (button == CompareTag("radio"))
         {
