@@ -301,7 +301,6 @@ public class PlayerController : MonoBehaviour
             Item_button.interactable = false;
             if (HP != HP_max && HP_Potion > 0)
             {
-                button_check = true;
                 //遅延
                 Invoke("SE_Play_Heal", 1.0f);
 
