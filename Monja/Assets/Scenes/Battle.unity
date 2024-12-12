@@ -4071,8 +4071,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1614461928}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0362, y: 0.0033, z: 0}
-  m_LocalScale: {x: 2.2272708, y: 1.6651347, z: 1}
+  m_LocalPosition: {x: -0.00072, y: 0.0033, z: 0}
+  m_LocalScale: {x: 2.2210076, y: 1.6651347, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -4995,8 +4995,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.21, y: 0.26}
-  m_SizeDelta: {x: 233.55, y: 92.78}
+  m_AnchoredPosition: {x: -67.07, y: -14.65}
+  m_SizeDelta: {x: 117.62, y: 65.44}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2031012978
 MonoBehaviour:
@@ -5025,7 +5025,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 56
-    m_Alignment: 5
+    m_Alignment: 8
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -5152,7 +5152,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -72, y: 31}
+  m_AnchoredPosition: {x: 56.9, y: -23.685001}
   m_SizeDelta: {x: 130.31, y: 47.37}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2078794431
@@ -5315,9 +5315,9 @@ MonoBehaviour:
   Enemy_deffence: 5
   Enemy_Magic: 0
   Log: {fileID: 1265022589}
+  HP_Bar: {fileID: 1636723077}
   poison: 0
   OnFire: 0
-  HP_Bar: {fileID: 1636723077}
 --- !u!114 &2097196024
 MonoBehaviour:
   m_ObjectHideFlags: 0
