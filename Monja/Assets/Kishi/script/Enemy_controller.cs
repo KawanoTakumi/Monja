@@ -207,6 +207,7 @@ public class Enemy_controller : MonoBehaviour
                 PlayerController.MP = PlayerController.MP_max;
                 tag_get = true;
                 Destroy(obj1);
+                Destroy(GameObject.Find("Enmey_HP"));
                 Destroy(playerController.obj_player);
                 HP_Bar.SetActive(false);//HPバー
                 animator.SetBool("death", true);//deathフラグをtrueにする

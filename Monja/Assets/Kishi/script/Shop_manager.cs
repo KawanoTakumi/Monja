@@ -151,9 +151,9 @@ public class Shop_manager: MonoBehaviour
         switch (switch_num)
         {
             case 0: number1 = Random.Range(36, 38); break;
-            case 1: number1 = Random.Range(0, prefab.Length - 6); break;
-            case 2: number1 = Random.Range(0, prefab.Length - 4); break;
-            case 3: number1 = Random.Range(0, prefab.Length - 2); break;
+            case 1: number1 = Random.Range(1, prefab.Length - 6); break;
+            case 2: number1 = Random.Range(1, prefab.Length - 4); break;
+            case 3: number1 = Random.Range(1, prefab.Length - 2); break;
         }
         CreateObject1();
         do
@@ -162,9 +162,9 @@ public class Shop_manager: MonoBehaviour
             switch (switch_num)
             {
                 case 0: number2 = Random.Range(36, 38); break;
-                case 1: number2 = Random.Range(0, prefab.Length - 6); break;
-                case 2: number2 = Random.Range(0, prefab.Length - 4); break;
-                case 3: number2 = Random.Range(0, prefab.Length - 2); break;
+                case 1: number2 = Random.Range(1, prefab.Length - 6); break;
+                case 2: number2 = Random.Range(1, prefab.Length - 4); break;
+                case 3: number2 = Random.Range(1, prefab.Length - 2); break;
             }
         } while (number2 == number1);
         CreateObject2();
@@ -175,9 +175,9 @@ public class Shop_manager: MonoBehaviour
             switch (switch_num)
             {
                 case 0: number3 = Random.Range(36, 38); break;
-                case 1: number3 = Random.Range(0, prefab.Length - 6); break;
-                case 2: number3 = Random.Range(0, prefab.Length - 4); break;
-                case 3: number3 = Random.Range(0, prefab.Length - 2); break;
+                case 1: number3 = Random.Range(1, prefab.Length - 6); break;
+                case 2: number3 = Random.Range(1, prefab.Length - 4); break;
+                case 3: number3 = Random.Range(1, prefab.Length - 2); break;
             }
         } while (number3 == number2 || number3 == number1);
         CreateObject3();

@@ -15,7 +15,7 @@ public class Item_Manager : MonoBehaviour
         {
             Item.Add("none", false);//空のキーを設定（アイテムがないときの状態）
             //アイテムをItem辞書に登録
-            Item.Add("healdrink", false);//0
+            Item.Add("healdrink", true);//0
             Item.Add("bowlingball", false);//1
             Item.Add("CDplayer", false);//2
             Item.Add("cd", false);//3
