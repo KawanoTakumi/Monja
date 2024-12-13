@@ -492,19 +492,15 @@ public class Enemy_controller : MonoBehaviour
         {
             Log.text = ("メデューサの魔法攻撃");
             Enemy_luck = Random.Range(1, 6);
-            if (Enemy_luck <= 1)
+            if (Enemy_luck > 0)
             {
                 Enemy_Magic = magic;
-            }
-            else if (Enemy_luck > 1)
-            {
-                Enemy_Magic = 0;
-                Create_Effect_Enemy(1, 2.5f, 0.3f);
                 poison = true;
                 Log.text = ("メデューサの毒発動");
+                Create_Effect_Enemy(1, 2.5f, 0.3f);
+                
             }
         }
-
         //死神
         void Sinigami()
         {
