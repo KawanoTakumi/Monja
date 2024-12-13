@@ -52,7 +52,7 @@ public class Shop_manager: MonoBehaviour
         {
             Item_Manager.Item[button3.tag] = true;
         }
-
+        
 
         Item_Manager.Item.TryGetValue(button1.tag, out bool flag_1);
         Item_Manager.Item.TryGetValue(button2.tag, out bool flag_2);
@@ -71,6 +71,11 @@ public class Shop_manager: MonoBehaviour
         if (flag_3 == true && button3.interactable == true)
         {
             button3.interactable = false;
+        }
+
+        if(Item_Library.Heal_Get_Flag == true)
+        {
+            healbutton.interactable = false;
         }
     }
     public void CreateObject1()
@@ -132,7 +137,7 @@ public class Shop_manager: MonoBehaviour
     }
     public void CreateObjectHeal()
     {
-        Healobj = Instantiate(prefab[0], new Vector3(7.5f, -2.0f, 0), Quaternion.identity, _parentGameObject.transform);
+        Healobj = Instantiate(prefab[0], new Vector3(7.5f, -1.5f, 0), Quaternion.identity, _parentGameObject.transform);
         healbutton = Healobj.GetComponent<Button>();
         Healobj.name = "Heal_Item";
         button_intaractable(healbutton);

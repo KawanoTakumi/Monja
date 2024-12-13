@@ -439,7 +439,7 @@ public class Enemy_controller : MonoBehaviour
             {
                 case 1:
                     Attack(2);
-                    Log.text = ("ナイトの攻撃");
+                    Log.text = ("ナイトは斬撃を飛ばした");
                     damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Diffence);
                     break;
                 case 2:
