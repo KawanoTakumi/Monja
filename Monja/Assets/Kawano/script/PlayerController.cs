@@ -34,6 +34,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] GameObject _parentGameObject;
     public Status_Controller status_;
     turn_manager turn_Manager;
+    Status_Controller status;
     Animator animator;//プレイヤーアニメーター
     Damage_calculate damage_Calculate;//ダメージサーキュレーター
     Enemy_controller enemy_Controller;
@@ -104,9 +105,10 @@ public class PlayerController : MonoBehaviour
             turn_manager.turn = false;
         }
         //毒ダメージ
-        if(enemy_Controller.poison == true)
+        if (enemy_Controller.poison == true)
         {
             poison_cnt += 3;
+            Log_2.text = "毒の効果で３ダメージくらった";
             enemy_Controller.poison = false;
         }
         //延焼ダメージ
@@ -211,14 +213,13 @@ public class PlayerController : MonoBehaviour
 
                 Attack_damage = Attack;
             }
-            if (player_luck == max_luck -1 || Item_Power.dice_crit == true)
+            else if (player_luck == max_luck -1 || Item_Power.dice_crit == true)
             {
                 Attack_damage = Attack + Attack / 2;                
                 Log.text = ("主人公クリティカルが発生");
                 Item_Power.dice_crit = false;
             }
 
-            Attack_damage = Attack;
             damage_Calculate.Enemey_Damage_Calculate(Attack_damage, enemy_Controller.Enemy_deffence);
         }
     }

@@ -15,11 +15,13 @@ public class Shop_manager: MonoBehaviour
     GameObject obj1;
     GameObject obj2;
     GameObject obj3;
+    GameObject Healobj;
     public bool item_flag;
     public Item_Library Item_Library;
     public Button button1;
     public Button button2;
     public Button button3;
+    public Button healbutton;
     public static int shop_min = 1;
     public static int shop_max = 2;
     public static int tmp_1 = -1;
@@ -128,7 +130,13 @@ public class Shop_manager: MonoBehaviour
             Item_Get_Check(button3);
         }
     }
-
+    public void CreateObjectHeal()
+    {
+        Healobj = Instantiate(prefab[0], new Vector3(6.5f, -3.5f, 0), Quaternion.identity, _parentGameObject.transform);
+        healbutton = Healobj.GetComponent<Button>();
+        Healobj.name = "Heal_Item";
+        button_intaractable(healbutton);
+    }
     void Item_Get_Check(Button button)
     {
         Item_Manager.Item.TryGetValue(button.tag, out bool tag_bool);
@@ -181,6 +189,7 @@ public class Shop_manager: MonoBehaviour
             }
         } while (number3 == number2 || number3 == number1);
         CreateObject3();
+        CreateObjectHeal();
     }
     public void Getflag_reset()
     {
@@ -210,5 +219,9 @@ public class Shop_manager: MonoBehaviour
         {
             text.text = ("ÉäÉçÅ[ÉãÇÕ40GïKóvÇ≈Ç∑");
         }
+    }
+    public void button_intaractable(Button button)
+    {
+        button.interactable = false;
     }
 }
