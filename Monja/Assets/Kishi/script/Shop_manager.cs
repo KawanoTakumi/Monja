@@ -132,7 +132,7 @@ public class Shop_manager: MonoBehaviour
     }
     public void CreateObjectHeal()
     {
-        Healobj = Instantiate(prefab[0], new Vector3(6.5f, -3.5f, 0), Quaternion.identity, _parentGameObject.transform);
+        Healobj = Instantiate(prefab[0], new Vector3(7.5f, -2.0f, 0), Quaternion.identity, _parentGameObject.transform);
         healbutton = Healobj.GetComponent<Button>();
         Healobj.name = "Heal_Item";
         button_intaractable(healbutton);
@@ -196,6 +196,7 @@ public class Shop_manager: MonoBehaviour
         Item_Library.GetFlag1 = false;
         Item_Library.GetFlag2 = false;
         Item_Library.GetFlag3 = false;
+        Item_Library.Heal_Get_Flag = false;
     }
     public void shop_reroll()
     {

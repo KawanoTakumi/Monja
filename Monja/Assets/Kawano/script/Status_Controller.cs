@@ -5,6 +5,8 @@ public class Status_Controller : MonoBehaviour
     public GameObject[] Effects;//ステータスエフェクト
     public static GameObject eff_obj;
     GameObject _parent;//親オブジェクト
+    public PlayerController player;
+    
     public void Status_Effect(bool player_flag, int number)
     {
         switch(player_flag)

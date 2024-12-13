@@ -10,14 +10,16 @@ public class Item_Library : MonoBehaviour
     int ItemValue1 = 25;
     int ItemValue2 = 30;
     int ItemValue3 = 35;
+    int ItemValue_Heal = 25;
     //取得フラグ
     public static bool GetFlag1 = false;
     public static bool GetFlag2 = false;
     public static bool GetFlag3 = false;
+    public static bool Heal_Get_Flag = false;
     public bool Flag_1 = false;
     public bool Flag_2 = false;
     public bool Flag_3 = false;
-
+    public Button heal_button;
 
     public Text textbox;
 
@@ -27,13 +29,21 @@ public class Item_Library : MonoBehaviour
     {
         GameObject obj = GameObject.Find("shopmanager");
         shop_manager = obj.GetComponent<Shop_manager>();//ショップマネージャーを取得
-
     }
 
     // Update is called once per frame
     void Update()
     {
         money = PlayerController.Money;
+
+        if (Heal_Get_Flag == true)
+        {
+            heal_button.interactable = false;
+        }
+        else
+        {
+            heal_button.interactable = true;
+        }
     }
 
     //----------------------------
@@ -110,6 +120,21 @@ public class Item_Library : MonoBehaviour
         else if (money - ItemValue1 < 0)
         {
             textbox.text = "お金が足りません。";
+        }
+    }
+    public void Heal_Buy()
+    {
+        if(money >= ItemValue_Heal)
+        {
+            money -= ItemValue_Heal;
+            PlayerController.HP_Potion++;
+            PlayerController.Money = money;
+            shop_manager.healbutton.interactable = false;
+            Heal_Get_Flag = true;
+        }
+        else
+        {
+            textbox.text = "お金が足りません";
         }
     }
 }

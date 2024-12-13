@@ -329,7 +329,7 @@ public class PlayerController : MonoBehaviour
             intaract_true();
         }
     }
-    void intaract_false()
+    public void intaract_false()
     {
         Attack_.interactable = false;
         Magic_.interactable = false;
