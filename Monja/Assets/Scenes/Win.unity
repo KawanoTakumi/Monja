@@ -1225,6 +1225,10 @@ PrefabInstance:
       propertyPath: m_Volume
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 369285360025072898, guid: c73c7eb0f7c45fa43a4512ad34fc0033, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 369285360025072899, guid: c73c7eb0f7c45fa43a4512ad34fc0033, type: 3}
       propertyPath: m_Name
       value: button_audio

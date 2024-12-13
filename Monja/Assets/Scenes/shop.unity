@@ -4021,6 +4021,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2346285576421895478, guid: 43642502f5dec814fb3e8ba7214031fc, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2346285576421895480, guid: 43642502f5dec814fb3e8ba7214031fc, type: 3}
       propertyPath: m_Name
       value: BGM_Manager
