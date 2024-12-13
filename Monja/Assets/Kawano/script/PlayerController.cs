@@ -318,7 +318,7 @@ public class PlayerController : MonoBehaviour
                 }
                 Log.text = ("主人公は回復した");
             }
-            else　if(HP == HP_max)
+            else if(HP == HP_max)
             {
                 Log.text = ("体力は満タンだ！！！");
             }
