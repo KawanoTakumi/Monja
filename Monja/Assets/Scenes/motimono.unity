@@ -12788,6 +12788,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1788472649869984662, guid: a78e3504bbd6d954ebd4c2a3719ce327, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4346123561679468007, guid: a78e3504bbd6d954ebd4c2a3719ce327, type: 3}
       propertyPath: m_Name
       value: BGM_Manager

@@ -4418,8 +4418,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -518, y: 380}
-  m_SizeDelta: {x: 450.23, y: 86.75}
+  m_AnchoredPosition: {x: -545.35, y: 380}
+  m_SizeDelta: {x: 395.52, y: 86.75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1308068189
 MonoBehaviour:
@@ -6323,6 +6323,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2937479455962750785, guid: 61e3672502c1d264f823a02481c40c6a, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2937479455962750785, guid: 61e3672502c1d264f823a02481c40c6a, type: 3}
       propertyPath: m_audioClip
       value: 
