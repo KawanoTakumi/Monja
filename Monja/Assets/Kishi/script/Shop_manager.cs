@@ -70,7 +70,6 @@ public class Shop_manager: MonoBehaviour
         {
             button3.interactable = false;
         }
-
     }
     public void CreateObject1()
     {

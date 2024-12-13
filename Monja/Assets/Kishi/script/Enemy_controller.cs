@@ -641,6 +641,7 @@ public class Enemy_controller : MonoBehaviour
         Item_Power.turn_compare = 0;
         Freeze_turn = false;
         Destroy(obj1);
+        Destroy(obj2);
         Destroy(Status_Controller.eff_obj);
         magic_cnt = 0;
         turn = 1;

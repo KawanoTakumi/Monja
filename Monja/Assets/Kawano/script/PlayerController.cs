@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
     public static int max_luck = 13;//最大ラック
     public static int magic_number = 0;//魔法番号(撃てる魔法の種類)
     int poison_cnt;//毒のターン数
-    int OnFire_cnt = 2;//延焼のターン数
+    int OnFire_cnt;//延焼のターン数
     bool cons_flag = false;
     public Button Item_button;
     public Button Setting_Button;
@@ -76,7 +76,7 @@ public class PlayerController : MonoBehaviour
         Diffence = Deffence_tmp;
         Magic = Magic_tmp;
         Magic_Diffence = MagicDeffence_tmp;
-        Log.text = "プレイヤーのターン";
+        Log.text = "主人公のターン";
         money = Money;
         turn_Manager = GetComponent<turn_manager>();
         turn_manager.turn = true;
@@ -119,7 +119,7 @@ public class PlayerController : MonoBehaviour
         if(HP <= 0)
         {
             animator.SetBool("death",true);
-            Log.text = "倒れてしまった";
+            Log.text = "主人公は倒れてしまった";
             ChangeScene.scene_cnt = 1;//最初のシーンがcase :1
         }
 
@@ -174,9 +174,19 @@ public class PlayerController : MonoBehaviour
                 button_check = false;
                 if (poison_cnt > 0)
                 {
-                    HP -= 5;
+                    HP -= 2;
+                    Log.text = "毒の効果で体力が2減った";
+                    status_.Status_Effect(true, 2);
                     poison_cnt -= 1;
                 }
+                if (OnFire_cnt > 0)
+                {
+                    HP -= 8;
+                    Log.text = "延焼効果で体力が8減った";
+                    status_.Status_Effect(true, 3);
+                    OnFire_cnt -= 1;
+                }
+
                 Log.text = "";
                 turn_manager.turn = false;
             }
@@ -204,7 +214,7 @@ public class PlayerController : MonoBehaviour
             if (player_luck == max_luck -1 || Item_Power.dice_crit == true)
             {
                 Attack_damage = Attack + Attack / 2;                
-                Log.text = ("主人公クリティカル");
+                Log.text = ("主人公クリティカルが発生");
                 Item_Power.dice_crit = false;
             }
 
@@ -276,7 +286,7 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                Log.text = ("MPが足りない");
+                Log.text = ("MPが足りない！");
             }
         }
     }
@@ -291,7 +301,6 @@ public class PlayerController : MonoBehaviour
             Item_button.interactable = false;
             if (HP != HP_max && HP_Potion > 0)
             {
-                button_check = true;
                 //遅延
                 Invoke("SE_Play_Heal", 1.0f);
 
@@ -314,7 +323,7 @@ public class PlayerController : MonoBehaviour
             }
             else if(HP_Potion < 1)
             {
-                Log.text = ("ポーションが足りない");
+                Log.text = ("ポーションが足りない！");
             }
             intaract_true();
         }
@@ -350,6 +359,7 @@ public class PlayerController : MonoBehaviour
         Item_Manager.Item["TV"] = false;
         Item_Manager.Item["CreditCard"] = false;
         Item_Manager.Item["Mouse"] = false;
+
         Item_Manager.Item["HandMirror"] = false;
         Item_Manager.Item["bowlingpin"] = false;
         Item_Manager.Item["baseball_ball"] = false;
@@ -360,6 +370,7 @@ public class PlayerController : MonoBehaviour
         Item_Manager.Item["Scissors"]= false;
         Item_Manager.Item["ice"]= false;
         Item_Manager.Item["Pudding"]= false;
+
         Item_Manager.Item["Drill"]= false;
         Item_Manager.Item["Headphone"]= false;
         Item_Manager.Item["Coffee"]= false;
@@ -370,6 +381,7 @@ public class PlayerController : MonoBehaviour
         Item_Manager.Item["ItypeMagnet"]= false;
         Item_Manager.Item["Magnifying Speculum"]= false;
         Item_Manager.Item["Mike"]= false;
+
         Item_Manager.Item["Megaphone"]= false;
         Item_Manager.Item["HandMill"]= false;
         Item_Manager.Item["Kama"]= false;
@@ -384,23 +396,6 @@ public class PlayerController : MonoBehaviour
     public void Anim_Reset(string anim_tag)
     {
         animator.SetBool(anim_tag, false);
-        if(anim_tag != "heal")
-        {
-            if (poison_cnt > 0)
-            {
-                status_.Status_Effect(true,2);
-                Log.text = "毒の効果で体力が2減った";
-                HP -= 2;
-                poison_cnt -= 1;
-            }
-            if(OnFire_cnt > 0)
-            {
-                status_.Status_Effect(true, 3);
-                Log.text = "延焼効果で体力が5減った";
-                HP -= 5;
-                OnFire_cnt -= 1;
-            }
-        }
     }
     //エフェクトオブジェクト作成関数
     public void Create_Effect_Player(int number, float Fx, float Fy)
@@ -411,14 +406,14 @@ public class PlayerController : MonoBehaviour
     public void Magic_Effect()
     {
         int eff_random = 0;
-        eff_random = Random.Range(0, 101);
-        if(eff_random <= 24)
+        eff_random = Random.Range(0, 5);
+        if(eff_random == 4)
         {
             switch(magic_number)
             {
                 case 1: Enemy_controller.Freeze_turn = true; status_.Status_Effect(false, 0); Log_2.text = "相手が凍り次のターンになった"; break;
                 case 2: enemy_Controller.magic_Diffence -= 3; Log_2.text = "相手の魔法防御力が3下がった"; break;
-                case 6: Enemy_controller.HP -= 5; Log_2.text = "毒で５ダメージ与えた";break;
+                case 6: Enemy_controller.HP -= 5; Log_2.text = "毒で５ダメージ与えた"; status_.Status_Effect(false, 2); break;
             }
         }
     }
@@ -452,7 +447,6 @@ public class PlayerController : MonoBehaviour
         Magic_tmp = 25;
         MagicDeffence_tmp = 25;
     }
-
     public void Lose()
     {
         animator.SetBool("death", false);
@@ -470,6 +464,7 @@ public class PlayerController : MonoBehaviour
         Enemy_controller.turn = 0;
         Enemy_controller.HP = 150;
         Enemy_controller.Freeze_turn = false;
+        Enemy_controller.Stone_turn = false;
         Enemy_controller.tag_get = true;
         Money = 0;
         SceneManager.LoadScene("Lose");

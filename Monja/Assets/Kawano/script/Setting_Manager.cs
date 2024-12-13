@@ -13,9 +13,9 @@ public class Setting_Manager : MonoBehaviour
     void Update()
     {
         sorce_1.volume = Slider_Manager.Music_Volume;
-        sorce_2.volume = Slider_Manager.Music_Volume;
-        sorce_3.volume = Slider_Manager.Music_Volume;
-        sorce_4.volume = Slider_Manager.Music_Volume;
-        sorce_5.volume = Slider_Manager.Music_Volume;
+        sorce_2.volume = sorce_1.volume;
+        sorce_3.volume = sorce_1.volume;
+        sorce_4.volume = sorce_1.volume;
+        sorce_5.volume = sorce_1.volume;
     }
 }
