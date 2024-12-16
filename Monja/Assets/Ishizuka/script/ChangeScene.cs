@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class ChangeScene : MonoBehaviour
 {
@@ -22,11 +21,12 @@ public class ChangeScene : MonoBehaviour
     {
             SceneManager.LoadScene(sceneName);
     }
-
+    //shop_changeを有効にする
     public void change_scene()
     {
         Scene_Change = true;
     }
+    //ショップに戻る時用関数
     public void shop_change()
     {
         //shopに戻る時用
@@ -36,37 +36,35 @@ public class ChangeScene : MonoBehaviour
             Scene_Change = false;
         }
     }
+    //シーンカウント増加関数
     public void add_scene_num()
     {
         //シーンナンバー加算
         scene_cnt++;
     }
+    //シーンカウントリセット関数
     public void reset_scene_num()
     {
         scene_cnt = 0;
     }
+    //最初のターン経過取得フラグ
     public void first_turn_flag()
     {
         Item_Power.first_turn = false;
     }
+    //workシーン変更関数
     public void Work_Cange_Scene()
     {
-        
+        //各シーンカウントで移動シーンを変更
         switch (scene_cnt)
         {
-            case 0: SceneManager.LoadScene("Title"); break;           //タイトル
-            case 1: SceneManager.LoadScene("work_01"); break;
-            case 2: SceneManager.LoadScene("work_01"); break;
-            case 3: SceneManager.LoadScene("work_01"); break;
-            case 4: SceneManager.LoadScene("work_02"); break;
-            case 5: SceneManager.LoadScene("work_02"); break;
-            case 6: SceneManager.LoadScene("work_02"); break;
-            case 7: SceneManager.LoadScene("work_03"); break;
-            case 8: SceneManager.LoadScene("work_03"); break;
-            case 9: SceneManager.LoadScene("work_03"); break;
-
+            case 0: SceneManager.LoadScene("Title"); break;                //タイトル
+            case 1:case 2:case 3: SceneManager.LoadScene("work_01"); break;//歩行シーン1
+            case 4:case 5:case 6: SceneManager.LoadScene("work_02"); break;//歩行シーン2
+            case 7:case 8:case 9: SceneManager.LoadScene("work_03"); break;//歩行シーン3
         }
     }
+    //戦闘シーンをscene_cntに基づいて変更
     public void Enemy_Change_Scene()
     {
         if(Scene_Change == false)
@@ -74,16 +72,16 @@ public class ChangeScene : MonoBehaviour
             //バトルシーン(case: 3,6,9のときはボスシーン)
             switch (scene_cnt)
             {
-                case 0: SceneManager.LoadScene("Title");break;           //タイトル
-                case 1: SceneManager.LoadScene("Battle"); break;         //スケルトン　  バトル１
-                case 2: SceneManager.LoadScene("Battle_2"); break;       //リッチ　      バトル２
-                case 3: SceneManager.LoadScene("Boss_Battle_01"); break; //死神　        バトル３
-                case 4: SceneManager.LoadScene("Battle_4"); break;       //ミノタウロス　バトル４
-                case 5: SceneManager.LoadScene("Battle_5"); break;       //ケンタウロス　バトル５
-                case 6: SceneManager.LoadScene("Boss_Battle_02"); break; //メデューサ    バトル６
-                case 7: SceneManager.LoadScene("Battle_7"); break;       //コカトリス　  バトル７
-                case 8: SceneManager.LoadScene("Battle_8"); break;       //ナイト　      バトル８
-                case 9: SceneManager.LoadScene("Boss_Battle_03"); break; //ドラゴン      バトル９
+                case 0: SceneManager.LoadScene("Title");            break; //タイトル
+                case 1: SceneManager.LoadScene("Battle");           break; //スケルトン　  バトル１
+                case 2: SceneManager.LoadScene("Battle_2");         break; //リッチ　      バトル２
+                case 3: SceneManager.LoadScene("Boss_Battle_01");   break; //死神　        バトル３
+                case 4: SceneManager.LoadScene("Battle_4");         break; //ミノタウロス　バトル４
+                case 5: SceneManager.LoadScene("Battle_5");         break; //ケンタウロス　バトル５
+                case 6: SceneManager.LoadScene("Boss_Battle_02");   break; //メデューサ    バトル６
+                case 7: SceneManager.LoadScene("Battle_7");         break; //コカトリス　  バトル７
+                case 8: SceneManager.LoadScene("Battle_8");         break; //ナイト　      バトル８
+                case 9: SceneManager.LoadScene("Boss_Battle_03");   break; //ドラゴン      バトル９
             }
         }
     }
@@ -132,21 +130,23 @@ public class ChangeScene : MonoBehaviour
 
         scene_cnt = 0;
     }
-
     public void Item_num_Recet()
     {
         Shop_manager.tmp_1 = -1;
         Shop_manager.tmp_2 = -1;
         Shop_manager.tmp_3 = -1;
     }
+    //shop移行
     public void shop_go()
     {
         SceneManager.LoadScene("shop");
     }
+    //shopから移動
     public void back_shop()
     {
         SceneManager.LoadScene("shop_back");
     }
+    //
     public static void Title_Reset()
     {
         PlayerController.HP = PlayerController.HP_max;

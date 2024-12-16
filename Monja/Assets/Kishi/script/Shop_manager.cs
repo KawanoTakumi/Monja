@@ -141,7 +141,7 @@ public class Shop_manager: MonoBehaviour
     }
     public void CreateObjectHeal()
     {
-        Healobj = Instantiate(prefab[0], new Vector3(7.5f, -1.5f, 0), Quaternion.identity, _parentGameObject.transform);
+        Healobj = Instantiate(prefab[0], new Vector3(7.75f, -1.2f, 0), Quaternion.identity, _parentGameObject.transform);
         healbutton = Healobj.GetComponent<Button>();
         Healobj.name = "Heal_Item";
         button_intaractable(healbutton);
@@ -167,7 +167,7 @@ public class Shop_manager: MonoBehaviour
         switch_num = Random.Range(shop_min, shop_max);
         switch (switch_num)
         {
-            case 0: number1 = Random.Range(36, 38); break;
+            case 0: number1 = Random.Range(prefab.Length - 2, prefab.Length); break;
             case 1: number1 = Random.Range(1, prefab.Length - 6); break;
             case 2: number1 = Random.Range(1, prefab.Length - 4); break;
             case 3: number1 = Random.Range(1, prefab.Length - 2); break;
@@ -178,7 +178,7 @@ public class Shop_manager: MonoBehaviour
             switch_num = Random.Range(shop_min, shop_max);
             switch (switch_num)
             {
-                case 0: number2 = Random.Range(36, 38); break;
+                case 0: number2 = Random.Range(prefab.Length - 2, prefab.Length); break;
                 case 1: number2 = Random.Range(1, prefab.Length - 6); break;
                 case 2: number2 = Random.Range(1, prefab.Length - 4); break;
                 case 3: number2 = Random.Range(1, prefab.Length - 2); break;
@@ -191,7 +191,7 @@ public class Shop_manager: MonoBehaviour
             switch_num = Random.Range(shop_min, shop_max);
             switch (switch_num)
             {
-                case 0: number3 = Random.Range(36, 38); break;
+                case 0: number3 = Random.Range(prefab.Length - 2, prefab.Length); break;
                 case 1: number3 = Random.Range(1, prefab.Length - 6); break;
                 case 2: number3 = Random.Range(1, prefab.Length - 4); break;
                 case 3: number3 = Random.Range(1, prefab.Length - 2); break;

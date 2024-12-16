@@ -5,14 +5,11 @@ using UnityEngine.UI;
 
 public class TestR : MonoBehaviour
 {
-    public Button button;
-    public bool true_tag = false;
-    // Start is called before the first frame update
+    public Button button;//ƒ{ƒ^ƒ“
     void Start()
     {
         button.interactable = false;
     }
-    // Update is called once per frame
     void Update()
     {
         button.interactable = false;

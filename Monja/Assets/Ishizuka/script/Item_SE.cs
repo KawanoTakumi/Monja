@@ -8,12 +8,11 @@ public class Item_SE : MonoBehaviour
 
     private void Start()
     {
-        audioSource = GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();//オーディオソース取得
     }
 
     public void hit_se()
     {
         GetComponent<AudioSource>().Play();  // 効果音を鳴らす
-
     }
 }

@@ -3,39 +3,38 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using UnityEngine.Audio;
 
 public class Enemy_controller : MonoBehaviour
 {
     //ステータス
-    public static int HP = 100; //エネミーHP
-    public int attack;　//エネミー物理攻撃力
-    public int deffence;  //エネミー物理防御力
-    public int magic; //エネミーマホウ攻撃力
-    public int magic_Diffence; //エネミーマホウ防御力
-    public int money;          //エネミードロップ金額
+    public static int HP = 100;      //エネミーHP
+    public int attack;　             //エネミー物理攻撃力
+    public int deffence;             //エネミー物理防御力
+    public int magic;                //エネミー魔法攻撃力
+    public int magic_Diffence;       //エネミー魔法防御力
+    public int money;                //エネミードロップ金額
     public  static int HP_MAX = 100; //エネミーHP最大値
 
     public GameObject[] Effect;//エフェクト用
-    public GameObject Monster;
-    GameObject obj1;
-    public GameObject obj2;
-    [SerializeField] GameObject _parentGameObject;
-    turn_manager turn_Manager;//turnManager読み込み
-    Damage_calculate damage_Calculate;
-    Enemy_SE enemy_SE;
-    PlayerController playerController;
-    public Status_Controller status_;
-    GameObject player;
-    Animator animator;
-    public int Enemy_attack;//攻撃力(計算後)
-    public int Enemy_deffence;//防御力(計算後)
-    public int Enemy_Magic;//魔法攻撃力(計算後)
-    int Enemy_act = 0;  //エネミー行動判別用
-    int Enemy_luck = 0; //エネミーラック判定用
-    static int Enemy_luck_Max;　　　　//エネミーラック値
-    static int magic_cnt = 0;　　　　//魔法攻撃回数カウント
-    //-------------------------
+    public GameObject Monster;//エネミーオブジェクト
+    GameObject obj1;       //エフェクト用オブジェクト
+    public GameObject obj2;//エフェクト用オブジェクト
+    [SerializeField] GameObject _parentGameObject;//親オブジェクト
+    turn_manager turn_Manager;          //turnManager読み込み
+    Damage_calculate damage_Calculate;  //ダメージ計算
+    Enemy_SE enemy_SE;                  //エネミーSE
+    PlayerController playerController;  //プレイヤーコントローラ
+    public Status_Controller status_;   //ステータス
+    GameObject player;                  //プレイヤーオブジェクト
+    Animator animator;                  //アニメーター
+    public int Enemy_attack;            //攻撃力(計算後)
+    public int Enemy_deffence;          //防御力(計算後)
+    public int Enemy_Magic;             //魔法攻撃力(計算後)
+    int Enemy_act = 0;                  //エネミー行動判別用
+    int Enemy_luck = 0;                 //エネミーラック判定用
+    static int Enemy_luck_Max;　　  　　//エネミーラック値
+    static int magic_cnt = 0;　　　  　 //魔法攻撃回数カウント
+    //-------------------------  
     //エネミー判別用
     static bool Enemy_Skelton;  
     static bool Enemy_Centaurus;
@@ -48,16 +47,16 @@ public class Enemy_controller : MonoBehaviour
     static bool Boss_Dragon;
     //----------------------------
     public static int turn = 1;//ターン
-    public static bool tag_get = true;
-    int turn_time = 0;
-    public Text Log;
-    public static bool End_Game_Flag = false;
-    public GameObject HP_Bar;
+    public static bool tag_get = true;//タグ取得用フラグ
+    int turn_time = 0;//ターンの時間
+    public Text Log;//ログテキスト
+    public static bool End_Game_Flag = false;//ゲーム終了フラグ
+    public GameObject HP_Bar;//体力バー
     //状態異常変数
-    public bool poison;
-    public bool OnFire;
-    public static bool Freeze_turn = false;
-    public static bool Stone_turn = false;
+    public bool poison;                      //毒
+    public bool OnFire;                      //炎上
+    public static bool Freeze_turn = false;  //凍結
+    public static bool Stone_turn = false;   //石化
 
     //各シーン到達後trueにする
     public static bool Sinigami_flag = false;

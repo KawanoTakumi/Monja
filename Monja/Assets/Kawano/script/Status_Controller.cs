@@ -16,7 +16,7 @@ public class Status_Controller : MonoBehaviour
             case true:_parent = GameObject.Find("Player");break;
             case false:_parent = GameObject.Find("Monster");break;
         }
-        //ó‘ÔˆÙí”Ô†
+        //ó‘ÔˆÙí
         switch(number)
         {
             case 0:Create_Effect_Status(0, 0.0f, 0.0f);break;//“€Œ‹

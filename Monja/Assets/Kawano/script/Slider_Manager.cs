@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Slider_Manager : MonoBehaviour
 {
-    public Slider obj;
-    public Text Value_Text;
-    public static float Music_Volume = 0.5f;
+    public Slider obj;//スライダー
+    public Text Value_Text;//数値用テキスト
+    public static float Music_Volume = 0.5f;//初期音量
 
     // Start is called before the first frame update
     void Start()
