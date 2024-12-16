@@ -227,15 +227,15 @@ public class PlayerController : MonoBehaviour
     //シュウリュウ
     public void concentration()
     {
-        Item_button.interactable = false;
         turn_Manager = GetComponent<turn_manager>();
         animator = GetComponent<Animator>();
 
         if (turn_manager.turn == true)
         {
-            button_check = true;
             if (MP < 100)
             {
+                button_check = true;
+                Item_button.interactable = false;
                 intaract_false();
                 animator.SetBool("cons", true);
                 MP += MP_max / 2;
