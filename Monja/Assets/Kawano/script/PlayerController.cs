@@ -25,15 +25,15 @@ public class PlayerController : MonoBehaviour
     public static int magic_number = 0;//魔法番号(撃てる魔法の種類)
     int poison_cnt;//毒のターン数
     int OnFire_cnt;//延焼のターン数
-    bool cons_flag = false;
-    public Button Item_button;
-    public Button Setting_Button;
+    bool cons_flag = false;//シュウチュウフラグ
+    public Button Item_button;//アイテムボタン
+    public Button Setting_Button;//設定ボタン
 
     public GameObject[] Effect;//エフェクト用
-    public GameObject obj_player;
-    [SerializeField] GameObject _parentGameObject;
-    public Status_Controller status_;
-    turn_manager turn_Manager;
+    public GameObject obj_player;//プレイヤーオブジェクト
+    [SerializeField] GameObject _parentGameObject;//親オブジェクト
+    public Status_Controller status_;//ステータスコントローラー
+    turn_manager turn_Manager;//ターンマネージャー
     Status_Controller status;
     Animator animator;//プレイヤーアニメーター
     Damage_calculate damage_Calculate;//ダメージサーキュレーター

@@ -16,18 +16,18 @@ public class Shop_manager: MonoBehaviour
     GameObject obj2;
     GameObject obj3;
     GameObject Healobj;
-    public bool item_flag;
-    public Item_Library Item_Library;
-    public Button button1;
+    public bool item_flag;//アイテムフラグ
+    public Item_Library Item_Library;//アイテムライブラリ
+    public Button button1;//購入ボタン
     public Button button2;
     public Button button3;
     public Button healbutton;
-    public static int shop_min = 1;
-    public static int shop_max = 2;
+    public static int shop_min = 1;//ショップ最小値
+    public static int shop_max = 2;//ショップ最大値
     public static int tmp_1 = -1;
     public static int tmp_2 = -1;
     public static int tmp_3 = -1;
-    public Text text;
+    public Text text;//説明テキスト
     [SerializeField] GameObject _parentGameObject;
 
     void Start()
@@ -53,7 +53,7 @@ public class Shop_manager: MonoBehaviour
             Item_Manager.Item[button3.tag] = true;
         }
         
-
+        //Dictionaryから値を取得
         Item_Manager.Item.TryGetValue(button1.tag, out bool flag_1);
         Item_Manager.Item.TryGetValue(button2.tag, out bool flag_2);
         Item_Manager.Item.TryGetValue(button3.tag, out bool flag_3);
@@ -103,6 +103,7 @@ public class Shop_manager: MonoBehaviour
     {
         if(tmp_2 == -1)
         {
+            // ゲームオブジェクトを生成します。
             obj2 = Instantiate(prefab[number2], new Vector3(-0.15f, 1.55f, 0), Quaternion.identity, _parentGameObject.transform);
             button2 = obj2.GetComponent<Button>();
             obj2.name = "Item_Image_2";
@@ -111,6 +112,7 @@ public class Shop_manager: MonoBehaviour
         }
         else
         {
+            // ゲームオブジェクトを生成します。
             obj2 = Instantiate(prefab[tmp_2], new Vector3(-0.15f, 1.55f, 0), Quaternion.identity, _parentGameObject.transform);
             button2 = obj2.GetComponent<Button>();
             obj2.name = "Item_Image_2";
@@ -121,6 +123,7 @@ public class Shop_manager: MonoBehaviour
     {
         if(tmp_3 == -1)
         {
+            // ゲームオブジェクトを生成します。
             obj3 = Instantiate(prefab[number3], new Vector3(3.6f, 1.55f, 0), Quaternion.identity, _parentGameObject.transform);
             button3 = obj3.GetComponent<Button>();
             obj3.name = "Item_Image_3";
@@ -129,6 +132,7 @@ public class Shop_manager: MonoBehaviour
         }
         else
         {
+            // ゲームオブジェクトを生成します。
             obj3 = Instantiate(prefab[tmp_3], new Vector3(3.6f, 1.55f, 0), Quaternion.identity, _parentGameObject.transform);
             button3 = obj3.GetComponent<Button>();
             obj3.name = "Item_Image_3";

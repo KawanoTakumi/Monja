@@ -6,8 +6,6 @@ public class Title_script : MonoBehaviour
 {
     public AudioSource Title_bgm;
     bool bgm_start = false;
-
-
     public void Update()
     {
         if (bgm_start == true)

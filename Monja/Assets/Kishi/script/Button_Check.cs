@@ -13,6 +13,7 @@ public class Button_Check : MonoBehaviour
 
     public void Awake()
     {
+        //インスタンスがnullの時、インスタンスをtrueにする
         if(instance1 == null)
         {
             instance1 = this;
