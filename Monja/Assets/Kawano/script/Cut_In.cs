@@ -3,17 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 public class Cut_In : MonoBehaviour
 {
-    public GameObject Cut_Scene;
+    public GameObject Cut_Scene;//カットシーン
     public AudioSource Cut_In_SE;//カットイン用SE
-    public AudioClip clip;
-    public static bool first_flag = true;//初回のみ再生
+    public AudioClip clip;//音楽データ
+    public static bool first_flag = true;//初回フラグ
 
     public void Update()
     {
+        //fairst_flagがfalseのとき、カットシーンを削除
         if (first_flag == false)
             Destroy(Cut_Scene);
     }
-
+    //カットイン
     public void Cut_In_Del()
     {
         if(first_flag == true)

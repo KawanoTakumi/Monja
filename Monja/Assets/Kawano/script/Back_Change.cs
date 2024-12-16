@@ -16,6 +16,7 @@ public class Back_Change : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //シーンカウント毎に画像を変更
         switch(ChangeScene.scene_cnt)
         {
             case 1:

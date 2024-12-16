@@ -5,7 +5,14 @@ using UnityEngine.UI;
 
 public class ending_script : MonoBehaviour
 {
+    public GameObject scene;//シーン
     public Text text_box;//テキストボックス
+    //洞窟のシーンを削除
+    public void cave_del()
+    {
+        scene.SetActive(false);
+    }
+
     public void Text_Change(int Number)
     {
         switch (Number)

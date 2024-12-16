@@ -194,6 +194,7 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+    //ザンゲキ
     public void attack()
     {
         turn_Manager = GetComponent<turn_manager>();
@@ -223,6 +224,7 @@ public class PlayerController : MonoBehaviour
             damage_Calculate.Enemey_Damage_Calculate(Attack_damage, enemy_Controller.Enemy_deffence);
         }
     }
+    //シュウリュウ
     public void concentration()
     {
         Item_button.interactable = false;
@@ -252,6 +254,7 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+    //マホウ
     public void magic()
     {
         turn_Manager = GetComponent<turn_manager>();
@@ -291,6 +294,7 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+    //カイフク
     public void heal()
     {
         turn_Manager = GetComponent<turn_manager>();
@@ -329,6 +333,7 @@ public class PlayerController : MonoBehaviour
             intaract_true();
         }
     }
+    //ボタンインタラクトfalse
     public void intaract_false()
     {
         Attack_.interactable = false;
@@ -339,6 +344,7 @@ public class PlayerController : MonoBehaviour
         Setting_Button.interactable = false;
         Destroy(Status_Controller.eff_obj);
     }
+    //ボタンインタラクトtrue
     public void intaract_true()
     {
         Attack_.interactable = true;
@@ -348,6 +354,7 @@ public class PlayerController : MonoBehaviour
         Item_button.interactable = true;
         Setting_Button.interactable = true;
     }
+    //アイテムデータ削除
     public static void Item_Reset()
     {
         Item_Manager.Item["healdrink"] = false;
@@ -404,6 +411,7 @@ public class PlayerController : MonoBehaviour
         obj_player = Instantiate(Effect[number], new Vector3(Fx, Fy, 0), Quaternion.identity, _parentGameObject.transform);
         obj_player.name = "Effect_image_" + number;
     }
+    //マホウのエフェクト
     public void Magic_Effect()
     {
         int eff_random = 0;
@@ -418,7 +426,7 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-
+    //クリティカルエフェクト
     public void Crit_Effect(int num)
     {
 
@@ -441,6 +449,7 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+    //ステータスリセット
     public static void Status_reset()
     {
         Attack_tmp = 25;
@@ -448,6 +457,7 @@ public class PlayerController : MonoBehaviour
         Magic_tmp = 25;
         MagicDeffence_tmp = 25;
     }
+    //負け
     public void Lose()
     {
         animator.SetBool("death", false);

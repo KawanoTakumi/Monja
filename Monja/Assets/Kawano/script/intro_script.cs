@@ -6,11 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class intro_script : MonoBehaviour
 {
-    public Text text_box;
-    public AudioSource audioSource_Work;
-    [SerializeField] AudioClip clip_work;
-    [SerializeField] AudioClip clip_work2;
-    [SerializeField] AudioClip clip_work3;
+    public Text text_box;//テキストボックス
+    public AudioSource audioSource_Work;//歩いている時のSE
+    [SerializeField] AudioClip clip_work;//歩いている時
+    [SerializeField] AudioClip clip_work_hapning;//びっくり
+    [SerializeField] AudioClip clip_work_fall;//落下時
     public void Change_Text(int text_num)
     {
         switch (text_num)
@@ -25,11 +25,12 @@ public class intro_script : MonoBehaviour
     }
     public void SE_Play_Intro(int set_num)
     {
+        //set_num毎にSEを再生する
         switch (set_num)
         {
             case 1: audioSource_Work.PlayOneShot(clip_work);break;
-            case 2: audioSource_Work.PlayOneShot(clip_work2);break;
-            case 3: audioSource_Work.PlayOneShot(clip_work3);break;
+            case 2: audioSource_Work.PlayOneShot(clip_work_hapning);break;
+            case 3: audioSource_Work.PlayOneShot(clip_work_fall);break;
 
         }
     }

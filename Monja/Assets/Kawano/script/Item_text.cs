@@ -8,23 +8,14 @@ public class Item_text : MonoBehaviour
     public Button button;//É{É^Éì
     Text itemname;//ñºëO
     Text text;//ê‡ñæï∂
-    // Start is called before the first frame update
     void Start()
     {
         GameObject Name = GameObject.Find("Item_Name");
         itemname = Name.GetComponent<Text>();
         GameObject Text = GameObject.Find("Item_Text");
         text = Text.GetComponent<Text>();
-
         button = GetComponent<Button>();
         button.interactable = true;
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
     public void Hit_button()
     {

@@ -5,15 +5,15 @@ using UnityEngine.UI;
 
 public class Item_Power : MonoBehaviour
 {
-    PlayerController playercontroller;
-    public Enemy_controller enemy_Controller;
-    public Text log_text;
+    PlayerController playercontroller;//主人公
+    public Enemy_controller enemy_Controller;//敵
+    public Text log_text;//ログ
     public static int turn_compare = 0;//ターン数比較用()
-    public static bool first_turn = true;
+    public static bool first_turn = true;//最初のターン
 
-    bool adapt_bowlingball = true;//ボウリング用適応変数(bowlingball)
+    bool adapt_bowlingball = true;
     bool adapt_cd = true;
-    bool adapt_CDplayer = true;//CDプレーヤー用適応変数(CDplayer)
+    bool adapt_CDplayer = true;
     bool adapt_kesigomu = true;
     bool adapt_TV = true;
     bool adapt_CreditCard = true;
