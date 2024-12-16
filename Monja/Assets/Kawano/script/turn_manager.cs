@@ -7,8 +7,8 @@ public class turn_manager : MonoBehaviour
 {
     public static bool turn = true;//turn == trueの時プレイヤーのターン、falseの時敵のターン
     public static int turn_time_max = 80;
-    public Text turn_text;
-    public Text Log_text;
+    public Text turn_text;//ターンテキスト
+    public Text Log_text;//ログテキスト
     Color p_turn = new(0.4f, 0.4f, 1, 1);//青色
     Color e_turn = new(1, 0, 0, 1);//赤色
 

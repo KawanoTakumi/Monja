@@ -12,6 +12,7 @@ public class Setting_Manager : MonoBehaviour
     public AudioSource sorce_5;//5
     void Update()
     {
+        //‰¹Šy‚Ìƒ{ƒŠƒ…[ƒ€‚ğ‚·‚×‚Äˆê’è‚É‚·‚é
         sorce_1.volume = Slider_Manager.Music_Volume;
         sorce_2.volume = sorce_1.volume;
         sorce_3.volume = sorce_1.volume;

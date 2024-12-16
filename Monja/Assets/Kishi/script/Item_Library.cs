@@ -6,11 +6,12 @@ using UnityEngine.UI;
 public class Item_Library : MonoBehaviour
 {
     // Start is called before the first frame update
-    public int money;
+    public int money;//お金
+    //設定金額
     int ItemValue1 = 25;
     int ItemValue2 = 30;
     int ItemValue3 = 35;
-    int ItemValue_Heal = 25;
+    int ItemValue_Heal = 25;//回復用
     //取得フラグ
     public static bool GetFlag1 = false;
     public static bool GetFlag2 = false;
@@ -19,23 +20,18 @@ public class Item_Library : MonoBehaviour
     public bool Flag_1 = false;
     public bool Flag_2 = false;
     public bool Flag_3 = false;
-    public Button heal_button;
-
-    public Text textbox;
-
-
-    Shop_manager shop_manager;
+    public Button heal_button;//回復アイテム用ボタン
+    public Text textbox;//テキスト
+    Shop_manager shop_manager;//ショップマネージャー
     void Start()
     {
         GameObject obj = GameObject.Find("shopmanager");
         shop_manager = obj.GetComponent<Shop_manager>();//ショップマネージャーを取得
     }
-
-    // Update is called once per frame
     void Update()
     {
         money = PlayerController.Money;
-
+        //回復アイテムを取得したとき、インタラクトできなくする
         if (Heal_Get_Flag == true)
         {
             heal_button.interactable = false;
@@ -45,13 +41,12 @@ public class Item_Library : MonoBehaviour
             heal_button.interactable = true;
         }
     }
-
     //----------------------------
     //購入判定
     //---------------------------
-
     public void Buy1()
     {
+        //お金が設定金額より多くゲットフラグがtrueの時
         if (money >= ItemValue1 && GetFlag1 == false)
         {
             if(Item_Manager.Item.TryGetValue(shop_manager.button1.tag,out bool button1))
@@ -76,6 +71,7 @@ public class Item_Library : MonoBehaviour
 
     public void Buy2()
     {
+        //お金が設定金額より多くゲットフラグがtrueの時
         if (money >= ItemValue2 && GetFlag2 == false)
         {
             if (Item_Manager.Item.TryGetValue(shop_manager.button2.tag, out bool button2))
@@ -100,6 +96,7 @@ public class Item_Library : MonoBehaviour
     }
     public void Buy3()
     {
+        //お金が設定金額より多くゲットフラグがtrueの時
         if (money >= ItemValue3 && GetFlag3 == false)
         {
             if (Item_Manager.Item.TryGetValue(shop_manager.button3.tag, out bool button3))
@@ -122,6 +119,7 @@ public class Item_Library : MonoBehaviour
             textbox.text = "お金が足りません。";
         }
     }
+    //回復購入関数
     public void Heal_Buy()
     {
         if(money >= ItemValue_Heal)

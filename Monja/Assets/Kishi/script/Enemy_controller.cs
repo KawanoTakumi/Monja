@@ -275,6 +275,7 @@ public class Enemy_controller : MonoBehaviour
                 }
             }
         }
+        //アタック
         void Attack(int paturn)
         {
             switch(paturn)
@@ -294,13 +295,14 @@ public class Enemy_controller : MonoBehaviour
               
             }
         }
+        //防御
         void Defence()
         {
             Create_Effect_Enemy(0, 2.3f, 0f);
             enemy_SE.SE_Monster(2);
             Enemy_deffence = deffence;
         }
-
+        //魔法
         void Magic()
         {
             if (magic_cnt < 3)
@@ -313,7 +315,7 @@ public class Enemy_controller : MonoBehaviour
                 Enemy_Magic = Enemy_Magic + magic;
             }
         }
-
+        //回復
         void Heal()
         {
             HP += HP / 10;
@@ -366,7 +368,7 @@ public class Enemy_controller : MonoBehaviour
                     break;
             }
         }
-
+        //ミノタウロス
         void Minotaurus()
         {
             Enemy_act = Random.Range(1, 4);//1～3まで
@@ -389,6 +391,7 @@ public class Enemy_controller : MonoBehaviour
                     break;
             }
         }
+        //ケンタウロス
         void Centaurus()
         {
             Enemy_act = Random.Range(1, 4);//1～3まで
@@ -410,7 +413,7 @@ public class Enemy_controller : MonoBehaviour
                     break;
             }
         }
-
+        //コカトリス
         void Cockatrice()
         {
             Enemy_act = Random.Range(1, 4);//1～3まで
@@ -432,6 +435,7 @@ public class Enemy_controller : MonoBehaviour
                     break;
             }
         }
+        //ナイト
         void Knight()
         {
             Enemy_act = Random.Range(1, 4);//1～3まで
@@ -488,6 +492,7 @@ public class Enemy_controller : MonoBehaviour
                     break;
             }
         }
+        //メデューサの魔法攻撃
         void medhusa_magic()
         {
             Log.text = ("メデューサの魔法攻撃");
@@ -525,6 +530,7 @@ public class Enemy_controller : MonoBehaviour
                     break;
             }
         }
+        //死神の攻撃
         void sinigami_attack()
         {
             animator.SetBool("Attack", true);
@@ -541,7 +547,7 @@ public class Enemy_controller : MonoBehaviour
                 Create_Effect_Enemy(1, 2.5f, 0.3f);
             }
         }
-        
+        //ドラゴン
         void Dragon()
         {
             Enemy_act = Random.Range(1, 5);//1～4まで
@@ -566,6 +572,7 @@ public class Enemy_controller : MonoBehaviour
                     break;
             }
         }
+        //ドラゴンの攻撃
         void dragon_attack()
         {
             Enemy_luck = Random.Range(1, 6);
@@ -582,6 +589,7 @@ public class Enemy_controller : MonoBehaviour
                 Create_Effect_Enemy(1, 2.5f, 0.3f);
             }
         }
+        //ドラゴンの魔法攻撃
         void dragon_magic()
         {
             if (magic_cnt < 2)
@@ -595,6 +603,7 @@ public class Enemy_controller : MonoBehaviour
                 Enemy_Magic = magic + Enemy_attack;
             }
         }
+        //ドラゴンの回復
         void dragon_Heal()
         {
             HP += HP / 10 + Enemy_attack;
@@ -606,6 +615,7 @@ public class Enemy_controller : MonoBehaviour
     {
         animator.SetBool(anim_tag, false);
     }
+    //ターンフラグ
     public void Turn_Flag()
     {
         turn_manager.turn = false;
@@ -629,8 +639,10 @@ public class Enemy_controller : MonoBehaviour
                 break;
         }
     }
+    //勝ち
     public void Win()
     {
+        //各種数値を初期化
         animator.SetBool("death", false);
         Monster.SetActive(false);
         Win_Reset();
@@ -668,10 +680,12 @@ public class Enemy_controller : MonoBehaviour
             SceneManager.LoadScene("Win");
         }
     }
+    //クリティカルエフェクトを削除
     public void Crit_Del()
     {
         Destroy(obj1);
     }
+    //リセット関数
     void Win_Reset()
     {
         Enemy_Skelton = false;
@@ -684,6 +698,7 @@ public class Enemy_controller : MonoBehaviour
         Boss_sinigami = false;
         Boss_Dragon = false;
     }
+    //アタックエフェクト関数
     public void Attack_Effect()
     {
         obj1 = Instantiate(Effect[1], new Vector3(0.0f, 0.0f, 0), Quaternion.identity, _parentGameObject.transform);
