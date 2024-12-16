@@ -17,7 +17,7 @@ public class Enemy_controller : MonoBehaviour
 
     public GameObject[] Effect;//エフェクト用
     public GameObject Monster;//エネミーオブジェクト
-    GameObject obj1;       //エフェクト用オブジェクト
+    public GameObject obj1;       //エフェクト用オブジェクト
     public GameObject obj2;//エフェクト用オブジェクト
     [SerializeField] GameObject _parentGameObject;//親オブジェクト
     turn_manager turn_Manager;          //turnManager読み込み
@@ -538,12 +538,12 @@ public class Enemy_controller : MonoBehaviour
         {
             animator.SetBool("Attack", true);
             Enemy_luck = Random.Range(1, 21);
-            if (Enemy_luck <= 19)
+            if (Enemy_luck == 1)
             {
                 Log.text = ("死神の攻撃");
                 Enemy_attack = attack;
             }
-            else if (Enemy_luck == 20)
+            else if (Enemy_luck >= 2)
             {
                 PlayerController.HP = PlayerController.HP /2;
                 Log.text = ("死神の呪い");
@@ -632,12 +632,12 @@ public class Enemy_controller : MonoBehaviour
             default:
                 {
                     obj1 = Instantiate(Effect[number], new Vector3(Fx, Fy, 0), Quaternion.identity, _parentGameObject.transform);
-                    obj1.name = "Effect_image_" + number;
+                    obj1.name = "obj_name" + number;
                 }break;
             case 0:
                 {
                     obj2 = Instantiate(Effect[number], new Vector3(Fx, Fy, 0), Quaternion.identity, _parentGameObject.transform);
-                    obj2.name = "Effect_image_" + number;
+                    obj2.name = "obj_name" + number;
                 }
                 break;
         }

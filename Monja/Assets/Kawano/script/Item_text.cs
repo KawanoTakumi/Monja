@@ -123,7 +123,7 @@ public class Item_text : MonoBehaviour
         else if (button == CompareTag("Drill"))
         {
             itemname.text = "ドリル";
-            text.text = "物に穴を開ける道具。穴の開けすぎには注意\nエネミーの物理攻撃力分プレイヤー攻撃力を増加させ、エネミーの物理防御力分プレイヤーの物理防御力を減少させる";
+            text.text = "物に穴を開ける道具。穴の開けすぎには注意\n戦闘開始時、エネミーの物理攻撃力分プレイヤー攻撃力を増加させ、エネミーの物理防御力分プレイヤーの物理防御力を減少させる";
         }
         else if (button == CompareTag("Headphone"))
         {
@@ -143,7 +143,7 @@ public class Item_text : MonoBehaviour
         else if (button == CompareTag("Safetycone"))
         {
             itemname.text = "三角コーン";
-            text.text = "危険な場所に設置してあるもの。たまに蹴られる不運な奴\n２５％の確率で物理攻撃力と物理防御力を４０増加";
+            text.text = "危険な場所に設置してあるもの。たまに蹴られる不運な奴\n戦闘開始時、２５％の確率で物理攻撃力と物理防御力を４０増加";
         }
         else if (button == CompareTag("USB"))
         {
@@ -163,7 +163,7 @@ public class Item_text : MonoBehaviour
         else if (button == CompareTag("Magnifying Speculum"))
         {
             itemname.text = "虫眼鏡";
-            text.text = "物を拡大して見ることができる道具。レンズが輝く\n物理防御力と魔法防御力を毎ターン3増加させる";
+            text.text = "物を拡大して見ることができる道具。レンズが輝く\n毎ターン物理防御力と魔法防御力を3増加させる";
         }
         else if (button == CompareTag("Mike"))
         {
@@ -178,7 +178,7 @@ public class Item_text : MonoBehaviour
         else if (button == CompareTag("HandMill"))
         {
             itemname.text = "ハンドミル";
-            text.text = "豆を挽くための道具。香ばしい香りがしてるぜ。\nコーヒーを持っている時魔法攻撃力を６０増加させる\n持っていない時は魔法攻撃力を３０減少させる";
+            text.text = "豆を挽くための道具。香ばしい香りがしてるぜ。\nコーヒーを持っている時、魔法攻撃力を６０増加させる\n持っていない時は魔法攻撃力を３０減少させる";
         }
         else if(button == CompareTag("Kama"))
         {

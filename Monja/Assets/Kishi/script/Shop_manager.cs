@@ -141,7 +141,7 @@ public class Shop_manager: MonoBehaviour
     }
     public void CreateObjectHeal()
     {
-        Healobj = Instantiate(prefab[0], new Vector3(7.75f, -1.2f, 0), Quaternion.identity, _parentGameObject.transform);
+        Healobj = Instantiate(prefab[0], new Vector3(7.75f, -1.1f, 0), Quaternion.identity, _parentGameObject.transform);
         healbutton = Healobj.GetComponent<Button>();
         Healobj.name = "Heal_Item";
         button_intaractable(healbutton);

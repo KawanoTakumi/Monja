@@ -8,10 +8,10 @@ public class Item_Library : MonoBehaviour
     // Start is called before the first frame update
     public int money;//お金
     //設定金額
-    int ItemValue1 = 25;
-    int ItemValue2 = 30;
-    int ItemValue3 = 35;
-    int ItemValue_Heal = 25;//回復用
+    int ItemValue1 = 20;
+    int ItemValue2 = 25;
+    int ItemValue3 = 30;
+    int ItemValue_Heal = 20;//回復用
     //取得フラグ
     public static bool GetFlag1 = false;
     public static bool GetFlag2 = false;
