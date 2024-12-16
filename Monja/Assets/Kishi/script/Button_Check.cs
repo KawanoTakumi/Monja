@@ -32,12 +32,6 @@ public class Button_Check : MonoBehaviour
         isTouched2 = false;
         isTouched3 = false;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public void button_check1()
     {
         isTouched1 = true;
