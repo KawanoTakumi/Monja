@@ -8,13 +8,13 @@ using UnityEngine.Audio;
 public class Enemy_controller : MonoBehaviour
 {
     //ステータス
-    public static int HP = 100;
-    public int attack;
-    public int deffence;
-    public int magic;
-    public int magic_Diffence;
-    public int money;
-    public  static int HP_MAX = 100;
+    public static int HP = 100; //エネミーHP
+    public int attack;　//エネミー物理攻撃力
+    public int deffence;  //エネミー物理防御力
+    public int magic; //エネミーマホウ攻撃力
+    public int magic_Diffence; //エネミーマホウ防御力
+    public int money;          //エネミードロップ金額
+    public  static int HP_MAX = 100; //エネミーHP最大値
 
     public GameObject[] Effect;//エフェクト用
     public GameObject Monster;
@@ -31,12 +31,13 @@ public class Enemy_controller : MonoBehaviour
     public int Enemy_attack;//攻撃力(計算後)
     public int Enemy_deffence;//防御力(計算後)
     public int Enemy_Magic;//魔法攻撃力(計算後)
-    int Enemy_act = 0;
-    int Enemy_luck = 0;
-    static int Enemy_luck_Max;
-    static int magic_cnt = 0;
-
-    static bool Enemy_Skelton;
+    int Enemy_act = 0;  //エネミー行動判別用
+    int Enemy_luck = 0; //エネミーラック判定用
+    static int Enemy_luck_Max;　　　　//エネミーラック値
+    static int magic_cnt = 0;　　　　//魔法攻撃回数カウント
+    //-------------------------
+    //エネミー判別用
+    static bool Enemy_Skelton;  
     static bool Enemy_Centaurus;
     static bool Enemy_Richie;
     static bool Enemy_Knight;
@@ -45,6 +46,7 @@ public class Enemy_controller : MonoBehaviour
     static bool Boss_Medhusa;
     static bool Boss_sinigami;
     static bool Boss_Dragon;
+    //----------------------------
     public static int turn = 1;//ターン
     public static bool tag_get = true;
     int turn_time = 0;
@@ -65,6 +67,8 @@ public class Enemy_controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        //エネミーオブジェクトタグ取得
         player = GameObject.Find("Player");
         playerController = player.GetComponent<PlayerController>();
         GameObject obj = GameObject.Find("Player");
