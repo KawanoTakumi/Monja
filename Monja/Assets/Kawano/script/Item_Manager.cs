@@ -61,9 +61,9 @@ public class Item_Manager : MonoBehaviour
 
             Item.Add("Gas_burner", false);//40
             Item.Add("Hamberger", false);//41
-            Item.Add("", false);//42
-            Item.Add("", false);//43
-            Item.Add("", false);//44
+            Item.Add("Pencil", false);//42
+            Item.Add("Mayonnaise", false);//43
+            //Item.Add("", false);//44
             Item.Add("Kama", false);//45
             Item.Add("Robe", false);//46
             Item.Add("Scale", false);//47

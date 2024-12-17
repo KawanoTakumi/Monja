@@ -210,10 +210,10 @@ public class Item_text : MonoBehaviour
             itemname.text = "野球グローブ";
             text.text = "野球で使われるグローブ。手によくフィットする\n";
         }
-        else if (button == CompareTag("Bowling_glove"))
+        else if (button == CompareTag("Boxing_glove"))
         {
             itemname.text = "ボクシンググローブ";
-            text.text = "ボクシングで使用されるグローブ\n一発KO";
+            text.text = "ボクシングで使用されるグローブ,一発KO\n";
         }
         else if (button == CompareTag("Juice"))
         {
@@ -223,22 +223,22 @@ public class Item_text : MonoBehaviour
         else if (button == CompareTag("Gas_burner"))
         {
             itemname.text = "ガスバーナー";
-            text.text = "ガスで熱を生み出す道具\n酸素もなにも燃やせ！！！";
+            text.text = "ガスで熱を生み出す道具。酸素も闘志も燃やせ！！！";
         }
         else if (button == CompareTag("Hamberger"))
         {
             itemname.text = "ハンバーガー";
-            text.text = "ジャンクフードの王様。カロリーが高い\n";
+            text.text = "ジャンクフードの王様。カロリーが高い。一日三食これ一個";
         }
-        else if (button == CompareTag(""))
+        else if (button == CompareTag("Pencil"))
         {
-            itemname.text = "";
-            text.text = "";
+            itemname.text = "鉛筆";
+            text.text = "文字を書け、色や硬さに種類がある。H ore HB ore B?";
         }
-        else if (button == CompareTag(""))
+        else if (button == CompareTag("Mayonnaise"))
         {
-            itemname.text = "";
-            text.text = "";
+            itemname.text = "マヨネーズ";
+            text.text = "卵と油で作る調味料、カロリーが高すぎるがとてもおいしい。\n一部の人はこれを飲もうとしたりするとか\n";
         }
         else if (button == CompareTag(""))
         {

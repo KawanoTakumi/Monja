@@ -11,6 +11,7 @@ public class Item_Power : MonoBehaviour
     public static int turn_compare = 0;//ターン数比較用()
     public static bool first_turn = true;//最初のターン
 
+    //ターンの最初のみ読み込むためのフラグ（各アイテム毎に１つ設定）
     bool adapt_bowlingball = true;
     bool adapt_cd = true;
     bool adapt_CDplayer = true;
@@ -36,6 +37,18 @@ public class Item_Power : MonoBehaviour
     bool adapt_Mike = true;
     bool adapt_Megaphone = true;
     bool adapt_HandMill = true;
+    bool adapt_Poteto = true;
+    bool adapt_Scop = true;
+    bool adapt_hammer = true;
+    bool adapt_Bugle = true;
+    bool adapt_Sylinge = true;
+    bool adapt_Baseball_glove = true;
+    bool adapt_Boxing_glove = true;
+    bool adapt_Juice = true;
+    bool adapt_Gas_burner = true;
+    bool adapt_Hamberger = true;
+    bool adapt_Pencil = true;
+    bool adapt_Mayonnaise = true;
     bool adapt_Pudding = true;
     bool adapt_Sinigami_kama = true;
     bool adapt_Sinigami_robe = true;
@@ -51,6 +64,7 @@ public class Item_Power : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //プレイヤーを読み込み、プレイヤーコントローラーを取得する
         GameObject player = GameObject.Find("Player");
         playercontroller = player.GetComponent<PlayerController>();
     }
@@ -94,18 +108,26 @@ public class Item_Power : MonoBehaviour
 
         Item_Manager.Item.TryGetValue("Megaphone", out bool Megaphone_flag);
         Item_Manager.Item.TryGetValue("HandMill", out bool HandMill_flag);
-        //Item_Manager.Item.TryGetValue("HandMill", out bool _flag);
-        //Item_Manager.Item.TryGetValue("HandMill", out bool HandMill_flag);
-        //Item_Manager.Item.TryGetValue("HandMill", out bool HandMill_flag);
-        //Item_Manager.Item.TryGetValue("HandMill", out bool HandMill_flag);
-        //Item_Manager.Item.TryGetValue("HandMill", out bool HandMill_flag);
-        //Item_Manager.Item.TryGetValue("HandMill", out bool HandMill_flag);
-        //Item_Manager.Item.TryGetValue("HandMill", out bool HandMill_flag);
+        Item_Manager.Item.TryGetValue("Poteto", out bool Poteto_flag);
+        Item_Manager.Item.TryGetValue("Scop", out bool Scop_flag);
+        Item_Manager.Item.TryGetValue("hammer", out bool hammer_flag);
+        Item_Manager.Item.TryGetValue("Bugle", out bool Bugle_flag);
+        Item_Manager.Item.TryGetValue("Sylinge", out bool Sylinge_flag);
+        Item_Manager.Item.TryGetValue("Baseball_glove", out bool Baseball_glove_flag);
+        Item_Manager.Item.TryGetValue("Boxing_glove", out bool Boxing_glove_flag);
+        Item_Manager.Item.TryGetValue("Juice", out bool Juice_flag);
+
+        Item_Manager.Item.TryGetValue("Gas_burner", out bool Gas_burner_flag);
+        Item_Manager.Item.TryGetValue("Hamberger", out bool Hamberger_flag);
+        Item_Manager.Item.TryGetValue("Pencil", out bool Pencil_flag);
+        Item_Manager.Item.TryGetValue("Mayonnaise", out bool Mayonnaise_flag);
+        //Item_Manager.Item.TryGetValue("c", out bool c_flag);
         Item_Manager.Item.TryGetValue("Kama", out bool Sinigami_Kama_flag);
         Item_Manager.Item.TryGetValue("Robe", out bool Sinigami_Robe_flag);
         Item_Manager.Item.TryGetValue("Scale", out bool Medhusa_Scale_flag);
         Item_Manager.Item.TryGetValue("MagicBook", out bool Medhusa_MagicBook_flag);
         Item_Manager.Item.TryGetValue("Juwel", out bool Dragon_Juwel_flag);
+
         Item_Manager.Item.TryGetValue("Tooth", out bool Dragon_Tooth_flag);
 
         //----------------------
@@ -437,7 +459,99 @@ public class Item_Power : MonoBehaviour
                 adapt_HandMill = false;
             }
         }
-        if(Sinigami_Kama_flag == true)
+        if(Poteto_flag == true)
+        {
+            if(adapt_Poteto == true && first_turn == true)
+            {
+
+            }
+        }
+        if(Scop_flag == true)
+        {
+            if(adapt_Scop == true && first_turn == true)
+            {
+
+            }
+        }
+        if(hammer_flag == true)
+        {
+            if(adapt_hammer == true && first_turn == true)
+            {
+
+            }
+        }
+        if(Bugle_flag == true)
+        {
+            if(adapt_Bugle == true && first_turn == true)
+            {
+
+            }
+        }
+        if(Sylinge_flag == true)
+        {
+            if(adapt_Sylinge == true && first_turn == true)
+            {
+
+            }
+        }
+        if(Baseball_glove_flag == true)
+        {
+            if(adapt_Baseball_glove == true && first_turn == true)
+            {
+
+            }
+        }
+        if(Boxing_glove_flag == true)
+        {
+            if(adapt_Boxing_glove == true && first_turn == true)
+            {
+
+            }
+        }
+        if(Juice_flag  == true)
+        {
+            if(adapt_Juice == true && first_turn == true)
+            {
+
+            }
+        }
+        if(Gas_burner_flag == true)
+        {
+            if(adapt_Gas_burner == true && first_turn == true)
+            {
+
+            }
+        }
+        if(Hamberger_flag == true)
+        {
+            if(adapt_Hamberger == true && first_turn == true)
+            {
+
+            }
+        }
+        if (Pencil_flag == true)
+        {
+            if (adapt_Pencil == true && first_turn == true)
+            {
+
+            }
+        }
+        if (Mayonnaise_flag == true)
+        {
+            if (adapt_Mayonnaise == true && first_turn == true)
+            {
+
+            }
+        }
+        if (Hamberger_flag == true)
+        {
+            if (adapt_Hamberger == true && first_turn == true)
+            {
+
+            }
+        }
+
+        if (Sinigami_Kama_flag == true)
         {
             if(adapt_Sinigami_kama == true && first_turn == true)
             {

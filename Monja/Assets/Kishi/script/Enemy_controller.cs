@@ -548,7 +548,7 @@ public class Enemy_controller : MonoBehaviour
             }
             else if (Enemy_luck == 20)
             {
-                PlayerController.HP = PlayerController.HP /2;
+                PlayerController.HP /= 2;
                 Log.text = ("éÄê_ÇÃéÙÇ¢");
                 Create_Effect_Enemy(1, 2.5f, 0.3f);
             }
