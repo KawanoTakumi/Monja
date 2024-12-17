@@ -50,6 +50,7 @@ public class Enemy_controller : MonoBehaviour
     public static bool tag_get = true;//タグ取得用フラグ
     int turn_time = 0;//ターンの時間
     public Text Log;//ログテキスト
+    public Text Log_2; 
     public static bool End_Game_Flag = false;//ゲーム終了フラグ
     public GameObject HP_Bar;//体力バー
     //状態異常変数
@@ -189,8 +190,10 @@ public class Enemy_controller : MonoBehaviour
                 playerController.intaract_true();
                 Item_Power.first_turn = false;
                 Destroy(playerController.obj_player);
+                Destroy(Status_Controller.eff_obj);
                 turn_manager.turn = true;
                 Log.text = ("プレイヤーのターン");
+                Log_2.text = "";
                 //時間の初期化
                 turn_time = 0;
 
@@ -538,12 +541,12 @@ public class Enemy_controller : MonoBehaviour
         {
             animator.SetBool("Attack", true);
             Enemy_luck = Random.Range(1, 21);
-            if (Enemy_luck == 1)
+            if (Enemy_luck <  20)
             {
                 Log.text = ("死神の攻撃");
                 Enemy_attack = attack;
             }
-            else if (Enemy_luck >= 2)
+            else if (Enemy_luck == 20)
             {
                 PlayerController.HP = PlayerController.HP /2;
                 Log.text = ("死神の呪い");

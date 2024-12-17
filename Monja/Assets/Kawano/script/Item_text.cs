@@ -180,7 +180,72 @@ public class Item_text : MonoBehaviour
             itemname.text = "ハンドミル";
             text.text = "豆を挽くための道具。香ばしい香りがしてるぜ。\nコーヒーを持っている時、魔法攻撃力を６０増加させる\n持っていない時は魔法攻撃力を３０減少させる";
         }
-        else if(button == CompareTag("Kama"))
+        else if(button == CompareTag("Poteto"))
+        {
+            itemname.text = "ポテト";
+            text.text = "ジャガイモを油で揚げた食べ物。\n食べるのをやめられない";
+        }
+        else if (button == CompareTag("Scop"))
+        {
+            itemname.text = "スコップ";
+            text.text = "土を掘ったり、鳴らしたりできる。\n";
+        }
+        else if (button == CompareTag("hammer"))
+        {
+            itemname.text = "ハンマー";
+            text.text = "様々な用途がある万能な道具\n";
+        }
+        else if (button == CompareTag("Bugle"))
+        {
+            itemname.text = "ラッパ";
+            text.text = "様々な音を奏でられる金属性の楽器\nカルテット？";
+        }
+        else if (button == CompareTag("Sylinge"))
+        {
+            itemname.text = "注射器";
+            text.text = "医療目的で使われる、先端が尖った道具\n";
+        }
+        else if (button == CompareTag("Baseball_glove"))
+        {
+            itemname.text = "野球グローブ";
+            text.text = "野球で使われるグローブ。手によくフィットする\n";
+        }
+        else if (button == CompareTag("Bowling_glove"))
+        {
+            itemname.text = "ボクシンググローブ";
+            text.text = "ボクシングで使用されるグローブ\n一発KO";
+        }
+        else if (button == CompareTag("Juice"))
+        {
+            itemname.text = "ジュース";
+            text.text = "果汁などが入った飲料水\n何味がはわからない";
+        }
+        else if (button == CompareTag("Gas_burner"))
+        {
+            itemname.text = "ガスバーナー";
+            text.text = "ガスで熱を生み出す道具\n酸素もなにも燃やせ！！！";
+        }
+        else if (button == CompareTag("Hamberger"))
+        {
+            itemname.text = "ハンバーガー";
+            text.text = "ジャンクフードの王様。カロリーが高い\n";
+        }
+        else if (button == CompareTag(""))
+        {
+            itemname.text = "";
+            text.text = "";
+        }
+        else if (button == CompareTag(""))
+        {
+            itemname.text = "";
+            text.text = "";
+        }
+        else if (button == CompareTag(""))
+        {
+            itemname.text = "";
+            text.text = "";
+        }
+        else if (button == CompareTag("Kama"))
         {
             itemname.text = "死神の鎌";
             text.text = "切れ味がいい鎌。魂まで刈ってしまう\n物理攻撃力を40増加させ、クリティカルがかなり発生しやすくなる";

@@ -94,6 +94,13 @@ public class Item_Power : MonoBehaviour
 
         Item_Manager.Item.TryGetValue("Megaphone", out bool Megaphone_flag);
         Item_Manager.Item.TryGetValue("HandMill", out bool HandMill_flag);
+        //Item_Manager.Item.TryGetValue("HandMill", out bool _flag);
+        //Item_Manager.Item.TryGetValue("HandMill", out bool HandMill_flag);
+        //Item_Manager.Item.TryGetValue("HandMill", out bool HandMill_flag);
+        //Item_Manager.Item.TryGetValue("HandMill", out bool HandMill_flag);
+        //Item_Manager.Item.TryGetValue("HandMill", out bool HandMill_flag);
+        //Item_Manager.Item.TryGetValue("HandMill", out bool HandMill_flag);
+        //Item_Manager.Item.TryGetValue("HandMill", out bool HandMill_flag);
         Item_Manager.Item.TryGetValue("Kama", out bool Sinigami_Kama_flag);
         Item_Manager.Item.TryGetValue("Robe", out bool Sinigami_Robe_flag);
         Item_Manager.Item.TryGetValue("Scale", out bool Medhusa_Scale_flag);

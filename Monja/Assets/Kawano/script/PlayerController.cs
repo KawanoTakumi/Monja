@@ -42,7 +42,6 @@ public class PlayerController : MonoBehaviour
     public ChangeScene change;//チェンジシーン
     int turn_time = 0;//ターン経過時間
     bool button_check = false;
-
     //ボタン関係変数
     public Button Attack_;
     public Button Concentlation_;
@@ -52,7 +51,7 @@ public class PlayerController : MonoBehaviour
     static int Deffence_tmp = 25;
     static int Magic_tmp = 25;
     static int MagicDeffence_tmp = 25;
-
+    int cons_num;
     public Text Log;//テキストログ
     public Text Log_2;
 
@@ -108,11 +107,11 @@ public class PlayerController : MonoBehaviour
             Enemy_controller.Stone_turn = false;
             turn_manager.turn = false;
         }
+
         //毒ダメージ
         if (enemy_Controller.poison == true)
         {
             poison_cnt += 3;
-            Log_2.text = "毒の効果で３ダメージくらった";
             enemy_Controller.poison = false;
         }
         //延焼ダメージ
@@ -243,8 +242,9 @@ public class PlayerController : MonoBehaviour
                 intaract_false();
                 animator.SetBool("cons", true);
                 MP += MP_max / 2;
-                Magic += 10;
                 Log.text = "主人公は集中した";
+                Magic += 10;
+                cons_num++;
                 cons_flag = true;
                 //MPがMP_maxより大きければMP_maxの値に合わせる
                 if (MP > MP_max)
@@ -286,14 +286,14 @@ public class PlayerController : MonoBehaviour
                 damage_Calculate.Enemey_Damage_Calculate(Magic_damage, enemy_Controller.magic_Diffence);
                 if(cons_flag == true)
                 {
-                    Magic -= 10;
+                    Magic -= 10 * cons_num;
+                    cons_num = 0;
                     cons_flag = false;
                 }
-                //遅延
-                Invoke("SE_Play_Magic", 30.0f);
             }
             else
             {
+                Magic_.interactable = false;
                 Log.text = ("MPが足りない！");
             }
         }
