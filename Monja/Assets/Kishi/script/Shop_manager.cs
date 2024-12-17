@@ -210,9 +210,9 @@ public class Shop_manager: MonoBehaviour
     public void shop_reroll()
     {
 
-        if (PlayerController.Money >= 40)
+        if (PlayerController.Money >= 30)
         {
-            PlayerController.Money -= 40;
+            PlayerController.Money -= 30;
             
             Destroy(obj1);
             Item_Library.GetFlag1 = false;
@@ -227,7 +227,7 @@ public class Shop_manager: MonoBehaviour
         }
         else
         {
-            text.text = ("リロールは40G必要です");
+            text.text = ("リロールは30G必要です");
         }
     }
     public void button_intaractable(Button button)

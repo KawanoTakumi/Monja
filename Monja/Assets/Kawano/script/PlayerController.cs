@@ -311,7 +311,7 @@ public class PlayerController : MonoBehaviour
             if (HP != HP_max && HP_Potion > 0)
             {
                 //遅延
-                Invoke("SE_Play_Heal", 1.0f);
+                //Invoke("SE_Play_Heal", 1.0f);
 
                 animator.SetBool("heal", true);
                 //Debug.Log("回復");

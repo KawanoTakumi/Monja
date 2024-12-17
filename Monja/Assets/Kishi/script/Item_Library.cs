@@ -11,7 +11,7 @@ public class Item_Library : MonoBehaviour
     int ItemValue1 = 20;
     int ItemValue2 = 25;
     int ItemValue3 = 30;
-    int ItemValue_Heal = 20;//回復用
+    int ItemValue_Heal = 25;//回復用
     //取得フラグ
     public static bool GetFlag1 = false;
     public static bool GetFlag2 = false;
