@@ -12459,6 +12459,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 42
       objectReference: {fileID: 0}
+    - target: {fileID: 522708552356556166, guid: 9e1b45433c0646744b49bd92012aa148, type: 3}
+      propertyPath: m_TagString
+      value: Pencil
+      objectReference: {fileID: 0}
     - target: {fileID: 5587781913015454192, guid: 9e1b45433c0646744b49bd92012aa148, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -12543,6 +12547,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6132791823267339827, guid: 9e1b45433c0646744b49bd92012aa148, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c38b81a306e02cc4a9ac542f010ff570, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e1b45433c0646744b49bd92012aa148, type: 3}
 --- !u!1001 &1426591029567063584
@@ -12619,7 +12627,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3181195564585444485, guid: 156a7fa565e6f494da2aaf77b70f8f9d, type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Mayonnaise
       objectReference: {fileID: 0}
     - target: {fileID: 7417184637300965619, guid: 156a7fa565e6f494da2aaf77b70f8f9d, type: 3}
       propertyPath: m_Pivot.x
@@ -12708,7 +12716,7 @@ PrefabInstance:
     - target: {fileID: 9113286191673349936, guid: 156a7fa565e6f494da2aaf77b70f8f9d, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 21300000, guid: 2b331a13da7b8794a9fdac1bc6cf830f, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 156a7fa565e6f494da2aaf77b70f8f9d, type: 3}
 --- !u!1001 &2697548430465595973
@@ -13029,6 +13037,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: 43
       objectReference: {fileID: 0}
+    - target: {fileID: 4437172736180426312, guid: 5a1e1d4827f73ef4798d092c7642f9b3, type: 3}
+      propertyPath: m_TagString
+      value: Mayonnaise
+      objectReference: {fileID: 0}
+    - target: {fileID: 8054973922540873213, guid: 5a1e1d4827f73ef4798d092c7642f9b3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2b331a13da7b8794a9fdac1bc6cf830f, type: 3}
     - target: {fileID: 8601527550494372414, guid: 5a1e1d4827f73ef4798d092c7642f9b3, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
