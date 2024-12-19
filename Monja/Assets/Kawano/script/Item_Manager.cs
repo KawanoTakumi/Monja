@@ -34,7 +34,7 @@ public class Item_Manager : MonoBehaviour
             Item.Add("Popcorn", false);//15
             Item.Add("Apple", false);//16
             Item.Add("Scissors", false);//17
-            Item.Add("ice", false);//18
+            Item.Add("ice", true);//18
             Item.Add("Pudding", false);//19
 
             Item.Add("Drill", false);//20
@@ -46,7 +46,7 @@ public class Item_Manager : MonoBehaviour
             Item.Add("Smartphone", false);//26
             Item.Add("ItypeMagnet", false);//27
             Item.Add("Magnifying Speculum",false);//28
-            Item.Add("Mike", false);//29
+            Item.Add("Mike", true);//29
 
             Item.Add("Megaphone", false);//30
             Item.Add("HandMill", false);//31
@@ -56,19 +56,20 @@ public class Item_Manager : MonoBehaviour
             Item.Add("Bugle", false);//35
             Item.Add("Sylinge", false);//36
             Item.Add("Baseball_glove", false);//37
-            Item.Add("Bowling_glove", false);//38
+            Item.Add("Boxing_glove", false);//38
             Item.Add("Juice",false);//39
 
             Item.Add("Gas_burner", false);//40
             Item.Add("Hamberger", false);//41
             Item.Add("Pencil", false);//42
             Item.Add("Mayonnaise", false);//43
-            //Item.Add("", false);//44
+            Item.Add("Watch", false);//44
             Item.Add("Kama", false);//45
             Item.Add("Robe", false);//46
             Item.Add("Scale", false);//47
-            Item.Add("MagicBook", false);//48
+            Item.Add("MagicBook",true);//48
             Item.Add("Juwel", false);//49
+
             Item.Add("Tooth", false);//50
         }
     }

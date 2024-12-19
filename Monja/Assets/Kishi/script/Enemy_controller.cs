@@ -58,6 +58,7 @@ public class Enemy_controller : MonoBehaviour
     public bool OnFire;                      //炎上
     public static bool Freeze_turn = false;  //凍結
     public static bool Stone_turn = false;   //石化
+    public static bool Stun_turn = false;    //気絶
 
     //各シーン到達後trueにする
     public static bool Sinigami_flag = false;
@@ -180,9 +181,11 @@ public class Enemy_controller : MonoBehaviour
             //EnemyAttackを初期化
             Enemy_attack = 0;
             Enemy_Magic = 0;
-            if(Freeze_turn == true)
+            if(Freeze_turn == true || Stone_turn == true || Stun_turn == true)
             {
                 Freeze_turn = false;
+                Stone_turn = false;
+                Stun_turn = false;
                 if(HP > 0)
                 {
                     turn += 1;
@@ -266,6 +269,7 @@ public class Enemy_controller : MonoBehaviour
                 playerController.intaract_true();
                 Item_Power.first_turn = false;
                 turn_manager.turn = true;
+                playerController.Log_2.text = "";
                 Log.text = ("プレイヤーのターン");
                 //時間の初期化
                 turn_time = 0;

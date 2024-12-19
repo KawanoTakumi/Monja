@@ -39,9 +39,7 @@ public class Item_Power : MonoBehaviour
     bool adapt_HandMill = true;
     bool adapt_Poteto = true;
     bool adapt_Scop = true;
-    bool adapt_hammer = true;
     bool adapt_Bugle = true;
-    bool adapt_Sylinge = true;
     bool adapt_Baseball_glove = true;
     bool adapt_Boxing_glove = true;
     bool adapt_Juice = true;
@@ -49,6 +47,7 @@ public class Item_Power : MonoBehaviour
     bool adapt_Hamberger = true;
     bool adapt_Pencil = true;
     bool adapt_Mayonnaise = true;
+    bool adapt_Watch = true;
     bool adapt_Pudding = true;
     bool adapt_Sinigami_kama = true;
     bool adapt_Sinigami_robe = true;
@@ -56,8 +55,15 @@ public class Item_Power : MonoBehaviour
     bool adapt_Medhusa_MagicBook = true;
     bool adapt_Dragon_Juwel = true;
     bool adapt_Dragon_Tooth = true;
+    
     int dice_random = 0;
     int safetycorn_random = 0;
+    int scop_random = 0;
+    int hammer_random = 0;
+    int sylinge_random = 0;
+    int Pencil_Down_cnt = 0;
+
+    public static bool Boxing_flag = false;
     public static bool Sinigami_Crit_Effect = false;
     public static bool Medhusa_Magic_flag = false;
     public static bool dice_crit = false;
@@ -121,7 +127,7 @@ public class Item_Power : MonoBehaviour
         Item_Manager.Item.TryGetValue("Hamberger", out bool Hamberger_flag);
         Item_Manager.Item.TryGetValue("Pencil", out bool Pencil_flag);
         Item_Manager.Item.TryGetValue("Mayonnaise", out bool Mayonnaise_flag);
-        //Item_Manager.Item.TryGetValue("c", out bool c_flag);
+        Item_Manager.Item.TryGetValue("Watch", out bool Watch_flag);
         Item_Manager.Item.TryGetValue("Kama", out bool Sinigami_Kama_flag);
         Item_Manager.Item.TryGetValue("Robe", out bool Sinigami_Robe_flag);
         Item_Manager.Item.TryGetValue("Scale", out bool Medhusa_Scale_flag);
@@ -461,23 +467,39 @@ public class Item_Power : MonoBehaviour
         }
         if(Poteto_flag == true)
         {
-            if(adapt_Poteto == true && first_turn == true)
+            if (adapt_Poteto == true && Hamberger_flag == true && first_turn == true)
             {
-
+                playercontroller.Attack += 60;
+                adapt_Poteto = false;
+            }
+            else if (adapt_Poteto == true && first_turn == true)
+            {
+                playercontroller.Attack -= 30;
+                adapt_Poteto = false;
             }
         }
-        if(Scop_flag == true)
+        if (Scop_flag == true)
         {
             if(adapt_Scop == true && first_turn == true)
             {
-
+                scop_random = Random.Range(1, 5);
+                if(scop_random == 4)
+                {
+                    PlayerController.Money += 20;
+                }
+                adapt_Scop = false;
             }
         }
         if(hammer_flag == true)
         {
-            if(adapt_hammer == true && first_turn == true)
+            if(turn_compare < Enemy_controller.turn)
             {
-
+                hammer_random = Random.Range(1, 11);
+                if (hammer_random == 10)
+                {
+                    Enemy_controller.Stun_turn = true;
+                }
+                turn_compare = Enemy_controller.turn;
             }
         }
         if(Bugle_flag == true)
@@ -489,23 +511,40 @@ public class Item_Power : MonoBehaviour
         }
         if(Sylinge_flag == true)
         {
-            if(adapt_Sylinge == true && first_turn == true)
+            if(turn_compare < Enemy_controller.turn)
             {
-
+                sylinge_random = Random.Range(1, 7);
+                if(sylinge_random == 6)
+                {
+                    PlayerController.HP += 30;
+                }
+                else
+                {
+                    PlayerController.HP += 5;
+                }
+                turn_compare = Enemy_controller.turn;
             }
         }
         if(Baseball_glove_flag == true)
         {
-            if(adapt_Baseball_glove == true && first_turn == true)
+            if(adapt_Baseball_glove == true && baseball_ball_flag == true && first_turn == true)
             {
-
+                playercontroller.Attack += 25;
+                playercontroller.Diffence += 35;
+                adapt_Baseball_glove = false;
+            }
+            else if (adapt_Baseball_glove == true && first_turn == true)
+            {
+                playercontroller.Attack += 25;
+                adapt_Baseball_glove = false;
             }
         }
         if(Boxing_glove_flag == true)
         {
             if(adapt_Boxing_glove == true && first_turn == true)
             {
-
+                Boxing_flag = true;
+                adapt_Boxing_glove = false;
             }
         }
         if(Juice_flag  == true)
@@ -533,8 +572,19 @@ public class Item_Power : MonoBehaviour
         {
             if (adapt_Pencil == true && first_turn == true)
             {
-
+                playercontroller.Attack += 50;
             }
+            //ƒ^[ƒ“–ˆ‚ÌŒø‰Ê
+            if (turn_compare < Enemy_controller.turn)
+            {
+                if(Pencil_Down_cnt <= 10)
+                {
+                    playercontroller.Attack -= 5;
+                    Pencil_Down_cnt++;
+                }
+                turn_compare = Enemy_controller.turn;
+            }
+
         }
         if (Mayonnaise_flag == true)
         {
@@ -546,6 +596,13 @@ public class Item_Power : MonoBehaviour
         if (Hamberger_flag == true)
         {
             if (adapt_Hamberger == true && first_turn == true)
+            {
+
+            }
+        }
+        if(Watch_flag == true)
+        {
+            if(adapt_Watch == true && first_turn == true)
             {
 
             }
