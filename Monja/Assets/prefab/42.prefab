@@ -17,13 +17,10 @@ GameObject:
   - component: {fileID: 1716137394507487907}
   - component: {fileID: 961029723118374218}
   - component: {fileID: 6065315771930119330}
-  - component: {fileID: 3256155158627119226}
-  - component: {fileID: 7746887228742572347}
-  - component: {fileID: 5939729408464972524}
   - component: {fileID: 250345099864777737}
   m_Layer: 0
   m_Name: 42
-  m_TagString: Scop
+  m_TagString: Mayonnaise
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46,7 +43,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 546, y: -34}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 190, y: 185}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8510498934972992362
 CanvasRenderer:
@@ -76,7 +73,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 058232838d481774880b5d2a524eddd8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2b331a13da7b8794a9fdac1bc6cf830f, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -142,7 +139,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 3256155158627119226}
+      - m_Target: {fileID: 6906418628144895744}
         m_TargetAssemblyTypeName: Item_text, Assembly-CSharp
         m_MethodName: Hit_button
         m_Mode: 1
@@ -332,44 +329,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d77e516a60506b4a8b5cbe69e8a2bf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3256155158627119226
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 522708552356556166}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e498045494565d46b7f0c9cb041b831, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  button: {fileID: 2966942390557404276}
---- !u!114 &7746887228742572347
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 522708552356556166}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74da8a62fed5efa4ebdfe28f65622f3b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &5939729408464972524
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 522708552356556166}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8fe137fb46c889c4c843191fc1c1d311, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  button: {fileID: 2966942390557404276}
 --- !u!114 &250345099864777737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -387,7 +346,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 7746887228742572347}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: MouseSE, Assembly-CSharp
           m_MethodName: OnMouseEnter
           m_Mode: 1
@@ -403,7 +362,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 7746887228742572347}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: MouseSE, Assembly-CSharp
           m_MethodName: OnMouseExit
           m_Mode: 1

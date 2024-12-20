@@ -17,13 +17,10 @@ GameObject:
   - component: {fileID: 2558074655948096108}
   - component: {fileID: 4109158590504588677}
   - component: {fileID: 6952640873396786285}
-  - component: {fileID: 1828678447276435637}
-  - component: {fileID: 6904742142441374196}
-  - component: {fileID: 7367540358431617571}
   - component: {fileID: 3974863229840424134}
   m_Layer: 0
   m_Name: 40
-  m_TagString: Scop
+  m_TagString: Hamberger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46,7 +43,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 334, y: -34}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 190, y: 185}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4777113273817535397
 CanvasRenderer:
@@ -142,7 +139,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1828678447276435637}
+      - m_Target: {fileID: 7748563693010603983}
         m_TargetAssemblyTypeName: Item_text, Assembly-CSharp
         m_MethodName: Hit_button
         m_Mode: 1
@@ -332,44 +329,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d77e516a60506b4a8b5cbe69e8a2bf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1828678447276435637
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3679971058566313289}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e498045494565d46b7f0c9cb041b831, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  button: {fileID: 2124670864714478779}
---- !u!114 &6904742142441374196
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3679971058566313289}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74da8a62fed5efa4ebdfe28f65622f3b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &7367540358431617571
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3679971058566313289}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8fe137fb46c889c4c843191fc1c1d311, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  button: {fileID: 2124670864714478779}
 --- !u!114 &3974863229840424134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -387,7 +346,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 6904742142441374196}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: MouseSE, Assembly-CSharp
           m_MethodName: OnMouseEnter
           m_Mode: 1
@@ -403,7 +362,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 6904742142441374196}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: MouseSE, Assembly-CSharp
           m_MethodName: OnMouseExit
           m_Mode: 1

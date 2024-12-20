@@ -223,6 +223,10 @@ public class PlayerController : MonoBehaviour
                 Log.text = ("主人公クリティカルが発生");
                 Item_Power.dice_crit = false;
             }
+            if (Item_Power.Boxing_flag == true)
+            {
+                
+            }
 
             damage_Calculate.Enemey_Damage_Calculate(Attack_damage, enemy_Controller.Enemy_deffence);
         }

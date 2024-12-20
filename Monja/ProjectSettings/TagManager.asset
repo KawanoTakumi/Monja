@@ -65,6 +65,9 @@ TagManager:
   - Juice
   - Gas_burner
   - Hamberger
+  - Pencil
+  - Mayonnaise
+  - Watch
   layers:
   - Default
   - TransparentFX
