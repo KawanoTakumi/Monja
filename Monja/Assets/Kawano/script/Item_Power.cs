@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Item_Power : MonoBehaviour
 {
     PlayerController playercontroller;//主人公
+    Status_Controller status_; //ステータスコントローラ
     public Enemy_controller enemy_Controller;//敵
     public Text log_text;//ログ
     public static int turn_compare = 0;//ターン数比較用()
@@ -39,7 +40,7 @@ public class Item_Power : MonoBehaviour
     bool adapt_HandMill = true;
     bool adapt_Poteto = true;
     bool adapt_Scop = true;
-    bool adapt_Bugle = true;
+    bool adapt_Speaker = true;
     bool adapt_Baseball_glove = true;
     bool adapt_Boxing_glove = true;
     bool adapt_Juice = true;
@@ -47,7 +48,6 @@ public class Item_Power : MonoBehaviour
     bool adapt_Hamberger = true;
     bool adapt_Pencil = true;
     bool adapt_Mayonnaise = true;
-    bool adapt_Watch = true;
     bool adapt_Pudding = true;
     bool adapt_Sinigami_kama = true;
     bool adapt_Sinigami_robe = true;
@@ -75,6 +75,8 @@ public class Item_Power : MonoBehaviour
         //プレイヤーを読み込み、プレイヤーコントローラーを取得する
         GameObject player = GameObject.Find("Player");
         playercontroller = player.GetComponent<PlayerController>();
+        GameObject Status_effect = GameObject.Find("Effect_manager");
+        status_ = Status_effect.GetComponent<Status_Controller>();
     }
 
     // Update is called once per frame
@@ -119,7 +121,7 @@ public class Item_Power : MonoBehaviour
         Item_Manager.Item.TryGetValue("Poteto", out bool Poteto_flag);
         Item_Manager.Item.TryGetValue("Scop", out bool Scop_flag);
         Item_Manager.Item.TryGetValue("hammer", out bool hammer_flag);
-        Item_Manager.Item.TryGetValue("Bugle", out bool Bugle_flag);
+        Item_Manager.Item.TryGetValue("Speaker", out bool Speaker_flag);
         Item_Manager.Item.TryGetValue("Sylinge", out bool Sylinge_flag);
         Item_Manager.Item.TryGetValue("Baseball_glove", out bool Baseball_glove_flag);
         Item_Manager.Item.TryGetValue("Boxing_glove", out bool Boxing_glove_flag);
@@ -504,12 +506,12 @@ public class Item_Power : MonoBehaviour
                 turn_compare = Enemy_controller.turn;
             }
         }
-        if(Bugle_flag == true)
+        if(Speaker_flag == true)
         {
-            if(adapt_Bugle == true && first_turn == true)
+            if(adapt_Speaker == true && first_turn == true)
             {
                 enemy_Controller.deffence -= 10;
-                adapt_Bugle = false;
+                adapt_Speaker = false;
             }
         }
         if(Sylinge_flag == true)
@@ -566,6 +568,9 @@ public class Item_Power : MonoBehaviour
                 if(gas_burner_random == 4)
                 {
                     Enemy_controller.HP -= 40;
+                    playercontroller.Log_2.text = "敵を炎上させた";
+                    status_.Status_Effect(false,3);
+                    adapt_Gas_burner = false;
                 }
             }
         }
@@ -574,10 +579,12 @@ public class Item_Power : MonoBehaviour
             if(adapt_Hamberger == true && Poteto_flag == true && first_turn == true)
             {
                 playercontroller.Attack += 40;
+                adapt_Hamberger = false;
             }
             else if(adapt_Hamberger == true && first_turn == true)
             {
                 playercontroller.Attack += 20;
+                adapt_Hamberger = false;
             }
         }
         if (Pencil_flag == true)
@@ -585,6 +592,7 @@ public class Item_Power : MonoBehaviour
             if (adapt_Pencil == true && first_turn == true)
             {
                 playercontroller.Attack += 50;
+                adapt_Pencil = false;
             }
             //ターン毎の効果
             if (turn_compare < Enemy_controller.turn)
@@ -602,6 +610,7 @@ public class Item_Power : MonoBehaviour
             if (adapt_Mayonnaise == true && first_turn == true)
             {
                 playercontroller.Magic += 50;
+                adapt_Mayonnaise = false;
             }
             //ターン毎の効果
             if (turn_compare < Enemy_controller.turn)

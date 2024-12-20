@@ -13098,7 +13098,7 @@ PrefabInstance:
     - target: {fileID: 8054973922540873213, guid: 5a1e1d4827f73ef4798d092c7642f9b3, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 2b331a13da7b8794a9fdac1bc6cf830f, type: 3}
+      objectReference: {fileID: 21300000, guid: 17dc1fc670e3ad2418a9fde279faa016, type: 3}
     - target: {fileID: 8601527550494372414, guid: 5a1e1d4827f73ef4798d092c7642f9b3, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -13807,7 +13807,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6671781243996365712, guid: e1573ea1d36743945a13787996307537, type: 3}
       propertyPath: m_TagString
-      value: Bugle
+      value: Speaker
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1573ea1d36743945a13787996307537, type: 3}

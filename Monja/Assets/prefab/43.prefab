@@ -20,7 +20,7 @@ GameObject:
   - component: {fileID: 4155817752212496327}
   m_Layer: 0
   m_Name: 43
-  m_TagString: Scop
+  m_TagString: Watch
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -73,7 +73,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 058232838d481774880b5d2a524eddd8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 17dc1fc670e3ad2418a9fde279faa016, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1

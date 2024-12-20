@@ -32,7 +32,6 @@ public class Shop_manager: MonoBehaviour
 
     void Start()
     {
-        PlayerController.Money = 10000;
         shop_select();
     }
 

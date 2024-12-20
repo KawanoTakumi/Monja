@@ -195,10 +195,10 @@ public class Item_text : MonoBehaviour
             itemname.text = "ハンマー";
             text.text = "様々な用途がある万能な道具\n\n１０分の１の確率で相手を気絶させる";
         }
-        else if (button == CompareTag("Bugle"))
+        else if (button == CompareTag("Speaker"))
         {
-            itemname.text = "ラッパ";
-            text.text = "様々な音を奏でられる金属性の楽器。カルテット？\n\n";
+            itemname.text = "スピーカー";
+            text.text = "音を増幅させる装置。カルテット？\n\n敵の物理防御力を10減少させる";
         }
         else if (button == CompareTag("Sylinge"))
         {
@@ -208,42 +208,42 @@ public class Item_text : MonoBehaviour
         else if (button == CompareTag("Baseball_glove"))
         {
             itemname.text = "野球グローブ";
-            text.text = "野球で使われるグローブ。手によくフィットする\n\n物理攻撃力を２５増加させる。野球ボールをももってたら、\n魔法攻撃力も２５増加させる";
+            text.text = "野球で使われるグローブ。手によくフィットする\n\n物理攻撃力を２５増加させる。\n野球ボールを持ってたら、魔法攻撃力も２５増加させる";
         }
         else if (button == CompareTag("Boxing_glove"))
         {
             itemname.text = "ボクシンググローブ";
-            text.text = "ボクシングで使用されるグローブ,一発KO\n\nコウゲキを押したとき物理攻撃力を１増加させる";
+            text.text = "ボクシングで使用されるグローブ,一発KO\n\nコウゲキを押したとき物理攻撃力を3増加させる";
         }
         else if (button == CompareTag("Juice"))
         {
             itemname.text = "ジュース";
-            text.text = "果汁などが入った飲料水。何味がはわからない\n\n";
+            text.text = "果汁などが入った飲料水。何味がはわからない\n\n戦闘開始時体力を20回復させる";
         }
         else if (button == CompareTag("Gas_burner"))
         {
             itemname.text = "ガスバーナー";
-            text.text = "ガスで熱を生み出す道具。酸素も闘志も燃やせ！！！\n\n";
+            text.text = "ガスで熱を生み出す道具。酸素も闘志も燃やせ！！！\n\n確率で敵を炎上させる";
         }
         else if (button == CompareTag("Hamberger"))
         {
             itemname.text = "ハンバーガー";
-            text.text = "ジャンクフードの王様。カロリーが高い。一日三食これ一個\n\n";
+            text.text = "ジャンクフードの王様。カロリーが高い。一日三食これ一個\n\nポテトを持っている時物理攻撃力を４０増加させる\n持っていないときは物理攻撃力を２０増加させる";
         }
         else if (button == CompareTag("Pencil"))
         {
             itemname.text = "鉛筆";
-            text.text = "文字を書け、色や硬さに種類がある。H ore HB ore B?\n\n";
+            text.text = "文字を書け、色や硬さに種類がある。H ore HB ore B?\n\n物理攻撃力を５０増加させるが毎ターン物理攻撃力を５減少させる";
         }
         else if (button == CompareTag("Mayonnaise"))
         {
             itemname.text = "マヨネーズ";
-            text.text = "卵と油で作る調味料。一部の人はこれを飲もうとしたりするとか\n\n";
+            text.text = "卵と油で作る調味料。一部の人はこれを飲もうとしたりするとか\n\n魔法攻撃力を５０増加させるが毎ターン魔法攻撃力を５減少させる";
         }
         else if (button == CompareTag("Watch"))
         {
             itemname.text = "腕時計";
-            text.text = "";
+            text.text = "時間を気軽に確認できる、社会人には必須のアイテム。\n\n主人公の体力が減少するほど物理攻撃力を増加させる";
         }
         else if (button == CompareTag("Kama"))
         {
