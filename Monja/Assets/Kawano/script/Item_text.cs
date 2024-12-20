@@ -183,17 +183,17 @@ public class Item_text : MonoBehaviour
         else if(button == CompareTag("Poteto"))
         {
             itemname.text = "ポテト";
-            text.text = "ジャガイモを油で揚げた食べ物。\n\n食べるのをやめられない";
+            text.text = "ジャガイモを油で揚げた食べ物。食べるのをやめられない\n\nハンバーガーを持っている時物理攻撃力を60増加させ、持っていない時は物理攻撃力を３０減少させる";
         }
         else if (button == CompareTag("Scop"))
         {
             itemname.text = "ショベル";
-            text.text = "土を掘ったり、鳴らしたりできる。\n\n";
+            text.text = "土を掘ったり、鳴らしたりできる。\n\n４分の１の確率でお金を３０入手する";
         }
         else if (button == CompareTag("hammer"))
         {
             itemname.text = "ハンマー";
-            text.text = "様々な用途がある万能な道具\n\n";
+            text.text = "様々な用途がある万能な道具\n\n１０分の１の確率で相手を気絶させる";
         }
         else if (button == CompareTag("Bugle"))
         {
@@ -203,17 +203,17 @@ public class Item_text : MonoBehaviour
         else if (button == CompareTag("Sylinge"))
         {
             itemname.text = "注射器";
-            text.text = "医療目的で使われる、先端が尖った道具\n\n";
+            text.text = "医療目的で使われる、先端が尖った道具\n\n６分の１の確率で体力を３０回復させ、それ以外の時は５回復させる";
         }
         else if (button == CompareTag("Baseball_glove"))
         {
             itemname.text = "野球グローブ";
-            text.text = "野球で使われるグローブ。手によくフィットする\n\n";
+            text.text = "野球で使われるグローブ。手によくフィットする\n\n物理攻撃力を２５増加させる。野球ボールをももってたら、\n魔法攻撃力も２５増加させる";
         }
         else if (button == CompareTag("Boxing_glove"))
         {
             itemname.text = "ボクシンググローブ";
-            text.text = "ボクシングで使用されるグローブ,一発KO\n\n";
+            text.text = "ボクシングで使用されるグローブ,一発KO\n\nコウゲキを押したとき物理攻撃力を１増加させる";
         }
         else if (button == CompareTag("Juice"))
         {
@@ -240,9 +240,9 @@ public class Item_text : MonoBehaviour
             itemname.text = "マヨネーズ";
             text.text = "卵と油で作る調味料。一部の人はこれを飲もうとしたりするとか\n\n";
         }
-        else if (button == CompareTag(""))
+        else if (button == CompareTag("Watch"))
         {
-            itemname.text = "";
+            itemname.text = "腕時計";
             text.text = "";
         }
         else if (button == CompareTag("Kama"))

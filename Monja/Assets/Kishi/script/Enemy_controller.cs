@@ -181,6 +181,11 @@ public class Enemy_controller : MonoBehaviour
             //EnemyAttack‚ğ‰Šú‰»
             Enemy_attack = 0;
             Enemy_Magic = 0;
+            if(Item_Power.Watch_Add_reset == false)
+            {
+                playerController.Attack -= PlayerController.HP_max - PlayerController.HP;
+                Item_Power.Watch_Add_reset = true;
+            }
             if(Freeze_turn == true || Stone_turn == true || Stun_turn == true)
             {
                 Freeze_turn = false;

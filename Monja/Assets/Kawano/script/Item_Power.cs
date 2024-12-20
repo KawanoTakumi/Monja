@@ -61,12 +61,14 @@ public class Item_Power : MonoBehaviour
     int scop_random = 0;
     int hammer_random = 0;
     int sylinge_random = 0;
+    int gas_burner_random = 0;
     int Pencil_Down_cnt = 0;
 
     public static bool Boxing_flag = false;
     public static bool Sinigami_Crit_Effect = false;
     public static bool Medhusa_Magic_flag = false;
     public static bool dice_crit = false;
+    public static bool Watch_Add_reset = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -506,7 +508,8 @@ public class Item_Power : MonoBehaviour
         {
             if(adapt_Bugle == true && first_turn == true)
             {
-
+                enemy_Controller.deffence -= 10;
+                adapt_Bugle = false;
             }
         }
         if(Sylinge_flag == true)
@@ -551,21 +554,30 @@ public class Item_Power : MonoBehaviour
         {
             if(adapt_Juice == true && first_turn == true)
             {
-
+                PlayerController.HP += 20;
+                adapt_Juice = false;
             }
         }
         if(Gas_burner_flag == true)
         {
             if(adapt_Gas_burner == true && first_turn == true)
             {
-
+                gas_burner_random = Random.Range(1, 5);
+                if(gas_burner_random == 4)
+                {
+                    Enemy_controller.HP -= 40;
+                }
             }
         }
         if(Hamberger_flag == true)
         {
-            if(adapt_Hamberger == true && first_turn == true)
+            if(adapt_Hamberger == true && Poteto_flag == true && first_turn == true)
             {
-
+                playercontroller.Attack += 40;
+            }
+            else if(adapt_Hamberger == true && first_turn == true)
+            {
+                playercontroller.Attack += 20;
             }
         }
         if (Pencil_flag == true)
@@ -584,30 +596,36 @@ public class Item_Power : MonoBehaviour
                 }
                 turn_compare = Enemy_controller.turn;
             }
-
         }
         if (Mayonnaise_flag == true)
         {
             if (adapt_Mayonnaise == true && first_turn == true)
             {
-
+                playercontroller.Magic += 50;
             }
-        }
-        if (Hamberger_flag == true)
-        {
-            if (adapt_Hamberger == true && first_turn == true)
+            //É^Å[ÉìñàÇÃå¯â 
+            if (turn_compare < Enemy_controller.turn)
             {
-
+                if (Pencil_Down_cnt <= 10)
+                {
+                    playercontroller.Magic -= 5;
+                    Pencil_Down_cnt++;
+                }
+                turn_compare = Enemy_controller.turn;
             }
         }
-        if(Watch_flag == true)
+        if (Watch_flag == true)
         {
-            if(adapt_Watch == true && first_turn == true)
+            if(turn_compare < Enemy_controller.turn)
             {
-
+                if (Watch_Add_reset == true)
+                {
+                    playercontroller.Attack += PlayerController.HP_max - PlayerController.HP;
+                    turn_compare = Enemy_controller.turn;
+                    Watch_Add_reset = false;
+                }
             }
         }
-
         if (Sinigami_Kama_flag == true)
         {
             if(adapt_Sinigami_kama == true && first_turn == true)
