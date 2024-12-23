@@ -4817,7 +4817,7 @@ MonoBehaviour:
   player_money: {fileID: 1205328569}
   Heal_drink_num: {fileID: 1873193602}
   HP_Text: {fileID: 1656194462}
-  HP_MAX_Text: {fileID: 2096363887}
+  MP_Text: {fileID: 2096363887}
 --- !u!114 &1930081985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5703,7 +5703,7 @@ GameObject:
   - component: {fileID: 2096363888}
   - component: {fileID: 2096363887}
   m_Layer: 5
-  m_Name: HP_MAX_Text
+  m_Name: MP_Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
