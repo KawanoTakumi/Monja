@@ -2193,6 +2193,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 45
       objectReference: {fileID: 0}
+    - target: {fileID: 5859353280898352168, guid: 69f0de1e8b8da8444a964ca1ff9f99e3, type: 3}
+      propertyPath: m_TagString
+      value: Scythe
+      objectReference: {fileID: 0}
     - target: {fileID: 6367785217935176470, guid: 69f0de1e8b8da8444a964ca1ff9f99e3, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
