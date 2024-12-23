@@ -33,7 +33,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Battle_8.unity
     guid: b708b5539d411894c955c8ff5f40d68b
   - enabled: 1
-    path: Assets/Scenes/motimono.unity
+    path: Assets/Scenes/Inventry.unity
     guid: f4d0a229996a83b4382836c68073060c
   - enabled: 1
     path: Assets/Scenes/shop.unity
