@@ -47,8 +47,8 @@ public class Item_Power : MonoBehaviour
     bool adapt_Pencil = true;
     bool adapt_Mayonnaise = true;
     bool adapt_Pudding = true;
-    bool adapt_Sinigami_scythe = true;
-    bool adapt_Sinigami_robe = true;
+    bool adapt_TheGrimReaper_scythe = true;
+    bool adapt_TheGrimReaper_robe = true;
     bool adapt_Medhusa_Scale = true;
     bool adapt_Medhusa_MagicBook = true;
     bool adapt_Dragon_Juwel = true;
@@ -637,21 +637,21 @@ public class Item_Power : MonoBehaviour
         }
         if (Sinigami_Scythe_flag == true)
         {
-            if(adapt_Sinigami_scythe == true && first_turn == true)
+            if(adapt_TheGrimReaper_scythe == true && first_turn == true)
             {
                 playercontroller.Attack += 40;
                 PlayerController.max_luck -= 3;
                 Sinigami_Crit_Effect = true;//死神のクリティカルエフェクト発生
-                adapt_Sinigami_scythe = false;
+                adapt_TheGrimReaper_scythe = false;
             }
         }
         if(Sinigami_Robe_flag == true)
         {
-            if(adapt_Sinigami_robe == true && first_turn == true)
+            if(adapt_TheGrimReaper_robe == true && first_turn == true)
             {
                 playercontroller.Diffence += 40;
                 PlayerController.max_luck -= 3;
-                adapt_Sinigami_robe = false;
+                adapt_TheGrimReaper_robe = false;
             }
         }
         if(Medhusa_Scale_flag == true)
