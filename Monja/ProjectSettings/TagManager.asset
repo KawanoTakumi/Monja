@@ -15,7 +15,6 @@ TagManager:
   - ono
   - none
   - medhusa
-  - sinigami
   - kesigomu
   - TV
   - CreditCard
@@ -69,7 +68,6 @@ TagManager:
   - Speaker
   - Sickle
   - Lich
-  - Scythe
   - TheGrimReaper
   layers:
   - Default
