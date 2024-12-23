@@ -97,7 +97,7 @@ public class Enemy_controller : MonoBehaviour
                 HP_MAX = 120;
                 Enemy_luck_Max = 0;
             }
-            else if (CompareTag("TheGrimReaper ") == true)
+            else if (CompareTag("TheGrimReaper") == true)
             {
                 Boss_TheGrimReaper = true;
                 HP = 240;
