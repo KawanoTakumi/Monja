@@ -2329,7 +2329,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1119714838}
         m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
-        m_MethodName: Item_num_Recet
+        m_MethodName: Item_num_Reset
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

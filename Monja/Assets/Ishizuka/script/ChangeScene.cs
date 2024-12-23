@@ -130,7 +130,7 @@ public class ChangeScene : MonoBehaviour
 
         scene_cnt = 0;
     }
-    public void Item_num_Recet()
+    public void Item_num_Reset()
     {
         Shop_manager.tmp_1 = -1;
         Shop_manager.tmp_2 = -1;

@@ -49,7 +49,6 @@ TagManager:
   - cockatrice
   - knight
   - dragon
-  - Kama
   - Robe
   - MagicBook
   - Juwel
@@ -69,6 +68,7 @@ TagManager:
   - Mayonnaise
   - Watch
   - Speaker
+  - Sickle
   layers:
   - Default
   - TransparentFX

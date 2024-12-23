@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 597621374761878032}
   m_Layer: 0
   m_Name: 45
-  m_TagString: Kama
+  m_TagString: Sickle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

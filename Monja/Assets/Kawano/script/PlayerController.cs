@@ -128,22 +128,22 @@ public class PlayerController : MonoBehaviour
             ChangeScene.scene_cnt = 1;//最初のシーンがcase :1
         }
 
-        //ステータス999上限
-        if(Attack >= 999)
+        //ステータス9999上限
+        if(Attack >= 9999)
         {
-            Attack = 999;
+            Attack = 9999;
         }
-        if(Diffence >= 999)
+        if(Diffence >= 9999)
         {
-            Diffence = 999;
+            Diffence = 9999;
         }
-        if(Magic >= 999)
+        if(Magic >= 9999)
         {
-            Magic = 999;
+            Magic = 9999;
         }
-        if(Magic_Diffence >= 999)
+        if(Magic_Diffence >= 9999)
         {
-            Magic_Diffence = 999;
+            Magic_Diffence = 9999;
         }
         if(HP >= HP_max)
         {

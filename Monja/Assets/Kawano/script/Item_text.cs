@@ -188,17 +188,17 @@ public class Item_text : MonoBehaviour
         else if (button == CompareTag("Scop"))
         {
             itemname.text = "ショベル";
-            text.text = "土を掘ったり、鳴らしたりできる。\n\n４分の１の確率でお金を３０入手する";
+            text.text = "土を掘ったり、鳴らしたりできる。\n\n戦闘開始時４分の１の確率でお金を３０入手する";
         }
         else if (button == CompareTag("hammer"))
         {
             itemname.text = "ハンマー";
-            text.text = "様々な用途がある万能な道具\n\n１０分の１の確率で相手を気絶させる";
+            text.text = "様々な用途がある万能な道具\n\n毎ターン１０分の１の確率で相手を気絶させる";
         }
         else if (button == CompareTag("Speaker"))
         {
             itemname.text = "スピーカー";
-            text.text = "音を増幅させる装置。カルテット？\n\n敵の物理防御力を10減少させる";
+            text.text = "音を増幅させる装置。カルテット？\n\n敵の物理防御力を25減少させる";
         }
         else if (button == CompareTag("Sylinge"))
         {
@@ -223,7 +223,7 @@ public class Item_text : MonoBehaviour
         else if (button == CompareTag("Gas_burner"))
         {
             itemname.text = "ガスバーナー";
-            text.text = "ガスで熱を生み出す道具。酸素も闘志も燃やせ！！！\n\n確率で敵を炎上させる";
+            text.text = "ガスで熱を生み出す道具。酸素も闘志も燃やせ！！！\n\n戦闘開始時確率で敵を炎上させる";
         }
         else if (button == CompareTag("Hamberger"))
         {
@@ -245,7 +245,7 @@ public class Item_text : MonoBehaviour
             itemname.text = "腕時計";
             text.text = "時間を気軽に確認できる、社会人には必須のアイテム。\n\n主人公の体力が減少するほど物理攻撃力を増加させる";
         }
-        else if (button == CompareTag("Kama"))
+        else if (button == CompareTag("Sickle"))
         {
             itemname.text = "死神の鎌";
             text.text = "切れ味がいい鎌。魂まで刈ってしまう\n\n物理攻撃力を40増加させ、クリティカルがかなり発生しやすくなる";

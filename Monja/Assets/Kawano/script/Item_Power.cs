@@ -49,7 +49,7 @@ public class Item_Power : MonoBehaviour
     bool adapt_Pencil = true;
     bool adapt_Mayonnaise = true;
     bool adapt_Pudding = true;
-    bool adapt_Sinigami_kama = true;
+    bool adapt_Sinigami_sickle = true;
     bool adapt_Sinigami_robe = true;
     bool adapt_Medhusa_Scale = true;
     bool adapt_Medhusa_MagicBook = true;
@@ -132,7 +132,7 @@ public class Item_Power : MonoBehaviour
         Item_Manager.Item.TryGetValue("Pencil", out bool Pencil_flag);
         Item_Manager.Item.TryGetValue("Mayonnaise", out bool Mayonnaise_flag);
         Item_Manager.Item.TryGetValue("Watch", out bool Watch_flag);
-        Item_Manager.Item.TryGetValue("Kama", out bool Sinigami_Kama_flag);
+        Item_Manager.Item.TryGetValue("Sickle", out bool Sinigami_Sickle_flag);
         Item_Manager.Item.TryGetValue("Robe", out bool Sinigami_Robe_flag);
         Item_Manager.Item.TryGetValue("Scale", out bool Medhusa_Scale_flag);
         Item_Manager.Item.TryGetValue("MagicBook", out bool Medhusa_MagicBook_flag);
@@ -489,7 +489,7 @@ public class Item_Power : MonoBehaviour
                 scop_random = Random.Range(1, 5);
                 if(scop_random == 4)
                 {
-                    PlayerController.Money += 20;
+                    PlayerController.Money += 30;
                 }
                 adapt_Scop = false;
             }
@@ -511,7 +511,7 @@ public class Item_Power : MonoBehaviour
         {
             if(adapt_Speaker == true && first_turn == true)
             {
-                enemy_Controller.deffence -= 10;
+                enemy_Controller.deffence -= 25;
                 adapt_Speaker = false;
             }
         }
@@ -636,14 +636,14 @@ public class Item_Power : MonoBehaviour
                 }
             }
         }
-        if (Sinigami_Kama_flag == true)
+        if (Sinigami_Sickle_flag == true)
         {
-            if(adapt_Sinigami_kama == true && first_turn == true)
+            if(adapt_Sinigami_sickle == true && first_turn == true)
             {
                 playercontroller.Attack += 40;
                 PlayerController.max_luck -= 3;
                 Sinigami_Crit_Effect = true;//死神のクリティカルエフェクト発生
-                adapt_Sinigami_kama = false;
+                adapt_Sinigami_sickle = false;
             }
         }
         if(Sinigami_Robe_flag == true)

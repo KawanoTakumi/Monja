@@ -64,7 +64,7 @@ public class Item_Manager : MonoBehaviour
             Item.Add("Pencil", false);//42
             Item.Add("Mayonnaise", false);//43
             Item.Add("Watch", false);//44
-            Item.Add("Kama", false);//45
+            Item.Add("Sickle", false);//45
             Item.Add("Robe", false);//46
             Item.Add("Scale", false);//47
             Item.Add("MagicBook",false);//48
