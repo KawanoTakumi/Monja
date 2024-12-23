@@ -20,7 +20,7 @@ GameObject:
   - component: {fileID: 3263081551694182725}
   m_Layer: 0
   m_Name: 35
-  m_TagString: Speaker
+  m_TagString: Sylinge
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
