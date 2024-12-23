@@ -130,7 +130,7 @@ public class Item_Power : MonoBehaviour
         Item_Manager.Item.TryGetValue("Pencil", out bool Pencil_flag);
         Item_Manager.Item.TryGetValue("Mayonnaise", out bool Mayonnaise_flag);
         Item_Manager.Item.TryGetValue("Watch", out bool Watch_flag);
-        Item_Manager.Item.TryGetValue("Scythe", out bool Sinigami_Scythe_flag);
+        Item_Manager.Item.TryGetValue("Scythe", out bool TheGrimReaper_Scythe_flag);
         Item_Manager.Item.TryGetValue("Robe", out bool Sinigami_Robe_flag);
         Item_Manager.Item.TryGetValue("Scale", out bool Medhusa_Scale_flag);
         Item_Manager.Item.TryGetValue("MagicBook", out bool Medhusa_MagicBook_flag);
@@ -635,7 +635,7 @@ public class Item_Power : MonoBehaviour
                 }
             }
         }
-        if (Sinigami_Scythe_flag == true)
+        if (TheGrimReaper_Scythe_flag == true)
         {
             if(adapt_TheGrimReaper_scythe == true && first_turn == true)
             {
