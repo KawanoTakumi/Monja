@@ -172,6 +172,7 @@ public class Enemy_controller : MonoBehaviour
         GameObject.FindWithTag("sinigami");
         GameObject.FindWithTag("dragon");
 
+        //ターンがtrueの時、エフェクト用オブジェクトを消去
         if (turn_manager.turn == true)
         {
             Destroy(obj1);
@@ -181,11 +182,13 @@ public class Enemy_controller : MonoBehaviour
             //EnemyAttackを初期化
             Enemy_attack = 0;
             Enemy_Magic = 0;
+            //Watchの効果を消去
             if(Item_Power.Watch_Add_reset == false)
             {
                 playerController.Attack -= PlayerController.HP_max - PlayerController.HP;
                 Item_Power.Watch_Add_reset = true;
             }
+            //各種ターン経過系の状態異常を発動
             if(Freeze_turn == true || Stone_turn == true || Stun_turn == true)
             {
                 Freeze_turn = false;
@@ -195,11 +198,13 @@ public class Enemy_controller : MonoBehaviour
                 {
                     turn += 1;
                 }
-                playerController.intaract_true();
+                playerController.intaract_true();//ボタンインタラクトをtrue
                 Item_Power.first_turn = false;
+                //エフェクト用オブジェクトを削除
                 Destroy(playerController.obj_player);
                 Destroy(Status_Controller.eff_obj);
                 turn_manager.turn = true;
+                //ログを変更
                 Log.text = ("プレイヤーのターン");
                 Log_2.text = "";
                 //時間の初期化
@@ -290,7 +295,7 @@ public class Enemy_controller : MonoBehaviour
                 }
             }
         }
-        //アタック
+        //アタック(Enemy)
         void Attack(int paturn)
         {
             switch(paturn)
@@ -310,14 +315,14 @@ public class Enemy_controller : MonoBehaviour
               
             }
         }
-        //防御
+        //防御(Enemy)
         void Defence()
         {
             Create_Effect_Enemy(0, 2.3f, 0f);
             enemy_SE.SE_Monster(2);
             Enemy_deffence = deffence;
         }
-        //魔法
+        //魔法(Enemy)
         void Magic()
         {
             if (magic_cnt < 3)
@@ -330,7 +335,7 @@ public class Enemy_controller : MonoBehaviour
                 Enemy_Magic = Enemy_Magic + magic;
             }
         }
-        //回復
+        //回復(Enemy)
         void Heal()
         {
             HP += HP / 10;
