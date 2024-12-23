@@ -588,20 +588,21 @@ public class Item_Power : MonoBehaviour
         }
         if (Pencil_flag == true)
         {
-            if (adapt_Pencil == true && first_turn == true)
-            {
-                playercontroller.Attack += 50;
-                adapt_Pencil = false;
-            }
             //ターン毎の効果
             if (turn_compare < Enemy_controller.turn)
             {
-                if(Pencil_Down_cnt <= 10)
+                if (Pencil_Down_cnt <= 10)
                 {
                     playercontroller.Attack -= 5;
                     Pencil_Down_cnt++;
                 }
                 turn_compare = Enemy_controller.turn;
+            }
+            //戦闘開始時の効果
+            if (adapt_Pencil == true && first_turn == true)
+            {
+                playercontroller.Attack += 50;
+                adapt_Pencil = false;
             }
         }
         if (Mayonnaise_flag == true)
