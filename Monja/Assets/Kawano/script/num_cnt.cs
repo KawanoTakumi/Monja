@@ -15,7 +15,7 @@ public class num_cnt : MonoBehaviour
     public Text player_money;//所持金額
     public Text Heal_drink_num;//ヒールドリンクの所持数
     public Text HP_Text;//プレイヤー体力
-    public Text HP_MAX_Text;//プレイヤー最大体力
+    public Text MP_Text;//プレイヤーMP
     void Update()
     {
         //intをstringに変換
@@ -27,7 +27,7 @@ public class num_cnt : MonoBehaviour
         player_money.text = string.Format("{0}", PlayerController.Money);
         Heal_drink_num.text = string.Format("{0}", PlayerController.HP_Potion);
         HP_Text.text = string.Format("{0}",PlayerController.HP);
-        HP_MAX_Text.text = string.Format("{0}",PlayerController.HP_max);
+        MP_Text.text = string.Format("{0}",PlayerController.MP);
         Debug.Log(PlayerController.HP_max + "最大体力" + PlayerController.HP + "現在体力");
     }
 }

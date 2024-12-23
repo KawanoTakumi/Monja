@@ -87,7 +87,7 @@ public class Item_Library : MonoBehaviour
         }
         else if (GetFlag2 == true)
         {
-            textbox.text = "すでに持っています。";
+            textbox.text = "そのアイテムはすでに持っています。";
         }
         else if (money - ItemValue1 < 0)
         {
@@ -112,7 +112,7 @@ public class Item_Library : MonoBehaviour
         }
         else if (GetFlag3 == true)
         {
-            textbox.text = "すでに持っています。";
+            textbox.text = "そのアイテムはすでに持っています。";
         }
         else if (money - ItemValue1 < 0)
         {
