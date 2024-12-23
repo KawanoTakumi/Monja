@@ -1,12 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Button_Check : MonoBehaviour
 {
+    
     public static Button_Check instance1;
     public static Button_Check instance2;
     public static Button_Check instance3;
+    //ƒ{ƒ^ƒ“‰Ÿ‚µ‚½‚©”»’è
     public bool isTouched1;
     public bool isTouched2;
     public bool isTouched3;
