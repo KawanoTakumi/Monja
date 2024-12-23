@@ -1,9 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TestR : MonoBehaviour
+public class Item_interact_check : MonoBehaviour
 {
     public Button button;//ƒ{ƒ^ƒ“
     void Start()

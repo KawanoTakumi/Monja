@@ -47,7 +47,7 @@ public class Item_Power : MonoBehaviour
     bool adapt_Pencil = true;
     bool adapt_Mayonnaise = true;
     bool adapt_Pudding = true;
-    bool adapt_Sinigami_sickle = true;
+    bool adapt_Sinigami_scythe = true;
     bool adapt_Sinigami_robe = true;
     bool adapt_Medhusa_Scale = true;
     bool adapt_Medhusa_MagicBook = true;
@@ -130,7 +130,7 @@ public class Item_Power : MonoBehaviour
         Item_Manager.Item.TryGetValue("Pencil", out bool Pencil_flag);
         Item_Manager.Item.TryGetValue("Mayonnaise", out bool Mayonnaise_flag);
         Item_Manager.Item.TryGetValue("Watch", out bool Watch_flag);
-        Item_Manager.Item.TryGetValue("Sickle", out bool Sinigami_Sickle_flag);
+        Item_Manager.Item.TryGetValue("Scythe", out bool Sinigami_Scythe_flag);
         Item_Manager.Item.TryGetValue("Robe", out bool Sinigami_Robe_flag);
         Item_Manager.Item.TryGetValue("Scale", out bool Medhusa_Scale_flag);
         Item_Manager.Item.TryGetValue("MagicBook", out bool Medhusa_MagicBook_flag);
@@ -634,14 +634,14 @@ public class Item_Power : MonoBehaviour
                 }
             }
         }
-        if (Sinigami_Sickle_flag == true)
+        if (Sinigami_Scythe_flag == true)
         {
-            if(adapt_Sinigami_sickle == true && first_turn == true)
+            if(adapt_Sinigami_scythe == true && first_turn == true)
             {
                 playercontroller.Attack += 40;
                 PlayerController.max_luck -= 3;
                 Sinigami_Crit_Effect = true;//死神のクリティカルエフェクト発生
-                adapt_Sinigami_sickle = false;
+                adapt_Sinigami_scythe = false;
             }
         }
         if(Sinigami_Robe_flag == true)
