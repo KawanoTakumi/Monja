@@ -44,7 +44,6 @@ TagManager:
   - HandMill
   - Magnet
   - centaurus
-  - richie
   - minotaurus
   - cockatrice
   - knight
@@ -68,7 +67,8 @@ TagManager:
   - Mayonnaise
   - Watch
   - Speaker
-  - Scythe
+  - Sickle
+  - Lich
   layers:
   - Default
   - TransparentFX
