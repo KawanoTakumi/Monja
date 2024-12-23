@@ -2204,7 +2204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adb4b0b93018a3e4e96e6c822f2129d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: motimono
+  sceneName: Inventry
   shop: {fileID: 0}
 --- !u!114 &754146520
 MonoBehaviour:
@@ -3104,7 +3104,7 @@ GameObject:
   - component: {fileID: 922416185}
   - component: {fileID: 922416184}
   m_Layer: 5
-  m_Name: HP_MAX_Text
+  m_Name: MP_Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3461,7 +3461,7 @@ MonoBehaviour:
   player_money: {fileID: 1205328569}
   Heal_drink_num: {fileID: 2076699500}
   HP_Text: {fileID: 2142388756}
-  HP_MAX_Text: {fileID: 922416184}
+  MP_Text: {fileID: 922416184}
 --- !u!114 &1013919614
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -244,7 +244,7 @@ public class Item_text : MonoBehaviour
             itemname.text = "腕時計";
             guide_text.text = "時間を気軽に確認できる、社会人には必須のアイテム。\n\n主人公の体力が減少するほど物理攻撃力を増加させる";
         }
-        else if (button == CompareTag("Sickle"))
+        else if (button == CompareTag("Scythe"))
         {
             itemname.text = "死神の鎌";
             guide_text.text = "切れ味がいい鎌。魂まで刈ってしまう\n\n物理攻撃力を40増加させ、クリティカルがかなり発生しやすくなる";
