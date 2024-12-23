@@ -1,6 +1,5 @@
 using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
+
 
 public class Item_SE : MonoBehaviour
 {
@@ -8,11 +7,13 @@ public class Item_SE : MonoBehaviour
 
     private void Start()
     {
-        audioSource = GetComponent<AudioSource>();//オーディオソース取得
+        //オーディオソース取得
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void hit_se()
     {
-        GetComponent<AudioSource>().Play();  // 効果音を鳴らす
+        // 効果音を鳴らす
+        GetComponent<AudioSource>().Play();  
     }
 }

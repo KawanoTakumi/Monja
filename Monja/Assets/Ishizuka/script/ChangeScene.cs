@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -121,7 +120,19 @@ public class ChangeScene : MonoBehaviour
         Item_Manager.Item["Mike"] = false;
         Item_Manager.Item["Megaphone"] = false;
         Item_Manager.Item["HandMill"] = false;
-        Item_Manager.Item["Kama"] = false;
+        Item_Manager.Item["Poteto"] = false;
+        Item_Manager.Item["Scop"] = false;
+        Item_Manager.Item["hammer"] = false;
+        Item_Manager.Item["Speaker"] = false;
+        Item_Manager.Item["Sylinge"] = false;
+        Item_Manager.Item["Baseball_glove"] = false;
+        Item_Manager.Item["Boxing_glove"] = false;
+        Item_Manager.Item["Gas_burner"] = false;
+        Item_Manager.Item["Hamberger"] = false;
+        Item_Manager.Item["Pencil"] = false;
+        Item_Manager.Item["Mayonnaise"] = false;
+        Item_Manager.Item["Watch"] = false;
+        Item_Manager.Item["Scythe"] = false;
         Item_Manager.Item["Robe"] = false;
         Item_Manager.Item["Scale"] = false;
         Item_Manager.Item["MagicBook"] = false;
