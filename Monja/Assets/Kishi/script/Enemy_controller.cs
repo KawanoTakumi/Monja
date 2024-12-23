@@ -91,7 +91,7 @@ public class Enemy_controller : MonoBehaviour
         if (tag_get == true)
         {
             tag_get = false;
-            
+            //敵の種類判別　ステータス設定
             if (CompareTag("skelton") == true)
             {
                 Enemy_Skelton = true;
