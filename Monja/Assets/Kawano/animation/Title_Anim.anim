@@ -535,7 +535,7 @@ AnimationClip:
     intParameter: 1
     messageOptions: 0
   - time: 2.3833334
-    functionName: cave_del
+    functionName: Cave_del
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

@@ -279,7 +279,7 @@ public class Enemy_controller : MonoBehaviour
         GameObject.FindWithTag("knight");
         GameObject.FindWithTag("cockatrice");
         GameObject.FindWithTag("medhusa");
-        GameObject.FindWithTag("TheGrimReaper ");
+        GameObject.FindWithTag("TheGrimReaper");
         GameObject.FindWithTag("dragon");
 
     }
