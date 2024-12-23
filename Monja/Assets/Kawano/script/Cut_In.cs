@@ -7,7 +7,6 @@ public class Cut_In : MonoBehaviour
     public AudioSource Cut_In_SE;//カットイン用SE
     public AudioClip clip;//音楽データ
     public static bool first_flag = true;//初回フラグ
-
     public void Update()
     {
         //fairst_flagがfalseのとき、カットシーンを削除

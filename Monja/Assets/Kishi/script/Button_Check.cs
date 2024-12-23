@@ -27,12 +27,14 @@ public class Button_Check : MonoBehaviour
             instance3 = this;
         }
     }
-    void Start()
+    void Start()  
     {
         isTouched1 = false;
         isTouched2 = false;
         isTouched3 = false;
     }
+
+    //ボタンインタラクト判定
     public void button_check1()
     {
         isTouched1 = true;

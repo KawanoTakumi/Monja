@@ -5528,7 +5528,7 @@ MonoBehaviour:
   Enemy_deffence: 5
   Enemy_Magic: 0
   Log: {fileID: 1265022589}
-  Log_2: {fileID: 0}
+  Log_2: {fileID: 719100584}
   HP_Bar: {fileID: 1636723077}
   poison: 0
   OnFire: 0
