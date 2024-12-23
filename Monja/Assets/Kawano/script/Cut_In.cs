@@ -22,7 +22,8 @@ public class Cut_In : MonoBehaviour
             first_flag = false;
         }
     }
-    public void first_scene()
+    //最初のシーン以外ではカットシーンを削除
+    public void First_scene()
     {
         if(Enemy_controller.turn != 1)
         {

@@ -198,18 +198,9 @@ public class Enemy_controller : MonoBehaviour
                 {
                     turn += 1;
                 }
-                playerController.intaract_true();//ボタンインタラクトをtrue
-                Item_Power.first_turn = false;
-                //エフェクト用オブジェクトを削除
-                Destroy(playerController.obj_player);
-                Destroy(Status_Controller.eff_obj);
-                turn_manager.turn = true;
-                //ログを変更
-                Log.text = ("プレイヤーのターン");
-                Log_2.text = "";
+                turn_reset();
                 //時間の初期化
                 turn_time = 0;
-
                 if (turn >= 5)
                 {
                     money -= 5;//ターンが５よりも大きくなったら獲得金額を５ずつ減らす
@@ -274,16 +265,10 @@ public class Enemy_controller : MonoBehaviour
             turn_time++;
             if (turn_time > turn_manager.turn_time_max)
             {
-                Log.text = ("敵ターン終了");
                 turn += 1;
-                playerController.intaract_true();
-                Item_Power.first_turn = false;
-                turn_manager.turn = true;
-                playerController.Log_2.text = "";
-                Log.text = ("プレイヤーのターン");
+                turn_reset();
                 //時間の初期化
                 turn_time = 0;
-                
                 if (turn >= 5)
                 {
                     money -= 5;//ターンが５よりも大きくなったら獲得金額を５ずつ減らす
@@ -718,6 +703,19 @@ public class Enemy_controller : MonoBehaviour
         Boss_sinigami = false;
         Boss_Dragon = false;
     }
+    void turn_reset()
+    {
+        playerController.intaract_true();//ボタンインタラクトをtrue
+        Item_Power.first_turn = false;
+        //エフェクト用オブジェクトを削除
+        Destroy(playerController.obj_player);
+        Destroy(Status_Controller.eff_obj);
+        turn_manager.turn = true;
+        //ログを変更
+        Log.text = ("プレイヤーのターン");
+        Log_2.text = "";
+    }
+
     //アタックエフェクト関数
     public void Attack_Effect()
     {
