@@ -659,6 +659,7 @@ public class Enemy_controller : MonoBehaviour
         PlayerController.Status_reset();
         Item_Power.turn_compare = 0;
         Freeze_turn = false;
+        Item_Power.Pencil_Down_cnt = 0;
         Destroy(obj1);
         Destroy(obj2);
         Destroy(Status_Controller.eff_obj);

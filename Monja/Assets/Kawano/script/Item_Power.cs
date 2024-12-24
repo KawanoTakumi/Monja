@@ -60,7 +60,7 @@ public class Item_Power : MonoBehaviour
     int hammer_random = 0;
     int sylinge_random = 0;
     int gas_burner_random = 0;
-    int Pencil_Down_cnt = 0;
+    public static int Pencil_Down_cnt = 0;
 
     public static bool Boxing_flag = false;
     public static bool Sinigami_Crit_Effect = false;
@@ -588,6 +588,12 @@ public class Item_Power : MonoBehaviour
         }
         if (Pencil_flag == true)
         {
+            //戦闘開始時の効果
+            if (adapt_Pencil == true && first_turn == true)
+            {
+                playercontroller.Attack += 50;
+                adapt_Pencil = false;
+            }
             //ターン毎の効果
             if (turn_compare < Enemy_controller.turn)
             {
@@ -598,12 +604,7 @@ public class Item_Power : MonoBehaviour
                 }
                 turn_compare = Enemy_controller.turn;
             }
-            //戦闘開始時の効果
-            if (adapt_Pencil == true && first_turn == true)
-            {
-                playercontroller.Attack += 50;
-                adapt_Pencil = false;
-            }
+
         }
         if (Mayonnaise_flag == true)
         {
