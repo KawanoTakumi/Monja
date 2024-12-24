@@ -254,25 +254,25 @@ public class Item_text : MonoBehaviour
             itemname.text = "死神のローブ";
             guide_text.text = "死神が着ていたローブ。ひんやりと冷たい\n\n物理防御力を40増加させ、クリティカルが発生しやすくなる";
         }
-        else if (button == CompareTag("Scale"))
+        else if (button == CompareTag("Eye"))
         {
-            itemname.text = "メデューサの鱗";
-            guide_text.text = "メデューサの尻尾の部分の鱗。とても硬い\n\n魔法攻撃力を40増加させ、クリティカルが出やすくなる";
+            itemname.text = "メデューサの目";
+            guide_text.text = "メデューサの目。取り扱いには注意が必要\n\n魔法攻撃力を40増加させ、クリティカルが出やすくなる";
         }
         else if (button == CompareTag("MagicBook"))
         {
             itemname.text = "メデューサの魔導書";
             guide_text.text = "メデューサが使っていた魔導書。書かれている文字は解読できない\n\n魔法防御力を40増加させ、クリティカルが出やすくなる\n（アイテム画面でアイテムを押すと魔法攻撃が変化）";
         }
-        else if (button == CompareTag("Juwel"))
+        else if (button == CompareTag("Scale"))
         {
-            itemname.text = "ドラゴンの炎の結晶";
-            guide_text.text = "ドラゴンの体内で生成された結晶。ほんのりと暖かい\n\n最大体力を20増加させる";
+            itemname.text = "ドラゴンの鱗";
+            guide_text.text = "ドラゴンの体表を覆っている鱗。ほんのりと暖かい\n\nターン毎に全ステータスを10増加させる";
         }
         else if (button == CompareTag("Tooth"))
         {
             itemname.text = "ドラゴンの牙";
-            guide_text.text = "ドラゴンの鋭い牙。取り扱いには注意\n\n最大を20増加させる";
+            guide_text.text = "ドラゴンの鋭い牙。取り扱いには注意\n\n体力を半分に減らす代わりに物理攻撃力を100増加させる";
         }
     }
 

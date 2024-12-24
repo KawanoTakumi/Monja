@@ -207,7 +207,7 @@ public class Enemy_controller : MonoBehaviour
                 playerController.Attack -= PlayerController.HP_max - PlayerController.HP;
                 Item_Power.Watch_Add_reset = true;
             }
-            if(Freeze_turn == true || Stone_turn == true || Stun_turn == true)
+            if (Freeze_turn == true || Stone_turn == true || Stun_turn == true)
             {
                 Freeze_turn = false;
                 Stone_turn = false;

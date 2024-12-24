@@ -42,16 +42,14 @@ public class Item_Power : MonoBehaviour
     bool adapt_Baseball_glove = true;
     bool adapt_Boxing_glove = true;
     bool adapt_Juice = true;
-    bool adapt_Gas_burner = true;
     bool adapt_Hamberger = true;
     bool adapt_Pencil = true;
     bool adapt_Mayonnaise = true;
     bool adapt_Pudding = true;
     bool adapt_TheGrimReaper_scythe = true;
     bool adapt_TheGrimReaper_robe = true;
-    bool adapt_Medhusa_Scale = true;
+    bool adapt_Medhusa_Eye = true;
     bool adapt_Medhusa_MagicBook = true;
-    bool adapt_Dragon_Juwel = true;
     bool adapt_Dragon_Tooth = true;
     
     int dice_random = 0;
@@ -59,7 +57,7 @@ public class Item_Power : MonoBehaviour
     int scop_random = 0;
     int hammer_random = 0;
     int sylinge_random = 0;
-    int gas_burner_random = 0;
+    int gas_burner_turn_multh = 1;
     public static int Pencil_Down_cnt = 0;
 
     public static bool Boxing_flag = false;
@@ -67,6 +65,7 @@ public class Item_Power : MonoBehaviour
     public static bool Medhusa_Magic_flag = false;
     public static bool dice_crit = false;
     public static bool Watch_Add_reset = true;
+    public static bool gas_burner_turn = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -132,9 +131,9 @@ public class Item_Power : MonoBehaviour
         Item_Manager.Item.TryGetValue("Watch", out bool Watch_flag);
         Item_Manager.Item.TryGetValue("Scythe", out bool TheGrimReaper_Scythe_flag);
         Item_Manager.Item.TryGetValue("Robe", out bool Sinigami_Robe_flag);
-        Item_Manager.Item.TryGetValue("Scale", out bool Medhusa_Scale_flag);
+        Item_Manager.Item.TryGetValue("Eye", out bool Medhusa_Eye_flag);
         Item_Manager.Item.TryGetValue("MagicBook", out bool Medhusa_MagicBook_flag);
-        Item_Manager.Item.TryGetValue("Juwel", out bool Dragon_Juwel_flag);
+        Item_Manager.Item.TryGetValue("Scale", out bool Dragon_Scale_flag);
 
         Item_Manager.Item.TryGetValue("Tooth", out bool Dragon_Tooth_flag);
 
@@ -561,16 +560,17 @@ public class Item_Power : MonoBehaviour
         }
         if(Gas_burner_flag == true)
         {
-            if(adapt_Gas_burner == true && first_turn == true)
+            
+            if(Enemy_controller.turn == 2 * gas_burner_turn_multh)
             {
-                gas_burner_random = Random.Range(1, 5);
-                if(gas_burner_random == 4)
-                {
-                    Enemy_controller.HP -= 40;
-                    playercontroller.Log_2.text = "敵を炎上させた";
-                    status_.Status_Effect(false,3);
-                    adapt_Gas_burner = false;
-                }
+                playercontroller.Attack += 25;
+                gas_burner_turn_multh++;
+                
+            }
+            else if(Enemy_controller.turn != 2 * gas_burner_turn_multh && gas_burner_turn == false)
+            {
+                playercontroller.Attack -= 25;
+                gas_burner_turn = true;
             }
         }
         if(Hamberger_flag == true)
@@ -640,8 +640,8 @@ public class Item_Power : MonoBehaviour
         {
             if(adapt_TheGrimReaper_scythe == true && first_turn == true)
             {
-                playercontroller.Attack += 40;
-                PlayerController.max_luck -= 3;
+                playercontroller.Attack      += 40;
+                PlayerController.max_luck    -= 3;
                 Sinigami_Crit_Effect = true;//死神のクリティカルエフェクト発生
                 adapt_TheGrimReaper_scythe = false;
             }
@@ -655,40 +655,42 @@ public class Item_Power : MonoBehaviour
                 adapt_TheGrimReaper_robe = false;
             }
         }
-        if(Medhusa_Scale_flag == true)
+        if(Medhusa_Eye_flag == true)
         {
-            if(adapt_Medhusa_Scale == true && first_turn == true)
+            if(adapt_Medhusa_Eye == true && first_turn == true)
             {
                 playercontroller.Magic_Diffence += 40;
-                PlayerController.max_luck -= 3;
-                adapt_Medhusa_Scale = false;
+                PlayerController.max_luck       -= 3;
+                adapt_Medhusa_Eye = false;
             }
         }
         if(Medhusa_MagicBook_flag == true)
         {
             if(adapt_Medhusa_MagicBook == true && first_turn == true)
             {
-                playercontroller.Magic += 40;
+                playercontroller.Magic    += 40;
                 PlayerController.max_luck -= 3;
                 Medhusa_Magic_flag = true;
                 adapt_Medhusa_MagicBook = false;
             }
         }
-        if(Dragon_Juwel_flag == true)
+        if(Dragon_Scale_flag == true)
         {
-            if(adapt_Dragon_Juwel == true && first_turn == true)
+            if(turn_compare < Enemy_controller.turn)
             {
-                PlayerController.HP_max += 20;
-                PlayerController.HP += 20;
-                adapt_Dragon_Juwel = false;
+                playercontroller.Attack         += 10;
+                playercontroller.Diffence       += 10;
+                playercontroller.Magic          += 10;
+                playercontroller.Magic_Diffence += 10;
+                turn_compare = Enemy_controller.turn;
             }
         }
         if(Dragon_Tooth_flag == true)
         {
-            if(adapt_Dragon_Tooth == true && first_turn == true)
+            if(adapt_Dragon_Tooth = true && first_turn == true)
             {
-                PlayerController.MP_max += 20;
-                PlayerController.MP += 20;
+                playercontroller.Attack    += 100;
+                PlayerController.HP_max     = 50;
                 adapt_Dragon_Tooth = false;
             }
         }

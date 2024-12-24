@@ -51,11 +51,9 @@ TagManager:
   - MagicBook
   - Juwel
   - Tooth
-  - Scale
   - Poteto
   - Scop
   - hammer
-  - Bugle
   - Sylinge
   - Baseball_glove
   - Boxing_glove
@@ -69,6 +67,9 @@ TagManager:
   - Sickle
   - Lich
   - TheGrimReaper
+  - Scythe
+  - Eye
+  - Scale
   layers:
   - Default
   - TransparentFX

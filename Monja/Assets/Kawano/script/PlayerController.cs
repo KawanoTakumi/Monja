@@ -488,6 +488,14 @@ public class PlayerController : MonoBehaviour
         Money = 0;
         SceneManager.LoadScene("Lose");
     }
+    public void Burner_sub_flag()
+    {
+        //turnが２以上の時gas_burner_turnをfalseにする
+        if(Item_Power.turn_compare/2 == 0)
+        {
+            Item_Power.gas_burner_turn = false;
+        }
+    }
     public void SE_Play_Attack()
     {
         audioSource_Attack.PlayOneShot(clip_attack);

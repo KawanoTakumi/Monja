@@ -2870,6 +2870,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 49
       objectReference: {fileID: 0}
+    - target: {fileID: 2270612901574708214, guid: 8372d89fa1e027f4088d14f51eb0ae8c, type: 3}
+      propertyPath: m_TagString
+      value: Scale
+      objectReference: {fileID: 0}
     - target: {fileID: 5608131106934393200, guid: 8372d89fa1e027f4088d14f51eb0ae8c, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
