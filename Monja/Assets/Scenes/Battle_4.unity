@@ -5861,7 +5861,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb3a806902d7b3441bc0d68101c047e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attack: 40
+  attack: 35
   deffence: 20
   magic: 0
   magic_Diffence: 10
@@ -5879,7 +5879,7 @@ MonoBehaviour:
   Enemy_deffence: 5
   Enemy_Magic: 0
   Log: {fileID: 191331722}
-  Log_2: {fileID: 0}
+  Log_2: {fileID: 191331721}
   HP_Bar: {fileID: 934638373}
   poison: 0
   OnFire: 0

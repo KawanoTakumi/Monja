@@ -5929,11 +5929,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb3a806902d7b3441bc0d68101c047e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attack: 55
+  attack: 50
   deffence: 15
   magic: 45
   magic_Diffence: 15
-  money: 75
+  money: 100
   Effect:
   - {fileID: 8299584437378114090, guid: 8e11c902fcd31ff429c6fd4f84115c7f, type: 3}
   - {fileID: 3841687375311422541, guid: a354262969f9b404abaee5f657949991, type: 3}

@@ -314,11 +314,7 @@ public class PlayerController : MonoBehaviour
             Item_button.interactable = false;
             if (HP != HP_max && HP_Potion > 0)
             {
-                //遅延
-                //Invoke("SE_Play_Heal", 1.0f);
-
                 animator.SetBool("heal", true);
-                //Debug.Log("回復");
                 Create_Effect_Player(1, -5.1f, 0.1f);
 
                 HP_Potion -= 1;

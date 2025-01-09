@@ -128,22 +128,22 @@ public class Enemy_controller : MonoBehaviour
             else if (CompareTag("cockatrice") == true)
             {
                 Enemy_Cockatrice = true;
-                HP = 570;
-                HP_MAX = 570;
+                HP = 530;
+                HP_MAX = 530;
                 Enemy_luck_Max = 16;
             }
             else if (CompareTag("knight") == true)
             {
                 Enemy_Knight = true;
-                HP = 680;
-                HP_MAX = 680;
+                HP = 600;
+                HP_MAX = 600;
                 Enemy_luck_Max = 9;
             }
             else if (CompareTag("dragon") == true)
             {
                 Boss_Dragon = true;
-                HP = 1000;
-                HP_MAX = 1000;
+                HP = 860;
+                HP_MAX = 860;
                 Enemy_luck_Max = 11;
             }
         }
