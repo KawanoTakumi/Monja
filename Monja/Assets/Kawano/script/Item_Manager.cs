@@ -54,10 +54,10 @@ public class Item_Manager : MonoBehaviour
             Item.Add("Speaker", false);//35
             Item.Add("Sylinge", false);//36
             Item.Add("Baseball_glove", false);//37
-            Item.Add("Boxing_glove", true);//38
+            Item.Add("Boxing_glove", true);//38   //チェック中
             Item.Add("Juice",false);//39
 
-            Item.Add("Gas_burner", false);//40
+            Item.Add("Gas_burner", true);//40    //チェック中
             Item.Add("Hamberger", false);//41
             Item.Add("Pencil", false);//42
             Item.Add("Mayonnaise", false);//43

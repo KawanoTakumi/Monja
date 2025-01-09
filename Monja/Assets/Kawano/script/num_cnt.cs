@@ -28,6 +28,6 @@ public class num_cnt : MonoBehaviour
         Heal_drink_num.text = string.Format("{0}", PlayerController.HP_Potion);
         HP_Text.text = string.Format("{0}",PlayerController.HP);
         MP_Text.text = string.Format("{0}",PlayerController.MP);
-        Debug.Log(PlayerController.HP_max + "Å‘å‘Ì—Í" + PlayerController.HP + "Œ»İ‘Ì—Í");
+        //Debug.Log(PlayerController.HP_max + "Å‘å‘Ì—Í" + PlayerController.HP + "Œ»İ‘Ì—Í");
     }
 }

@@ -79,6 +79,8 @@ public class Item_Power : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
+       
+
         //アイテムのフラグ取得
         Item_Manager.Item.TryGetValue("healdrink", out bool healdrink_flag);
         Item_Manager.Item.TryGetValue("bowlingball", out bool bowlingball_flag);
@@ -561,14 +563,17 @@ public class Item_Power : MonoBehaviour
         if(Gas_burner_flag == true)
         {
             
-            if(Enemy_controller.turn == 2 * gas_burner_turn_multh)
+            
+            if(Enemy_controller.turn == (2 * gas_burner_turn_multh))
             {
                 playercontroller.Attack += 25;
                 gas_burner_turn_multh++;
-                
+
             }
-            else if(Enemy_controller.turn != 2 * gas_burner_turn_multh && gas_burner_turn == false)
+            else if (gas_burner_turn == false)
             {
+                Debug.Log("マイナス");
+                Debug.Log(Enemy_controller.turn);
                 playercontroller.Attack -= 25;
                 gas_burner_turn = true;
             }

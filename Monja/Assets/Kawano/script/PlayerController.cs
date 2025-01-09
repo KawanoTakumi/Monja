@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     public static int magic_number = 0;//魔法番号(撃てる魔法の種類)
     int poison_cnt;//毒のターン数
     int OnFire_cnt;//延焼のターン数
+    
     bool cons_flag = false;//シュウチュウフラグ
     public Button Item_button;//アイテムボタン
     public Button Setting_Button;//設定ボタン
@@ -225,7 +226,7 @@ public class PlayerController : MonoBehaviour
             }
             if (Item_Power.Boxing_flag == true)
             {
-                Attack+= 3;
+                Attack += 3;
             }
 
             damage_Calculate.Enemey_Damage_Calculate(Attack_damage, enemy_Controller.Enemy_deffence);
@@ -314,11 +315,7 @@ public class PlayerController : MonoBehaviour
             Item_button.interactable = false;
             if (HP != HP_max && HP_Potion > 0)
             {
-                //遅延
-                //Invoke("SE_Play_Heal", 1.0f);
-
                 animator.SetBool("heal", true);
-                //Debug.Log("回復");
                 Create_Effect_Player(1, -5.1f, 0.1f);
 
                 HP_Potion -= 1;
@@ -505,7 +502,7 @@ public class PlayerController : MonoBehaviour
     public void Burner_sub_flag()
     {
         //turnが２以上の時gas_burner_turnをfalseにする
-        if(Item_Power.turn_compare/2 == 0)
+        if(Enemy_controller.turn/2 != 0)
         {
             Item_Power.gas_burner_turn = false;
         }

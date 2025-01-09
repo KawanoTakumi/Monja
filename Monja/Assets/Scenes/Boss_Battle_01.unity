@@ -6610,9 +6610,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 40
-  deffence: 10
+  deffence: 15
   magic: 0
-  magic_Diffence: 15
+  magic_Diffence: 20
   money: 75
   Effect:
   - {fileID: 8299584437378114090, guid: 8e11c902fcd31ff429c6fd4f84115c7f, type: 3}
@@ -6627,7 +6627,7 @@ MonoBehaviour:
   Enemy_deffence: 0
   Enemy_Magic: 0
   Log: {fileID: 683160955}
-  Log_2: {fileID: 0}
+  Log_2: {fileID: 683160954}
   HP_Bar: {fileID: 934638373}
   poison: 0
   OnFire: 0
