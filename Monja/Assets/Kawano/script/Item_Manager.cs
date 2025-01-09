@@ -54,7 +54,7 @@ public class Item_Manager : MonoBehaviour
             Item.Add("Speaker", false);//35
             Item.Add("Sylinge", false);//36
             Item.Add("Baseball_glove", false);//37
-            Item.Add("Boxing_glove", false);//38
+            Item.Add("Boxing_glove", true);//38
             Item.Add("Juice",false);//39
 
             Item.Add("Gas_burner", false);//40
