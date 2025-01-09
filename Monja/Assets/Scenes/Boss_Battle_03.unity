@@ -6495,7 +6495,7 @@ MonoBehaviour:
   deffence: 30
   magic: 60
   magic_Diffence: 25
-  money: 10
+  money: 0
   Effect:
   - {fileID: 8299584437378114090, guid: 8e11c902fcd31ff429c6fd4f84115c7f, type: 3}
   - {fileID: 718690403272715185, guid: a8dc17518bca8c040b4b5f78d341013c, type: 3}
