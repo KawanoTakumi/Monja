@@ -66,7 +66,7 @@ public class Item_Manager : MonoBehaviour
             Item.Add("Robe", false);//46
             Item.Add("Scale", false);//47
             Item.Add("MagicBook",false);//48
-            Item.Add("Juwel", false);//49
+            Item.Add("Eye", false);//49
 
             Item.Add("Tooth", false);//50
         }
