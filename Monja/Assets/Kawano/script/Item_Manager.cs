@@ -54,19 +54,19 @@ public class Item_Manager : MonoBehaviour
             Item.Add("Speaker", false);//35
             Item.Add("Sylinge", false);//36
             Item.Add("Baseball_glove", false);//37
-            Item.Add("Boxing_glove", false);//38   
+            Item.Add("Boxing_glove", true);//38   //チェック中
             Item.Add("Juice",false);//39
 
-            Item.Add("Gas_burner", false);//40    
+            Item.Add("Gas_burner", true);//40    //チェック中
             Item.Add("Hamberger", false);//41
             Item.Add("Pencil", false);//42
             Item.Add("Mayonnaise", false);//43
             Item.Add("Watch", false);//44
             Item.Add("Scythe", false);//45
             Item.Add("Robe", false);//46
-            Item.Add("Scale", false);//47
+            Item.Add("Eye", false);//47
             Item.Add("MagicBook",false);//48
-            Item.Add("Eye", false);//49
+            Item.Add("Scale", false);//49
 
             Item.Add("Tooth", false);//50
         }

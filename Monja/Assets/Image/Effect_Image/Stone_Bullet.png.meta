@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d1a1a7e2a7e911d4299d79c78c7fa859
+guid: b8819d0d99bc61f4dbdb3540e6fcf00b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,13 +105,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ice_bullet_0
+      name: Stone_Bullet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 64
-        height: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -119,20 +119,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e29a1fedfba211a4b960a83ee77627fa
-      internalID: 1278069512
+      spriteID: f1b13879b4ea3fb4081bf1406cb7c9b6
+      internalID: -874426530
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ice_bullet_1
+      name: Stone_Bullet_1
       rect:
         serializedVersion: 2
-        x: 64
+        x: 32
         y: 0
-        width: 64
-        height: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,8 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a6e176900aa63124fb549f9923878280
-      internalID: -623359597
+      spriteID: ef92f382a7fa80a41acb76c5f9d3f514
+      internalID: -910091018
       vertices: []
       indices: 
       edges: []
@@ -157,8 +157,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      ice_bullet_0: 1278069512
-      ice_bullet_1: -623359597
+      Stone_Bullet_0: -874426530
+      Stone_Bullet_1: -910091018
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
