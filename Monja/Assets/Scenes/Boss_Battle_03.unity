@@ -6505,6 +6505,7 @@ MonoBehaviour:
   - {fileID: 718690403272715185, guid: a8dc17518bca8c040b4b5f78d341013c, type: 3}
   - {fileID: 8770600068115727514, guid: 976d6d9efbaeded44a24ae3e576007fb, type: 3}
   - {fileID: 65997235662778169, guid: 760badf891656b54cb4efffd25f19c1c, type: 3}
+  - {fileID: 869476236431959033, guid: 30aa625abf4206e408313966c30e045d, type: 3}
   Monster: {fileID: 2097196019}
   obj1: {fileID: 0}
   obj2: {fileID: 0}

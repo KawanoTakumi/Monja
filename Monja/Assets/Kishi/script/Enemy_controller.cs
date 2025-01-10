@@ -246,6 +246,7 @@ public class Enemy_controller : MonoBehaviour
             turn_time++;
             if (turn_time > turn_manager.turn_time_max)
             {
+                Item_Power.turn_bool = true;
                 Log.text = ("“Gƒ^[ƒ“I—¹");
                 turn += 1;
                 playerController.intaract_true();
@@ -589,17 +590,15 @@ public class Enemy_controller : MonoBehaviour
         Enemy_luck = Random.Range(1, 6);
         if (Enemy_luck <= 4)
         {
-            animator.SetBool("Attack", true);
-
             Log.text = ("ƒhƒ‰ƒSƒ“‚ÌUŒ‚");
-            Create_Effect_Enemy(3, -0.6f, 0.3f);
+            Create_Effect_Enemy(3, -3.6f, 0.3f);
             Enemy_attack = attack;
         }
         else if (Enemy_luck == 5)
         {
             Enemy_attack = attack + 20;
             Log.text = ("—´‚Ì‚—g");
-            Create_Effect_Enemy(3, -0.6f, 0.3f);
+            Create_Effect_Enemy(3, -3.6f, 0.3f);
         }
     }
     //ƒhƒ‰ƒSƒ“‚Ì–‚–@UŒ‚
