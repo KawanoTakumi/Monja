@@ -107,7 +107,7 @@ public class Item_text : MonoBehaviour
         else if (button == CompareTag("Scissors"))
         {
             itemname.text = "ハサミ";
-            guide_text.text = "紙などを切るためお道具。どんなカットがお好み？\n\n物理攻撃力を３０増加させるがターン毎に物理防御力を２減少させる";
+            guide_text.text = "紙や髪などを切るためのお道具。どんなカットがお好み？\n\n物理攻撃力を３０増加させるがターン毎に物理防御力を２減少させる";
         }
         else if (button == CompareTag("ice"))
         {
@@ -187,7 +187,7 @@ public class Item_text : MonoBehaviour
         else if (button == CompareTag("Scop"))
         {
             itemname.text = "ショベル";
-            guide_text.text = "土を掘ったり、鳴らしたりできる。\n\n戦闘開始時４分の１の確率でお金を３０入手する";
+            guide_text.text = "土を掘ったり、均したりできる。\n\n戦闘開始時４分の１の確率でお金を３０入手する";
         }
         else if (button == CompareTag("hammer"))
         {
@@ -217,7 +217,7 @@ public class Item_text : MonoBehaviour
         else if (button == CompareTag("Juice"))
         {
             itemname.text = "ジュース";
-            guide_text.text = "果汁などが入った飲料水。何味がはわからない。\n\n戦闘開始時体力を20回復させる";
+            guide_text.text = "果汁などが入った飲料水。何味かはわからない。\n\n戦闘開始時体力を20回復させる";
         }
         else if (button == CompareTag("Gas_burner"))
         {
@@ -272,7 +272,7 @@ public class Item_text : MonoBehaviour
         else if (button == CompareTag("Tooth"))
         {
             itemname.text = "ドラゴンの牙";
-            guide_text.text = "ドラゴンの鋭い牙。取り扱いには注意。\n\n体力を半分に減らす代わりに物理攻撃力を100増加させる";
+            guide_text.text = "ドラゴンの鋭い牙。手のひら位のサイズ。\n\n体力を半分に減らす代わりに物理攻撃力を100増加させる";
         }
     }
 

@@ -498,7 +498,7 @@ public class Item_Power : MonoBehaviour
             if(turn_compare < Enemy_controller.turn)
             {
                 hammer_random = Random.Range(1, 11);
-                if (hammer_random <= 10)
+                if (hammer_random == 10)
                 {
                     Enemy_controller.Stun_turn = true;
                     status_.Status_Effect(false, 4);//気絶エフェクト
@@ -573,8 +573,7 @@ public class Item_Power : MonoBehaviour
             }
             else if (Enemy_controller.turn != 1&&Enemy_controller.turn % 2 != 0 && turn_bool == true)
             {
-                Debug.Log("マイナス");
-                Debug.Log(Enemy_controller.turn);
+               
                 playercontroller.Attack -= 25;
                 turn_bool = false;
 

@@ -205,7 +205,7 @@ public class PlayerController : MonoBehaviour
     //ザンゲキ
     public void attack()
     {
-        Debug.Log(Enemy_controller.turn);
+      
        
         turn_Manager = GetComponent<turn_manager>();
         animator = GetComponent<Animator>();
@@ -420,7 +420,7 @@ public class PlayerController : MonoBehaviour
         Item_Manager.Item["Robe"]= false;
         Item_Manager.Item["Scale"]= false;
         Item_Manager.Item["MagicBook"]= false;
-        Item_Manager.Item["Juwel"]= false;
+        Item_Manager.Item["Eye"]= false;
         Item_Manager.Item["Tooth"]= false;
 
     }
