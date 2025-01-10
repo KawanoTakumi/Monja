@@ -591,14 +591,16 @@ public class Enemy_controller : MonoBehaviour
         if (Enemy_luck <= 4)
         {
             animator.SetBool("Attack", true);
+
             Log.text = ("ƒhƒ‰ƒSƒ“‚ÌUŒ‚");
+            Create_Effect_Enemy(3, -0.6f, 0.3f);
             Enemy_attack = attack;
         }
         else if (Enemy_luck == 5)
         {
             Enemy_attack = attack + 20;
             Log.text = ("—´‚Ì‚—g");
-            Create_Effect_Enemy(1, 2.5f, 0.3f);
+            Create_Effect_Enemy(3, -0.6f, 0.3f);
         }
     }
     //ƒhƒ‰ƒSƒ“‚Ì–‚–@UŒ‚
@@ -611,6 +613,7 @@ public class Enemy_controller : MonoBehaviour
         }
         else if (magic_cnt >= 2)
         {
+            Create_Effect_Enemy(1, 2.5f, 0.3f);
             OnFire = true;
             Enemy_Magic = magic + Enemy_attack;
         }

@@ -126,6 +126,7 @@ public class ChangeScene : MonoBehaviour
         Item_Manager.Item["Speaker"] = false;
         Item_Manager.Item["Sylinge"] = false;
         Item_Manager.Item["Baseball_glove"] = false;
+        Item_Manager.Item["Juice"] = false;
         Item_Manager.Item["Boxing_glove"] = false;
         Item_Manager.Item["Gas_burner"] = false;
         Item_Manager.Item["Hamberger"] = false;
@@ -169,6 +170,7 @@ public class ChangeScene : MonoBehaviour
         //Šeí”’l‚ğ‰Šú‰»
         Item_Power.turn_compare = 0;
         Item_Power.first_turn = true;
+        Item_Power.Boxing_flag = false;
         Enemy_controller.turn = 0;
         Enemy_controller.HP = 150;
         Enemy_controller.tag_get = true;
