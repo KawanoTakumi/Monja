@@ -205,7 +205,7 @@ public class PlayerController : MonoBehaviour
     //ザンゲキ
     public void attack()
     {
-        Debug.Log(Enemy_controller.turn);
+      
        
         turn_Manager = GetComponent<turn_manager>();
         animator = GetComponent<Animator>();

@@ -22,7 +22,7 @@ public class Status_Controller : MonoBehaviour
             case 1:Create_Effect_Status(1, 0.0f, 0.0f);break;//石化
             case 2:Create_Effect_Status(2, 0.0f, 0.0f);break;//毒
             case 3:Create_Effect_Status(3, 0.0f, 0.0f);break;//延焼
-            case 4:Create_Effect_Status(4, 0.0f, 4.0f);break;//気絶
+            case 4:Create_Effect_Status(4, 0.0f, 4.5f);break;//気絶
         }
     }
     //エフェクト作成関数（状態異常番号、位置X、位置Y）
