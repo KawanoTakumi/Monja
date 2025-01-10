@@ -42,6 +42,7 @@ public class PlayerController : MonoBehaviour
     GameObject Enemey;
     public ChangeScene change;//チェンジシーン
     int turn_time = 0;//ターン経過時間
+   
     bool button_check = false;
     //ボタン関係変数
     public Button Attack_;
@@ -109,6 +110,7 @@ public class PlayerController : MonoBehaviour
             turn_manager.turn = false;
         }
 
+
         //毒ダメージ
         if (enemy_Controller.poison == true)
         {
@@ -129,8 +131,10 @@ public class PlayerController : MonoBehaviour
             ChangeScene.scene_cnt = 1;//最初のシーンがcase :1
         }
 
+       
+       
         //ステータス9999上限
-        if(Attack >= 9999)
+        if (Attack >= 9999)
         {
             Attack = 9999;
         }
@@ -201,6 +205,8 @@ public class PlayerController : MonoBehaviour
     //ザンゲキ
     public void attack()
     {
+        Debug.Log(Enemy_controller.turn);
+       
         turn_Manager = GetComponent<turn_manager>();
         animator = GetComponent<Animator>();
         intaract_false();
@@ -485,14 +491,7 @@ public class PlayerController : MonoBehaviour
         Money = 0;
         SceneManager.LoadScene("Lose");
     }
-    public void Burner_sub_flag()
-    {
-        //turnが２以上の時gas_burner_turnをfalseにする
-        if(Enemy_controller.turn/2 != 0)
-        {
-            Item_Power.gas_burner_turn = false;
-        }
-    }
+   
     public void SE_Play_Attack()
     {
         audioSource_Attack.PlayOneShot(clip_attack);

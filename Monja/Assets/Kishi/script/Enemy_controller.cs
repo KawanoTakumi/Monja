@@ -246,6 +246,7 @@ public class Enemy_controller : MonoBehaviour
             turn_time++;
             if (turn_time > turn_manager.turn_time_max)
             {
+                Item_Power.turn_bool = true;
                 Log.text = ("“Gƒ^[ƒ“I—¹");
                 turn += 1;
                 playerController.intaract_true();
