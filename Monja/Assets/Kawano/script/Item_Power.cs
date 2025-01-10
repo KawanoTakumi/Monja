@@ -57,7 +57,7 @@ public class Item_Power : MonoBehaviour
     int scop_random = 0;
     int hammer_random = 0;
     int sylinge_random = 0;
-    int gas_burner_turn_multh = 1;
+    //int gas_burner_turn_multh = 1;
     public static int Pencil_Down_cnt = 0;
 
     public static bool Boxing_flag = false;
@@ -65,7 +65,7 @@ public class Item_Power : MonoBehaviour
     public static bool Medhusa_Magic_flag = false;
     public static bool dice_crit = false;
     public static bool Watch_Add_reset = true;
-    public static bool gas_burner_turn = true;
+    public static bool turn_bool = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -562,20 +562,22 @@ public class Item_Power : MonoBehaviour
         }
         if(Gas_burner_flag == true)
         {
-            
-            
-            if(Enemy_controller.turn == (2 * gas_burner_turn_multh))
+
+
+            if (Enemy_controller.turn % 2 == 0 && turn_bool == true)
             {
                 playercontroller.Attack += 25;
-                gas_burner_turn_multh++;
+                turn_bool = false;
+
 
             }
-            else if (gas_burner_turn == false)
+            else if (Enemy_controller.turn != 1&&Enemy_controller.turn % 2 != 0 && turn_bool == true)
             {
                 Debug.Log("マイナス");
                 Debug.Log(Enemy_controller.turn);
                 playercontroller.Attack -= 25;
-                gas_burner_turn = true;
+                turn_bool = false;
+
             }
         }
         if(Hamberger_flag == true)
