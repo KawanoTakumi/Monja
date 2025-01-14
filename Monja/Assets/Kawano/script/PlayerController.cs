@@ -205,8 +205,6 @@ public class PlayerController : MonoBehaviour
     //ザンゲキ
     public void attack()
     {
-      
-       
         turn_Manager = GetComponent<turn_manager>();
         animator = GetComponent<Animator>();
         intaract_false();
@@ -469,6 +467,15 @@ public class PlayerController : MonoBehaviour
                         Create_Effect_Player(4, 5.0f, 0.0f);
                     }
                     break;
+                case 3:Destroy(obj_player);break;
+            }
+            
+        }
+        else 
+        {
+            switch (num)
+            {
+                case 2:Create_Effect_Player(7,5.0f,0.0f);break;
                 case 3:Destroy(obj_player);break;
             }
         }
