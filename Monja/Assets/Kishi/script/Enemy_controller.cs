@@ -192,7 +192,7 @@ public class Enemy_controller : MonoBehaviour
         {
             Dragon();
         }
-
+        //ターンがtrueの時エフェクトオブジェクトを削除
         if (turn_manager.turn == true)
         {
             Destroy(obj1);
@@ -202,7 +202,8 @@ public class Enemy_controller : MonoBehaviour
             //EnemyAttackを初期化
             Enemy_attack = 0;
             Enemy_Magic = 0;
-            if(Item_Power.Watch_Add_reset == false)//アイテム：Watchの増加分ステータスリセット
+            Destroy(playerController.obj_player);
+            if (Item_Power.Watch_Add_reset == false)//アイテム：Watchの増加分ステータスリセット
             {
                 playerController.Attack -= PlayerController.HP_max - PlayerController.HP;
                 Item_Power.Watch_Add_reset = true;
@@ -219,7 +220,7 @@ public class Enemy_controller : MonoBehaviour
                 playerController.intaract_true();
                 Item_Power.first_turn = false;
                 Destroy(playerController.obj_player);
-                Destroy(Status_Controller.eff_obj);
+                status_.Delete_Effect();
                 turn_manager.turn = true;
                 Log.text = ("プレイヤーのターン");
                 Log_2.text = "";
@@ -248,6 +249,7 @@ public class Enemy_controller : MonoBehaviour
             {
                 Item_Power.turn_bool = true;
                 Log.text = ("敵ターン終了");
+                status_.Delete_Effect();
                 turn += 1;
                 playerController.intaract_true();
                 Item_Power.first_turn = false;
@@ -256,10 +258,10 @@ public class Enemy_controller : MonoBehaviour
                 Log.text = ("プレイヤーのターン");
                 //時間の初期化
                 turn_time = 0;
-                
+                //ターンが５よりも大きくなったら獲得金額を５ずつ減らす
                 if (turn >= 5)
                 {
-                    money -= 5;//ターンが５よりも大きくなったら獲得金額を５ずつ減らす
+                    money -= 5;
                     //moneyが0以下になったら、moneyを0にする
                     if (money <= 0)
                     {
@@ -591,14 +593,14 @@ public class Enemy_controller : MonoBehaviour
         if (Enemy_luck <= 4)
         {
             Log.text = ("ドラゴンの攻撃");
-            Create_Effect_Enemy(3, -3.6f, 0.3f);
+            Create_Effect_Enemy(3, -5.4f, 0.3f);
             Enemy_attack = attack;
         }
         else if (Enemy_luck == 5)
         {
             Enemy_attack = attack + 20;
             Log.text = ("龍の高揚");
-            Create_Effect_Enemy(3, -3.6f, 0.3f);
+            Create_Effect_Enemy(3, -5.4f, 0.3f);
         }
     }
     //ドラゴンの魔法攻撃
