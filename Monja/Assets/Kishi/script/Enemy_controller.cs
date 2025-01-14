@@ -253,7 +253,7 @@ public class Enemy_controller : MonoBehaviour
                 turn += 1;
                 playerController.intaract_true();
                 Item_Power.first_turn = false;
-                Enemy_deffence =Enemy_deffence;
+                Enemy_deffence -=Enemy_deffence;
                 turn_manager.turn = true;
                 playerController.Log_2.text = "";
                 Log.text = ("プレイヤーのターン");

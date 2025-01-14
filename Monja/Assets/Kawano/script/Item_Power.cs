@@ -139,9 +139,9 @@ public class Item_Power : MonoBehaviour
 
         Item_Manager.Item.TryGetValue("Tooth", out bool Dragon_Tooth_flag);
 
-        //----------------------
-        //   アイテム効果
-        //----------------------
+        //-------------------------------
+        //   アイテム効果(初回ターンのみ)
+        //-------------------------------
 
         if (healdrink_flag == true)
         {
@@ -174,40 +174,6 @@ public class Item_Power : MonoBehaviour
                 playercontroller.Attack -= 20;//攻撃力20減少
                 playercontroller.Diffence += 20;//防御力20上昇
                 adapt_CDplayer = false;
-            }
-        }
-        if(radio_flag == true)
-        {
-            if(turn_compare < Enemy_controller.turn)
-            {
-                if(PlayerController.HP > 6)
-                {
-                    playercontroller.Diffence += 10;//毎ターン防御力10上昇
-                    PlayerController.HP -= 5;//体力を5減らす
-                    log_text.text = "ラジオの効果で-5HP";
-                }
-                else
-                {
-                    log_text.text = "ラジオの効果は発動しなかった";
-                }
-                turn_compare = Enemy_controller.turn;
-            }
-        }
-        if(hourglass_flag == true)
-        {
-            if(turn_compare < Enemy_controller.turn)
-            {
-                if(PlayerController.HP > 6)
-                {
-                    playercontroller.Attack += 10;//毎ターン攻撃力10上昇
-                    PlayerController.HP -= 5;//体力を5減らす
-                    log_text.text = "砂時計の効果で-5HP";
-                }
-                else
-                {
-                    log_text.text = "効果は発動しなかった";
-                }
-                turn_compare = Enemy_controller.turn;//次のターンまで発動しないようにする
             }
         }
         if(kesigomu_flag == true)
@@ -261,23 +227,6 @@ public class Item_Power : MonoBehaviour
                 adapt_baseball_ball = false;
             }
         }
-        if(dice_flag == true)
-        {
-            if(turn_compare < Enemy_controller.turn)
-            {
-                dice_random = Random.Range(1, 7);
-                switch (dice_random)
-                {
-                    case 1: playercontroller.Attack += 10;break;
-                    case 2: playercontroller.Attack -= 10;break;
-                    case 3: playercontroller.Magic += 10; break;
-                    case 4: playercontroller.Magic -= 10; break;
-                    case 5: PlayerController.Money += 5;break;
-                    case 6: dice_crit = true; break;//クリティカル発生
-                }
-                turn_compare = Enemy_controller.turn;
-            }
-        }
         if(Waterbucket_flag == true)
         {
             if(adapt_Waterbucket == true && first_turn == true)
@@ -305,17 +254,10 @@ public class Item_Power : MonoBehaviour
         }
         if(Scissors_flag == true)
         {
-            //戦闘開始時の効果
             if(adapt_Scissors == true && first_turn == true)
             {
                 playercontroller.Attack += 20;
                 adapt_Scissors = false;
-            }
-            //ターン毎の効果
-            if (turn_compare < Enemy_controller.turn)
-            {
-                playercontroller.Diffence -= 2;
-                turn_compare = Enemy_controller.turn;
             }
         }
         if (ice_flag == true)
@@ -345,23 +287,6 @@ public class Item_Power : MonoBehaviour
             {
                 playercontroller.Attack += enemy_Controller.deffence / 2;
                 adapt_Drill = false;
-            }
-        }
-        if(Headphone_flag)
-        {
-            if (turn_compare < Enemy_controller.turn)
-            {
-                if (playercontroller.Attack <= 3 || playercontroller.Diffence <= 3)
-                {
-                    log_text.text = "ヘッドホンの効果は発動しなかった";
-                }
-                else
-                {
-                    playercontroller.Attack -= 3;
-                    playercontroller.Diffence -= 3;
-                    PlayerController.HP += 10;
-                }
-                turn_compare = Enemy_controller.turn;
             }
         }
         if(UtypeMagnet_flag == true)
@@ -430,15 +355,6 @@ public class Item_Power : MonoBehaviour
                 adapt_Itype_M = false;
             }
         }
-        if(MagnifyingSpeculum_flag == true)
-        {
-            if(turn_compare < Enemy_controller.turn)
-            {
-                playercontroller.Diffence += 3;
-                playercontroller.Magic_Diffence += 3;
-                turn_compare = Enemy_controller.turn;
-            }
-        }
         if(Mike_flag == true)
         {
             if(adapt_Mike == true && first_turn == true)
@@ -493,41 +409,12 @@ public class Item_Power : MonoBehaviour
                 adapt_Scop = false;
             }
         }
-        if(hammer_flag == true)
-        {
-            if(turn_compare < Enemy_controller.turn)
-            {
-                hammer_random = Random.Range(1, 11);
-                if (hammer_random <= 10)
-                {
-                    Enemy_controller.Stun_turn = true;
-                    status_.Status_Effect(false, 4);//気絶エフェクト
-                }
-                turn_compare = Enemy_controller.turn;
-            }
-        }
         if(Speaker_flag == true)
         {
             if(adapt_Speaker == true && first_turn == true)
             {
                 enemy_Controller.deffence -= 25;
                 adapt_Speaker = false;
-            }
-        }
-        if(Sylinge_flag == true)
-        {
-            if(turn_compare < Enemy_controller.turn)
-            {
-                sylinge_random = Random.Range(1, 7);
-                if(sylinge_random == 6)
-                {
-                    PlayerController.HP += 30;
-                }
-                else
-                {
-                    PlayerController.HP += 5;
-                }
-                turn_compare = Enemy_controller.turn;
             }
         }
         if(Baseball_glove_flag == true)
@@ -562,21 +449,15 @@ public class Item_Power : MonoBehaviour
         }
         if(Gas_burner_flag == true)
         {
-
-
             if (Enemy_controller.turn % 2 == 0 && turn_bool == true)
             {
                 playercontroller.Attack += 25;
                 turn_bool = false;
-
-
             }
             else if (Enemy_controller.turn != 1&&Enemy_controller.turn % 2 != 0 && turn_bool == true)
             {
-               
                 playercontroller.Attack -= 25;
                 turn_bool = false;
-
             }
         }
         if(Hamberger_flag == true)
@@ -600,17 +481,6 @@ public class Item_Power : MonoBehaviour
                 playercontroller.Attack += 50;
                 adapt_Pencil = false;
             }
-            //ターン毎の効果
-            if (turn_compare < Enemy_controller.turn)
-            {
-                if (Pencil_Down_cnt <= 10)
-                {
-                    playercontroller.Attack -= 5;
-                    Pencil_Down_cnt++;
-                }
-                turn_compare = Enemy_controller.turn;
-            }
-
         }
         if (Mayonnaise_flag == true)
         {
@@ -618,28 +488,6 @@ public class Item_Power : MonoBehaviour
             {
                 playercontroller.Magic += 50;
                 adapt_Mayonnaise = false;
-            }
-            //ターン毎の効果
-            if (turn_compare < Enemy_controller.turn)
-            {
-                if (Pencil_Down_cnt <= 10)
-                {
-                    playercontroller.Magic -= 5;
-                    Pencil_Down_cnt++;
-                }
-                turn_compare = Enemy_controller.turn;
-            }
-        }
-        if (Watch_flag == true)
-        {
-            if(turn_compare < Enemy_controller.turn)
-            {
-                if (Watch_Add_reset == true)
-                {
-                    playercontroller.Attack += PlayerController.HP_max - PlayerController.HP;
-                    turn_compare = Enemy_controller.turn;
-                    Watch_Add_reset = false;
-                }
             }
         }
         if (TheGrimReaper_Scythe_flag == true)
@@ -680,17 +528,6 @@ public class Item_Power : MonoBehaviour
                 adapt_Medhusa_MagicBook = false;
             }
         }
-        if(Dragon_Scale_flag == true)
-        {
-            if(turn_compare < Enemy_controller.turn)
-            {
-                playercontroller.Attack         += 10;
-                playercontroller.Diffence       += 10;
-                playercontroller.Magic          += 10;
-                playercontroller.Magic_Diffence += 10;
-                turn_compare = Enemy_controller.turn;
-            }
-        }
         if(Dragon_Tooth_flag == true)
         {
             if(adapt_Dragon_Tooth = true && first_turn == true)
@@ -702,12 +539,134 @@ public class Item_Power : MonoBehaviour
         }
         if (bowlingpin_flag == true)
         {
-            //一番下
+            //効果の内容的に一番下
             if (adapt_bowlingpin == true && first_turn == true)
             {
                 PlayerController.Money += playercontroller.Attack / 6;
                 adapt_bowlingpin = false;
             }
+        }
+
+        //-----------------------------
+        //アイテム効果（ターン毎に発動）
+        //-----------------------------
+
+        if(turn_compare < Enemy_controller.turn)
+        {
+            if (radio_flag == true)
+            {
+                if (PlayerController.HP > 6)
+                {
+                    playercontroller.Diffence += 10;//毎ターン防御力10上昇
+                    PlayerController.HP -= 5;//体力を5減らす
+                    log_text.text = "ラジオの効果で-5HP";
+                }
+                else
+                {
+                    log_text.text = "ラジオの効果は発動しなかった";
+                }
+            }
+            if (hourglass_flag == true)
+            {
+                if (PlayerController.HP > 6)
+                {
+                    playercontroller.Attack += 10;//毎ターン攻撃力10上昇
+                    PlayerController.HP -= 5;//体力を5減らす
+                    log_text.text = "砂時計の効果で-5HP";
+                }
+                else
+                {
+                    log_text.text = "効果は発動しなかった";
+                }
+            }
+            if (dice_flag == true)
+            {
+                dice_random = Random.Range(1, 7);
+                switch (dice_random)
+                {
+                    case 1: playercontroller.Attack += 10; break;
+                    case 2: playercontroller.Attack -= 10; break;
+                    case 3: playercontroller.Magic += 10; break;
+                    case 4: playercontroller.Magic -= 10; break;
+                    case 5: PlayerController.Money += 5; break;
+                    case 6: dice_crit = true; break;//クリティカル発生
+                }
+                if (Scissors_flag == true)
+                {
+                    playercontroller.Diffence -= 2;
+                }
+                if (Headphone_flag)
+                {
+                    if (playercontroller.Attack <= 3 || playercontroller.Diffence <= 3)
+                    {
+                        log_text.text = "ヘッドホンの効果は発動しなかった";
+                    }
+                    else
+                    {
+                        playercontroller.Attack -= 3;
+                        playercontroller.Diffence -= 3;
+                        PlayerController.HP += 10;
+                    }
+                }
+                if (MagnifyingSpeculum_flag == true)
+                {
+                    playercontroller.Diffence += 3;
+                    playercontroller.Magic_Diffence += 3;
+                }
+                if (hammer_flag == true)
+                {
+                    hammer_random = Random.Range(1, 11);
+                    if (hammer_random <= 10)
+                    {
+                        Enemy_controller.Stun_turn = true;
+                        status_.Status_Effect(false, 4);//気絶エフェクト
+                    }
+                }
+                if (Sylinge_flag == true)
+                {
+                    sylinge_random = Random.Range(1, 7);
+                    if (sylinge_random == 6)
+                    {
+                        PlayerController.HP += 30;
+                    }
+                    else
+                    {
+                        PlayerController.HP += 5;
+                    }
+                }
+                if (Pencil_flag == true)
+                {
+                    if (Pencil_Down_cnt <= 10)
+                    {
+                        playercontroller.Attack -= 5;
+                        Pencil_Down_cnt++;
+                    }
+                }
+                if (Mayonnaise_flag == true)
+                {
+                    if (Pencil_Down_cnt <= 10)
+                    {
+                        playercontroller.Magic -= 5;
+                        Pencil_Down_cnt++;
+                    }
+                }
+                if (Watch_flag == true)
+                {
+                    if (Watch_Add_reset == true)
+                    {
+                        playercontroller.Attack += PlayerController.HP_max - PlayerController.HP;
+                        Watch_Add_reset = false;
+                    }
+                }
+                if (Dragon_Scale_flag == true)
+                {
+                    playercontroller.Attack += 10;
+                    playercontroller.Diffence += 10;
+                    playercontroller.Magic += 10;
+                    playercontroller.Magic_Diffence += 10;
+                }
+            }
+            turn_compare = Enemy_controller.turn;
         }
     }
 }
