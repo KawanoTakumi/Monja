@@ -36,21 +36,29 @@ public class Item_Manager : MonoBehaviour
             Item.Add("Pudding", false);//19
 
             Item.Add("Drill", false);//20
+<<<<<<< HEAD
             Item.Add("Headphone", true);//21
+=======
+            Item.Add("Headphone", false);//21  
+>>>>>>> 5b9ab2b7f26d85167b003ead03542c858df426ff
             Item.Add("Coffee", false);//22
             Item.Add("Safetycone", false);//23
             Item.Add("USB", false);//24
             Item.Add("UtypeMagnet", false);//25
             Item.Add("Smartphone", false);//26
             Item.Add("ItypeMagnet", false);//27
+<<<<<<< HEAD
             Item.Add("Magnifying Speculum",true);//28
+=======
+            Item.Add("Magnifying Speculum",false);//28 
+>>>>>>> 5b9ab2b7f26d85167b003ead03542c858df426ff
             Item.Add("Mike", false);//29
 
             Item.Add("Megaphone", false);//30
             Item.Add("HandMill", false);//31
             Item.Add("Poteto", false);//32
             Item.Add("Scop", false);//33
-            Item.Add("hammer", false);//34
+            Item.Add("hammer", false);//34 
             Item.Add("Speaker", false);//35
             Item.Add("Sylinge", false);//36
             Item.Add("Baseball_glove", false);//37

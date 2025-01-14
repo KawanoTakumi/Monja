@@ -4875,6 +4875,7 @@ MonoBehaviour:
   - {fileID: 8770600068115727514, guid: 976d6d9efbaeded44a24ae3e576007fb, type: 3}
   - {fileID: 3829796316166014384, guid: cd5836ad580d71b4b93459ff5afabc79, type: 3}
   - {fileID: 6506879874350029958, guid: 685d751e53b102045a89fb3d66a5f28e, type: 3}
+  - {fileID: 8672578751335183930, guid: 9e93473aeadc05247beab7f8e26066bc, type: 3}
   obj_player: {fileID: 0}
   _parentGameObject: {fileID: 1930081981}
   status_: {fileID: 487598714}
