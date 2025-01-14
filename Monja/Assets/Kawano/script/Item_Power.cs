@@ -188,7 +188,7 @@ public class Item_Power : MonoBehaviour
                 }
                 else
                 {
-                    log_text.text = "Œø‰Ê‚Í”­“®‚µ‚È‚©‚Á‚½";
+                    log_text.text = "ƒ‰ƒWƒI‚ÌŒø‰Ê‚Í”­“®‚µ‚È‚©‚Á‚½";
                 }
                 turn_compare = Enemy_controller.turn;
             }

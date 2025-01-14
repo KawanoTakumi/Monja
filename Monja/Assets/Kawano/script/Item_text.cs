@@ -32,7 +32,7 @@ public class Item_text : MonoBehaviour
         else if (button == CompareTag("healdrink"))
         {
             itemname.text = "LIFE";
-            guide_text.text = "缶ジュース。甘くておいしい。\n\n[消費アイテム] 体力を５０回復する";
+            guide_text.text = "缶ジュース。甘くておいしい。\n\n[消費アイテム] 体力を５０回復する。（カイフクを押すと使用できる）";
         }
         else if (button == CompareTag("hourglass"))
         {
@@ -42,7 +42,7 @@ public class Item_text : MonoBehaviour
         else if (button == CompareTag("cd"))
         {
             itemname.text = "CD";
-            guide_text.text = "映像や音楽を書き込むことができる。投げても痛そう。\n\n物理防御力が高いほど、物理攻撃力を上昇させる";
+            guide_text.text = "映像や音楽を書き込むことができる。投げたら痛そう。\n\n物理防御力が高いほど、物理攻撃力を上昇させる";
         }
         else if (button == CompareTag("CDplayer"))
         {
@@ -67,7 +67,7 @@ public class Item_text : MonoBehaviour
         else if (button == CompareTag("Mouse"))
         {
             itemname.text = "マウス";
-            guide_text.text = "パソコンを使うときに必須の機械。マウスなしは考えられない。\n\n魔法攻撃力を１５増加させる";
+            guide_text.text = "パソコンを使うときに必須の機械。マウスなしは考えられない。\n\n魔法攻撃力を１０増加させる";
         }
         else if (button == CompareTag("HandMirror"))
         {
@@ -107,7 +107,7 @@ public class Item_text : MonoBehaviour
         else if (button == CompareTag("Scissors"))
         {
             itemname.text = "ハサミ";
-            guide_text.text = "紙や髪などを切るためのお道具。どんなカットがお好み？\n\n物理攻撃力を３０増加させるがターン毎に物理防御力を２減少させる";
+            guide_text.text = "紙や髪などを切るためのお道具。どんなカットがお好み？\n\n物理攻撃力を２０増加させるがターン毎に物理防御力を２減少させる";
         }
         else if (button == CompareTag("ice"))
         {
@@ -122,7 +122,7 @@ public class Item_text : MonoBehaviour
         else if (button == CompareTag("Drill"))
         {
             itemname.text = "ドリル";
-            guide_text.text = "物に穴を開ける道具。穴の開けすぎには注意！！\n\n戦闘開始時、エネミーの物理攻撃力分プレイヤー攻撃力を増加させ、エネミーの物理防御力分プレイヤーの物理防御力を減少させる";
+            guide_text.text = "物に穴を開ける道具。穴の開けすぎには注意！！\n\n戦闘開始時、敵の防御力の半分を攻撃力増加させる。";
         }
         else if (button == CompareTag("Headphone"))
         {
@@ -207,7 +207,7 @@ public class Item_text : MonoBehaviour
         else if (button == CompareTag("Baseball_glove"))
         {
             itemname.text = "野球グローブ";
-            guide_text.text = "野球で使われるグローブ。手によくフィットする。\n\n物理攻撃力を２５増加させる。\n野球ボールを持ってたら、魔法攻撃力も２５増加させる";
+            guide_text.text = "野球で使われるグローブ。手によくフィットする。\n\n物理攻撃力を２５増加させる。\n野球ボールを持ってたら、魔法攻撃力も３５増加させる";
         }
         else if (button == CompareTag("Boxing_glove"))
         {
@@ -222,7 +222,7 @@ public class Item_text : MonoBehaviour
         else if (button == CompareTag("Gas_burner"))
         {
             itemname.text = "ガスバーナー";
-            guide_text.text = "ガスで熱を生み出す道具。酸素も闘志も燃やせ！！！\n\n戦闘開始時確率で敵を炎上させる";
+            guide_text.text = "ガスで熱を生み出す道具。酸素も闘志も燃やせ！！！\n\n偶数ターン開始時、物理攻撃力を２５増加させる";
         }
         else if (button == CompareTag("Hamberger"))
         {
@@ -257,12 +257,12 @@ public class Item_text : MonoBehaviour
         else if (button == CompareTag("Eye"))
         {
             itemname.text = "メデューサの目";
-            guide_text.text = "メデューサの目。取り扱いには注意が必要。\n\n魔法攻撃力を40増加させ、クリティカルが出やすくなる";
+            guide_text.text = "メデューサの目。取り扱いには注意が必要。\n\n魔法防御力を40増加させ、クリティカルが出やすくなる";
         }
         else if (button == CompareTag("MagicBook"))
         {
             itemname.text = "メデューサの魔導書";
-            guide_text.text = "メデューサが使っていた魔導書。書かれている文字は解読できない。\n\n魔法防御力を40増加させ、クリティカルが出やすくなる\n（アイテム画面でアイテムを押すと魔法攻撃が変化）";
+            guide_text.text = "メデューサが使っていた魔導書。書かれている文字は解読できない。\n\n魔法攻撃力を40増加させ、クリティカルが出やすくなる\n（アイテム画面でアイテムを押すと魔法攻撃が変化）";
         }
         else if (button == CompareTag("Scale"))
         {
