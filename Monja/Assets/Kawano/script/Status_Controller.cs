@@ -29,7 +29,6 @@ public class Status_Controller : MonoBehaviour
     public void Create_Effect_Status(int number, float Fx, float Fy)
     {
         eff_obj = Instantiate(Effects[number], new Vector3(Fx, Fy, 0), Quaternion.identity, _parent.transform);
-        eff_obj.name = "Effect_image_" + number;
     }
     //íœŠÖ”
     public void Delete_Effect()
