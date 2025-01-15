@@ -80,7 +80,7 @@ public class Shop_manager: MonoBehaviour
         if(tmp_1 == -1)
         {
             // ゲームオブジェクトを生成します。
-            obj1 = Instantiate(prefab[34], new Vector3(-3.7f, 1.52f, 0), Quaternion.identity, _parentGameObject.transform);
+            obj1 = Instantiate(prefab[number1], new Vector3(-3.7f, 1.52f, 0), Quaternion.identity, _parentGameObject.transform);
             button1 = obj1.GetComponent<Button>();
             obj1.name = "Item_Image_1";
             tmp_1 = number1;
@@ -101,7 +101,7 @@ public class Shop_manager: MonoBehaviour
         if(tmp_2 == -1)
         {
             // ゲームオブジェクトを生成します。
-            obj2 = Instantiate(prefab[34], new Vector3(-0.15f, 1.52f, 0), Quaternion.identity, _parentGameObject.transform);
+            obj2 = Instantiate(prefab[number2], new Vector3(-0.15f, 1.52f, 0), Quaternion.identity, _parentGameObject.transform);
             button2 = obj2.GetComponent<Button>();
             obj2.name = "Item_Image_2";
             tmp_2 = number2;
@@ -121,7 +121,7 @@ public class Shop_manager: MonoBehaviour
         if(tmp_3 == -1)
         {
             // ゲームオブジェクトを生成します。
-            obj3 = Instantiate(prefab[34], new Vector3(3.45f, 1.52f, 0), Quaternion.identity, _parentGameObject.transform);
+            obj3 = Instantiate(prefab[number3], new Vector3(3.45f, 1.52f, 0), Quaternion.identity, _parentGameObject.transform);
             button3 = obj3.GetComponent<Button>();
             obj3.name = "Item_Image_3";
             tmp_3 = number3;
