@@ -566,6 +566,7 @@ public class Enemy_controller : MonoBehaviour
     void Dragon()
     {
         Enemy_act = Random.Range(1, 5);//1Å`4Ç‹Ç≈
+        Enemy_act = 2;
         switch (Enemy_act)
         {
             case 1:
@@ -609,6 +610,7 @@ public class Enemy_controller : MonoBehaviour
     {
         if (magic_cnt < 2)
         {
+            Create_Effect_Enemy(4, 0.0f, 0.2f);
             Enemy_Magic = magic;
             magic_cnt++;
         }
