@@ -5898,7 +5898,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attack: 5
   deffence: 0
-  magic: 25
+  magic: 35
   magic_Diffence: 10
   money: 50
   Effect:

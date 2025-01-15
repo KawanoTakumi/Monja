@@ -680,6 +680,7 @@ public class Enemy_controller : MonoBehaviour
             Item_Power.first_turn = true;
             Item_Power.Sinigami_Crit_Effect = false;
             Dragon_flag = true;
+            PlayerController.HP_Potion = 0;
             ChangeScene.Title_Reset();
             SceneManager.LoadScene("ending");
         }
