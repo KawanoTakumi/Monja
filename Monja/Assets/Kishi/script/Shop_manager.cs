@@ -34,6 +34,9 @@ public class Shop_manager: MonoBehaviour
 
     public void Update()
     {
+
+      
+
         //アイテムライブラリのGetFlagがtrueの時DictionalyのItem.valueをtrueにする
         if (Item_Library.GetFlag1 == true)
         {
@@ -49,7 +52,8 @@ public class Shop_manager: MonoBehaviour
         {
             Item_Manager.Item[button3.tag] = true;
         }
-        
+
+     
         //Dictionaryから値を取得
         Item_Manager.Item.TryGetValue(button1.tag, out bool flag_1);
         Item_Manager.Item.TryGetValue(button2.tag, out bool flag_2);
