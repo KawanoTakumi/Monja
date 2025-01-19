@@ -171,6 +171,10 @@ public class PlayerController : MonoBehaviour
         {
             Magic_Diffence = 0;
         }
+        if(HP < 0)
+        {
+            HP = 0;
+        }
         if(max_luck < 2)
         {
             max_luck = 2;
