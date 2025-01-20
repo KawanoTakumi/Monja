@@ -2,58 +2,93 @@ using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
-public class Shop_manager: MonoBehaviour
+public class Shop_manager : MonoBehaviour
 {
     // オブジェクトを生成する元となるPrefabへの参照を保持します。
     public GameObject[] prefab;
+    //ショップ陳列アイテム選出
     int number1;
     int number2;
     int number3;
+    //ショップ陳列アイテム
     GameObject obj1;
     GameObject obj2;
     GameObject obj3;
     GameObject Healobj;
     public bool item_flag;//アイテムフラグ
     public Item_Library Item_Library;//アイテムライブラリ
-    public Button button1;//購入ボタン
+    //購入ボタン
+    public Button button1;
     public Button button2;
     public Button button3;
     public Button healbutton;
+    //ボスアイテム除外用
     public static int shop_min = 1;//ショップ最小値
     public static int shop_max = 2;//ショップ最大値
+    //ショップ選出アイテム保存用
     public static int tmp_1 = -1;
     public static int tmp_2 = -1;
     public static int tmp_3 = -1;
-    public Text text;//説明テキスト
+    //説明テキスト
+    public Text text;
     [SerializeField] GameObject _parentGameObject;
+
+    //テスト
+    int[] number = new int[4];
+    int[] shop_tmp = new int[3] {-1,-1,-1};
+    public Button[] button = new Button[4];
+    GameObject[] item_obj = new GameObject[4];
+    int shop_limit = 6;
+
+    enum aaa
+    {
+        title = 1,
+        main =2,
+        sub =3
+    }
 
     void Start()
     {
-        shop_select();
+
+        for(int i=0;i<=3;i++)
+        {
+           
+            switch (i)
+            {
+                case 0: item_select(i); shop_tmp[i] = Create_ShopItem(i); break;
+                case 1: item_select(i); shop_tmp[i] = Create_ShopItem(i); break;
+                case 2: item_select(i); shop_tmp[i] = Create_ShopItem(i); break;
+                case 3: item_select(i); CreateObjectHeal();                               break;
+            }
+           
+        }
+        Debug.Log(number[0]); Debug.Log(number[1]); Debug.Log(number[2]);
+        // shop_select();
+
     }
 
     public void Update()
     {
 
-      
+
 
         //アイテムライブラリのGetFlagがtrueの時DictionalyのItem.valueをtrueにする
         if (Item_Library.GetFlag1 == true)
         {
             Item_Manager.Item[button1.tag] = true;
         }
-    
+
         if (Item_Library.GetFlag2 == true)
         {
             Item_Manager.Item[button2.tag] = true;
         }
-   
+
         if (Item_Library.GetFlag3 == true)
         {
             Item_Manager.Item[button3.tag] = true;
         }
 
-     
+
         //Dictionaryから値を取得
         Item_Manager.Item.TryGetValue(button1.tag, out bool flag_1);
         Item_Manager.Item.TryGetValue(button2.tag, out bool flag_2);
@@ -74,133 +109,133 @@ public class Shop_manager: MonoBehaviour
             button3.interactable = false;
         }
 
-        if(Item_Library.Heal_Get_Flag == true)
+        if (Item_Library.Heal_Get_Flag == true)
         {
             healbutton.interactable = false;
         }
     }
-    public void CreateObject1()
-    {
-        if(tmp_1 == -1)
-        {
-            // ゲームオブジェクトを生成します。
-            obj1 = Instantiate(prefab[number1], new Vector3(-3.7f, 1.52f, 0), Quaternion.identity, _parentGameObject.transform);
-            button1 = obj1.GetComponent<Button>();
-            obj1.name = "Item_Image_1";
-            tmp_1 = number1;
-            Item_Get_Check(button1);
-        }
-        else
-        {
-            // ゲームオブジェクトを生成します。
-            obj1 = Instantiate(prefab[tmp_1], new Vector3(-3.7f, 1.52f, 0), Quaternion.identity, _parentGameObject.transform);
-            button1 = obj1.GetComponent<Button>();
-            obj1.name = "Item_Image_1";
-            Item_Get_Check(button1);
-        }
+    //public void CreateObject1()
+    //{
+    //    if (tmp_1 == -1)
+    //    {
+    //        // ゲームオブジェクトを生成します。
+    //        obj1 = Instantiate(prefab[number1], new Vector3(-3.7f, 1.52f, 0), Quaternion.identity, _parentGameObject.transform);
+    //        button1 = obj1.GetComponent<Button>();
+    //        obj1.name = "Item_Image_1";
+    //        tmp_1 = number1;
+    //        Item_Get_Check(button1);
+    //    }
+    //    else
+    //    {
+    //        // ゲームオブジェクトを生成します。
+    //        obj1 = Instantiate(prefab[tmp_1], new Vector3(-3.7f, 1.52f, 0), Quaternion.identity, _parentGameObject.transform);
+    //        button1 = obj1.GetComponent<Button>();
+    //        obj1.name = "Item_Image_1";
+    //        Item_Get_Check(button1);
+    //    }
 
-    }
-    public void CreateObject2()
-    {
-        if(tmp_2 == -1)
-        {
-            // ゲームオブジェクトを生成します。
-            obj2 = Instantiate(prefab[number2], new Vector3(-0.15f, 1.52f, 0), Quaternion.identity, _parentGameObject.transform);
-            button2 = obj2.GetComponent<Button>();
-            obj2.name = "Item_Image_2";
-            tmp_2 = number2;
-            Item_Get_Check(button2);
-        }
-        else
-        {
-            // ゲームオブジェクトを生成します。
-            obj2 = Instantiate(prefab[tmp_2], new Vector3(-0.15f, 1.52f, 0), Quaternion.identity, _parentGameObject.transform);
-            button2 = obj2.GetComponent<Button>();
-            obj2.name = "Item_Image_2";
-            Item_Get_Check(button2);
-        }
-    }
-    public void CreateObject3()
-    {
-        if(tmp_3 == -1)
-        {
-            // ゲームオブジェクトを生成します。
-            obj3 = Instantiate(prefab[number3], new Vector3(3.45f, 1.52f, 0), Quaternion.identity, _parentGameObject.transform);
-            button3 = obj3.GetComponent<Button>();
-            obj3.name = "Item_Image_3";
-            tmp_3 = number3;
-            Item_Get_Check(button3);
-        }
-        else
-        {
-            // ゲームオブジェクトを生成します。
-            obj3 = Instantiate(prefab[tmp_3], new Vector3(3.45f, 1.52f, 0), Quaternion.identity, _parentGameObject.transform);
-            button3 = obj3.GetComponent<Button>();
-            obj3.name = "Item_Image_3";
-            Item_Get_Check(button3);
-        }
-    }
+    //}
+    //public void CreateObject2()
+    //{
+    //    if (tmp_2 == -1)
+    //    {
+    //        // ゲームオブジェクトを生成します。
+    //        obj2 = Instantiate(prefab[number2], new Vector3(-0.15f, 1.52f, 0), Quaternion.identity, _parentGameObject.transform);
+    //        button2 = obj2.GetComponent<Button>();
+    //        obj2.name = "Item_Image_2";
+    //        tmp_2 = number2;
+    //        Item_Get_Check(button2);
+    //    }
+    //    else
+    //    {
+    //        // ゲームオブジェクトを生成します。
+    //        obj2 = Instantiate(prefab[tmp_2], new Vector3(-0.15f, 1.52f, 0), Quaternion.identity, _parentGameObject.transform);
+    //        button2 = obj2.GetComponent<Button>();
+    //        obj2.name = "Item_Image_2";
+    //        Item_Get_Check(button2);
+    //    }
+    //}
+    //public void CreateObject3()
+    //{
+    //    if (tmp_3 == -1)
+    //    {
+    //        // ゲームオブジェクトを生成します。
+    //        obj3 = Instantiate(prefab[number3], new Vector3(3.45f, 1.52f, 0), Quaternion.identity, _parentGameObject.transform);
+    //        button3 = obj3.GetComponent<Button>();
+    //        obj3.name = "Item_Image_3";
+    //        tmp_3 = number3;
+    //        Item_Get_Check(button3);
+    //    }
+    //    else
+    //    {
+    //        // ゲームオブジェクトを生成します。
+    //        obj3 = Instantiate(prefab[tmp_3], new Vector3(3.45f, 1.52f, 0), Quaternion.identity, _parentGameObject.transform);
+    //        button3 = obj3.GetComponent<Button>();
+    //        obj3.name = "Item_Image_3";
+    //        Item_Get_Check(button3);
+    //    }
+    //}
     public void CreateObjectHeal()
     {
-        Healobj = Instantiate(prefab[0], new Vector3(7.75f, -1.2f, 0), Quaternion.identity, _parentGameObject.transform);
-        healbutton = Healobj.GetComponent<Button>();
-        Healobj.name = "Heal_Item";
-        button_intaractable(healbutton);
+        item_obj[3] = Instantiate(prefab[number[3]], new Vector3(7.75f, -1.2f, 0), Quaternion.identity, _parentGameObject.transform);
+        button[3] = item_obj[3].GetComponent<Button>();
+        item_obj[3].name = "Heal_Item";
+        button_intaractable(button[3]);
     }
-    void Item_Get_Check(Button button)
-    {
-        Item_Manager.Item.TryGetValue(button.tag, out bool tag_bool);
-        if (tag_bool == true)
-        {
-            button.interactable = false;
-        }
-    }
-    public void shop_select()
-    {
-        int switch_num;
-        Item_Library = GetComponent<Item_Library>();
-        switch (ChangeScene.scene_cnt)
-        {
-            case 3: shop_max = 3; break;
-            case 6: shop_max = 4; break;
-            case 9: shop_min = 0; break;
-        }
-        switch_num = Random.Range(shop_min, shop_max);
-        switch (switch_num)
-        {
-            case 0: number1 = Random.Range(prefab.Length - 2, prefab.Length); break;
-            case 1: number1 = Random.Range(1, prefab.Length - 6); break;
-            case 2: number1 = Random.Range(1, prefab.Length - 4); break;
-            case 3: number1 = Random.Range(1, prefab.Length - 2); break;
-        }
-        CreateObject1();
-        do
-        {
-            switch_num = Random.Range(shop_min, shop_max);
-            switch (switch_num)
-            {
-                case 0: number2 = Random.Range(prefab.Length - 2, prefab.Length); break;
-                case 1: number2 = Random.Range(1, prefab.Length - 6); break;
-                case 2: number2 = Random.Range(1, prefab.Length - 4); break;
-                case 3: number2 = Random.Range(1, prefab.Length - 2); break;
-            }
-        } while (number2 == number1);
-        CreateObject2();
+    //void Item_Get_Check(Button button)
+    //{
+    //    Item_Manager.Item.TryGetValue(button.tag, out bool tag_bool);
+    //    if (tag_bool == true)
+    //    {
+    //        button.interactable = false;
+    //    }
+    //}
+    //public void shop_select()
+    //{
+    //    int switch_num;
+    //    Item_Library = GetComponent<Item_Library>();
+    //    switch (ChangeScene.scene_cnt)
+    //    {
+    //        case 3: shop_max = 3; break;
+    //        case 6: shop_max = 4; break;
+    //        case 9: shop_min = 0; break;
+    //    }
+    //    switch_num = Random.Range(shop_min, shop_max);
+    //    switch (switch_num)
+    //    {
+    //        case 0: number1 = Random.Range(prefab.Length - 2, prefab.Length); break;
+    //        case 1: number1 = Random.Range(1, prefab.Length - 6); break;
+    //        case 2: number1 = Random.Range(1, prefab.Length - 4); break;
+    //        case 3: number1 = Random.Range(1, prefab.Length - 2); break;
+    //    }
+    //    CreateObject1();
+    //    do
+    //    {
+    //        switch_num = Random.Range(shop_min, shop_max);
+    //        switch (switch_num)
+    //        {
+    //            case 0: number2 = Random.Range(prefab.Length - 2, prefab.Length); break;
+    //            case 1: number2 = Random.Range(1, prefab.Length - 6); break;
+    //            case 2: number2 = Random.Range(1, prefab.Length - 4); break;
+    //            case 3: number2 = Random.Range(1, prefab.Length - 2); break;
+    //        }
+    //    } while (number2 == number1);
+    //    CreateObject2();
 
-        do
-        {
-            switch_num = Random.Range(shop_min, shop_max);
-            switch (switch_num)
-            {
-                case 0: number3 = Random.Range(prefab.Length - 2, prefab.Length); break;
-                case 1: number3 = Random.Range(1, prefab.Length - 6); break;
-                case 2: number3 = Random.Range(1, prefab.Length - 4); break;
-                case 3: number3 = Random.Range(1, prefab.Length - 2); break;
-            }
-        } while (number3 == number2 || number3 == number1);
-        CreateObject3();
-        CreateObjectHeal();
-    }
+    //    do
+    //    {
+    //        switch_num = Random.Range(shop_min, shop_max);
+    //        switch (switch_num)
+    //        {
+    //            case 0: number3 = Random.Range(prefab.Length - 2, prefab.Length); break;
+    //            case 1: number3 = Random.Range(1, prefab.Length - 6); break;
+    //            case 2: number3 = Random.Range(1, prefab.Length - 4); break;
+    //            case 3: number3 = Random.Range(1, prefab.Length - 2); break;
+    //        }
+    //    } while (number3 == number2 || number3 == number1);
+    //    CreateObject3();
+    //    CreateObjectHeal();
+    //}
     public void Getflag_reset()
     {
         Item_Library.GetFlag1 = false;
@@ -214,7 +249,7 @@ public class Shop_manager: MonoBehaviour
         if (PlayerController.Money >= 30)
         {
             PlayerController.Money -= 30;
-            
+
             Destroy(obj1);
             Item_Library.GetFlag1 = false;
             Destroy(obj2);
@@ -224,7 +259,7 @@ public class Shop_manager: MonoBehaviour
             tmp_1 = -1;
             tmp_2 = -1;
             tmp_3 = -1;
-            shop_select();
+            //shop_select();
         }
         else
         {
@@ -234,5 +269,58 @@ public class Shop_manager: MonoBehaviour
     public void button_intaractable(Button button)
     {
         button.interactable = false;
+    }
+
+    int Create_ShopItem(int i)
+    {
+        if (shop_tmp[i] <= -1)
+        {
+            switch (i)
+            {
+                case 0:
+                    item_obj[i] = Instantiate(prefab[number[i]], new Vector3(-3.7f, 1.52f, 0), Quaternion.identity, _parentGameObject.transform);
+                    item_obj[i].name = "Item_Image_1"; break;
+                case 1:
+                    item_obj[i] = Instantiate(prefab[number[i]], new Vector3(-0.15f, 1.52f, 0), Quaternion.identity, _parentGameObject.transform);
+                    item_obj[i].name = "Item_Image_2"; break;
+                case 2:
+                    item_obj[i] = Instantiate(prefab[number[i]], new Vector3(3.45f, 1.52f, 0), Quaternion.identity, _parentGameObject.transform);
+                    item_obj[i].name = "Item_Image_3"; break;
+                  
+            }
+            button[i] = item_obj[i].GetComponent<Button>();
+            Item_Get_Check(i);
+        }
+       
+        return number[i];
+    }
+
+    void item_select(int i)
+    {
+       
+        switch (ChangeScene.scene_cnt)
+        {
+            case 4: shop_limit = 4; break;
+            case 7: shop_limit = 2; break;
+            case 9: shop_limit =  0; break;
+            default:                 break;
+        }
+        switch(i)
+        {
+            case 0: number[i] = Random.Range(1, prefab.Length - shop_limit); break;
+            case 1: do { number[i] = Random.Range(1, prefab.Length - shop_limit); } while (number[0] == number[1]); break;
+            case 2: do { number[i] = Random.Range(1, prefab.Length - shop_limit); } while (number[0] == number[2] || number[1] == number[2]); break;
+            case 3: number[i] = 0;break;
+        }
+        Debug.Log(shop_limit);
+    }
+
+    void Item_Get_Check(int i)
+    {
+        Item_Manager.Item.TryGetValue(button[i].tag, out bool tag_bool);
+        if (tag_bool == true)
+        {
+            button[i].interactable = false;
+        }
     }
 }
