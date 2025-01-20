@@ -45,7 +45,7 @@ public class Item_Power : MonoBehaviour
     bool adapt_Hamberger = true;
     bool adapt_Pencil = true;
     bool adapt_Mayonnaise = true;
-    bool adapt_Pudding = true;
+    static bool adapt_Pudding = true;
     bool adapt_TheGrimReaper_scythe = true;
     bool adapt_TheGrimReaper_robe = true;
     bool adapt_Medhusa_Eye = true;
@@ -275,18 +275,10 @@ public class Item_Power : MonoBehaviour
                 PlayerController.HP_max += 30;
                 adapt_Pudding = false;
             }
-            else if(adapt_Pudding == true && first_turn == true)
+            if(adapt_Pudding == true && first_turn == true)
             {
                 PlayerController.HP += PlayerController.HP_max / 4;
                 adapt_Pudding = false;
-            }
-        }
-        if(Drill_flag == true)
-        {
-            if(adapt_Drill == true && first_turn == true)
-            {
-                playercontroller.Attack += enemy_Controller.deffence / 2;
-                adapt_Drill = false;
             }
         }
         if(UtypeMagnet_flag == true)

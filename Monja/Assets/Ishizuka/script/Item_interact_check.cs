@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class Item_interact_check : MonoBehaviour
 {
     public Button button;//ボタン
+    //インベントリのアイテムの表示を切り替える
     void Start()
     {
         button.interactable = false;
