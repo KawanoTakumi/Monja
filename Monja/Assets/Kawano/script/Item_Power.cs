@@ -145,7 +145,7 @@ public class Item_Power : MonoBehaviour
 
         if (healdrink_flag == true)
         {
-            PlayerController.HP_Potion += 1;
+            PlayerController.HP_POTION += 1;
             Item_Manager.Item["healdrink"] = false;//ヒールドリンクは何個でも持てるためフラグをfalse
             healdrink_flag = false;
         }
@@ -197,7 +197,7 @@ public class Item_Power : MonoBehaviour
         {
             if(adapt_CreditCard == true && first_turn == true)
             {
-                PlayerController.Money += 20;//戦闘開始後20G入手
+                PlayerController.MONEY += 20;//戦闘開始後20G入手
                 adapt_CreditCard = false;
             }
         }
@@ -214,7 +214,7 @@ public class Item_Power : MonoBehaviour
             if(adapt_HandMirror == true && first_turn == true)
             {
                 playercontroller.Diffence += 15;
-                playercontroller.Magic_Diffence += 15;
+                playercontroller.Magic_diffence += 15;
                 adapt_HandMirror = false;
             }
         }
@@ -231,7 +231,7 @@ public class Item_Power : MonoBehaviour
         {
             if(adapt_Waterbucket == true && first_turn == true)
             {
-                playercontroller.Magic_Diffence += 10;
+                playercontroller.Magic_diffence += 10;
                 adapt_Waterbucket = false;
             }
         }
@@ -272,12 +272,12 @@ public class Item_Power : MonoBehaviour
         {
             if(Apple_flag == true && adapt_Pudding == true && first_turn == true)
             {
-                PlayerController.HP_max += 30;
+                PlayerController.HP_MAX += 30;
                 adapt_Pudding = false;
             }
             if(adapt_Pudding == true && first_turn == true)
             {
-                PlayerController.HP += PlayerController.HP_max / 4;
+                PlayerController.HP += PlayerController.HP_MAX / 4;
                 adapt_Pudding = false;
             }
         }
@@ -327,7 +327,7 @@ public class Item_Power : MonoBehaviour
             if(adapt_USB == true && first_turn == true)
             {
                 playercontroller.Magic += 20;
-                playercontroller.Magic_Diffence -= 10;
+                playercontroller.Magic_diffence -= 10;
                 adapt_USB = false;
             }
         }
@@ -335,7 +335,7 @@ public class Item_Power : MonoBehaviour
         {
             if(adapt_SmartPhone == true && first_turn == true)
             {
-                playercontroller.Magic_Diffence += playercontroller.Magic / 4;
+                playercontroller.Magic_diffence += playercontroller.Magic / 4;
                 adapt_SmartPhone = false;
             }
         }
@@ -343,7 +343,7 @@ public class Item_Power : MonoBehaviour
         {
             if(adapt_Itype_M == true && first_turn == true)
             {
-                playercontroller.Magic_Diffence += 20;
+                playercontroller.Magic_diffence += 20;
                 adapt_Itype_M = false;
             }
         }
@@ -396,7 +396,7 @@ public class Item_Power : MonoBehaviour
                 scop_random = Random.Range(1, 5);
                 if(scop_random == 4)
                 {
-                    PlayerController.Money += 30;
+                    PlayerController.MONEY += 30;
                 }
                 adapt_Scop = false;
             }
@@ -487,7 +487,7 @@ public class Item_Power : MonoBehaviour
             if(adapt_TheGrimReaper_scythe == true && first_turn == true)
             {
                 playercontroller.Attack      += 40;
-                PlayerController.max_luck    -= 3;
+                PlayerController.MAX_LUCK    -= 3;
                 Sinigami_Crit_Effect = true;//死神のクリティカルエフェクト発生
                 adapt_TheGrimReaper_scythe = false;
             }
@@ -497,7 +497,7 @@ public class Item_Power : MonoBehaviour
             if(adapt_TheGrimReaper_robe == true && first_turn == true)
             {
                 playercontroller.Diffence += 40;
-                PlayerController.max_luck -= 3;
+                PlayerController.MAX_LUCK -= 3;
                 adapt_TheGrimReaper_robe = false;
             }
         }
@@ -505,8 +505,8 @@ public class Item_Power : MonoBehaviour
         {
             if(adapt_Medhusa_Eye == true && first_turn == true)
             {
-                playercontroller.Magic_Diffence += 40;
-                PlayerController.max_luck       -= 3;
+                playercontroller.Magic_diffence += 40;
+                PlayerController.MAX_LUCK       -= 3;
                 adapt_Medhusa_Eye = false;
             }
         }
@@ -515,7 +515,7 @@ public class Item_Power : MonoBehaviour
             if(adapt_Medhusa_MagicBook == true && first_turn == true)
             {
                 playercontroller.Magic    += 40;
-                PlayerController.max_luck -= 3;
+                PlayerController.MAX_LUCK -= 3;
                 Medhusa_Magic_flag = true;
                 adapt_Medhusa_MagicBook = false;
             }
@@ -525,7 +525,7 @@ public class Item_Power : MonoBehaviour
             if(adapt_Dragon_Tooth = true && first_turn == true)
             {
                 playercontroller.Attack    += 100;
-                PlayerController.HP_max     = 50;
+                PlayerController.HP_MAX     = 50;
                 adapt_Dragon_Tooth = false;
             }
         }
@@ -534,7 +534,7 @@ public class Item_Power : MonoBehaviour
             //効果の内容的に一番下
             if (adapt_bowlingpin == true && first_turn == true)
             {
-                PlayerController.Money += playercontroller.Attack / 6;
+                PlayerController.MONEY += playercontroller.Attack / 6;
                 adapt_bowlingpin = false;
             }
         }
@@ -580,7 +580,7 @@ public class Item_Power : MonoBehaviour
                     case 2: playercontroller.Attack -= 10; break;
                     case 3: playercontroller.Magic += 10; break;
                     case 4: playercontroller.Magic -= 10; break;
-                    case 5: PlayerController.Money += 5; break;
+                    case 5: PlayerController.MONEY += 5; break;
                     case 6: dice_crit = true; break;//クリティカル発生
                 }
                 if (Scissors_flag == true)
@@ -603,7 +603,7 @@ public class Item_Power : MonoBehaviour
                 if (MagnifyingSpeculum_flag == true)
                 {
                     playercontroller.Diffence += 3;
-                    playercontroller.Magic_Diffence += 3;
+                    playercontroller.Magic_diffence += 3;
                 }
                 if (hammer_flag == true)
                 {
@@ -646,7 +646,7 @@ public class Item_Power : MonoBehaviour
                 {
                     if (Watch_Add_reset == true)
                     {
-                        playercontroller.Attack += PlayerController.HP_max - PlayerController.HP;
+                        playercontroller.Attack += PlayerController.HP_MAX - PlayerController.HP;
                         Watch_Add_reset = false;
                     }
                 }
@@ -655,7 +655,7 @@ public class Item_Power : MonoBehaviour
                     playercontroller.Attack += 10;
                     playercontroller.Diffence += 10;
                     playercontroller.Magic += 10;
-                    playercontroller.Magic_Diffence += 10;
+                    playercontroller.Magic_diffence += 10;
                 }
             }
             turn_compare = Enemy_controller.turn;

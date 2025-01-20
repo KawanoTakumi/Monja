@@ -122,7 +122,7 @@ public class Item_text : MonoBehaviour
         else if (button == CompareTag("Drill"))
         {
             itemname.text = "ドリル";
-            guide_text.text = "物に穴を開ける道具。穴の開けすぎには注意！！\n\n戦闘開始時、敵の防御力の半分を攻撃力増加させる。";
+            guide_text.text = "物に穴を開ける道具。穴の開けすぎには注意！！\n\n戦闘開始時、敵の防御力の半分を自身の物理攻撃力に加算する。";
         }
         else if (button == CompareTag("Headphone"))
         {
@@ -279,6 +279,6 @@ public class Item_text : MonoBehaviour
     //魔法攻撃を後から変更するための関数（アイテム画面でボタンを押したらその魔法攻撃になる）
     public void magic_number(int num_M)
     {
-        PlayerController.magic_number = num_M;
+        PlayerController.MAGIC_NUMBER = num_M;
     }
 }

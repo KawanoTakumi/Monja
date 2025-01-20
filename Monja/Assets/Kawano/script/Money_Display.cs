@@ -9,6 +9,6 @@ public class Money_Display : MonoBehaviour
     void Update()
     {
         //金額をテキストに反映する
-        Money_Text.text = string.Format("{0}", PlayerController.Money);
+        Money_Text.text = string.Format("{0}", PlayerController.MONEY);
     }
 }

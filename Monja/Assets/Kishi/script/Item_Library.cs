@@ -28,7 +28,7 @@ public class Item_Library : MonoBehaviour
     }
     void Update()
     {
-        money = PlayerController.Money;
+        money = PlayerController.MONEY;
         //回復アイテムを取得したとき、インタラクトできなくする
         if (Heal_Get_Flag == true)
         {
@@ -54,7 +54,7 @@ public class Item_Library : MonoBehaviour
                     money -= ItemValue1;
                 }
             }
-            PlayerController.Money = money;//Player側の数も減らす
+            PlayerController.MONEY = money;//Player側の数も減らす
             GetFlag1 = true;
         }
         else if (GetFlag1 == true)
@@ -80,7 +80,7 @@ public class Item_Library : MonoBehaviour
                 }
             }
 
-            PlayerController.Money = money;//Player側の数も減らす
+            PlayerController.MONEY = money;//Player側の数も減らす
             GetFlag2 = true;
         }
         else if (GetFlag2 == true)
@@ -105,7 +105,7 @@ public class Item_Library : MonoBehaviour
                 }
             }
 
-            PlayerController.Money = money;//Player側の数も減らす
+            PlayerController.MONEY = money;//Player側の数も減らす
             GetFlag3 = true;
         }
         else if (GetFlag3 == true)
@@ -123,8 +123,8 @@ public class Item_Library : MonoBehaviour
         if(money >= ItemValue_Heal)
         {
             money -= ItemValue_Heal;
-            PlayerController.HP_Potion++;
-            PlayerController.Money = money;
+            PlayerController.HP_POTION++;
+            PlayerController.MONEY = money;
             shop_manager.healbutton.interactable = false;
             Heal_Get_Flag = true;
         }

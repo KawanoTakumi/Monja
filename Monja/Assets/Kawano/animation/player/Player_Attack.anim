@@ -228,7 +228,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0
-    functionName: SE_Play_Attack
+    functionName: Play_Sound
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

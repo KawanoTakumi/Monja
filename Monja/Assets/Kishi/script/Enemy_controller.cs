@@ -202,10 +202,10 @@ public class Enemy_controller : MonoBehaviour
             //EnemyAttackを初期化
             Enemy_attack = 0;
             Enemy_Magic = 0;
-            Destroy(playerController.obj_player);
+            Destroy(playerController.Player_object);
             if (Item_Power.Watch_Add_reset == false)//アイテム：Watchの増加分ステータスリセット
             {
-                playerController.Attack -= PlayerController.HP_max - PlayerController.HP;
+                playerController.Attack -= PlayerController.HP_MAX - PlayerController.HP;
                 Item_Power.Watch_Add_reset = true;
             }
             if (Freeze_turn == true || Stone_turn == true || Stun_turn == true)
@@ -219,7 +219,7 @@ public class Enemy_controller : MonoBehaviour
                 }
                 playerController.intaract_true();
                 Item_Power.first_turn = false;
-                Destroy(playerController.obj_player);
+                Destroy(playerController.Player_object);
                 status_.Delete_Effect();
                 turn_manager.turn = true;
                 Log.text = ("プレイヤーのターン");
@@ -255,7 +255,7 @@ public class Enemy_controller : MonoBehaviour
                 Item_Power.first_turn = false;
                 Enemy_deffence -=Enemy_deffence;
                 turn_manager.turn = true;
-                playerController.Log_2.text = "";
+                playerController.Log[1].text = "";
                 Log.text = ("プレイヤーのターン");
                 //時間の初期化
                 turn_time = 0;
@@ -369,13 +369,13 @@ public class Enemy_controller : MonoBehaviour
                 Magic();
                 Log.text = ("リッチの魔法攻撃");
                 Create_Effect_Enemy(1, 5.5f, 0.4f);
-                damage_Calculate.Player_Damage_Calculate(Enemy_Magic, playerController.Magic_Diffence);
+                damage_Calculate.Player_Damage_Calculate(Enemy_Magic, playerController.Magic_diffence);
                 break;
             case 2:
                 Magic();
                 Log.text = ("リッチの魔法攻撃");
                 Create_Effect_Enemy(1, 5.5f, 0.4f);
-                damage_Calculate.Player_Damage_Calculate(Enemy_Magic, playerController.Magic_Diffence);
+                damage_Calculate.Player_Damage_Calculate(Enemy_Magic, playerController.Magic_diffence);
                 break;
             case 3:
                 Heal();
@@ -438,7 +438,7 @@ public class Enemy_controller : MonoBehaviour
                 Magic();
                 Log.text = ("コカトリスの魔法攻撃");
                 Create_Effect_Enemy(3, 0.0f, 0.0f);
-                damage_Calculate.Player_Damage_Calculate(Enemy_Magic, playerController.Magic_Diffence);
+                damage_Calculate.Player_Damage_Calculate(Enemy_Magic, playerController.Magic_diffence);
                 break;
             case 2:
                 Attack(1);
@@ -484,7 +484,7 @@ public class Enemy_controller : MonoBehaviour
             case 1:
                 medhusa_magic();
                 Log.text = ("メデューサの魔法攻撃");
-                damage_Calculate.Player_Damage_Calculate(Enemy_Magic, playerController.Magic_Diffence);
+                damage_Calculate.Player_Damage_Calculate(Enemy_Magic, playerController.Magic_diffence);
                 break;
             case 2:
                 medhusa_magic();
@@ -577,7 +577,7 @@ public class Enemy_controller : MonoBehaviour
             case 2:
                 dragon_magic();
                 Log.text = ("ドラゴンの魔法攻撃");
-                damage_Calculate.Player_Damage_Calculate(Enemy_Magic, playerController.Magic_Diffence);
+                damage_Calculate.Player_Damage_Calculate(Enemy_Magic, playerController.Magic_diffence);
                 break;
             case 3:
                 dragon_attack();
@@ -677,17 +677,17 @@ public class Enemy_controller : MonoBehaviour
         Cut_In.first_flag = true;
         if (ChangeScene.scene_cnt >= 9)
         {
-            PlayerController.Money += money;
+            PlayerController.MONEY += money;
             Item_Power.first_turn = true;
             Item_Power.Sinigami_Crit_Effect = false;
             Dragon_flag = true;
-            PlayerController.HP_Potion = 0;
+            PlayerController.HP_POTION = 0;
             ChangeScene.Title_Reset();
             SceneManager.LoadScene("ending");
         }
         else
         {
-            PlayerController.Money += money;
+            PlayerController.MONEY += money;
             Item_Power.first_turn = true;
             if(ChangeScene.scene_cnt >= 6)
             {
@@ -721,11 +721,11 @@ public class Enemy_controller : MonoBehaviour
 
     void Enemy_Defeat()
     {
-        PlayerController.MP = PlayerController.MP_max;
+        PlayerController.MP = PlayerController.MP_MAX;
         tag_get = true;
         Destroy(obj1);
         Destroy(GameObject.Find("Enmey_HP"));
-        Destroy(playerController.obj_player);
+        Destroy(playerController.Player_object);
         HP_Bar.SetActive(false);//HPバー
         animator.SetBool("death", true);//deathフラグをtrueにする
         turn_manager.turn = true;
