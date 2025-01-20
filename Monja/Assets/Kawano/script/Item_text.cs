@@ -279,6 +279,6 @@ public class Item_text : MonoBehaviour
     //魔法攻撃を後から変更するための関数（アイテム画面でボタンを押したらその魔法攻撃になる）
     public void magic_number(int num_M)
     {
-        PlayerController.MAGIC_NUMBER = num_M;
+        PlayerController.MAGIC_TYPE = num_M;
     }
 }

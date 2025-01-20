@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     public static int HP_POTION = 0;            //HPポーションの数
     public static int MONEY = 0;                //所持金額
     public static int MAX_LUCK = 13;            //最大ラック
-    public static int MAGIC_NUMBER = 0;         //魔法番号(撃てる魔法の種類)
+    public static int MAGIC_TYPE = 0;         //魔法番号(撃てる魔法の種類)
     static int STATUS_MAX = 9999;               //ステータス上限
     static int STATUS_MIN = 0;                  //ステータス下限
     static int CONSTANT_ATTACK   = 25;          //攻撃の定数
@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
 
     //プレイヤーステータス（変数）
     public int Attack_damage  = 0;              //攻撃力
-    public int Diffence       = 0;              //防御力
+    public int Deffence       = 0;              //防御力
     public int Magic_damage   = 0;              //魔法力
     public int Magic_diffence = 0;              //魔法防御力
     public int Calc_attack_damage  = 0;         //攻撃力(計算後)
@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
     int Poison_cnt = 0;                         //毒のターン数
     int OnFire_cnt = 0;                         //延焼のターン数
     int Turn_time  = 0;                         //ターン経過時間
-    int Cons_num   = 0;                         //マホウ強化変数
+    int Magic_power_up  = 0;                    //マホウ強化変数
 
     //オブジェクト取得変数
     public Button Item_button;                      //アイテムボタン
@@ -70,7 +70,7 @@ public class PlayerController : MonoBehaviour
 
         //初期の定数を変数に適用
         Attack_damage = CONSTANT_ATTACK;
-        Diffence = CONSTANT_DEFFENCE;
+        Deffence = CONSTANT_DEFFENCE;
         Magic_damage = CONSTANT_MAGIC;
         Magic_diffence = CONSTANT_MAGIC_DEFFENCE;
 
@@ -85,7 +85,7 @@ public class PlayerController : MonoBehaviour
     {
         //数値を保存
         CONSTANT_ATTACK         = Attack_damage;
-        CONSTANT_DEFFENCE       = Diffence;
+        CONSTANT_DEFFENCE       = Deffence;
         CONSTANT_MAGIC          = Magic_damage;
         CONSTANT_MAGIC_DEFFENCE = Magic_diffence;
 
@@ -131,9 +131,9 @@ public class PlayerController : MonoBehaviour
         {
             Attack_damage = STATUS_MAX;
         }
-        if(Diffence >= STATUS_MAX)
+        if(Deffence >= STATUS_MAX)
         {
-            Diffence = STATUS_MAX;
+            Deffence = STATUS_MAX;
         }
         if(Magic_damage >= STATUS_MAX)
         {
@@ -153,9 +153,9 @@ public class PlayerController : MonoBehaviour
         {
             Attack_damage = STATUS_MIN;
         }
-        if (Diffence < STATUS_MIN)
+        if (Deffence < STATUS_MIN)
         {
-            Diffence = STATUS_MIN;
+            Deffence = STATUS_MIN;
         }
         if (Magic_damage < STATUS_MIN)
         {
@@ -251,7 +251,7 @@ public class PlayerController : MonoBehaviour
                 MP += MP_MAX / 2;
                 Log[0].text = "主人公は集中した";
                 Magic_damage += 10;
-                Cons_num++;
+                Magic_power_up++;
                 Cons_flag = true;
                 //MPがMP_maxより大きければMP_maxの値に合わせる
                 if (MP > MP_MAX)
@@ -278,7 +278,7 @@ public class PlayerController : MonoBehaviour
                 Intaract_False();
                 Log[0].text = "主人公は魔法を撃った";
                 Animator.SetBool("magic", true);
-                switch (MAGIC_NUMBER)
+                switch (MAGIC_TYPE)
                 {
                     case 0: Create_Effect_Player(0, 5.7f, 0.9f); break;
                     case 1: Create_Effect_Player(2, 0f, 0f);break;
@@ -291,8 +291,8 @@ public class PlayerController : MonoBehaviour
                 Damage_calculate.Enemey_Damage_Calculate(Calc_magic_damage, Enemy_controller.magic_Diffence);
                 if(Cons_flag == true)
                 {
-                    Magic_damage -= 10 * Cons_num;
-                    Cons_num = 0;
+                    Magic_damage -= 10 * Magic_power_up;
+                    Magic_power_up = 0;
                     Cons_flag = false;
                 }
             }
@@ -415,25 +415,26 @@ public class PlayerController : MonoBehaviour
         Item_Manager.Item["Tooth"]= false;
 
     }
-    //アニメーションリセット（boolのみ）
+    //アニメーションリセット（アニメーションタグ名）
     public void Anim_Reset(string anim_tag)
     {
         Animator.SetBool(anim_tag, false);
     }
-    //エフェクトオブジェクト作成関数
-    public void Create_Effect_Player(int number, float Fx, float Fy)
+    //エフェクトオブジェクト作成関数（魔法番号、位置X、位置Y）
+    public void Create_Effect_Player(int number, float fx, float fy)
     {
-        Player_object = Instantiate(Effect[number], new Vector3(Fx, Fy, 0), Quaternion.identity, ParentGameObject.transform);
+        Player_object = Instantiate(Effect[number], new Vector3(fx, fy, 0), Quaternion.identity, 
+            ParentGameObject.transform);
         Player_object.name = "Effect_image_" + number;
     }
     //マホウのエフェクト
     public void Magic_Effect()
     {
-        int eff_random = 0;
+        int eff_random;//ランダム取得変数
         eff_random = Random.Range(0, 5);
         if(eff_random == 4)
         {
-            switch(MAGIC_NUMBER)
+            switch(MAGIC_TYPE)
             {
                 case 1: 
                     Enemy_controller.Freeze_turn = true;
@@ -491,13 +492,14 @@ public class PlayerController : MonoBehaviour
     //負け
     public void Lose()
     {
-        Animator.SetBool("death", false);
-        //各種数値を初期化
+        Animator.SetBool("death", false);//負けアニメーション終了
+        //各種変数を初期化
         HP = HP_MAX;
         MP = MP_MAX;
         Item_Reset();
         Status_Reset();
-        MAGIC_NUMBER = 0;
+        MONEY = 0;
+        MAGIC_TYPE = 0;
         Shop_manager.shop_max = 2;
         Shop_manager.shop_min = 1;
         Item_Power.turn_compare = 0;
@@ -509,7 +511,6 @@ public class PlayerController : MonoBehaviour
         Enemy_controller.Freeze_turn = false;
         Enemy_controller.Stone_turn = false;
         Enemy_controller.tag_get = true;
-        MONEY = 0;
         SceneManager.LoadScene("Lose");
     }
     //SE再生関数（SEのナンバー）

@@ -3011,7 +3011,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Attack_damage: 0
-  Diffence: 25
+  Deffence: 0
   Magic_damage: 0
   Magic_diffence: 0
   Calc_attack_damage: 0

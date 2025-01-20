@@ -155,7 +155,7 @@ public class Item_Power : MonoBehaviour
             if(adapt_bowlingball == true && first_turn == true)
             {
                 playercontroller.Attack_damage += 20;//UŒ‚—Í20ã¸
-                playercontroller.Diffence -= 20;//–hŒä—Í20Œ¸­
+                playercontroller.Deffence -= 20;//–hŒä—Í20Œ¸­
                 adapt_bowlingball = false;//false‚É‚µ‚Äˆê‰ñ‚µ‚©“Ç‚İ‚Ü‚ê“à—e‚É‚·‚é
             }
         }
@@ -163,7 +163,7 @@ public class Item_Power : MonoBehaviour
         {
             if(adapt_cd == true && first_turn == true)
             {
-                playercontroller.Attack_damage += playercontroller.Diffence / 6;//attack‚Édiffence‚Ì1/6‚Ì”š‚ğ‰ÁZ
+                playercontroller.Attack_damage += playercontroller.Deffence / 6;//attack‚Édiffence‚Ì1/6‚Ì”š‚ğ‰ÁZ
                 adapt_cd = false;
             }
         }
@@ -172,7 +172,7 @@ public class Item_Power : MonoBehaviour
             if(adapt_CDplayer == true && first_turn == true)
             {
                 playercontroller.Attack_damage -= 20;//UŒ‚—Í20Œ¸­
-                playercontroller.Diffence += 20;//–hŒä—Í20ã¸
+                playercontroller.Deffence += 20;//–hŒä—Í20ã¸
                 adapt_CDplayer = false;
             }
         }
@@ -213,7 +213,7 @@ public class Item_Power : MonoBehaviour
         {
             if(adapt_HandMirror == true && first_turn == true)
             {
-                playercontroller.Diffence += 15;
+                playercontroller.Deffence += 15;
                 playercontroller.Magic_diffence += 15;
                 adapt_HandMirror = false;
             }
@@ -223,7 +223,7 @@ public class Item_Power : MonoBehaviour
             if(adapt_baseball_ball == true && first_turn == true)
             {
                 playercontroller.Attack_damage += 15;
-                playercontroller.Diffence -= 10;
+                playercontroller.Deffence -= 10;
                 adapt_baseball_ball = false;
             }
         }
@@ -317,7 +317,7 @@ public class Item_Power : MonoBehaviour
                 else if(safetycorn_random == 4)
                 {
                     playercontroller.Attack_damage += 40;
-                    playercontroller.Diffence += 40;
+                    playercontroller.Deffence += 40;
                     adapt_SafetyCorn = false;
                 }
             }
@@ -359,7 +359,7 @@ public class Item_Power : MonoBehaviour
         {
             if(adapt_Megaphone == true && first_turn == true)
             {
-                playercontroller.Diffence += 20;
+                playercontroller.Deffence += 20;
                 adapt_Megaphone = false;
             }
         }
@@ -414,7 +414,7 @@ public class Item_Power : MonoBehaviour
             if(adapt_Baseball_glove == true && baseball_ball_flag == true && first_turn == true)
             {
                 playercontroller.Attack_damage += 25;
-                playercontroller.Diffence += 35;
+                playercontroller.Deffence += 35;
                 adapt_Baseball_glove = false;
             }
             else if (adapt_Baseball_glove == true && first_turn == true)
@@ -496,7 +496,7 @@ public class Item_Power : MonoBehaviour
         {
             if(adapt_TheGrimReaper_robe == true && first_turn == true)
             {
-                playercontroller.Diffence += 40;
+                playercontroller.Deffence += 40;
                 PlayerController.MAX_LUCK -= 3;
                 adapt_TheGrimReaper_robe = false;
             }
@@ -549,7 +549,7 @@ public class Item_Power : MonoBehaviour
             {
                 if (PlayerController.HP > 6)
                 {
-                    playercontroller.Diffence += 10;//–ˆƒ^[ƒ“–hŒä—Í10ã¸
+                    playercontroller.Deffence += 10;//–ˆƒ^[ƒ“–hŒä—Í10ã¸
                     PlayerController.HP -= 5;//‘Ì—Í‚ğ5Œ¸‚ç‚·
                     log_text.text = "ƒ‰ƒWƒI‚ÌŒø‰Ê‚Å-5HP";
                 }
@@ -585,24 +585,24 @@ public class Item_Power : MonoBehaviour
                 }
                 if (Scissors_flag == true)
                 {
-                    playercontroller.Diffence -= 2;
+                    playercontroller.Deffence -= 2;
                 }
                 if (Headphone_flag)
                 {
-                    if (playercontroller.Attack_damage <= 3 || playercontroller.Diffence <= 3)
+                    if (playercontroller.Attack_damage <= 3 || playercontroller.Deffence <= 3)
                     {
                         log_text.text = "ƒwƒbƒhƒzƒ“‚ÌŒø‰Ê‚Í”­“®‚µ‚È‚©‚Á‚½";
                     }
                     else
                     {
                         playercontroller.Attack_damage -= 3;
-                        playercontroller.Diffence -= 3;
+                        playercontroller.Deffence -= 3;
                         PlayerController.HP += 10;
                     }
                 }
                 if (MagnifyingSpeculum_flag == true)
                 {
-                    playercontroller.Diffence += 3;
+                    playercontroller.Deffence += 3;
                     playercontroller.Magic_diffence += 3;
                 }
                 if (hammer_flag == true)
@@ -653,7 +653,7 @@ public class Item_Power : MonoBehaviour
                 if (Dragon_Scale_flag == true)
                 {
                     playercontroller.Attack_damage += 10;
-                    playercontroller.Diffence += 10;
+                    playercontroller.Deffence += 10;
                     playercontroller.Magic_damage += 10;
                     playercontroller.Magic_diffence += 10;
                 }

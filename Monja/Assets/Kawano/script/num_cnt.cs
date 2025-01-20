@@ -20,7 +20,7 @@ public class num_cnt : MonoBehaviour
     {
         //int‚ðstring‚É•ÏŠ·
         attack_Text.text = string.Format("{0}",player.Attack_damage);
-        diffence_Text.text = string.Format("{0}",player.Diffence);
+        diffence_Text.text = string.Format("{0}",player.Deffence);
         magic_Text.text = string.Format("{0}",player.Magic_damage);
         magic_diffence_Text.text = string.Format("{0}",player.Magic_diffence);
         turn_Text.text = string.Format("{0}", Enemy_controller.turn);

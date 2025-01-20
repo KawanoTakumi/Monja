@@ -345,12 +345,12 @@ public class Enemy_controller : MonoBehaviour
             case 1:
                 Attack(1);
                 Log.text = ("スケルトンの攻撃");
-                damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Diffence);
+                damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Deffence);
                 break;
             case 2:
                 Attack(1);
                 Log.text = ("スケルトンの攻撃");
-                damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Diffence);
+                damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Deffence);
                 break;
             case 3:
                 Defence();
@@ -392,12 +392,12 @@ public class Enemy_controller : MonoBehaviour
             case 1:
                 Attack(1);
                 Log.text = ("ミノタウロスの攻撃");
-                damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Diffence);
+                damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Deffence);
                 break;
             case 2:
                 Attack(1);
                 Log.text = ("ミノタウロスの攻撃");
-                damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Diffence);
+                damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Deffence);
                 break;
             case 3:
                 Defence();
@@ -415,12 +415,12 @@ public class Enemy_controller : MonoBehaviour
             case 1:
                 Attack(2);
                 Log.text = ("ケンタウロスの弓攻撃");
-                damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Diffence);
+                damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Deffence);
                 break;
             case 2:
                 Attack(2);
                 Log.text = ("ケンタウロスの弓攻撃");
-                damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Diffence);
+                damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Deffence);
                 break;
             case 3:
                 Defence();
@@ -443,7 +443,7 @@ public class Enemy_controller : MonoBehaviour
             case 2:
                 Attack(1);
                 Log.text = ("コカトリスの攻撃");
-                damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Diffence);
+                damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Deffence);
                 break;
             case 3:
                 Defence();
@@ -460,7 +460,7 @@ public class Enemy_controller : MonoBehaviour
             case 1:
                 Attack(2);
                 Log.text = ("ナイトは斬撃を飛ばした");
-                damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Diffence);
+                damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Deffence);
                 break;
             case 2:
                 Heal();
@@ -529,11 +529,11 @@ public class Enemy_controller : MonoBehaviour
         {
             case 1:
                 TheGrimReaper_attack();
-                damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Diffence);
+                damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Deffence);
                 break;
             case 2:
                 TheGrimReaper_attack();
-                damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Diffence);
+                damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Deffence);
                 break;
             case 3:
                 Defence();
@@ -572,7 +572,7 @@ public class Enemy_controller : MonoBehaviour
         {
             case 1:
                 dragon_attack();
-                damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Diffence);
+                damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Deffence);
                 break;
             case 2:
                 dragon_magic();
@@ -581,7 +581,7 @@ public class Enemy_controller : MonoBehaviour
                 break;
             case 3:
                 dragon_attack();
-                damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Diffence);
+                damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Deffence);
                 break;
             case 4:
                 dragon_Heal();
