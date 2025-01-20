@@ -1,4 +1,3 @@
-
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -6,33 +5,47 @@ public class ChangeScene : MonoBehaviour
 {
     public string sceneName;//切り替えるシーンの名前を入れる
     public Shop_manager shop;
-    public static bool Scene_Change = false;
-    public static int Boss_Number = 0;
-    public static int scene_cnt = 0;
-
-    public void Start()
+    public static bool SceneChange = false;
+    public static int BossNumber = 0;
+    public static int scene_cnt  = 0;
+    public enum Scene
     {
+        Title          = 0,
+        Battle         = 1,
+        Battle_2       = 2,
+        Boss_Battle_01 = 3,
+        Battle_4       = 4,
+        Battle_5       = 5,
+        Boss_Battle_02 = 6,
+        Battle_7       = 7,
+        Battle_8       = 8,
+        Boss_Battle_03 = 9
+    }
+    Scene scene = Scene.Title;
+    void Start()
+    {
+        Debug.Log(scene);
         shop = GetComponent<Shop_manager>();
-        
-    } 
-    //シーンを読み込む
+    }
+    //ロードシーンを読み込む
     public void Load()
     {
-            SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene(sceneName);
     }
-    //shop_changeを有効にする
+    //change_sceneを読み込む
     public void change_scene()
     {
-        Scene_Change = true;
+        //shop_changeを有効にする
+        SceneChange = true;
     }
-    //ショップに戻る時用関数
+    //ショップに戻る時の関数
     public void shop_change()
     {
         //shopに戻る時用
-        if (Scene_Change == true)
+        if (SceneChange == true)
         {
             SceneManager.LoadScene("shop");
-            Scene_Change = false;
+            SceneChange = false;
         }
     }
     //シーンカウント増加関数
@@ -40,11 +53,12 @@ public class ChangeScene : MonoBehaviour
     {
         //シーンナンバー加算
         scene_cnt++;
+        scene++;
     }
     //シーンカウントリセット関数
     public void reset_scene_num()
     {
-        scene_cnt = 0;
+        scene = Scene.Title;
     }
     //最初のターン経過取得フラグ
     public void first_turn_flag()
@@ -57,34 +71,35 @@ public class ChangeScene : MonoBehaviour
         //各シーンカウントで移動シーンを変更
         switch (scene_cnt)
         {
-            case 0: SceneManager.LoadScene("Title"); break;                //タイトル
-            case 1:case 2:case 3: SceneManager.LoadScene("work_01"); break;//歩行シーン1
-            case 4:case 5:case 6: SceneManager.LoadScene("work_02"); break;//歩行シーン2
-            case 7:case 8:case 9: SceneManager.LoadScene("work_03"); break;//歩行シーン3
+            case (int)Scene.Title: SceneManager.LoadScene("Title"); break;                //タイトル
+            case (int)Scene.Battle:   case (int)Scene.Battle_2: case (int)Scene.Boss_Battle_01: SceneManager.LoadScene("work_01"); break;//歩行シーン1
+            case (int)Scene.Battle_4: case (int)Scene.Battle_5: case (int)Scene.Boss_Battle_02: SceneManager.LoadScene("work_02"); break;//歩行シーン2
+            case (int)Scene.Battle_7: case (int)Scene.Battle_8: case (int)Scene.Boss_Battle_03: SceneManager.LoadScene("work_03"); break;//歩行シーン3
         }
     }
     //戦闘シーンをscene_cntに基づいて変更
     public void Enemy_Change_Scene()
     {
-        if(Scene_Change == false)
+        if (SceneChange == false)
         {
             //バトルシーン(case: 3,6,9のときはボスシーン)
             switch (scene_cnt)
             {
-                case 0: SceneManager.LoadScene("Title");            break; //タイトル
-                case 1: SceneManager.LoadScene("Battle");           break; //スケルトン　  バトル１
-                case 2: SceneManager.LoadScene("Battle_2");         break; //リッチ　      バトル２
-                case 3: SceneManager.LoadScene("Boss_Battle_01");   break; //死神　        バトル３
-                case 4: SceneManager.LoadScene("Battle_4");         break; //ミノタウロス　バトル４
-                case 5: SceneManager.LoadScene("Battle_5");         break; //ケンタウロス　バトル５
-                case 6: SceneManager.LoadScene("Boss_Battle_02");   break; //メデューサ    バトル６
-                case 7: SceneManager.LoadScene("Battle_7");         break; //コカトリス　  バトル７
-                case 8: SceneManager.LoadScene("Battle_8");         break; //ナイト　      バトル８
-                case 9: SceneManager.LoadScene("Boss_Battle_03");   break; //ドラゴン      バトル９
+                case (int)Scene.Title:          SceneManager.LoadScene("Title");          break; //タイトル
+                case (int)Scene.Battle:         SceneManager.LoadScene("Battle");         break; //スケルトン　  バトル１
+                case (int)Scene.Battle_2:       SceneManager.LoadScene("Battle_2");       break; //リッチ　      バトル２
+                case (int)Scene.Boss_Battle_01: SceneManager.LoadScene("Boss_Battle_01"); break; //死神　        バトル３
+                case (int)Scene.Battle_4:       SceneManager.LoadScene("Battle_4");       break; //ミノタウロス　バトル４
+                case (int)Scene.Battle_5:       SceneManager.LoadScene("Battle_5");       break; //ケンタウロス　バトル５
+                case (int)Scene.Boss_Battle_02: SceneManager.LoadScene("Boss_Battle_02"); break; //メデューサ    バトル６
+                case (int)Scene.Battle_7:       SceneManager.LoadScene("Battle_7");       break; //コカトリス　  バトル７
+                case (int)Scene.Battle_8:       SceneManager.LoadScene("Battle_8");       break; //ナイト　      バトル８
+                case (int)Scene.Boss_Battle_03: SceneManager.LoadScene("Boss_Battle_03"); break; //ドラゴン      バトル９
             }
         }
     }
     //titleに戻る時に使用
+    //アイテムとHPとシーンカウントをリセット
     public void Player_Reset()
     {
         PlayerController.HP = PlayerController.HP_MAX;
@@ -142,6 +157,7 @@ public class ChangeScene : MonoBehaviour
 
         scene_cnt = 0;
     }
+    //shopシーンのアイテム表示をリセット
     public void Item_num_Reset()
     {
         Shop_manager.tmp_1 = -1;
@@ -172,7 +188,7 @@ public class ChangeScene : MonoBehaviour
         Item_Power.first_turn = true;
         Item_Power.Boxing_flag = false;
         Enemy_controller.turn = 0;
-        Enemy_controller.HP = 150;
+        Enemy_controller.HP = Enemy_controller.HP_MAX;
         Enemy_controller.tag_get = true;
     }
     //リトライした時数値を変更
@@ -180,9 +196,9 @@ public class ChangeScene : MonoBehaviour
     {
         switch (scene_cnt)
         {
-            case 1: case 2: case 3: scene_cnt = 1;break;   
-            case 4: case 5: case 6: scene_cnt = 4;break;   
-            case 7: case 8: case 9: scene_cnt = 7;break;   
+            case (int)Scene.Battle:   case (int)Scene.Battle_2: case (int)Scene.Boss_Battle_01: scene = Scene.Battle; break;
+            case (int)Scene.Battle_4: case (int)Scene.Battle_5: case (int)Scene.Boss_Battle_02: scene = Scene.Battle_4; break;
+            case (int)Scene.Battle_7: case (int)Scene.Battle_8: case (int)Scene.Boss_Battle_03: scene = Scene.Battle_7; break;
         }
     }
 }

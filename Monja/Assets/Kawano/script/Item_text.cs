@@ -112,12 +112,12 @@ public class Item_text : MonoBehaviour
         else if (button == CompareTag("ice"))
         {
             itemname.text = "氷";
-            guide_text.text = "水を凍らせるとできる物体。かき氷にしますか？\n\n魔法攻撃力を１０増加させ、氷の弾で攻撃する（アイテム画面でアイテムを押すと魔法攻撃が変化）";
+            guide_text.text = "水を凍らせるとできる物体。かき氷にしますか？\n魔法攻撃力を１０増加させ、氷の弾で攻撃する。\n（アイテム画面でアイテムを押すと魔法攻撃が変化）";
         }
         else if (button == CompareTag("Pudding"))
         {
             itemname.text = "プリン";
-            guide_text.text = "卵を牛乳などと一緒に固めた甘いお菓子。至福の時間。\n\n戦闘開始時体力を最大値の２５％分回復する。\nまた、リンゴを持っていると戦闘ごとに最大体力が３０増加する";
+            guide_text.text = "卵を牛乳などと一緒に固めた甘いお菓子。至福の時間。\n戦闘開始時体力を最大値の２５％分回復する。\nまた、リンゴを持っていると戦闘ごとに最大体力が３０増加する";
         }
         else if (button == CompareTag("Drill"))
         {
@@ -127,7 +127,7 @@ public class Item_text : MonoBehaviour
         else if (button == CompareTag("Headphone"))
         {
             itemname.text = "ヘッドフォン";
-            guide_text.text = "頭につけることで音楽を聞くことができる道具。自分の世界に入ってしまう。\n\n毎ターン開始時に物理攻撃力と物理防御力を３減少\n体力を１０回復";
+            guide_text.text = "頭につけることで音楽を聞くことができる道具。自分の世界に入ってしまう。\n毎ターン開始時に物理攻撃力と物理防御力を３減少させて体力を１０回復";
         }
         else if (button == CompareTag("UtypeMagnet"))
         {
@@ -167,7 +167,7 @@ public class Item_text : MonoBehaviour
         else if (button == CompareTag("Mike"))
         {
             itemname.text = "マイク";
-            guide_text.text = "音を拾うことができる機械。Say Yeah!!\n\n魔法攻撃力を３０増加させ音のノイズで攻撃する\n（アイテム画面でアイテムを押すと魔法攻撃が変化）";
+            guide_text.text = "音を拾うことができる機械。Say Yeah!!\n魔法攻撃力を３０増加させ音のノイズで攻撃する\n（アイテム画面でアイテムを押すと魔法攻撃が変化）";
         }
         else if (button == CompareTag("Megaphone"))
         {
@@ -177,12 +177,12 @@ public class Item_text : MonoBehaviour
         else if (button == CompareTag("HandMill"))
         {
             itemname.text = "ハンドミル";
-            guide_text.text = "豆を挽くための道具。香ばしい香りがしてるぜ。\n\nコーヒーを持っている時、魔法攻撃力を６０増加させる\n持っていない時は魔法攻撃力を３０減少させる";
+            guide_text.text = "豆を挽くための道具。香ばしい香りがしてるぜ。\nコーヒーを持っている時、魔法攻撃力を６０増加させる\n持っていない時は魔法攻撃力を３０減少させる";
         }
         else if(button == CompareTag("Poteto"))
         {
             itemname.text = "ポテト";
-            guide_text.text = "ジャガイモを油で揚げた食べ物。食べるのをやめられない。\n\nハンバーガーを持っている時物理攻撃力を60増加させ、持っていない時は物理攻撃力を３０減少させる";
+            guide_text.text = "ジャガイモを油で揚げた食べ物。食べるのをやめられない。\nハンバーガーを持っている時物理攻撃力を60増加させる\n持っていない時は物理攻撃力を３０減少させる";
         }
         else if (button == CompareTag("Scop"))
         {
@@ -207,7 +207,7 @@ public class Item_text : MonoBehaviour
         else if (button == CompareTag("Baseball_glove"))
         {
             itemname.text = "野球グローブ";
-            guide_text.text = "野球で使われるグローブ。手によくフィットする。\n\n物理攻撃力を２５増加させる。\n野球ボールを持ってたら、魔法攻撃力も３５増加させる";
+            guide_text.text = "野球で使われるグローブ。手によくフィットする。\n物理攻撃力を２５増加させる。\n野球ボールを持ってたら、魔法攻撃力も３５増加させる";
         }
         else if (button == CompareTag("Boxing_glove"))
         {
@@ -227,7 +227,7 @@ public class Item_text : MonoBehaviour
         else if (button == CompareTag("Hamberger"))
         {
             itemname.text = "ハンバーガー";
-            guide_text.text = "ジャンクフードの王様。カロリーが高い。一日三食これ一個。\n\nポテトを持っている時物理攻撃力を４０増加させる\n持っていないときは物理攻撃力を２０増加させる";
+            guide_text.text = "ジャンクフードの王様。カロリーが高い。一日三食これ一個。\nポテトを持っている時物理攻撃力を４０増加させる\n持っていないときは物理攻撃力を２０増加させる";
         }
         else if (button == CompareTag("Pencil"))
         {
@@ -262,7 +262,7 @@ public class Item_text : MonoBehaviour
         else if (button == CompareTag("MagicBook"))
         {
             itemname.text = "メデューサの魔導書";
-            guide_text.text = "メデューサが使っていた魔導書。書かれている文字は解読できない。\n\n魔法攻撃力を40増加させ、クリティカルが出やすくなる\n（アイテム画面でアイテムを押すと魔法攻撃が変化）";
+            guide_text.text = "メデューサが使っていた魔導書。書かれている文字は解読できない。\n魔法攻撃力を40増加させ、クリティカルが出やすくなる\n（アイテム画面でアイテムを押すと魔法攻撃が変化）";
         }
         else if (button == CompareTag("Scale"))
         {

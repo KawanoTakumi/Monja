@@ -27,7 +27,7 @@ public class Item_Manager : MonoBehaviour
             Item.Add("HandMirror",          false);//10
             Item.Add("bowlingpin",          false);//11
             Item.Add("baseball_ball",       false);//12
-            Item.Add("dice",                false);//13
+            Item.Add("dice",                true);//13
             Item.Add("Water bucket",        false);//14
             Item.Add("Popcorn",             false);//15
             Item.Add("Apple",               false);//16

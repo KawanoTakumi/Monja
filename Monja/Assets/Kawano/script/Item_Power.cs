@@ -45,7 +45,7 @@ public class Item_Power : MonoBehaviour
     bool adapt_Hamberger = true;
     bool adapt_Pencil = true;
     bool adapt_Mayonnaise = true;
-    bool adapt_Pudding = true;
+    static bool adapt_Pudding = true;
     bool adapt_TheGrimReaper_scythe = true;
     bool adapt_TheGrimReaper_robe = true;
     bool adapt_Medhusa_Eye = true;
@@ -154,7 +154,7 @@ public class Item_Power : MonoBehaviour
         {
             if(adapt_bowlingball == true && first_turn == true)
             {
-                playercontroller.Attack_damage += 20;//攻撃力20上昇
+                playercontroller.Attack += 20;//攻撃力20上昇
                 playercontroller.Diffence -= 20;//防御力20減少
                 adapt_bowlingball = false;//falseにして一回しか読み込まれ内容にする
             }
@@ -163,7 +163,7 @@ public class Item_Power : MonoBehaviour
         {
             if(adapt_cd == true && first_turn == true)
             {
-                playercontroller.Attack_damage += playercontroller.Diffence / 6;//attackにdiffenceの1/6の数字を加算
+                playercontroller.Attack += playercontroller.Diffence / 6;//attackにdiffenceの1/6の数字を加算
                 adapt_cd = false;
             }
         }
@@ -171,7 +171,7 @@ public class Item_Power : MonoBehaviour
         {
             if(adapt_CDplayer == true && first_turn == true)
             {
-                playercontroller.Attack_damage -= 20;//攻撃力20減少
+                playercontroller.Attack -= 20;//攻撃力20減少
                 playercontroller.Diffence += 20;//防御力20上昇
                 adapt_CDplayer = false;
             }
@@ -180,8 +180,8 @@ public class Item_Power : MonoBehaviour
         {
             if(adapt_kesigomu == true && first_turn == true)
             {
-                playercontroller.Attack_damage += 20;
-                playercontroller.Magic_damage -= playercontroller.Attack_damage / 2;
+                playercontroller.Attack += 20;
+                playercontroller.Magic -= playercontroller.Attack / 2;
                 adapt_kesigomu = false;
             }
         }
@@ -189,7 +189,7 @@ public class Item_Power : MonoBehaviour
         {
             if(adapt_TV == true && first_turn == true)
             {
-                playercontroller.Magic_damage += (playercontroller.Magic_damage / 5) * 3;//魔法攻撃力５につき魔法攻撃力を３上昇
+                playercontroller.Magic += (playercontroller.Magic / 5) * 3;//魔法攻撃力５につき魔法攻撃力を３上昇
                 adapt_TV = false;
             }
         }
@@ -205,7 +205,7 @@ public class Item_Power : MonoBehaviour
         {
             if(adapt_Mouse == true && first_turn == true)
             {
-                playercontroller.Magic_damage += 10;
+                playercontroller.Magic += 10;
                 adapt_Mouse = false;
             }
         }
@@ -222,7 +222,7 @@ public class Item_Power : MonoBehaviour
         {
             if(adapt_baseball_ball == true && first_turn == true)
             {
-                playercontroller.Attack_damage += 15;
+                playercontroller.Attack += 15;
                 playercontroller.Diffence -= 10;
                 adapt_baseball_ball = false;
             }
@@ -248,7 +248,7 @@ public class Item_Power : MonoBehaviour
             if(adapt_Apple == true && first_turn == true)
             {
                 PlayerController.HP += 30;
-                playercontroller.Magic_damage += 15;
+                playercontroller.Magic += 15;
                 adapt_Apple = false;
             }
         }
@@ -256,7 +256,7 @@ public class Item_Power : MonoBehaviour
         {
             if(adapt_Scissors == true && first_turn == true)
             {
-                playercontroller.Attack_damage += 20;
+                playercontroller.Attack += 20;
                 adapt_Scissors = false;
             }
         }
@@ -264,7 +264,7 @@ public class Item_Power : MonoBehaviour
         {
             if(adapt_ice == true && first_turn == true)
             {
-                playercontroller.Magic_damage += 10;
+                playercontroller.Magic += 10;
                 adapt_ice = false;
             }
         }
@@ -275,25 +275,17 @@ public class Item_Power : MonoBehaviour
                 PlayerController.HP_MAX += 30;
                 adapt_Pudding = false;
             }
-            else if(adapt_Pudding == true && first_turn == true)
+            if(adapt_Pudding == true && first_turn == true)
             {
                 PlayerController.HP += PlayerController.HP_MAX / 4;
                 adapt_Pudding = false;
-            }
-        }
-        if(Drill_flag == true)
-        {
-            if(adapt_Drill == true && first_turn == true)
-            {
-                playercontroller.Attack_damage += enemy_Controller.deffence / 2;
-                adapt_Drill = false;
             }
         }
         if(UtypeMagnet_flag == true)
         {
             if (adapt_Utype_M == true && first_turn == true)
             {
-                playercontroller.Magic_damage += 20;
+                playercontroller.Magic += 20;
                 adapt_Utype_M = false;
             }
         }
@@ -309,7 +301,7 @@ public class Item_Power : MonoBehaviour
                 {
                     PlayerController.HP -= 20;
                 }
-                playercontroller.Magic_damage += 30;
+                playercontroller.Magic += 30;
                 adapt_Coffee = false;
             }
         }
@@ -324,7 +316,7 @@ public class Item_Power : MonoBehaviour
                 }
                 else if(safetycorn_random == 4)
                 {
-                    playercontroller.Attack_damage += 40;
+                    playercontroller.Attack += 40;
                     playercontroller.Diffence += 40;
                     adapt_SafetyCorn = false;
                 }
@@ -334,7 +326,7 @@ public class Item_Power : MonoBehaviour
         {
             if(adapt_USB == true && first_turn == true)
             {
-                playercontroller.Magic_damage += 20;
+                playercontroller.Magic += 20;
                 playercontroller.Magic_diffence -= 10;
                 adapt_USB = false;
             }
@@ -343,7 +335,7 @@ public class Item_Power : MonoBehaviour
         {
             if(adapt_SmartPhone == true && first_turn == true)
             {
-                playercontroller.Magic_diffence += playercontroller.Magic_damage / 4;
+                playercontroller.Magic_diffence += playercontroller.Magic / 4;
                 adapt_SmartPhone = false;
             }
         }
@@ -359,7 +351,7 @@ public class Item_Power : MonoBehaviour
         {
             if(adapt_Mike == true && first_turn == true)
             {
-                playercontroller.Magic_damage += 30;
+                playercontroller.Magic += 30;
                 adapt_Mike = false;
             }
         }
@@ -375,12 +367,12 @@ public class Item_Power : MonoBehaviour
         {
             if(adapt_HandMill == true && Coffee_flag == true && first_turn == true)
             {
-                playercontroller.Magic_damage += 60;
+                playercontroller.Magic += 60;
                 adapt_HandMill = false;
             }
             else if(adapt_HandMill == true && first_turn == true)
             {
-                playercontroller.Magic_damage -= 30;
+                playercontroller.Magic -= 30;
                 adapt_HandMill = false;
             }
         }
@@ -388,12 +380,12 @@ public class Item_Power : MonoBehaviour
         {
             if (adapt_Poteto == true && Hamberger_flag == true && first_turn == true)
             {
-                playercontroller.Attack_damage += 60;
+                playercontroller.Attack += 60;
                 adapt_Poteto = false;
             }
             else if (adapt_Poteto == true && first_turn == true)
             {
-                playercontroller.Attack_damage -= 30;
+                playercontroller.Attack -= 30;
                 adapt_Poteto = false;
             }
         }
@@ -421,13 +413,13 @@ public class Item_Power : MonoBehaviour
         {
             if(adapt_Baseball_glove == true && baseball_ball_flag == true && first_turn == true)
             {
-                playercontroller.Attack_damage += 25;
+                playercontroller.Attack += 25;
                 playercontroller.Diffence += 35;
                 adapt_Baseball_glove = false;
             }
             else if (adapt_Baseball_glove == true && first_turn == true)
             {
-                playercontroller.Attack_damage += 25;
+                playercontroller.Attack += 25;
                 adapt_Baseball_glove = false;
             }
         }
@@ -451,12 +443,12 @@ public class Item_Power : MonoBehaviour
         {
             if (Enemy_controller.turn % 2 == 0 && turn_bool == true)
             {
-                playercontroller.Attack_damage += 25;
+                playercontroller.Attack += 25;
                 turn_bool = false;
             }
             else if (Enemy_controller.turn != 1&&Enemy_controller.turn % 2 != 0 && turn_bool == true)
             {
-                playercontroller.Attack_damage -= 25;
+                playercontroller.Attack -= 25;
                 turn_bool = false;
             }
         }
@@ -464,12 +456,12 @@ public class Item_Power : MonoBehaviour
         {
             if(adapt_Hamberger == true && Poteto_flag == true && first_turn == true)
             {
-                playercontroller.Attack_damage += 40;
+                playercontroller.Attack += 40;
                 adapt_Hamberger = false;
             }
             else if(adapt_Hamberger == true && first_turn == true)
             {
-                playercontroller.Attack_damage += 20;
+                playercontroller.Attack += 20;
                 adapt_Hamberger = false;
             }
         }
@@ -478,7 +470,7 @@ public class Item_Power : MonoBehaviour
             //戦闘開始時の効果
             if (adapt_Pencil == true && first_turn == true)
             {
-                playercontroller.Attack_damage += 50;
+                playercontroller.Attack += 50;
                 adapt_Pencil = false;
             }
         }
@@ -486,7 +478,7 @@ public class Item_Power : MonoBehaviour
         {
             if (adapt_Mayonnaise == true && first_turn == true)
             {
-                playercontroller.Magic_damage += 50;
+                playercontroller.Magic += 50;
                 adapt_Mayonnaise = false;
             }
         }
@@ -494,7 +486,7 @@ public class Item_Power : MonoBehaviour
         {
             if(adapt_TheGrimReaper_scythe == true && first_turn == true)
             {
-                playercontroller.Attack_damage += 40;
+                playercontroller.Attack      += 40;
                 PlayerController.MAX_LUCK    -= 3;
                 Sinigami_Crit_Effect = true;//死神のクリティカルエフェクト発生
                 adapt_TheGrimReaper_scythe = false;
@@ -522,7 +514,7 @@ public class Item_Power : MonoBehaviour
         {
             if(adapt_Medhusa_MagicBook == true && first_turn == true)
             {
-                playercontroller.Magic_damage += 40;
+                playercontroller.Magic    += 40;
                 PlayerController.MAX_LUCK -= 3;
                 Medhusa_Magic_flag = true;
                 adapt_Medhusa_MagicBook = false;
@@ -532,7 +524,7 @@ public class Item_Power : MonoBehaviour
         {
             if(adapt_Dragon_Tooth = true && first_turn == true)
             {
-                playercontroller.Attack_damage += 100;
+                playercontroller.Attack    += 100;
                 PlayerController.HP_MAX     = 50;
                 adapt_Dragon_Tooth = false;
             }
@@ -542,7 +534,7 @@ public class Item_Power : MonoBehaviour
             //効果の内容的に一番下
             if (adapt_bowlingpin == true && first_turn == true)
             {
-                PlayerController.MONEY += playercontroller.Attack_damage / 6;
+                PlayerController.MONEY += playercontroller.Attack / 6;
                 adapt_bowlingpin = false;
             }
         }
@@ -570,7 +562,7 @@ public class Item_Power : MonoBehaviour
             {
                 if (PlayerController.HP > 6)
                 {
-                    playercontroller.Attack_damage += 10;//毎ターン攻撃力10上昇
+                    playercontroller.Attack += 10;//毎ターン攻撃力10上昇
                     PlayerController.HP -= 5;//体力を5減らす
                     log_text.text = "砂時計の効果で-5HP";
                 }
@@ -584,10 +576,10 @@ public class Item_Power : MonoBehaviour
                 dice_random = Random.Range(1, 7);
                 switch (dice_random)
                 {
-                    case 1: playercontroller.Attack_damage += 10; break;
-                    case 2: playercontroller.Attack_damage -= 10; break;
-                    case 3: playercontroller.Magic_damage += 10; break;
-                    case 4: playercontroller.Magic_damage -= 10; break;
+                    case 1: playercontroller.Attack += 10; break;
+                    case 2: playercontroller.Attack -= 10; break;
+                    case 3: playercontroller.Magic += 10; break;
+                    case 4: playercontroller.Magic -= 10; break;
                     case 5: PlayerController.MONEY += 5; break;
                     case 6: dice_crit = true; break;//クリティカル発生
                 }
@@ -597,13 +589,13 @@ public class Item_Power : MonoBehaviour
                 }
                 if (Headphone_flag)
                 {
-                    if (playercontroller.Attack_damage <= 3 || playercontroller.Diffence <= 3)
+                    if (playercontroller.Attack <= 3 || playercontroller.Diffence <= 3)
                     {
                         log_text.text = "ヘッドホンの効果は発動しなかった";
                     }
                     else
                     {
-                        playercontroller.Attack_damage -= 3;
+                        playercontroller.Attack -= 3;
                         playercontroller.Diffence -= 3;
                         PlayerController.HP += 10;
                     }
@@ -638,7 +630,7 @@ public class Item_Power : MonoBehaviour
                 {
                     if (Pencil_Down_cnt <= 10)
                     {
-                        playercontroller.Attack_damage -= 5;
+                        playercontroller.Attack -= 5;
                         Pencil_Down_cnt++;
                     }
                 }
@@ -646,7 +638,7 @@ public class Item_Power : MonoBehaviour
                 {
                     if (Pencil_Down_cnt <= 10)
                     {
-                        playercontroller.Magic_damage -= 5;
+                        playercontroller.Magic -= 5;
                         Pencil_Down_cnt++;
                     }
                 }
@@ -654,15 +646,15 @@ public class Item_Power : MonoBehaviour
                 {
                     if (Watch_Add_reset == true)
                     {
-                        playercontroller.Attack_damage += PlayerController.HP_MAX - PlayerController.HP;
+                        playercontroller.Attack += PlayerController.HP_MAX - PlayerController.HP;
                         Watch_Add_reset = false;
                     }
                 }
                 if (Dragon_Scale_flag == true)
                 {
-                    playercontroller.Attack_damage += 10;
+                    playercontroller.Attack += 10;
                     playercontroller.Diffence += 10;
-                    playercontroller.Magic_damage += 10;
+                    playercontroller.Magic += 10;
                     playercontroller.Magic_diffence += 10;
                 }
             }
