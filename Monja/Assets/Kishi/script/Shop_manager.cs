@@ -246,9 +246,9 @@ public class Shop_manager : MonoBehaviour
     public void shop_reroll()
     {
 
-        if (PlayerController.Money >= 30)
+        if (PlayerController.MONEY >= 30)
         {
-            PlayerController.Money -= 30;
+            PlayerController.MONEY -= 30;
 
             Destroy(obj1);
             Item_Library.GetFlag1 = false;
