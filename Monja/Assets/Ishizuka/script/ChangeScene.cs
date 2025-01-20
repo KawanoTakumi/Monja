@@ -165,7 +165,7 @@ public class ChangeScene : MonoBehaviour
         PlayerController.MP = PlayerController.MP_MAX;
         PlayerController.MAGIC_NUMBER = 0;
         PlayerController.MONEY = 0;
-        PlayerController.Status_reset();
+        PlayerController.Status_Reset();
         PlayerController.Item_Reset();
         //Šeí”’l‚ğ‰Šú‰»
         Item_Power.turn_compare = 0;

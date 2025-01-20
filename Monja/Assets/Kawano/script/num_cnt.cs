@@ -19,9 +19,9 @@ public class num_cnt : MonoBehaviour
     void Update()
     {
         //int‚ðstring‚É•ÏŠ·
-        attack_Text.text = string.Format("{0}",player.Attack);
+        attack_Text.text = string.Format("{0}",player.Attack_damage);
         diffence_Text.text = string.Format("{0}",player.Diffence);
-        magic_Text.text = string.Format("{0}",player.Magic);
+        magic_Text.text = string.Format("{0}",player.Magic_damage);
         magic_diffence_Text.text = string.Format("{0}",player.Magic_diffence);
         turn_Text.text = string.Format("{0}", Enemy_controller.turn);
         player_money.text = string.Format("{0}", PlayerController.MONEY);

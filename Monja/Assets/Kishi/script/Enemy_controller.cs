@@ -205,7 +205,7 @@ public class Enemy_controller : MonoBehaviour
             Destroy(playerController.Player_object);
             if (Item_Power.Watch_Add_reset == false)//アイテム：Watchの増加分ステータスリセット
             {
-                playerController.Attack -= PlayerController.HP_MAX - PlayerController.HP;
+                playerController.Attack_damage -= PlayerController.HP_MAX - PlayerController.HP;
                 Item_Power.Watch_Add_reset = true;
             }
             if (Freeze_turn == true || Stone_turn == true || Stun_turn == true)
@@ -217,7 +217,7 @@ public class Enemy_controller : MonoBehaviour
                 {
                     turn += 1;
                 }
-                playerController.intaract_true();
+                playerController.Intaract_True();
                 Item_Power.first_turn = false;
                 Destroy(playerController.Player_object);
                 status_.Delete_Effect();
@@ -251,7 +251,7 @@ public class Enemy_controller : MonoBehaviour
                 Log.text = ("敵ターン終了");
                 status_.Delete_Effect();
                 turn += 1;
-                playerController.intaract_true();
+                playerController.Intaract_True();
                 Item_Power.first_turn = false;
                 Enemy_deffence -=Enemy_deffence;
                 turn_manager.turn = true;
@@ -664,7 +664,7 @@ public class Enemy_controller : MonoBehaviour
         animator.SetBool("death", false);
         Monster.SetActive(false);
         Win_Reset();
-        PlayerController.Status_reset();
+        PlayerController.Status_Reset();
         Item_Power.turn_compare = 0;
         Freeze_turn = false;
         Item_Power.Pencil_Down_cnt = 0;

@@ -22,41 +22,41 @@ public class PlayerController : MonoBehaviour
     static int CONSTANT_MAGIC_DEFFENCE = 25;    //魔法防御の定数
 
     //プレイヤーステータス（変数）
-    public int Attack         = 0;              //攻撃力
+    public int Attack_damage  = 0;              //攻撃力
     public int Diffence       = 0;              //防御力
-    public int Magic          = 0;              //魔法力
+    public int Magic_damage   = 0;              //魔法力
     public int Magic_diffence = 0;              //魔法防御力
-    public int Attack_damage  = 0;              //攻撃力(計算後)
-    public int Magic_damage   = 0;              //魔法力(計算後)
-    public int Player_luck    = 0;              //プレイヤーのラック
+    public int Calc_attack_damage  = 0;         //攻撃力(計算後)
+    public int Calc_magic_damage   = 0;         //魔法力(計算後)
+    public int Player_luck         = 0;         //プレイヤーのラック
     int Poison_cnt = 0;                         //毒のターン数
     int OnFire_cnt = 0;                         //延焼のターン数
     int Turn_time  = 0;                         //ターン経過時間
     int Cons_num   = 0;                         //マホウ強化変数
 
     //オブジェクト取得変数
-    public Button Item_button;                     //アイテムボタン
-    public Button Setting_button;                  //設定ボタン
-    public Button Attack_button;                   //ザンゲキボタン
-    public Button Concentlation_button;            //シュウチュウボタン
-    public Button Magic_button;                    //マホウボタン
-    public Button Heal_button;                     //カイフクボタン
-    public GameObject Player_object;                  //プレイヤーオブジェクト
-    public Status_Controller Status_controller;    //ステータスコントローラー
-    [SerializeField] GameObject ParentGameObject;  //親オブジェクト
-    Animator Animator;                             //プレイヤーアニメーター
-    Damage_calculate Damage_calculate;             //ダメージサーキュレーター
-    Enemy_controller Enemy_controller;             //エネミーコントローラ
-    GameObject Enemey;                             //敵オブジェクト
-    public GameObject[] Effect;                    //エフェクト用配列
-    public Text[] Log;                             //テキストログ用配列
+    public Button Item_button;                      //アイテムボタン
+    public Button Setting_button;                   //設定ボタン
+    public Button Attack_button;                    //ザンゲキボタン
+    public Button Concentlation_button;             //シュウチュウボタン
+    public Button Magic_button;                     //マホウボタン
+    public Button Heal_button;                      //カイフクボタン
+    public GameObject Player_object;                //プレイヤーオブジェクト
+    public Status_Controller Status_controller;     //ステータスコントローラー
+    [SerializeField] GameObject ParentGameObject;   //親オブジェクト
+    Animator Animator;                              //プレイヤーアニメーター
+    Damage_calculate Damage_calculate;              //ダメージサーキュレーター
+    Enemy_controller Enemy_controller;              //エネミーコントローラ
+    GameObject Enemey;                              //敵オブジェクト
+    public GameObject[] Effect;                     //エフェクト用配列
+    public Text[] Log;                              //テキストログ用配列
 
     //フラグ
-    bool Cons_flag     = false;                    //シュウチュウフラグ
-    bool Button_check  = false;                    //ボタンチェックフラグ
+    bool Cons_flag     = false;                     //シュウチュウフラグ
+    bool Button_check  = false;                     //ボタンチェックフラグ
 
-    public AudioSource Audio_source_SE;               //SEオーディオソース
-    [SerializeField] AudioClip[] Audio_clip_SE;       //SEオーディオクリップ
+    public AudioSource Audio_source_SE;             //SEオーディオソース
+    [SerializeField] AudioClip[] Audio_clip_SE;     //SEオーディオクリップ
 
     //スタートメソッド
     //説明・・・オブジェクトのコンポーネントを読み込む、戦闘開始時にステータスを初期化、主人公ターンへ移行
@@ -69,9 +69,9 @@ public class PlayerController : MonoBehaviour
         Enemy_controller = Enemey.GetComponent<Enemy_controller>();
 
         //初期の定数を変数に適用
-        Attack = CONSTANT_ATTACK;
+        Attack_damage = CONSTANT_ATTACK;
         Diffence = CONSTANT_DEFFENCE;
-        Magic = CONSTANT_MAGIC;
+        Magic_damage = CONSTANT_MAGIC;
         Magic_diffence = CONSTANT_MAGIC_DEFFENCE;
 
         //主人公のターンにする true = 主人公、false = 敵
@@ -79,14 +79,16 @@ public class PlayerController : MonoBehaviour
         Log[0].text = "主人公のターン";
     }
 
-
+    //アップデートメソッド
+    //説明・・・数値を保持させる、各エフェクト作成、プレイヤーのターンを経過させる
     void Update()
     {
         //数値を保存
-        CONSTANT_ATTACK    = Attack;
-        CONSTANT_DEFFENCE  = Diffence;
-        CONSTANT_MAGIC     = Magic;
+        CONSTANT_ATTACK         = Attack_damage;
+        CONSTANT_DEFFENCE       = Diffence;
+        CONSTANT_MAGIC          = Magic_damage;
         CONSTANT_MAGIC_DEFFENCE = Magic_diffence;
+
         //エフェクト削除
         if (turn_manager.turn == false)
         {
@@ -102,8 +104,6 @@ public class PlayerController : MonoBehaviour
             Enemy_controller.Stone_turn = false;
             turn_manager.turn = false;
         }
-
-
         //毒ダメージ
         if (Enemy_controller.poison == true)
         {
@@ -127,17 +127,17 @@ public class PlayerController : MonoBehaviour
        
        
         //ステータス上限
-        if (Attack >= STATUS_MAX)
+        if (Attack_damage >= STATUS_MAX)
         {
-            Attack = STATUS_MAX;
+            Attack_damage = STATUS_MAX;
         }
         if(Diffence >= STATUS_MAX)
         {
             Diffence = STATUS_MAX;
         }
-        if(Magic >= STATUS_MAX)
+        if(Magic_damage >= STATUS_MAX)
         {
-            Magic = STATUS_MAX;
+            Magic_damage = STATUS_MAX;
         }
         if(Magic_diffence >= STATUS_MAX)
         {
@@ -149,17 +149,17 @@ public class PlayerController : MonoBehaviour
         }
 
         //ステータス下限
-        if (Attack < STATUS_MIN)
+        if (Attack_damage < STATUS_MIN)
         {
-            Attack = STATUS_MIN;
+            Attack_damage = STATUS_MIN;
         }
         if (Diffence < STATUS_MIN)
         {
             Diffence = STATUS_MIN;
         }
-        if (Magic < STATUS_MIN)
+        if (Magic_damage < STATUS_MIN)
         {
-            Magic = STATUS_MIN;
+            Magic_damage = STATUS_MIN;
         }
         if (Magic_diffence < STATUS_MIN)
         {
@@ -207,7 +207,7 @@ public class PlayerController : MonoBehaviour
     //ザンゲキ
     public void attack()
     {
-        intaract_false();
+        Intaract_False();
         Animator.SetBool("attack", true);
         if (turn_manager.turn == true)
         {
@@ -220,20 +220,20 @@ public class PlayerController : MonoBehaviour
                 //遅延
                 Invoke("SE_Play_Attack", 500.0f);
 
-                Attack_damage = Attack;
+                Calc_attack_damage = Attack_damage;
             }
             else if (Player_luck == MAX_LUCK -1 || Item_Power.dice_crit == true)
             {
-                Attack_damage = Attack + Attack / 2;                
+                Calc_attack_damage = Attack_damage + Attack_damage / 2;                
                 Log[0].text = ("主人公クリティカルが発生");
                 Item_Power.dice_crit = false;
             }
             if (Item_Power.Boxing_flag == true)
             {
-                Attack += 3;
+                Attack_damage += 3;
             }
 
-            Damage_calculate.Enemey_Damage_Calculate(Attack_damage, Enemy_controller.Enemy_deffence);
+            Damage_calculate.Enemey_Damage_Calculate(Calc_attack_damage, Enemy_controller.Enemy_deffence);
         }
     }
     //シュウチュウ
@@ -246,11 +246,11 @@ public class PlayerController : MonoBehaviour
             {
                 Button_check = true;
                 Item_button.interactable = false;
-                intaract_false();
+                Intaract_False();
                 Animator.SetBool("cons", true);
                 MP += MP_MAX / 2;
                 Log[0].text = "主人公は集中した";
-                Magic += 10;
+                Magic_damage += 10;
                 Cons_num++;
                 Cons_flag = true;
                 //MPがMP_maxより大きければMP_maxの値に合わせる
@@ -275,7 +275,7 @@ public class PlayerController : MonoBehaviour
                 Button_check = true;
                 Item_button.interactable = false;
 
-                intaract_false();
+                Intaract_False();
                 Log[0].text = "主人公は魔法を撃った";
                 Animator.SetBool("magic", true);
                 switch (MAGIC_NUMBER)
@@ -287,11 +287,11 @@ public class PlayerController : MonoBehaviour
                 }
 
                 MP -= 25;
-                Magic_damage = Magic;
-                Damage_calculate.Enemey_Damage_Calculate(Magic_damage, Enemy_controller.magic_Diffence);
+                Calc_magic_damage = Magic_damage;
+                Damage_calculate.Enemey_Damage_Calculate(Calc_magic_damage, Enemy_controller.magic_Diffence);
                 if(Cons_flag == true)
                 {
-                    Magic -= 10 * Cons_num;
+                    Magic_damage -= 10 * Cons_num;
                     Cons_num = 0;
                     Cons_flag = false;
                 }
@@ -304,11 +304,11 @@ public class PlayerController : MonoBehaviour
         }
     }
     //カイフク
-    public void heal()
+    public void Heal()
     {        
         if (turn_manager.turn == true)
         {
-            intaract_false();
+            Intaract_False();
             Item_button.interactable = false;
             if (HP != HP_MAX && HP_POTION > 0)
             {
@@ -332,11 +332,11 @@ public class PlayerController : MonoBehaviour
             {
                 Log[0].text = ("ポーションが足りない！");
             }
-            intaract_true();
+            Intaract_True();
         }
     }
     //ボタンインタラクトfalse
-    public void intaract_false()
+    public void Intaract_False()
     {
         Attack_button.interactable = false;
         Magic_button.interactable = false;
@@ -347,7 +347,7 @@ public class PlayerController : MonoBehaviour
         Destroy(Status_Controller.eff_obj);
     }
     //ボタンインタラクトtrue
-    public void intaract_true()
+    public void Intaract_True()
     {
         Attack_button.interactable = true;
         Magic_button.interactable = true;
@@ -481,7 +481,7 @@ public class PlayerController : MonoBehaviour
         }
     }
     //ステータスリセット
-    public static void Status_reset()
+    public static void Status_Reset()
     {
         CONSTANT_ATTACK         = 25;
         CONSTANT_DEFFENCE       = 25;
@@ -496,7 +496,7 @@ public class PlayerController : MonoBehaviour
         HP = HP_MAX;
         MP = MP_MAX;
         Item_Reset();
-        Status_reset();
+        Status_Reset();
         MAGIC_NUMBER = 0;
         Shop_manager.shop_max = 2;
         Shop_manager.shop_min = 1;
