@@ -22,12 +22,11 @@ public class num_cnt : MonoBehaviour
         attack_Text.text = string.Format("{0}",player.Attack);
         diffence_Text.text = string.Format("{0}",player.Diffence);
         magic_Text.text = string.Format("{0}",player.Magic);
-        magic_diffence_Text.text = string.Format("{0}",player.Magic_Diffence);
+        magic_diffence_Text.text = string.Format("{0}",player.Magic_diffence);
         turn_Text.text = string.Format("{0}", Enemy_controller.turn);
-        player_money.text = string.Format("{0}", PlayerController.Money);
-        Heal_drink_num.text = string.Format("{0}", PlayerController.HP_Potion);
+        player_money.text = string.Format("{0}", PlayerController.MONEY);
+        Heal_drink_num.text = string.Format("{0}", PlayerController.HP_POTION);
         HP_Text.text = string.Format("{0}",PlayerController.HP);
         MP_Text.text = string.Format("{0}",PlayerController.MP);
-        //Debug.Log(PlayerController.HP_max + "ç≈ëÂëÃóÕ" + PlayerController.HP + "åªç›ëÃóÕ");
     }
 }

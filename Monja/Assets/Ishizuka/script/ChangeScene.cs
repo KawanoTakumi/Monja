@@ -87,7 +87,7 @@ public class ChangeScene : MonoBehaviour
     //titleに戻る時に使用
     public void Player_Reset()
     {
-        PlayerController.HP = PlayerController.HP_max;
+        PlayerController.HP = PlayerController.HP_MAX;
         Item_Manager.Item["healdrink"] = false;
         Item_Manager.Item["bowlingball"] = false;
         Item_Manager.Item["CDplayer"] = false;
@@ -161,10 +161,10 @@ public class ChangeScene : MonoBehaviour
     //数値初期化
     public static void Title_Reset()
     {
-        PlayerController.HP = PlayerController.HP_max;
-        PlayerController.MP = PlayerController.MP_max;
-        PlayerController.magic_number = 0;
-        PlayerController.Money = 0;
+        PlayerController.HP = PlayerController.HP_MAX;
+        PlayerController.MP = PlayerController.MP_MAX;
+        PlayerController.MAGIC_NUMBER = 0;
+        PlayerController.MONEY = 0;
         PlayerController.Status_reset();
         PlayerController.Item_Reset();
         //各種数値を初期化

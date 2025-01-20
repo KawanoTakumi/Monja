@@ -3016,10 +3016,16 @@ MonoBehaviour:
   Magic_Diffence: 25
   Attack_damage: 0
   Magic_damage: 0
-  money: 0
-  player_luck: 0
+  Player_luck: 0
   Item_button: {fileID: 754146516}
-  Setting_Button: {fileID: 239009253}
+  Setting_button: {fileID: 239009253}
+  Attack_button: {fileID: 357366336}
+  Concentlation_button: {fileID: 734965666}
+  Magic_button: {fileID: 1750655129}
+  Heal_button: {fileID: 998457889}
+  Obj_player: {fileID: 1013919604}
+  Status_controller: {fileID: 108743371}
+  ParentGameObject: {fileID: 1013919604}
   Effect:
   - {fileID: 1970586632822164892, guid: fa0d56264dfbcd64ca333dc0f80d4760, type: 3}
   - {fileID: 2159356408269481005, guid: f2580a5da0869f34a859503c60ba7ca9, type: 3}
@@ -3029,26 +3035,16 @@ MonoBehaviour:
   - {fileID: 3829796316166014384, guid: cd5836ad580d71b4b93459ff5afabc79, type: 3}
   - {fileID: 6506879874350029958, guid: 685d751e53b102045a89fb3d66a5f28e, type: 3}
   - {fileID: 8672578751335183930, guid: 9e93473aeadc05247beab7f8e26066bc, type: 3}
-  obj_player: {fileID: 0}
-  _parentGameObject: {fileID: 1013919604}
-  status_: {fileID: 108743371}
-  change: {fileID: 754146519}
-  Attack_: {fileID: 357366336}
-  Concentlation_: {fileID: 734965666}
-  Magic_: {fileID: 1750655129}
-  Heal_: {fileID: 998457889}
-  Log: {fileID: 1265022589}
-  Log_2: {fileID: 719100584}
-  audioSource_Attack: {fileID: 357366339}
-  clip_attack: {fileID: 8300000, guid: d5f7b1cd8ad265b4687b1d8bd980f6e9, type: 3}
-  audioSource_Magic: {fileID: 1750655124}
-  clip_magic: {fileID: 8300000, guid: 46981e05d4227af4cb997d6a42b8667c, type: 3}
-  audioSource_Conce: {fileID: 734965661}
-  clip_conce: {fileID: 8300000, guid: 43376ed47ccd67d4c81af31b4e76f903, type: 3}
-  audioSource_Heal: {fileID: 998457888}
-  clip_heal: {fileID: 8300000, guid: 0e7749f107b09634bb2a45218da5d05a, type: 3}
-  audioSource_Critical: {fileID: 357366339}
-  clip_critical: {fileID: 8300000, guid: 239b834c55f6a184fb6e9467f302fb41, type: 3}
+  Log:
+  - {fileID: 1265022589}
+  - {fileID: 719100584}
+  Audio_source_SE: {fileID: 1561560812}
+  Audio_clip_SE:
+  - {fileID: 8300000, guid: d5f7b1cd8ad265b4687b1d8bd980f6e9, type: 3}
+  - {fileID: 8300000, guid: 46981e05d4227af4cb997d6a42b8667c, type: 3}
+  - {fileID: 8300000, guid: 43376ed47ccd67d4c81af31b4e76f903, type: 3}
+  - {fileID: 8300000, guid: 0e7749f107b09634bb2a45218da5d05a, type: 3}
+  - {fileID: 8300000, guid: 239b834c55f6a184fb6e9467f302fb41, type: 3}
 --- !u!114 &1013919611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6076,6 +6072,10 @@ PrefabInstance:
     - target: {fileID: 4243482730140551702, guid: cbf198b11dd69c243ae02d0cc9208ceb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4243482730140551703, guid: cbf198b11dd69c243ae02d0cc9208ceb, type: 3}
+      propertyPath: m_Volume
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4243482730140551703, guid: cbf198b11dd69c243ae02d0cc9208ceb, type: 3}
       propertyPath: m_PlayOnAwake
