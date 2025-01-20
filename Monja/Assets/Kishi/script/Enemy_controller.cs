@@ -554,6 +554,7 @@ public class Enemy_controller : MonoBehaviour
         {
             Log.text = ("死神の攻撃");
             Enemy_attack = attack;
+            Create_Effect_Enemy(1, 2.5f, 0.3f);
         }
         else if (Enemy_luck == 20)
         {
@@ -716,11 +717,6 @@ public class Enemy_controller : MonoBehaviour
         Boss_Medhusa = false;
         Boss_TheGrimReaper = false;
         Boss_Dragon = false;
-    }
-    //アタックエフェクト関数
-    public void Attack_Effect()
-    {
-        obj1 = Instantiate(Effect[1], new Vector3(0.0f, 0.0f, 0), Quaternion.identity, _parentGameObject.transform);
     }
 
     void Enemy_Defeat()

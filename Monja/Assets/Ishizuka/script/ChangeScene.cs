@@ -158,7 +158,7 @@ public class ChangeScene : MonoBehaviour
     {
         SceneManager.LoadScene("shop_back");
     }
-    //
+    //数値初期化
     public static void Title_Reset()
     {
         PlayerController.HP = PlayerController.HP_max;
@@ -174,5 +174,15 @@ public class ChangeScene : MonoBehaviour
         Enemy_controller.turn = 0;
         Enemy_controller.HP = 150;
         Enemy_controller.tag_get = true;
+    }
+    //リトライした時数値を変更
+    public void Retry_Num_Tmp()
+    {
+        switch (scene_cnt)
+        {
+            case 1: case 2: case 3: scene_cnt = 1;break;   
+            case 4: case 5: case 6: scene_cnt = 4;break;   
+            case 7: case 8: case 9: scene_cnt = 7;break;   
+        }
     }
 }
