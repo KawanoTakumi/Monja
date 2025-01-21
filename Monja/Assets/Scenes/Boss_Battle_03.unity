@@ -976,7 +976,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1013919610}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: magic
+        m_MethodName: Magic
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1504,9 +1504,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcd184f3f35701c44aa192f05bab8116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cut_Scene: {fileID: 1914041795}
-  Cut_In_SE: {fileID: 1998415515}
-  clip: {fileID: 8300000, guid: 15a4a12db625cab40b86e139b8da3386, type: 3}
+  Cut_scene: {fileID: 1914041795}
+  Cut_in_SE: {fileID: 883615363}
+  Clip: {fileID: 8300000, guid: 15a4a12db625cab40b86e139b8da3386, type: 3}
 --- !u!1 &494006584
 GameObject:
   m_ObjectHideFlags: 0
@@ -3437,9 +3437,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5b2e17a19c88fd46ad70f6b96b81044, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP_Bar: {fileID: 884395292}
-  MP_Bar: {fileID: 1792437756}
-  Enemy_HP_Bar: {fileID: 629880849}
+  HP_bar: {fileID: 884395292}
+  MP_bar: {fileID: 1792437756}
+  Enemy_HP_bar: {fileID: 629880849}
 --- !u!114 &1013919613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4852,7 +4852,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1013919610}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: concentration
+        m_MethodName: Concentration
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6246,11 +6246,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1997187050}
   m_CullTransparentMesh: 1
---- !u!82 &1998415515 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 5292537002824185132, guid: ccb697ba6dc078345a640e56dea3a19d, type: 3}
-  m_PrefabInstance: {fileID: 410910355}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2005244746
 PrefabInstance:
   m_ObjectHideFlags: 0

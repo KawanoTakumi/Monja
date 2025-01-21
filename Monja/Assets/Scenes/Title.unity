@@ -600,7 +600,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c84be66a29abce4eaddd97742b556a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  quit: {fileID: 0}
 --- !u!114 &220012492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1248,7 +1247,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c84be66a29abce4eaddd97742b556a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  quit: {fileID: 0}
 --- !u!114 &871157666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1909,8 +1907,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72681d04a160c4944bebfe4404b19052, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene: {fileID: 899190074}
-  text_box: {fileID: 0}
+  Cave_scene: {fileID: 899190074}
+  Ending_Text: {fileID: 0}
 --- !u!1 &2105629563
 GameObject:
   m_ObjectHideFlags: 0
