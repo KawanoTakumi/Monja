@@ -256,8 +256,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72681d04a160c4944bebfe4404b19052, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene: {fileID: 882569792}
-  text_box: {fileID: 2137777412}
+  Cave_scene: {fileID: 882569792}
+  Ending_Text: {fileID: 2137777412}
 --- !u!1 &650422838
 GameObject:
   m_ObjectHideFlags: 0
@@ -883,7 +883,7 @@ GameObject:
   - component: {fileID: 2137777413}
   - component: {fileID: 2137777412}
   m_Layer: 0
-  m_Name: Text (Legacy)
+  m_Name: Ending_text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

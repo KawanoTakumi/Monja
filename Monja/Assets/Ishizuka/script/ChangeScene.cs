@@ -3,11 +3,11 @@ using UnityEngine.SceneManagement;
 
 public class ChangeScene : MonoBehaviour
 {
-    public string sceneName;//切り替えるシーンの名前を入れる
-    public Shop_manager shop;
+    public string SceneName;//切り替えるシーンの名前を入れる
+    public Shop_manager Shop;
     public static bool SceneChange = false;
-    public static int BossNumber = 0;
-    public static int scene_cnt  = 0;
+    //public static int BossNumber = 0;
+    public static int Scene_cnt  = 0;
     public enum Scene
     {
         Title          = 0,
@@ -24,22 +24,22 @@ public class ChangeScene : MonoBehaviour
     Scene scene = Scene.Title;
     void Start()
     {
-        Debug.Log(scene);
-        shop = GetComponent<Shop_manager>();
+        Debug.Log(SceneName);
+        Shop = GetComponent<Shop_manager>();
     }
     //ロードシーンを読み込む
     public void Load()
     {
-        SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene(SceneName);
     }
     //change_sceneを読み込む
-    public void change_scene()
+    public void Change_Scene()
     {
         //shop_changeを有効にする
         SceneChange = true;
     }
     //ショップに戻る時の関数
-    public void shop_change()
+    public void Shop_Change()
     {
         //shopに戻る時用
         if (SceneChange == true)
@@ -49,19 +49,19 @@ public class ChangeScene : MonoBehaviour
         }
     }
     //シーンカウント増加関数
-    public void add_scene_num()
+    public void Add_Scene_Num()
     {
         //シーンナンバー加算
-        scene_cnt++;
+        Scene_cnt++;
         scene++;
     }
     //シーンカウントリセット関数
-    public void reset_scene_num()
+    public void Reset_Scene_Num()
     {
         scene = Scene.Title;
     }
     //最初のターン経過取得フラグ
-    public void first_turn_flag()
+    public void First_Turn_Flag()
     {
         Item_Power.first_turn = false;
     }
@@ -69,7 +69,7 @@ public class ChangeScene : MonoBehaviour
     public void Work_Cange_Scene()
     {
         //各シーンカウントで移動シーンを変更
-        switch (scene_cnt)
+        switch (Scene_cnt)
         {
             case (int)Scene.Title: SceneManager.LoadScene("Title"); break;                //タイトル
             case (int)Scene.Battle:   case (int)Scene.Battle_2: case (int)Scene.Boss_Battle_01: SceneManager.LoadScene("work_01"); break;//歩行シーン1
@@ -83,7 +83,7 @@ public class ChangeScene : MonoBehaviour
         if (SceneChange == false)
         {
             //バトルシーン(case: 3,6,9のときはボスシーン)
-            switch (scene_cnt)
+            switch (Scene_cnt)
             {
                 case (int)Scene.Title:          SceneManager.LoadScene("Title");          break; //タイトル
                 case (int)Scene.Battle:         SceneManager.LoadScene("Battle");         break; //スケルトン　  バトル１
@@ -155,22 +155,22 @@ public class ChangeScene : MonoBehaviour
         Item_Manager.Item["Eye"] = false;
         Item_Manager.Item["Tooth"] = false;
 
-        scene_cnt = 0;
+        Scene_cnt = 0;
     }
     //shopシーンのアイテム表示をリセット
-    public void Item_num_Reset()
+    public void Item_Num_Reset()
     {
         Shop_manager.tmp_1 = -1;
         Shop_manager.tmp_2 = -1;
         Shop_manager.tmp_3 = -1;
     }
     //shop移行
-    public void shop_go()
+    public void Shop_Go()
     {
         SceneManager.LoadScene("shop");
     }
     //shopから移動
-    public void back_shop()
+    public void Back_Shop()
     {
         SceneManager.LoadScene("shop_back");
     }
@@ -194,7 +194,7 @@ public class ChangeScene : MonoBehaviour
     //リトライした時数値を変更
     public void Retry_Num_Tmp()
     {
-        switch (scene_cnt)
+        switch (Scene_cnt)
         {
             case (int)Scene.Battle:   case (int)Scene.Battle_2: case (int)Scene.Boss_Battle_01: scene = Scene.Battle; break;
             case (int)Scene.Battle_4: case (int)Scene.Battle_5: case (int)Scene.Boss_Battle_02: scene = Scene.Battle_4; break;

@@ -3,29 +3,32 @@ using UnityEngine.UI;
 
 public class Back_Change : MonoBehaviour
 {
-    public Image img;
-    public Sprite[] sprite;
-    // Start is called before the first frame update
+    public Image Back_image;//背景画像
+    public Sprite[] sprite;//表示したい画像配列
+
+    //スタートメソッド
+    //説明・・・コンポーネントを取得
     void Start()
     {
-        img = GetComponent<Image>();
+        Back_image = GetComponent<Image>();
     }
 
-    // Update is called once per frame
+    //アップデートメソッド
+    //説明・・・シーンカウント毎に表示する画像を変更する
     void Update()
     {
-        //シーンカウント毎に画像を変更
+        //シーンカウント毎に画像を変更（スプライトの番号で管理）
         switch(ChangeScene.scene_cnt)
         {
             case 1:
-            case 2:img.sprite = sprite[0];break;
-            case 3:img.sprite = sprite[1];break;
+            case 2:Back_image.sprite = sprite[0];break;
+            case 3:Back_image.sprite = sprite[1];break;
             case 4:
-            case 5:img.sprite = sprite[2];break;
-            case 6:img.sprite = sprite[3];break;
+            case 5:Back_image.sprite = sprite[2];break;
+            case 6:Back_image.sprite = sprite[3];break;
             case 7:
-            case 8:img.sprite = sprite[4];break;
-            case 9:img.sprite = sprite[5];break;
+            case 8:Back_image.sprite = sprite[4];break;
+            case 9:Back_image.sprite = sprite[5];break;
         }
     }
 }

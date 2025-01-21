@@ -3,23 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 public class Cut_In : MonoBehaviour
 {
-    public GameObject Cut_Scene;//カットシーン
-    public AudioSource Cut_In_SE;//カットイン用SE
-    public AudioClip clip;//音楽データ
-    public static bool first_flag = true;//初回フラグ
+    public GameObject Cut_scene;            //カットシーン
+    public AudioSource Cut_in_SE;           //カットイン用SE
+    public AudioClip Clip;                  //オーディオクリップ
+    public static bool FIRST_FLAG = true;   //初回フラグ
+
+    //アップデートメソッド
+    //説明・・・一度再生されたらカットシーンを削除
     public void Update()
     {
-        //fairst_flagがfalseのとき、カットシーンを削除
-        if (first_flag == false)
-            Destroy(Cut_Scene);
+        //初回フラグがfalseの時、カットインを再生しない
+        if (FIRST_FLAG == false)
+            Destroy(Cut_scene);
     }
-    //カットイン
+    //カットイン削除メソッド
     public void Cut_In_Del()
     {
-        if(first_flag == true)
+        if(FIRST_FLAG == true)
         {
-            Cut_Scene.SetActive(false);
-            first_flag = false;
+            Cut_scene.SetActive(false);
+            FIRST_FLAG = false;
         }
     }
     //最初のシーン以外ではカットシーンを削除
@@ -27,12 +30,12 @@ public class Cut_In : MonoBehaviour
     {
         if(Enemy_controller.turn != 1)
         {
-            Cut_Scene.SetActive(false);
+            Cut_scene.SetActive(false);
         }
     }
     //カットインサウンド関数
     public void Cut_In_Sound()
     {
-        Cut_In_SE.PlayOneShot(clip);
+        Cut_in_SE.PlayOneShot(Clip);//クリップを再生
     }
 }

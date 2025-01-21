@@ -3,16 +3,18 @@ using UnityEngine.UI;
 
 public class Button_Cnt : MonoBehaviour
 {
-    public GameObject Title_button;//タイトルボタンオブジェクト
-    public Text title_text;//タイトルに戻るテキスト
-    // Update is called once per frame
+    public GameObject Title_button;  //タイトルボタンオブジェクト
+    public Text Title_text;          //タイトルボタンテキスト
+    
+    //アップデートメソッド
+    //説明・・・最初のシーンの時、タイトルに戻るを削除
     void Update()
     {
         //シーンカウントが0の時、タイトルに戻るボタンを削除
         if(ChangeScene.scene_cnt == 0)
         {
             Destroy(Title_button);
-            Destroy(title_text);
+            Destroy(Title_text);
         }
     }
 }
