@@ -245,8 +245,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adb4b0b93018a3e4e96e6c822f2129d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: intro
-  shop: {fileID: 0}
+  SceneName: intro
+  Shop: {fileID: 0}
 --- !u!114 &125877554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1007,8 +1007,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adb4b0b93018a3e4e96e6c822f2129d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Guide
-  shop: {fileID: 0}
+  SceneName: Guide
+  Shop: {fileID: 0}
 --- !u!114 &647263822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1969,8 +1969,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adb4b0b93018a3e4e96e6c822f2129d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Setting
-  shop: {fileID: 0}
+  SceneName: Setting
+  Shop: {fileID: 0}
 --- !u!114 &2105629566
 MonoBehaviour:
   m_ObjectHideFlags: 0

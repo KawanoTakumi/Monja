@@ -1043,8 +1043,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adb4b0b93018a3e4e96e6c822f2129d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Title
-  shop: {fileID: 0}
+  SceneName: Title
+  Shop: {fileID: 0}
 --- !u!114 &1171061563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1364,8 +1364,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adb4b0b93018a3e4e96e6c822f2129d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: 
-  shop: {fileID: 0}
+  SceneName: 
+  Shop: {fileID: 0}
 --- !u!114 &1317403927
 MonoBehaviour:
   m_ObjectHideFlags: 0

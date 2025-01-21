@@ -15,7 +15,7 @@ public class Back_Change : MonoBehaviour
     void Update()
     {
         //シーンカウント毎に画像を変更
-        switch(ChangeScene.scene_cnt)
+        switch(ChangeScene.SCENE_CNT)
         {
             case 1:
             case 2:img.sprite = sprite[0];break;

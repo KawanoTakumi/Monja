@@ -1091,8 +1091,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adb4b0b93018a3e4e96e6c822f2129d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Title
-  shop: {fileID: 0}
+  SceneName: Title
+  Shop: {fileID: 0}
 --- !u!1 &1738918696
 GameObject:
   m_ObjectHideFlags: 0
@@ -1450,8 +1450,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adb4b0b93018a3e4e96e6c822f2129d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: work_01
-  shop: {fileID: 0}
+  SceneName: Battle
+  Shop: {fileID: 0}
 --- !u!1 &1894115862
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,7 +8,7 @@ public class Scene_State : MonoBehaviour
     void Update()
     {
         //シーンカウント毎に移動アニメーションを変更する
-        switch (ChangeScene.scene_cnt)
+        switch (ChangeScene.SCENE_CNT)
         {
             case 1: anim.SetBool("anim1", true); break;
             case 4: anim.SetBool("anim1", true); break;

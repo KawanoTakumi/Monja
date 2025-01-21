@@ -675,7 +675,7 @@ public class Enemy_controller : MonoBehaviour
         turn = 1;
         Shop_manager.shop_max = 2;
         Cut_In.first_flag = true;
-        if (ChangeScene.scene_cnt >= 9)
+        if (ChangeScene.SCENE_CNT >= 9)
         {
             PlayerController.MONEY += money;
             Item_Power.first_turn = true;
@@ -689,11 +689,11 @@ public class Enemy_controller : MonoBehaviour
         {
             PlayerController.MONEY += money;
             Item_Power.first_turn = true;
-            if(ChangeScene.scene_cnt >= 6)
+            if(ChangeScene.SCENE_CNT >= 6)
             {
                 Medhusa_flag = true;
             }
-            else if(ChangeScene.scene_cnt >= 3)
+            else if(ChangeScene.SCENE_CNT >= 3)
             {
                 TheGrimReaper_flag = true;
             }

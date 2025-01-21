@@ -7,7 +7,7 @@ public class ChangeScene : MonoBehaviour
     public Shop_manager Shop;
     public static bool SceneChange = false;
     //public static int BossNumber = 0;
-    public static int Scene_cnt  = 0;
+    public static int SCENE_CNT  = 0;
     public enum Scene
     {
         Title          = 0,
@@ -52,7 +52,7 @@ public class ChangeScene : MonoBehaviour
     public void Add_Scene_Num()
     {
         //シーンナンバー加算
-        Scene_cnt++;
+        SCENE_CNT++;
         scene++;
     }
     //シーンカウントリセット関数
@@ -69,7 +69,7 @@ public class ChangeScene : MonoBehaviour
     public void Work_Cange_Scene()
     {
         //各シーンカウントで移動シーンを変更
-        switch (Scene_cnt)
+        switch (SCENE_CNT)
         {
             case (int)Scene.Title: SceneManager.LoadScene("Title"); break;                //タイトル
             case (int)Scene.Battle:   case (int)Scene.Battle_2: case (int)Scene.Boss_Battle_01: SceneManager.LoadScene("work_01"); break;//歩行シーン1
@@ -83,7 +83,7 @@ public class ChangeScene : MonoBehaviour
         if (SceneChange == false)
         {
             //バトルシーン(case: 3,6,9のときはボスシーン)
-            switch (Scene_cnt)
+            switch (SCENE_CNT)
             {
                 case (int)Scene.Title:          SceneManager.LoadScene("Title");          break; //タイトル
                 case (int)Scene.Battle:         SceneManager.LoadScene("Battle");         break; //スケルトン　  バトル１
@@ -155,7 +155,7 @@ public class ChangeScene : MonoBehaviour
         Item_Manager.Item["Eye"] = false;
         Item_Manager.Item["Tooth"] = false;
 
-        Scene_cnt = 0;
+        SCENE_CNT = 0;
     }
     //shopシーンのアイテム表示をリセット
     public void Item_Num_Reset()
@@ -194,7 +194,7 @@ public class ChangeScene : MonoBehaviour
     //リトライした時数値を変更
     public void Retry_Num_Tmp()
     {
-        switch (Scene_cnt)
+        switch (SCENE_CNT)
         {
             case (int)Scene.Battle:   case (int)Scene.Battle_2: case (int)Scene.Boss_Battle_01: scene = Scene.Battle; break;
             case (int)Scene.Battle_4: case (int)Scene.Battle_5: case (int)Scene.Boss_Battle_02: scene = Scene.Battle_4; break;

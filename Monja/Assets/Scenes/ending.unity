@@ -242,8 +242,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adb4b0b93018a3e4e96e6c822f2129d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: End_Game
-  shop: {fileID: 0}
+  SceneName: End_Game
+  Shop: {fileID: 0}
 --- !u!114 &160348272
 MonoBehaviour:
   m_ObjectHideFlags: 0

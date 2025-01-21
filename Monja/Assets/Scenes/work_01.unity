@@ -1077,6 +1077,10 @@ PrefabInstance:
       propertyPath: source
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2262588488811627225, guid: 2d782a17914b45145a3c2eed6f7001f9, type: 3}
+      propertyPath: SceneName
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3479783588736517177, guid: 2d782a17914b45145a3c2eed6f7001f9, type: 3}
       propertyPath: m_Name
       value: warker

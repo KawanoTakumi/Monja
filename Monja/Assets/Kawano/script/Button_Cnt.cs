@@ -9,7 +9,7 @@ public class Button_Cnt : MonoBehaviour
     void Update()
     {
         //シーンカウントが0の時、タイトルに戻るボタンを削除
-        if(ChangeScene.scene_cnt == 0)
+        if(ChangeScene.SCENE_CNT == 0)
         {
             Destroy(Title_button);
             Destroy(title_text);
