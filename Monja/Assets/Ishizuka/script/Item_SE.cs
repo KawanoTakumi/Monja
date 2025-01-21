@@ -3,15 +3,15 @@ using UnityEngine;
 
 public class Item_SE : MonoBehaviour
 {
-    private AudioSource audioSource;
+    private AudioSource AudioSource;
 
     private void Start()
     {
         //オーディオソース取得
-        audioSource = GetComponent<AudioSource>();
+        AudioSource = GetComponent<AudioSource>();
     }
 
-    public void hit_se()
+    public void Hit_se()
     {
         // 効果音を鳴らす
         GetComponent<AudioSource>().Play();  

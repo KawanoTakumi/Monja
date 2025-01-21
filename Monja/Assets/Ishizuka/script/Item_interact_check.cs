@@ -12,7 +12,7 @@ public class Item_interact_check : MonoBehaviour
     void Update()
     {
         button.interactable = false;
-
+        //アイテムを購入したときにtrueの時インベントリのアイテム表示させる
         if (Item_Manager.Item[button.tag] == true)
             button.interactable = true;
     }
