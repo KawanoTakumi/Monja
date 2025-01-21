@@ -1226,7 +1226,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1013919610}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: attack
+        m_MethodName: Attack
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5511,7 +5511,7 @@ MonoBehaviour:
   deffence: 5
   magic: 0
   magic_Diffence: 5
-  money: 50
+  money: 10000
   Effect:
   - {fileID: 8299584437378114090, guid: 8e11c902fcd31ff429c6fd4f84115c7f, type: 3}
   - {fileID: 3841687375311422541, guid: a354262969f9b404abaee5f657949991, type: 3}
