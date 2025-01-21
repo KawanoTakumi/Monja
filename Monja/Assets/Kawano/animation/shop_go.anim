@@ -399,7 +399,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 1.8833333
-    functionName: shop_go
+    functionName: Shop_Go
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

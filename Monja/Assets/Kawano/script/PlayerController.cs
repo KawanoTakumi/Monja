@@ -123,11 +123,7 @@ public class PlayerController : MonoBehaviour
             //死亡アニメーションを再生、ログを更新
             Animator.SetBool("death",true);
             Log[0].text = "主人公は倒れてしまった";
-<<<<<<< HEAD
             ChangeScene.SCENE_CNT = 1;//最初のシーンがcase :1
-=======
-            ChangeScene.scene_cnt = 1;//シーンカウントを１にする
->>>>>>> 9440d7947f8c41c54bcf30d83cddef966fad4cab
         }
 
         //ステータス上限

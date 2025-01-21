@@ -17,13 +17,8 @@ public class Back_Change : MonoBehaviour
     //説明・・・シーンカウント毎に表示する画像を変更する
     void Update()
     {
-<<<<<<< HEAD
         //シーンカウント毎に画像を変更
         switch(ChangeScene.SCENE_CNT)
-=======
-        //シーンカウント毎に画像を変更（スプライトの番号で管理）
-        switch(ChangeScene.scene_cnt)
->>>>>>> 9440d7947f8c41c54bcf30d83cddef966fad4cab
         {
             case 1:
             case 2:Back_image.sprite = sprite[0];break;

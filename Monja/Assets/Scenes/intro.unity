@@ -649,6 +649,18 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1782658503}
         m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
+        m_MethodName: Add_Scene_Num
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1782658503}
+        m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
         m_MethodName: Work_Cange_Scene
         m_Mode: 1
         m_Arguments:
@@ -834,7 +846,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adb4b0b93018a3e4e96e6c822f2129d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneName: Battle
+  SceneName: 
   Shop: {fileID: 0}
 --- !u!82 &1905101177
 AudioSource:

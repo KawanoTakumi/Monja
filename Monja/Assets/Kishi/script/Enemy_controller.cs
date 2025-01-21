@@ -674,13 +674,8 @@ public class Enemy_controller : MonoBehaviour
         magic_cnt = 0;
         turn = 1;
         Shop_manager.shop_max = 2;
-<<<<<<< HEAD
-        Cut_In.first_flag = true;
-        if (ChangeScene.SCENE_CNT >= 9)
-=======
         Cut_In.FIRST_FLAG = true;
-        if (ChangeScene.scene_cnt >= 9)
->>>>>>> 9440d7947f8c41c54bcf30d83cddef966fad4cab
+        if (ChangeScene.SCENE_CNT >= 9)
         {
             PlayerController.MONEY += money;
             Item_Power.first_turn = true;

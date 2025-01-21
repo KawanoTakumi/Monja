@@ -2129,19 +2129,11 @@ MonoBehaviour:
   healbutton: {fileID: 365762796}
   text: {fileID: 1040258329}
   _parentGameObject: {fileID: 1292750242}
-<<<<<<< HEAD
-  button:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-=======
   Obj_button:
   - {fileID: 1123360770}
   - {fileID: 525141354}
   - {fileID: 30034492}
   - {fileID: 365762796}
->>>>>>> 9440d7947f8c41c54bcf30d83cddef966fad4cab
 --- !u!114 &1035226745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2342,7 +2334,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1119714838}
         m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
-        m_MethodName: Item_num_Reset
+        m_MethodName: Item_Num_Reset
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2354,7 +2346,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1119714838}
         m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
-        m_MethodName: add_scene_num
+        m_MethodName: Add_Scene_Num
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2390,7 +2382,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1119714838}
         m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
-        m_MethodName: back_shop
+        m_MethodName: Back_Shop
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

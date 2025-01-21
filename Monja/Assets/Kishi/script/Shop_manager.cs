@@ -51,7 +51,7 @@ public class Shop_manager : MonoBehaviour
                 case 0: item_select(i); Create_ShopItem(i); break;
                 case 1: item_select(i); Create_ShopItem(i); break;
                 case 2: item_select(i); Create_ShopItem(i); break;
-                case 3: item_select(i); CreateObjectHeal();                               break;
+                case 3: item_select(i); CreateObjectHeal(); break;
             }
         }
         for(int i=0;i<=2;i++)
