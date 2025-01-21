@@ -738,7 +738,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1013919610}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: magic
+        m_MethodName: Magic
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3185,9 +3185,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5b2e17a19c88fd46ad70f6b96b81044, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP_Bar: {fileID: 884395292}
-  MP_Bar: {fileID: 1792437756}
-  Enemy_HP_Bar: {fileID: 629880849}
+  HP_bar: {fileID: 884395292}
+  MP_bar: {fileID: 1792437756}
+  Enemy_HP_bar: {fileID: 629880849}
 --- !u!114 &1013919613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4535,7 +4535,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1013919610}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: concentration
+        m_MethodName: Concentration
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

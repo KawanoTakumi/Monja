@@ -55,6 +55,7 @@ public class PlayerController : MonoBehaviour
     bool Cons_flag     = false;                     //シュウチュウフラグ
     bool Button_check  = false;                     //ボタンチェックフラグ
 
+    //オーディオ
     public AudioSource Audio_source_SE;             //SEオーディオソース
     [SerializeField] AudioClip[] Audio_clip_SE;     //SEオーディオクリップ
 
@@ -63,15 +64,15 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         //オブジェクトのコンポーネントを変数に読み込む
-        Animator = GetComponent<Animator>();
-        Damage_calculate = GetComponent<Damage_calculate>();
-        Enemey = GameObject.Find("Monster");
+        Enemey           = GameObject.Find("Monster");
         Enemy_controller = Enemey.GetComponent<Enemy_controller>();
+        Animator         = GetComponent<Animator>();
+        Damage_calculate = GetComponent<Damage_calculate>();
 
         //初期の定数を変数に適用
-        Attack_damage = CONSTANT_ATTACK;
-        Deffence = CONSTANT_DEFFENCE;
-        Magic_damage = CONSTANT_MAGIC;
+        Attack_damage  = CONSTANT_ATTACK;
+        Deffence       = CONSTANT_DEFFENCE;
+        Magic_damage   = CONSTANT_MAGIC;
         Magic_diffence = CONSTANT_MAGIC_DEFFENCE;
 
         //主人公のターンにする true = 主人公、false = 敵
@@ -102,7 +103,7 @@ public class PlayerController : MonoBehaviour
         if(Enemy_controller.Stone_turn == true)
         {
             Enemy_controller.Stone_turn = false;
-            turn_manager.turn = false;
+            turn_manager.turn = false;//ターンを経過させる
         }
         //毒ダメージ
         if (Enemy_controller.poison == true)
@@ -119,27 +120,30 @@ public class PlayerController : MonoBehaviour
         //敗北
         if(HP <= 0)
         {
+            //死亡アニメーションを再生、ログを更新
             Animator.SetBool("death",true);
             Log[0].text = "主人公は倒れてしまった";
+<<<<<<< HEAD
             ChangeScene.SCENE_CNT = 1;//最初のシーンがcase :1
+=======
+            ChangeScene.scene_cnt = 1;//シーンカウントを１にする
+>>>>>>> 9440d7947f8c41c54bcf30d83cddef966fad4cab
         }
 
-       
-       
         //ステータス上限
-        if (Attack_damage >= STATUS_MAX)
+        if (Attack_damage  > STATUS_MAX)
         {
-            Attack_damage = STATUS_MAX;
+            Attack_damage  = STATUS_MAX;
         }
-        if(Deffence >= STATUS_MAX)
+        if(Deffence        > STATUS_MAX)
         {
-            Deffence = STATUS_MAX;
+            Deffence       = STATUS_MAX;
         }
-        if(Magic_damage >= STATUS_MAX)
+        if(Magic_damage    > STATUS_MAX)
         {
-            Magic_damage = STATUS_MAX;
+            Magic_damage   = STATUS_MAX;
         }
-        if(Magic_diffence >= STATUS_MAX)
+        if(Magic_diffence  > STATUS_MAX)
         {
             Magic_diffence = STATUS_MAX;
         }
@@ -149,17 +153,17 @@ public class PlayerController : MonoBehaviour
         }
 
         //ステータス下限
-        if (Attack_damage < STATUS_MIN)
+        if (Attack_damage  < STATUS_MIN)
         {
-            Attack_damage = STATUS_MIN;
+            Attack_damage  = STATUS_MIN;
         }
-        if (Deffence < STATUS_MIN)
+        if (Deffence       < STATUS_MIN)
         {
-            Deffence = STATUS_MIN;
+            Deffence       = STATUS_MIN;
         }
-        if (Magic_damage < STATUS_MIN)
+        if (Magic_damage   < STATUS_MIN)
         {
-            Magic_damage = STATUS_MIN;
+            Magic_damage   = STATUS_MIN;
         }
         if (Magic_diffence < STATUS_MIN)
         {
@@ -177,14 +181,16 @@ public class PlayerController : MonoBehaviour
         //状態異常時の効果
         if(Button_check == true)
         {
+            //ターンタイムを増加させタイムが最大値より大きくなったら
             Turn_time++;
             if (Turn_time > turn_manager.turn_time_max)
             {
-                Turn_time = 0;
-                Button_check = false;
+                Turn_time = 0;//ターンタイムを初期化
+                Button_check = false;//ボタンを押せなくする
                 //毒
                 if (Poison_cnt > 0)
                 {
+                    //体力を減らして、ログ更新、エフェクトを作成
                     HP -= 2;
                     Log[0].text = "毒の効果で体力が2減った";
                     Status_controller.Status_Effect(true, 2);
@@ -193,6 +199,7 @@ public class PlayerController : MonoBehaviour
                 //炎上
                 if (OnFire_cnt > 0)
                 {
+                    //体力を減らして、ログ更新、エフェクトを作成
                     HP -= 8;
                     Log[0].text = "延焼効果で体力が8減った";
                     Status_controller.Status_Effect(true, 3);
@@ -214,34 +221,43 @@ public class PlayerController : MonoBehaviour
         //主人公のターンの時
         if (turn_manager.turn == true)
         {
-            //ボタンが押されたことを確認して、ログを更新、
+            //ボタンが押されたことを確認して、ログを更新、ボタンを押せなくする
             Button_check = true;
             Log[0].text = "主人公は攻撃した";
-            Item_button.interactable = false;
+
+            //主人公の幸運値をランダムで変更して、値に応じてクリティカルを発生させる
             Player_luck = Random.Range(1,MAX_LUCK);
             if (Player_luck < MAX_LUCK - 1)
             {
-                //遅延
+                //SEを遅延させる
                 Invoke("SE_Play_Attack", 500.0f);
 
+                //計算後の攻撃値を取得
                 Calc_attack_damage = Attack_damage;
             }
             else if (Player_luck == MAX_LUCK -1 || Item_Power.dice_crit == true)
             {
-                Calc_attack_damage = Attack_damage + Attack_damage / 2;                
-                Log[0].text = ("主人公クリティカルが発生");
-                Item_Power.dice_crit = false;
-            }
-            if (Item_Power.Boxing_flag == true)
-            {
-                Attack_damage += 3;
+                Calc_attack_damage = Attack_damage + Attack_damage / 2;//計算後の攻撃値に１．５倍の攻撃値を取得    
+                Log[0].text = ("主人公クリティカルが発生");//ログ更新
+                Item_Power.dice_crit = false;//サイコロのクリティカルフラグを初期化
             }
 
+            //敵のエフェクトを削除する
+            Destroy(Enemy_controller.obj1);
+            Destroy(Enemy_controller.obj2);
+
+            //主人公がボクシンググローブを持っていた場合
+            if (Item_Power.Boxing_flag == true)
+            {
+                Attack_damage += 3;//攻撃値に毎ターン＋３する
+            }
+
+            //敵に与える攻撃値を（計算後の攻撃値）ー（敵の防御力）で計算する
             Damage_calculate.Enemey_Damage_Calculate(Calc_attack_damage, Enemy_controller.Enemy_deffence);
         }
     }
     //シュウチュウ
-    public void concentration()
+    public void Concentration()
     {
 
         if (turn_manager.turn == true)
@@ -251,12 +267,15 @@ public class PlayerController : MonoBehaviour
             {
                 //ボタンが押されたことを確認し、ボタンを押せなくする
                 Button_check = true;
-                Item_button.interactable = false;
                 Intaract_False();
 
                 Animator.SetBool("cons", true);                //アニメーションを再生
                 MP += MP_MAX / 2;　　　　　　　　　　　　　　　//MPを半分回復
-                Log[0].text = "主人公は集中した";　　　　　　　//ログを更新
+                Log[0].text = "主人公は集中した";       //ログを更新
+
+                //敵のエフェクトを削除する
+                Destroy(Enemy_controller.obj1);
+                Destroy(Enemy_controller.obj2);
 
                 //魔法攻撃力を上昇させて、カウントを進める
                 Magic_damage += 10;
@@ -276,17 +295,24 @@ public class PlayerController : MonoBehaviour
         }
     }
     //マホウ
-    public void magic()
+    public void Magic()
     {
+        //主人公ターンの時
         if (turn_manager.turn == true)
         {
+            //MPが25より大きかったら
             if(MP >= 25)
             {
+                //ボタンが押されたことを確認、ボタンを押せなくする、ログを更新
                 Button_check = true;
-                Item_button.interactable = false;
-
                 Intaract_False();
                 Log[0].text = "主人公は魔法を撃った";
+
+                //敵のエフェクトを削除する
+                Destroy(Enemy_controller.obj1);
+                Destroy(Enemy_controller.obj2);
+
+                //魔法のアニメーションを魔法のタイプに応じて変化させる
                 Animator.SetBool("magic", true);
                 switch (MAGIC_TYPE)
                 {
@@ -296,18 +322,25 @@ public class PlayerController : MonoBehaviour
                     case 6: Create_Effect_Player(6, 0f, 0f);break;
                 }
 
+                //MPを減少させて、計算後の魔法攻撃値を取得
                 MP -= 25;
                 Calc_magic_damage = Magic_damage;
+
+                //敵に与えるダメージを計算（魔法攻撃値）ー（敵魔法防御）
                 Damage_calculate.Enemey_Damage_Calculate(Calc_magic_damage, Enemy_controller.magic_Diffence);
+
+                //シュウチュウフラグがtrueの時
                 if(Cons_flag == true)
                 {
+                    //シュウチュウで増加させた魔法攻撃力分減少させる
                     Magic_damage -= 10 * Magic_power_up;
-                    Magic_power_up = 0;
-                    Cons_flag = false;
+                    Magic_power_up = 0;//増加量を初期化
+                    Cons_flag = false;//シュウチュウフラグを初期化
                 }
             }
             else
             {
+                //MPが足りない時、魔法を不発させ、ターンを消費させる
                 Magic_button.interactable = false;
                 Log[0].text = ("MPが足りない！");
             }
@@ -315,24 +348,30 @@ public class PlayerController : MonoBehaviour
     }
     //カイフク
     public void Heal()
-    {        
+    {
+        //主人公ターンの時
         if (turn_manager.turn == true)
         {
+            //ボタンを押せなくする
             Intaract_False();
-            Item_button.interactable = false;
+
+            //HPが最大値より少ない　かつ　HPポーションを所持している時
             if (HP != HP_MAX && HP_POTION > 0)
             {
+                //回復アニメーションを作動させ、回復エフェクトを作成
                 Animator.SetBool("heal", true);
                 Create_Effect_Player(1, -5.1f, 0.1f);
 
+                //HPポーションの所持数を減らし、体力を最大値の半分回復させる
                 HP_POTION -= 1;
                 HP += HP_MAX / 2;
                 
+                //HPが最大値より大きくなったら、最大値に合わせる
                 if (HP > HP_MAX)
                 {
                     HP = HP_MAX;
                 }
-                Log[0].text = ("主人公は回復した");
+                Log[0].text = ("主人公は回復した");//ログを更新
             }
             else if(HP == HP_MAX)
             {
@@ -342,7 +381,7 @@ public class PlayerController : MonoBehaviour
             {
                 Log[0].text = ("ポーションが足りない！");
             }
-            Intaract_True();
+            Intaract_True();//ボタンを押せるようにする
         }
     }
     //ボタンインタラクトfalse
@@ -354,7 +393,7 @@ public class PlayerController : MonoBehaviour
         Concentlation_button.interactable   = false;
         Item_button.interactable            = false;
         Setting_button.interactable         = false;
-        Destroy(Status_Controller.eff_obj);
+        Destroy(Status_Controller.eff_obj);//エフェクトを削除
     }
     //ボタンインタラクトtrue
     public void Intaract_True()
@@ -443,7 +482,7 @@ public class PlayerController : MonoBehaviour
     public void Magic_Effect()
     {
         int Eff_random;//ランダム取得変数
-        Eff_random = Random.Range(0, 5);
+        Eff_random = Random.Range(0, 5);//1/4の確率
         if(Eff_random == 4)
         {
             switch(MAGIC_TYPE)
@@ -493,7 +532,7 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-    //ステータスリセット
+    //ステータスリセット関数
     public static void Status_Reset()
     {
         CONSTANT_ATTACK         = 25;
@@ -501,23 +540,27 @@ public class PlayerController : MonoBehaviour
         CONSTANT_MAGIC     　   = 25;
         CONSTANT_MAGIC_DEFFENCE = 25;
     }
-    //負け
+    //負け関数
     public void Lose()
     {
         Animator.SetBool("death", false);//負けアニメーション終了
-        //各種変数を初期化
+        //主人公のステータスを初期化
         Item_Reset();
         Status_Reset();
         HP = HP_MAX;
         MP = MP_MAX;
         MONEY = 0;
         MAGIC_TYPE = 0;
+
+        //ショップの選択範囲を初期化
         Shop_manager.shop_max = 2;
         Shop_manager.shop_min = 1;
         Item_Power.turn_compare = 0;
         Item_Power.first_turn = true;
         Item_Power.Sinigami_Crit_Effect = false;
         Item_Power.Boxing_flag = false;
+
+        //敵のステータスを初期化
         Enemy_controller.turn = 0;
         Enemy_controller.HP = 150;
         Enemy_controller.Freeze_turn = false;

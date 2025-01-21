@@ -34,18 +34,11 @@ public class Shop_manager : MonoBehaviour
     [SerializeField] GameObject _parentGameObject;
 
     //テスト
-    int[] number = new int[4];
-    int[] shop_tmp = new int[3] {-1,-1,-1};
-    public Button[] button = new Button[4];
-    GameObject[] item_obj = new GameObject[4];
-    int shop_limit = 6;
-
-    enum aaa
-    {
-        title = 1,
-        main =2,
-        sub =3
-    }
+    int[] Item_number = new int[4];
+    public static int[] Shop_tmp = new int[3] {-1,-1,-1};
+    public Button[] Obj_button = new Button[4];
+    GameObject[] Item_obj = new GameObject[4];
+    int Shop_limit = 6;
 
     void Start()
     {
@@ -55,37 +48,50 @@ public class Shop_manager : MonoBehaviour
            
             switch (i)
             {
-                case 0: item_select(i); shop_tmp[i] = Create_ShopItem(i); break;
-                case 1: item_select(i); shop_tmp[i] = Create_ShopItem(i); break;
-                case 2: item_select(i); shop_tmp[i] = Create_ShopItem(i); break;
+                case 0: item_select(i); Create_ShopItem(i); break;
+                case 1: item_select(i); Create_ShopItem(i); break;
+                case 2: item_select(i); Create_ShopItem(i); break;
                 case 3: item_select(i); CreateObjectHeal();                               break;
             }
-           
         }
-        Debug.Log(number[0]); Debug.Log(number[1]); Debug.Log(number[2]);
+        for(int i=0;i<=2;i++)
+        {
+            Debug.Log(Shop_tmp[i]);
+        }
         // shop_select();
-
+       
     }
 
     public void Update()
     {
+        for (int i = 0; i <= 3; i++)
+        {
+            Item_Manager.Item.TryGetValue(Obj_button[i].tag, out bool flag);
+            if (flag == true && Obj_button[i].interactable == true)
+                Obj_button[i].interactable = false;
+        }
 
 
 
         //アイテムライブラリのGetFlagがtrueの時DictionalyのItem.valueをtrueにする
-        if (Item_Library.GetFlag1 == true)
-        {
-            Item_Manager.Item[button1.tag] = true;
-        }
+        //if (Item_Library.GetFlag1 == true)
+        //{
+        //    Item_Manager.Item[button1.tag] = true;
+        //}
 
-        if (Item_Library.GetFlag2 == true)
-        {
-            Item_Manager.Item[button2.tag] = true;
-        }
+        //if (Item_Library.GetFlag2 == true)
+        //{
+        //    Item_Manager.Item[button2.tag] = true;
+        //}
 
-        if (Item_Library.GetFlag3 == true)
+        //if (Item_Library.GetFlag3 == true)
+        //{
+        //    Item_Manager.Item[button3.tag] = true;
+        //}
+        for (int i = 0; i <= 2; i++)
         {
-            Item_Manager.Item[button3.tag] = true;
+            if (Item_Library.GetFlag[i] == true)
+                Item_Manager.Item[Obj_button[i].tag] = true;
         }
 
 
@@ -94,20 +100,22 @@ public class Shop_manager : MonoBehaviour
         Item_Manager.Item.TryGetValue(button2.tag, out bool flag_2);
         Item_Manager.Item.TryGetValue(button3.tag, out bool flag_3);
 
-        if (flag_1 == true && button1.interactable == true)
-        {
-            button1.interactable = false;
-        }
+        //if (flag_1 == true && button1.interactable == true)
+        //{
+        //    button1.interactable = false;
+        //}
 
-        if (flag_2 == true && button2.interactable == true)
-        {
-            button2.interactable = false;
-        }
+        //if (flag_2 == true && button2.interactable == true)
+        //{
+        //    button2.interactable = false;
+        //}
 
-        if (flag_3 == true && button3.interactable == true)
-        {
-            button3.interactable = false;
-        }
+        //if (flag_3 == true && button3.interactable == true)
+        //{
+        //    button3.interactable = false;
+        //}
+      
+       
 
         if (Item_Library.Heal_Get_Flag == true)
         {
@@ -177,10 +185,10 @@ public class Shop_manager : MonoBehaviour
     //}
     public void CreateObjectHeal()
     {
-        item_obj[3] = Instantiate(prefab[number[3]], new Vector3(7.75f, -1.2f, 0), Quaternion.identity, _parentGameObject.transform);
-        button[3] = item_obj[3].GetComponent<Button>();
-        item_obj[3].name = "Heal_Item";
-        button_intaractable(button[3]);
+        Item_obj[3] = Instantiate(prefab[Item_number[3]], new Vector3(7.75f, -1.2f, 0), Quaternion.identity, _parentGameObject.transform);
+        Obj_button[3] = Item_obj[3].GetComponent<Button>();
+        Item_obj[3].name = "Heal_Item";
+        button_intaractable(Obj_button[3]);
     }
     //void Item_Get_Check(Button button)
     //{
@@ -260,6 +268,16 @@ public class Shop_manager : MonoBehaviour
             tmp_2 = -1;
             tmp_3 = -1;
             //shop_select();
+
+            for(int i =0;i<=2;i++)
+            {
+                Destroy(Item_obj[i]);
+                Item_Library.GetFlag[i] = false;
+                Shop_tmp[i] = -1;
+                item_select(i);
+                Create_ShopItem(i);
+            }
+          
         }
         else
         {
@@ -273,26 +291,44 @@ public class Shop_manager : MonoBehaviour
 
     int Create_ShopItem(int i)
     {
-        if (shop_tmp[i] <= -1)
+        if (Shop_tmp[i] == -1)
         {
             switch (i)
             {
                 case 0:
-                    item_obj[i] = Instantiate(prefab[number[i]], new Vector3(-3.7f, 1.52f, 0), Quaternion.identity, _parentGameObject.transform);
-                    item_obj[i].name = "Item_Image_1"; break;
+                    Item_obj[i] = Instantiate(prefab[Item_number[i]], new Vector3(-3.7f, 1.52f, 0), Quaternion.identity, _parentGameObject.transform);
+                    Item_obj[i].name = "Item_Image_1"; Shop_tmp[i] = Item_number[i]; break;
                 case 1:
-                    item_obj[i] = Instantiate(prefab[number[i]], new Vector3(-0.15f, 1.52f, 0), Quaternion.identity, _parentGameObject.transform);
-                    item_obj[i].name = "Item_Image_2"; break;
+                    Item_obj[i] = Instantiate(prefab[Item_number[i]], new Vector3(-0.15f, 1.52f, 0), Quaternion.identity, _parentGameObject.transform);
+                    Item_obj[i].name = "Item_Image_2"; Shop_tmp[i] = Item_number[i]; break;
                 case 2:
-                    item_obj[i] = Instantiate(prefab[number[i]], new Vector3(3.45f, 1.52f, 0), Quaternion.identity, _parentGameObject.transform);
-                    item_obj[i].name = "Item_Image_3"; break;
+                    Item_obj[i] = Instantiate(prefab[Item_number[i]], new Vector3(3.45f, 1.52f, 0), Quaternion.identity, _parentGameObject.transform);
+                    Item_obj[i].name = "Item_Image_3"; Shop_tmp[i] = Item_number[i]; break;
                   
             }
-            button[i] = item_obj[i].GetComponent<Button>();
+            Obj_button[i] = Item_obj[i].GetComponent<Button>();
+            Item_Get_Check(i);
+        }
+        else
+        {
+            switch (i)
+            {
+                case 0:
+                    Item_obj[i] = Instantiate(prefab[Shop_tmp[i]], new Vector3(-3.7f, 1.52f, 0), Quaternion.identity, _parentGameObject.transform);
+                    Item_obj[i].name = "Item_Image_1"; break;
+                case 1:
+                    Item_obj[i] = Instantiate(prefab[Shop_tmp[i]], new Vector3(-0.15f, 1.52f, 0), Quaternion.identity, _parentGameObject.transform);
+                    Item_obj[i].name = "Item_Image_2"; break;
+                case 2:
+                    Item_obj[i] = Instantiate(prefab[Shop_tmp[i]], new Vector3(3.45f, 1.52f, 0), Quaternion.identity, _parentGameObject.transform);
+                    Item_obj[i].name = "Item_Image_3"; break;
+
+            }
+            Obj_button[i] = Item_obj[i].GetComponent<Button>();
             Item_Get_Check(i);
         }
        
-        return number[i];
+        return Item_number[i];
     }
 
     void item_select(int i)
@@ -300,27 +336,26 @@ public class Shop_manager : MonoBehaviour
        
         switch (ChangeScene.SCENE_CNT)
         {
-            case 4: shop_limit = 4; break;
-            case 7: shop_limit = 2; break;
-            case 9: shop_limit =  0; break;
+            case 4: Shop_limit = 4; break;
+            case 7: Shop_limit = 2; break;
+            case 9: Shop_limit =  0; break;
             default:                 break;
         }
         switch(i)
         {
-            case 0: number[i] = Random.Range(1, prefab.Length - shop_limit); break;
-            case 1: do { number[i] = Random.Range(1, prefab.Length - shop_limit); } while (number[0] == number[1]); break;
-            case 2: do { number[i] = Random.Range(1, prefab.Length - shop_limit); } while (number[0] == number[2] || number[1] == number[2]); break;
-            case 3: number[i] = 0;break;
+            case 0: Item_number[i] = Random.Range(1, prefab.Length - Shop_limit); break;
+            case 1: do {Item_number[i] = Random.Range(1, prefab.Length - Shop_limit); } while (Item_number[0] == Item_number[1]); break;
+            case 2: do {Item_number[i] = Random.Range(1, prefab.Length - Shop_limit); } while (Item_number[0] == Item_number[2] || Item_number[1] == Item_number[2]); break;
+            case 3: Item_number[i] = 0;break;
         }
-        Debug.Log(shop_limit);
     }
 
     void Item_Get_Check(int i)
     {
-        Item_Manager.Item.TryGetValue(button[i].tag, out bool tag_bool);
+        Item_Manager.Item.TryGetValue(Obj_button[i].tag, out bool tag_bool);
         if (tag_bool == true)
         {
-            button[i].interactable = false;
+            Obj_button[i].interactable = false;
         }
     }
 }
