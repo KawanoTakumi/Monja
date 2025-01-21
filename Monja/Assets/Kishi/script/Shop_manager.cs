@@ -298,7 +298,7 @@ public class Shop_manager : MonoBehaviour
     void item_select(int i)
     {
        
-        switch (ChangeScene.scene_cnt)
+        switch (ChangeScene.SCENE_CNT)
         {
             case 4: shop_limit = 4; break;
             case 7: shop_limit = 2; break;
