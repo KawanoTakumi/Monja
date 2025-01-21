@@ -1,0 +1,33 @@
+
+スクリプトのルール
+
+変数：最初の文字だけを大文字にする　
+
+例　Enemy_controller Enemy_controller;
+
+    bool Cons_flag;
+
+    int Num;
+
+
+定数：すべて大文字にする
+
+例　public static int HP_MAX;
+
+    static int STATUS_MAX = 9999;
+
+
+メソッド名：各単語の先頭の文字を大文字にする
+
+例　public void Attack()
+
+    public void Intaract_False()
+
+    public void Create_Effect_Player(int)
+
+
+
+各スクリプトメソッドの説明を書く
+
+※変数、定数名を変更するときは最初に変更する変数、定数名を右クリックして、すべての参照先を表示
+　してから変更すること

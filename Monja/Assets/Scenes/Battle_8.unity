@@ -2982,7 +2982,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1013919610}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: attack
+        m_MethodName: Attack
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3383,12 +3383,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6190e519a1569e540b6b6c0282d0879b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Attack: 25
-  Diffence: 25
-  Magic: 25
-  Magic_Diffence: 25
   Attack_damage: 0
+  Deffence: 0
   Magic_damage: 0
+  Magic_diffence: 0
+  Calc_attack_damage: 0
+  Calc_magic_damage: 0
   Player_luck: 0
   Item_button: {fileID: 754146516}
   Setting_button: {fileID: 860605819}
@@ -3396,7 +3396,7 @@ MonoBehaviour:
   Concentlation_button: {fileID: 1656728079}
   Magic_button: {fileID: 348858938}
   Heal_button: {fileID: 1111548031}
-  Obj_player: {fileID: 1013919604}
+  Player_object: {fileID: 0}
   Status_controller: {fileID: 755293136}
   ParentGameObject: {fileID: 1013919604}
   Effect:
@@ -3411,7 +3411,7 @@ MonoBehaviour:
   Log:
   - {fileID: 455935519}
   - {fileID: 455935518}
-  Audio_source_SE: {fileID: 0}
+  Audio_source_SE: {fileID: 1776424424}
   Audio_clip_SE:
   - {fileID: 8300000, guid: d5f7b1cd8ad265b4687b1d8bd980f6e9, type: 3}
   - {fileID: 8300000, guid: 46981e05d4227af4cb997d6a42b8667c, type: 3}
