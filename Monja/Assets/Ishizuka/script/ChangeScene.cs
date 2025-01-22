@@ -103,66 +103,69 @@ public class ChangeScene : MonoBehaviour
     public void Player_Reset()
     {
         PlayerController.HP = PlayerController.HP_MAX;
-        Item_Manager.Item["healdrink"] = false;
-        Item_Manager.Item["bowlingball"] = false;
-        Item_Manager.Item["CDplayer"] = false;
-        Item_Manager.Item["cd"] = false;
-        Item_Manager.Item["radio"] = false;
-        Item_Manager.Item["hourglass"] = false;
-        Item_Manager.Item["kesigomu"] = false;
-        Item_Manager.Item["TV"] = false;
-        Item_Manager.Item["CreditCard"] = false;
-        Item_Manager.Item["Mouse"] = false;
-        Item_Manager.Item["HandMirror"] = false;
-        Item_Manager.Item["bowlingpin"] = false;
-        Item_Manager.Item["baseball_ball"] = false;
-        Item_Manager.Item["dice"] = false;
-        Item_Manager.Item["Water bucket"] = false;
-        Item_Manager.Item["Popcorn"] = false;
-        Item_Manager.Item["Apple"] = false;
-        Item_Manager.Item["Scissors"] = false;
-        Item_Manager.Item["ice"] = false;
-        Item_Manager.Item["Pudding"] = false;
-        Item_Manager.Item["Drill"] = false;
-        Item_Manager.Item["Headphone"] = false;
-        Item_Manager.Item["Coffee"] = false;
-        Item_Manager.Item["Safetycone"] = false;
-        Item_Manager.Item["USB"] = false;
-        Item_Manager.Item["UtypeMagnet"] = false;
-        Item_Manager.Item["Smartphone"] = false;
-        Item_Manager.Item["ItypeMagnet"] = false;
+        Item_Manager.Item["healdrink"]        = false;
+        Item_Manager.Item["bowlingball"]      = false;
+        Item_Manager.Item["CDplayer"]         = false;
+        Item_Manager.Item["cd"]               = false;
+        Item_Manager.Item["radio"]            = false;
+        Item_Manager.Item["hourglass"]        = false;
+        Item_Manager.Item["kesigomu"]         = false;
+        Item_Manager.Item["TV"]               = false;
+        Item_Manager.Item["CreditCard"]       = false;
+        Item_Manager.Item["Mouse"]            = false;
+        Item_Manager.Item["HandMirror"]       = false;
+        Item_Manager.Item["bowlingpin"]       = false;
+        Item_Manager.Item["baseball_ball"]    = false;
+        Item_Manager.Item["dice"]             = false;
+        Item_Manager.Item["Water bucket"]     = false;
+        Item_Manager.Item["Popcorn"]          = false;
+        Item_Manager.Item["Apple"]            = false;
+        Item_Manager.Item["Scissors"]         = false;
+        Item_Manager.Item["ice"]              = false;
+        Item_Manager.Item["Pudding"]          = false;
+        Item_Manager.Item["Drill"]            = false;
+        Item_Manager.Item["Headphone"]        = false;
+        Item_Manager.Item["Coffee"]           = false;
+        Item_Manager.Item["Safetycone"]       = false;
+        Item_Manager.Item["USB"]              = false;
+        Item_Manager.Item["UtypeMagnet"]      = false;
+        Item_Manager.Item["Smartphone"]       = false;
+        Item_Manager.Item["ItypeMagnet"]      = false;
         Item_Manager.Item["Magnifying Speculum"] = false;
-        Item_Manager.Item["Mike"] = false;
-        Item_Manager.Item["Megaphone"] = false;
-        Item_Manager.Item["HandMill"] = false;
-        Item_Manager.Item["Poteto"] = false;
-        Item_Manager.Item["Scop"] = false;
-        Item_Manager.Item["hammer"] = false;
-        Item_Manager.Item["Speaker"] = false;
-        Item_Manager.Item["Sylinge"] = false;
-        Item_Manager.Item["Baseball_glove"] = false;
-        Item_Manager.Item["Juice"] = false;
-        Item_Manager.Item["Boxing_glove"] = false;
-        Item_Manager.Item["Gas_burner"] = false;
-        Item_Manager.Item["Hamberger"] = false;
-        Item_Manager.Item["Pencil"] = false;
-        Item_Manager.Item["Mayonnaise"] = false;
-        Item_Manager.Item["Watch"] = false;
-        Item_Manager.Item["Scythe"] = false;
-        Item_Manager.Item["Robe"] = false;
-        Item_Manager.Item["Scale"] = false;
-        Item_Manager.Item["MagicBook"] = false;
-        Item_Manager.Item["Eye"] = false;
-        Item_Manager.Item["Tooth"] = false;
+        Item_Manager.Item["Mike"]             = false;
+        Item_Manager.Item["Megaphone"]        = false;
+        Item_Manager.Item["HandMill"]         = false;
+        Item_Manager.Item["Poteto"]           = false;
+        Item_Manager.Item["Scop"]             = false;
+        Item_Manager.Item["hammer"]           = false;
+        Item_Manager.Item["Speaker"]          = false;
+        Item_Manager.Item["Sylinge"]          = false;
+        Item_Manager.Item["Baseball_glove"]   = false;
+        Item_Manager.Item["Juice"]            = false;
+        Item_Manager.Item["Boxing_glove"]     = false;
+        Item_Manager.Item["Gas_burner"]       = false;
+        Item_Manager.Item["Hamberger"]        = false;
+        Item_Manager.Item["Pencil"]           = false;
+        Item_Manager.Item["Mayonnaise"]       = false;
+        Item_Manager.Item["Watch"]            = false;
+        Item_Manager.Item["Scythe"]           = false;
+        Item_Manager.Item["Robe"]             = false;
+        Item_Manager.Item["Scale"]            = false;
+        Item_Manager.Item["MagicBook"]        = false;
+        Item_Manager.Item["Eye"]              = false;
+        Item_Manager.Item["Tooth"]            = false;
 
         SCENE_CNT = 0;
     }
     //shopシーンのアイテム表示をリセット
     public void Item_Num_Reset()
     {
-        Shop_manager.tmp_1 = -1;
-        Shop_manager.tmp_2 = -1;
-        Shop_manager.tmp_3 = -1;
+        //Shop_manager.tmp_1 = -1;
+        //Shop_manager.tmp_2 = -1;
+        //Shop_manager.tmp_3 = -1;
+
+        for (int i = 0; i < 3; i++)
+            Shop_manager.Shop_tmp[i] = -1;
     }
     //shop移行
     public void Shop_Go()

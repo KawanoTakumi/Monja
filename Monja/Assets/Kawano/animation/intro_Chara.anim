@@ -568,7 +568,7 @@ AnimationClip:
     intParameter: 1
     messageOptions: 0
   - time: 0.13333334
-    functionName: add_scene_num
+    functionName: Add_Scene_Num
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

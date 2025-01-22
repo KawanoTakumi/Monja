@@ -244,11 +244,14 @@ public class Shop_manager : MonoBehaviour
     //    CreateObject3();
     //    CreateObjectHeal();
     //}
+
+    //ゲットフラグリセット
     public void Getflag_reset()
     {
-        Item_Library.GetFlag1 = false;
-        Item_Library.GetFlag2 = false;
-        Item_Library.GetFlag3 = false;
+        //アイテムの取得フラグリセット
+
+        for (int i = 0; i < 3; i++)
+            Item_Library.GetFlag[i] = false;
         Item_Library.Heal_Get_Flag = false;
     }
     public void shop_reroll()
