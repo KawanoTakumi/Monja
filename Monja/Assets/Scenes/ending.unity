@@ -257,7 +257,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Cave_scene: {fileID: 882569792}
-  Ending_Text: {fileID: 2137777412}
+  Ending_text: {fileID: 2137777412}
 --- !u!1 &650422838
 GameObject:
   m_ObjectHideFlags: 0

@@ -6006,10 +6006,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf8040cb1b65f324b84719cb8f66b548, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SE_Source: {fileID: 1747877779}
-  se_1: {fileID: 8300000, guid: 23cccebae18cdf541be4ccd38264e4d6, type: 3}
-  se_2: {fileID: 8300000, guid: e5dcba7423a42484c894f1592d2e71c0, type: 3}
-  se_3: {fileID: 8300000, guid: 2a933e09abf5965449e018a974e94834, type: 3}
+  SE_source: {fileID: 4243482730140551703, guid: cbf198b11dd69c243ae02d0cc9208ceb, type: 3}
+  SE_audio_clip:
+  - {fileID: 8300000, guid: 23cccebae18cdf541be4ccd38264e4d6, type: 3}
+  - {fileID: 8300000, guid: e5dcba7423a42484c894f1592d2e71c0, type: 3}
+  - {fileID: 8300000, guid: 2a933e09abf5965449e018a974e94834, type: 3}
 --- !u!1 &2102821929
 GameObject:
   m_ObjectHideFlags: 0

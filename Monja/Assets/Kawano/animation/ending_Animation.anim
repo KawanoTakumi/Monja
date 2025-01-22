@@ -305,7 +305,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 19.35
+    m_StopTime: 22.916666
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -716,7 +716,7 @@ AnimationClip:
     floatParameter: 0
     intParameter: 1
     messageOptions: 0
-  - time: 2.7833333
+  - time: 3.6
     functionName: Text_Change
     data: 
     objectReferenceParameter: {fileID: 0}
@@ -730,28 +730,28 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 7.2833333
+  - time: 8.55
     functionName: Text_Change
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 3
     messageOptions: 0
-  - time: 11.55
+  - time: 13.45
     functionName: Text_Change
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 4
     messageOptions: 0
-  - time: 15.8
+  - time: 18.2
     functionName: Text_Change
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 5
     messageOptions: 0
-  - time: 19.35
+  - time: 22.916666
     functionName: Load
     data: 
     objectReferenceParameter: {fileID: 0}

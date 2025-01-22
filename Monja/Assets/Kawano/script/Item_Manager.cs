@@ -6,8 +6,8 @@ public class Item_Manager : MonoBehaviour
     public static IDictionary<string, bool> Item = new Dictionary<string, bool>();
     private void Awake()
     {
-        DontDestroyOnLoad(this);
-        Application.targetFrameRate = 60;
+        DontDestroyOnLoad(this);//このスクリプトは破棄されない
+        Application.targetFrameRate = 60;//フレームレートを60fpsに固定
         //辞書にキーを設定
         if (Item.ContainsKey("healdrink") == false)
         {

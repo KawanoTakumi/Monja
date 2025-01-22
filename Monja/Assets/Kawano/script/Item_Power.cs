@@ -66,78 +66,82 @@ public class Item_Power : MonoBehaviour
     public static bool dice_crit = false;
     public static bool Watch_Add_reset = true;
     public static bool turn_bool = true;
-    // Start is called before the first frame update
+
+
+    //スタートメソッド
+    //説明・・・各コンポーネントを取得
     void Start()
     {
         //プレイヤーを読み込み、プレイヤーコントローラーを取得する
         GameObject player = GameObject.Find("Player");
         playercontroller = player.GetComponent<PlayerController>();
+        
+        //ステータスエフェクトを読み込み、コンポーネント取得
         GameObject Status_effect = GameObject.Find("Effect_manager");
         status_ = Status_effect.GetComponent<Status_Controller>();
     }
 
-    // Update is called once per frame
+    //アップデートメソッド
+    //説明・・・アイテムのフラグを取得し、アイテムの効果を管理する
     public void Update()
     {
-       
-
         //アイテムのフラグ取得
-        Item_Manager.Item.TryGetValue("healdrink", out bool healdrink_flag);
-        Item_Manager.Item.TryGetValue("bowlingball", out bool bowlingball_flag);
-        Item_Manager.Item.TryGetValue("cd", out bool cd_flag);
-        Item_Manager.Item.TryGetValue("CDplayer", out bool CDplayer_flag);
-        Item_Manager.Item.TryGetValue("radio", out bool radio_flag);
-        Item_Manager.Item.TryGetValue("hourglass", out bool hourglass_flag);
-        Item_Manager.Item.TryGetValue("kesigomu", out bool kesigomu_flag);
-        Item_Manager.Item.TryGetValue("TV", out bool TV_flag);
-        Item_Manager.Item.TryGetValue("CreditCard", out bool CreditCard_flag);
-        Item_Manager.Item.TryGetValue("Mouse", out bool Mouse_flag);
+        Item_Manager.Item.TryGetValue("healdrink",            out bool healdrink_flag);
+        Item_Manager.Item.TryGetValue("bowlingball",          out bool bowlingball_flag);
+        Item_Manager.Item.TryGetValue("cd",                   out bool cd_flag);
+        Item_Manager.Item.TryGetValue("CDplayer",             out bool CDplayer_flag);
+        Item_Manager.Item.TryGetValue("radio",                out bool radio_flag);
+        Item_Manager.Item.TryGetValue("hourglass",            out bool hourglass_flag);
+        Item_Manager.Item.TryGetValue("kesigomu",             out bool kesigomu_flag);
+        Item_Manager.Item.TryGetValue("TV",                   out bool TV_flag);
+        Item_Manager.Item.TryGetValue("CreditCard",           out bool CreditCard_flag);
+        Item_Manager.Item.TryGetValue("Mouse",                out bool Mouse_flag);
 
-        Item_Manager.Item.TryGetValue("HandMirror", out bool HandMirror_flag);
-        Item_Manager.Item.TryGetValue("bowlingpin", out bool bowlingpin_flag);
-        Item_Manager.Item.TryGetValue("baseball_ball", out bool baseball_ball_flag);
-        Item_Manager.Item.TryGetValue("dice", out bool dice_flag);
-        Item_Manager.Item.TryGetValue("Water bucket", out bool Waterbucket_flag);
-        Item_Manager.Item.TryGetValue("Popcorn", out bool Popcorn_flag);
-        Item_Manager.Item.TryGetValue("Apple", out bool Apple_flag);
-        Item_Manager.Item.TryGetValue("Scissors", out bool Scissors_flag);
-        Item_Manager.Item.TryGetValue("ice", out bool ice_flag);
-        Item_Manager.Item.TryGetValue("Pudding", out bool Pudding_flag);
+        Item_Manager.Item.TryGetValue("HandMirror",           out bool HandMirror_flag);
+        Item_Manager.Item.TryGetValue("bowlingpin",           out bool bowlingpin_flag);
+        Item_Manager.Item.TryGetValue("baseball_ball",        out bool baseball_ball_flag);
+        Item_Manager.Item.TryGetValue("dice",                 out bool dice_flag);
+        Item_Manager.Item.TryGetValue("Water bucket",         out bool Waterbucket_flag);
+        Item_Manager.Item.TryGetValue("Popcorn",              out bool Popcorn_flag);
+        Item_Manager.Item.TryGetValue("Apple",                out bool Apple_flag);
+        Item_Manager.Item.TryGetValue("Scissors",             out bool Scissors_flag);
+        Item_Manager.Item.TryGetValue("ice",                  out bool ice_flag);
+        Item_Manager.Item.TryGetValue("Pudding",              out bool Pudding_flag);
 
-        Item_Manager.Item.TryGetValue("Drill", out bool Drill_flag);
-        Item_Manager.Item.TryGetValue("Headphone", out bool Headphone_flag);
-        Item_Manager.Item.TryGetValue("UtypeMagnet", out bool UtypeMagnet_flag);
-        Item_Manager.Item.TryGetValue("Coffee", out bool Coffee_flag);
-        Item_Manager.Item.TryGetValue("Safetycone", out bool Safetycone_flag);
-        Item_Manager.Item.TryGetValue("USB", out bool USB_flag);
-        Item_Manager.Item.TryGetValue("Smartphone", out bool Smartphone_flag);
-        Item_Manager.Item.TryGetValue("ItypeMagnet", out bool ItypeMagnet_flag);
-        Item_Manager.Item.TryGetValue("Magnifying Speculum", out bool MagnifyingSpeculum_flag);
-        Item_Manager.Item.TryGetValue("Mike", out bool Mike_flag);
+        Item_Manager.Item.TryGetValue("Drill",                out bool Drill_flag);
+        Item_Manager.Item.TryGetValue("Headphone",            out bool Headphone_flag);
+        Item_Manager.Item.TryGetValue("UtypeMagnet",          out bool UtypeMagnet_flag);
+        Item_Manager.Item.TryGetValue("Coffee",               out bool Coffee_flag);
+        Item_Manager.Item.TryGetValue("Safetycone",           out bool Safetycone_flag);
+        Item_Manager.Item.TryGetValue("USB",                  out bool USB_flag);
+        Item_Manager.Item.TryGetValue("Smartphone",           out bool Smartphone_flag);
+        Item_Manager.Item.TryGetValue("ItypeMagnet",          out bool ItypeMagnet_flag);
+        Item_Manager.Item.TryGetValue("Magnifying Speculum",  out bool MagnifyingSpeculum_flag);
+        Item_Manager.Item.TryGetValue("Mike",                 out bool Mike_flag);
 
-        Item_Manager.Item.TryGetValue("Megaphone", out bool Megaphone_flag);
-        Item_Manager.Item.TryGetValue("HandMill", out bool HandMill_flag);
-        Item_Manager.Item.TryGetValue("Poteto", out bool Poteto_flag);
-        Item_Manager.Item.TryGetValue("Scop", out bool Scop_flag);
-        Item_Manager.Item.TryGetValue("hammer", out bool hammer_flag);
-        Item_Manager.Item.TryGetValue("Speaker", out bool Speaker_flag);
-        Item_Manager.Item.TryGetValue("Sylinge", out bool Sylinge_flag);
-        Item_Manager.Item.TryGetValue("Baseball_glove", out bool Baseball_glove_flag);
-        Item_Manager.Item.TryGetValue("Boxing_glove", out bool Boxing_glove_flag);
-        Item_Manager.Item.TryGetValue("Juice", out bool Juice_flag);
+        Item_Manager.Item.TryGetValue("Megaphone",            out bool Megaphone_flag);
+        Item_Manager.Item.TryGetValue("HandMill",             out bool HandMill_flag);
+        Item_Manager.Item.TryGetValue("Poteto",               out bool Poteto_flag);
+        Item_Manager.Item.TryGetValue("Scop",                 out bool Scop_flag);
+        Item_Manager.Item.TryGetValue("hammer",               out bool hammer_flag);
+        Item_Manager.Item.TryGetValue("Speaker",              out bool Speaker_flag);
+        Item_Manager.Item.TryGetValue("Sylinge",              out bool Sylinge_flag);
+        Item_Manager.Item.TryGetValue("Baseball_glove",       out bool Baseball_glove_flag);
+        Item_Manager.Item.TryGetValue("Boxing_glove",         out bool Boxing_glove_flag);
+        Item_Manager.Item.TryGetValue("Juice",                out bool Juice_flag);
 
-        Item_Manager.Item.TryGetValue("Gas_burner", out bool Gas_burner_flag);
-        Item_Manager.Item.TryGetValue("Hamberger", out bool Hamberger_flag);
-        Item_Manager.Item.TryGetValue("Pencil", out bool Pencil_flag);
-        Item_Manager.Item.TryGetValue("Mayonnaise", out bool Mayonnaise_flag);
-        Item_Manager.Item.TryGetValue("Watch", out bool Watch_flag);
-        Item_Manager.Item.TryGetValue("Scythe", out bool TheGrimReaper_Scythe_flag);
-        Item_Manager.Item.TryGetValue("Robe", out bool Sinigami_Robe_flag);
-        Item_Manager.Item.TryGetValue("Eye", out bool Medhusa_Eye_flag);
-        Item_Manager.Item.TryGetValue("MagicBook", out bool Medhusa_MagicBook_flag);
-        Item_Manager.Item.TryGetValue("Scale", out bool Dragon_Scale_flag);
+        Item_Manager.Item.TryGetValue("Gas_burner",           out bool Gas_burner_flag);
+        Item_Manager.Item.TryGetValue("Hamberger",            out bool Hamberger_flag);
+        Item_Manager.Item.TryGetValue("Pencil",               out bool Pencil_flag);
+        Item_Manager.Item.TryGetValue("Mayonnaise",           out bool Mayonnaise_flag);
+        Item_Manager.Item.TryGetValue("Watch",                out bool Watch_flag);
+        Item_Manager.Item.TryGetValue("Scythe",               out bool TheGrimReaper_Scythe_flag);
+        Item_Manager.Item.TryGetValue("Robe",                 out bool Sinigami_Robe_flag);
+        Item_Manager.Item.TryGetValue("Eye",                  out bool Medhusa_Eye_flag);
+        Item_Manager.Item.TryGetValue("MagicBook",            out bool Medhusa_MagicBook_flag);
+        Item_Manager.Item.TryGetValue("Scale",                out bool Dragon_Scale_flag);
 
-        Item_Manager.Item.TryGetValue("Tooth", out bool Dragon_Tooth_flag);
+        Item_Manager.Item.TryGetValue("Tooth",                out bool Dragon_Tooth_flag);
 
         //-------------------------------
         //   アイテム効果(初回ターンのみ)

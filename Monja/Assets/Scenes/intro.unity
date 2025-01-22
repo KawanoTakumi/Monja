@@ -817,11 +817,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c841a7cc0e2b174088a63ed94865170, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text_box: {fileID: 1584222037}
-  audioSource_Work: {fileID: 1905101177}
-  clip_work: {fileID: 8300000, guid: 49b00cfcc30aa2d4b848c7ec9a987dcd, type: 3}
-  clip_work_hapning: {fileID: 8300000, guid: 2c5bc463da4778741a0cf855005aed38, type: 3}
-  clip_work_fall: {fileID: 8300000, guid: 261b5c624ed28c04e83c32dc72216d5d, type: 3}
+  Text_box: {fileID: 1584222037}
+  SE_source: {fileID: 1905101177}
+  SE_clip:
+  - {fileID: 8300000, guid: 49b00cfcc30aa2d4b848c7ec9a987dcd, type: 3}
+  - {fileID: 8300000, guid: 620d4845d4f8032489532dea968595df, type: 3}
+  - {fileID: 8300000, guid: 261b5c624ed28c04e83c32dc72216d5d, type: 3}
 --- !u!114 &1905101176
 MonoBehaviour:
   m_ObjectHideFlags: 0

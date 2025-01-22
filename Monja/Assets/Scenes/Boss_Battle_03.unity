@@ -2412,7 +2412,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 13.574}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 32, y: -41.000015}
+  m_AnchoredPosition: {x: 32, y: -41}
   m_SizeDelta: {x: 218.92, y: -293.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &872394342
@@ -6556,10 +6556,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf8040cb1b65f324b84719cb8f66b548, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SE_Source: {fileID: 883615363}
-  se_1: {fileID: 8300000, guid: 23cccebae18cdf541be4ccd38264e4d6, type: 3}
-  se_2: {fileID: 8300000, guid: e5dcba7423a42484c894f1592d2e71c0, type: 3}
-  se_3: {fileID: 8300000, guid: 2a933e09abf5965449e018a974e94834, type: 3}
+  SE_source: {fileID: 4243482730140551703, guid: cbf198b11dd69c243ae02d0cc9208ceb, type: 3}
+  SE_audio_clip:
+  - {fileID: 8300000, guid: 23cccebae18cdf541be4ccd38264e4d6, type: 3}
+  - {fileID: 8300000, guid: e5dcba7423a42484c894f1592d2e71c0, type: 3}
+  - {fileID: 8300000, guid: 2a933e09abf5965449e018a974e94834, type: 3}
 --- !u!1 &2102821929
 GameObject:
   m_ObjectHideFlags: 0
