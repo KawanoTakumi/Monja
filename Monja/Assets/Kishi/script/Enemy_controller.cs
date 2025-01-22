@@ -673,7 +673,6 @@ public class Enemy_controller : MonoBehaviour
         Destroy(Status_Controller.eff_obj);
         magic_cnt = 0;
         turn = 1;
-        Shop_manager.shop_max = 2;
         Cut_In.FIRST_FLAG = true;
         if (ChangeScene.SCENE_CNT >= 9)
         {

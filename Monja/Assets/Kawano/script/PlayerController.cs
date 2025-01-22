@@ -549,8 +549,7 @@ public class PlayerController : MonoBehaviour
         MAGIC_TYPE = 0;
 
         //ショップの選択範囲を初期化
-        Shop_manager.shop_max = 2;
-        Shop_manager.shop_min = 1;
+        Shop_manager.Shop_limit = 6;
         Item_Power.turn_compare = 0;
         Item_Power.first_turn = true;
         Item_Power.Sinigami_Crit_Effect = false;
