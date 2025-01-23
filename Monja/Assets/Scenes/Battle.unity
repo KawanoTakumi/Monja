@@ -3086,17 +3086,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02c2b98189c4a8941a757f5989057aad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1013919610}
-  enemy: {fileID: 2097196022}
-  attack_Text: {fileID: 837703531}
-  diffence_Text: {fileID: 2021175573}
-  magic_Text: {fileID: 43188779}
-  magic_diffence_Text: {fileID: 304395925}
-  turn_Text: {fileID: 2031012978}
-  player_money: {fileID: 1205328569}
+  Player: {fileID: 1013919610}
+  Attack_text: {fileID: 837703531}
+  Diffence_text: {fileID: 2021175573}
+  Magic_text: {fileID: 43188779}
+  Magic_diffence_text: {fileID: 304395925}
+  Turn_text: {fileID: 2031012978}
+  Player_money: {fileID: 1205328569}
   Heal_drink_num: {fileID: 1500767188}
-  HP_Text: {fileID: 2123496185}
-  MP_Text: {fileID: 1572456799}
+  HP_text: {fileID: 2123496185}
+  MP_text: {fileID: 1572456799}
 --- !u!114 &1013919614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6076,7 +6075,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4243482730140551703, guid: cbf198b11dd69c243ae02d0cc9208ceb, type: 3}
       propertyPath: m_Volume
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4243482730140551703, guid: cbf198b11dd69c243ae02d0cc9208ceb, type: 3}
       propertyPath: m_PlayOnAwake

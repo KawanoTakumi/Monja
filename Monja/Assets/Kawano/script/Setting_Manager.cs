@@ -1,22 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Audio;
 
 public class Setting_Manager : MonoBehaviour
 {
-    public AudioSource sorce_1;//1
-    public AudioSource sorce_2;//2
-    public AudioSource sorce_3;//3
-    public AudioSource sorce_4;//4
-    public AudioSource sorce_5;//5
+    public AudioSource[] Audio_source;//Audio用ソース
+    //public AudioSource SE_source;//SE用ソース
     void Update()
     {
         //音楽のボリュームをすべて一定にする
-        sorce_1.volume = Slider_Manager.Music_Volume;
-        sorce_2.volume = sorce_1.volume;
-        sorce_3.volume = sorce_1.volume;
-        sorce_4.volume = sorce_1.volume;
-        sorce_5.volume = sorce_1.volume;
+        Audio_source[1].volume = Slider_Manager.Music_Volume;
+        Audio_source[2].volume = Audio_source[1].volume;
+        Audio_source[3].volume = Audio_source[1].volume;
+        Audio_source[4].volume = Audio_source[1].volume;
+        Audio_source[5].volume = Audio_source[1].volume;
     }
 }

@@ -2930,17 +2930,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02c2b98189c4a8941a757f5989057aad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1013919610}
-  enemy: {fileID: 2097196022}
-  attack_Text: {fileID: 875647017}
-  diffence_Text: {fileID: 1138115244}
-  magic_Text: {fileID: 77412614}
-  magic_diffence_Text: {fileID: 1997187052}
-  turn_Text: {fileID: 1162000641}
-  player_money: {fileID: 1205328569}
+  Player: {fileID: 1013919610}
+  Attack_text: {fileID: 875647017}
+  Diffence_text: {fileID: 1138115244}
+  Magic_text: {fileID: 77412614}
+  Magic_diffence_text: {fileID: 1997187052}
+  Turn_text: {fileID: 1162000641}
+  Player_money: {fileID: 1205328569}
   Heal_drink_num: {fileID: 1873193602}
-  HP_Text: {fileID: 835335471}
-  MP_Text: {fileID: 1027062166}
+  HP_text: {fileID: 835335471}
+  MP_text: {fileID: 1027062166}
 --- !u!114 &1013919614
 MonoBehaviour:
   m_ObjectHideFlags: 0
