@@ -72,7 +72,7 @@ public class Shop_manager : MonoBehaviour
     {
         //アイテムの取得フラグリセット
 
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < 4; i++)
             Item_Library.GetFlag[i] = false;
     }
     public void shop_reroll()

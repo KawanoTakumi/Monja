@@ -5871,6 +5871,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: BGM_Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 1559270969831591574, guid: 386d31e0ed3b7e74c917d4ad733b1317, type: 3}
+      propertyPath: Audio_source.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1559270969831591574, guid: 386d31e0ed3b7e74c917d4ad733b1317, type: 3}
+      propertyPath: Audio_source.Array.data[0]
+      value: 
+      objectReference: {fileID: 8914400355081705785, guid: d99a4518af5efbd4380cd798b0d10d2c, type: 3}
+    - target: {fileID: 1559270969831591574, guid: 386d31e0ed3b7e74c917d4ad733b1317, type: 3}
+      propertyPath: Audio_source.Array.data[1]
+      value: 
+      objectReference: {fileID: 1788472649869984662, guid: a78e3504bbd6d954ebd4c2a3719ce327, type: 3}
+    - target: {fileID: 1559270969831591574, guid: 386d31e0ed3b7e74c917d4ad733b1317, type: 3}
+      propertyPath: Audio_source.Array.data[2]
+      value: 
+      objectReference: {fileID: 2346285576421895478, guid: 43642502f5dec814fb3e8ba7214031fc, type: 3}
+    - target: {fileID: 1559270969831591574, guid: 386d31e0ed3b7e74c917d4ad733b1317, type: 3}
+      propertyPath: Audio_source.Array.data[3]
+      value: 
+      objectReference: {fileID: 2937479455962750785, guid: 61e3672502c1d264f823a02481c40c6a, type: 3}
+    - target: {fileID: 1559270969831591574, guid: 386d31e0ed3b7e74c917d4ad733b1317, type: 3}
+      propertyPath: Audio_source.Array.data[4]
+      value: 
+      objectReference: {fileID: 1559270969831591575, guid: 386d31e0ed3b7e74c917d4ad733b1317, type: 3}
     - target: {fileID: 1559270969831591575, guid: 386d31e0ed3b7e74c917d4ad733b1317, type: 3}
       propertyPath: Loop
       value: 1
