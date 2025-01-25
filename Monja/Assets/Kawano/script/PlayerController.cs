@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     public static int MP     = 100;             //MP
     public static int MP_MAX = 100;             //最高MP
     public static int HP_POTION = 0;            //HPポーションの数
-    public static int MONEY = 10000;                //所持金額
+    public static int MONEY = 0;                //所持金額
     public static int MAX_LUCK = 13;            //最大ラック
     public static int MAGIC_TYPE = 0;         //魔法番号(撃てる魔法の種類)
     static int STATUS_MAX = 9999;               //ステータス上限

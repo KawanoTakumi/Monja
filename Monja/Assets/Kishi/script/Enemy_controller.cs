@@ -314,7 +314,7 @@ public class Enemy_controller : MonoBehaviour
     void Defence()
     {
         Create_Effect_Enemy(0, 2.3f, 0f);
-        enemy_SE.SE_Monster(2);
+        enemy_SE.SE_Monster(2);//ñhå‰SE
         Enemy_deffence = deffence;
     }
     //ñÇñ@

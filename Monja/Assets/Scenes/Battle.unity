@@ -5510,7 +5510,7 @@ MonoBehaviour:
   deffence: 5
   magic: 0
   magic_Diffence: 5
-  money: 10000
+  money: 50
   Effect:
   - {fileID: 8299584437378114090, guid: 8e11c902fcd31ff429c6fd4f84115c7f, type: 3}
   - {fileID: 3841687375311422541, guid: a354262969f9b404abaee5f657949991, type: 3}
@@ -5587,7 +5587,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf8040cb1b65f324b84719cb8f66b548, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SE_source: {fileID: 4243482730140551703, guid: cbf198b11dd69c243ae02d0cc9208ceb, type: 3}
+  SE_source: {fileID: 1561560812}
   SE_audio_clip:
   - {fileID: 8300000, guid: 23cccebae18cdf541be4ccd38264e4d6, type: 3}
   - {fileID: 8300000, guid: e5dcba7423a42484c894f1592d2e71c0, type: 3}
