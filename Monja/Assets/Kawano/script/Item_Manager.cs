@@ -27,13 +27,13 @@ public class Item_Manager : MonoBehaviour
             Item.Add("HandMirror",          false);//10
             Item.Add("bowlingpin",          false);//11
             Item.Add("baseball_ball",       false);//12
-            Item.Add("dice",                true);//13
+            Item.Add("dice",                false);//13
             Item.Add("Water bucket",        false);//14
             Item.Add("Popcorn",             false);//15
             Item.Add("Apple",               false);//16
             Item.Add("Scissors",            false);//17
             Item.Add("ice",                 false);//18
-            Item.Add("Pudding",             false);//19
+            Item.Add("Pudding",             false);//19 //Т▓Ро
 
             Item.Add("Drill",               false);//20
             Item.Add("Headphone",           false);//21  
@@ -50,7 +50,7 @@ public class Item_Manager : MonoBehaviour
             Item.Add("HandMill",            false);//31
             Item.Add("Poteto",              false);//32
             Item.Add("Scop",                false);//33
-            Item.Add("hammer",              false);//34 
+            Item.Add("hammer",              false);//34 //Т▓Ро
             Item.Add("Speaker",             false);//35
             Item.Add("Sylinge",             false);//36
             Item.Add("Baseball_glove",      false);//37
@@ -62,7 +62,7 @@ public class Item_Manager : MonoBehaviour
             Item.Add("Pencil",              false);//42
             Item.Add("Mayonnaise",          false);//43
             Item.Add("Watch",               false);//44
-            Item.Add("Scythe",              false);//45
+            Item.Add("Scythe",              false);//45 //Т▓Ро
             Item.Add("Robe",                false);//46
             Item.Add("Eye",                 false);//47
             Item.Add("MagicBook",           false);//48

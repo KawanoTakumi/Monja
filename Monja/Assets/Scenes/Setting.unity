@@ -278,7 +278,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: BGM
+  m_Text: "\u97F3\u91CF"
 --- !u!222 &70701816
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -475,7 +475,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -234, y: 219}
+  m_AnchoredPosition: {x: 4, y: 219}
   m_SizeDelta: {x: 542.24, y: 79.55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &489079806
@@ -529,9 +529,9 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 261112937224730069, guid: cea75ff245ccde84bb39f313cb247f26, type: 3}
+      - m_Target: {fileID: 489079807}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: set_volume
+        m_MethodName: 
         m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1091,19 +1091,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1171061562}
         m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
-        m_MethodName: reset_scene_num
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1171061562}
-        m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
-        m_MethodName: Load
+        m_MethodName: Reset_Scene_Num
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1128,6 +1116,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1171061562}
         m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
         m_MethodName: Player_Reset
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1171061562}
+        m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
+        m_MethodName: Load
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1259,7 +1259,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8914400355081705786, guid: d99a4518af5efbd4380cd798b0d10d2c, type: 3}
       propertyPath: Audio_source.Array.size
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8914400355081705786, guid: d99a4518af5efbd4380cd798b0d10d2c, type: 3}
       propertyPath: Audio_source.Array.data[2]
@@ -1273,6 +1273,10 @@ PrefabInstance:
       propertyPath: Audio_source.Array.data[4]
       value: 
       objectReference: {fileID: 1559270969831591575, guid: 386d31e0ed3b7e74c917d4ad733b1317, type: 3}
+    - target: {fileID: 8914400355081705786, guid: d99a4518af5efbd4380cd798b0d10d2c, type: 3}
+      propertyPath: Audio_source.Array.data[5]
+      value: 
+      objectReference: {fileID: 4243482730140551703, guid: cbf198b11dd69c243ae02d0cc9208ceb, type: 3}
     - target: {fileID: 8914400355081705787, guid: d99a4518af5efbd4380cd798b0d10d2c, type: 3}
       propertyPath: m_RootOrder
       value: 3
