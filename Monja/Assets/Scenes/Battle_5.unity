@@ -1978,7 +1978,7 @@ GameObject:
   - component: {fileID: 803488475}
   - component: {fileID: 803488474}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: MP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2001,8 +2001,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -132, y: -230.98}
-  m_SizeDelta: {x: 104.43, y: 50.395}
+  m_AnchoredPosition: {x: -130.83, y: -230.98}
+  m_SizeDelta: {x: 106.77, y: 50.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &803488474
 MonoBehaviour:
@@ -3403,7 +3403,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1013919610}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: heal
+        m_MethodName: Heal
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6234,7 +6234,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1559270969831591574, guid: 386d31e0ed3b7e74c917d4ad733b1317, type: 3}
       propertyPath: Audio_source.Array.size
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1559270969831591574, guid: 386d31e0ed3b7e74c917d4ad733b1317, type: 3}
       propertyPath: Audio_source.Array.data[0]
@@ -6256,6 +6256,10 @@ PrefabInstance:
       propertyPath: Audio_source.Array.data[4]
       value: 
       objectReference: {fileID: 1559270969831591575, guid: 386d31e0ed3b7e74c917d4ad733b1317, type: 3}
+    - target: {fileID: 1559270969831591574, guid: 386d31e0ed3b7e74c917d4ad733b1317, type: 3}
+      propertyPath: Audio_source.Array.data[5]
+      value: 
+      objectReference: {fileID: 2140974267}
     - target: {fileID: 1559270969831591575, guid: 386d31e0ed3b7e74c917d4ad733b1317, type: 3}
       propertyPath: Loop
       value: 1

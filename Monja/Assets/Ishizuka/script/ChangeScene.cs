@@ -160,10 +160,6 @@ public class ChangeScene : MonoBehaviour
     //shopシーンのアイテム表示をリセット
     public void Item_Num_Reset()
     {
-        //Shop_manager.tmp_1 = -1;
-        //Shop_manager.tmp_2 = -1;
-        //Shop_manager.tmp_3 = -1;
-
         for (int i = 0; i < 3; i++)
             Shop_manager.Shop_tmp[i] = -1;
     }
@@ -180,6 +176,7 @@ public class ChangeScene : MonoBehaviour
     //数値初期化
     public static void Title_Reset()
     {
+        PlayerController.HP_MAX = 100;//最大体力を初期の値にする
         PlayerController.HP = PlayerController.HP_MAX;
         PlayerController.MP = PlayerController.MP_MAX;
         PlayerController.MAGIC_TYPE = 0;

@@ -12,5 +12,6 @@ public class Setting_Manager : MonoBehaviour
         Audio_source[2].volume = Audio_source[0].volume;
         Audio_source[3].volume = Audio_source[0].volume;
         Audio_source[4].volume = Audio_source[0].volume;
+        Audio_source[5].volume = Audio_source[0].volume;
     }
 }

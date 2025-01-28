@@ -512,7 +512,7 @@ public class Enemy_controller : MonoBehaviour
     {
         Log.text = ("メデューサの魔法攻撃");
         Enemy_luck = Random.Range(1, 6);
-        if (Enemy_luck > 0)
+        if (Enemy_luck == 6)
         {
             Enemy_Magic = magic;
             poison = true;

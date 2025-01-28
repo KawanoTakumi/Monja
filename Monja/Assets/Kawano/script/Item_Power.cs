@@ -184,8 +184,8 @@ public class Item_Power : MonoBehaviour
         {
             if(adapt_kesigomu == true && first_turn == true)
             {
-                playercontroller.Attack_damage += 20;
-                playercontroller.Magic_damage -= playercontroller.Attack_damage / 2;
+                playercontroller.Attack_damage += 20;//•¨—UŒ‚—Í20ã¸
+                playercontroller.Magic_damage -= playercontroller.Attack_damage / 2;//–‚–@UŒ‚—Í‚ğ•¨—UŒ‚—Í/‚Q•ªŒ¸‚ç‚·
                 adapt_kesigomu = false;
             }
         }
@@ -209,7 +209,7 @@ public class Item_Power : MonoBehaviour
         {
             if(adapt_Mouse == true && first_turn == true)
             {
-                playercontroller.Magic_damage += 10;
+                playercontroller.Magic_damage += 10;//–‚–@UŒ‚—Í10ã¸
                 adapt_Mouse = false;
             }
         }
@@ -226,8 +226,8 @@ public class Item_Power : MonoBehaviour
         {
             if(adapt_baseball_ball == true && first_turn == true)
             {
-                playercontroller.Attack_damage += 15;
-                playercontroller.Deffence -= 10;
+                playercontroller.Attack_damage += 15;//•¨—UŒ‚—Í‚ğ15‘‰Á
+                playercontroller.Deffence -= 10;//•¨—–hŒä—Í‚ğ10Œ¸­
                 adapt_baseball_ball = false;
             }
         }
@@ -613,7 +613,7 @@ public class Item_Power : MonoBehaviour
                 if (hammer_flag == true)
                 {
                     hammer_random = Random.Range(1, 11);
-                    if (hammer_random <= 10)
+                    if (hammer_random == 10)
                     {
                         Enemy_controller.Stun_turn = true;
                         status_.Status_Effect(false, 4);//‹CâƒGƒtƒFƒNƒg
