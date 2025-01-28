@@ -28,6 +28,9 @@ public class Status_Controller : MonoBehaviour
     //エフェクト作成関数（状態異常番号、位置X、位置Y）
     public void Create_Effect_Status(int number)
     {
+        if (number == 4)//気絶用に位置を変更しています
+            eff_obj = Instantiate(Effects[number], new Vector3(_parent.transform.position.x, _parent.transform.position.y + 1.7f,0),Quaternion.identity, _parent.transform);
+        else
         eff_obj = Instantiate(Effects[number], new Vector3(_parent.transform.position.x, _parent.transform.position.y, 0), Quaternion.identity, _parent.transform);
     }
     //削除関数

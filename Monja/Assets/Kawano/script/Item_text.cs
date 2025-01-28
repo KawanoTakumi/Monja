@@ -166,7 +166,7 @@ public class Item_text : MonoBehaviour
         else if (button == CompareTag("Magnifying Speculum"))
         {
             Item_name.text = "虫眼鏡";
-            Item_guide_text.text = "物を拡大して見ることができる道具。レンズが輝く。\n\n毎ターン開始時に物理防御力と魔法防御力を3増加させる";
+            Item_guide_text.text = "物を拡大して見ることができる道具。レンズが輝く。\n\n毎ターン開始時に物理防御力と魔法防御力を３増加させる";
         }
         else if (button == CompareTag("Mike"))
         {
@@ -186,7 +186,7 @@ public class Item_text : MonoBehaviour
         else if(button == CompareTag("Poteto"))
         {
             Item_name.text = "ポテト";
-            Item_guide_text.text = "ジャガイモを油で揚げた食べ物。食べるのをやめられない。\nハンバーガーを持っている時物理攻撃力を60増加させる\n持っていない時は物理攻撃力を３０減少させる";
+            Item_guide_text.text = "ジャガイモを油で揚げた食べ物。食べるのをやめられない。\nハンバーガーを持っている時物理攻撃力を６０増加させる\n持っていない時は物理攻撃力を３０減少させる";
         }
         else if (button == CompareTag("Scop"))
         {
@@ -201,7 +201,7 @@ public class Item_text : MonoBehaviour
         else if (button == CompareTag("Speaker"))
         {
             Item_name.text = "スピーカー";
-            Item_guide_text.text = "音を増幅させる装置。カルテット？\n\n敵の物理防御力を25減少させる";
+            Item_guide_text.text = "音を増幅させる装置。カルテット？\n\n敵の物理防御力を２５減少させる";
         }
         else if (button == CompareTag("Sylinge"))
         {
@@ -216,12 +216,12 @@ public class Item_text : MonoBehaviour
         else if (button == CompareTag("Boxing_glove"))
         {
             Item_name.text = "ボクシンググローブ";
-            Item_guide_text.text = "ボクシングで使用されるグローブ,一発KO！！\n\nザンゲキを押したとき物理攻撃力を3増加させる";
+            Item_guide_text.text = "ボクシングで使用されるグローブ,一発KO！！\n\nザンゲキを押したとき物理攻撃力を３増加させる";
         }
         else if (button == CompareTag("Juice"))
         {
             Item_name.text = "ジュース";
-            Item_guide_text.text = "果汁などが入った飲料水。何味かはわからない。\n\n戦闘開始時体力を20回復させる";
+            Item_guide_text.text = "果汁などが入った飲料水。何味かはわからない。\n\n戦闘開始時体力を２０回復させる";
         }
         else if (button == CompareTag("Gas_burner"))
         {
@@ -251,32 +251,32 @@ public class Item_text : MonoBehaviour
         else if (button == CompareTag("Scythe"))
         {
             Item_name.text = "死神の鎌";
-            Item_guide_text.text = "切れ味がいい鎌。魂まで刈ってしまう。\n\n物理攻撃力を40増加させ、クリティカルがかなり発生しやすくなる";
+            Item_guide_text.text = "切れ味がいい鎌。魂まで刈ってしまう。\n\n物理攻撃力を４０増加させ、クリティカルがかなり発生しやすくなる";
         }
         else if (button == CompareTag("Robe"))
         {
             Item_name.text = "死神のローブ";
-            Item_guide_text.text = "死神が着ていたローブ。ひんやりと冷たい。\n\n物理防御力を40増加させ、クリティカルが発生しやすくなる";
+            Item_guide_text.text = "死神が着ていたローブ。ひんやりと冷たい。\n\n物理防御力を４０増加させ、クリティカルが発生しやすくなる";
         }
         else if (button == CompareTag("Eye"))
         {
             Item_name.text = "メデューサの目";
-            Item_guide_text.text = "メデューサの目。取り扱いには注意が必要。\n\n魔法防御力を40増加させ、クリティカルが出やすくなる";
+            Item_guide_text.text = "メデューサの目。取り扱いには注意が必要。\n\n魔法防御力を４０増加させ、クリティカルが出やすくなる";
         }
         else if (button == CompareTag("MagicBook"))
         {
             Item_name.text = "メデューサの魔導書";
-            Item_guide_text.text = "メデューサが使っていた魔導書。書かれている文字は解読できない。\n魔法攻撃力を40増加させ、クリティカルが出やすくなる\n（アイテム画面でアイテムを押すと魔法攻撃が変化）";
+            Item_guide_text.text = "メデューサが使っていた魔導書。書かれている文字は解読できない。\n魔法攻撃力を４０増加させ、クリティカルが出やすくなる\n（アイテム画面でアイテムを押すと魔法攻撃が変化）";
         }
         else if (button == CompareTag("Scale"))
         {
             Item_name.text = "ドラゴンの鱗";
-            Item_guide_text.text = "ドラゴンの体表を覆っている鱗。ほんのりと暖かい。\n\n毎ターン開始時に全ステータスを10増加させる";
+            Item_guide_text.text = "ドラゴンの体表を覆っている鱗。ほんのりと暖かい。\n\n毎ターン開始時に全ステータスを１０増加させる";
         }
         else if (button == CompareTag("Tooth"))
         {
             Item_name.text = "ドラゴンの牙";
-            Item_guide_text.text = "ドラゴンの鋭い牙。手のひら位のサイズ。\n\n体力を半分に減らす代わりに物理攻撃力を100増加させる";
+            Item_guide_text.text = "ドラゴンの鋭い牙。手のひら位のサイズ。\n\n体力を半分に減らす代わりに物理攻撃力を１００増加させる";
         }
     }
 
