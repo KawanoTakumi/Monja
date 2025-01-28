@@ -33,7 +33,7 @@ public class Item_Manager : MonoBehaviour
             Item.Add("Apple",               false);//16
             Item.Add("Scissors",            false);//17
             Item.Add("ice",                 false);//18
-            Item.Add("Pudding",             false);//19 //Т▓Ро
+            Item.Add("Pudding",             false);//19 
 
             Item.Add("Drill",               false);//20
             Item.Add("Headphone",           false);//21  
@@ -62,7 +62,7 @@ public class Item_Manager : MonoBehaviour
             Item.Add("Pencil",              false);//42
             Item.Add("Mayonnaise",          false);//43
             Item.Add("Watch",               false);//44
-            Item.Add("Scythe",              false);//45 //Т▓Ро
+            Item.Add("Scythe",              false);//45
             Item.Add("Robe",                false);//46
             Item.Add("Eye",                 false);//47
             Item.Add("MagicBook",           false);//48
