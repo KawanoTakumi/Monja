@@ -587,6 +587,7 @@ public class Item_Power : MonoBehaviour
                     case 5: PlayerController.MONEY += 5; break;
                     case 6: dice_crit = true; break;//クリティカル発生
                 }
+            }
                 if (Scissors_flag == true)
                 {
                     playercontroller.Deffence -= 2;
@@ -661,7 +662,7 @@ public class Item_Power : MonoBehaviour
                     playercontroller.Magic_damage += 10;
                     playercontroller.Magic_diffence += 10;
                 }
-            }
+            
             turn_compare = Enemy_controller.turn;
         }
     }
