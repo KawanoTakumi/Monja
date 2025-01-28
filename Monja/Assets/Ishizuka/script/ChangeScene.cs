@@ -154,7 +154,7 @@ public class ChangeScene : MonoBehaviour
         Item_Manager.Item["MagicBook"]        = false;
         Item_Manager.Item["Eye"]              = false;
         Item_Manager.Item["Tooth"]            = false;
-
+        PlayerController.MAX_LUCK = 13;
         SCENE_CNT = 0;
     }
     //shopシーンのアイテム表示をリセット

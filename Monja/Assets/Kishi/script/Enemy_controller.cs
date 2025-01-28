@@ -253,7 +253,6 @@ public class Enemy_controller : MonoBehaviour
                 turn += 1;
                 playerController.Intaract_True();
                 Item_Power.first_turn = false;
-                Enemy_deffence -=Enemy_deffence;
                 turn_manager.turn = true;
                 playerController.Log[1].text = "";
                 Log.text = ("プレイヤーのターン");
@@ -315,7 +314,7 @@ public class Enemy_controller : MonoBehaviour
     {
         Create_Effect_Enemy(0, 2.3f, 0f);
         enemy_SE.SE_Monster(2);//防御SE
-        Enemy_deffence = deffence;
+        Enemy_deffence += deffence;
     }
     //魔法
     void Magic()
@@ -355,7 +354,6 @@ public class Enemy_controller : MonoBehaviour
             case 3:
                 Defence();
                 Log.text = ("スケルトンは防御した");
-                Enemy_deffence = deffence;
                 break;
         }
     }
@@ -402,7 +400,6 @@ public class Enemy_controller : MonoBehaviour
             case 3:
                 Defence();
                 Log.text = ("ミノタウロスは防御した");
-                Enemy_deffence = deffence;
                 break;
         }
     }
@@ -567,7 +564,6 @@ public class Enemy_controller : MonoBehaviour
     void Dragon()
     {
         Enemy_act = Random.Range(1, 5);//1～4まで
-        Enemy_act = 2;
         switch (Enemy_act)
         {
             case 1:

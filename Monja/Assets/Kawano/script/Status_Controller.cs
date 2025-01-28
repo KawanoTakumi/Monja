@@ -12,23 +12,23 @@ public class Status_Controller : MonoBehaviour
         //プレイヤーかどうか
         switch(player_flag)
         {
-            case true:_parent = GameObject.Find("Player");break;
+            case true:_parent = GameObject.Find("Player"); break;
             case false:_parent = GameObject.Find("Monster");break;
         }
         //状態異常
         switch(number)
         {
-            case 0:Create_Effect_Status(0, 0.0f, 0.0f);break;//凍結
-            case 1:Create_Effect_Status(1, 0.0f, 0.0f);break;//石化
-            case 2:Create_Effect_Status(2, 0.0f, 0.0f);break;//毒
-            case 3:Create_Effect_Status(3, 0.0f, 0.0f);break;//延焼
-            case 4:Create_Effect_Status(4, 0.0f, 4.5f);break;//気絶
+            case 0:Create_Effect_Status(0);break;//凍結
+            case 1:Create_Effect_Status(1);break;//石化
+            case 2:Create_Effect_Status(2);break;//毒
+            case 3:Create_Effect_Status(3);break;//延焼
+            case 4:Create_Effect_Status(4);break;//気絶
         }
     }
     //エフェクト作成関数（状態異常番号、位置X、位置Y）
-    public void Create_Effect_Status(int number, float Fx, float Fy)
+    public void Create_Effect_Status(int number)
     {
-        eff_obj = Instantiate(Effects[number], new Vector3(Fx, Fy, 0), Quaternion.identity, _parent.transform);
+        eff_obj = Instantiate(Effects[number], new Vector3(_parent.transform.position.x, _parent.transform.position.y, 0), Quaternion.identity, _parent.transform);
     }
     //削除関数
     public void Delete_Effect()
