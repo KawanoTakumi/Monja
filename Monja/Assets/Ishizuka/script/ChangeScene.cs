@@ -176,6 +176,7 @@ public class ChangeScene : MonoBehaviour
     //”’l‰Šú‰»
     public static void Title_Reset()
     {
+        PlayerController.HP_MAX = 100;//Å‘å‘Ì—Í‚ğ‰Šú‚Ì’l‚É‚·‚é
         PlayerController.HP = PlayerController.HP_MAX;
         PlayerController.MP = PlayerController.MP_MAX;
         PlayerController.MAGIC_TYPE = 0;

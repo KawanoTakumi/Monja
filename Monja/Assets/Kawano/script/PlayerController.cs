@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     public static int HP_POTION = 0;            //HPポーションの数
     public static int MONEY = 0;                //所持金額
     public static int MAX_LUCK = 13;            //最大ラック
-    public static int MAGIC_TYPE = 0;         //魔法番号(撃てる魔法の種類)
+    public static int MAGIC_TYPE = 0;           //魔法番号(撃てる魔法の種類)
     static int STATUS_MAX = 9999;               //ステータス上限
     static int STATUS_MIN = 0;                  //ステータス下限
     static int CONSTANT_ATTACK   = 25;          //攻撃の定数
@@ -77,7 +77,6 @@ public class PlayerController : MonoBehaviour
 
         //主人公のターンにする true = 主人公、false = 敵
         turn_manager.turn = true;
-        Log[0].text = "主人公のターン";
     }
 
     //アップデートメソッド
@@ -543,6 +542,7 @@ public class PlayerController : MonoBehaviour
         //主人公のステータスを初期化
         Item_Reset();
         Status_Reset();
+        HP_MAX = 100;
         HP = HP_MAX;
         MP = MP_MAX;
         MONEY = 0;

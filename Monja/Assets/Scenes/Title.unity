@@ -2306,6 +2306,14 @@ PrefabInstance:
       propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8914400355081705786, guid: d99a4518af5efbd4380cd798b0d10d2c, type: 3}
+      propertyPath: Audio_source.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8914400355081705786, guid: d99a4518af5efbd4380cd798b0d10d2c, type: 3}
+      propertyPath: Audio_source.Array.data[5]
+      value: 
+      objectReference: {fileID: 4243482730140551703, guid: cbf198b11dd69c243ae02d0cc9208ceb, type: 3}
     - target: {fileID: 8914400355081705787, guid: d99a4518af5efbd4380cd798b0d10d2c, type: 3}
       propertyPath: m_RootOrder
       value: 3

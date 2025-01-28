@@ -302,7 +302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f21d81a0450aa5642b7c8add226f31c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  img: {fileID: 84074490}
+  Back_image: {fileID: 0}
   sprite:
   - {fileID: 21300000, guid: c4d45d8642b6c1443a64ed382d3d9739, type: 3}
   - {fileID: 21300000, guid: 61ce67d4b13252b41a9b3911a3ed3871, type: 3}
@@ -912,6 +912,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1686780686}
         m_TargetAssemblyTypeName: Audio, Assembly-CSharp
         m_MethodName: hit_se
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1686780687}
+        m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
+        m_MethodName: Title_Reset
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
