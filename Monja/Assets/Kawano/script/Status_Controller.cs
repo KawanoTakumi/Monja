@@ -21,7 +21,7 @@ public class Status_Controller : MonoBehaviour
             case 0:Create_Effect_Status(0, 0.0f, 0.0f);break;//“€Œ‹
             case 1:Create_Effect_Status(1, 0.0f, 0.0f);break;//Î‰»
             case 2:Create_Effect_Status(2, 0.0f, 0.0f);break;//“Å
-            case 3:Create_Effect_Status(3, 0.0f, 0.0f);break;//‰„Ä
+            case 3:Create_Effect_Status(3, -6.0f, 0.0f);break;//‰„Ä
             case 4:Create_Effect_Status(4, 0.0f, 4.5f);break;//‹Câ
         }
     }

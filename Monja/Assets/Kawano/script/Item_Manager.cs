@@ -50,7 +50,7 @@ public class Item_Manager : MonoBehaviour
             Item.Add("HandMill",            false);//31
             Item.Add("Poteto",              false);//32
             Item.Add("Scop",                false);//33
-            Item.Add("hammer",              false);//34 //Т▓Ро
+            Item.Add("hammer",              true);//34 //Т▓Ро
             Item.Add("Speaker",             false);//35
             Item.Add("Sylinge",             false);//36
             Item.Add("Baseball_glove",      false);//37
@@ -63,8 +63,8 @@ public class Item_Manager : MonoBehaviour
             Item.Add("Mayonnaise",          false);//43
             Item.Add("Watch",               false);//44
             Item.Add("Scythe",              false);//45
-            Item.Add("Robe",                false);//46
-            Item.Add("Eye",                 false);//47
+            Item.Add("Robe",                true);//46
+            Item.Add("Eye",                 true);//47
             Item.Add("MagicBook",           false);//48
             Item.Add("Scale",               false);//49
 
