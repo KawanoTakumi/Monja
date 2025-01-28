@@ -75,10 +75,12 @@ public class Shop_manager : MonoBehaviour
         for (int i = 0; i < 4; i++)
             Item_Library.GetFlag[i] = false;
     }
+
+    //ショップリロール関数
     public void shop_reroll()
     {
 
-        if (PlayerController.MONEY >= 30)
+        if (PlayerController.MONEY >= 30)//所持金確認
         {
             PlayerController.MONEY -= 30;
 
