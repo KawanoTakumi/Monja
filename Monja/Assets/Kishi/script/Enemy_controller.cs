@@ -642,12 +642,12 @@ public class Enemy_controller : MonoBehaviour
         {
             default:
                 {
-                    obj1 = Instantiate(Effect[number], new Vector3(Fx, Fy, 0), Quaternion.identity, _parentGameObject.transform);
+                    obj1 = Instantiate(Effect[number], new Vector3(_parentGameObject.transform.position.x, _parentGameObject.transform.position.y, 0), Quaternion.identity, _parentGameObject.transform);
                     obj1.name = "obj_name" + number;
                 }break;
             case 0:
                 {
-                    obj2 = Instantiate(Effect[number], new Vector3(Fx, Fy, 0), Quaternion.identity, _parentGameObject.transform);
+                    obj2 = Instantiate(Effect[number], new Vector3(_parentGameObject.transform.position.x, _parentGameObject.transform.position.y, 0), Quaternion.identity, _parentGameObject.transform);
                     obj2.name = "obj_name" + number;
                 }
                 break;

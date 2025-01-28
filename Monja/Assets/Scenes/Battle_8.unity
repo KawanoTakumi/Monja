@@ -5834,7 +5834,7 @@ MonoBehaviour:
   magic_Diffence: 10
   money: 100
   Effect:
-  - {fileID: 8299584437378114090, guid: 8e11c902fcd31ff429c6fd4f84115c7f, type: 3}
+  - {fileID: 9024055473706721657, guid: 9b8997740a6396d45a8151ae7a1d750a, type: 3}
   - {fileID: 8291922539528890057, guid: 03d0cf194d739dc4b80b11088fa5f6ba, type: 3}
   - {fileID: 8770600068115727514, guid: 976d6d9efbaeded44a24ae3e576007fb, type: 3}
   Monster: {fileID: 2097196019}
@@ -5843,7 +5843,7 @@ MonoBehaviour:
   _parentGameObject: {fileID: 2097196019}
   status_: {fileID: 755293136}
   Enemy_attack: 0
-  Enemy_deffence: 0
+  Enemy_deffence: 10
   Enemy_Magic: 0
   Log: {fileID: 455935519}
   Log_2: {fileID: 455935518}
