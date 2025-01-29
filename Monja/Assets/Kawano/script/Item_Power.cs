@@ -300,7 +300,7 @@ public class Item_Power : MonoBehaviour
                 adapt_Pudding = false;
             }
         }
-        if(Headphone_flag == true)
+        if(Drill_flag == true)
         {
             if(adapt_Drill == true && first_turn)
             {
