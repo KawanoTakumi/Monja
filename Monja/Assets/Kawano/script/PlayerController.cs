@@ -206,6 +206,9 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+    /// <summary>
+    /// ザンゲキボタンを押されたときに作動させるメソッドです
+    /// </summary>
     //ザンゲキ
     public void Attack()
     {
@@ -251,6 +254,9 @@ public class PlayerController : MonoBehaviour
             Damage_calculate.Enemey_Damage_Calculate(Calc_attack_damage, Enemy_controller.Enemy_deffence);
         }
     }
+    /// <summary>
+    /// シュウチュウボタンを押された時に発動させるメソッドです
+    /// </summary>
     //シュウチュウ
     public void Concentration()
     {
@@ -289,6 +295,9 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+    /// <summary>
+    /// マホウボタンをおされた時に発動させるメソッドです
+    /// </summary>
     //マホウ
     public void Magic()
     {
@@ -342,6 +351,10 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+
+    /// <summary>
+    /// カイフクボタンを押したときに発動させるメソッドです
+    /// </summary>
     //カイフク
     public void Heal()
     {
@@ -380,7 +393,10 @@ public class PlayerController : MonoBehaviour
             Intaract_True();//ボタンを押せるようにする
         }
     }
-    //ボタンインタラクトfalse
+
+    /// <summary>
+    /// ボタンを押せなくするメソッドです
+    /// </summary>
     public void Intaract_False()
     {
         Attack_button.interactable          = false;
@@ -391,7 +407,10 @@ public class PlayerController : MonoBehaviour
         Setting_button.interactable         = false;
         Destroy(Status_Controller.eff_obj);//エフェクトを削除
     }
-    //ボタンインタラクトtrue
+
+    /// <summary>
+    /// ボタンを押せるようにするメソッドです
+    /// </summary>
     public void Intaract_True()
     {
         Attack_button.interactable           = true;
@@ -401,7 +420,12 @@ public class PlayerController : MonoBehaviour
         Item_button.interactable             = true;
         Setting_button.interactable          = true;
     }
-    //アイテムデータ初期化
+    /// <summary>
+    /// アイテムの取得データを初期化させるメソッドです
+    /// </summary>
+    /// <remarks>
+    /// このメソッドは負けた時、ゲームをクリアした時に使用します
+    /// </remarks>>
     public static void Item_Reset()
     {
         Item_Manager.Item["healdrink"]           = false;
@@ -462,19 +486,29 @@ public class PlayerController : MonoBehaviour
         Item_Manager.Item["Tooth"]               = false;
 
     }
-    //アニメーションリセット（アニメーションタグ名）
+    /// <summary>
+    /// アニメーションを終了させるメソッドです
+    /// </summary>
+    /// <param name="anim_tag">アニメーションの名前</param>
     public void Anim_Reset(string anim_tag)
     {
         Animator.SetBool(anim_tag, false);
     }
-    //エフェクトオブジェクト作成関数（魔法番号、位置X、位置Y）
+    /// <summary>
+    /// エフェクトオブジェクトを作成するメソッドです
+    /// </summary>
+    /// <param name="number">作成するエフェクトの番号</param>
+    /// <param name="fx">X座標</param>
+    /// <param name="fy">Y座標</param>
     public void Create_Effect_Player(int number, float fx, float fy)
     {
         Player_object = Instantiate(Effect[number], new Vector3(fx, fy, 0), Quaternion.identity, 
             ParentGameObject.transform);
         Player_object.name = "Effect_image_" + number;
     }
-    //マホウの状態異常効果
+    /// <summary>
+    /// 魔法を打った際の状態異常を４分の１で発生させるメソッドです
+    /// </summary>
     public void Magic_Effect()
     {
         int Eff_random;//ランダム取得変数
@@ -497,7 +531,10 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-    //クリティカルエフェクト(作動させる行動)
+    /// <summary>
+    /// クリティカルエフェクトを発生させるメソッドです
+    /// </summary>
+    /// <param name="Play_act">実行する行動の番号</param>
     public void Crit_Effect(int Play_act)
     {
 
@@ -528,6 +565,9 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+    /// <summary>
+    /// ステータスを初期値に戻すメソッドです
+    /// </summary>
     //ステータスリセット関数
     public static void Status_Reset()
     {
@@ -536,6 +576,12 @@ public class PlayerController : MonoBehaviour
         CONSTANT_MAGIC     　   = 25;
         CONSTANT_MAGIC_DEFFENCE = 25;
     }
+    /// <summary>
+    /// 負けた時に実行するメソッドです
+    /// </summary>
+    /// <remarks>
+    /// 負けた時以外では使用しないでください
+    /// </remarks>>
     //負け関数
     public void Lose()
     {
@@ -565,6 +611,11 @@ public class PlayerController : MonoBehaviour
         Enemy_controller.tag_get = true;
         SceneManager.LoadScene("Lose");
     }
+
+    /// <summary>
+    /// SEを再生するメソッドです
+    /// </summary>
+    /// <param name="se_number">SEの番号</param>
     //SE再生関数（SEのナンバー）
    public void Play_Sound(int se_number)
     {

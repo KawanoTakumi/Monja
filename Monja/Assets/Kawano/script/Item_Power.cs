@@ -26,7 +26,7 @@ public class Item_Power : MonoBehaviour
     bool adapt_Apple = true;
     bool adapt_Scissors = true;
     bool adapt_ice = true;
-    //bool adapt_Drill = true;
+    bool adapt_Drill = true;
     bool adapt_Utype_M = true;
     bool adapt_Coffee = true;
     bool adapt_SafetyCorn = true;
@@ -298,6 +298,15 @@ public class Item_Power : MonoBehaviour
                 Debug.Log("pudding");
                 PlayerController.HP += PlayerController.HP_MAX / 4;
                 adapt_Pudding = false;
+            }
+        }
+        if(Headphone_flag == true)
+        {
+            if(adapt_Drill == true && first_turn)
+            {
+                //“G‚Ì–hŒä—Í‚Ì‚Q•ª‚Ì‚P‚Ì”’l‚ğ©g‚Ì•¨—UŒ‚—Í‚É‰ÁZ‚·‚é
+                playercontroller.Attack_damage += enemy_Controller.deffence / 2;
+                adapt_Drill = false;
             }
         }
         if(UtypeMagnet_flag == true)
