@@ -527,7 +527,7 @@ public class Item_Power : MonoBehaviour
             {
                 Debug.Log("Scythe");
                 playercontroller.Attack_damage += 40;
-                PlayerController.MAX_LUCK    -= 3;
+                PlayerController.MAX_LUCK    -= 3;//クリティカル発生確率を3増加
                 Sinigami_Crit_Effect = true;//死神のクリティカルエフェクト発生
                 adapt_TheGrimReaper_scythe = false;
             }
@@ -537,8 +537,8 @@ public class Item_Power : MonoBehaviour
             if(adapt_TheGrimReaper_robe == true && first_turn == true)
             {
                 Debug.Log("Robe");
-                playercontroller.Deffence += 40;
-                PlayerController.MAX_LUCK -= 3;
+                playercontroller.Deffence += 40;//物理防御力を40増加
+                PlayerController.MAX_LUCK -= 3;//クリティカル発生確率を3増加
                 adapt_TheGrimReaper_robe = false;
             }
         }
@@ -548,7 +548,7 @@ public class Item_Power : MonoBehaviour
             {
                 Debug.Log("Eye");
                 playercontroller.Magic_diffence += 40;
-                PlayerController.MAX_LUCK       -= 3;
+                PlayerController.MAX_LUCK       -= 3;//クリティカル発生確率を3増加
                 adapt_Medhusa_Eye = false;
             }
         }
@@ -557,8 +557,8 @@ public class Item_Power : MonoBehaviour
             if(adapt_Medhusa_MagicBook == true && first_turn == true)
             {
                 Debug.Log("Magic_Book");
-                playercontroller.Magic_damage += 40;
-                PlayerController.MAX_LUCK -= 3;
+                playercontroller.Magic_damage += 40;//魔法攻撃力を40増加させる
+                PlayerController.MAX_LUCK -= 3;//クリティカル発生確率を3増加
                 Medhusa_Magic_flag = true;
                 adapt_Medhusa_MagicBook = false;
             }
@@ -568,7 +568,7 @@ public class Item_Power : MonoBehaviour
             if(adapt_Dragon_Tooth = true && first_turn == true)
             {
                 Debug.Log("Tooth");
-                playercontroller.Attack_damage += 100;
+                playercontroller.Attack_damage += 100;//物理攻撃力を100増加
                 PlayerController.HP_MAX += 50;//最大体力を50追加
                 adapt_Dragon_Tooth = false;
             }
@@ -592,7 +592,7 @@ public class Item_Power : MonoBehaviour
         {
             if (radio_flag == true)
             {
-                if (PlayerController.HP > 6)
+                if (PlayerController.HP > 11)
                 {
                     Debug.Log("radio");
                     playercontroller.Deffence += 10;//毎ターン防御力10上昇
@@ -606,7 +606,7 @@ public class Item_Power : MonoBehaviour
             }
             if (hourglass_flag == true)
             {
-                if (PlayerController.HP > 6)
+                if (PlayerController.HP >11)
                 {
                     Debug.Log("hourglass");
                     playercontroller.Attack_damage += 10;//毎ターン攻撃力10上昇

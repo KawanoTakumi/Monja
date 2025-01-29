@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     static int STATUS_MIN = 0;                  //ステータス下限
     static int CONSTANT_ATTACK   = 25;          //攻撃の定数
     static int CONSTANT_DEFFENCE = 25;          //防御の定数
-    static int CONSTANT_MAGIC    = 25;          //魔法の定数
+    static int CONSTANT_MAGIC    = 35;          //魔法の定数
     static int CONSTANT_MAGIC_DEFFENCE = 25;    //魔法防御の定数
 
     //プレイヤーステータス（変数）
@@ -181,7 +181,7 @@ public class PlayerController : MonoBehaviour
             if (Turn_time > turn_manager.turn_time_max)
             {
                 Turn_time = 0;//ターンタイムを初期化
-                Button_check = false;//ボタンを押せなくする
+                Button_check = false;
                 //毒
                 if (Poison_cnt > 0)
                 {
@@ -299,6 +299,7 @@ public class PlayerController : MonoBehaviour
             if(MP >= 25)
             {
                 //ボタンが押されたことを確認、ボタンを押せなくする、ログを更新
+                Debug.Log("Magic");
                 Button_check = true;
                 Intaract_False();
                 Log[0].text = "主人公は魔法を撃った";
@@ -542,7 +543,8 @@ public class PlayerController : MonoBehaviour
         //主人公のステータスを初期化
         Item_Reset();
         Status_Reset();
-        HP_MAX = 100;
+        MAX_LUCK = 13;//クリティカル発生確率初期化
+        HP_MAX = 100;//最大体力を初期化
         HP = HP_MAX;
         MP = MP_MAX;
         MONEY = 0;
