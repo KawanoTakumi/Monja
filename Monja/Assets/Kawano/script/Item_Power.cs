@@ -584,6 +584,8 @@ public class Item_Power : MonoBehaviour
             }
         }
 
+        first_turn = false;
+
         //-----------------------------
         //アイテム効果（ターン毎に発動）
         //-----------------------------

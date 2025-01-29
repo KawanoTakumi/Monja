@@ -315,7 +315,7 @@ public class PlayerController : MonoBehaviour
                     case 0: Create_Effect_Player(0, 5.7f, 0.9f); break;
                     case 1: Create_Effect_Player(2, 0f, 0f);break;
                     case 2: Create_Effect_Player(3, 0f, 0f);break;
-                    case 6: Create_Effect_Player(6, 0f, 0f);break;
+                    case 3: Create_Effect_Player(6, 0f, 0f);break;
                 }
 
                 //MPを減少させて、計算後の魔法攻撃値を取得
