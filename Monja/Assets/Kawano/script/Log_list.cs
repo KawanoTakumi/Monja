@@ -10,7 +10,6 @@ public class Log_list : MonoBehaviour
     public Text Text;
     public GameObject Log_list_box;
     bool Hit = false;
-    
 
     //ボタンが押された場合ログを開く
     public void Log_Open()
@@ -31,9 +30,10 @@ public class Log_list : MonoBehaviour
     //ログをテキストに入れる
     void Log_Get()
     {
-        for (int i = 0; i < LogList.Count; i++)
+        //LogList.Reverse();//listを逆順にする
+        for (int i = 0; i <LogList.Count; i++)
         {
-            Text.text += LogList[i];
+            Text.text += LogList[i];//LogList[0]から順番に入れる
         }
     }
     //ログリストの中身を破棄
