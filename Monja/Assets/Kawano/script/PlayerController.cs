@@ -122,6 +122,7 @@ public class PlayerController : MonoBehaviour
             //死亡アニメーションを再生、ログを更新
             Animator.SetBool("death",true);
             Log[0].text = "主人公は倒れてしまった";
+            Log_list.LogList.Add("主人公は倒れてしまった\n");//ログリストに追加
             ChangeScene.SCENE_CNT = 1;//最初のシーンがcase :1
         }
 
@@ -187,7 +188,8 @@ public class PlayerController : MonoBehaviour
                 {
                     //体力を減らして、ログ更新、エフェクトを作成
                     HP -= 2;
-                    Log[0].text = "毒の効果で体力が2減った";
+                    Log[0].text = "毒の効果で体力が２減った";
+                    Log_list.LogList.Add("毒の効果で体力が２減った\n");//ログリストに追加
                     Status_controller.Status_Effect(true, 2);
                     Poison_cnt -= 1;
                 }
@@ -196,7 +198,8 @@ public class PlayerController : MonoBehaviour
                 {
                     //体力を減らして、ログ更新、エフェクトを作成
                     HP -= 8;
-                    Log[0].text = "延焼効果で体力が8減った";
+                    Log[0].text = "延焼効果で体力が８減った";
+                    Log_list.LogList.Add("延焼効果で体力が８減った\n");//ログリストに追加
                     Status_controller.Status_Effect(true, 3);
                     OnFire_cnt -= 1;
                 }
@@ -222,6 +225,7 @@ public class PlayerController : MonoBehaviour
             //ボタンが押されたことを確認して、ログを更新、ボタンを押せなくする
             Button_check = true;
             Log[0].text = "主人公は攻撃した";
+            Log_list.LogList.Add("主人公は攻撃した\n");//ログリストに追加
 
             //主人公の幸運値をランダムで変更して、値に応じてクリティカルを発生させる
             Player_luck = Random.Range(1,MAX_LUCK);
@@ -237,6 +241,7 @@ public class PlayerController : MonoBehaviour
             {
                 Calc_attack_damage = Attack_damage + Attack_damage / 2;//計算後の攻撃値に１．５倍の攻撃値を取得    
                 Log[0].text = ("主人公クリティカルが発生");//ログ更新
+                Log_list.LogList.Add("主人公クリティカルが発生\n");//ログリストに追加
                 Item_Power.dice_crit = false;//サイコロのクリティカルフラグを初期化
             }
 
@@ -273,7 +278,7 @@ public class PlayerController : MonoBehaviour
                 Animator.SetBool("cons", true);                //アニメーションを再生
                 MP += MP_MAX / 2;　　　　　　　　　　　　　　　//MPを半分回復
                 Log[0].text = "主人公は集中した";       //ログを更新
-
+                Log_list.LogList.Add("主人公は集中した\n");//ログリストに追加
                 //敵のエフェクトを削除する
                 Destroy(Enemy_controller.obj1);
                 Destroy(Enemy_controller.obj2);
@@ -292,6 +297,7 @@ public class PlayerController : MonoBehaviour
             else
             {
                 Log[0].text = "主人公は十分集中している";
+                Log_list.LogList.Add("主人公は十分集中している\n");//ログリストに追加
             }
         }
     }
@@ -312,6 +318,7 @@ public class PlayerController : MonoBehaviour
                 Button_check = true;
                 Intaract_False();
                 Log[0].text = "主人公は魔法を撃った";
+                Log_list.LogList.Add("主人公は魔法を撃った\n");//ログリストに追加
 
                 //敵のエフェクトを削除する
                 Destroy(Enemy_controller.obj1);
@@ -348,6 +355,7 @@ public class PlayerController : MonoBehaviour
                 //MPが足りない時、魔法を不発させ、ターンを消費させる
                 Magic_button.interactable = false;
                 Log[0].text = ("MPが足りない！");
+                Log_list.LogList.Add("MPが足りない！\n");//ログリストに追加
             }
         }
     }
@@ -381,14 +389,17 @@ public class PlayerController : MonoBehaviour
                     HP = HP_MAX;
                 }
                 Log[0].text = ("主人公は回復した");//ログを更新
+                Log_list.LogList.Add("主人公は回復した\n");//ログリストに追加
             }
             else if(HP == HP_MAX)
             {
                 Log[0].text = ("体力は満タンだ！！！");
+                Log_list.LogList.Add("体力は満タンだ！！！\n");//ログリストに追加
             }
             else if(HP_POTION < 1)
             {
                 Log[0].text = ("ポーションが足りない！");
+                Log_list.LogList.Add("ポーションが足りない！\n");//ログリストに追加
             }
             Intaract_True();//ボタンを押せるようにする
         }
@@ -521,11 +532,14 @@ public class PlayerController : MonoBehaviour
                     Enemy_controller.Freeze_turn = true;
                     Status_controller.Status_Effect(false, 0);
                     Log[1].text = "相手が凍り次のターンになった";
+                    Log_list.LogList.Add("相手が凍り次のターンになった\n");//ログリストに追加
                     break;
                 case 2: Enemy_controller.magic_Diffence -= 3; 
-                    Log[1].text = "相手の魔法防御力が3下がった"; 
+                    Log[1].text = "相手の魔法防御力が３下がった"; 
+                    Log_list.LogList.Add("相手の魔法防御力が３下がった\n");//ログリストに追加
                     break;
                 case 6: Enemy_controller.HP -= 5; Log[1].text = "毒で５ダメージ与えた";
+                    Log_list.LogList.Add("毒で５ダメージ与えた\n");//ログリストに追加
                     Status_controller.Status_Effect(false, 2); 
                     break;
             }
@@ -595,7 +609,7 @@ public class PlayerController : MonoBehaviour
         MP = MP_MAX;
         MONEY = 0;
         MAGIC_TYPE = 0;
-
+        Log_list.Log_Clear();//ログを初期化
         //ショップの選択範囲を初期化
         Shop_manager.Shop_limit = 6;
         Item_Power.turn_compare = 0;
@@ -616,7 +630,6 @@ public class PlayerController : MonoBehaviour
     /// SEを再生するメソッドです
     /// </summary>
     /// <param name="se_number">SEの番号</param>
-    //SE再生関数（SEのナンバー）
    public void Play_Sound(int se_number)
     {
         Audio_source_SE.PlayOneShot(Audio_clip_SE[se_number]);

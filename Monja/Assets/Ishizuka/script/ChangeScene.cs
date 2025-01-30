@@ -24,7 +24,7 @@ public class ChangeScene : MonoBehaviour
     Scene scene = Scene.Title;
     void Start()
     {
-        Debug.Log(SceneName);
+        //Debug.Log(SceneName);
         Shop = GetComponent<Shop_manager>();
     }
     //ロードシーンを読み込む
@@ -190,6 +190,7 @@ public class ChangeScene : MonoBehaviour
         Enemy_controller.turn = 0;
         Enemy_controller.HP = Enemy_controller.HP_MAX;
         Enemy_controller.tag_get = true;
+        Log_list.Log_Clear();//ログを初期化
     }
     //リトライした時数値を変更
     public void Retry_Num_Tmp()

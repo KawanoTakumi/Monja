@@ -610,11 +610,13 @@ public class Item_Power : MonoBehaviour
                     Debug.Log("radio");
                     playercontroller.Deffence += 10;//毎ターン防御力10上昇
                     PlayerController.HP -= 5;//体力を5減らす
-                    log_text.text = "ラジオの効果で-5HP";
+                    log_text.text = "ラジオの効果で体力が５減った";
+                    Log_list.LogList.Add("ラジオの効果で体力が５減った\n");//ログリストに追加
                 }
                 else
                 {
                     log_text.text = "ラジオの効果は発動しなかった";
+                    Log_list.LogList.Add("ラジオの効果は発動しなかった\n");//ログリストに追加
                 }
             }
             if (hourglass_flag == true)
@@ -624,11 +626,13 @@ public class Item_Power : MonoBehaviour
                     Debug.Log("hourglass");
                     playercontroller.Attack_damage += 10;//毎ターン攻撃力10上昇
                     PlayerController.HP -= 5;//体力を5減らす
-                    log_text.text = "砂時計の効果で-5HP";
+                    log_text.text = "砂時計の効果で体力が５減った";
+                    Log_list.LogList.Add("砂時計の効果で体力が５減った\n");//ログリストに追加
                 }
                 else
                 {
-                    log_text.text = "効果は発動しなかった";
+                    log_text.text = "砂時計の効果は発動しなかった";
+                    Log_list.LogList.Add("砂時計の効果は発動しなかった\n");//ログリストに追加
                 }
             }
             if (dice_flag == true)
@@ -656,6 +660,7 @@ public class Item_Power : MonoBehaviour
                 if (playercontroller.Attack_damage <= 3 || playercontroller.Deffence <= 3)
                 {
                     log_text.text = "ヘッドホンの効果は発動しなかった";
+                    Log_list.LogList.Add("ヘッドホンの効果は発動しなかった\n");//ログリストに追加
                 }
                 else
                 {

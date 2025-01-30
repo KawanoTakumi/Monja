@@ -37,7 +37,7 @@ public class Item_Manager : MonoBehaviour
 
             Item.Add("Drill",               false);//20
             Item.Add("Headphone",           false);//21  
-            Item.Add("Coffee",              true);//22 //’²®’†
+            Item.Add("Coffee",              false);//22 //’²®’†
             Item.Add("Safetycone",          false);//23
             Item.Add("USB",                 false);//24
             Item.Add("UtypeMagnet",         false);//25
