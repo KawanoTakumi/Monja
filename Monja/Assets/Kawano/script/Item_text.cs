@@ -76,7 +76,7 @@ public class Item_text : MonoBehaviour
         else if (button == CompareTag("HandMirror"))
         {
             Item_name.text = "ハンドミラー";
-            Item_guide_text.text = "手軽に容姿を確認できるコンパクトな鏡。鏡よ鏡、美しいのは誰？\n\n物理防御力と魔法防御力を１５増加させる";
+            Item_guide_text.text = "手軽に容姿を確認できるコンパクトな鏡。鏡よ鏡、美しいのは誰？\n\n物理防御力と魔法防御力を１０増加させる";
         }
         else if (button == CompareTag("bowlingpin"))
         {
@@ -141,7 +141,7 @@ public class Item_text : MonoBehaviour
         else if (button == CompareTag("Coffee"))
         {
             Item_name.text = "コーヒー";
-            Item_guide_text.text = "豆を焙煎した飲料水。とても苦い。Chill Time !!!\n\n体力を２０減らし魔法攻撃力を３０増加させる";
+            Item_guide_text.text = "豆を焙煎した飲料水。とても苦い。Chill Time !!!\n\n体力を２０減らし魔法攻撃力を３０増加させる\n体力が２０より小さかった場合は発動しない";
         }
         else if (button == CompareTag("Safetycone"))
         {
@@ -211,7 +211,7 @@ public class Item_text : MonoBehaviour
         else if (button == CompareTag("Baseball_glove"))
         {
             Item_name.text = "野球グローブ";
-            Item_guide_text.text = "野球で使われるグローブ。手によくフィットする。\n物理攻撃力を２５増加させる。\n野球ボールを持ってたら、魔法攻撃力も３５増加させる";
+            Item_guide_text.text = "野球で使われるグローブ。手によくフィットする。\n物理攻撃力を２５増加させる。\n野球ボールを持ってたら、物理防御力も１５増加させる";
         }
         else if (button == CompareTag("Boxing_glove"))
         {
