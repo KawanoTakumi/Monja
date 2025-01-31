@@ -225,8 +225,8 @@ public class Item_Power : MonoBehaviour
             if(adapt_HandMirror == true && first_turn == true)
             {
                 Debug.Log("HandMirror");
-                playercontroller.Deffence += 15;
-                playercontroller.Magic_diffence += 15;
+                playercontroller.Deffence += 15; //物理防御力を15上昇
+                playercontroller.Magic_diffence += 15; //魔法防御力を15上昇
                 adapt_HandMirror = false;
             }
         }
@@ -535,7 +535,7 @@ public class Item_Power : MonoBehaviour
             if(adapt_TheGrimReaper_scythe == true && first_turn == true)
             {
                 Debug.Log("Scythe");
-                playercontroller.Attack_damage += 40;
+                playercontroller.Attack_damage += 50;
                 PlayerController.MAX_LUCK    -= 3;//クリティカル発生確率を3増加
                 Sinigami_Crit_Effect = true;//死神のクリティカルエフェクト発生
                 adapt_TheGrimReaper_scythe = false;
@@ -546,7 +546,7 @@ public class Item_Power : MonoBehaviour
             if(adapt_TheGrimReaper_robe == true && first_turn == true)
             {
                 Debug.Log("Robe");
-                playercontroller.Deffence += 40;//物理防御力を40増加
+                playercontroller.Deffence += 20;//物理防御力を20増加
                 PlayerController.MAX_LUCK -= 3;//クリティカル発生確率を3増加
                 adapt_TheGrimReaper_robe = false;
             }
@@ -556,7 +556,7 @@ public class Item_Power : MonoBehaviour
             if(adapt_Medhusa_Eye == true && first_turn == true)
             {
                 Debug.Log("Eye");
-                playercontroller.Magic_diffence += 40;
+                playercontroller.Magic_diffence += 20;
                 PlayerController.MAX_LUCK       -= 3;//クリティカル発生確率を3増加
                 adapt_Medhusa_Eye = false;
             }
@@ -566,8 +566,7 @@ public class Item_Power : MonoBehaviour
             if(adapt_Medhusa_MagicBook == true && first_turn == true)
             {
                 Debug.Log("Magic_Book");
-                playercontroller.Magic_damage += 40;//魔法攻撃力を40増加させる
-                PlayerController.MAX_LUCK -= 3;//クリティカル発生確率を3増加
+                playercontroller.Magic_damage += 60;//魔法攻撃力を60増加させる
                 Medhusa_Magic_flag = true;
                 adapt_Medhusa_MagicBook = false;
             }

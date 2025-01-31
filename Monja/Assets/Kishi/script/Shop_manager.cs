@@ -20,7 +20,9 @@ public class Shop_manager : MonoBehaviour
     //説明テキスト
     public Text text;
     [SerializeField] GameObject _parentGameObject;
-
+    /// <summary>
+    /// 
+    /// </summary>
     void Start()
     {
 
@@ -59,6 +61,9 @@ public class Shop_manager : MonoBehaviour
         }
 
     }
+    /// <summary>
+    /// 回復アイテムのオブジェクトを生成します
+    /// </summary>
     public void CreateObjectHeal()
     {
         Item_obj[3] = Instantiate(prefab[Item_number[3]], new Vector3(7.75f, -1.2f, 0), Quaternion.identity, _parentGameObject.transform);
