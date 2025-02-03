@@ -52,7 +52,7 @@ public class Status_boad : MonoBehaviour
     {
         //“GƒXƒe[ƒ^ƒX
         Enemy_attack.text = string.Format("{0}", Enemy_controller.attack);                 //“G‚Ì•¨—UŒ‚—Í
-        Enmey_deffence.text = string.Format("{0}", Enemy_controller.deffence);             //“G‚Ì•¨—–hŒä—Í
+        Enmey_deffence.text = string.Format("{0}", Enemy_controller.Enemy_deffence);             //“G‚Ì•¨—–hŒä—Í
         Enmey_magic.text = string.Format("{0}", Enemy_controller.magic);                   //“G‚Ì–‚–@UŒ‚—Í
         Enmey_magic_deffence.text = string.Format("{0}", Enemy_controller.magic_Diffence); //“G‚Ì–‚–@–hŒä—Í
         Enmey_max_hp.text = string.Format("{0}", Enemy_controller.HP_MAX);                 //“G‚ÌÅ‘å‘Ì—Í
@@ -92,9 +92,9 @@ public class Status_boad : MonoBehaviour
             else if (PlayerController.Attack_damage > Enemy_controller.attack)
                 Enemy_attack.color = Down;
             //•¨—–hŒä—Í
-            if (PlayerController.Deffence < Enemy_controller.deffence)
+            if (PlayerController.Deffence < Enemy_controller.Enemy_deffence)
                 Enmey_deffence.color = Up;
-            else if (PlayerController.Deffence > Enemy_controller.deffence)
+            else if (PlayerController.Deffence > Enemy_controller.Enemy_deffence)
                 Enmey_deffence.color = Down;
             //–‚–@UŒ‚—Í
             if (PlayerController.Magic_damage < Enemy_controller.magic)

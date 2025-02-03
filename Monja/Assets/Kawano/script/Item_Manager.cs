@@ -50,7 +50,7 @@ public class Item_Manager : MonoBehaviour
             Item.Add("HandMill",            false);//31
             Item.Add("Poteto",              false);//32
             Item.Add("Scop",                false);//33
-            Item.Add("hammer",              false);//34 //—vŒŸØ
+            Item.Add("hammer",              true);//34 //—vŒŸØ
             Item.Add("Speaker",             false);//35
             Item.Add("Sylinge",             false);//36
             Item.Add("Baseball_glove",      false);//37

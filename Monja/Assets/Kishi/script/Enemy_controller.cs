@@ -7,9 +7,9 @@ public class Enemy_controller : MonoBehaviour
     //ステータス
     public static int HP = 100;      //エネミーHP
     public int attack;　             //エネミー物理攻撃力
-    public int deffence;             //エネミー物理防御力
+    int deffence = 5;             //エネミー物理防御加算値
     public int magic;                //エネミー魔法攻撃力
-    public int magic_Diffence;       //エネミー魔法防御力
+    public int magic_Diffence;       //エネミー魔法防御加算値
     public int money;                //エネミードロップ金額
     public  static int HP_MAX = 100; //エネミーHP最大値
 
@@ -26,12 +26,13 @@ public class Enemy_controller : MonoBehaviour
     GameObject player;                  //プレイヤーオブジェクト
     Animator animator;                  //アニメーター
     public int Enemy_attack;            //攻撃力(計算後)
-    public int Enemy_deffence;          //防御力(計算後)
+    public int Enemy_deffence;          //防御初期値
     public int Enemy_Magic;             //魔法攻撃力(計算後)
     int Enemy_act = 0;                  //エネミー行動判別用
     int Enemy_luck = 0;                 //エネミーラック判定用
     static int Enemy_luck_Max;　　  　　//エネミーラック値
     static int magic_cnt = 0;　　　  　 //魔法攻撃回数カウント
+    bool Deffence_flag = false;
     //-------------------------  
     //エネミー判別用
     static bool Enemy_Skelton;  
@@ -88,6 +89,7 @@ public class Enemy_controller : MonoBehaviour
                 Enemy_Skelton = true;
                 HP = 75;
                 HP_MAX = 75;
+                Enemy_deffence = 10;
                 Enemy_luck_Max = 16;
             }
             else if (CompareTag("Lich") == true)
@@ -95,6 +97,7 @@ public class Enemy_controller : MonoBehaviour
                 Enemy_Lich = true;
                 HP = 120;
                 HP_MAX = 120;
+                Enemy_deffence = 15;
                 Enemy_luck_Max = 0;
             }
             else if (CompareTag("TheGrimReaper") == true)
@@ -102,6 +105,7 @@ public class Enemy_controller : MonoBehaviour
                 Boss_TheGrimReaper = true;
                 HP = 240;
                 HP_MAX = 240;
+                Enemy_deffence = 30;
                 Enemy_luck_Max = 26;
             }
             else if (CompareTag("minotaurus") == true)
@@ -109,6 +113,7 @@ public class Enemy_controller : MonoBehaviour
                 Enemy_Minotaurus = true;
                 HP = 320;
                 HP_MAX = 320;
+                Enemy_deffence = 40;
                 Enemy_luck_Max = 9;
             }
             else if (CompareTag("centaurus") == true)
@@ -116,6 +121,7 @@ public class Enemy_controller : MonoBehaviour
                Enemy_Centaurus = true;
                 HP = 400;
                 HP_MAX = 400;
+                Enemy_deffence = 35;
                 Enemy_luck_Max = 11;
             }
             else if (CompareTag("medhusa") == true)
@@ -123,6 +129,7 @@ public class Enemy_controller : MonoBehaviour
                 Boss_Medhusa = true;
                 HP = 460;
                 HP_MAX = 460;
+                Enemy_deffence = 30;
                 Enemy_luck_Max = 0;
             }
             else if (CompareTag("cockatrice") == true)
@@ -130,6 +137,7 @@ public class Enemy_controller : MonoBehaviour
                 Enemy_Cockatrice = true;
                 HP = 530;
                 HP_MAX = 530;
+                Enemy_deffence = 50;
                 Enemy_luck_Max = 16;
             }
             else if (CompareTag("knight") == true)
@@ -137,6 +145,7 @@ public class Enemy_controller : MonoBehaviour
                 Enemy_Knight = true;
                 HP = 600;
                 HP_MAX = 600;
+                Enemy_deffence = 55;
                 Enemy_luck_Max = 9;
             }
             else if (CompareTag("dragon") == true)
@@ -144,6 +153,7 @@ public class Enemy_controller : MonoBehaviour
                 Boss_Dragon = true;
                 HP = 860;
                 HP_MAX = 860;
+                Enemy_deffence = 60;
                 Enemy_luck_Max = 11;
             }
         }
@@ -202,6 +212,13 @@ public class Enemy_controller : MonoBehaviour
             //EnemyAttackを初期化
             Enemy_attack = 0;
             Enemy_Magic = 0;
+            if (Deffence_flag == true)
+            {
+                Enemy_deffence -= deffence;
+                Deffence_flag = false;
+            }
+
+
             Destroy(playerController.Player_object);
             if (Item_Power.Watch_Add_reset == false)//アイテム：Watchの増加分ステータスリセット
             {
@@ -314,6 +331,7 @@ public class Enemy_controller : MonoBehaviour
         Create_Effect_Enemy(0, 2.3f, 0f);
         enemy_SE.SE_Monster(2);//防御SE
         Enemy_deffence += deffence;
+        Deffence_flag = true;
     }
     //魔法
     void Magic()
@@ -506,7 +524,6 @@ public class Enemy_controller : MonoBehaviour
     //メデューサの魔法攻撃
     void medhusa_magic()
     {
-        Log.text = ("メデューサの魔法攻撃"); Log_list.LogList.Add("　メデューサの魔法攻撃\n");//ログリストに追加
         Enemy_luck = Random.Range(1, 6);
         if (Enemy_luck == 6)
         {
