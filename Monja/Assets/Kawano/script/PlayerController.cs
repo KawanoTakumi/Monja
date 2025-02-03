@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     static int STATUS_MIN = 0;                  //ステータス下限
     static int CONSTANT_ATTACK   = 25;          //攻撃の定数
     static int CONSTANT_DEFFENCE = 25;          //防御の定数
-    static int CONSTANT_MAGIC    = 35;          //魔法の定数
+    static int CONSTANT_MAGIC    = 25;          //魔法の定数
     static int CONSTANT_MAGIC_DEFFENCE = 25;    //魔法防御の定数
 
     //プレイヤーステータス（変数）
@@ -189,7 +189,7 @@ public class PlayerController : MonoBehaviour
                 {
                     //体力を減らして、ログ更新、エフェクトを作成
                     HP -= 2;
-                    Log[0].text = "毒の効果で体力が２減った";
+                    Log[0].text = "　毒の効果で体力が２減った";
                     Log_list.LogList.Add("毒の効果で体力が２減った\n");//ログリストに追加
                     Status_controller.Status_Effect(true, 2);
                     Poison_cnt -= 1;
@@ -200,13 +200,13 @@ public class PlayerController : MonoBehaviour
                     //体力を減らして、ログ更新、エフェクトを作成
                     HP -= 8;
                     Log[0].text = "延焼効果で体力が８減った";
-                    Log_list.LogList.Add("延焼効果で体力が８減った\n");//ログリストに追加
+                    Log_list.LogList.Add("　延焼効果で体力が８減った\n");//ログリストに追加
                     Status_controller.Status_Effect(true, 3);
                     OnFire_cnt -= 1;
                 }
                 //ログの初期化、ターンを経過させる
                 Log[0].text = "";
-                Log_list.LogList.Add("\n<color=#f369e1>　敵のターン</color>\n");//ログリストに追加
+                Log_list.LogList.Add("\n<color=#f369e1>　　敵のターン</color>\n");//ログリストに追加
                 turn_manager.turn = false;
             }
         }
@@ -229,7 +229,7 @@ public class PlayerController : MonoBehaviour
             //ボタンが押されたことを確認して、ログを更新、ボタンを押せなくする
             Button_check = true;
             Log[0].text = "主人公は攻撃した";
-            Log_list.LogList.Add("主人公は攻撃した\n");//ログリストに追加
+            Log_list.LogList.Add("　主人公は攻撃した\n");//ログリストに追加
 
             //主人公の幸運値をランダムで変更して、値に応じてクリティカルを発生させる
             Player_luck = Random.Range(1,MAX_LUCK);
@@ -245,7 +245,7 @@ public class PlayerController : MonoBehaviour
             {
                 Calc_attack_damage = Attack_damage + Attack_damage / 2;//計算後の攻撃値に１．５倍の攻撃値を取得    
                 Log[0].text = ("主人公クリティカルが発生");//ログ更新
-                Log_list.LogList.Add("主人公クリティカルが発生\n");//ログリストに追加
+                Log_list.LogList.Add("　主人公クリティカルが発生\n");//ログリストに追加
                 Item_Power.dice_crit = false;//サイコロのクリティカルフラグを初期化
             }
 
@@ -272,7 +272,7 @@ public class PlayerController : MonoBehaviour
 
         if (turn_manager.turn == true)
         {
-            Log_list.LogList.Add("\n<color=#24e1f3>　プレイヤーのターン</color>\n");//ログリストに追加
+            Log_list.LogList.Add("\n<color=#24e1f3>　　プレイヤーのターン</color>\n");//ログリストに追加
             //MPが最大値より小さい時
             if (MP < MP_MAX)
             {
@@ -283,7 +283,7 @@ public class PlayerController : MonoBehaviour
                 Animator.SetBool("cons", true);                //アニメーションを再生
                 MP += MP_MAX / 2;　　　　　　　　　　　　　　　//MPを半分回復
                 Log[0].text = "主人公は集中した";       //ログを更新
-                Log_list.LogList.Add("主人公は集中した\n");//ログリストに追加
+                Log_list.LogList.Add("　主人公は集中した\n");//ログリストに追加
                 //敵のエフェクトを削除する
                 Destroy(Enemy_controller.obj1);
                 Destroy(Enemy_controller.obj2);
@@ -302,7 +302,7 @@ public class PlayerController : MonoBehaviour
             else
             {
                 Log[0].text = "主人公は十分集中している";
-                Log_list.LogList.Add("主人公は十分集中している\n");//ログリストに追加
+                Log_list.LogList.Add("　主人公は十分集中している\n");//ログリストに追加
             }
         }
     }
@@ -315,7 +315,7 @@ public class PlayerController : MonoBehaviour
         //主人公ターンの時
         if (turn_manager.turn == true)
         {
-            Log_list.LogList.Add("\n<color=#24e1f3>　プレイヤーのターン</color>\n");//ログリストに追加
+            Log_list.LogList.Add("\n<color=#24e1f3>　　プレイヤーのターン</color>\n");//ログリストに追加
 
             //MPが25より大きかったら
             if (MP >= 25)
@@ -325,7 +325,7 @@ public class PlayerController : MonoBehaviour
                 Button_check = true;
                 Intaract_False();
                 Log[0].text = "主人公は魔法を撃った";
-                Log_list.LogList.Add("主人公は魔法を撃った\n");//ログリストに追加
+                Log_list.LogList.Add("　主人公は魔法を撃った\n");//ログリストに追加
 
                 //敵のエフェクトを削除する
                 Destroy(Enemy_controller.obj1);
@@ -362,7 +362,7 @@ public class PlayerController : MonoBehaviour
                 //MPが足りない時、魔法を不発させ、ターンを消費させる
                 Magic_button.interactable = false;
                 Log[0].text = ("MPが足りない！");
-                Log_list.LogList.Add("MPが足りない！\n");//ログリストに追加
+                Log_list.LogList.Add("　MPが足りない！\n");//ログリストに追加
             }
         }
     }
@@ -376,7 +376,7 @@ public class PlayerController : MonoBehaviour
         //主人公ターンの時
         if (turn_manager.turn == true)
         {
-            Log_list.LogList.Add("\n<color=#24e1f3>　プレイヤーのターン</color>\n");//ログリストに追加
+            Log_list.LogList.Add("\n<color=#24e1f3>　　プレイヤーのターン</color>\n");//ログリストに追加
             //ボタンを押せなくする
             Intaract_False();
 
@@ -397,17 +397,17 @@ public class PlayerController : MonoBehaviour
                     HP = HP_MAX;
                 }
                 Log[0].text = ("主人公は回復した");//ログを更新
-                Log_list.LogList.Add("主人公は回復した\n");//ログリストに追加
+                Log_list.LogList.Add("　主人公は回復した\n");//ログリストに追加
             }
             else if(HP == HP_MAX)
             {
                 Log[0].text = ("体力は満タンだ！！！");
-                Log_list.LogList.Add("体力は満タンだ！！！\n");//ログリストに追加
+                Log_list.LogList.Add("　体力は満タンだ！！！\n");//ログリストに追加
             }
             else if(HP_POTION < 1)
             {
                 Log[0].text = ("ポーションが足りない！");
-                Log_list.LogList.Add("ポーションが足りない！\n");//ログリストに追加
+                Log_list.LogList.Add("　ポーションが足りない！\n");//ログリストに追加
             }
             Intaract_True();//ボタンを押せるようにする
         }

@@ -60,7 +60,7 @@ public class Damage_calculate : MonoBehaviour
         }
         PlayerController.HP -= result;
         Log.text = ("プレイヤーに" + result + "ダメージ");
-        Log_list.LogList.Add("プレイヤーに" + result + "ダメージ\n");//ログリストに追加
+        Log_list.LogList.Add("　プレイヤーに" + result + "ダメージ\n");//ログリストに追加
         Player_animator.SetBool("Player_Damage", true);
     }
     public void Enemey_Damage_Calculate(int attack,int diffence)
@@ -74,7 +74,7 @@ public class Damage_calculate : MonoBehaviour
         }
         Enemy_controller.HP -= result;
         Log.text = ("敵に" + result + "ダメージ");
-        Log_list.LogList.Add("敵に" + result + "ダメージ\n");//ログリストに追加
+        Log_list.LogList.Add("　敵に" + result + "ダメージ\n");//ログリストに追加
         Enemy_animator.SetBool("Damage", true);
     }
 }

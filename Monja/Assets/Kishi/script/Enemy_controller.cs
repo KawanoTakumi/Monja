@@ -342,17 +342,17 @@ public class Enemy_controller : MonoBehaviour
         {
             case 1:
                 Attack(1);
-                Log.text = ("スケルトンの攻撃"); Log_list.LogList.Add("スケルトンの攻撃\n");//ログリストに追加
+                Log.text = ("スケルトンの攻撃"); Log_list.LogList.Add("　スケルトンの攻撃\n");//ログリストに追加
                 damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Deffence);
                 break;
             case 2:
                 Attack(1);
-                Log.text = ("スケルトンの攻撃"); Log_list.LogList.Add("スケルトンの攻撃\n");//ログリストに追加
+                Log.text = ("スケルトンの攻撃"); Log_list.LogList.Add("　スケルトンの攻撃\n");//ログリストに追加
                 damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Deffence);
                 break;
             case 3:
                 Defence();
-                Log.text = ("スケルトンは防御した"); Log_list.LogList.Add("スケルトンは防御した\n");//ログリストに追加
+                Log.text = ("スケルトンは防御した"); Log_list.LogList.Add("　スケルトンは防御した\n");//ログリストに追加
                 break;
         }
     }
@@ -364,19 +364,19 @@ public class Enemy_controller : MonoBehaviour
         {
             case 1:
                 Magic();
-                Log.text = ("リッチの魔法攻撃"); Log_list.LogList.Add("リッチの魔法攻撃\n");//ログリストに追加
+                Log.text = ("リッチの魔法攻撃"); Log_list.LogList.Add("　リッチの魔法攻撃\n");//ログリストに追加
                 Create_Effect_Enemy(1, 5.5f, 0.4f);
                 damage_Calculate.Player_Damage_Calculate(Enemy_Magic, playerController.Magic_diffence);
                 break;
             case 2:
                 Magic();
-                Log.text = ("リッチの魔法攻撃"); Log_list.LogList.Add("リッチの魔法攻撃\n");//ログリストに追加
+                Log.text = ("リッチの魔法攻撃"); Log_list.LogList.Add("　リッチの魔法攻撃\n");//ログリストに追加
                 Create_Effect_Enemy(1, 5.5f, 0.4f);
                 damage_Calculate.Player_Damage_Calculate(Enemy_Magic, playerController.Magic_diffence);
                 break;
             case 3:
                 Heal();
-                Log.text = ("リッチは回復した"); Log_list.LogList.Add("リッチは回復した\n");//ログリストに追加
+                Log.text = ("リッチは回復した"); Log_list.LogList.Add("　リッチは回復した\n");//ログリストに追加
                 break;
         }
     }
@@ -388,17 +388,17 @@ public class Enemy_controller : MonoBehaviour
         {
             case 1:
                 Attack(1);
-                Log.text = ("ミノタウロスの攻撃"); Log_list.LogList.Add("ミノタウロスの攻撃\n");//ログリストに追加
+                Log.text = ("ミノタウロスの攻撃"); Log_list.LogList.Add("　ミノタウロスの攻撃\n");//ログリストに追加
                 damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Deffence);
                 break;
             case 2:
                 Attack(1);
-                Log.text = ("ミノタウロスの攻撃"); Log_list.LogList.Add("ミノタウロスの攻撃\n");//ログリストに追加
+                Log.text = ("ミノタウロスの攻撃"); Log_list.LogList.Add("　ミノタウロスの攻撃\n");//ログリストに追加
                 damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Deffence);
                 break;
             case 3:
                 Defence();
-                Log.text = ("ミノタウロスは防御した"); Log_list.LogList.Add("ミノタウロスは防御した\n");//ログリストに追加
+                Log.text = ("ミノタウロスは防御した"); Log_list.LogList.Add("　ミノタウロスは防御した\n");//ログリストに追加
                 break;
         }
     }
@@ -410,17 +410,17 @@ public class Enemy_controller : MonoBehaviour
         {
             case 1:
                 Attack(2);
-                Log.text = ("ケンタウロスの弓攻撃"); Log_list.LogList.Add("ケンタウロスの弓攻撃\n");//ログリストに追加
+                Log.text = ("ケンタウロスの弓攻撃"); Log_list.LogList.Add("　ケンタウロスの弓攻撃\n");//ログリストに追加
                 damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Deffence);
                 break;
             case 2:
                 Attack(2);
-                Log.text = ("ケンタウロスの弓攻撃"); Log_list.LogList.Add("ケンタウロスの弓攻撃\n");//ログリストに追加
+                Log.text = ("ケンタウロスの弓攻撃"); Log_list.LogList.Add("　ケンタウロスの弓攻撃\n");//ログリストに追加
                 damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Deffence);
                 break;
             case 3:
                 Defence();
-                Log.text = ("ケンタウロスは防御した"); Log_list.LogList.Add("ケンタウロスは防御した\n");//ログリストに追加
+                Log.text = ("ケンタウロスは防御した"); Log_list.LogList.Add("　ケンタウロスは防御した\n");//ログリストに追加
                 break;
         }
     }
@@ -432,18 +432,18 @@ public class Enemy_controller : MonoBehaviour
         {
             case 1:
                 Magic();
-                Log.text = ("コカトリスの魔法攻撃"); Log_list.LogList.Add("コカトリスの魔法攻撃\n");//ログリストに追加
+                Log.text = ("コカトリスの魔法攻撃"); Log_list.LogList.Add("　コカトリスの魔法攻撃\n");//ログリストに追加
                 Create_Effect_Enemy(3, 0.0f, 0.0f);
                 damage_Calculate.Player_Damage_Calculate(Enemy_Magic, playerController.Magic_diffence);
                 break;
             case 2:
                 Attack(1);
-                Log.text = ("コカトリスの攻撃"); Log_list.LogList.Add("コカトリスの攻撃\n");//ログリストに追加
+                Log.text = ("コカトリスの攻撃"); Log_list.LogList.Add("　コカトリスの攻撃\n");//ログリストに追加
                 damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Deffence);
                 break;
             case 3:
                 Defence();
-                Log.text = ("コカトリスは防御した"); Log_list.LogList.Add("コカトリスは防御した\n");//ログリストに追加
+                Log.text = ("コカトリスは防御した"); Log_list.LogList.Add("　コカトリスは防御した\n");//ログリストに追加
                 break;
         }
     }
@@ -455,16 +455,16 @@ public class Enemy_controller : MonoBehaviour
         {
             case 1:
                 Attack(2);
-                Log.text = ("ナイトは斬撃を飛ばした"); Log_list.LogList.Add("ナイトは斬撃を飛ばした\n");//ログリストに追加
+                Log.text = ("ナイトは斬撃を飛ばした"); Log_list.LogList.Add("　ナイトは斬撃を飛ばした\n");//ログリストに追加
                 damage_Calculate.Player_Damage_Calculate(Enemy_attack, playerController.Deffence);
                 break;
             case 2:
                 Heal();
-                Log.text = ("ナイトは回復した"); Log_list.LogList.Add("ナイトは回復した\n");//ログリストに追加
+                Log.text = ("ナイトは回復した"); Log_list.LogList.Add("　ナイトは回復した\n");//ログリストに追加
                 break;
             case 3:
                 Defence();
-                Log.text = ("ナイトは防御した"); Log_list.LogList.Add("ナイトは防御した\n");//ログリストに追加
+                Log.text = ("ナイトは防御した"); Log_list.LogList.Add("　ナイトは防御した\n");//ログリストに追加
                 break;
         }
     }
@@ -479,40 +479,40 @@ public class Enemy_controller : MonoBehaviour
         {
             case 1:
                 medhusa_magic();
-                Log.text = ("メデューサの魔法攻撃"); Log_list.LogList.Add("メデューサの魔法攻撃\n");//ログリストに追加
+                Log.text = ("メデューサの魔法攻撃"); Log_list.LogList.Add("　メデューサの魔法攻撃\n");//ログリストに追加
                 damage_Calculate.Player_Damage_Calculate(Enemy_Magic, playerController.Magic_diffence);
                 break;
             case 2:
                 medhusa_magic();
-                Log.text = ("メデューサの石化攻撃"); Log_list.LogList.Add("メデューサの石化攻撃\n");//ログリストに追加
+                Log.text = ("メデューサの石化攻撃"); Log_list.LogList.Add("　メデューサの石化攻撃\n");//ログリストに追加
                 switch (stone_luck)
                 {
                     case 1:
                     case 2:
-                    case 3: Log.text = "石化しなかった"; Log_list.LogList.Add("石化しなかった\n"); break;
-                    case 4: Log.text = "石化してしまった"; Log_list.LogList.Add("石化してしまった\n");status_.Status_Effect(true, 1); Stone_turn = true; break;
+                    case 3: Log.text = "石化しなかった"; Log_list.LogList.Add("　石化しなかった\n"); break;
+                    case 4: Log.text = "石化してしまった"; Log_list.LogList.Add("　石化してしまった\n");status_.Status_Effect(true, 1); Stone_turn = true; break;
                 }
                 break;
             case 3:
                 Heal();
-                Log.text = ("メデューサは回復した"); Log_list.LogList.Add("メデューサは回復した\n");//ログリストに追加
+                Log.text = ("メデューサは回復した"); Log_list.LogList.Add("　メデューサは回復した\n");//ログリストに追加
                 break;
             case 4:
                 Defence();
-                Log.text = ("メデューサは防御した"); Log_list.LogList.Add("メデューサは防御した\n");//ログリストに追加
+                Log.text = ("メデューサは防御した"); Log_list.LogList.Add("　メデューサは防御した\n");//ログリストに追加
                 break;
         }
     }
     //メデューサの魔法攻撃
     void medhusa_magic()
     {
-        Log.text = ("メデューサの魔法攻撃"); Log_list.LogList.Add("メデューサの魔法攻撃\n");//ログリストに追加
+        Log.text = ("メデューサの魔法攻撃"); Log_list.LogList.Add("　メデューサの魔法攻撃\n");//ログリストに追加
         Enemy_luck = Random.Range(1, 6);
         if (Enemy_luck == 6)
         {
             Enemy_Magic = magic;
             poison = true;
-            Log.text = ("メデューサの毒発動"); Log_list.LogList.Add("メデューサの毒発動\n");//ログリストに追加
+            Log.text = ("メデューサの毒発動"); Log_list.LogList.Add("　メデューサの毒発動\n");//ログリストに追加
             Create_Effect_Enemy(1, 2.5f, 0.3f);
 
         }
@@ -533,11 +533,11 @@ public class Enemy_controller : MonoBehaviour
                 break;
             case 3:
                 Defence();
-                Log.text = ("死神は防御した"); Log_list.LogList.Add("死神は防御した\n");//ログリストに追加
+                Log.text = ("死神は防御した"); Log_list.LogList.Add("　死神は防御した\n");//ログリストに追加
                 break;
             case 4:
                 Defence();
-                Log.text = ("死神は防御した"); Log_list.LogList.Add("死神は防御した\n");//ログリストに追加
+                Log.text = ("死神は防御した"); Log_list.LogList.Add("　死神は防御した\n");//ログリストに追加
                 break;
         }
     }
@@ -548,14 +548,14 @@ public class Enemy_controller : MonoBehaviour
         Enemy_luck = Random.Range(1, 21);
         if (Enemy_luck < 20)
         {
-            Log.text = ("死神の攻撃"); Log_list.LogList.Add("死神の攻撃\n");//ログリストに追加
+            Log.text = ("死神の攻撃"); Log_list.LogList.Add("　死神の攻撃\n");//ログリストに追加
             Enemy_attack = attack;
             Create_Effect_Enemy(1, 2.5f, 0.3f);
         }
         else if (Enemy_luck == 20)
         {
             PlayerController.HP /= 2;
-            Log.text = ("死神の呪い"); Log_list.LogList.Add("死神の呪い\n");//ログリストに追加
+            Log.text = ("死神の呪い"); Log_list.LogList.Add("　死神の呪い\n");//ログリストに追加
             Create_Effect_Enemy(1, 2.5f, 0.3f);
         }
     }
@@ -571,7 +571,7 @@ public class Enemy_controller : MonoBehaviour
                 break;
             case 2:
                 dragon_magic();
-                Log.text = ("ドラゴンの魔法攻撃"); Log_list.LogList.Add("ドラゴンの魔法攻撃\n");//ログリストに追加
+                Log.text = ("ドラゴンの魔法攻撃"); Log_list.LogList.Add("　ドラゴンの魔法攻撃\n");//ログリストに追加
                 damage_Calculate.Player_Damage_Calculate(Enemy_Magic, playerController.Magic_diffence);
                 break;
             case 3:
@@ -580,7 +580,7 @@ public class Enemy_controller : MonoBehaviour
                 break;
             case 4:
                 dragon_Heal();
-                Log.text = ("ドラゴンは回復した"); Log_list.LogList.Add("ドラゴンは回復した\n");//ログリストに追加
+                Log.text = ("ドラゴンは回復した"); Log_list.LogList.Add("　ドラゴンは回復した\n");//ログリストに追加
                 break;
         }
     }
@@ -590,14 +590,14 @@ public class Enemy_controller : MonoBehaviour
         Enemy_luck = Random.Range(1, 6);
         if (Enemy_luck <= 4)
         {
-            Log.text = ("ドラゴンの攻撃"); Log_list.LogList.Add("ドラゴンの攻撃\n");//ログリストに追加
+            Log.text = ("ドラゴンの攻撃"); Log_list.LogList.Add("　ドラゴンの攻撃\n");//ログリストに追加
             Create_Effect_Enemy(3, -5.4f, 0.3f);
             Enemy_attack = attack;
         }
         else if (Enemy_luck == 5)
         {
             Enemy_attack = attack + 20;
-            Log.text = ("龍の高揚"); Log_list.LogList.Add("龍の高揚\n");//ログリストに追加
+            Log.text = ("龍の高揚"); Log_list.LogList.Add("　龍の高揚\n");//ログリストに追加
             Create_Effect_Enemy(3, -5.4f, 0.3f);
         }
     }
@@ -725,6 +725,6 @@ public class Enemy_controller : MonoBehaviour
         animator.SetBool("death", true);//deathフラグをtrueにする
         turn_manager.turn = true;
         Log.text = "戦闘に勝利した！！！";
-        Log_list.LogList.Add("戦闘に勝利した\n");//ログリストに追加
+        Log_list.LogList.Add("　戦闘に勝利した\n");//ログリストに追加
     }
 }
