@@ -594,15 +594,16 @@ public class Item_Power : MonoBehaviour
                 adapt_bowlingpin = false;
             }
         }
-
         first_turn = false;
 
         //-----------------------------
         //ƒAƒCƒeƒ€Œø‰Êiƒ^[ƒ“–ˆ‚É”­“®j
         //-----------------------------
-
-        if(turn_compare < Enemy_controller.turn)
+        if (turn_compare < Enemy_controller.turn)
         {
+            if(first_turn != true)
+            Log_list.LogList.Add("\n<color=#f3f300>@@---ƒAƒCƒeƒ€‚ÌŒø‰Ê---</color>\n");//ƒƒOƒŠƒXƒg‚É’Ç‰Á
+
             if (radio_flag == true)
             {
                 if (PlayerController.HP > 11)
@@ -641,17 +642,18 @@ public class Item_Power : MonoBehaviour
                 dice_random = Random.Range(1, 7);
                 switch (dice_random)
                 {
-                    case 1: playercontroller.Attack_damage += 10; break;//•¨—UŒ‚—Í‚ğ‚P‚O‘‰Á
-                    case 2: playercontroller.Attack_damage -= 10; break;//•¨—UŒ‚—Í‚ğ‚P‚OŒ¸­
-                    case 3: playercontroller.Magic_damage += 10; break;//–‚–@UŒ‚—Í‚ğ‚P‚O‘‰Á
-                    case 4: playercontroller.Magic_damage -= 10; break;//–‚–@UŒ‚—Í‚ğ‚P‚OŒ¸­
-                    case 5: PlayerController.MONEY += 5; break;//Š‹àŠz‚ğ‚T‘‰Á‚³‚¹‚é
-                    case 6: dice_crit = true; break;//ƒNƒŠƒeƒBƒJƒ‹”­¶
+                    case 1: playercontroller.Attack_damage += 10; Log_list.LogList.Add("ƒ_ƒCƒX‚ÌŒø‰Ê‚Å•¨—UŒ‚—Í‚ª‚P‚Oã¸‚µ‚½\n"); break;//•¨—UŒ‚—Í‚ğ‚P‚O‘‰Á
+                    case 2: playercontroller.Attack_damage -= 10; Log_list.LogList.Add("ƒ_ƒCƒX‚ÌŒø‰Ê‚Å•¨—UŒ‚—Í‚ª‚P‚OŒ¸­‚µ‚½\n"); break;//•¨—UŒ‚—Í‚ğ‚P‚OŒ¸­
+                    case 3: playercontroller.Magic_damage += 10; Log_list.LogList.Add("ƒ_ƒCƒX‚ÌŒø‰Ê‚Å–‚–@UŒ‚—Í‚ª‚P‚Oã¸‚µ‚½\n"); break;//–‚–@UŒ‚—Í‚ğ‚P‚O‘‰Á
+                    case 4: playercontroller.Magic_damage -= 10; Log_list.LogList.Add("ƒ_ƒCƒX‚ÌŒø‰Ê‚Å–‚–@UŒ‚—Í‚ª‚P‚OŒ¸­‚µ‚½\n"); break;//–‚–@UŒ‚—Í‚ğ‚P‚OŒ¸­
+                    case 5: PlayerController.MONEY += 5; Log_list.LogList.Add("ƒ_ƒCƒX‚ÌŒø‰Ê‚Å‚¨‹à‚ğ‚T‚f“üè‚µ‚½\n"); break;//Š‹àŠz‚ğ‚T‘‰Á‚³‚¹‚é
+                    case 6: dice_crit = true; Log_list.LogList.Add("ƒ_ƒCƒX‚ÌŒø‰Ê‚ÅƒNƒŠƒeƒBƒJƒ‹‚ª”­¶‚µ‚â‚·‚­‚È‚Á‚½\n"); break;//ƒNƒŠƒeƒBƒJƒ‹”­¶
                 }
             }
             if (Scissors_flag == true)
             {
                 Debug.Log("Scissors");
+                Log_list.LogList.Add("ƒnƒTƒ~‚ÌŒø‰Ê‚Å•¨—–hŒä—Í‚ª‚QŒ¸­‚µ‚½\n");
                 playercontroller.Deffence -= 2;//•¨—–hŒä—Í‚ğ‚QŒ¸­‚³‚¹‚é
             }
             if (Headphone_flag)
@@ -664,14 +666,17 @@ public class Item_Power : MonoBehaviour
                 }
                 else
                 {
+                    Log_list.LogList.Add("ƒwƒbƒhƒzƒ“‚ÌŒø‰Ê‚Å•¨—UŒ‚—Í‚Æ•¨—–hŒä—Í‚ª‚RŒ¸­‚µ‚½\n");
                     playercontroller.Attack_damage -= 3;//•¨—UŒ‚—Í‚ğ‚RŒ¸­‚³‚¹‚é
                     playercontroller.Deffence -= 3;//•¨—–hŒä—Í‚ğ‚RŒ¸­‚³‚¹‚é
+                    Log_list.LogList.Add("ƒwƒbƒhƒzƒ“‚ÌŒø‰Ê‚Å‘Ì—Í‚ª‚P‚O‰ñ•œ‚µ‚½\n");
                     PlayerController.HP += 10;//‘Ì—Í‚ğ‚P‚O‰ñ•œ‚³‚¹‚é
                 }
             }
             if (MagnifyingSpeculum_flag == true)
             {
                 Debug.Log("Magnifying");
+                Log_list.LogList.Add("’Šá‹¾‚ÌŒø‰Ê‚Å•¨—–hŒä—Í‚Æ–‚–@–hŒä—Í‚ª‚R‘‰Á‚µ‚½\n");
                 playercontroller.Deffence += 3;//•¨—–hŒä—Í‚ğ‚R‘‰Á‚³‚¹‚é
                 playercontroller.Magic_diffence += 3;//–‚–@–hŒä—Í‚ğ‚R‘‰Á‚³‚¹‚é
             }
@@ -683,6 +688,7 @@ public class Item_Power : MonoBehaviour
                 {
                     //“G‚ğ‹Câ‚³‚¹‚é
                     Enemy_controller.Stun_turn = true;
+                    Log_list.LogList.Add("ƒnƒ“ƒ}[‚ÌŒø‰Ê‚Å“G‚ªƒXƒ^ƒ“‚µ‚½\n");
                     status_.Status_Effect(false, 4);//‹CâƒGƒtƒFƒNƒg
                 }
             }
@@ -692,10 +698,12 @@ public class Item_Power : MonoBehaviour
                 sylinge_random = Random.Range(1, 7);//‚P/‚U‚ÌŠm—¦
                 if (sylinge_random == 6)
                 {
+                    Log_list.LogList.Add("’ËŠí‚ÌŒø‰Ê‚Å‘Ì—Í‚ª‚R‚O‰ñ•œ‚µ‚½\n");
                     PlayerController.HP += 30;//‘Ì—Í‚ğ‚R‚O‰ñ•œ‚³‚¹‚é
                 }
                 else
                 {
+                    Log_list.LogList.Add("’ËŠí‚ÌŒø‰Ê‚Å‘Ì—Í‚ª‚T‰ñ•œ‚µ‚½\n");
                     PlayerController.HP += 5;//‘Ì—Í‚ğ‚T‰ñ•œ‚³‚¹‚é
                 }
             }
@@ -705,6 +713,7 @@ public class Item_Power : MonoBehaviour
                 //‚P‚Oƒ^[ƒ“‚ÌŠÔ
                 if (Pencil_Down_cnt <= 10)
                 {
+                    Log_list.LogList.Add("‰”•M‚ÌŒø‰Ê‚Å•¨—UŒ‚—Í‚ª‚TŒ¸­‚µ‚½(‚ ‚Æ\n");
                     playercontroller.Attack_damage -= 5;//•¨—UŒ‚—Í‚ğ‚TŒ¸­‚³‚¹‚é
                     Pencil_Down_cnt++;
                 }
@@ -715,6 +724,7 @@ public class Item_Power : MonoBehaviour
                 //‚P‚Oƒ^[ƒ“‚ÌŠÔ
                 if (Pencil_Down_cnt <= 10)
                 {
+                    Log_list.LogList.Add("ƒ}ƒˆƒl[ƒY‚ÌŒø‰Ê‚Å–‚–@UŒ‚—Í‚ª‚TŒ¸­‚µ‚½\n");
                     playercontroller.Magic_damage -= 5;//–‚–@UŒ‚—Í‚ğ‚TŒ¸­
                     Pencil_Down_cnt++;
                 }
@@ -725,6 +735,7 @@ public class Item_Power : MonoBehaviour
                 if (Watch_Add_reset == true)
                 {
                     //•¨—UŒ‚—Í
+                    Log_list.LogList.Add("˜rŒv‚ÌŒø‰Ê‚Å•¨—UŒ‚—Í‚ª"+ (PlayerController.HP_MAX - PlayerController.HP) +"ã¸‚µ‚½\n");
                     playercontroller.Attack_damage += PlayerController.HP_MAX - PlayerController.HP;
                     Watch_Add_reset = false;
                 }
@@ -732,6 +743,7 @@ public class Item_Power : MonoBehaviour
             if (Dragon_Scale_flag == true)
             {
                 Debug.Log("Dragon_Scale");
+                Log_list.LogList.Add("ƒ_ƒCƒX‚ÌŒø‰Ê‚Å‘SƒXƒe[ƒ^ƒX‚ª‚P‚Oã¸‚µ‚½\n");
                 playercontroller.Attack_damage += 10;//•¨—UŒ‚—Í‚ğ‚P‚O‘‰Á
                 playercontroller.Deffence += 10;//•¨—–hŒä—Ê‚ğ‚P‚O‘‰Á
                 playercontroller.Magic_damage += 10;//–‚–@UŒ‚—Í‚ğ‚P‚O‘‰Á
@@ -739,5 +751,6 @@ public class Item_Power : MonoBehaviour
             }
             turn_compare = Enemy_controller.turn;
         }
+
     }
 }
