@@ -223,7 +223,6 @@ public class Enemy_controller : MonoBehaviour
                 status_.Delete_Effect();
                 turn_manager.turn = true;
                 Log.text = ("プレイヤーのターン");
-                Log_list.LogList.Add("プレイヤーのターン\n");//ログリストに追加
                 Log_2.text = "";
                 //時間の初期化
                 turn_time = 0;
@@ -249,16 +248,13 @@ public class Enemy_controller : MonoBehaviour
             if (turn_time > turn_manager.turn_time_max)
             {
                 Item_Power.turn_bool = true;
-                Log.text = ("敵ターン終了");
-                Log_list.LogList.Add("敵ターン終了\n");//ログリストに追加
                 status_.Delete_Effect();
                 turn += 1;
                 playerController.Intaract_True();
                 Item_Power.first_turn = false;
                 turn_manager.turn = true;
                 playerController.Log[1].text = "";
-                Log.text = ("プレイヤーのターン"); 
-                Log_list.LogList.Add("プレイヤーのターン\n");//ログリストに追加
+                playerController.Log[0].text = "";
                 //時間の初期化
                 turn_time = 0;
                 //ターンが５よりも大きくなったら獲得金額を５ずつ減らす

@@ -182,6 +182,7 @@ public class PlayerController : MonoBehaviour
             if (Turn_time > turn_manager.turn_time_max)
             {
                 Turn_time = 0;//ターンタイムを初期化
+                Log[0].text = "";
                 Button_check = false;
                 //毒
                 if (Poison_cnt > 0)
@@ -205,6 +206,7 @@ public class PlayerController : MonoBehaviour
                 }
                 //ログの初期化、ターンを経過させる
                 Log[0].text = "";
+                Log_list.LogList.Add("\n<color=#f369e1>　敵のターン</color>\n");//ログリストに追加
                 turn_manager.turn = false;
             }
         }
@@ -222,6 +224,8 @@ public class PlayerController : MonoBehaviour
         //主人公のターンの時
         if (turn_manager.turn == true)
         {
+            Log_list.LogList.Add("\n<color=#24e1f3>　　プレイヤーのターン</color>\n");//ログリストに追加
+
             //ボタンが押されたことを確認して、ログを更新、ボタンを押せなくする
             Button_check = true;
             Log[0].text = "主人公は攻撃した";
@@ -268,6 +272,7 @@ public class PlayerController : MonoBehaviour
 
         if (turn_manager.turn == true)
         {
+            Log_list.LogList.Add("\n<color=#24e1f3>　プレイヤーのターン</color>\n");//ログリストに追加
             //MPが最大値より小さい時
             if (MP < MP_MAX)
             {
@@ -310,8 +315,10 @@ public class PlayerController : MonoBehaviour
         //主人公ターンの時
         if (turn_manager.turn == true)
         {
+            Log_list.LogList.Add("\n<color=#24e1f3>　プレイヤーのターン</color>\n");//ログリストに追加
+
             //MPが25より大きかったら
-            if(MP >= 25)
+            if (MP >= 25)
             {
                 //ボタンが押されたことを確認、ボタンを押せなくする、ログを更新
                 Debug.Log("Magic");
@@ -369,6 +376,7 @@ public class PlayerController : MonoBehaviour
         //主人公ターンの時
         if (turn_manager.turn == true)
         {
+            Log_list.LogList.Add("\n<color=#24e1f3>　プレイヤーのターン</color>\n");//ログリストに追加
             //ボタンを押せなくする
             Intaract_False();
 

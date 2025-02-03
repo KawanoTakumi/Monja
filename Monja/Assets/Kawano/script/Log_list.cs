@@ -1,13 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
 public class Log_list : MonoBehaviour
 {
     //ログ用のリストを追加
     public static List<string> LogList = new();
-    public Text Text;
+    public TextMeshProUGUI Log_text;
     public GameObject Log_list_box;
     bool Hit = false;
 
@@ -22,7 +22,7 @@ public class Log_list : MonoBehaviour
         }
         else
         {
-            Text.text = "";//テキストを初期化
+            Log_text.text = "";//テキストを初期化
             Log_list_box.SetActive(false);//ログを閉じる
             Hit = false;
         }
@@ -33,7 +33,7 @@ public class Log_list : MonoBehaviour
         //LogList.Reverse();//listを逆順にする
         for (int i = 0; i <LogList.Count; i++)
         {
-            Text.text += LogList[i];//LogList[0]から順番に入れる
+            Log_text.text += LogList[i];//LogList[0]から順番に入れる
         }
     }
     //ログリストの中身を破棄
