@@ -150,11 +150,20 @@ public class Item_Power : MonoBehaviour
             Item_get_flag = true;
 
 
-            //-------------------------------
-            //   アイテム効果(初回ターンのみ)
-            //-------------------------------
+        //アイテムログのテンプレート
 
-            if (healdrink_flag == true)
+        //Log_list.LogList.Add("　の効果で　\n");
+
+
+
+        //-------------------------------
+        //   アイテム効果(初回ターンのみ)
+        //-------------------------------
+
+        if (Item_get_flag == true)
+            Log_list.LogList.Add("\n<color=#f3f300>　------アイテムの効果------</color>\n\n");//ログリストに追加
+
+        if (healdrink_flag == true)
         {
             PlayerController.HP_POTION += 1;
             Item_Manager.Item["healdrink"] = false;//ヒールドリンクは何個でも持てるためフラグをfalse
@@ -166,6 +175,7 @@ public class Item_Power : MonoBehaviour
             if(adapt_bowlingball == true && first_turn == true)
             {
                 Debug.Log("bowlingball");
+                Log_list.LogList.Add("　ボウリングの玉の効果で物理攻撃力が２０増加し、物理防御力が２０減少した\n");//ログリストに追加
                 playercontroller.Attack_damage += 20;//攻撃力20上昇
                 playercontroller.Deffence -= 20;//防御力20減少
                 adapt_bowlingball = false;//falseにして一回しか読み込まれ内容にする
@@ -175,8 +185,10 @@ public class Item_Power : MonoBehaviour
         {
             if(adapt_cd == true && first_turn == true)
             {
+                int cd_num = 0;
                 Debug.Log("cd");
-                playercontroller.Attack_damage += playercontroller.Deffence / 6;//attackにdiffenceの1/6の数字を加算
+                playercontroller.Attack_damage += cd_num = playercontroller.Deffence / 6;//attackにdiffenceの1/6の数字を加算
+                Log_list.LogList.Add("　CDの効果で物理攻撃力が" + cd_num + "増加した　\n");
                 adapt_cd = false;
             }
         }
@@ -185,8 +197,10 @@ public class Item_Power : MonoBehaviour
             if(adapt_CDplayer == true && first_turn == true)
             {
                 Debug.Log("CDplayer");
+                Log_list.LogList.Add("　の効果で　\n");
                 playercontroller.Attack_damage -= 20;//攻撃力20減少
                 playercontroller.Deffence += 20;//防御力20上昇
+                Log_list.LogList.Add("　CDプレイヤーの効果で物理攻撃力が２０減少し、物理防御力が２０増加した　\n");
                 adapt_CDplayer = false;
             }
         }
@@ -194,9 +208,11 @@ public class Item_Power : MonoBehaviour
         {
             if(adapt_kesigomu == true && first_turn == true)
             {
+                int kesigomu_num = 0;
                 Debug.Log("kesigomu");
                 playercontroller.Attack_damage += 20;//物理攻撃力20上昇
-                playercontroller.Magic_damage -= playercontroller.Attack_damage / 2;//魔法攻撃力を物理攻撃力/２分減らす
+                playercontroller.Magic_damage -= kesigomu_num = playercontroller.Attack_damage / 2;//魔法攻撃力を物理攻撃力/２分減らす
+                Log_list.LogList.Add("　消しゴムの効果で物理攻撃力が２０増加し、魔法攻撃力が"+kesigomu_num+"　\n");
                 adapt_kesigomu = false;
             }
         }
@@ -609,8 +625,6 @@ public class Item_Power : MonoBehaviour
         if (turn_compare < Enemy_controller.turn)
         {
 
-            if(Item_get_flag == true)
-            Log_list.LogList.Add("\n<color=#f3f300>　------アイテムの効果------</color>\n\n");//ログリストに追加
 
             if (radio_flag == true)
             {
