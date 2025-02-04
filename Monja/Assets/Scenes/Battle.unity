@@ -5398,8 +5398,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb3a806902d7b3441bc0d68101c047e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attack: 27
-  deffence: 6
+  attack: 30
   magic: 0
   magic_Diffence: 5
   money: 50

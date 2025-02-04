@@ -5748,7 +5748,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 6
+  m_SortingOrder: 10
   m_TargetDisplay: 0
 --- !u!224 &1914041799
 RectTransform:
@@ -6409,10 +6409,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attack: 80
-  deffence: 30
   magic: 60
-  magic_Diffence: 25
-  money: 0
+  magic_Diffence: 45
+  money: 150
   Effect:
   - {fileID: 8299584437378114090, guid: 8e11c902fcd31ff429c6fd4f84115c7f, type: 3}
   - {fileID: 718690403272715185, guid: a8dc17518bca8c040b4b5f78d341013c, type: 3}

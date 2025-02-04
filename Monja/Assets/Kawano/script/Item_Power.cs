@@ -66,7 +66,7 @@ public class Item_Power : MonoBehaviour
     public static bool dice_crit = false;
     public static bool Watch_Add_reset = true;
     public static bool turn_bool = true;
-
+    bool Item_get_flag = false;
 
     //スタートメソッド
     //説明・・・各コンポーネントを取得
@@ -129,25 +129,32 @@ public class Item_Power : MonoBehaviour
         Item_Manager.Item.TryGetValue("Baseball_glove",       out bool Baseball_glove_flag);
         Item_Manager.Item.TryGetValue("Boxing_glove",         out bool Boxing_glove_flag);
         Item_Manager.Item.TryGetValue("Juice",                out bool Juice_flag);
-
         Item_Manager.Item.TryGetValue("Gas_burner",           out bool Gas_burner_flag);
         Item_Manager.Item.TryGetValue("Hamberger",            out bool Hamberger_flag);
         Item_Manager.Item.TryGetValue("Pencil",               out bool Pencil_flag);
         Item_Manager.Item.TryGetValue("Mayonnaise",           out bool Mayonnaise_flag);
         Item_Manager.Item.TryGetValue("Watch",                out bool Watch_flag);
+
         Item_Manager.Item.TryGetValue("Scythe",               out bool TheGrimReaper_Scythe_flag);
         Item_Manager.Item.TryGetValue("Robe",                 out bool Sinigami_Robe_flag);
         Item_Manager.Item.TryGetValue("Eye",                  out bool Medhusa_Eye_flag);
         Item_Manager.Item.TryGetValue("MagicBook",            out bool Medhusa_MagicBook_flag);
         Item_Manager.Item.TryGetValue("Scale",                out bool Dragon_Scale_flag);
-
         Item_Manager.Item.TryGetValue("Tooth",                out bool Dragon_Tooth_flag);
 
-        //-------------------------------
-        //   アイテム効果(初回ターンのみ)
-        //-------------------------------
 
-        if (healdrink_flag == true)
+        //ターン経過系のアイテムを取得したときアイテム効果のログを表示
+        if (radio_flag == true || hourglass_flag == true || dice_flag == true || Scissors_flag == true ||
+        Headphone_flag == true || MagnifyingSpeculum_flag == true || hammer_flag == true ||
+        Sylinge_flag == true || Pencil_flag == true || Mayonnaise_flag == true || Watch_flag == true || Dragon_Scale_flag == true)
+            Item_get_flag = true;
+
+
+            //-------------------------------
+            //   アイテム効果(初回ターンのみ)
+            //-------------------------------
+
+            if (healdrink_flag == true)
         {
             PlayerController.HP_POTION += 1;
             Item_Manager.Item["healdrink"] = false;//ヒールドリンクは何個でも持てるためフラグをfalse
@@ -601,7 +608,8 @@ public class Item_Power : MonoBehaviour
         //-----------------------------
         if (turn_compare < Enemy_controller.turn)
         {
-            if(first_turn != true)
+
+            if(Item_get_flag == true)
             Log_list.LogList.Add("\n<color=#f3f300>　------アイテムの効果------</color>\n\n");//ログリストに追加
 
             if (radio_flag == true)
@@ -750,7 +758,9 @@ public class Item_Power : MonoBehaviour
                 playercontroller.Magic_diffence += 10;//魔法防御力を１０増加
             }
             turn_compare = Enemy_controller.turn;
+            if(Item_get_flag == true)
             Log_list.LogList.Add("<color=#f3f300>　------------------------------\n</color>");//ログの最後に線を引く
         }
     }
+
 }

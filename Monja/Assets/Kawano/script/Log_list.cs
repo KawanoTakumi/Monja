@@ -16,8 +16,12 @@ public class Log_list : MonoBehaviour
     {
         pos = Log_text.GetComponent<RectTransform>().anchoredPosition;
     }
-
-
+    public void Update()
+    {
+        //Log_textのPos.yが０より上にいかないようにする
+        if (Log_text.GetComponent<RectTransform>().anchoredPosition.y > 0)
+            Log_text.GetComponent<RectTransform>().anchoredPosition = pos;
+    }
     //ボタンが押された場合ログを開く
     public void Log_Open()
     {

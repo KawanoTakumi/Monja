@@ -15,6 +15,9 @@ public class Shop_manager : MonoBehaviour
     public Button[] Obj_button = new Button[4];         //購入ボタン
     //ボスアイテム除外用
     public static int Shop_limit = 6;
+    public static bool TheGrimreaper_flag  = false;
+    public static bool Medhusa_flag        = false;
+    public static bool Dragon_flag         = false;
     //ショップ選出アイテム保存用
     public static int[] Shop_tmp = new int[3] { -1, -1, -1 };
     //説明テキスト
@@ -157,11 +160,24 @@ public class Shop_manager : MonoBehaviour
        
         switch (ChangeScene.SCENE_CNT)
         {
-            case 4: Shop_limit = 4; break;
-            case 7: Shop_limit = 2; break;
-            case 9: Shop_limit =  0; break;
+            case 4: TheGrimreaper_flag  = true; break;
+            case 7:Medhusa_flag         = true; break;
+            case 9:Dragon_flag          = true; break;
             default:                 break;
         }
+        if (TheGrimreaper_flag == true)
+        {
+            Shop_limit = 4;
+            if (Medhusa_flag == true)
+            {
+                Shop_limit = 2;
+                if (Dragon_flag == true)
+                {
+                    Shop_limit = 0;
+                }
+            }
+        }
+
         switch(i)
         {
             case 0: Item_number[i] = Random.Range(1, prefab.Length - Shop_limit); break;

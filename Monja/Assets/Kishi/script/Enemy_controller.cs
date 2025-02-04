@@ -97,7 +97,7 @@ public class Enemy_controller : MonoBehaviour
                 Enemy_Lich = true;
                 HP = 120;
                 HP_MAX = 120;
-                Enemy_deffence = 15;
+                Enemy_deffence = 10;
                 Enemy_luck_Max = 0;
             }
             else if (CompareTag("TheGrimReaper") == true)
@@ -113,7 +113,7 @@ public class Enemy_controller : MonoBehaviour
                 Enemy_Minotaurus = true;
                 HP = 320;
                 HP_MAX = 320;
-                Enemy_deffence = 40;
+                Enemy_deffence = 30;
                 Enemy_luck_Max = 9;
             }
             else if (CompareTag("centaurus") == true)
@@ -129,22 +129,22 @@ public class Enemy_controller : MonoBehaviour
                 Boss_Medhusa = true;
                 HP = 460;
                 HP_MAX = 460;
-                Enemy_deffence = 30;
+                Enemy_deffence = 35;
                 Enemy_luck_Max = 0;
             }
             else if (CompareTag("cockatrice") == true)
             {
                 Enemy_Cockatrice = true;
-                HP = 530;
-                HP_MAX = 530;
-                Enemy_deffence = 50;
+                HP = 500;
+                HP_MAX = 500;
+                Enemy_deffence = 45;
                 Enemy_luck_Max = 16;
             }
             else if (CompareTag("knight") == true)
             {
                 Enemy_Knight = true;
-                HP = 600;
-                HP_MAX = 600;
+                HP = 560;
+                HP_MAX = 560;
                 Enemy_deffence = 55;
                 Enemy_luck_Max = 9;
             }
