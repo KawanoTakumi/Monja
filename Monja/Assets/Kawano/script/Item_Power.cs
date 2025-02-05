@@ -64,6 +64,8 @@ public class Item_Power : MonoBehaviour
     public static bool Boxing_flag = false;
     public static bool Sinigami_Crit_Effect = false;
     public static bool Medhusa_Magic_flag = false;
+    public static bool M_magic_book_flag = false;
+    public static bool M_eye_flag = false;
     public static bool dice_crit = false;
     public static bool Watch_Add_reset = true;
     public static bool turn_bool = true;
@@ -152,7 +154,7 @@ public class Item_Power : MonoBehaviour
         //-----------------------------
         if (turn_compare < Enemy_controller.turn)
         {
-            Log_list.LogList.Add("\n<color=#f3f300>　------アイテムの効果------</color>\n\n");//ログリストに追加
+            Log_list.LogList.Add("\n<color=#f3f300>　------アイテムの効果---------------------------</color>\n\n");//ログリストに追加
 
             //-------------------------------
             //   アイテム効果(初回ターンのみ)
@@ -183,7 +185,7 @@ public class Item_Power : MonoBehaviour
                     int cd_num = 0;
                     Debug.Log("cd");
                     playercontroller.Attack_damage += cd_num = playercontroller.Deffence / 6;//attackにdiffenceの1/6の数字を加算
-                    Log_list.LogList.Add("　CDで物攻" + cd_num + "増加　\n");
+                    Log_list.LogList.Add("　CDで物攻" + cd_num + "が増加　\n");
                     adapt_cd = false;
                 }
             }
@@ -194,7 +196,7 @@ public class Item_Power : MonoBehaviour
                     Debug.Log("CDplayer");
                     playercontroller.Attack_damage -= 20;//攻撃力20減少
                     playercontroller.Deffence += 20;//防御力20上昇
-                    Log_list.LogList.Add("　CDプレイヤーの効果で物理攻撃力が２０減少し、物理防御力が２０増加した　\n");
+                    Log_list.LogList.Add("　CDプレイヤーで物攻２０減少、物防２０増加　\n");
                     adapt_CDplayer = false;
                 }
             }
@@ -206,7 +208,7 @@ public class Item_Power : MonoBehaviour
                     Debug.Log("kesigomu");
                     playercontroller.Attack_damage += 20;//物理攻撃力20上昇
                     playercontroller.Magic_damage -= kesigomu_num = playercontroller.Attack_damage / 2;//魔法攻撃力を物理攻撃力/２分減らす
-                    Log_list.LogList.Add("　消しゴムの効果で物理攻撃力が２０増加し、魔法攻撃力が" + kesigomu_num + "増加した　\n");
+                    Log_list.LogList.Add("　消しゴムで物攻２０増加、魔攻" + kesigomu_num + "減少　\n");
                     adapt_kesigomu = false;
                 }
             }
@@ -217,7 +219,7 @@ public class Item_Power : MonoBehaviour
                     int TV_num = 0;
                     Debug.Log("TV");
                     playercontroller.Magic_damage += TV_num = (playercontroller.Magic_damage / 5) * 3;//魔法攻撃力５につき魔法攻撃力を３上昇
-                    Log_list.LogList.Add("　テレビの効果で魔法攻撃力が" + TV_num + "増加した　\n");
+                    Log_list.LogList.Add("　テレビで魔攻" + TV_num + "増加　\n");
                     adapt_TV = false;
                 }
             }
@@ -227,7 +229,7 @@ public class Item_Power : MonoBehaviour
                 {
                     Debug.Log("CreditCard");
                     PlayerController.MONEY += 20;//戦闘開始後２０G入手
-                    Log_list.LogList.Add("　クレジットカードの効果でお金を２０入手した　\n");
+                    Log_list.LogList.Add("　クレジットカードで２０G入手　\n");
                     adapt_CreditCard = false;
                 }
             }
@@ -237,7 +239,7 @@ public class Item_Power : MonoBehaviour
                 {
                     Debug.Log("Mouse");
                     playercontroller.Magic_damage += 10;//魔法攻撃力１０上昇
-                    Log_list.LogList.Add("　マウスの効果で魔法攻撃力が１０増加した　\n");
+                    Log_list.LogList.Add("　マウスで魔攻１０増加　\n");
                     adapt_Mouse = false;
                 }
             }
@@ -248,7 +250,7 @@ public class Item_Power : MonoBehaviour
                     Debug.Log("HandMirror");
                     playercontroller.Deffence += 10;//物理防御力を１０増加
                     playercontroller.Magic_diffence += 10;//魔法防御力を１０増加
-                    Log_list.LogList.Add("　ハンドミラーの効果で　物理防御力と魔法防御力が１０増加した　\n");
+                    Log_list.LogList.Add("　ハンドミラーで物防と魔防１０増加　\n");
                     adapt_HandMirror = false;
                 }
             }
@@ -259,7 +261,7 @@ public class Item_Power : MonoBehaviour
                     Debug.Log("baseball_ball");
                     playercontroller.Attack_damage += 15;//物理攻撃力を15増加
                     playercontroller.Deffence -= 10;//物理防御力を10減少
-                    Log_list.LogList.Add("　野球ボールの効果で物理攻撃力が１５増加し、物理防御力が１０減少した　\n");
+                    Log_list.LogList.Add("　野球ボールで物攻１５増加、物防１０減少　\n");
                     adapt_baseball_ball = false;
                 }
             }
@@ -269,7 +271,7 @@ public class Item_Power : MonoBehaviour
                 {
                     Debug.Log("Waterbucket");
                     playercontroller.Magic_diffence += 10;//魔法防御力を10増加
-                    Log_list.LogList.Add("　水入りのバケツの効果で魔法防御力が１０増加した　\n");
+                    Log_list.LogList.Add("　水入りのバケツで魔防１０増加　\n");
                     adapt_Waterbucket = false;
                 }
             }
@@ -279,7 +281,7 @@ public class Item_Power : MonoBehaviour
                 {
                     Debug.Log("Popcorn");
                     PlayerController.HP += 20;//体力を２０回復
-                    Log_list.LogList.Add("　ポップコーンの効果で体力を２０回復した　\n");
+                    Log_list.LogList.Add("　ポップコーンで体力を２０回復　\n");
                     adapt_Popcorn = false;
                 }
             }
@@ -290,7 +292,7 @@ public class Item_Power : MonoBehaviour
                     Debug.Log("Apple");
                     PlayerController.HP += 30;//体力を３０回復
                     playercontroller.Magic_damage += 15;//魔法攻撃力を１５増加
-                    Log_list.LogList.Add("　リンゴの効果で体力を３０回復し、魔法攻撃力が１５増加した　\n");
+                    Log_list.LogList.Add("　リンゴで体力を３０回復、魔攻１５増加　\n");
                     adapt_Apple = false;
                 }
             }
@@ -300,7 +302,7 @@ public class Item_Power : MonoBehaviour
                 {
                     Debug.Log("Scissors");
                     playercontroller.Attack_damage += 20;//物理攻撃力を２０増加
-                    Log_list.LogList.Add("　ハサミの効果で物理攻撃力が２０増加した　\n");
+                    Log_list.LogList.Add("　ハサミで物攻２０増加　\n");
                     adapt_Scissors = false;
                 }
             }
@@ -310,7 +312,7 @@ public class Item_Power : MonoBehaviour
                 {
                     Debug.Log("ice");
                     playercontroller.Magic_damage += 10;//魔法攻撃力を１０増加
-                    Log_list.LogList.Add("　氷の効果で魔法攻撃力が１０増加した　\n");
+                    Log_list.LogList.Add("　氷で魔攻１０増加　\n");
                     adapt_ice = false;
                 }
             }
@@ -319,7 +321,7 @@ public class Item_Power : MonoBehaviour
                 if (Apple_flag == true && adapt_Pudding == true && first_turn == true)
                 {
                     PlayerController.HP_MAX += 30;//最大体力を３０増加
-                    Log_list.LogList.Add("　リンゴとプリンの効果で最大体力が３０増加した　\n");
+                    Log_list.LogList.Add("　リンゴとプリンで最大体力が３０増加　\n");
                     adapt_Pudding = false;
                 }
                 if (adapt_Pudding == true && first_turn == true)
@@ -327,7 +329,7 @@ public class Item_Power : MonoBehaviour
                     int Pudding_num;
                     Debug.Log("pudding");
                     PlayerController.HP += Pudding_num = PlayerController.HP_MAX / 4;//体力を１/４回復
-                    Log_list.LogList.Add("　プリンの効果で体力が" + Pudding_num + "回復した　\n");
+                    Log_list.LogList.Add("　プリンで体力" + Pudding_num + "回復　\n");
                     adapt_Pudding = false;
                 }
             }
@@ -338,7 +340,7 @@ public class Item_Power : MonoBehaviour
                     int Drill_num;
                     //敵の防御力の２分の１の数値を自身の物理攻撃力に加算する
                     playercontroller.Attack_damage += Drill_num = enemy_Controller.Enemy_deffence / 2;
-                    Log_list.LogList.Add("　ドリルの効果で物理攻撃力が" + Drill_num + "増加した　\n");
+                    Log_list.LogList.Add("　ドリルで物攻" + Drill_num + "増加　\n");
                     adapt_Drill = false;
                 }
             }
@@ -348,7 +350,7 @@ public class Item_Power : MonoBehaviour
                 {
                     Debug.Log("Utype");
                     playercontroller.Magic_damage += 20;//魔法攻撃力を２０増加
-                    Log_list.LogList.Add("　U字型マグネットの効果で魔法攻撃力が２０増加した　\n");
+                    Log_list.LogList.Add("　U字型マグネットで魔攻２０増加　\n");
                     adapt_Utype_M = false;
                 }
             }
@@ -362,7 +364,7 @@ public class Item_Power : MonoBehaviour
                     {
                         PlayerController.HP -= 20;//体力を２０減少させる
                         playercontroller.Magic_damage += 30;//魔法攻撃力を３０増加させる
-                        Log_list.LogList.Add("　コーヒーの効果で魔法攻撃力が３０増加し、体力が２０減少した　\n");
+                        Log_list.LogList.Add("　コーヒーで魔攻３０増加、体力２０減少　\n");
                     }
                     adapt_Coffee = false;
                 }
@@ -381,7 +383,7 @@ public class Item_Power : MonoBehaviour
                     {
                         playercontroller.Attack_damage += 40;//物理攻撃力を４０増加させる
                         playercontroller.Deffence += 40;//物理防御力を４０増加させる
-                        Log_list.LogList.Add("　三角コーンの効果で物理攻撃力と物理防御力が４０増加した　\n");
+                        Log_list.LogList.Add("　三角コーンで物攻と物防４０増加　\n");
                         adapt_SafetyCorn = false;
                     }
                 }
@@ -393,7 +395,7 @@ public class Item_Power : MonoBehaviour
                     Debug.Log("USB");
                     playercontroller.Magic_damage += 20;//魔法攻撃力を２０増加させる
                     playercontroller.Magic_diffence -= 10;//魔法防御力を１０減少させる
-                    Log_list.LogList.Add("　USBの効果で魔法攻撃力が２０増加し、魔法防御力が１０減少した　\n");
+                    Log_list.LogList.Add("　USBで魔攻２０増加、魔防１０減少　\n");
                     adapt_USB = false;
                 }
             }
@@ -404,7 +406,7 @@ public class Item_Power : MonoBehaviour
                     int SmartPhone_num;
                     Debug.Log("SmartPhone");
                     playercontroller.Magic_diffence += SmartPhone_num = playercontroller.Magic_damage / 4;//魔法防御力を魔法攻撃力の１/４分増加させる
-                    Log_list.LogList.Add("　スマートフォンの効果で魔法防御力が" + SmartPhone_num + "増加した　\n");
+                    Log_list.LogList.Add("　スマートフォンで魔防" + SmartPhone_num + "増加　\n");
                     adapt_SmartPhone = false;
                 }
             }
@@ -414,7 +416,7 @@ public class Item_Power : MonoBehaviour
                 {
                     Debug.Log("Itype");
                     playercontroller.Magic_diffence += 20;//魔法防御力を２０増加させる
-                    Log_list.LogList.Add("　I字型マグネットの効果で魔法防御力が２０増加した　\n");
+                    Log_list.LogList.Add("　I字型マグネットで魔防２０増加　\n");
                     adapt_Itype_M = false;
                 }
             }
@@ -424,7 +426,7 @@ public class Item_Power : MonoBehaviour
                 {
                     Debug.Log("Mike");
                     playercontroller.Magic_damage += 30;//魔法攻撃力を３０増加させる
-                    Log_list.LogList.Add("　マイクの効果で魔法攻撃力が３０増加した　\n");
+                    Log_list.LogList.Add("　マイクで魔攻３０増加　\n");
                     adapt_Mike = false;
                 }
             }
@@ -434,7 +436,7 @@ public class Item_Power : MonoBehaviour
                 {
                     Debug.Log("Megaphone");
                     playercontroller.Deffence += 20;//物理防御力を２０増加させる
-                    Log_list.LogList.Add("　メガホンの効果で物理防御力が２０増加した　\n");
+                    Log_list.LogList.Add("　メガホンで物防２０増加　\n");
                     adapt_Megaphone = false;
                 }
             }
@@ -444,14 +446,14 @@ public class Item_Power : MonoBehaviour
                 if (adapt_HandMill == true && Coffee_flag == true && first_turn == true)
                 {
                     playercontroller.Magic_damage += 60;
-                    Log_list.LogList.Add("　コーヒーとハンドミルの効果で魔法攻撃力が６０増加した　\n");
+                    Log_list.LogList.Add("　コーヒーとハンドミルで魔攻６０増加　\n");
                     adapt_HandMill = false;
                 }
                 else if (adapt_HandMill == true && first_turn == true)
                 {
                     Debug.Log("HandMill");
                     playercontroller.Magic_damage -= 30;//魔法攻撃力を３０減少させる
-                    Log_list.LogList.Add("　ハンドミルの効果で魔法攻撃力が３０増加した　\n");
+                    Log_list.LogList.Add("　ハンドミルで魔攻３０増加　\n");
                     adapt_HandMill = false;
                 }
             }
@@ -461,14 +463,14 @@ public class Item_Power : MonoBehaviour
                 if (adapt_Poteto == true && Hamberger_flag == true && first_turn == true)
                 {
                     playercontroller.Attack_damage += 60;
-                    Log_list.LogList.Add("　　ポテトとハンバーガーの効果で物理攻撃力が６０増加した　\n");
+                    Log_list.LogList.Add("　　ポテトとハンバーガーで物攻６０増加　\n");
                     adapt_Poteto = false;
                 }
                 else if (adapt_Poteto == true && first_turn == true)
                 {
                     Debug.Log("Poteto");
                     playercontroller.Attack_damage -= 30;//物理攻撃力を３０減少させる
-                    Log_list.LogList.Add("　ポテトの効果で物理攻撃力が３０減少した　\n");
+                    Log_list.LogList.Add("　ポテトで物攻３０減少　\n");
                     adapt_Poteto = false;
                 }
             }
@@ -481,7 +483,7 @@ public class Item_Power : MonoBehaviour
                     if (scop_random == 4)
                     {
                         PlayerController.MONEY += 30;//所持金額を３０増加させる
-                        Log_list.LogList.Add("　スコップの効果でお金を３０入手した　\n");
+                        Log_list.LogList.Add("　スコップで３０G入手　\n");
                     }
                     adapt_Scop = false;
                 }
@@ -492,7 +494,7 @@ public class Item_Power : MonoBehaviour
                 {
                     Debug.Log("Speaker");
                     enemy_Controller.Enemy_deffence -= 25;//敵の物理防御力を２５減少させる
-                    Log_list.LogList.Add("　スピーカーの効果で物理防御力が２５減少した　\n");
+                    Log_list.LogList.Add("　スピーカーで物防２５減少　\n");
                     adapt_Speaker = false;
                 }
             }
@@ -503,14 +505,14 @@ public class Item_Power : MonoBehaviour
                 {
                     playercontroller.Attack_damage += 25;//物理攻撃力を２５増加
                     playercontroller.Deffence += 15;//物理防御力を１５増加
-                    Log_list.LogList.Add("　野球ボールと野球グローブの効果で物理攻撃力が２５増加し、物理防御力が１５増加した　\n");
+                    Log_list.LogList.Add("　野球ボールと野球グローブで物攻２５増加、物防１５増加　\n");
                     adapt_Baseball_glove = false;
                 }
                 else if (adapt_Baseball_glove == true && first_turn == true)
                 {
                     Debug.Log("Baseball_glove");
                     playercontroller.Attack_damage += 25;//物理攻撃力を２５増加
-                    Log_list.LogList.Add("　野球グローブの効果で物理攻撃力が２５増加した　\n");
+                    Log_list.LogList.Add("　野球グローブで物攻２５増加　\n");
                     adapt_Baseball_glove = false;
                 }
             }
@@ -522,7 +524,7 @@ public class Item_Power : MonoBehaviour
                     Debug.Log("Boxing_glove");
                     Boxing_flag = true;
                     adapt_Boxing_glove = false;
-                    Log_list.LogList.Add("　ボクシンググローブの効果でザンゲキを押したときに物理攻撃力が３増加するようになった　\n");
+                    Log_list.LogList.Add("　ボクシンググローブでザンゲキを押すと物攻が３増加　\n");
                 }
             }
             if (Juice_flag == true)
@@ -531,7 +533,7 @@ public class Item_Power : MonoBehaviour
                 {
                     Debug.Log("Juice");
                     PlayerController.HP += 20;//体力を２０増加させる
-                    Log_list.LogList.Add("　ジュースの効果で体力を２０回復した　\n");
+                    Log_list.LogList.Add("　ジュースで体力を２０回復　\n");
                     adapt_Juice = false;
                 }
             }
@@ -541,13 +543,13 @@ public class Item_Power : MonoBehaviour
                 {
                     Debug.Log("Gas_burner");
                     playercontroller.Attack_damage += 25;//物理攻撃力を２５増加させる
-                    Log_list.LogList.Add("　ガスバーナーの効果で物理攻撃力が２５増加した　\n");
+                    Log_list.LogList.Add("　ガスバーナーで物攻２５増加　\n");
                     turn_bool = false;
                 }
                 else if (Enemy_controller.turn != 1 && Enemy_controller.turn % 2 != 0 && turn_bool == true)
                 {
                     playercontroller.Attack_damage -= 25;//物理攻撃力を２５減少させる
-                    Log_list.LogList.Add("　ガスバーナーの効果で物理攻撃力が２５減少した　\n");
+                    Log_list.LogList.Add("　ガスバーナーで物攻２５減少　\n");
                     turn_bool = false;
                 }
             }
@@ -558,14 +560,14 @@ public class Item_Power : MonoBehaviour
                 {
                     Debug.Log("Hamberger");
                     playercontroller.Attack_damage += 40;//物理攻撃力を４０増加させる
-                    Log_list.LogList.Add("　ハンバーガーとポテトの効果で物理攻撃力が４０増加した　\n");
+                    Log_list.LogList.Add("　ハンバーガーとポテトで物攻４０増加　\n");
                     adapt_Hamberger = false;
                 }
                 else if (adapt_Hamberger == true && first_turn == true)
                 {
                     Debug.Log("Hamberger");
                     playercontroller.Attack_damage += 20;//物理攻撃力を２０増加させる
-                    Log_list.LogList.Add("　ハンバーガーの効果で物理攻撃力が２０増加した　\n");
+                    Log_list.LogList.Add("　ハンバーガーで物攻２０増加　\n");
                     adapt_Hamberger = false;
                 }
             }
@@ -576,7 +578,7 @@ public class Item_Power : MonoBehaviour
                 {
                     Debug.Log("Pencil");
                     playercontroller.Attack_damage += 50;//物理攻撃力を５０増加させる
-                    Log_list.LogList.Add("　鉛筆の効果で物理攻撃力が５０増加した　\n");
+                    Log_list.LogList.Add("　鉛筆で物攻５０増加　\n");
                     adapt_Pencil = false;
                 }
             }
@@ -586,7 +588,7 @@ public class Item_Power : MonoBehaviour
                 {
                     Debug.Log("Mayonnaise");
                     playercontroller.Magic_damage += 50;//魔法攻撃力を５０増加させる
-                    Log_list.LogList.Add("　マヨネーズの効果で魔法攻撃力が５０増加した　\n");
+                    Log_list.LogList.Add("　マヨネーズで魔攻５０増加　\n");
                     adapt_Mayonnaise = false;
                 }
             }
@@ -598,7 +600,7 @@ public class Item_Power : MonoBehaviour
                     playercontroller.Attack_damage += 40;//物理攻撃力を４０増加させる
                     PlayerController.MAX_LUCK -= 3;//クリティカル発生確率を3増加
                     Sinigami_Crit_Effect = true;//死神のクリティカルエフェクト発生
-                    Log_list.LogList.Add("　死神の鎌の効果で物理攻撃力が４０増加し、クリティカルが発生しやすくなった　\n");
+                    Log_list.LogList.Add("　死神の鎌で物攻４０増加　\n");
                     adapt_TheGrimReaper_scythe = false;
                 }
             }
@@ -609,7 +611,7 @@ public class Item_Power : MonoBehaviour
                     Debug.Log("Robe");
                     playercontroller.Deffence += 40;//物理防御力を40増加
                     PlayerController.MAX_LUCK -= 3;//クリティカル発生確率を3増加
-                    Log_list.LogList.Add("　死神のローブの効果で物理防御力が４０増加し、クリティカルが発生しやすくなった　\n");
+                    Log_list.LogList.Add("　死神のローブで物防４０増加　\n");
                     adapt_TheGrimReaper_robe = false;
                 }
             }
@@ -620,7 +622,7 @@ public class Item_Power : MonoBehaviour
                     Debug.Log("Eye");
                     playercontroller.Magic_diffence += 40;//魔法b防御力を４０増加させる
                     PlayerController.MAX_LUCK -= 3;//クリティカル発生確率を3増加
-                    Log_list.LogList.Add("　メデューサの目の効果で魔法防御力が４０増加し、クリティカルが発生しやすくなった　\n");
+                    Log_list.LogList.Add("　メデューサの目で魔防４０増加　\n");
                     adapt_Medhusa_Eye = false;
                 }
             }
@@ -631,7 +633,7 @@ public class Item_Power : MonoBehaviour
                     Debug.Log("Magic_Book");
                     playercontroller.Magic_damage += 40;//魔法攻撃力を40増加させる
                     PlayerController.MAX_LUCK -= 3;//クリティカル発生確率を3増加
-                    Log_list.LogList.Add("　メデューサの魔導書の効果で魔法攻撃力が４０増加し、クリティカルが発生しやすくなった　\n");
+                    Log_list.LogList.Add("　メデューサの魔導書で魔攻４０増加　\n");
                     Medhusa_Magic_flag = true;
                     adapt_Medhusa_MagicBook = false;
                 }
@@ -643,7 +645,7 @@ public class Item_Power : MonoBehaviour
                     Debug.Log("Tooth");
                     playercontroller.Attack_damage += 100;//物理攻撃力を100増加
                     PlayerController.HP_MAX += 50;//最大体力を50追加
-                    Log_list.LogList.Add("　ドラゴンの牙の効果で物理攻撃力が１００増加し、最大体力が５０増加した　\n");
+                    Log_list.LogList.Add("　ドラゴンの牙で物攻１００増加、最大体力５０増加　\n");
                     adapt_Dragon_Tooth = false;
                 }
             }
@@ -655,7 +657,7 @@ public class Item_Power : MonoBehaviour
                     int bowlingpin_num = 0;
                     Debug.Log("bowlingpin");
                     PlayerController.MONEY += bowlingpin_num = playercontroller.Attack_damage / 6;//所持金額を物理攻撃力の１/６分増加させる
-                    Log_list.LogList.Add("　ボウリングのピンの効果で所持金額を" + bowlingpin_num + "入手した　\n");
+                    Log_list.LogList.Add("　ボウリングのピンで" + bowlingpin_num + "G入手　\n");
                     adapt_bowlingpin = false;
                 }
             }
@@ -671,13 +673,12 @@ public class Item_Power : MonoBehaviour
                     Debug.Log("radio");
                     playercontroller.Deffence += 10;//毎ターン防御力10上昇
                     PlayerController.HP -= 5;//体力を5減らす
-                    log_text.text = "ラジオの効果で体力が５減った";
-                    Log_list.LogList.Add("　ラジオの効果で体力が５減った\n");//ログリストに追加
+                    log_text.text = "ラジオで体力が５減少";
+                    Log_list.LogList.Add("　ラジオで体力が５減少\n");//ログリストに追加
                 }
                 else
                 {
                     log_text.text = "ラジオの効果は発動しなかった";
-                    Log_list.LogList.Add("　ラジオの効果は発動しなかった\n");//ログリストに追加
                 }
             }
             if (hourglass_flag == true)
@@ -688,12 +689,11 @@ public class Item_Power : MonoBehaviour
                     playercontroller.Attack_damage += 10;//毎ターン攻撃力10上昇
                     PlayerController.HP -= 5;//体力を5減らす
                     log_text.text = "砂時計の効果で体力が５減った";
-                    Log_list.LogList.Add("　砂時計の効果で体力が５減った\n");//ログリストに追加
+                    Log_list.LogList.Add("　砂時計で体力が５減少\n");//ログリストに追加
                 }
                 else
                 {
                     log_text.text = "砂時計の効果は発動しなかった";
-                    Log_list.LogList.Add("　砂時計の効果は発動しなかった\n");//ログリストに追加
                 }
             }
             if (dice_flag == true)
@@ -702,18 +702,18 @@ public class Item_Power : MonoBehaviour
                 dice_random = Random.Range(1, 7);
                 switch (dice_random)
                 {
-                    case 1: playercontroller.Attack_damage += 10; Log_list.LogList.Add("　ダイスの効果で物理攻撃力が１０上昇した\n"); break;//物理攻撃力を１０増加
-                    case 2: playercontroller.Attack_damage -= 10; Log_list.LogList.Add("　ダイスの効果で物理攻撃力が１０減少した\n"); break;//物理攻撃力を１０減少
-                    case 3: playercontroller.Magic_damage += 10; Log_list.LogList.Add("　ダイスの効果で魔法攻撃力が１０上昇した\n"); break;//魔法攻撃力を１０増加
-                    case 4: playercontroller.Magic_damage -= 10; Log_list.LogList.Add("　ダイスの効果で魔法攻撃力が１０減少した\n"); break;//魔法攻撃力を１０減少
-                    case 5: PlayerController.MONEY += 5; Log_list.LogList.Add("　ダイスの効果でお金を５Ｇ入手した\n"); break;//所持金額を５増加させる
-                    case 6: dice_crit = true; Log_list.LogList.Add("　ダイスの効果でクリティカルが発生しやすくなった\n"); break;//クリティカル発生
+                    case 1: playercontroller.Attack_damage += 10; Log_list.LogList.Add("　ダイスで物攻１０増加\n"); break;//物理攻撃力を１０増加
+                    case 2: playercontroller.Attack_damage -= 10; Log_list.LogList.Add("　ダイスで物攻１０減少\n"); break;//物理攻撃力を１０減少
+                    case 3: playercontroller.Magic_damage += 10; Log_list.LogList.Add("　ダイスで魔攻１０上昇\n"); break;//魔法攻撃力を１０増加
+                    case 4: playercontroller.Magic_damage -= 10; Log_list.LogList.Add("　ダイスで魔攻１０減少\n"); break;//魔法攻撃力を１０減少
+                    case 5: PlayerController.MONEY += 5; Log_list.LogList.Add("　ダイスで５G入手\n"); break;//所持金額を５増加させる
+                    case 6: dice_crit = true; Log_list.LogList.Add("　ダイスでクリティカルが発生率増加\n"); break;//クリティカル発生
                 }
             }
             if (Scissors_flag == true)
             {
                 Debug.Log("Scissors");
-                Log_list.LogList.Add("　ハサミの効果で物理防御力が２減少した\n");
+                Log_list.LogList.Add("　ハサミで物防２減少\n");
                 playercontroller.Deffence -= 2;//物理防御力を２減少させる
             }
             if (Headphone_flag)
@@ -722,21 +722,19 @@ public class Item_Power : MonoBehaviour
                 if (playercontroller.Attack_damage <= 3 || playercontroller.Deffence <= 3)
                 {
                     log_text.text = "ヘッドホンの効果は発動しなかった";
-                    Log_list.LogList.Add("　ヘッドホンの効果は発動しなかった\n");//ログリストに追加
                 }
                 else
                 {
-                    Log_list.LogList.Add("　ヘッドホンの効果で物理攻撃力と物理防御力が３減少した\n");
                     playercontroller.Attack_damage -= 3;//物理攻撃力を３減少させる
                     playercontroller.Deffence -= 3;//物理防御力を３減少させる
-                    Log_list.LogList.Add("　ヘッドホンの効果で体力が１０回復した\n");
                     PlayerController.HP += 10;//体力を１０回復させる
+                    Log_list.LogList.Add("　ヘッドホンで体力を１０回復し、物攻と物防３減少\n");
                 }
             }
             if (MagnifyingSpeculum_flag == true)
             {
                 Debug.Log("Magnifying");
-                Log_list.LogList.Add("　虫眼鏡の効果で物理防御力と魔法防御力が３増加した\n");
+                Log_list.LogList.Add("　虫眼鏡で物防と魔防３増加\n");
                 playercontroller.Deffence += 3;//物理防御力を３増加させる
                 playercontroller.Magic_diffence += 3;//魔法防御力を３増加させる
             }
@@ -758,12 +756,12 @@ public class Item_Power : MonoBehaviour
                 sylinge_random = Random.Range(1, 7);//１/６の確率
                 if (sylinge_random == 6)
                 {
-                    Log_list.LogList.Add("　注射器の効果で体力が３０回復した\n");
+                    Log_list.LogList.Add("　注射器で体力が３０回復\n");
                     PlayerController.HP += 30;//体力を３０回復させる
                 }
                 else
                 {
-                    Log_list.LogList.Add("　注射器の効果で体力が５回復した\n");
+                    Log_list.LogList.Add("　注射器で体力が５回復\n");
                     PlayerController.HP += 5;//体力を５回復させる
                 }
             }
@@ -773,7 +771,7 @@ public class Item_Power : MonoBehaviour
                 //１０ターンの間
                 if (Pencil_Down_cnt <= 10)
                 {
-                    Log_list.LogList.Add("　鉛筆の効果で物理攻撃力が５減少した(あと\n");
+                    Log_list.LogList.Add("　鉛筆で物攻５減少\n");
                     playercontroller.Attack_damage -= 5;//物理攻撃力を５減少させる
                     Pencil_Down_cnt++;
                 }
@@ -784,7 +782,7 @@ public class Item_Power : MonoBehaviour
                 //１０ターンの間
                 if (Pencil_Down_cnt <= 10)
                 {
-                    Log_list.LogList.Add("　マヨネーズの効果で魔法攻撃力が５減少した\n");
+                    Log_list.LogList.Add("　マヨネーズで魔攻５減少\n");
                     playercontroller.Magic_damage -= 5;//魔法攻撃力を５減少
                     Pencil_Down_cnt++;
                 }
@@ -795,7 +793,7 @@ public class Item_Power : MonoBehaviour
                 if (Watch_Add_reset == true)
                 {
                     //物理攻撃力
-                    Log_list.LogList.Add("　腕時計の効果で物理攻撃力が"+ (PlayerController.HP_MAX - PlayerController.HP) +"上昇した\n");
+                    Log_list.LogList.Add("　腕時計で物攻"+ (PlayerController.HP_MAX - PlayerController.HP) +"上昇\n");
                     playercontroller.Attack_damage += PlayerController.HP_MAX - PlayerController.HP;
                     Watch_Add_reset = false;
                 }
@@ -803,13 +801,13 @@ public class Item_Power : MonoBehaviour
             if (Dragon_Scale_flag == true)
             {
                 Debug.Log("Dragon_Scale");
-                Log_list.LogList.Add("　ドラゴンの鱗の効果で全ステータスが１０上昇した\n");
+                Log_list.LogList.Add("　ドラゴンの鱗で全ステータス１０上昇\n");
                 playercontroller.Attack_damage += 10;//物理攻撃力を１０増加
                 playercontroller.Deffence += 10;//物理防御量を１０増加
                 playercontroller.Magic_damage += 10;//魔法攻撃力を１０増加
                 playercontroller.Magic_diffence += 10;//魔法防御力を１０増加
             }
-            Log_list.LogList.Add("--------------------------------------------------------------　\n");
+            Log_list.LogList.Add("　<color=#f3f300>----------------------------------------------</color>　\n");
             turn_compare = Enemy_controller.turn;
         }
     }

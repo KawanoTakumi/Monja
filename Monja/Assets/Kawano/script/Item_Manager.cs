@@ -14,15 +14,15 @@ public class Item_Manager : MonoBehaviour
             //アイテムをItem辞書に登録
             Item.Add("none",                false);//空のキーを設定（アイテムがないときの状態）
             Item.Add("healdrink",           false);//0
-            Item.Add("bowlingball",         true);//1
-            Item.Add("CDplayer",            true);//2
-            Item.Add("cd",                  true);//3
-            Item.Add("radio",               true);//4
-            Item.Add("hourglass",           true);//5
-            Item.Add("kesigomu",            true);//6
-            Item.Add("TV",                  true);//7
-            Item.Add("CreditCard",          true);//8
-            Item.Add("Mouse",               true);//9
+            Item.Add("bowlingball",         false);//1
+            Item.Add("CDplayer",            false);//2
+            Item.Add("cd",                  false);//3
+            Item.Add("radio",               false);//4
+            Item.Add("hourglass",           false);//5
+            Item.Add("kesigomu",            false);//6
+            Item.Add("TV",                  false);//7
+            Item.Add("CreditCard",          false);//8
+            Item.Add("Mouse",               false);//9
 
             Item.Add("HandMirror",          false);//10
             Item.Add("bowlingpin",          false);//11
