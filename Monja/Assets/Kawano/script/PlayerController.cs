@@ -620,11 +620,13 @@ public class PlayerController : MonoBehaviour
         Log_list.Log_Clear();//ログを初期化
         //ショップの選択範囲を初期化
         Shop_manager.Shop_limit = 6;
+        Shop_manager.TheGrimreaper_flag = false;
+        Shop_manager.Medhusa_flag = false;
+        Shop_manager.Dragon_flag = false;
         Item_Power.turn_compare = 0;
         Item_Power.first_turn = true;
         Item_Power.Sinigami_Crit_Effect = false;
         Item_Power.Boxing_flag = false;
-
         //敵のステータスを初期化
         Enemy_controller.turn = 0;
         Enemy_controller.HP = 150;
