@@ -222,7 +222,7 @@ public class Enemy_controller : MonoBehaviour
             Destroy(playerController.Player_object);
             if (Item_Power.Watch_Add_reset == false)//アイテム：Watchの増加分ステータスリセット
             {
-                playerController.Attack_damage -= PlayerController.HP_MAX - PlayerController.HP;
+                playerController.Attack_damage -= PlayerController.HP_max - PlayerController.HP;
                 Item_Power.Watch_Add_reset = true;
             }
             if (Freeze_turn == true || Stone_turn == true || Stun_turn == true)
@@ -678,6 +678,8 @@ public class Enemy_controller : MonoBehaviour
         Win_Reset();
         PlayerController.Status_Reset();
         Item_Power.turn_compare = 0;
+        Item_Power.M_eye_flag = false;
+        Item_Power.M_magic_book_flag = false;
         Freeze_turn = false;
         Item_Power.Pencil_Down_cnt = 0;
         Destroy(obj1);
@@ -689,17 +691,17 @@ public class Enemy_controller : MonoBehaviour
         Cut_In.FIRST_FLAG = true;
         if (ChangeScene.SCENE_CNT >= 9)
         {
-            PlayerController.MONEY += money;
+            PlayerController.Mmoney += money;
             Item_Power.first_turn = true;
             Item_Power.Sinigami_Crit_Effect = false;
             Dragon_flag = true;
-            PlayerController.HP_POTION = 0;
+            PlayerController.HP_potion = 0;
             ChangeScene.Title_Reset();
             SceneManager.LoadScene("ending");
         }
         else
         {
-            PlayerController.MONEY += money;
+            PlayerController.Mmoney += money;
             Item_Power.first_turn = true;
             if(ChangeScene.SCENE_CNT >= 6)
             {
@@ -733,7 +735,7 @@ public class Enemy_controller : MonoBehaviour
 
     void Enemy_Defeat()
     {
-        PlayerController.MP = PlayerController.MP_MAX;
+        PlayerController.MP = PlayerController.MP_max;
         tag_get = true;
         Destroy(obj1);
         Destroy(GameObject.Find("Enmey_HP"));

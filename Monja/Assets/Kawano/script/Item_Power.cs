@@ -11,24 +11,24 @@ public class Item_Power : MonoBehaviour
     public static bool first_turn = true;//Å‰‚Ìƒ^[ƒ“
 
     //ƒ^[ƒ“‚ÌÅ‰‚Ì‚İ“Ç‚İ‚Ş‚½‚ß‚Ìƒtƒ‰ƒOiŠeƒAƒCƒeƒ€–ˆ‚É‚P‚Âİ’èj
-    bool adapt_bowlingball = true;
-    bool adapt_cd = true;
-    bool adapt_CDplayer = true;
-    bool adapt_kesigomu = true;
-    bool adapt_TV = true;
-    bool adapt_CreditCard = true;
-    bool adapt_Mouse = true;
-    bool adapt_HandMirror = true;
-    bool adapt_bowlingpin = true;
-    bool adapt_baseball_ball = true;
-    bool adapt_Waterbucket = true;
-    bool adapt_Popcorn = true;
-    bool adapt_Apple = true;
-    bool adapt_Scissors = true;
-    bool adapt_ice = true;
-    bool adapt_Drill = true;
-    bool adapt_Utype_M = true;
-    bool adapt_Coffee = true;
+    bool Adapt_bowlingball = true;
+    bool Adapt_cd = true;
+    bool Adapt_CDplayer = true;
+    bool Adapt_kesigomu = true;
+    bool Adapt_TV = true;
+    bool Adapt_CreditCard = true;
+    bool Adapt_Mouse = true;
+    bool Adapt_HandMirror = true;
+    bool Adapt_bowlingpin = true;
+    bool Adapt_baseball_ball = true;
+    bool Adapt_Waterbucket = true;
+    bool Adapt_Popcorn = true;
+    bool Adapt_Apple = true;
+    bool Adapt_Scissors = true;
+    bool Adapt_ice = true;
+    bool Adapt_Drill = true;
+    bool Adapt_Utype_M = true;
+    bool Adapt_Coffee = true;
     bool adapt_SafetyCorn = true;
     bool adapt_USB = true;
     bool adapt_SmartPhone = true;
@@ -162,165 +162,165 @@ public class Item_Power : MonoBehaviour
 
             if (healdrink_flag == true)
             {
-                PlayerController.HP_POTION += 1;
+                PlayerController.HP_potion += 1;
                 Item_Manager.Item["healdrink"] = false;//ƒq[ƒ‹ƒhƒŠƒ“ƒN‚Í‰½ŒÂ‚Å‚à‚Ä‚é‚½‚ßƒtƒ‰ƒO‚ğfalse
                 healdrink_flag = false;
             }
 
             if (bowlingball_flag == true)
             {
-                if (adapt_bowlingball == true && first_turn == true)
+                if (Adapt_bowlingball == true && first_turn == true)
                 {
                     Debug.Log("bowlingball");
                     Log_list.LogList.Add("@ƒ{ƒEƒŠƒ“ƒO‚Ì‹…‚Å•¨U‚ª‚Q‚O‘‰ÁA•¨–h‚ª‚Q‚OŒ¸­\n");//ƒƒOƒŠƒXƒg‚É’Ç‰Á
                     playercontroller.Attack_damage += 20;//UŒ‚—Í20ã¸
                     playercontroller.Deffence -= 20;//–hŒä—Í20Œ¸­
-                    adapt_bowlingball = false;//false‚É‚µ‚Äˆê‰ñ‚µ‚©“Ç‚İ‚Ü‚ê“à—e‚É‚·‚é
+                    Adapt_bowlingball = false;//false‚É‚µ‚Äˆê‰ñ‚µ‚©“Ç‚İ‚Ü‚ê“à—e‚É‚·‚é
                 }
             }
             if (cd_flag == true)
             {
-                if (adapt_cd == true && first_turn == true)
+                if (Adapt_cd == true && first_turn == true)
                 {
                     int cd_num = 0;
                     Debug.Log("cd");
                     playercontroller.Attack_damage += cd_num = playercontroller.Deffence / 6;//attack‚Édiffence‚Ì1/6‚Ì”š‚ğ‰ÁZ
                     Log_list.LogList.Add("@CD‚Å•¨U" + cd_num + "‚ª‘‰Á@\n");
-                    adapt_cd = false;
+                    Adapt_cd = false;
                 }
             }
             if (CDplayer_flag == true)
             {
-                if (adapt_CDplayer == true && first_turn == true)
+                if (Adapt_CDplayer == true && first_turn == true)
                 {
                     Debug.Log("CDplayer");
                     playercontroller.Attack_damage -= 20;//UŒ‚—Í20Œ¸­
                     playercontroller.Deffence += 20;//–hŒä—Í20ã¸
                     Log_list.LogList.Add("@CDƒvƒŒƒCƒ„[‚Å•¨U‚Q‚OŒ¸­A•¨–h‚Q‚O‘‰Á@\n");
-                    adapt_CDplayer = false;
+                    Adapt_CDplayer = false;
                 }
             }
             if (kesigomu_flag == true)
             {
-                if (adapt_kesigomu == true && first_turn == true)
+                if (Adapt_kesigomu == true && first_turn == true)
                 {
                     int kesigomu_num = 0;
                     Debug.Log("kesigomu");
                     playercontroller.Attack_damage += 20;//•¨—UŒ‚—Í20ã¸
                     playercontroller.Magic_damage -= kesigomu_num = playercontroller.Attack_damage / 2;//–‚–@UŒ‚—Í‚ğ•¨—UŒ‚—Í/‚Q•ªŒ¸‚ç‚·
                     Log_list.LogList.Add("@Á‚µƒSƒ€‚Å•¨U‚Q‚O‘‰ÁA–‚U" + kesigomu_num + "Œ¸­@\n");
-                    adapt_kesigomu = false;
+                    Adapt_kesigomu = false;
                 }
             }
             if (TV_flag == true)
             {
-                if (adapt_TV == true && first_turn == true)
+                if (Adapt_TV == true && first_turn == true)
                 {
                     int TV_num = 0;
                     Debug.Log("TV");
                     playercontroller.Magic_damage += TV_num = (playercontroller.Magic_damage / 5) * 3;//–‚–@UŒ‚—Í‚T‚É‚Â‚«–‚–@UŒ‚—Í‚ğ‚Rã¸
                     Log_list.LogList.Add("@ƒeƒŒƒr‚Å–‚U" + TV_num + "‘‰Á@\n");
-                    adapt_TV = false;
+                    Adapt_TV = false;
                 }
             }
             if (CreditCard_flag == true)
             {
-                if (adapt_CreditCard == true && first_turn == true)
+                if (Adapt_CreditCard == true && first_turn == true)
                 {
                     Debug.Log("CreditCard");
-                    PlayerController.MONEY += 20;//í“¬ŠJnŒã‚Q‚OG“üè
+                    PlayerController.Mmoney += 20;//í“¬ŠJnŒã‚Q‚OG“üè
                     Log_list.LogList.Add("@ƒNƒŒƒWƒbƒgƒJ[ƒh‚Å‚Q‚OG“üè@\n");
-                    adapt_CreditCard = false;
+                    Adapt_CreditCard = false;
                 }
             }
             if (Mouse_flag == true)
             {
-                if (adapt_Mouse == true && first_turn == true)
+                if (Adapt_Mouse == true && first_turn == true)
                 {
                     Debug.Log("Mouse");
                     playercontroller.Magic_damage += 10;//–‚–@UŒ‚—Í‚P‚Oã¸
                     Log_list.LogList.Add("@ƒ}ƒEƒX‚Å–‚U‚P‚O‘‰Á@\n");
-                    adapt_Mouse = false;
+                    Adapt_Mouse = false;
                 }
             }
             if (HandMirror_flag == true)
             {
-                if (adapt_HandMirror == true && first_turn == true)
+                if (Adapt_HandMirror == true && first_turn == true)
                 {
                     Debug.Log("HandMirror");
                     playercontroller.Deffence += 10;//•¨—–hŒä—Í‚ğ‚P‚O‘‰Á
                     playercontroller.Magic_diffence += 10;//–‚–@–hŒä—Í‚ğ‚P‚O‘‰Á
                     Log_list.LogList.Add("@ƒnƒ“ƒhƒ~ƒ‰[‚Å•¨–h‚Æ–‚–h‚P‚O‘‰Á@\n");
-                    adapt_HandMirror = false;
+                    Adapt_HandMirror = false;
                 }
             }
             if (baseball_ball_flag == true)
             {
-                if (adapt_baseball_ball == true && first_turn == true)
+                if (Adapt_baseball_ball == true && first_turn == true)
                 {
                     Debug.Log("baseball_ball");
                     playercontroller.Attack_damage += 15;//•¨—UŒ‚—Í‚ğ15‘‰Á
                     playercontroller.Deffence -= 10;//•¨—–hŒä—Í‚ğ10Œ¸­
                     Log_list.LogList.Add("@–ì‹…ƒ{[ƒ‹‚Å•¨U‚P‚T‘‰ÁA•¨–h‚P‚OŒ¸­@\n");
-                    adapt_baseball_ball = false;
+                    Adapt_baseball_ball = false;
                 }
             }
             if (Waterbucket_flag == true)
             {
-                if (adapt_Waterbucket == true && first_turn == true)
+                if (Adapt_Waterbucket == true && first_turn == true)
                 {
                     Debug.Log("Waterbucket");
                     playercontroller.Magic_diffence += 10;//–‚–@–hŒä—Í‚ğ10‘‰Á
                     Log_list.LogList.Add("@…“ü‚è‚ÌƒoƒPƒc‚Å–‚–h‚P‚O‘‰Á@\n");
-                    adapt_Waterbucket = false;
+                    Adapt_Waterbucket = false;
                 }
             }
             if (Popcorn_flag == true)
             {
-                if (adapt_Popcorn == true && first_turn == true)
+                if (Adapt_Popcorn == true && first_turn == true)
                 {
                     Debug.Log("Popcorn");
                     PlayerController.HP += 20;//‘Ì—Í‚ğ‚Q‚O‰ñ•œ
                     Log_list.LogList.Add("@ƒ|ƒbƒvƒR[ƒ“‚Å‘Ì—Í‚ğ‚Q‚O‰ñ•œ@\n");
-                    adapt_Popcorn = false;
+                    Adapt_Popcorn = false;
                 }
             }
             if (Apple_flag == true)
             {
-                if (adapt_Apple == true && first_turn == true)
+                if (Adapt_Apple == true && first_turn == true)
                 {
                     Debug.Log("Apple");
                     PlayerController.HP += 30;//‘Ì—Í‚ğ‚R‚O‰ñ•œ
                     playercontroller.Magic_damage += 15;//–‚–@UŒ‚—Í‚ğ‚P‚T‘‰Á
                     Log_list.LogList.Add("@ƒŠƒ“ƒS‚Å‘Ì—Í‚ğ‚R‚O‰ñ•œA–‚U‚P‚T‘‰Á@\n");
-                    adapt_Apple = false;
+                    Adapt_Apple = false;
                 }
             }
             if (Scissors_flag == true)
             {
-                if (adapt_Scissors == true && first_turn == true)
+                if (Adapt_Scissors == true && first_turn == true)
                 {
                     Debug.Log("Scissors");
                     playercontroller.Attack_damage += 20;//•¨—UŒ‚—Í‚ğ‚Q‚O‘‰Á
                     Log_list.LogList.Add("@ƒnƒTƒ~‚Å•¨U‚Q‚O‘‰Á@\n");
-                    adapt_Scissors = false;
+                    Adapt_Scissors = false;
                 }
             }
             if (ice_flag == true)
             {
-                if (adapt_ice == true && first_turn == true)
+                if (Adapt_ice == true && first_turn == true)
                 {
                     Debug.Log("ice");
                     playercontroller.Magic_damage += 10;//–‚–@UŒ‚—Í‚ğ‚P‚O‘‰Á
                     Log_list.LogList.Add("@•X‚Å–‚U‚P‚O‘‰Á@\n");
-                    adapt_ice = false;
+                    Adapt_ice = false;
                 }
             }
             if (Pudding_flag == true)
             {
                 if (Apple_flag == true && adapt_Pudding == true && first_turn == true)
                 {
-                    PlayerController.HP_MAX += 30;//Å‘å‘Ì—Í‚ğ‚R‚O‘‰Á
+                    PlayerController.HP_max += 30;//Å‘å‘Ì—Í‚ğ‚R‚O‘‰Á
                     Log_list.LogList.Add("@ƒŠƒ“ƒS‚ÆƒvƒŠƒ“‚ÅÅ‘å‘Ì—Í‚ª‚R‚O‘‰Á@\n");
                     adapt_Pudding = false;
                 }
@@ -328,35 +328,35 @@ public class Item_Power : MonoBehaviour
                 {
                     int Pudding_num;
                     Debug.Log("pudding");
-                    PlayerController.HP += Pudding_num = PlayerController.HP_MAX / 4;//‘Ì—Í‚ğ‚P/‚S‰ñ•œ
+                    PlayerController.HP += Pudding_num = PlayerController.HP_max / 4;//‘Ì—Í‚ğ‚P/‚S‰ñ•œ
                     Log_list.LogList.Add("@ƒvƒŠƒ“‚Å‘Ì—Í" + Pudding_num + "‰ñ•œ@\n");
                     adapt_Pudding = false;
                 }
             }
             if (Drill_flag == true)
             {
-                if (adapt_Drill == true && first_turn)
+                if (Adapt_Drill == true && first_turn)
                 {
                     int Drill_num;
                     //“G‚Ì–hŒä—Í‚Ì‚Q•ª‚Ì‚P‚Ì”’l‚ğ©g‚Ì•¨—UŒ‚—Í‚É‰ÁZ‚·‚é
                     playercontroller.Attack_damage += Drill_num = enemy_Controller.Enemy_deffence / 2;
                     Log_list.LogList.Add("@ƒhƒŠƒ‹‚Å•¨U" + Drill_num + "‘‰Á@\n");
-                    adapt_Drill = false;
+                    Adapt_Drill = false;
                 }
             }
             if (UtypeMagnet_flag == true)
             {
-                if (adapt_Utype_M == true && first_turn == true)
+                if (Adapt_Utype_M == true && first_turn == true)
                 {
                     Debug.Log("Utype");
                     playercontroller.Magic_damage += 20;//–‚–@UŒ‚—Í‚ğ‚Q‚O‘‰Á
                     Log_list.LogList.Add("@UšŒ^ƒ}ƒOƒlƒbƒg‚Å–‚U‚Q‚O‘‰Á@\n");
-                    adapt_Utype_M = false;
+                    Adapt_Utype_M = false;
                 }
             }
             if (Coffee_flag == true)
             {
-                if (adapt_Coffee == true && first_turn == true)
+                if (Adapt_Coffee == true && first_turn == true)
                 {
                     Debug.Log("Coffe");
                     //‘Ì—Í‚ª‚Q‚O‚æ‚è‘å‚«‚©‚Á‚½ê‡
@@ -366,7 +366,7 @@ public class Item_Power : MonoBehaviour
                         playercontroller.Magic_damage += 30;//–‚–@UŒ‚—Í‚ğ‚R‚O‘‰Á‚³‚¹‚é
                         Log_list.LogList.Add("@ƒR[ƒq[‚Å–‚U‚R‚O‘‰ÁA‘Ì—Í‚Q‚OŒ¸­@\n");
                     }
-                    adapt_Coffee = false;
+                    Adapt_Coffee = false;
                 }
             }
             if (Safetycone_flag == true)
@@ -482,7 +482,7 @@ public class Item_Power : MonoBehaviour
                     scop_random = Random.Range(1, 5);//‚P/‚S‚ÌŠm—¦
                     if (scop_random == 4)
                     {
-                        PlayerController.MONEY += 30;//Š‹àŠz‚ğ‚R‚O‘‰Á‚³‚¹‚é
+                        PlayerController.Mmoney += 30;//Š‹àŠz‚ğ‚R‚O‘‰Á‚³‚¹‚é
                         Log_list.LogList.Add("@ƒXƒRƒbƒv‚Å‚R‚OG“üè@\n");
                     }
                     adapt_Scop = false;
@@ -494,7 +494,7 @@ public class Item_Power : MonoBehaviour
                 {
                     Debug.Log("Speaker");
                     enemy_Controller.Enemy_deffence -= 25;//“G‚Ì•¨—–hŒä—Í‚ğ‚Q‚TŒ¸­‚³‚¹‚é
-                    Log_list.LogList.Add("@ƒXƒs[ƒJ[‚Å•¨–h‚Q‚TŒ¸­@\n");
+                    Log_list.LogList.Add("@ƒXƒs[ƒJ[‚Å“G‚Ì•¨–h‚Q‚TŒ¸­@\n");
                     adapt_Speaker = false;
                 }
             }
@@ -598,7 +598,7 @@ public class Item_Power : MonoBehaviour
                 {
                     Debug.Log("Scythe");
                     playercontroller.Attack_damage += 40;//•¨—UŒ‚—Í‚ğ‚S‚O‘‰Á‚³‚¹‚é
-                    PlayerController.MAX_LUCK -= 3;//ƒNƒŠƒeƒBƒJƒ‹”­¶Šm—¦‚ğ3‘‰Á
+                    PlayerController.Mmax_luck -= 3;//ƒNƒŠƒeƒBƒJƒ‹”­¶Šm—¦‚ğ3‘‰Á
                     Sinigami_Crit_Effect = true;//€_‚ÌƒNƒŠƒeƒBƒJƒ‹ƒGƒtƒFƒNƒg”­¶
                     Log_list.LogList.Add("@€_‚ÌŠ™‚Å•¨U‚S‚O‘‰Á@\n");
                     adapt_TheGrimReaper_scythe = false;
@@ -610,7 +610,7 @@ public class Item_Power : MonoBehaviour
                 {
                     Debug.Log("Robe");
                     playercontroller.Deffence += 40;//•¨—–hŒä—Í‚ğ40‘‰Á
-                    PlayerController.MAX_LUCK -= 3;//ƒNƒŠƒeƒBƒJƒ‹”­¶Šm—¦‚ğ3‘‰Á
+                    PlayerController.Mmax_luck -= 3;//ƒNƒŠƒeƒBƒJƒ‹”­¶Šm—¦‚ğ3‘‰Á
                     Log_list.LogList.Add("@€_‚Ìƒ[ƒu‚Å•¨–h‚S‚O‘‰Á@\n");
                     adapt_TheGrimReaper_robe = false;
                 }
@@ -620,9 +620,10 @@ public class Item_Power : MonoBehaviour
                 if (adapt_Medhusa_Eye == true && first_turn == true)
                 {
                     Debug.Log("Eye");
-                    playercontroller.Magic_diffence += 40;//–‚–@b–hŒä—Í‚ğ‚S‚O‘‰Á‚³‚¹‚é
-                    PlayerController.MAX_LUCK -= 3;//ƒNƒŠƒeƒBƒJƒ‹”­¶Šm—¦‚ğ3‘‰Á
-                    Log_list.LogList.Add("@ƒƒfƒ…[ƒT‚Ì–Ú‚Å–‚–h‚S‚O‘‰Á@\n");
+                    enemy_Controller.magic_Diffence -= 40;//‘Šè‚Ì–‚–@–hŒä—Í‚ğ‚S‚OŒ¸­‚³‚¹‚é
+                    PlayerController.Mmax_luck -= 3;//ƒNƒŠƒeƒBƒJƒ‹”­¶Šm—¦‚ğ3‘‰Á
+                    Log_list.LogList.Add("@ƒƒfƒ…[ƒT‚Ì–Ú‚Å“G‚Ì–‚–h‚S‚OŒ¸­@\n");
+                    M_eye_flag = true;
                     adapt_Medhusa_Eye = false;
                 }
             }
@@ -632,9 +633,10 @@ public class Item_Power : MonoBehaviour
                 {
                     Debug.Log("Magic_Book");
                     playercontroller.Magic_damage += 40;//–‚–@UŒ‚—Í‚ğ40‘‰Á‚³‚¹‚é
-                    PlayerController.MAX_LUCK -= 3;//ƒNƒŠƒeƒBƒJƒ‹”­¶Šm—¦‚ğ3‘‰Á
+                    PlayerController.Mmax_luck -= 3;//ƒNƒŠƒeƒBƒJƒ‹”­¶Šm—¦‚ğ3‘‰Á
                     Log_list.LogList.Add("@ƒƒfƒ…[ƒT‚Ì–‚“±‘‚Å–‚U‚S‚O‘‰Á@\n");
                     Medhusa_Magic_flag = true;
+                    M_magic_book_flag = true;
                     adapt_Medhusa_MagicBook = false;
                 }
             }
@@ -644,7 +646,7 @@ public class Item_Power : MonoBehaviour
                 {
                     Debug.Log("Tooth");
                     playercontroller.Attack_damage += 100;//•¨—UŒ‚—Í‚ğ100‘‰Á
-                    PlayerController.HP_MAX += 50;//Å‘å‘Ì—Í‚ğ50’Ç‰Á
+                    PlayerController.HP_max += 50;//Å‘å‘Ì—Í‚ğ50’Ç‰Á
                     Log_list.LogList.Add("@ƒhƒ‰ƒSƒ“‚Ì‰å‚Å•¨U‚P‚O‚O‘‰ÁAÅ‘å‘Ì—Í‚T‚O‘‰Á@\n");
                     adapt_Dragon_Tooth = false;
                 }
@@ -652,13 +654,13 @@ public class Item_Power : MonoBehaviour
             if (bowlingpin_flag == true)
             {
                 //Œø‰Ê‚Ì“à—e“I‚Éˆê”Ô‰º
-                if (adapt_bowlingpin == true && first_turn == true)
+                if (Adapt_bowlingpin == true && first_turn == true)
                 {
                     int bowlingpin_num = 0;
                     Debug.Log("bowlingpin");
-                    PlayerController.MONEY += bowlingpin_num = playercontroller.Attack_damage / 6;//Š‹àŠz‚ğ•¨—UŒ‚—Í‚Ì‚P/‚U•ª‘‰Á‚³‚¹‚é
+                    PlayerController.Mmoney += bowlingpin_num = playercontroller.Attack_damage / 6;//Š‹àŠz‚ğ•¨—UŒ‚—Í‚Ì‚P/‚U•ª‘‰Á‚³‚¹‚é
                     Log_list.LogList.Add("@ƒ{ƒEƒŠƒ“ƒO‚Ìƒsƒ“‚Å" + bowlingpin_num + "G“üè@\n");
-                    adapt_bowlingpin = false;
+                    Adapt_bowlingpin = false;
                 }
             }
             first_turn = false;
@@ -704,9 +706,9 @@ public class Item_Power : MonoBehaviour
                 {
                     case 1: playercontroller.Attack_damage += 10; Log_list.LogList.Add("@ƒ_ƒCƒX‚Å•¨U‚P‚O‘‰Á\n"); break;//•¨—UŒ‚—Í‚ğ‚P‚O‘‰Á
                     case 2: playercontroller.Attack_damage -= 10; Log_list.LogList.Add("@ƒ_ƒCƒX‚Å•¨U‚P‚OŒ¸­\n"); break;//•¨—UŒ‚—Í‚ğ‚P‚OŒ¸­
-                    case 3: playercontroller.Magic_damage += 10; Log_list.LogList.Add("@ƒ_ƒCƒX‚Å–‚U‚P‚Oã¸\n"); break;//–‚–@UŒ‚—Í‚ğ‚P‚O‘‰Á
-                    case 4: playercontroller.Magic_damage -= 10; Log_list.LogList.Add("@ƒ_ƒCƒX‚Å–‚U‚P‚OŒ¸­\n"); break;//–‚–@UŒ‚—Í‚ğ‚P‚OŒ¸­
-                    case 5: PlayerController.MONEY += 5; Log_list.LogList.Add("@ƒ_ƒCƒX‚Å‚TG“üè\n"); break;//Š‹àŠz‚ğ‚T‘‰Á‚³‚¹‚é
+                    case 3: playercontroller.Magic_damage  += 10; Log_list.LogList.Add("@ƒ_ƒCƒX‚Å–‚U‚P‚Oã¸\n"); break;//–‚–@UŒ‚—Í‚ğ‚P‚O‘‰Á
+                    case 4: playercontroller.Magic_damage  -= 10; Log_list.LogList.Add("@ƒ_ƒCƒX‚Å–‚U‚P‚OŒ¸­\n"); break;//–‚–@UŒ‚—Í‚ğ‚P‚OŒ¸­
+                    case 5: PlayerController.Mmoney        +=  5; Log_list.LogList.Add("@ƒ_ƒCƒX‚Å‚TG“üè\n");      break;//Š‹àŠz‚ğ‚T‘‰Á‚³‚¹‚é
                     case 6: dice_crit = true; Log_list.LogList.Add("@ƒ_ƒCƒX‚ÅƒNƒŠƒeƒBƒJƒ‹‚ª”­¶—¦‘‰Á\n"); break;//ƒNƒŠƒeƒBƒJƒ‹”­¶
                 }
             }
@@ -793,8 +795,8 @@ public class Item_Power : MonoBehaviour
                 if (Watch_Add_reset == true)
                 {
                     //•¨—UŒ‚—Í
-                    Log_list.LogList.Add("@˜rŒv‚Å•¨U"+ (PlayerController.HP_MAX - PlayerController.HP) +"ã¸\n");
-                    playercontroller.Attack_damage += PlayerController.HP_MAX - PlayerController.HP;
+                    Log_list.LogList.Add("@˜rŒv‚Å•¨U"+ (PlayerController.HP_max - PlayerController.HP) +"ã¸\n");
+                    playercontroller.Attack_damage += PlayerController.HP_max - PlayerController.HP;
                     Watch_Add_reset = false;
                 }
             }

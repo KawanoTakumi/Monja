@@ -3,10 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class ChangeScene : MonoBehaviour
 {
-    public string SceneName;//切り替えるシーンの名前を入れる
     public Shop_manager Shop;
     public static bool SceneChange = false;
-    //public static int BossNumber = 0;
     public static int SCENE_CNT  = 0;
     public enum Scene
     {
@@ -22,15 +20,21 @@ public class ChangeScene : MonoBehaviour
         Boss_Battle_03 = 9
     }
     Scene scene = Scene.Title;
+
+    //スタートメソッド
+    //説明　コンポーネントを取得します
     void Start()
     {
         //Debug.Log(SceneName);
         Shop = GetComponent<Shop_manager>();
     }
-    //ロードシーンを読み込む
-    public void Load()
+    /// <summary>
+    /// シーンを読み込む関数です。
+    /// </summary>
+    /// <param name="Scenename">シーン名</param>
+    public void Load(string Scenename)
     {
-        SceneManager.LoadScene(SceneName);
+        SceneManager.LoadScene(Scenename);
     }
     //change_sceneを読み込む
     public void Change_Scene()
@@ -39,6 +43,9 @@ public class ChangeScene : MonoBehaviour
         SceneChange = true;
     }
     //ショップに戻る時の関数
+    /// <summary>
+    /// インベントリ画面からショップに戻るとき用の関数です
+    /// </summary>>
     public void Shop_Change()
     {
         //shopに戻る時用
@@ -49,6 +56,9 @@ public class ChangeScene : MonoBehaviour
         }
     }
     //シーンカウント増加関数
+    /// <summary>
+    /// シーン用のカウントを進める関数です
+    /// </summary>
     public void Add_Scene_Num()
     {
         //シーンナンバー加算
@@ -56,16 +66,25 @@ public class ChangeScene : MonoBehaviour
         scene++;
     }
     //シーンカウントリセット関数
+    /// <summary>
+    /// シーン用のカウントをリセットする関数です
+    /// </summary>
     public void Reset_Scene_Num()
     {
         scene = Scene.Title;
     }
     //最初のターン経過取得フラグ
+    /// <summary>
+    /// 最初のターンだった場合フラグをfalseにします
+    /// </summary>
     public void First_Turn_Flag()
     {
         Item_Power.first_turn = false;
     }
     //workシーン変更関数
+    /// <summary>
+    /// シーンカウントに応じて主人公が歩くシーンを設定します
+    /// </summary>
     public void Work_Cange_Scene()
     {
         //各シーンカウントで移動シーンを変更
@@ -78,6 +97,9 @@ public class ChangeScene : MonoBehaviour
         }
     }
     //戦闘シーンをscene_cntに基づいて変更
+    /// <summary>
+    /// 戦闘シーンをシーンカウントに応じて変更します
+    /// </summary>
     public void Enemy_Change_Scene()
     {
         if (SceneChange == false)
@@ -100,9 +122,12 @@ public class ChangeScene : MonoBehaviour
     }
     //titleに戻る時に使用
     //アイテムとHPとシーンカウントをリセット
+    /// <summary>
+    /// プレイヤーの各種ステータスをリセットします
+    /// </summary>
     public void Player_Reset()
     {
-        PlayerController.HP = PlayerController.HP_MAX;
+        PlayerController.HP = PlayerController.HP_max;
         Item_Manager.Item["healdrink"]        = false;
         Item_Manager.Item["bowlingball"]      = false;
         Item_Manager.Item["CDplayer"]         = false;
@@ -154,33 +179,45 @@ public class ChangeScene : MonoBehaviour
         Item_Manager.Item["MagicBook"]        = false;
         Item_Manager.Item["Eye"]              = false;
         Item_Manager.Item["Tooth"]            = false;
-        PlayerController.MAX_LUCK = 13;//クリティカル発生確率初期化
+        PlayerController.Mmax_luck = 13;//クリティカル発生確率初期化
         SCENE_CNT = 0;
     }
     //shopシーンのアイテム表示をリセット
+    /// <summary>
+    /// ショップシーンで使用したアイテム用の変数をリセットします
+    /// </summary>
     public void Item_Num_Reset()
     {
         for (int i = 0; i < 3; i++)
             Shop_manager.Shop_tmp[i] = -1;
     }
     //shop移行
+    /// <summary>
+    /// ショップに移動します
+    /// </summary>
     public void Shop_Go()
     {
         SceneManager.LoadScene("shop");
     }
     //shopから移動
+    /// <summary>
+    /// ショップぁら次のシーンへ移動します
+    /// </summary>
     public void Back_Shop()
     {
         SceneManager.LoadScene("shop_back");
     }
     //数値初期化
+    /// <summary>
+    /// タイトル用に変数を初期化します
+    /// </summary>
     public static void Title_Reset()
     {
-        PlayerController.HP_MAX = 100;//最大体力を初期の値にする
-        PlayerController.HP = PlayerController.HP_MAX;
-        PlayerController.MP = PlayerController.MP_MAX;
-        PlayerController.MAGIC_TYPE = 0;
-        PlayerController.MONEY = 0;
+        PlayerController.HP_max = 100;//最大体力を初期の値にする
+        PlayerController.HP = PlayerController.HP_max;
+        PlayerController.MP = PlayerController.MP_max;
+        PlayerController.Magic_number = 0;
+        PlayerController.Mmoney = 0;
         PlayerController.Status_Reset();
         PlayerController.Item_Reset();
         //各種数値を初期化

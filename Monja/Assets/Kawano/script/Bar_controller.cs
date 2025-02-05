@@ -12,10 +12,10 @@ public class Bar_controller : MonoBehaviour
     void Start()
     {
         //各数値をスライダーの Varueに入れる
-        HP_bar.value          = PlayerController.HP_MAX;
-        HP_bar.maxValue       = PlayerController.HP_MAX;
-        MP_bar.value          = PlayerController.MP_MAX;
-        MP_bar.maxValue       = PlayerController.MP_MAX;
+        HP_bar.value          = PlayerController.HP_max;
+        HP_bar.maxValue       = PlayerController.HP_max;
+        MP_bar.value          = PlayerController.MP_max;
+        MP_bar.maxValue       = PlayerController.MP_max;
         Enemy_HP_bar.maxValue = Enemy_controller.HP_MAX;
     }
     //アップデートメソッド

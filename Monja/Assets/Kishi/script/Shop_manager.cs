@@ -88,10 +88,9 @@ public class Shop_manager : MonoBehaviour
     public void shop_reroll()
     {
 
-        if (PlayerController.MONEY >= 30)//所持金確認
+        if (PlayerController.Mmoney >= 5)//所持金確認
         {
-            PlayerController.MONEY -= 30;
-
+            PlayerController.Mmoney -= 5;
 
             for(int i =0;i<=2;i++)
             {
@@ -101,11 +100,10 @@ public class Shop_manager : MonoBehaviour
                 item_select(i);
                 Create_ShopItem(i);
             }
-          
         }
         else
         {
-            text.text = ("リロールは30G必要です");
+            text.text = "リロールは5G必要です";
         }
     }
     public void button_intaractable(Button button)

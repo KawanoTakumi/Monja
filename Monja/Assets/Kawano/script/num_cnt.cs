@@ -25,8 +25,8 @@ public class num_cnt : MonoBehaviour
         //プレイヤーステータス
         HP_text.text             = string.Format("{0}", PlayerController.HP);
         MP_text.text             = string.Format("{0}", PlayerController.MP);
-        Heal_drink_num.text      = string.Format("{0}", PlayerController.HP_POTION);
-        Player_money.text        = string.Format("{0}", PlayerController.MONEY);
+        Heal_drink_num.text      = string.Format("{0}", PlayerController.HP_potion);
+        Player_money.text        = string.Format("{0}", PlayerController.Mmoney);
         Attack_text.text         = string.Format("{0}", Player.Attack_damage);
         Diffence_text.text       = string.Format("{0}", Player.Deffence);
         Magic_text.text          = string.Format("{0}", Player.Magic_damage);

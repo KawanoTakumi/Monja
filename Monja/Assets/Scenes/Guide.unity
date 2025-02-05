@@ -346,7 +346,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1559270969831591574, guid: 386d31e0ed3b7e74c917d4ad733b1317, type: 3}
       propertyPath: Audio_source.Array.size
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1559270969831591574, guid: 386d31e0ed3b7e74c917d4ad733b1317, type: 3}
       propertyPath: Audio_source.Array.data[0]
@@ -368,6 +368,10 @@ PrefabInstance:
       propertyPath: Audio_source.Array.data[4]
       value: 
       objectReference: {fileID: 1559270969831591575, guid: 386d31e0ed3b7e74c917d4ad733b1317, type: 3}
+    - target: {fileID: 1559270969831591574, guid: 386d31e0ed3b7e74c917d4ad733b1317, type: 3}
+      propertyPath: Audio_source.Array.data[5]
+      value: 
+      objectReference: {fileID: 136594880}
     - target: {fileID: 1559270969831591575, guid: 386d31e0ed3b7e74c917d4ad733b1317, type: 3}
       propertyPath: Loop
       value: 1
@@ -2072,7 +2076,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adb4b0b93018a3e4e96e6c822f2129d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneName: Title
   Shop: {fileID: 0}
 --- !u!114 &2004052946
 MonoBehaviour:
@@ -2121,13 +2124,13 @@ MonoBehaviour:
       - m_Target: {fileID: 2004052945}
         m_TargetAssemblyTypeName: ChangeScene, Assembly-CSharp
         m_MethodName: Load
-        m_Mode: 1
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Title
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2004052947

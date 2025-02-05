@@ -358,7 +358,7 @@ AnimationClip:
   m_Events:
   - time: 3.7666667
     functionName: Load
-    data: 
+    data: shop_go
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0

@@ -261,12 +261,13 @@ public class Item_text : MonoBehaviour
         else if (button == CompareTag("Eye"))
         {
             Item_name.text = "メデューサの目";
-            Item_guide_text.text = "メデューサの目。取り扱いには注意が必要。\n\n魔法防御力を４０増加させ、クリティカルが出やすくなる";
+            Item_guide_text.text = "メデューサの目。取り扱いには注意が必要。\n\n相手の魔法防御力を４０減少させ、魔法を二回打つとMPを２５回復";
+            
         }
         else if (button == CompareTag("MagicBook"))
         {
             Item_name.text = "メデューサの魔導書";
-            Item_guide_text.text = "メデューサが使っていた魔導書。書かれている文字は解読できない。\n魔法攻撃力を４０増加させ、クリティカルが出やすくなる\n（アイテム画面でアイテムを押すと魔法攻撃が変化）";
+            Item_guide_text.text = "メデューサが使っていた魔導書。書かれている文字は解読できない。\n魔法攻撃力を４０増加させ、魔法を二回打つとMPを２５回復\n（アイテム画面でアイテムを押すと魔法攻撃が変化）";
         }
         else if (button == CompareTag("Scale"))
         {
@@ -283,6 +284,6 @@ public class Item_text : MonoBehaviour
     //魔法攻撃を後から変更するための関数（アイテム画面でボタンを押したらその魔法攻撃になる）
     public void magic_number(int num_M)
     {
-        PlayerController.MAGIC_TYPE = num_M;
+        PlayerController.Magic_number = num_M;
     }
 }

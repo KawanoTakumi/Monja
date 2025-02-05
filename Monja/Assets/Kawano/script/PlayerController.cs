@@ -6,14 +6,6 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     //プレイヤーステータス（定数）
-    public static int HP     = 100;             //HP
-    public static int HP_MAX = 100;             //最高HP
-    public static int MP     = 100;             //MP
-    public static int MP_MAX = 100;             //最高MP
-    public static int HP_POTION = 0;            //HPポーションの数
-    public static int MONEY = 0;                //所持金額
-    public static int MAX_LUCK = 13;            //最大ラック
-    public static int MAGIC_TYPE = 0;           //魔法番号(撃てる魔法の種類)
     static int STATUS_MAX = 9999;               //ステータス上限
     static int STATUS_MIN = 0;                  //ステータス下限
     static int CONSTANT_ATTACK   = 25;          //攻撃の定数
@@ -22,6 +14,14 @@ public class PlayerController : MonoBehaviour
     static int CONSTANT_MAGIC_DEFFENCE = 25;    //魔法防御の定数
 
     //プレイヤーステータス（変数）
+    public static int HP = 100;             //HP
+    public static int HP_max = 100;             //最高HP
+    public static int MP = 100;             //MP
+    public static int MP_max = 100;             //最高MP
+    public static int HP_potion = 0;            //HPポーションの数
+    public static int Mmoney = 0;                //所持金額
+    public static int Mmax_luck = 13;            //最大ラック
+    public static int Magic_number = 0;           //魔法番号(撃てる魔法の種類)
     public int Attack_damage  = 0;              //攻撃力
     public int Deffence       = 0;              //防御力
     public int Magic_damage   = 0;              //魔法力
@@ -74,7 +74,6 @@ public class PlayerController : MonoBehaviour
         Deffence       = CONSTANT_DEFFENCE;
         Magic_damage   = CONSTANT_MAGIC;
         Magic_diffence = CONSTANT_MAGIC_DEFFENCE;
-
         //主人公のターンにする true = 主人公、false = 敵
         turn_manager.turn = true;
     }
@@ -143,9 +142,9 @@ public class PlayerController : MonoBehaviour
         {
             Magic_diffence = STATUS_MAX;
         }
-        if(HP >= HP_MAX)
+        if(HP >= HP_max)
         {
-            HP = HP_MAX;
+            HP = HP_max;
         }
 
         //ステータス下限
@@ -169,9 +168,9 @@ public class PlayerController : MonoBehaviour
         {
             HP = STATUS_MIN;
         }
-        if(MAX_LUCK < 2)
+        if(Mmax_luck < 2)
         {
-            MAX_LUCK = 2;
+            Mmax_luck = 2;
         }
 
         //状態異常時の効果
@@ -232,8 +231,8 @@ public class PlayerController : MonoBehaviour
             Log_list.LogList.Add("　主人公は攻撃した\n");//ログリストに追加
 
             //主人公の幸運値をランダムで変更して、値に応じてクリティカルを発生させる
-            Player_luck = Random.Range(1,MAX_LUCK);
-            if (Player_luck < MAX_LUCK - 1)
+            Player_luck = Random.Range(1,Mmax_luck);
+            if (Player_luck < Mmax_luck - 1)
             {
                 //SEを遅延させる
                 Invoke("SE_Play_Attack", 500.0f);
@@ -241,7 +240,7 @@ public class PlayerController : MonoBehaviour
                 //計算後の攻撃値を取得
                 Calc_attack_damage = Attack_damage;
             }
-            else if (Player_luck == MAX_LUCK -1 || Item_Power.dice_crit == true)
+            else if (Player_luck == Mmax_luck -1 || Item_Power.dice_crit == true)
             {
                 Calc_attack_damage = Attack_damage + Attack_damage / 2;//計算後の攻撃値に１．５倍の攻撃値を取得    
                 Log[0].text = ("主人公クリティカルが発生");//ログ更新
@@ -274,14 +273,14 @@ public class PlayerController : MonoBehaviour
         {
             Log_list.LogList.Add("\n<color=#24e1f3>　　プレイヤーのターン</color>\n");//ログリストに追加
             //MPが最大値より小さい時
-            if (MP < MP_MAX)
+            if (MP < MP_max)
             {
                 //ボタンが押されたことを確認し、ボタンを押せなくする
                 Button_check = true;
                 Intaract_False();
 
                 Animator.SetBool("cons", true);                //アニメーションを再生
-                MP += MP_MAX / 2;　　　　　　　　　　　　　　　//MPを半分回復
+                MP += MP_max / 2;　　　　　　　　　　　　　　　//MPを半分回復
                 Log[0].text = "主人公は集中した";       //ログを更新
                 Log_list.LogList.Add("　主人公は集中した\n");//ログリストに追加
                 //敵のエフェクトを削除する
@@ -294,9 +293,9 @@ public class PlayerController : MonoBehaviour
                 Cons_flag = true;
 
                 //MPがMP_maxより大きければMP_maxの値に合わせる
-                if (MP > MP_MAX)
+                if (MP > MP_max)
                 {
-                    MP = MP_MAX;
+                    MP = MP_max;
                 }
             }
             else
@@ -333,7 +332,7 @@ public class PlayerController : MonoBehaviour
 
                 //魔法のアニメーションを魔法のタイプに応じて変化させる
                 Animator.SetBool("magic", true);
-                switch (MAGIC_TYPE)
+                switch (Magic_number)
                 {
                     case 0: Create_Effect_Player(0, 5.7f, 0.9f); break;
                     case 1: Create_Effect_Player(2, 0f, 0f);break;
@@ -354,21 +353,24 @@ public class PlayerController : MonoBehaviour
                     Item_Power.MagicBook_cnt++;
                     if(Item_Power.MagicBook_cnt == 2)
                     {
-                        MP += 25;  
+                        MP += 25;
+                        Item_Power.MagicBook_cnt = 0;
+
                     }
 
-                    Item_Power.MagicBook_cnt = 0;
                 }
                 if (Item_Power.M_eye_flag == true)
                 {
                     Item_Power.MedhusaEye_cnt++;
                     if (Item_Power.MedhusaEye_cnt == 2)
                     {
-                        if (MP + 25 > 100)
-                            MP += 25;
-
+                        MP += 25;
                         Item_Power.MedhusaEye_cnt = 0;
                     }
+                }
+                if(MP > MP_max)
+                {
+                    MP = MP_max;
                 }
 
                 //シュウチュウフラグがtrueの時
@@ -404,30 +406,30 @@ public class PlayerController : MonoBehaviour
             Intaract_False();
 
             //HPが最大値より少ない　かつ　HPポーションを所持している時
-            if (HP != HP_MAX && HP_POTION > 0)
+            if (HP != HP_max && HP_potion > 0)
             {
                 //回復アニメーションを作動させ、回復エフェクトを作成
                 Animator.SetBool("heal", true);
                 Create_Effect_Player(1, -5.1f, 0.1f);
 
                 //HPポーションの所持数を減らし、体力を最大値の半分回復させる
-                HP_POTION -= 1;
-                HP += HP_MAX / 2;
+                HP_potion -= 1;
+                HP += HP_max / 2;
                 
                 //HPが最大値より大きくなったら、最大値に合わせる
-                if (HP > HP_MAX)
+                if (HP > HP_max)
                 {
-                    HP = HP_MAX;
+                    HP = HP_max;
                 }
                 Log[0].text = ("主人公は回復した");//ログを更新
                 Log_list.LogList.Add("　主人公は回復した\n");//ログリストに追加
             }
-            else if(HP == HP_MAX)
+            else if(HP == HP_max)
             {
                 Log[0].text = ("体力は満タンだ！！！");
                 Log_list.LogList.Add("　体力は満タンだ！！！\n");//ログリストに追加
             }
-            else if(HP_POTION < 1)
+            else if(HP_potion < 1)
             {
                 Log[0].text = ("ポーションが足りない！");
                 Log_list.LogList.Add("　ポーションが足りない！\n");//ログリストに追加
@@ -557,7 +559,7 @@ public class PlayerController : MonoBehaviour
         Eff_random = Random.Range(0, 5);//1/4の確率
         if(Eff_random == 4)
         {
-            switch(MAGIC_TYPE)
+            switch(Magic_number)
             {
                 case 1: 
                     Enemy_controller.Freeze_turn = true;
@@ -583,7 +585,7 @@ public class PlayerController : MonoBehaviour
     public void Crit_Effect(int Play_act)
     {
 
-        if(Player_luck == MAX_LUCK - 1 || Item_Power.dice_crit == true)
+        if(Player_luck == Mmax_luck - 1 || Item_Power.dice_crit == true)
         {
             switch (Play_act)
             {
@@ -634,12 +636,12 @@ public class PlayerController : MonoBehaviour
         //主人公のステータスを初期化
         Item_Reset();
         Status_Reset();
-        MAX_LUCK = 13;//クリティカル発生確率初期化
-        HP_MAX = 100;//最大体力を初期化
-        HP = HP_MAX;
-        MP = MP_MAX;
-        MONEY = 0;
-        MAGIC_TYPE = 0;
+        Mmax_luck = 13;//クリティカル発生確率初期化
+        HP_max = 100;//最大体力を初期化
+        HP = HP_max;
+        MP = MP_max;
+        Mmoney = 0;
+        Magic_number = 0;
         Log_list.Log_Clear();//ログを初期化
         //ショップの選択範囲を初期化
         Shop_manager.Shop_limit = 6;
@@ -650,6 +652,8 @@ public class PlayerController : MonoBehaviour
         Item_Power.first_turn = true;
         Item_Power.Sinigami_Crit_Effect = false;
         Item_Power.Boxing_flag = false;
+        Item_Power.M_eye_flag = false;
+        Item_Power.M_magic_book_flag = false;
         //敵のステータスを初期化
         Enemy_controller.turn = 0;
         Enemy_controller.HP = 150;
