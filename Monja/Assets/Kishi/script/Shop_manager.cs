@@ -23,9 +23,7 @@ public class Shop_manager : MonoBehaviour
     //説明テキスト
     public Text text;
     [SerializeField] GameObject _parentGameObject;
-    /// <summary>
-    /// 
-    /// </summary>
+   
     void Start()
     {
 
@@ -75,7 +73,9 @@ public class Shop_manager : MonoBehaviour
         button_intaractable(Obj_button[3]);
     }
 
-    //ゲットフラグリセット
+    /// <summary>
+    ///アイテムの入手状況判定用のフラグをリセットします
+    /// </summary>
     public void Getflag_reset()
     {
         //アイテムの取得フラグリセット
@@ -84,7 +84,9 @@ public class Shop_manager : MonoBehaviour
             Item_Library.GetFlag[i] = false;
     }
 
-    //ショップリロール関数
+    /// <summary>
+    /// ショップを再抽選します
+    /// </summary>
     public void shop_reroll()
     {
 
@@ -108,11 +110,19 @@ public class Shop_manager : MonoBehaviour
             text.text = ("リロールは30G必要です");
         }
     }
+    /// <summary>
+    /// ボタンが押された場合、ボタンを再度押せなくします
+    /// </summary>
+    /// <param name="button"></param>
     public void button_intaractable(Button button)
     {
         button.interactable = false;
     }
-
+    /// <summary>
+    /// アイテムのイブジェクトを生成します
+    /// </summary>
+    /// <param name="i"></param>
+    /// <returns></returns>
     int Create_ShopItem(int i)
     {
         if (Shop_tmp[i] == -1)
@@ -154,7 +164,10 @@ public class Shop_manager : MonoBehaviour
        
         return Item_number[i];
     }
-
+    /// <summary>
+    /// Create_ShopItemで生成するアイテムをprefabからランダムで選出します
+    /// </summary>
+    /// <param name="i"></param>
     void item_select(int i)
     {
        
@@ -186,7 +199,10 @@ public class Shop_manager : MonoBehaviour
             case 3: Item_number[i] = 0;break;
         }
     }
-
+    /// <summary>
+    ///　入手済みのアイテムオブジェクトを押せなくします
+    /// </summary>
+    /// <param name="i">スタート関数のfor文の変数iの値</param>
     void Item_Get_Check(int i)
     {
         Item_Manager.Item.TryGetValue(Obj_button[i].tag, out bool tag_bool);
