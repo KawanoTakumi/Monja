@@ -20,7 +20,7 @@ public class Item_Library : MonoBehaviour
     }
     void Update()
     {
-        money = PlayerController.MONEY;
+        money = PlayerController.Mmoney;
         //回復アイテムを取得したとき、インタラクトできなくする
         if (GetFlag[3] == true)
         {
@@ -39,7 +39,7 @@ public class Item_Library : MonoBehaviour
         if(money >= ITEM_VALUE[i] && GetFlag[i]==false)
         {
            
-            if (i == 3)PlayerController.HP_POTION++;
+            if (i == 3)PlayerController.HP_potion++;
             if (Item_Manager.Item.TryGetValue(shop_manager.Obj_button[i].tag, out bool button))
             {
                 if (button == false)
@@ -47,7 +47,7 @@ public class Item_Library : MonoBehaviour
                     money -= ITEM_VALUE[i];
                 }
             }
-            PlayerController.MONEY = money;
+            PlayerController.Mmoney = money;
             shop_manager.Obj_button[i].interactable = false;
             GetFlag[i] = true;
         }
