@@ -348,8 +348,31 @@ public class PlayerController : MonoBehaviour
                 //敵に与えるダメージを計算（魔法攻撃値）ー（敵魔法防御）
                 Damage_calculate.Enemey_Damage_Calculate(Calc_magic_damage, Enemy_controller.magic_Diffence);
 
+
+                if (Item_Power.M_magic_book_flag == true)
+                {
+                    Item_Power.MagicBook_cnt++;
+                    if(Item_Power.MagicBook_cnt == 2)
+                    {
+                        MP += 25;  
+                    }
+
+                    Item_Power.MagicBook_cnt = 0;
+                }
+                if (Item_Power.M_eye_flag == true)
+                {
+                    Item_Power.MedhusaEye_cnt++;
+                    if (Item_Power.MedhusaEye_cnt == 2)
+                    {
+                        if (MP + 25 > 100)
+                            MP += 25;
+
+                        Item_Power.MedhusaEye_cnt = 0;
+                    }
+                }
+
                 //シュウチュウフラグがtrueの時
-                if(Cons_flag == true)
+                if (Cons_flag == true)
                 {
                     //シュウチュウで増加させた魔法攻撃力分減少させる
                     Magic_damage -= 10 * Magic_power_up;
